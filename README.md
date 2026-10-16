@@ -65,3 +65,5 @@ CSharp1 now selects the pinned Unicode 3.0 BMP category policy; other partial pr
 The [names/types conformance continuation](docs/coverage/csharp1-type-conformance-evidence.md) maps every NamesTypes production to direct fixtures and independent typed child/span comparisons. Compiler-deferred void and standalone array-rank oracle differences are recorded explicitly; all profiles remain partial.
 
 The [cast/expression conformance continuation](docs/coverage/csharp1-cast-conformance-evidence.md) compares recursive cast operands, operator grouping and authored spans. It adds finite malformed and safe-module observations without claiming full expression coverage.
+
+The [array/argument continuation](docs/coverage/csharp1-array-argument-evidence.md) checks dimensions, rank order, nested initializer elements, ref/out arguments and separator spans. `CSN2005` rejects direct array-creation element targets in the standard baseline; parenthesize the creation before indexing. Roslyn acceptance of initialized direct indexing is recorded as a reference discrepancy.
