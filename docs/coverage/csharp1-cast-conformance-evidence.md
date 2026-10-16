@@ -19,3 +19,9 @@ Initial execution passed 431 oracle and 37 normal fixtures; an earlier missing t
 Full pre-review verification: **550 normal + 1,373 oracle = 1,923 tests pass**. The fixture report covers finite depth and selected interactions. Array creation/initializers, remaining primary forms, general argument contexts, full unsafe production internals and broader declaration/statement conformance remain pending. The baseline inventory stays implemented and no overall profile completion gate is promoted.
 
 Decision: compare syntax and spans, excluding semantic conversion/assignability errors consistently with the parser scope; treating these accepted fixtures as executable programs would overstate the evidence.
+
+## Fresh review
+
+Fresh read-only review of `5e118e8..d6f126d` judged the checkpoint ready to merge with no Critical or Important findings. One deferred minor: literal expressions are compared by kind, expression span and source text; the generated `Value` child projection/span/text is not separately asserted. This does not block the finite cast/grouping evidence, but literal-child closure remains pending.
+
+Review boundaries: statement/interface/declaration/source restrictions (Tasks 3–6); array creation/initializers, general argument modifiers and other primary forms; full pointer/fixed/stackalloc internals and unsafe contexts; binding/conversions/assignability/execution. Extrapolating these fixtures would overstate conformance or executable validity. The reviewer inspected source under a no-run instruction; the two complete author runs supply execution evidence. Prior PRs #3/#4 are now merged to main; this checkpoint targets main directly.
