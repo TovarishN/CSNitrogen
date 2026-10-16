@@ -55,7 +55,12 @@ public class SourceGrammarParityTests
   using var parsed=CSharpParser.Parse(new(source,"CSharp1","test.cs",[]));
   Assert.True(!rejected==parsed.Accepted,source+"\nOracle "+string.Join(";",reference.CompilationDiagnostics.Select(d=>d.Id+":"+d.GetMessage()))+"\nOurs "+string.Join(";",parsed.Issues));
  }
- [Theory][InlineData("Boolean.cs")][InlineData("EventArgs.cs")]
+ public static IEnumerable<object[]> ExternalCorpus()
+ {
+  using var provenance=System.Text.Json.JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"Corpus/Mono2004/provenance.json")));
+  foreach(var file in provenance.RootElement.GetProperty("files").EnumerateArray())yield return [file.GetProperty("local").GetString()!];
+ }
+ [Theory][MemberData(nameof(ExternalCorpus))]
  public void Pinned_external_CSharp1_corpus(string file)
  {
   string source=File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"Corpus/Mono2004",file));var oracle=Oracle.Observe(source,LanguageVersion.CSharp1);

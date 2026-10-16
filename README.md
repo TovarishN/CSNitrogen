@@ -57,3 +57,5 @@ See the [C# 1 lexical/preprocessing evidence](docs/coverage/csharp1-lexical-prep
 Prototype API migration: `Root.Members` replaces `Root.Types` to represent namespaces and all type declarations. `Classes` returns global classes only. Generated views remain borrowed from the owning result.
 
 The [attribute conformance continuation](docs/coverage/csharp1-attribute-conformance-evidence.md) records the latest C# 1 fixes and oracle classifications. The initial baseline is published at [TovarishN/CSNitrogen](https://github.com/TovarishN/CSNitrogen).
+
+The [context conformance continuation](docs/coverage/csharp1-context-conformance-evidence.md) records catch/accessor/constructor checks, corrected conditional tree shapes, the historical reference policy and expanded corpus. Prototype generated-view change: conditional false arms use `.False.Value`.

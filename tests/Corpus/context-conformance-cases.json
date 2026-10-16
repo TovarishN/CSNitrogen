@@ -1,0 +1,154 @@
+[
+  {
+    "source": "class C{void M(){try{}catch(E e){}catch{}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{void M(){try{}catch{}catch(E e){}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{void M(){try{}catch{}catch{}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{void M(){try{}finally{}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{void M(){try{}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{int P{get{return 0;}set{}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{int P{set{}get{return 0;}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{int P{get{return 0;}get{return 1;}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{int P{set{}set{}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{int P{}}",
+    "expected": false
+  },
+  {
+    "source": "interface I{int P{get;set;}}",
+    "expected": true
+  },
+  {
+    "source": "interface I{int P{set;get;}}",
+    "expected": true
+  },
+  {
+    "source": "interface I{int P{get;get;}}",
+    "expected": false
+  },
+  {
+    "source": "interface I{int this[int x]{get;get;}}",
+    "expected": false
+  },
+  {
+    "source": "class C{int this[int x]{get{return x;}get{return x;}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{event E X{add{}remove{}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{event E X{remove{}add{}}}",
+    "expected": true
+  },
+  {
+    "source": "class C{event E X{add{}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{event E X{remove{}}}",
+    "expected": false
+  },
+  {
+    "source": "class C{event E X{add{}add{}remove{}}}",
+    "expected": false
+  },
+  {
+    "source": "enum E{}",
+    "expected": true
+  },
+  {
+    "source": "enum E{A,}",
+    "expected": true
+  },
+  {
+    "source": "enum E{,}",
+    "expected": false
+  },
+  {
+    "source": "struct S{public S(int x){} }",
+    "expected": true
+  },
+  {
+    "source": "struct S{~S(){}}",
+    "expected": false
+  },
+  {
+    "source": "class C{~C(){}}",
+    "expected": true
+  },
+  {
+    "source": "class C{static C(){}}",
+    "expected": true
+  },
+  {
+    "source": "class C{static C(int x){}}",
+    "expected": false
+  },
+  {
+    "source": "class C{static C():base(){}}",
+    "expected": false
+  },
+  {
+    "source": "struct S{public S(){}}",
+    "expected": false
+  },
+  {
+    "source": "struct S{int x=1;}",
+    "expected": false
+  },
+  {
+    "source": "struct S{static int x=1;}",
+    "expected": true
+  },
+  {
+    "source": "class C{void M(){if(x) label:F();}}",
+    "expected": false
+  },
+  {
+    "source": "class C{void M(){label:int x;}}",
+    "expected": true
+  },
+  {
+    "source": "class C{void M(){using(T x){} }}",
+    "expected": true
+  },
+  {
+    "source": "enum E:float{A}",
+    "expected": true
+  },
+  {
+    "source": "class C{int M(){return a?b:c=d;}}",
+    "expected": true
+  },
+  {
+    "source": "class C{void M(){F(a?b:c=d);}}",
+    "expected": true
+  }
+]

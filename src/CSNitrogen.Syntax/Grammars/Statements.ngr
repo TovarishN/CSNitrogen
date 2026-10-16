@@ -18,8 +18,10 @@ syntax module CSharp.Statements
  syntax SwitchSection = Labels:SwitchLabel+ Statements:Statement+;
  syntax SwitchStatement = "switch" "(" Value:CSharp.Expressions.Expression ")" "{" Sections:SwitchSection* "}";
  syntax CatchClause = "catch" Declaration:("(" CSharp.NamesTypes.TypeReference CSharp.Lexical.Identifier? ")")? Body:Block;
+ syntax SpecificCatchClause = &("catch" "(") Value:CatchClause;
+ syntax GeneralCatchClause = &("catch" "{") Value:CatchClause;
  syntax FinallyClause = "finally" Body:Block;
- syntax TryStatement = "try" Body:Block Handlers:(CatchClause+ FinallyClause? / FinallyClause);
+ syntax TryStatement = "try" Body:Block Handlers:(SpecificCatchClause+ GeneralCatchClause? FinallyClause? / GeneralCatchClause FinallyClause? / FinallyClause);
  syntax UsingStatement = "using" "(" Resource:(VariableDeclaration / CSharp.Expressions.Expression) ")" Body:EmbeddedStatement;
  syntax LockStatement = "lock" "(" Value:CSharp.Expressions.Expression ")" Body:EmbeddedStatement;
  syntax CheckedStatement = ("checked" / "unchecked") Body:Block;

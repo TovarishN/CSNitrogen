@@ -27,6 +27,9 @@ syntax module CSharp.Expressions
   | DefiniteCast = "(" Type:DefiniteCastType ")"
   | NamedCast = "(" Name:CSharp.NamesTypes.QualifiedName ")" &AfterNamedCast
  }
+ // Conditional arms are full expressions, including assignments. A rule call
+ // resets the Pratt operand floor rather than inheriting conditional precedence.
+ syntax ConditionalOperand = Value:Expression;
  syntax AssignmentOperator = "<<=" / ">>=" / "+=" / "-=" / "*=" / "/=" / "%=" / "&=" / "|=" / "^=" / "=";
  extensible syntax Expression
  {
@@ -71,7 +74,7 @@ syntax module CSharp.Expressions
   | BitOrExpression = Left:Expression BitOrOp Right:Expression precedence 90 left
   | AndExpression = Left:Expression "&&" Right:Expression precedence 80 left
   | OrExpression = Left:Expression "||" Right:Expression precedence 70 left
-  | ConditionalExpression = Condition:Expression "?" True:Expression ":" False:Expression precedence 60 right
+  | ConditionalExpression = Condition:Expression "?" True:Expression ":" False:ConditionalOperand precedence 60 right
   | AssignmentExpression = Target:Expression Operator:AssignmentOperator Value:Expression precedence 50 right
  }
  syntax ExpressionFragment = Value:Expression;
