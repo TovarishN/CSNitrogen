@@ -23,3 +23,19 @@ The deferred conditional-expression tests now recurse through both arms, nested 
 Source-category tests: all 16 initial historical public pipeline fixtures first failed, then passed. The independent historical exhaustive run passed all six initial observations in five seconds; full final counts and fresh review outcomes are appended below. Historical BMP category parity does not prove exhaustive C# 1 production coverage or semantic identifier equality in a binder.
 
 Final pre-review verification: 411 normal tests and 298 independent oracle tests passed (709 total). Historical boundary fixtures passed 33/33 after reproducing failures; constant/event/jump keyword alternatives also have complete-identifier guards. All three generators reproduce byte-identical outputs, the current Unicode snapshot remains unchanged, and all 118 recorded Nitrogen source hashes match both the original source and the isolated build copy.
+
+## Review decisions
+
+A fresh read-only review found one Important interface `new` keyword-prefix omission and no Critical or Minor findings. Four public-parser fixtures reproduced it before the grammar guard was corrected.
+
+- shared raw identifier grammar is the historical/current union; owning API/explicit syntax policy validates the selected table — preserves Token names while supporting historical-only characters — raw fragments alone are not profile conformance.
+- exactly one global-target extension per configured language; named metadata selects Historical for CSharp1, Current for other partial profiles, custom metadata retains current default — avoids category-changed Cf misclassification — other version-specific Unicode freezes remain future work.
+- CSharp1 uses Unicode3 BMP whitespace/identifier/format categories consistently through source and preprocessing; no supplementary/NFC/binding guarantee — original data has broader semantic normalization requirements outside parser scope — full CSharp1 still requires production closure.
+- normalize historical-only whitespace outside literals/comments to equal-length ASCII spaces in MaskedText — the shared identifier superset otherwise consumes it — authored OriginalText and UTF16 offsets remain stable, but MaskedText may now differ in active trivia as documented.
+- prefer complete identifier/type matches and guard ref/out/modifier keywords with identifier lookahead — avoid prefix splitting without Nitrogen core changes — generated optional-mode wrapper shapes may change; generated views remain prototype syntax API.
+- full production completeness and later-version Unicode freezes remain open — all profiles stay partial — cost if wrong is premature version coverage claims, prevented by completion gate.
+- binding/NFC/supplementary identifiers remain outside this BMP parser checkpoint — scope is explicitly recorded — cost if wrong is unsupported semantic or non-BMP input.
+- retain official source license/provenance without claiming legal sufficiency — technical review is not legal advice — cost if wrong is unresolved redistribution terms requiring separate review.
+- reviewer did not execute tests under read-only/no-build instruction; author executed full 709 tests and read results — avoids conflicting generated artifacts — cost if wrong is reliance on author's recorded verification rather than independent rerun.
+
+Post-review verification: all four interface regressions passed, and the complete suite passed **415 normal + 298 oracle = 713 tests**. No deferred minor findings. The review correction is covered by RED→GREEN evidence; no second review was substituted for the regression/full-suite gate.

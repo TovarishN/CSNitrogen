@@ -39,6 +39,6 @@ syntax module CSharp.Declarations
  syntax InterfaceProperty = Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier "{" Accessors:InterfaceAccessor+ "}";
  syntax InterfaceIndexer = Type:CSharp.NamesTypes.TypeReference "this" Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:InterfaceAccessor+ "}";
  syntax InterfaceEvent = !CSharp.Lexical.Identifier "event" Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier ";";
- syntax InterfaceMember = Attributes:CSharp.Attributes.AttributeSection* "new"? Value:(InterfaceMethod / InterfaceIndexer / InterfaceProperty / InterfaceEvent);
+ syntax InterfaceMember = Attributes:CSharp.Attributes.AttributeSection* (!CSharp.Lexical.Identifier "new")? Value:(InterfaceMethod / InterfaceIndexer / InterfaceProperty / InterfaceEvent);
  syntax DeclarationFragment = Value:TypeDeclaration;
 }

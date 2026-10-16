@@ -65,4 +65,11 @@ public class HistoricalUnicodeTests
  [InlineData("class C{void M(){throwᢅCall();}}")]
  public void Longer_identifiers_are_not_constant_event_or_jump_keywords(string source)
  {using var parsed=CSharpParser.Parse(new(source,"CSharp1","prefix.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));}
+ [Theory]
+ [InlineData("CSharp1","new\u1885Type")]
+ [InlineData("CSharp1","new\u1886Type")]
+ [InlineData("CSharp1",@"new\u1885Type")]
+ [InlineData("CSharp14","newⅠType")]
+ public void Interface_new_prefix_is_part_of_the_complete_return_type(string profile,string name)
+ {using var parsed=CSharpParser.Parse(new("interface I{"+name+" M();}",profile,"interface-prefix.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));}
 }
