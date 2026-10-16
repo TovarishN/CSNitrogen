@@ -1,6 +1,6 @@
 syntax module CSharp.Declarations
 {
- extensible syntax Modifier { | StandardModifier = "new" / "public" / "protected" / "internal" / "private" / "abstract" / "sealed" / "static" / "readonly" / "volatile" / "virtual" / "override" / "extern" }
+ extensible syntax Modifier { | StandardModifier = !CSharp.Lexical.Identifier ("new" / "public" / "protected" / "internal" / "private" / "abstract" / "sealed" / "static" / "readonly" / "volatile" / "virtual" / "override" / "extern") }
  syntax Bases = ":" Types:(CSharp.NamesTypes.TypeReference; ",")+;
  syntax ClassDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "class" Name:CSharp.Lexical.Identifier Bases:Bases? "{" Members:ClassMember* "}" ";"?;
  syntax StructDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "struct" Name:CSharp.Lexical.Identifier Bases:Bases? "{" Members:ClassMember* "}" ";"?;
@@ -25,8 +25,8 @@ syntax module CSharp.Declarations
  syntax IndexerName = (CSharp.NamesTypes.QualifiedName ".")? "this";
  syntax IndexerDeclaration = Type:CSharp.NamesTypes.TypeReference Name:IndexerName Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:Accessor+ "}";
  syntax EventAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:("add" / "remove") Body:CSharp.Statements.Block;
- syntax EventPropertyDeclaration = "event" Type:CSharp.NamesTypes.TypeReference Name:CSharp.NamesTypes.QualifiedName "{" Accessors:EventAccessor+ "}";
- syntax EventFieldDeclaration = "event" Variables:CSharp.Statements.VariableDeclaration ";";
+ syntax EventPropertyDeclaration = !CSharp.Lexical.Identifier "event" Type:CSharp.NamesTypes.TypeReference Name:CSharp.NamesTypes.QualifiedName "{" Accessors:EventAccessor+ "}";
+ syntax EventFieldDeclaration = !CSharp.Lexical.Identifier "event" Variables:CSharp.Statements.VariableDeclaration ";";
  syntax OperatorToken = "++" / "--" / "<<" / ">>" / "==" / "!=" / "<=" / ">=" / "+" / "-" / "!" / "~" / "*" / "/" / "%" / "&" / "|" / "^" / "<" / ">" / "true" / "false";
  syntax OperatorDeclaration = Return:CSharp.NamesTypes.TypeReference "operator" Operator:OperatorToken Parameters:CSharp.Attributes.ParameterList Body:MethodBody;
  syntax ConversionDeclaration = Mode:("implicit" / "explicit") "operator" Type:CSharp.NamesTypes.TypeReference Parameters:CSharp.Attributes.ParameterList Body:MethodBody;
@@ -38,7 +38,7 @@ syntax module CSharp.Declarations
  syntax InterfaceMethod = Return:CSharp.NamesTypes.ReturnType Name:CSharp.Lexical.Identifier Parameters:CSharp.Attributes.ParameterList ";";
  syntax InterfaceProperty = Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier "{" Accessors:InterfaceAccessor+ "}";
  syntax InterfaceIndexer = Type:CSharp.NamesTypes.TypeReference "this" Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:InterfaceAccessor+ "}";
- syntax InterfaceEvent = "event" Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier ";";
- syntax InterfaceMember = Attributes:CSharp.Attributes.AttributeSection* "new"? Value:(InterfaceMethod / InterfaceIndexer / InterfaceProperty / InterfaceEvent);
+ syntax InterfaceEvent = !CSharp.Lexical.Identifier "event" Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier ";";
+ syntax InterfaceMember = Attributes:CSharp.Attributes.AttributeSection* (!CSharp.Lexical.Identifier "new")? Value:(InterfaceMethod / InterfaceIndexer / InterfaceProperty / InterfaceEvent);
  syntax DeclarationFragment = Value:TypeDeclaration;
 }

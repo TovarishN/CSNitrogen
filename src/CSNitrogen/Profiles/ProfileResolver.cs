@@ -12,7 +12,10 @@ public static class ProfileResolver
         var requested = FeatureCatalog.Inventory.Where(f => f.Classification == "syntax-or-policy" && f.Introduced <= version)
             .Select(f => f.Id).Order(StringComparer.Ordinal).ToArray();
         return custom with { Profile = custom.Profile! with {
-            Version = version, RequestedFeatures = Array.AsReadOnly(requested),
+            Version = version,
+            Grammars = Array.AsReadOnly(custom.Profile.Grammars.Select(g=>version.Major==1 && g=="Grammars/GlobalTargetsCurrent.ngr"?"Grammars/GlobalTargetsHistorical.ngr":g).Order(StringComparer.Ordinal).ToArray()),
+            Policies = Array.AsReadOnly(new[]{version.Major==1?"unicode-3.0-bmp":"unicode-current-bmp"}),
+            RequestedFeatures = Array.AsReadOnly(requested),
             MissingFeatures = Array.AsReadOnly(requested.Except(custom.Profile!.Features,StringComparer.Ordinal).ToArray())
         } };
     }

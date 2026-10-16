@@ -13,7 +13,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
     }
     internal void Apply(DirectiveRecord d,int depth)
     {
-        string argument=DirectiveArguments.WithoutComment(d.Argument).Trim();
+        string argument=DirectiveArguments.WithoutComment(d.Argument,version);
         switch(d.Kind)
         {
             case "region":_regions.Push((depth,d.Span.Start));break;
@@ -54,8 +54,8 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
         string? file=previous?.File;
         if(end<argument.Length)
         {
-            if(!char.IsWhiteSpace(argument[end])){Error("CSN1207","Whitespace is required before the mapped file name.",d);return;}
-            string rest=argument[end..].Trim();
+            if(!UnicodePolicy.IsWhiteSpace(argument[end],version)){Error("CSN1207","Whitespace is required before the mapped file name.",d);return;}
+            string rest=UnicodePolicy.Trim(argument[end..],version);
             if(rest.Length<2||rest[0]!='"'||rest[^1]!='"'||rest[1..^1].Contains('"'))
             {Error("CSN1207","Expected a quoted mapped file name.",d);return;}
             file=rest[1..^1];

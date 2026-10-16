@@ -36,7 +36,7 @@ public class AttributeConformanceTests
    if(char.GetUnicodeCategory((char)code)!=UnicodeCategory.Format)continue;
    foreach(string spelling in new[]{((char)code).ToString(),"\\u"+code.ToString("x4"),"\\U0000"+code.ToString("X4")})
    {
-    using var parsed=CSharpParser.Parse(new("[as"+spelling+"sembly:A] class C{}","CSharp1","format.cs",[]));
+    using var parsed=CSharpParser.Parse(new("[as"+spelling+"sembly:A] class C{}","CSharp14","format.cs",[]));
     Assert.True(parsed.Accepted,"U+"+code.ToString("X4")+" :: "+string.Join(";",parsed.Issues));
     Assert.Equal(1,parsed.Root.Attributes.Count);
    }

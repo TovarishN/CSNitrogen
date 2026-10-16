@@ -13,7 +13,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsHistorical.ngr"
       ]
     },
     {
@@ -29,7 +30,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -45,7 +47,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -61,7 +64,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -77,7 +81,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -93,7 +98,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -109,7 +115,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -125,7 +132,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -141,7 +149,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -157,7 +166,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -173,7 +183,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -189,7 +200,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -205,7 +217,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -221,7 +234,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -237,7 +251,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -253,7 +268,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -269,7 +285,8 @@
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
-        "Grammars/Unsafe.ngr"
+        "Grammars/Unsafe.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr"
       ]
     },
     {
@@ -284,7 +301,8 @@
         "Grammars/Statements.ngr",
         "Grammars/Attributes.ngr",
         "Grammars/Declarations.ngr",
-        "Grammars/CompilationUnits.ngr"
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/GlobalTargetsHistorical.ngr"
       ]
     }
   ]

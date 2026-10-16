@@ -35,7 +35,7 @@ Console.WriteLine(document.Classes[0].Name); // Example
 
 The result owns the pooled Nitrogen tree. Borrowed nodes and typed views expire when it is disposed. Access `Root` when the parse is accepted; an error tree may not have a compilation-unit root. The generated views are syntax types; the API does not bind or type-check C# programs.
 
-Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. Each currently selects the nine baseline grammar modules in `src/CSNitrogen.Syntax/nitrogen.json`; differing names do not imply later syntax is implemented. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
+Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. Each currently selects the baseline grammar modules in `src/CSNitrogen.Syntax/nitrogen.json`; differing names do not imply later syntax is implemented. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
 
 `ProfileResolver.ResolveCustom` validates feature requirements/conflicts and gives deterministic module selections. It does not build arbitrary runtime grammars or execute a custom profile through `CSharpParser`. Implemented metadata separates source grammar families, lexical categories, trivia, preprocessing and unsafe syntax. Full language coverage remains unfinished.
 
@@ -59,3 +59,7 @@ Prototype API migration: `Root.Members` replaces `Root.Types` to represent names
 The [attribute conformance continuation](docs/coverage/csharp1-attribute-conformance-evidence.md) records the latest C# 1 fixes and oracle classifications. The initial baseline is published at [TovarishN/CSNitrogen](https://github.com/TovarishN/CSNitrogen).
 
 The [context conformance continuation](docs/coverage/csharp1-context-conformance-evidence.md) records catch/accessor/constructor checks, corrected conditional tree shapes, the historical reference policy and expanded corpus. Prototype generated-view change: conditional false arms use `.False.Value`.
+
+CSharp1 now selects the pinned Unicode 3.0 BMP category policy; other partial profiles retain current .NET categories. Raw identifier grammar is a union and requires `CSharpSyntaxPolicy.Check(tree, version)` when bypassing the public parser. See [historical Unicode evidence](docs/coverage/csharp1-historical-unicode-evidence.md). Global attribute targets now expose a typed alternative containing their Token.
+
+The [names/types conformance continuation](docs/coverage/csharp1-type-conformance-evidence.md) maps every NamesTypes production to direct fixtures and independent typed child/span comparisons. Compiler-deferred void and standalone array-rank oracle differences are recorded explicitly; all profiles remain partial.

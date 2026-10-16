@@ -4,7 +4,7 @@ syntax module CSharp.Statements
  syntax VariableDeclarator = Name:CSharp.Lexical.Identifier Initializer:("=" VariableInitializer)?;
  syntax VariableDeclaration = Type:CSharp.NamesTypes.TypeReference Variables:(VariableDeclarator; ",")+;
  syntax ConstantDeclarator = Name:CSharp.Lexical.Identifier "=" Value:CSharp.Expressions.Expression;
- syntax ConstantDeclaration = "const" Type:CSharp.NamesTypes.TypeReference Variables:(ConstantDeclarator; ",")+;
+ syntax ConstantDeclaration = !CSharp.Lexical.Identifier "const" Type:CSharp.NamesTypes.TypeReference Variables:(ConstantDeclarator; ",")+;
  syntax Block = "{" Statements:Statement* "}";
  syntax StatementExpression = Value:CSharp.Expressions.Expression;
  syntax StatementExpressionList = Items:(StatementExpression; ",")+;
@@ -25,7 +25,7 @@ syntax module CSharp.Statements
  syntax UsingStatement = "using" "(" Resource:(VariableDeclaration / CSharp.Expressions.Expression) ")" Body:EmbeddedStatement;
  syntax LockStatement = "lock" "(" Value:CSharp.Expressions.Expression ")" Body:EmbeddedStatement;
  syntax CheckedStatement = ("checked" / "unchecked") Body:Block;
- syntax JumpStatement = "break" ";" / "continue" ";" / "return" CSharp.Expressions.Expression? ";" / "throw" CSharp.Expressions.Expression? ";" / "goto" ("case" CSharp.Expressions.Expression / "default" / CSharp.Lexical.Identifier) ";";
+ syntax JumpStatement = !CSharp.Lexical.Identifier ("break" ";" / "continue" ";" / "return" CSharp.Expressions.Expression? ";" / "throw" CSharp.Expressions.Expression? ";" / "goto" ("case" CSharp.Expressions.Expression / "default" / CSharp.Lexical.Identifier) ";");
  extensible syntax EmbeddedStatement
  {
   | StandardEmbeddedStatement = Body:(Block / IfStatement / WhileStatement / DoStatement / ForStatement / ForeachStatement / SwitchStatement / TryStatement / UsingStatement / LockStatement / CheckedStatement / JumpStatement / ExpressionStatement / ";")
