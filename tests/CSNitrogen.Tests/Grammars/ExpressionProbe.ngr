@@ -1,0 +1,16 @@
+language ExpressionProbe { start Probe.Expression.Document; namespace CSNitrogen.Tests.Probes; }
+syntax module Probe.Expression
+{
+ token Identifier = ['a'..'z' 'A'..'Z' '_'] ['a'..'z' 'A'..'Z' '_' '0'..'9']* except "int";
+ syntax Document = Value:Expr;
+ extensible syntax Expr
+ {
+   | Ref = Name:Identifier
+   | Cast = "(" Type:Identifier ")" Value:Expr precedence 30
+   | Paren = "(" Value:Expr ")"
+   | Add = Left:Expr "+" Right:Expr precedence 10 left
+   | Multiply = Left:Expr "*" Right:Expr precedence 20 left
+   | Less = Left:Expr "<" Right:Expr precedence 5 left
+   | Shift = Left:Expr ">>" Right:Expr precedence 7 left
+ }
+}

@@ -1,0 +1,291 @@
+{
+  "languages": [
+    {
+      "name": "CSharp1",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp2",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp3",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp4",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp5",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp6",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp7",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp8",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp9",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp10",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp11",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp12",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp13",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp14",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp7_1",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp7_2",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp7_3",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr",
+        "Grammars/Unsafe.ngr"
+      ]
+    },
+    {
+      "name": "CSharp1Safe",
+      "start": "CSharp.CompilationUnits.CompilationUnit",
+      "namespace": "CSNitrogen.Syntax",
+      "grammars": [
+        "Grammars/Core.ngr",
+        "Grammars/Lexical.ngr",
+        "Grammars/NamesTypes.ngr",
+        "Grammars/Expressions.ngr",
+        "Grammars/Statements.ngr",
+        "Grammars/Attributes.ngr",
+        "Grammars/Declarations.ngr",
+        "Grammars/CompilationUnits.ngr"
+      ]
+    }
+  ]
+}

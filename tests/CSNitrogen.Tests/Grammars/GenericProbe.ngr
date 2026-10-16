@@ -1,0 +1,9 @@
+language GenericProbe { start Probe.Expression.Document; namespace CSNitrogen.Tests.Probes; grammars "ExpressionProbe.ngr"; }
+syntax module Probe.Generic
+{
+ syntax TypeName = Name:(Probe.Expression.Identifier / "int") Arguments:("<" Items:(TypeName; ",")+ ">")?;
+ extend syntax Probe.Expression.Expr
+ {
+   | GenericCall = Name:Identifier "<" Types:(TypeName; ",")+ ">" "(" Arguments:(Expr; ",")* ")"
+ }
+}

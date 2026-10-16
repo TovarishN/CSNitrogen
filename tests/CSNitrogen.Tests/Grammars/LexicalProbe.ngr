@@ -1,0 +1,24 @@
+language LexicalProbe { start Probe.Lexical.LexDocument; namespace CSNitrogen.Tests.Probes; }
+syntax module Probe.Lexical {
+token Space = [' ' '\t' '\r' '\n']+;
+token Number = ['0'..'9']+;
+token Regular = "\"" ([^ '"' '\\' '\r' '\n'] / "\\" .)* "\"";
+token Verbatim = "@\"" ("\"\"" / !"\"" .)* "\"";
+token InterpolatedText = ("{{" / "}}" / "\\" . / [^ '"' '{' '}' '\\' '\r' '\n'])+;
+syntax Interpolated = "$\"" Parts:(Hole / InterpolatedText)* "\"";
+syntax Hole = "{" Space? Value:LexExpr Space? "}";
+extensible syntax LexExpr { | Num = Number | Nested = Interpolated | LexAdd = Left:LexExpr Space? "+" Space? Right:LexExpr precedence 10 left }
+token Raw8 = "\"\"\"\"\"\"\"\"" !"\"" (!"\"\"\"\"\"\"\"\"" .)* "\"\"\"\"\"\"\"\"" !"\"";
+token Raw4 = "\"\"\"\"" !"\"" (!"\"\"\"\"" .)* "\"\"\"\"" !"\"";
+token Raw3 = "\"\"\"" !"\"" (!"\"\"\"" .)* "\"\"\"" !"\"";
+token RawText1 = (!("\"\"\"" / "{") .)+;
+syntax RawHole1 = "{" Space? Value:LexExpr Space? "}";
+syntax RawInterpolation1 = "$" "\"\"\"" !"\"" Parts:(RawHole1 / RawText1)* "\"\"\"" !"\"";
+token RawText2 = (!("\"\"\"" / "{{") .)+;
+syntax RawHole2 = "{{" Space? Value:LexExpr Space? "}}";
+syntax RawInterpolation2 = "$$" "\"\"\"" !"\"" Parts:(RawHole2 / RawText2)* "\"\"\"" !"\"";
+token RawText3 = (!("\"\"\"" / "{{{") .)+;
+syntax RawHole3 = "{{{" Space? Value:LexExpr Space? "}}}";
+syntax RawInterpolation3 = "$$$" "\"\"\"" !"\"" Parts:(RawHole3 / RawText3)* "\"\"\"" !"\"";
+syntax LexDocument = Value:(RawInterpolation3 / RawInterpolation2 / RawInterpolation1 / Raw8 / Raw4 / Raw3 / Interpolated / Verbatim / Regular);
+}

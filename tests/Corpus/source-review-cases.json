@@ -1,0 +1,50 @@
+[
+  {
+    "source": "unsafe class C { object M(){return (System.Int32)sizeof(int);} }",
+    "expected": true
+  },
+  {
+    "source": "class C {int M(){return int.MaxValue;}}",
+    "expected": true
+  },
+  {
+    "source": "class C {string s=string.Empty; bool M(){return object.ReferenceEquals(null,null);}}",
+    "expected": true
+  },
+  {
+    "source": "class C {int[] a=new int[]{}; int[] b=new int[]{1,};}",
+    "expected": true
+  },
+  {
+    "source": "class C {int[] a=new int[]{,};}",
+    "expected": false
+  },
+  {
+    "source": "class C {int[] a={,};}",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {void M(){int* p=stackalloc int[4];}}",
+    "expected": true
+  },
+  {
+    "source": "unsafe class C {void M(){int* p; p=stackalloc int[4];}}",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {int* M(){return stackalloc int[4];}}",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {void M(){F(stackalloc int[4]);}}",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {int* p=stackalloc int[4];}",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {void M(){int* p=(stackalloc int[4]);}}",
+    "expected": false
+  }
+]

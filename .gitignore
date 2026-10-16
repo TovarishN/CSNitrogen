@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+.dependencies/
+.superpowers/
+.DS_Store
+TestResults/
+**/TestResults/

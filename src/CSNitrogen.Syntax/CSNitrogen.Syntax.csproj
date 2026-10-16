@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles><CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)generated</CompilerGeneratedFilesOutputPath></PropertyGroup><ItemGroup>
+<ProjectReference Include="$(NitrogenRoot)/Nitrogen.Runtime/Nitrogen.Runtime.csproj"/>
+<ProjectReference Include="$(NitrogenRoot)/Nitrogen.Generator/Nitrogen.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+<AdditionalFiles Include="Grammars/**/*.ngr" Namespace="CSNitrogen.Syntax"/><AdditionalFiles Include="nitrogen.json"/>
+<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="Namespace"/><CompilerVisibleProperty Include="RootNamespace"/>
+</ItemGroup></Project>

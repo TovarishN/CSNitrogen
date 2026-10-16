@@ -1,0 +1,442 @@
+[
+  {
+    "source": "A",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "A.B",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "int",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "object",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "int[]",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "A[,]",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "A[][,]",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "var",
+    "mode": "type",
+    "expected": true
+  },
+  {
+    "source": "A.",
+    "mode": "type",
+    "expected": false
+  },
+  {
+    "source": "A[",
+    "mode": "type",
+    "expected": false
+  },
+  {
+    "source": "A<T>",
+    "mode": "type",
+    "expected": false
+  },
+  {
+    "source": "void",
+    "mode": "type",
+    "expected": false
+  },
+  {
+    "source": "a+b*c",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "a-b-c",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "a=b=c",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "a?b:c?d:e",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "(T)x",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "(x)+y",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "(int)-x",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "F(ref x,out y)",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "new C(1)",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "new int[3][]",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "new int[,] {{1,2},{3,4}}",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "typeof(void)",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "checked(x+1)",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "a is T",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "base.F()",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "x=>x",
+    "mode": "expression",
+    "expected": false
+  },
+  {
+    "source": "a??b",
+    "mode": "expression",
+    "expected": false
+  },
+  {
+    "source": "F(x:1)",
+    "mode": "expression",
+    "expected": false
+  },
+  {
+    "source": "new C { X=1 }",
+    "mode": "expression",
+    "expected": false
+  },
+  {
+    "source": "a+",
+    "mode": "expression",
+    "expected": false
+  },
+  {
+    "source": "nameof(x)",
+    "mode": "expression",
+    "expected": true
+  },
+  {
+    "source": "{ int x=1; x++; F(); }",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "a+b;",
+    "mode": "statement",
+    "expected": false
+  },
+  {
+    "source": "new C();",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "if(a) if(b) F(); else G();",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "if(a) int x;",
+    "mode": "statement",
+    "expected": false
+  },
+  {
+    "source": "for(int i=0;i<10;i++) F();",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "for(;;);",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "foreach(T x in xs) F(x);",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "switch(x){ case 1: break; default: return; }",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "try { F(); } catch(E e) { throw; } finally {}",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "try {}",
+    "mode": "statement",
+    "expected": false
+  },
+  {
+    "source": "using(T x=F()) { F(x); }",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "lock(x) F();",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "label: goto label;",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "while(x) {continue;}",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "do F(); while(x);",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "checked { F(); }",
+    "mode": "statement",
+    "expected": true
+  },
+  {
+    "source": "using T x=F();",
+    "mode": "statement",
+    "expected": false
+  },
+  {
+    "source": "try{}catch(E e) when(x){}",
+    "mode": "statement",
+    "expected": false
+  },
+  {
+    "source": "[A]",
+    "mode": "attribute",
+    "expected": true
+  },
+  {
+    "source": "[A(1, Name=2), N.B]",
+    "mode": "attribute",
+    "expected": true
+  },
+  {
+    "source": "[return:A]",
+    "mode": "attribute",
+    "expected": true
+  },
+  {
+    "source": "[A(",
+    "mode": "attribute",
+    "expected": false
+  },
+  {
+    "source": "[A,]",
+    "mode": "attribute",
+    "expected": true
+  },
+  {
+    "source": "()",
+    "mode": "parameter",
+    "expected": true
+  },
+  {
+    "source": "([A] ref int x,out T y,params object[] args)",
+    "mode": "parameter",
+    "expected": true
+  },
+  {
+    "source": "(int x=1)",
+    "mode": "parameter",
+    "expected": false
+  },
+  {
+    "source": "(this T x)",
+    "mode": "parameter",
+    "expected": false
+  },
+  {
+    "source": "(in T x)",
+    "mode": "parameter",
+    "expected": false
+  },
+  {
+    "source": "(params int[] x,int y)",
+    "mode": "parameter",
+    "expected": false
+  },
+  {
+    "source": "class C { const int N=1; int x=2,y; public C():base(){} ~C(){} int P {get{return x;} set{x=value;}} event E Changed; int this[int i] {get{return x;}} void M(ref int x,params object[] a){} class Nested {} }",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "struct S:I { public int M(){return 1;} }",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "interface I { void M(); int P {get;set;} event E Changed; int this[int i]{get;} }",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "enum E:byte {A=1,B,}",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "delegate void D(object x);",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "class C { public static C operator +(C a,C b){return a;} public static implicit operator int(C a){return 0;} void I.M(){} event E I.Changed {add{}remove{}} }",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "interface I { void M(){} }",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "class C<T> {}",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "partial class C {}",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "class C {int P {get;private set;}}",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "class C { int M()=>1; }",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "using A; using B=N.B; [assembly:A] namespace N {using Q; class C{void M(){F();}} struct S{}} class D{}",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "enum E{A} delegate void D(); interface I{}",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "class C{} using A;",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "using static A;",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "namespace N; class C{}",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "class C { void M(){a+b;} }",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "[assembly:A] using B;",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C { int* p; void M(){unsafe {int* q=stackalloc int[4]; *q=1; fixed(int* r=&x){r->M();}}} int x; }",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "class C {void M(){ sizeof(int); }}",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "class C {int M(){return sizeof(int);}}",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "unsafe class C {int M(){return sizeof(C);}}",
+    "mode": "source",
+    "expected": true
+  },
+  {
+    "source": "unsafe class C { fixed int data[16]; }",
+    "mode": "source",
+    "expected": false
+  },
+  {
+    "source": "unsafe class C {void M(){int* p=stackalloc[] {1,2};}}",
+    "mode": "source",
+    "expected": false
+  }
+]

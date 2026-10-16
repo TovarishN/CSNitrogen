@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/.dependencies/" />
+  <Folder Name="/.dependencies/Nitrogen/">
+    <Project Path=".dependencies/Nitrogen/Nitrogen.Generator/Nitrogen.Generator.csproj" />
+  </Folder><Project Path="src/CSNitrogen.Syntax/CSNitrogen.Syntax.csproj" /><Project Path="src/CSNitrogen/CSNitrogen.csproj" /><Project Path="tests/CSNitrogen.Tests/CSNitrogen.Tests.csproj" /><Project Path="tests/CSNitrogen.Oracle.Tests/CSNitrogen.Oracle.Tests.csproj" /></Solution>

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup><ItemGroup>
+<EmbeddedResource Include="../../docs/coverage/features.json" LogicalName="CSNitrogen.coverage.json"/>
+<EmbeddedResource Include="../CSNitrogen.Syntax/nitrogen.json" LogicalName="CSNitrogen.composition.json"/>
+<EmbeddedResource Include="../../docs/coverage/dependencies.json" LogicalName="CSNitrogen.dependencies.json"/>
+<EmbeddedResource Include="../CSNitrogen.Syntax/Grammars/**/*.ngr"><LogicalName>CSNitrogen.grammar.%(RecursiveDir)%(Filename)%(Extension)</LogicalName></EmbeddedResource>
+<EmbeddedResource Include="Parsing/**/*.cs;Preprocessing/**/*.cs;Profiles/**/*.cs"><LogicalName>CSNitrogen.source.%(Identity)</LogicalName></EmbeddedResource>
+</ItemGroup></Project>

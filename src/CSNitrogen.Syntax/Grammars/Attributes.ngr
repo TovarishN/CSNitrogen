@@ -1,0 +1,16 @@
+syntax module CSharp.Attributes
+{
+ syntax AttributeArgument = NamedAttributeArgument / PositionalAttributeArgument;
+ syntax NamedAttributeArgument = Name:CSharp.Lexical.Identifier "=" Value:CSharp.Expressions.Expression;
+ syntax PositionalAttributeArgument = Value:CSharp.Expressions.Expression;
+ syntax Attribute = Name:CSharp.NamesTypes.QualifiedName Arguments:("(" Items:(AttributeArgument; ",")* ")")?;
+ syntax AttributeSection = "[" Target:((CSharp.Lexical.Identifier / "return" / "event") ":")? Items:(Attribute; ",")+ ","? "]";
+ syntax GlobalAttributeSection = "[" Target:("assembly" / "module") ":" Items:(Attribute; ",")+ ","? "]";
+ syntax FixedParameter = Attributes:AttributeSection* Mode:("ref" / "out")? Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier;
+ syntax ParameterArray = Attributes:AttributeSection* "params" Element:CSharp.NamesTypes.TypeBase Ranks:CSharp.NamesTypes.ArrayRank+ Name:CSharp.Lexical.Identifier;
+ syntax Parameters = (FixedParameter ",")* ParameterArray / (FixedParameter; ",")*;
+ syntax ParameterList = "(" Items:Parameters ")";
+ syntax IndexerParameterList = "[" Items:((FixedParameter ",")* ParameterArray / (FixedParameter; ",")+) "]";
+ syntax AttributeFragment = Value:AttributeSection;
+ syntax ParameterFragment = Value:ParameterList;
+}

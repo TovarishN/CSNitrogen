@@ -1,0 +1,14 @@
+syntax module CSharp.NamesTypes
+{
+ syntax QualifiedName = Parts:(CSharp.Lexical.Identifier; ".")+;
+ syntax BuiltinType = "bool" / "byte" / "sbyte" / "short" / "ushort" / "int" / "uint" / "long" / "ulong" / "char" / "float" / "double" / "decimal" / "string" / "object";
+ syntax ArrayRank = "[" Commas:","* "]";
+ extensible syntax TypeBase
+ {
+  | BuiltinTypeName = Value:BuiltinType
+  | NamedTypeName = Name:QualifiedName
+ }
+ extensible syntax TypeReference { | TypeSyntax = Element:TypeBase Ranks:ArrayRank* }
+ syntax TypeFragment = Value:TypeReference;
+ syntax ReturnType = TypeReference / "void";
+}

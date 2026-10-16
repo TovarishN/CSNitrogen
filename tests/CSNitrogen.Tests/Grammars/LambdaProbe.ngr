@@ -1,0 +1,8 @@
+language LambdaProbe { start Probe.Expression.Document; namespace CSNitrogen.Tests.Probes; grammars "ExpressionProbe.ngr"; }
+syntax module Probe.Lambda
+{
+ extend syntax Probe.Expression.Expr
+ {
+   | Lambda = Parameter:Identifier "=>" Body:Expr precedence 1 right
+ }
+}

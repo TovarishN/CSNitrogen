@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/mono/mono",
+  "revision": "13d1764537ce5bbe5a06bf133fb2db1a4b5d2131",
+  "files": [
+    {
+      "local": "Boolean.cs",
+      "sourcePath": "mcs/class/corlib/System/Boolean.cs",
+      "url": "https://raw.githubusercontent.com/mono/mono/13d1764537ce5bbe5a06bf133fb2db1a4b5d2131/mcs/class/corlib/System/Boolean.cs",
+      "sha256": "7940c36b7dacf5f6056314cf81884c8d742c17b8afe148ef8a54140b7092d74b",
+      "license": "Source copyright/license notice preserved verbatim; see file header."
+    },
+    {
+      "local": "EventArgs.cs",
+      "sourcePath": "mcs/class/corlib/System/EventArgs.cs",
+      "url": "https://raw.githubusercontent.com/mono/mono/13d1764537ce5bbe5a06bf133fb2db1a4b5d2131/mcs/class/corlib/System/EventArgs.cs",
+      "sha256": "3d6636c824de086dc6770f06dcf43cada93c7a6d9b4336e35370d994800191df",
+      "license": "Source copyright/license notice preserved verbatim; see file header."
+    }
+  ]
+}
