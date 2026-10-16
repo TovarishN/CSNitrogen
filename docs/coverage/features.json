@@ -162,9 +162,11 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
         "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CastConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/CastConformanceParityTests.cs"
       ],
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Targeted C# 1 expression family implemented; explicit cast/parenthesis and recursive operator-interaction evidence recorded in csharp1-cast-productions.json. Remaining expression production/context closure pending. All profiles remain partial."
     },
     {
       "id": "baseline.location-directives",

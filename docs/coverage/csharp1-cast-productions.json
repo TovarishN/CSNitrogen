@@ -1,0 +1,165 @@
+{
+  "scope": "cast disambiguation and recursive operator interactions; finite evidence, not full expression closure",
+  "reference": "ECMA-334 first edition, 14.6.6 and 14.2.1",
+  "normalFixtures": "tests/CSNitrogen.Tests/Syntax/CastConformanceTests.cs",
+  "oracleFixtures": "tests/CSNitrogen.Oracle.Tests/CastConformanceParityTests.cs",
+  "castObservations": [
+    {
+      "production": "DefiniteCastType",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "AfterNamedCast",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "CastHead",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "DefiniteCast",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "NamedCast",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "ParenthesizedExpression",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "CastExpression",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "ExpressionFragment",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    },
+    {
+      "production": "PointerCastHead",
+      "positive": "Cast_disambiguation_and_recursive_operands_match",
+      "negative": "Malformed_casts_require_complete_heads_and_operands",
+      "note": "PointerCastHead is an Unsafe interaction; enclosing alternatives are observed through typed head selection and source type spans."
+    }
+  ],
+  "binaryObservations": [
+    {
+      "production": "MultiplyExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "DivideExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "RemainderExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "AddExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "SubtractExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "ShiftLeftExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "ShiftRightExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "LessExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "GreaterExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "LessEqualExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "GreaterEqualExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "EqualExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "NotEqualExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "BitAndExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "BitXorExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "BitOrExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "AndExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    },
+    {
+      "production": "OrExpression",
+      "positive": "Cast_operand_floor_preserves_binary_precedence_and_associativity",
+      "negative": "Cast_then_binary_operator_requires_a_right_operand"
+    }
+  ],
+  "otherObservations": {
+    "IsExpression/AsExpression": "explicit non-cast followers, typed operand and type spans",
+    "AssignmentExpression/ConditionalExpression/ConditionalOperand": "Casts_interact_with_assignment_and_conditional_children",
+    "Unsafe membership": "Unsafe_cast_and_unary_syntax_stays_in_its_module"
+  },
+  "limits": [
+    "Finite depth and selected operators/followers; no complete expression-family claim",
+    "No binding, conversion, assignability, operator overload or executable validity",
+    "Pointer type internal structure and full unsafe context closure remain separate",
+    "No production grammar changes were necessary"
+  ]
+}
