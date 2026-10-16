@@ -152,7 +152,9 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs"
       ],
       "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
     },
@@ -199,7 +201,9 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs"
       ],
       "status": "implemented",
       "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
@@ -335,7 +339,9 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs"
       ],
       "status": "implemented",
       "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
@@ -430,22 +436,30 @@
       "title": "Attributes",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/attributes/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 231,
-      "requires": [],
+      "requires": [
+        "baseline.attributes"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Attributes.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.boxing-and-unboxing",
       "title": "Boxing and unboxing",
       "introduced": "1.0",
-      "classification": "syntax-or-policy",
-      "reviewed": false,
+      "classification": "semantic-or-tooling",
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/types/boxing-and-unboxing",
       "inventoryLine": 235,
       "requires": [],
@@ -453,307 +467,474 @@
       "grammars": [],
       "policies": [],
       "fixtures": [],
-      "status": "unimplemented"
+      "status": "unimplemented",
+      "scopeNote": "Classification reviewed against the historical baseline: boxing/unboxing validity is semantic work, excluded from this parser. No semantic implementation is claimed."
     },
     {
       "id": "csharp-1.0.classes",
       "title": "Classes",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 214,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.delegates",
       "title": "Delegates",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 225,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.enums",
       "title": "Enums",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/builtin-types/enum",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 216,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.events",
       "title": "Events",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/event",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 218,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.expressions",
       "title": "Expressions",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 226,
-      "requires": [],
+      "requires": [
+        "baseline.expressions"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Expressions.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.goto-statement",
       "title": "goto statement",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/goto",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 228,
-      "requires": [],
+      "requires": [
+        "baseline.statements"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Statements.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.indexers",
       "title": "Indexers",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/indexers/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 222,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.interfaces",
       "title": "Interfaces",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/interfaces/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 217,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.literals",
       "title": "Literals",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 232,
-      "requires": [],
+      "requires": [
+        "baseline.numeric-literals",
+        "baseline.character-literals",
+        "baseline.regular-strings",
+        "baseline.verbatim-strings"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Lexical.ngr",
+        "Grammars/Expressions.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.operator-overloading",
       "title": "Operator overloading",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/operators/operator-overloading",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 219,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.output-parameters-out-https-docs-microsoft-com-dotnet-csharp-language-reference-keywords-out-and-ref-https-docs-microsoft-com-dotnet-csharp-language-reference-keywords-ref",
       "title": "Output parameters ([out](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/out) and [ref](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ref))",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 223,
-      "requires": [],
+      "requires": [
+        "baseline.attributes"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Attributes.ngr",
+        "Grammars/Expressions.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.params-arrays",
       "title": "params arrays",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/params",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 224,
-      "requires": [],
+      "requires": [
+        "baseline.attributes"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Attributes.ngr",
+        "Grammars/Expressions.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.preprocessor-directives",
       "title": "Preprocessor directives",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/preprocessor-directives/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 229,
-      "requires": [],
+      "requires": [
+        "baseline.conditional-compilation",
+        "baseline.location-directives",
+        "baseline.diagnostic-directives"
+      ],
       "conflicts": [],
       "grammars": [],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.properties",
       "title": "Properties",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 221,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.structs",
       "title": "Structs",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/builtin-types/struct",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 215,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.unsafe-code-and-pointers",
       "title": "Unsafe code and pointers",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/unsafe-code-pointers/",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 230,
-      "requires": [],
+      "requires": [
+        "baseline.unsafe-syntax"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Unsafe.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.unsigned-integer-types",
       "title": "Unsigned integer types",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 234,
-      "requires": [],
+      "requires": [
+        "baseline.names-and-types"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/NamesTypes.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.user-defined-conversion-operators",
       "title": "User-defined conversion operators",
       "introduced": "1.0",
-      "classification": "semantic-or-tooling",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/operators/user-defined-conversion-operators",
+      "classification": "syntax-or-policy",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 220,
-      "requires": [],
+      "requires": [
+        "baseline.members"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Declarations.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.using-statement",
       "title": "using statement",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 227,
-      "requires": [],
+      "requires": [
+        "baseline.statements"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Statements.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.0.verbatim-identifier",
       "title": "Verbatim identifier",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
-      "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/tokens/verbatim",
+      "reviewed": true,
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "inventoryLine": 233,
-      "requires": [],
+      "requires": [
+        "baseline.escaped-identifiers"
+      ],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Lexical.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
     },
     {
       "id": "csharp-1.2.dispose-in-foreach",

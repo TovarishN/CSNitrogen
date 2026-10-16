@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup><ItemGroup>
+<EmbeddedResource Include="../../docs/coverage/csharp1-reference-policy.json" LogicalName="CSNitrogen.reference-policy.json"/>
 <EmbeddedResource Include="../../docs/coverage/features.json" LogicalName="CSNitrogen.coverage.json"/>
 <EmbeddedResource Include="../CSNitrogen.Syntax/nitrogen.json" LogicalName="CSNitrogen.composition.json"/>
 <EmbeddedResource Include="../../docs/coverage/dependencies.json" LogicalName="CSNitrogen.dependencies.json"/>

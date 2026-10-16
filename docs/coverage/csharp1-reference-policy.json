@@ -1,0 +1,17 @@
+{
+  "primary": {
+    "title": "ECMA-334, first edition, December 2001",
+    "url": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
+    "sha256": "ac93571b47aa424a31316a30ac7c9b99424b7347b81469847b738f9af8b51c39"
+  },
+  "oracle": {
+    "package": "Microsoft.CodeAnalysis.CSharp",
+    "version": "5.0.0",
+    "languageVersion": "CSharp1"
+  },
+  "unicode": {
+    "runtime": "10.0.0",
+    "scope": "BMP category tables and escape spellings verified against the pinned runtime/compiler; not a frozen Unicode 3.0 category implementation",
+    "historicalStatus": "open"
+  }
+}

@@ -6,7 +6,7 @@ syntax module CSharp.Declarations
  syntax StructDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "struct" Name:CSharp.Lexical.Identifier Bases:Bases? "{" Members:ClassMember* "}" ";"?;
  syntax InterfaceDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "interface" Name:CSharp.Lexical.Identifier Bases:Bases? "{" Members:InterfaceMember* "}" ";"?;
  syntax EnumMember = Attributes:CSharp.Attributes.AttributeSection* Name:CSharp.Lexical.Identifier Value:("=" CSharp.Expressions.Expression)?;
- syntax EnumDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "enum" Name:CSharp.Lexical.Identifier Base:(":" CSharp.NamesTypes.BuiltinType)? "{" Members:(EnumMember; ",")* ","? "}" ";"?;
+ syntax EnumDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "enum" Name:CSharp.Lexical.Identifier Base:(":" CSharp.NamesTypes.BuiltinType)? "{" Members:((EnumMember; ",")+ ","?)? "}" ";"?;
  syntax DelegateDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* "delegate" Return:CSharp.NamesTypes.ReturnType Name:CSharp.Lexical.Identifier Parameters:CSharp.Attributes.ParameterList ";";
  extensible syntax TypeDeclaration
  {
