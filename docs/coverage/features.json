@@ -237,10 +237,12 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/TypeConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/TypeConformanceParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Nonpointer module has explicit per-production finite positive/negative and typed child/span evidence; see csharp1-type-productions.json and csharp1-type-conformance-evidence.md. Full consuming-context closure remains pending. All profiles remain partial."
     },
     {
       "id": "baseline.namespace-declarations",

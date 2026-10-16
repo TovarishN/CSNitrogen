@@ -61,3 +61,5 @@ The [attribute conformance continuation](docs/coverage/csharp1-attribute-conform
 The [context conformance continuation](docs/coverage/csharp1-context-conformance-evidence.md) records catch/accessor/constructor checks, corrected conditional tree shapes, the historical reference policy and expanded corpus. Prototype generated-view change: conditional false arms use `.False.Value`.
 
 CSharp1 now selects the pinned Unicode 3.0 BMP category policy; other partial profiles retain current .NET categories. Raw identifier grammar is a union and requires `CSharpSyntaxPolicy.Check(tree, version)` when bypassing the public parser. See [historical Unicode evidence](docs/coverage/csharp1-historical-unicode-evidence.md). Global attribute targets now expose a typed alternative containing their Token.
+
+The [names/types conformance continuation](docs/coverage/csharp1-type-conformance-evidence.md) maps every NamesTypes production to direct fixtures and independent typed child/span comparisons. Compiler-deferred void and standalone array-rank oracle differences are recorded explicitly; all profiles remain partial.
