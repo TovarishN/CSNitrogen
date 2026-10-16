@@ -23,3 +23,9 @@ Initial unsupported-comparer failures were test coverage under construction, not
 Full pre-review verification: **582 normal + 1,536 oracle = 2,118 tests pass**. Rank/dimension value matching, constant-expression requirements, ref/out writability, overload/constructor binding and execution remain excluded. Finite nesting/type/rank observations do not establish full expression or unsafe/context closure.
 
 Decision: enforce the published standard's immediate-target restriction through the existing syntax-policy architecture. This intentionally diverges from compiler-accepted initialized direct indexing; the cost is documented and covered by explicit discrepancy tests.
+
+## Fresh review
+
+Fresh read-only review of `eb2f6fc..371212d` judged the checkpoint ready to merge with no Critical, Important or Minor findings. No additional fix pass or deferred minor resulted. The prior literal projection detail is closed.
+
+Review boundaries remain semantic validity; complete statement/interface/namespace/unsafe closure; exhaustive malformed/recovery behavior and every intermediate profile. Extrapolating the finite fixtures would overstate those guarantees. The reviewer did not independently extract the historical PDF or run builds/hash checks under its read-only/no-network instructions. The author read the official reference text and ran the complete tests/dependency audit; these remain author execution evidence.
