@@ -164,9 +164,11 @@
         "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs",
         "tests/CSNitrogen.Tests/Syntax/CastConformanceTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/CastConformanceParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/CastConformanceParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/ArrayArgumentConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/ArrayArgumentConformanceParityTests.cs"
       ],
-      "scopeNote": "Targeted C# 1 expression family implemented; explicit cast/parenthesis and recursive operator-interaction evidence recorded in csharp1-cast-productions.json. Remaining expression production/context closure pending. All profiles remain partial."
+      "scopeNote": "Targeted C# 1 expression family implemented; cast/operator and array/initializer/argument evidence recorded in their production ledgers. CSN2005 enforces direct array creation element-target restriction; initialized direct indexing is an explicit Roslyn discrepancy. Remaining expression/context closure pending. All profiles remain partial."
     },
     {
       "id": "baseline.location-directives",

@@ -1,0 +1,72 @@
+{
+  "scope": "Finite array creation, initializer, argument and immediate element-target observations; not full expression closure",
+  "normalFixtures": "tests/CSNitrogen.Tests/Syntax/ArrayArgumentConformanceTests.cs",
+  "oracleFixtures": "tests/CSNitrogen.Oracle.Tests/ArrayArgumentConformanceParityTests.cs",
+  "shapeComparer": "tests/CSNitrogen.Oracle.Tests/ExpressionShapeAssert.cs",
+  "observations": [
+    {
+      "production": "Argument",
+      "positive": "Arguments_keep_modifier_values_separators_and_spans",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "Arguments",
+      "positive": "Initializers_and_arguments_retain_owning_declaration_contexts",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "ArrayElement",
+      "positive": "Arrays_and_nested_initializers_match_recursive_source_shape",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "ArrayInitializer",
+      "positive": "Initializers_and_arguments_retain_owning_declaration_contexts",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "SizedArray",
+      "positive": "Arrays_and_nested_initializers_match_recursive_source_shape",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "InitializedArray",
+      "positive": "Arrays_and_nested_initializers_match_recursive_source_shape",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    },
+    {
+      "production": "SizedArrayExpression",
+      "positive": "Arrays_and_nested_initializers_match_recursive_source_shape",
+      "negative": "Direct_array_creation_cannot_be_an_element_access_target"
+    },
+    {
+      "production": "InitializedArrayExpression",
+      "positive": "Arrays_and_nested_initializers_match_recursive_source_shape",
+      "negative": "Direct_array_creation_cannot_be_an_element_access_target"
+    },
+    {
+      "production": "ElementExpression",
+      "positive": "Parentheses_or_member_access_form_a_non_array_creation_target",
+      "negative": "Direct_array_creation_cannot_be_an_element_access_target"
+    },
+    {
+      "production": "VariableInitializer",
+      "positive": "Initializers_and_arguments_retain_owning_declaration_contexts",
+      "negative": "Malformed_arrays_initializers_and_arguments_are_rejected"
+    }
+  ],
+  "policy": "CSN2005 rejects immediate SizedArrayExpression/InitializedArrayExpression element-access targets in every selected baseline; raw grammar requires syntax policy",
+  "reference": "ECMA-334 first edition 14.5.6, 14.5.10.2, 19.6",
+  "oracleClassifications": {
+    "initialized direct indexing": "modern Roslyn syntax accepts; formal baseline policy rejects",
+    "repeated sized brackets": "compiler CS0178",
+    "missing sizes/initializer": "compiler CS1586",
+    "later arguments/implicit arrays": "compiler CS8022"
+  },
+  "limits": [
+    "No dimension constant/value/rank-size inference or type binding",
+    "No ref/out assignability or overload/constructor binding",
+    "Initializer optional group/list is inspected structurally through generated Items; no API migration",
+    "Finite nesting/type/rank cases only; profiles remain partial"
+  ]
+}

@@ -31,6 +31,12 @@ public static class CSharpSyntaxPolicy
                 }
                 previous=n;
             }
+            if(kind=="ElementExpression" && tree.ChildCount(n)>0)
+            {
+                var target=SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target;
+                if(Kind(target.Index) is "SizedArrayExpression" or "InitializedArrayExpression")
+                    issues.Add(new("CSN2005","Direct array creation requires parentheses before element access.",tree.Span(n),IssueCategory.Syntax));
+            }
             if(kind=="StackAllocExpression")
             {
                 int parent=tree.Parent(n);
