@@ -1,0 +1,104 @@
+[
+  {
+    "source": "[A]",
+    "expected": true
+  },
+  {
+    "source": "[A()]",
+    "expected": true
+  },
+  {
+    "source": "[A(1,2,X=3,Y=4)]",
+    "expected": true
+  },
+  {
+    "source": "[A(X=1,Y=2)]",
+    "expected": true
+  },
+  {
+    "source": "[A(X=1,2)]",
+    "expected": false
+  },
+  {
+    "source": "[A(1,X=2,3)]",
+    "expected": false
+  },
+  {
+    "source": "[A(X=1), A(2)]",
+    "expected": true
+  },
+  {
+    "source": "[A(X=1)][A(2)]",
+    "expected": true
+  },
+  {
+    "source": "[A(x+=1)]",
+    "expected": false,
+    "oracleDifference": "non-assignment-expression"
+  },
+  {
+    "source": "[A(X=y=1)]",
+    "expected": false,
+    "oracleDifference": "non-assignment-expression"
+  },
+  {
+    "source": "[A((x=1))]",
+    "expected": true
+  },
+  {
+    "source": "[A(X=(x=1))]",
+    "expected": true
+  },
+  {
+    "source": "[A(1+(x=2))]",
+    "expected": true
+  },
+  {
+    "source": "[A(X=1,)]",
+    "expected": false
+  },
+  {
+    "source": "[A(X:1)]",
+    "expected": false
+  },
+  {
+    "source": "[field:A]",
+    "expected": true
+  },
+  {
+    "source": "[return:A]",
+    "expected": true
+  },
+  {
+    "source": "[event:A]",
+    "expected": true
+  },
+  {
+    "source": "[class:A]",
+    "expected": true
+  },
+  {
+    "source": "[int:A]",
+    "expected": true
+  },
+  {
+    "source": "[assembly:A]",
+    "expected": true
+  },
+  {
+    "source": "[@assembly:A]",
+    "expected": true
+  },
+  {
+    "source": "[\\u0061ssembly:A]",
+    "expected": true
+  },
+  {
+    "source": "[assembly:A] using N;",
+    "expected": false
+  },
+  {
+    "source": "class C{[assembly:A]void M(){}}",
+    "expected": true
+  }
+]

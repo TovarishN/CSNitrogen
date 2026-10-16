@@ -41,6 +41,6 @@ A minor production-map extraction artifact is deferred: the generated listing in
 - Both corpus hashes match provenance; license notices are preserved.
 - Production runtime dependency manifests contain no Microsoft.CodeAnalysis dependency. Roslyn remains in the oracle test project; Nitrogen's source generator uses compiler APIs only at build time.
 
-Logs are retained locally under `.superpowers/sdd/csharp1-source-grammar/`: `final-build.log`, `final-normal.log`, `final-oracle.log`, `review-red.log`, `review-oracle-red.log`, and `review-green.log`. There is no Git repository; integration/commits and destructive cleanup remain deferred by the approved design.
+Logs are retained locally under `.superpowers/sdd/csharp1-source-grammar/`: `final-build.log`, `final-normal.log`, `final-oracle.log`, `review-red.log`, `review-oracle-red.log`, and `review-green.log`. At this milestone there was no Git repository; publication was subsequently authorized and main was published at 7359d6f. Destructive cleanup remains deferred.
 
 Next required work is C# 1 conformance closure: independently review each imported baseline feature, add per-production negative/context/tree-shape evidence, and resolve attribute argument restrictions and historical reference policy. Passing sample counts do not close those obligations. The source milestone provides executable baseline modules and an unsafe omission proof; the broader C# 1–14/customization request remains unfinished.

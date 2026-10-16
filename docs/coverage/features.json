@@ -9,7 +9,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/attributes",
       "requires": [
         "baseline.expressions"
       ],
@@ -18,14 +18,17 @@
         "Grammars/Attributes.ngr"
       ],
       "policies": [
-        "generated-syntax-context-checks"
+        "attribute-argument-order",
+        "attribute-non-assignment-expression"
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/AttributeConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/AttributeConformanceParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Targeted argument order, non-assignment root restriction, keyword target syntax, and global target identifier equality verified; binding/target applicability remain outside scope. Entire attribute family remains implemented pending exhaustive closure."
     },
     {
       "id": "baseline.character-literals",
