@@ -56,4 +56,17 @@ public class ProfileResolverTests
         using var doc=CSharpParser.Parse(new("class C {}","CSharp14","test.cs",[]));
         Assert.Equal(latest.CoverageIdentity,doc.CoverageIdentity);
     }
+ [Fact]
+ public void Unicode_policy_membership_matches_each_generated_configuration()
+ {
+  using var stream=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen.composition.json");
+  using var config=System.Text.Json.JsonDocument.Parse(stream!);
+  foreach(var language in config.RootElement.GetProperty("languages").EnumerateArray())
+  {
+   string name=language.GetProperty("name").GetString()!;if(name=="CSharp1Safe")continue;
+   var profile=ProfileResolver.Resolve(name).Profile!;
+   Assert.Equal(language.GetProperty("grammars").EnumerateArray().Select(g=>g.GetString()!).Order(StringComparer.Ordinal),profile.Grammars);
+   Assert.Contains(name=="CSharp1"?"unicode-3.0-bmp":"unicode-current-bmp",profile.Policies);
+  }
+ }
 }

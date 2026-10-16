@@ -14,13 +14,13 @@ syntax module CSharp.Expressions
  token BitXorOp = "^" !"=";
 
  syntax Literal = CSharp.Lexical.Real / CSharp.Lexical.Integer / CSharp.Lexical.Character / CSharp.Lexical.VerbatimString / CSharp.Lexical.RegularString / "true" / "false" / "null";
- syntax Argument = Mode:("ref" / "out")? Value:Expression;
+ syntax Argument = Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Value:Expression;
  syntax Arguments = "(" Items:(Argument; ",")* ")";
  syntax ArrayElement = ArrayInitializer / Expression;
  syntax ArrayInitializer = "{" Items:((ArrayElement; ",")+ ","?)? "}";
  syntax SizedArray = "new" Element:CSharp.NamesTypes.TypeBase "[" Sizes:(Expression; ",")+ "]" Ranks:CSharp.NamesTypes.ArrayRank* Initializer:ArrayInitializer?;
  syntax InitializedArray = "new" Element:CSharp.NamesTypes.TypeBase Ranks:CSharp.NamesTypes.ArrayRank+ Initializer:ArrayInitializer;
- syntax DefiniteCastType = CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank* / CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank+;
+ syntax DefiniteCastType = CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank+ / CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank*;
  syntax AfterNamedCast = CSharp.Lexical.Identifier / Literal / "(" / "!" / "~" / "this" / "base" / "new" / "typeof" / "sizeof" / "checked" / "unchecked";
  extensible syntax CastHead
  {
@@ -33,8 +33,8 @@ syntax module CSharp.Expressions
  syntax AssignmentOperator = "<<=" / ">>=" / "+=" / "-=" / "*=" / "/=" / "%=" / "&=" / "|=" / "^=" / "=";
  extensible syntax Expression
  {
-  | LiteralExpression = Value:Literal
   | NameExpression = Name:CSharp.Lexical.Identifier
+  | LiteralExpression = Value:Literal
   | ThisExpression = "this"
   | BaseMemberExpression = "base" "." Name:CSharp.Lexical.Identifier
   | BaseIndexExpression = "base" "[" Indices:(Expression; ",")+ "]"

@@ -3,6 +3,9 @@ import json,sys,re
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 data=json.loads(Path(sys.argv[1]).read_text())
+original_data=dict(data)
+historical=json.loads((root/'docs/coverage/historical-unicode-data.json').read_text())
+for key in ['start','part']:data[key]=sorted(set(data[key])|set(historical[key]))
 q=lambda x:json.dumps(x)
 def cls(chars):
  return '['+' '.join("'"+c+"'" for c in sorted(set(chars)))+']'
@@ -15,7 +18,7 @@ def ranges(values):
   a=f"'\\u{lo:04x}'";b=f"'\\u{prev:04x}'"
   result.append(a if lo==prev else a+'..'+b);lo=prev=x
  return '['+' '.join(result)+']'
-lines=['// Generated from pinned .NET BMP Unicode category data; see docs/coverage/unicode-data.json.', 'syntax module CSharp.Lexical {']
+lines=['// Generated BMP identifier superset from pinned current and Unicode 3.0 tables; apply the selected profile Unicode policy.', 'syntax module CSharp.Lexical {']
 for label,key in [('Start','start'),('Part','part')]:
  values=data[key];lines.append(f'token Id{label} = {ranges(values)};')
  groups={}
@@ -49,5 +52,5 @@ lines += [
  'syntax RealFragment = Value:Real;', 'syntax CharacterFragment = Value:Character;',
  'syntax StringFragment = Value:(VerbatimString / RegularString);','}']
 (root/'src/CSNitrogen.Syntax/Grammars/Lexical.ngr').write_text('\n'.join(lines)+'\n')
-(root/'docs/coverage/unicode-data.json').write_text(json.dumps(data,separators=(',',':'))+'\n')
+(root/'docs/coverage/unicode-data.json').write_text(json.dumps(original_data,separators=(',',':'))+'\n')
 print('Generated',len(lines),'lexical grammar lines')

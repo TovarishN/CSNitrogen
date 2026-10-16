@@ -5,8 +5,8 @@ syntax module CSharp.NamesTypes
  syntax ArrayRank = "[" Commas:","* "]";
  extensible syntax TypeBase
  {
-  | BuiltinTypeName = Value:BuiltinType
   | NamedTypeName = Name:QualifiedName
+  | BuiltinTypeName = Value:BuiltinType
  }
  extensible syntax TypeReference { | TypeSyntax = Element:TypeBase Ranks:ArrayRank* }
  syntax TypeFragment = Value:TypeReference;

@@ -21,7 +21,7 @@ public static class FeatureCatalog
         new FeatureDefinition("baseline.expressions", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.numeric-literals"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Expressions.ngr"})),
         new FeatureDefinition("baseline.statement-expressions", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Statements.ngr"})),
         new FeatureDefinition("baseline.statements", Array.AsReadOnly(new[]{"baseline.statement-expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Statements.ngr"})),
-        new FeatureDefinition("baseline.attributes", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Attributes.ngr"})),
+        new FeatureDefinition("baseline.attributes", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Attributes.ngr","Grammars/GlobalTargetsCurrent.ngr"})),
         new FeatureDefinition("baseline.members", Array.AsReadOnly(new[]{"baseline.attributes","baseline.statements"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Declarations.ngr"})),
         new FeatureDefinition("baseline.namespace-declarations", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/CompilationUnits.ngr"})),
         new FeatureDefinition("baseline.unsafe-syntax", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Unsafe.ngr"})),

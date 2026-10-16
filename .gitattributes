@@ -1,1 +1,5 @@
 * text=auto eol=lf
+
+# Preserve exact upstream Unicode source/license bytes for provenance hashes.
+/docs/coverage/sources/Unicode3/UnicodeData-3.0.0.txt -text
+/docs/coverage/sources/Unicode3/LICENSE.txt -text

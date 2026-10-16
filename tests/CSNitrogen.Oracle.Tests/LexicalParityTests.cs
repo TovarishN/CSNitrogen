@@ -48,8 +48,8 @@ public unsafe class LexicalParityTests
             string escape="\\u"+code.ToString(code%2==0?"X4":"x4",System.Globalization.CultureInfo.InvariantCulture);
             using var first=language.Parse(escape,LexicalModule.IdentifierFragment);
             using var part=language.Parse("a"+escape,LexicalModule.IdentifierFragment);
-            Assert.True(SyntaxFacts.IsIdentifierStartCharacter((char)code)==(first.Success&&!first.HasErrors),"Start: "+escape);
-            Assert.True(SyntaxFacts.IsIdentifierPartCharacter((char)code)==(part.Success&&!part.HasErrors),"Part: "+escape);
+            Assert.True(SyntaxFacts.IsIdentifierStartCharacter((char)code)==(first.Success&&!first.HasErrors&&!CSNitrogen.Parsing.CSharpSyntaxPolicy.Check(first.Tree,new(14,0)).Any()),"Start: "+escape);
+            Assert.True(SyntaxFacts.IsIdentifierPartCharacter((char)code)==(part.Success&&!part.HasErrors&&!CSNitrogen.Parsing.CSharpSyntaxPolicy.Check(part.Tree,new(14,0)).Any()),"Part: "+escape);
         }
     }
 }

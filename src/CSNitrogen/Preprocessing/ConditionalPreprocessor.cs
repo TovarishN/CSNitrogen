@@ -12,10 +12,10 @@ public static class ConditionalPreprocessor
         var symbols=new HashSet<string>(StringComparer.Ordinal);var issues=new List<ParseIssue>();
         foreach(var supplied in request.ConditionalSymbols)
         {
-            if(supplied is null || !ConditionalSymbols.TryNormalize(supplied,out var name))issues.Add(new("CSN1101","Invalid supplied conditional symbol.",new(0,0),IssueCategory.Preprocessing));
+            if(supplied is null || !ConditionalSymbols.TryNormalize(supplied,request.Version,out var name))issues.Add(new("CSN1101","Invalid supplied conditional symbol.",new(0,0),IssueCategory.Preprocessing));
             else symbols.Add(name);
         }
-        var scanner=new DirectiveScanner(request.Source);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
+        var scanner=new DirectiveScanner(request.Source,request.Version);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
         var inactive=new List<TextSpan>();char[] masked=request.Source.ToCharArray();
         var effects=new DirectiveEffects(request.Version,issues);
         bool Active()=>branches.Count==0||branches.Peek().Active;
@@ -23,7 +23,7 @@ public static class ConditionalPreprocessor
         void Error(string code,string message,DirectiveRecord d)=>issues.Add(new(code,message,d.Span,IssueCategory.Preprocessing));
         bool Condition(DirectiveRecord d)
         {
-            var result=ConditionalExpression.Evaluate(d.Argument,symbols);
+            var result=ConditionalExpression.Evaluate(d.Argument,symbols,request.Version);
             if(result.Error>=0)issues.Add(new("CSN1102",result.Message!,new(Math.Min(request.Source.Length,d.ArgumentStart+result.Error),0),IssueCategory.Preprocessing));
             return result.Value;
         }
@@ -32,7 +32,7 @@ public static class ConditionalPreprocessor
             bool active=Active();var d=scanner.ScanLine(line,active);
             if(d is null){if(!active){Mask(line);inactive.Add(new(line.Start,line.End-line.Start));}continue;}
             directives.Add(d);Mask(line);
-            string argument=DirectiveArguments.WithoutComment(d.Argument).Trim();
+            string argument=DirectiveArguments.WithoutComment(d.Argument,request.Version);
             switch(d.Kind)
             {
                 case "if":branches.Push(new(active,Condition(d),d.Span.Start));break;
@@ -53,7 +53,7 @@ public static class ConditionalPreprocessor
                     if(argument.Length>0)Error("CSN1104","Unexpected text after #endif.",d);
                     if(!branches.TryPop(out _))Error("CSN1103","Unmatched #endif.",d);break;
                 case "define":case "undef":
-                    if(!ConditionalSymbols.TryNormalize(argument,out var name))Error("CSN1101","Invalid conditional symbol.",d);
+                    if(!ConditionalSymbols.TryNormalize(argument,request.Version,out var name))Error("CSN1101","Invalid conditional symbol.",d);
                     else if(active)
                     {
                         if(scanner.SawToken)Error("CSN1105","#define and #undef must precede source tokens.",d);
@@ -63,6 +63,7 @@ public static class ConditionalPreprocessor
                 default:effects.Apply(d,branches.Count);break;
             }
         }
+        foreach(int position in scanner.HistoricalWhitespace)masked[position]=' ';
         scanner.Finish();effects.Finish();issues.AddRange(scanner.Issues);
         foreach(var branch in branches)issues.Add(new("CSN1103","Expected #endif.",new(branch.Start,0),IssueCategory.Preprocessing));
         return new(request.Source,new(masked),directives,inactive,issues,effects.Mappings);

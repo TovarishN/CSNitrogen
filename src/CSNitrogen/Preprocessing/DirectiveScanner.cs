@@ -7,11 +7,13 @@ public sealed class DirectiveScanner
 {
     private enum State { Normal, BlockComment, RegularString, VerbatimString, Character }
     private readonly string _source;
+    private readonly Version _version;
     private State _state;
     private int _opened;
     internal List<ParseIssue> Issues {get;}=[];
+    internal List<int> HistoricalWhitespace {get;}=[];
     internal bool SawToken {get;private set;}
-    internal DirectiveScanner(string source)=>_source=source;
+    internal DirectiveScanner(string source,Version? version=null){_source=source;_version=version??new(14,0);}
     public static DirectiveScanResult Scan(string source)
     {
         ArgumentNullException.ThrowIfNull(source);var scanner=new DirectiveScanner(source);var directives=new List<DirectiveRecord>();
@@ -27,7 +29,7 @@ public sealed class DirectiveScanner
             char c=_source[i];
             if(!active)
             {
-                if(char.IsWhiteSpace(c)||(i==0&&c=='\uFEFF'))continue;
+                if(UnicodePolicy.IsWhiteSpace(c,_version)||(i==0&&c=='\uFEFF'))continue;
                 return c=='#'?ReadDirective(i,line,false):null;
             }
             if(_state==State.BlockComment)
@@ -40,7 +42,11 @@ public sealed class DirectiveScanner
                 if(c==(_state==State.RegularString?'"':'\''))_state=State.Normal;
                 continue;
             }
-            if(char.IsWhiteSpace(c)||(i==0&&c=='\uFEFF'))continue;
+            if(UnicodePolicy.IsWhiteSpace(c,_version)||(i==0&&c=='\uFEFF'))
+            {
+                if(UnicodePolicy.IsHistorical(_version)&&!char.IsWhiteSpace(c)&&c!='\uFEFF')HistoricalWhitespace.Add(i);
+                continue;
+            }
             if(c=='#')
             {
                 if(!prefix)Issues.Add(new("CSN1001","A directive must be the first non-whitespace item on its line.",new(i,1),IssueCategory.Preprocessing));
@@ -63,15 +69,12 @@ public sealed class DirectiveScanner
     }
     private DirectiveRecord ReadDirective(int hash,SourceLine line,bool active)
     {
-        int i=hash+1;while(i<line.End&&char.IsWhiteSpace(_source[i]))i++;
+        int i=hash+1;while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
         int start=i;while(i<line.End&&IsDirectiveNamePart(_source[i]))i++;
-        string kind=_source[start..i];while(i<line.End&&char.IsWhiteSpace(_source[i]))i++;
+        string kind=_source[start..i];while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
         return new(kind,_source[i..line.End],new(hash,line.End-hash),i,line.Number,active);
     }
-    private static bool IsDirectiveNamePart(char c) => c is '_' or '\\' || char.IsLetterOrDigit(c) ||
-        char.GetUnicodeCategory(c) is System.Globalization.UnicodeCategory.LetterNumber or
-        System.Globalization.UnicodeCategory.NonSpacingMark or System.Globalization.UnicodeCategory.SpacingCombiningMark or
-        System.Globalization.UnicodeCategory.ConnectorPunctuation or System.Globalization.UnicodeCategory.Format;
+    private bool IsDirectiveNamePart(char c)=>c=='\\'||UnicodePolicy.IsPart(c,_version);
     private ParseIssue Unterminated(int end)=>new("CSN1002","Unterminated string, character, or block comment.",new(_opened,end-_opened),IssueCategory.Syntax);
     internal void Finish(){if(_state!=State.Normal)Issues.Add(Unterminated(_source.Length));}
 }

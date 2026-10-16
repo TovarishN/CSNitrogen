@@ -8,7 +8,7 @@ public static unsafe class CSharpParser
     private static readonly IReadOnlyDictionary<string, (Lazy<Language> Language, Rule Start)> Compositions =
         new Dictionary<string, (Lazy<Language>, Rule)>(StringComparer.Ordinal)
         {
-            ["CSharp1"] = (new(() => CSharp1Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp1Composition.Start),
+            ["CSharp1"] = (new(() => CSharp1Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipHistorical).Build()), CSharp1Composition.Start),
             ["CSharp2"] = (new(() => CSharp2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp2Composition.Start),
             ["CSharp3"] = (new(() => CSharp3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp3Composition.Start),
             ["CSharp4"] = (new(() => CSharp4Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp4Composition.Start),

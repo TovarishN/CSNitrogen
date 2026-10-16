@@ -15,7 +15,9 @@
       ],
       "conflicts": [],
       "grammars": [
-        "Grammars/Attributes.ngr"
+        "Grammars/Attributes.ngr",
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/GlobalTargetsHistorical.ngr"
       ],
       "policies": [
         "attribute-argument-order",
@@ -25,10 +27,12 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
         "tests/CSNitrogen.Tests/Syntax/AttributeConformanceTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/AttributeConformanceParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/AttributeConformanceParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Targeted argument order, non-assignment root restriction, keyword target syntax, and global target identifier equality verified; binding/target applicability remain outside scope. Entire attribute family remains implemented pending exhaustive closure."
+      "scopeNote": "Version profiles select exactly one global-target extension. The listed extensions are alternatives, not simultaneous module requirements. Attribute binding and target applicability remain excluded."
     },
     {
       "id": "baseline.character-literals",
@@ -68,7 +72,9 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs",
         "tests/CSNitrogen.Tests/Preprocessing/ConditionalPreprocessorTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
       "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
@@ -126,7 +132,9 @@
       "policies": [],
       "fixtures": [
         "tests/CSNitrogen.Tests/Lexing/LexicalTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
       "scopeNote": "C# 1 lexical category; recorded BMP Unicode table agrees with pinned Roslyn. Supplementary identifier characters remain outside the compiler-compatible subset."
@@ -176,7 +184,9 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs",
         "tests/CSNitrogen.Tests/Preprocessing/ConditionalPreprocessorTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
       "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
@@ -362,7 +372,9 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs",
         "tests/CSNitrogen.Tests/Preprocessing/ConditionalPreprocessorTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
       "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
@@ -382,10 +394,12 @@
       "policies": [],
       "fixtures": [
         "tests/CSNitrogen.Tests/Lexing/LexicalTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 lexical category; recorded BMP Unicode table agrees with pinned Roslyn. Supplementary identifier characters remain outside the compiler-compatible subset."
+      "scopeNote": "CSharp1 selects pinned Unicode 3.0 BMP categories; other partial profiles retain current .NET categories. Shared grammar is a union; public pipeline applies the selected category policy. Supplementary identifiers and semantic normalization/binding are not claimed."
     },
     {
       "id": "baseline.unsafe-syntax",

@@ -36,5 +36,23 @@ public class ContextConformanceParityTests
   Assert.Equal(expectedFalse,language.GetKindName(conditional.False.Value.Kind));
   Assert.Equal(conditionalOracle.WhenFalse.Span.Start,conditional.False.Value.Span.Start);
   Assert.Equal(conditionalOracle.WhenFalse.Span.Length,conditional.False.Value.Span.Length);
+  void Compare(ExpressionSyntax reference,ExpressionNode actual)
+  {
+   Assert.Equal(reference.Span.Start,actual.Span.Start);Assert.Equal(reference.Span.Length,actual.Span.Length);
+   if(reference is AssignmentExpressionSyntax assignment)
+   {
+    Assert.Equal("AssignmentExpression",language.GetKindName(actual.Kind));
+    var node=SyntaxView.Cast<AssignmentExpressionExpression>(parsed.Tree,actual.Index);
+    Compare(assignment.Left,node.Target);Compare(assignment.Right,node.Value);
+   }
+   else if(reference is ConditionalExpressionSyntax nested)
+   {
+    Assert.Equal("ConditionalExpression",language.GetKindName(actual.Kind));
+    var node=SyntaxView.Cast<ConditionalExpressionExpression>(parsed.Tree,actual.Index);
+    Compare(nested.Condition,node.Condition);Compare(nested.WhenTrue,node.True);Compare(nested.WhenFalse,node.False.Value);
+   }
+   else Assert.Equal("NameExpression",language.GetKindName(actual.Kind));
+  }
+  Compare(conditionalOracle.Condition,conditional.Condition);Compare(conditionalOracle.WhenTrue,conditional.True);Compare(conditionalOracle.WhenFalse,conditional.False.Value);
  }
 }

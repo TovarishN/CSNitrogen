@@ -49,7 +49,7 @@ public class AttributeConformanceParityTests
     string source="[as"+spelling+"sembly:A] class C{}";
     var tree=CSharpSyntaxTree.ParseText(source,new CSharpParseOptions(LanguageVersion.CSharp1));
     Assert.DoesNotContain(tree.GetDiagnostics(),d=>d.Severity==DiagnosticSeverity.Error);
-    using var parsed=CSharpParser.Parse(new(source,"CSharp1","format.cs",[]));
+    using var parsed=CSharpParser.Parse(new(source,"CSharp14","format.cs",[]));
     Assert.True(parsed.Accepted);Assert.Equal(tree.GetCompilationUnitRoot().AttributeLists.Count,parsed.Root.Attributes.Count);
    }
   }
