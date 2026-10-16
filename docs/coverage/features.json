@@ -357,10 +357,12 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
         "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/StatementConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/StatementConformanceParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Finite per-family statement/control-tree evidence recorded in csharp1-statement-productions.json. CSN2006 enforces default-label cardinality. Missing using initializers, constant values, jump target resolution and other semantic validity remain excluded. Broader context/recovery closure pending; all profiles remain partial."
     },
     {
       "id": "baseline.trivia",
