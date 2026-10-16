@@ -55,3 +55,5 @@ The parser's `Tree.Text` and `MaskedText` contain a source-preserving preprocess
 See the [C# 1 lexical/preprocessing evidence](docs/coverage/csharp1-lexical-preprocessing-evidence.md) for lexical tests and Unicode scope. See the [source grammar evidence](docs/coverage/csharp1-source-grammar-evidence.md) for the current milestone, oracle discrepancies and remaining gates.
 
 Prototype API migration: `Root.Members` replaces `Root.Types` to represent namespaces and all type declarations. `Classes` returns global classes only. Generated views remain borrowed from the owning result.
+
+The [attribute conformance continuation](docs/coverage/csharp1-attribute-conformance-evidence.md) records the latest C# 1 fixes and oracle classifications. The initial baseline is published at [TovarishN/CSNitrogen](https://github.com/TovarishN/CSNitrogen).
