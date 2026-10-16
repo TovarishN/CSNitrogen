@@ -23,3 +23,9 @@ Initial expectations had six rejecting cases; three duplicate-default cases were
 Full pre-review verification: **620 normal + 1,675 oracle = 2,295 tests pass**. No grammar module, generated API or Nitrogen core changes were necessary. Binding, IDisposable conversions/read-only resource semantics, case constant evaluation/equality, reachability, label/jump target resolution and executable correctness remain excluded. Finite nesting, recovery and profile observations do not establish complete C# 1 conformance.
 
 Decisions: add selected default-keyword cardinality without evaluating case values; preserve historical case-expression recognition despite modern pattern reinterpretation; preserve the earlier using-initializer semantic exclusion. The costs are a narrower policy than raw grammar for defaults and accepted syntax that still needs semantic validation for resource/constant/jump validity.
+
+## Fresh review
+
+Fresh read-only review of `bec12c9..b612fca` judged the checkpoint ready to merge with no Critical, Important or Minor findings. No additional fix pass or deferred minors resulted.
+
+Review limits remain missing using initializers and other semantic validity; unchanged cast/interface/source-placement/unsafe families; exhaustive recovery and full C#1 closure. Extrapolating these fixtures would overstate conformance or executable validity. The reviewer did not execute tests/hash checks; the complete author run and audit supply evidence for 2,295 tests and 118 original/isolated Nitrogen dependency hashes. The original corpus and sibling dirty status remain unchanged; production runtime manifests contain no Roslyn.
