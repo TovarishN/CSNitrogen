@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp2",
+  "primary": {
+    "title": "ECMA-334, fourth edition, June 2006",
+    "url": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
+    "sha256": "de596c178a4a80a8d86e91877544025822ec0749d8c04ecca25af60c75937652",
+    "pages": 553,
+    "annexAPdfPages": [
+      465,
+      494
+    ]
+  },
+  "oracle": {
+    "package": "Microsoft.CodeAnalysis.CSharp",
+    "version": "5.0.0",
+    "languageVersion": "CSharp2"
+  },
+  "status": "pending",
+  "unicode": {
+    "specified": "Unicode 4.0",
+    "source": "clause 2",
+    "implemented": "Current .NET BMP compatibility only",
+    "status": "pending historical data and policy"
+  },
+  "completion": "Reference pin and candidate index do not establish reviewed source coverage or profile completeness. Supplementary Microsoft CSharp2 differences require explicit sources and classification.",
+  "supplements": [
+    {
+      "title": "Microsoft Visual C# / Visual Studio 2005 documentation",
+      "url": "https://download.microsoft.com/download/1/6/d/16d24ada-5317-4de1-b2b2-890b51813d6e/VS2005_CSharp_en-us.pdf",
+      "sha256": "27ce1c2eac588d95f370b16741f35b1593564ddebaa9a46ad40b6c04faf8e6d3",
+      "pdfPage": 959,
+      "scope": "Fixed Size Buffers programming guide: CSharp2 addition, struct instance field/vector syntax; not a replacement for normative review"
+    }
+  ]
+}

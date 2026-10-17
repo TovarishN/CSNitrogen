@@ -26,7 +26,10 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
                     d.Kind=="error"?DiagnosticSeverity.Error:DiagnosticSeverity.Warning));break;
             case "line":if(d.Active||UnicodePolicy.IsHistorical(version))ApplyLine(d,argument);break;
             case "nullable":if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,8);break;
-            case "pragma":if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,2);break;
+            case "pragma":
+                if(version<new Version(2,0)){if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,2);}
+                else if(d.Active)issues.Add(new("CSN1203","Pragma payload preserved as implementation-defined compiler information; compiler effects are not applied.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
+                break;
             case "" when d.Argument.StartsWith(':'):if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,14);break;
             default:Error("CSN1204","Unknown preprocessing directive.",d);break;
         }
@@ -38,6 +41,17 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
     }
     private void ApplyLine(DirectiveRecord d,string argument)
     {
+        bool fourth=version==new Version(2,0);
+        bool exactStandard=UnicodePolicy.IsHistorical(version)||fourth;
+        if(fourth && UnicodePolicy.TryNormalize(argument,version,true,out var indicator))
+        {
+            if(indicator is "default" or "hidden")argument=indicator;
+            else
+            {
+                if(d.Active)issues.Add(new("CSN1203","Unrecognized implementation-defined line indicator; prior mapping retained.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
+                return;
+            }
+        }
         int physical=d.Line+1;
         var previous=Mappings.LastOrDefault();
         if(argument=="default")
@@ -49,16 +63,16 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
         }
         if(argument.StartsWith('(')){Later(d,10);return;}
         int end=0;while(end<argument.Length&&char.IsAsciiDigit(argument[end]))end++;
-        if(end==0||!BigInteger.TryParse(argument.AsSpan(0,end),NumberStyles.None,CultureInfo.InvariantCulture,out var number)||(!UnicodePolicy.IsHistorical(version)&&(number<1||number>int.MaxValue)))
+        if(end==0||!BigInteger.TryParse(argument.AsSpan(0,end),NumberStyles.None,CultureInfo.InvariantCulture,out var number)||(!exactStandard&&(number<1||number>int.MaxValue)))
         {Error("CSN1207","Expected decimal #line digits (positive Int32 for current profiles).",d);return;}
-        bool ignored=!UnicodePolicy.IsHistorical(version)&&number>=16707566;
+        bool ignored=!exactStandard&&number>=16707566;
         if(ignored)issues.Add(new("CSN1208","Line number exceeds the PDB representable limit; this mapping is ignored.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
         string? file=previous?.File;
         if(end<argument.Length)
         {
             if(!UnicodePolicy.IsWhiteSpace(argument[end],version)){Error("CSN1207","Whitespace is required before the mapped file name.",d);return;}
             string rest=UnicodePolicy.Trim(argument[end..],version);
-            if(rest.Length<(UnicodePolicy.IsHistorical(version)?3:2)||rest[0]!='"'||rest[^1]!='"'||rest[1..^1].Contains('"'))
+            if(rest.Length<(exactStandard?3:2)||rest[0]!='"'||rest[^1]!='"'||rest[1..^1].Contains('"'))
             {Error("CSN1207","Expected a quoted mapped file name.",d);return;}
             file=rest[1..^1];
         }

@@ -31,7 +31,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -48,7 +57,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -65,7 +83,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -82,7 +109,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -99,7 +135,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -116,7 +161,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -133,7 +187,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -150,7 +213,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -167,7 +239,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -184,7 +265,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -201,7 +291,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -218,7 +317,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -235,7 +343,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -252,7 +369,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -269,7 +395,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {
@@ -286,7 +421,16 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr",
+        "Grammars/NullableValues.ngr",
+        "Grammars/AnonymousMethods.ngr",
+        "Grammars/Iterators.ngr",
+        "Grammars/DefaultValues.ngr",
+        "Grammars/DeclarationForms.ngr",
+        "Grammars/AliasQualification.ngr",
+        "Grammars/GenericUnsafe.ngr",
+        "Grammars/FixedBuffers.ngr"
       ]
     },
     {

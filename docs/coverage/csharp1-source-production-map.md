@@ -2,7 +2,7 @@
 
 Every authored source production and extensible alternative is listed below. The [whole pending source review](csharp1-pending-normative-review.md) closes all 362 historical source occurrences within the normalized syntax/semantic-exclusion contract, using finite alternative/context/span/diagnostic witnesses. This does not establish universal malformed-input phase/recovery parity.
 
-The [machine-checked gate catalog](csharp1-coverage-gate.json) records all 641 declarations/alternatives in the configured CSharp1 grammar AST, including generated lexical helpers and the Core compatibility alias. Ten modules, eight policy sources and forty syntax inventory entries have scoped source review. The approved [runtime capability contract](csharp1-feature-catalog-decision.md) now covers all forty identities through canonical bundles; CSharp1 syntax coverage is complete while later/custom profiles remain partial.
+The [machine-checked gate catalog](csharp1-coverage-gate.json) records all 652 declarations/alternatives (including eleven unpopulated optional extension seams) in the configured CSharp1 grammar AST, including generated lexical helpers and the Core compatibility alias. Ten modules, eight policy sources and forty syntax inventory entries have scoped source review. The approved [runtime capability contract](csharp1-feature-catalog-decision.md) now covers all forty identities through canonical bundles; CSharp1 syntax coverage is complete while later/custom profiles remain partial.
 
 | Module | Production and alternative names | Targeted fixture family | Status |
 |---|---|---|---|

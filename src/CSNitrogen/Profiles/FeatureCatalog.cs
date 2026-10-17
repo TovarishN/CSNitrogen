@@ -6,6 +6,16 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp2.generics", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.expressions","baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Generics.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
+        new FeatureDefinition("csharp2.nullable-values", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NullableValues.ngr"})) { Introduced=new(2,0) },
+        new FeatureDefinition("csharp2.anonymous-methods", Array.AsReadOnly(new[]{"baseline.expressions","baseline.attributes","baseline.statements"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/AnonymousMethods.ngr"})) { Introduced=new(2,0) },
+        new FeatureDefinition("csharp2.iterators", Array.AsReadOnly(new[]{"baseline.statements","baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Iterators.ngr"})) { Introduced=new(2,0) },
+        new FeatureDefinition("csharp2.default-values", Array.AsReadOnly(new[]{"baseline.expressions","baseline.names-and-types"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/DefaultValues.ngr"})) { Introduced=new(2,0) },
+        new FeatureDefinition("csharp2.declaration-forms", Array.AsReadOnly(new[]{"baseline.members","baseline.attributes"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/DeclarationForms.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
+        new FeatureDefinition("csharp2.alias-qualification", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.namespace-declarations"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/AliasQualification.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
+        new FeatureDefinition("csharp2.pragmas", Array.AsReadOnly(new[]{"baseline.conditional-compilation"}), Array.Empty<string>(), Array.Empty<string>()) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"csharp1-preprocessing"}) },
+        new FeatureDefinition("csharp2.generic-unsafe", Array.AsReadOnly(new[]{"csharp2.generics","baseline.unsafe-syntax"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/GenericUnsafe.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
+        new FeatureDefinition("csharp2.fixed-buffers", Array.AsReadOnly(new[]{"baseline.members","baseline.unsafe-syntax"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/FixedBuffers.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("foundation.empty-classes", Array.AsReadOnly(new[]{"baseline.unicode-identifiers"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Core.ngr","Grammars/Declarations.ngr"})),
         new FeatureDefinition("baseline.unicode-identifiers", Array.Empty<string>(), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Lexical.ngr"})) { Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("baseline.escaped-identifiers", Array.Empty<string>(), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Lexical.ngr"})) { Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
@@ -52,6 +62,7 @@ public static class FeatureCatalog
         Read("CSNitrogen.dependencies.json");
         var composition=Read("CSNitrogen.composition.json");
         var reference=Read("CSNitrogen.reference-policy.json");
+        Read("CSNitrogen.csharp2-reference-policy.json");Read("CSNitrogen.csharp2-standard-index.json");
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");
         var index=Read("CSNitrogen.csharp1-standard-index.json");
         var crosswalk=Read("CSNitrogen.csharp1-standard-crosswalk.json");

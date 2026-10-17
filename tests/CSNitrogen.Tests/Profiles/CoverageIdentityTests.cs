@@ -15,6 +15,8 @@ public class CoverageIdentityTests
         Assert.Contains(names,n=>n.Contains("Lexical.ngr"));Assert.Contains(names,n=>n.Contains("ConditionalPreprocessor.cs"));
         Assert.Contains("CSNitrogen.composition.json",names);
         Assert.Contains("CSNitrogen.reference-policy.json",names);
+        Assert.Contains("CSNitrogen.csharp2-reference-policy.json",names);
+        Assert.Contains("CSNitrogen.csharp2-standard-index.json",names);
         Assert.Equal(64,FeatureCatalog.CoverageIdentity.Length);
     }
 }

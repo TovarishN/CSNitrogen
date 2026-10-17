@@ -3,3 +3,8 @@
 # Preserve exact upstream Unicode source/license bytes for provenance hashes.
 /docs/coverage/sources/Unicode3/UnicodeData-3.0.0.txt -text
 /docs/coverage/sources/Unicode3/LICENSE.txt -text
+
+# Preserve exact pinned corpus bytes and original notice whitespace.
+/tests/Corpus/Mono2006/* -text
+/tests/Corpus/Mono2006/LICENSE whitespace=-blank-at-eof
+/tests/Corpus/Mono2006/LICENSE.GPL whitespace=-blank-at-eol
