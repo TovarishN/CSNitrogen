@@ -23,3 +23,9 @@ No product defect was reproduced, so this continuation changes tests and coverag
 Full pre-review solution test/build: **620 normal + 1,746 oracle = 2,366 pass**, zero failed/skipped. Both original and isolated Nitrogen copies match all 118 pinned source hashes; original sibling dirty state remains ` M docs/editor-support.md`. Production dependency manifests contain no Microsoft.CodeAnalysis. Production source/grammar, original context corpus and pinned external corpus are unchanged.
 
 Decision: retain this step as characterization instead of inventing a production correction; the cost is finite evidence rather than exhaustive declaration closure. Binding, constructor/member resolution, modifier compatibility, operator arity/types, attribute target applicability, params/indexer type legality and executable validity remain excluded. C# 1 production/context closure, unsafe membership revalidation, later-version feature modules and arbitrary raw delimiters remain outstanding.
+
+## Fresh review
+
+Fresh read-only review of `1f4b67e..59a6fe2` found no Critical, Important or Minor issues and judged the bounded checkpoint ready to merge. The review checked the unchanged cast/statement-expression/interface/source-placement/unsafe families for regression and found no diff weakening them. It did not run tests or audits; those results are author-run evidence.
+
+The review's scope limits are retained: full enclosing-alias equivalence, exhaustive namespace/root/preprocessing and unsafe omission coverage, later-version modules, and the established semantic exclusions remain open. Deferring these families avoids claiming comprehensive conformance from selected observations. No review fix pass was needed.
