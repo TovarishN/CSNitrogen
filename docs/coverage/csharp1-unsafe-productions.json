@@ -1,0 +1,117 @@
+{
+  "scope": "C# 1 unsafe syntax and configured module omission; finite observations, no semantic safety or complete language conformance claim",
+  "normalFixtures": "tests/CSNitrogen.Tests/Syntax/UnsafeConformanceTests.cs",
+  "oracleFixtures": "tests/CSNitrogen.Oracle.Tests/UnsafeConformanceParityTests.cs",
+  "shapeComparers": [
+    "tests/CSNitrogen.Oracle.Tests/UnsafeShapeAssert.cs",
+    "tests/CSNitrogen.Oracle.Tests/ExpressionShapeAssert.cs",
+    "tests/CSNitrogen.Oracle.Tests/StatementShapeAssert.cs"
+  ],
+  "reference": "ECMA-334 first edition sections25.2,25.5,25.6,25.7; existing approved syntax/semantic boundary",
+  "observations": [
+    {
+      "production": "PointerNonArrayType",
+      "positive": "Unsafe_and_fixed_statement_owning_fields_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "PointerCastType",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "PointerTypeName",
+      "positive": "Pointer_type_elements_stars_and_array_ranks_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "VoidPointerTypeName",
+      "positive": "Pointer_type_elements_stars_and_array_ranks_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "PointerCastHead",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "SizeOfExtendedType",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "PointerIndirectionExpression",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "AddressExpression",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "PointerMemberExpression",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "SizeOfExtendedExpression",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "StackAllocExpression",
+      "positive": "Stackalloc_keeps_element_and_size_fields",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "UnsafeModifier",
+      "positive": "Unsafe_expression_children_and_precedence_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "FixedDeclarator",
+      "positive": "Unsafe_and_fixed_statement_owning_fields_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "FixedStatement",
+      "positive": "Unsafe_and_fixed_statement_owning_fields_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "UnsafeBlock",
+      "positive": "Unsafe_and_fixed_statement_owning_fields_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    },
+    {
+      "production": "UnsafeEmbeddedStatement",
+      "positive": "Unsafe_and_fixed_statement_owning_fields_match",
+      "omission": "Unsafe_module_omission_rejects_each_selected_surface",
+      "status": "finite-observations"
+    }
+  ],
+  "limits": [
+    "Safe composition is module omission, not proof of semantic memory safety",
+    "Direct configured safe factory uses default trivia; fixtures exercise common whitespace/comments, not full lexer-profile equivalence",
+    "Unmanaged types, addressability, pointer operations, fixed-variable readonly rules, bounds, layout, escape/lifetime and unsafe context remain compiler semantic work",
+    "Built-in sizeof grammar retains all existing BuiltinType spellings, including semantically invalid operands",
+    "No public custom language resolver execution or C#1Safe public parser profile introduced",
+    "No full C#1 or later-version coverage promotion"
+  ]
+}
