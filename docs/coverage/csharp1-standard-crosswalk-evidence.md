@@ -59,3 +59,9 @@ Review each nominated mapping against the normative RHS and prose, then attach a
 The full solution command above passed **706 normal + 2,043 oracle = 2,749 tests**, zero failed/skipped. This includes the unchanged pinned corpus and bounded malformed/nested/preprocessing regressions. Full-test output has no build warnings/errors. Whitespace formatting exited successfully with a generic workspace-load warning; the subsequent full build/test run is the authoritative execution evidence.
 
 All 118 source hashes match both the original and isolated Nitrogen copies. The sibling remains at `f5bf525e3e2723a8fe39e127f800f6376345feb1` with only its preexisting modified `docs/editor-support.md`. All six pinned Mono corpus hashes match provenance. Production manifests exclude Microsoft.CodeAnalysis and Nitrogen.Grammar. The extractor reproduced the committed index from the verified PDF and rejected an unpinned input before parsing. `git diff --check` passes.
+
+## Fresh review
+
+Fresh read-only whole-branch review of `3e2ed67..0c8aecf` found no Critical, Important or Minor issues and judged this partial structural-traceability checkpoint ready to merge. It independently compared the extracted-text heading list with all 362 committed occurrences in order, checked the supplied PDF hash, and reviewed the complete branch, audit failure paths, identity integration and saved test evidence. No fix pass was required.
+
+The reviewer did not certify normative RHS/prose equivalence, unchanged cast/statement/interface/source-context/unsafe behavior, or the authenticity/sufficiency of future human review declarations. Those remain substantive obligations. It did not rerun tests or independently repeat sibling/corpus hashing; those results remain author-run evidence. No profile promotion follows from this review.
