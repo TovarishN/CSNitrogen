@@ -1,0 +1,135 @@
+{
+  "module": "CSharp.Statements",
+  "normalFixtures": "tests/CSNitrogen.Tests/Syntax/StatementConformanceTests.cs",
+  "oracleFixtures": "tests/CSNitrogen.Oracle.Tests/StatementConformanceParityTests.cs",
+  "shapeComparer": "tests/CSNitrogen.Oracle.Tests/StatementShapeAssert.cs",
+  "productionCount": 32,
+  "observations": [
+    {
+      "family": "declarations",
+      "productions": [
+        "VariableInitializer",
+        "VariableDeclarator",
+        "VariableDeclaration",
+        "ConstantDeclarator",
+        "ConstantDeclaration"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "blocks and wrappers",
+      "productions": [
+        "Block",
+        "Statement",
+        "StandardStatement",
+        "EmbeddedStatement",
+        "StandardEmbeddedStatement",
+        "StatementFragment"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match + existing StatementTests.Statement_surface",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "statement expressions",
+      "productions": [
+        "StatementExpression",
+        "StatementExpressionList",
+        "ExpressionStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "conditionals",
+      "productions": [
+        "IfStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "loops",
+      "productions": [
+        "WhileStatement",
+        "DoStatement",
+        "ForStatement",
+        "ForeachStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "switch",
+      "productions": [
+        "SwitchLabel",
+        "SwitchSection",
+        "SwitchStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "exceptions",
+      "productions": [
+        "CatchClause",
+        "SpecificCatchClause",
+        "GeneralCatchClause",
+        "FinallyClause",
+        "TryStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "resources and locks",
+      "productions": [
+        "UsingStatement",
+        "LockStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "checked blocks",
+      "productions": [
+        "CheckedStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    },
+    {
+      "family": "jumps and labels",
+      "productions": [
+        "JumpStatement",
+        "LabeledStatement"
+      ],
+      "positive": "Recursive_statement_bodies_headers_and_spans_match",
+      "negative": "Malformed_or_ineligible_statement_contexts_are_rejected",
+      "scope": "finite syntax/tree/span observations; no binding or executable-control-flow claim"
+    }
+  ],
+  "policy": "CSN2006: each immediate switch has at most one default; nested switches are independent",
+  "compilerObservations": {
+    "duplicate default": "CS0152; parser rejects via CSN2006",
+    "missing using initializer": "CS0210; established semantic exclusion, parser accepts",
+    "empty final section": "CS8070; historical nonempty statement-list grammar rejects",
+    "embedded/statement-expression eligibility": "CS1023/CS0201",
+    "invocation-shaped case": "modern CasePatternSwitchLabelSyntax with CS8022; historical expression grammar accepted, constancy excluded"
+  },
+  "limits": [
+    "No binding, IDisposable conversion or using-resource readonly analysis",
+    "No case constant evaluation/equality, reachability or jump target resolution",
+    "Finite nesting/recovery/profile samples; no whole C#1 completion promotion",
+    "StatementFragment direct-start evidence remains in existing StatementTests"
+  ]
+}

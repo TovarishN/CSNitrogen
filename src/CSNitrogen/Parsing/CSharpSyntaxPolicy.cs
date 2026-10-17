@@ -37,6 +37,21 @@ public static class CSharpSyntaxPolicy
                 if(Kind(target.Index) is "SizedArrayExpression" or "InitializedArrayExpression")
                     issues.Add(new("CSN2005","Direct array creation requires parentheses before element access.",tree.Span(n),IssueCategory.Syntax));
             }
+            if(kind=="SwitchStatement" && tree.ChildCount(n)>5)
+            {
+                bool sawDefault=false;
+                foreach(var section in SyntaxView.Cast<SwitchStatementNode>(tree,n).Sections)
+                    if(tree.ChildCount(section.Index)>0)
+                        foreach(var label in section.Labels)
+                            if(tree.ChildCount(label.Index)>0)
+                            {
+                                int payload=tree.Child(label.Index,0);
+                                int keyword=Kind(payload)=="Group" && tree.ChildCount(payload)>0?tree.Child(payload,0):payload;
+                                if(Text(keyword)!="default")continue;
+                                if(sawDefault)issues.Add(new("CSN2006","A switch statement permits only one default label.",tree.Span(keyword),IssueCategory.Syntax));
+                                sawDefault=true;
+                            }
+            }
             if(kind=="StackAllocExpression")
             {
                 int parent=tree.Parent(n);
