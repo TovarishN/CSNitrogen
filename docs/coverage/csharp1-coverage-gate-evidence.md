@@ -60,3 +60,9 @@ The six-file pinned external corpus is retained as finite regression evidence. A
 Full solution build/test command: `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s`. Result: **706 normal + 2,014 oracle = 2,720 passed**, zero failed/skipped. This includes 25 new audit/identity/legacy-alias observations, existing bounded nested/malformed/directive-expression cases and the external corpus regressions. The audit's host C# source inspection uses explicit CSharp14 with pinned Roslyn 5.0.0; the audited language profile remains CSharp1.
 
 All 118 original/isolated Nitrogen source hashes match. Original revision remains `f5bf525e3e2723a8fe39e127f800f6376345feb1`, with only preexisting ` M docs/editor-support.md` dirty state. All six external corpus hashes match provenance. Production dependency manifests exclude both Microsoft.CodeAnalysis and the Nitrogen.Grammar bootstrap parser; the latter was added only to the oracle test project for authoritative `.ngr` AST inspection. Original corpora, parser grammar, composition membership and accepted-source behavior are unchanged.
+
+## Fresh review
+
+Fresh read-only review of `d2d1805..cfce8e2` found no Critical, Important or Minor issues and judged the bounded structural-audit checkpoint ready to merge. It inspected the complete diff, approved plan/design, execution rulings and saved full-test log. No fix pass was needed.
+
+Review limits are retained: exhaustive historical completeness, unchanged-family assertion/context closure and human review authenticity are not proved by this catalog. Later Unicode, larger corpus work and C# 2–14 remain separate. The reviewer did not execute tests/audits; the 2,720-pass run and dependency/corpus/sibling checks remain author-run evidence. Task 8 and CSharp1 completion remain open.
