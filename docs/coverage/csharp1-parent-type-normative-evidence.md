@@ -49,3 +49,7 @@ Fresh read-only review of `815b43a..d995527` found no Critical, Important or Min
 The reviewer specifically assessed the array-pointer discrepancy. Such referents violate the historical unmanaged restriction and therefore do not demonstrate a missing valid historical array spelling. The limited array/non-array structural closures can stand while recursive pointer/type phase parity remains unresolved. No fix pass or deferred minors resulted.
 
 It did not certify execution results, dependency/source/corpus hashes or sibling state, and did not independently inspect execution logs. It declined full recursive pointer/root-type parity, unmanaged classification, exact diagnostic placement, semantic binding/conversions/layout/execution, whole cast/statement/interface/placement/unsafe context families, or module/policy/feature/CSharp1 completion. Execution and preservation checks above remain author-run evidence; the production and completion limits remain explicit.
+
+## Subsequent boundary decision
+
+The [root-type/pointer continuation](csharp1-pointer-boundary-normative-evidence.md) separately reviews the four source rows left open here. It retains the array-pointer phase difference and closes historical valid-recognition contributions, rather than asserting semantic validation or universal invalid-input tree/phase parity. The counts and pending-row statements above remain the record of the parent-type checkpoint.

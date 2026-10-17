@@ -37,7 +37,7 @@ public class CSharp1StandardCrosswalkTests
         var report = CSharp1StandardCrosswalkAudit.Evaluate(Resource("csharp1-standard-index.json"), Resource("csharp1-standard-crosswalk.json"), Resource("csharp1-coverage-gate.json"));
         Assert.Empty(report.Errors);
         Assert.Equal(362, report.Occurrences); Assert.Equal(346, report.DistinctNames);
-        Assert.Equal(335, report.Pending); Assert.Single(report.Blockers);
+        Assert.Equal(331, report.Pending); Assert.Single(report.Blockers);
     }
 
     [Fact]
@@ -145,20 +145,20 @@ public class CSharp1StandardCrosswalkTests
     }
 
     [Fact]
-    public void Normative_type_reviews_do_not_promote_unreviewed_root_or_pointer_families()
+    public void Normative_type_reviews_preserve_all_other_pending_production_families()
     {
         var map = Resource("csharp1-standard-crosswalk.json");
         var rows = map["productions"]!.AsArray();
         var verified = rows.Where(r => r!["status"]!.GetValue<string>() == "verified").ToArray();
-        Assert.Equal(27, verified.Length);
-        string[] reviewedNames = ["namespace-name", "type-name", "namespace-or-type-name", "qualified-identifier", "rank-specifiers", "rank-specifier", "dim-separators", "predefined-type", "value-type", "struct-type", "simple-type", "numeric-type", "integral-type", "floating-point-type", "enum-type", "reference-type", "class-type", "interface-type", "delegate-type", "array-type", "non-array-type", "return-type"];
+        Assert.Equal(31, verified.Length);
+        string[] reviewedNames = ["namespace-name", "type-name", "namespace-or-type-name", "qualified-identifier", "rank-specifiers", "rank-specifier", "dim-separators", "predefined-type", "value-type", "struct-type", "simple-type", "numeric-type", "integral-type", "floating-point-type", "enum-type", "reference-type", "class-type", "interface-type", "delegate-type", "array-type", "non-array-type", "return-type", "type", "pointer-type", "unmanaged-type"];
         var expectedIds = Resource("csharp1-standard-index.json")["productions"]!.AsArray()
             .Where(p => reviewedNames.Contains(p!["name"]!.GetValue<string>(), StringComparer.Ordinal)).Select(p => p!["id"]!.GetValue<string>()).Order(StringComparer.Ordinal);
         Assert.Equal(expectedIds, verified.Select(r => r!["standardId"]!.GetValue<string>()).Order(StringComparer.Ordinal));
         Assert.All(verified, r => Assert.All(r!["reviews"]!.AsObject(), p => Assert.Equal("verified", p.Value!.GetValue<string>())));
         var report = CSharp1CoverageGateAudit.Evaluate(Resource("csharp1-coverage-gate.json"));
         Assert.Empty(report.Errors); Assert.False(report.Complete);
-        Assert.Contains(report.Blockers, b => b.StartsWith("Crosswalk: 335 ", StringComparison.Ordinal));
+        Assert.Contains(report.Blockers, b => b.StartsWith("Crosswalk: 331 ", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -169,7 +169,14 @@ public class CSharp1StandardCrosswalkTests
         Assert.Equal(16, expected.Count);
         var rows = Resource("csharp1-standard-crosswalk.json")["productions"]!.AsArray();
         Assert.All(rows.Where(p => expected.Contains(p!["standardId"]!.GetValue<string>())), p => Assert.Equal("verified", p!["status"]!.GetValue<string>()));
-        string[] deferred = ["A:360:5:type", "A:377:39:type", "A:377:43:pointer-type", "A:377:46:unmanaged-type"];
-        Assert.All(rows.Where(p => deferred.Contains(p!["standardId"]!.GetValue<string>(), StringComparer.Ordinal)), p => Assert.Equal("observed", p!["status"]!.GetValue<string>()));
+        Assert.All(rows.Where(p => p!["standardId"]!.GetValue<string>().EndsWith(":cast-expression", StringComparison.Ordinal)), p => Assert.Equal("observed", p!["status"]!.GetValue<string>()));
+    }
+
+    [Fact]
+    public void Root_pointer_review_closes_exactly_the_four_normalized_source_occurrences()
+    {
+        string[] reviewed = ["A:360:5:type", "A:377:39:type", "A:377:43:pointer-type", "A:377:46:unmanaged-type"];
+        var rows = Resource("csharp1-standard-crosswalk.json")["productions"]!.AsArray();
+        Assert.All(reviewed, id => Assert.Equal("verified", rows.Single(p => p!["standardId"]!.GetValue<string>() == id)!["status"]!.GetValue<string>()));
     }
 }
