@@ -8,10 +8,6 @@ public class PreprocessingParityTests
 {
     public static IEnumerable<object[]> Sources()
     {
-        yield return ["#define tr\\u0075e\n#if tr\\u0075e\nclass C {}\n#endif"];
-        yield return ["#define fals\\u0065\n#if fals\\u0065\nclass C {}\n#endif"];
-        yield return ["#if tr\\u0075e\nclass C {}\n#endif"];
-        yield return ["#if tr\u200Cue\nclass C {}\n#endif"];
         yield return ["#line 16707566 nonsense\nclass C {}"];
         yield return ["#line 16707567 \"unterminated\nclass C {}"];
         yield return ["#line 16707566 \"valid.cs\" junk\nclass C {}"];
@@ -23,7 +19,6 @@ public class PreprocessingParityTests
         yield return ["#define class\n#if class\nclass C {}\n#endif"];
         yield return ["#define \\u0058\n#if X\nclass C {}\n#endif"];
         yield return ["#if false\n#if F()\n#endif\n#endif"];
-        yield return ["#if false\n#nullable enable\n#endif\nclass C {}"];
         yield return ["#if true\n#region group\n#else\n#endregion\n#endif"];
         yield return ["#if true\n#endif junk"];
         yield return ["#if true\nclass C {}"];
@@ -69,6 +64,32 @@ public class PreprocessingParityTests
         Assert.Equal(oracle.Tree.GetMappedLineSpan(identifier.Span).StartLinePosition.Line,current.MapLocation(identifier.SpanStart).LogicalLine);
         Assert.Contains(current.Issues,i=>i.Code=="CSN1208");
         Assert.DoesNotContain(historical.Issues,i=>i.Code=="CSN1208");
+    }
+    public static IEnumerable<object[]> HistoricalConditionalDifferences()
+    {
+        yield return ["#define tr\\u0075e\n#if tr\\u0075e\nclass C {}\n#endif"];
+        yield return ["#define fals\\u0065\n#if fals\\u0065\nclass C {}\n#endif"];
+        yield return ["#if tr\\u0075e\nclass C {}\n#endif"];
+        yield return ["#if tr\u200Cue\nclass C {}\n#endif"];
+        yield return ["#if false\n#nullable enable\n#endif\nclass C {}"];
+    }
+    [Theory][MemberData(nameof(HistoricalConditionalDifferences))]
+    public void Historical_conditional_identity_and_inactive_grammar_differences_are_explicit(string source)
+    {
+        using var historical=CSharpParser.Parse(new(source,"CSharp1","physical.cs",[]));
+        using var current=CSharpParser.Parse(new(source,"CSharp14","physical.cs",[]));
+        var oracle=Oracle.Observe(source,LanguageVersion.CSharp1);
+        Assert.True(current.Accepted);
+        Assert.DoesNotContain(oracle.SyntaxDiagnostics,d=>d.Severity==DiagnosticSeverity.Error);
+        if(source.Contains("#nullable",StringComparison.Ordinal))Assert.False(historical.Accepted);
+        else
+        {
+            Assert.True(historical.Accepted);
+            int compilerClasses=oracle.Tree.GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>().Count();
+            Assert.Equal(compilerClasses,current.Classes.Count);
+            // Defining escaped true is the shared control. Other cases preserve the historical difference.
+            if(!source.StartsWith("#define tr",StringComparison.Ordinal))Assert.NotEqual(compilerClasses,historical.Classes.Count);
+        }
     }
     [Theory][MemberData(nameof(Sources))]
     public void Public_pipeline_matches_active_source_and_directive_diagnostics(string source)

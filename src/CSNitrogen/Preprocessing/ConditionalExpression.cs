@@ -58,9 +58,10 @@ internal sealed class ConditionalExpression
             string token=_text[start.._position];
             if(token=="true")return true;if(token=="false")return false;
             if(!ConditionalSymbols.TryNormalize(token,_version,out var normalized)){_position=start;throw new FormatException("Expected a conditional symbol or boolean literal.");}
-            // Roslyn recognizes decoded boolean spellings as literals in expressions,
-            // although escaped spellings are permitted in definition directives.
-            if(normalized=="true")return true;if(normalized=="false")return false;
+            // Current compiler compatibility decodes boolean spellings as literals.
+            // The first edition treats escaped/formatting spellings as symbols.
+            if(!UnicodePolicy.IsHistorical(_version))
+            {if(normalized=="true")return true;if(normalized=="false")return false;}
             return _symbols.Contains(normalized);
         }
         finally {_depth--;}

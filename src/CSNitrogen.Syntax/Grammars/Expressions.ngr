@@ -21,7 +21,7 @@ syntax module CSharp.Expressions
  syntax SizedArray = "new" Element:CSharp.NamesTypes.TypeBase "[" Sizes:(Expression; ",")+ "]" Ranks:CSharp.NamesTypes.ArrayRank* Initializer:ArrayInitializer?;
  syntax InitializedArray = "new" Element:CSharp.NamesTypes.TypeBase Ranks:CSharp.NamesTypes.ArrayRank+ Initializer:ArrayInitializer;
  syntax DefiniteCastType = CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank+ / CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank*;
- syntax AfterNamedCast = CSharp.Lexical.Identifier / Literal / "(" / "!" / "~" / "this" / "base" / "new" / "typeof" / "sizeof" / "checked" / "unchecked";
+ syntax AfterNamedCast = CSharp.Lexical.Identifier / CSharp.NamesTypes.BuiltinType / Literal / "(" / "!" / "~" / "this" / "base" / "new" / "typeof" / "sizeof" / "checked" / "unchecked";
  extensible syntax CastHead
  {
   | DefiniteCast = "(" Type:DefiniteCastType ")"

@@ -15,9 +15,30 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
     {
         var report = CSharp1CoverageGateAudit.Evaluate(Ledger());
         Assert.Empty(report.Errors); Assert.False(report.Complete);
-        Assert.Contains(report.Blockers, b => b.Contains("historical-standard-crosswalk", StringComparison.Ordinal));
-        Assert.Contains(report.Blockers, b => b.Contains("independent-context-review", StringComparison.Ordinal));
+        Assert.Single(report.Blockers);
+        Assert.Contains(report.Blockers, b => b.Contains("runtime-profile-contract", StringComparison.Ordinal));
         output.WriteLine($"Audit: modules={report.Modules}, authored={report.Productions}, policySources={report.PolicySources}, sourceCodes={report.PolicyCodes}, syntaxFeatures={report.SyntaxFeatures}, blockers={report.Blockers.Count}");
+    }
+
+    [Fact]
+    public void Source_review_cannot_bypass_the_runtime_profile_contract()
+    {
+        var ledger=Ledger();var inventory=CSharp1CoverageGateAudit.Inventory();
+        foreach(string group in new[]{"modules","policies"})
+            foreach(var row in ledger[group]!.AsArray())row!["status"]="verified";
+        foreach(var obligation in ledger["obligations"]!.AsArray())
+            if(obligation!["id"]!.GetValue<string>()!="runtime-profile-contract")obligation["status"]="verified";
+        foreach(var feature in inventory["features"]!.AsArray()){feature!["status"]="verified";feature["reviewed"]=true;}
+        var map=JsonNode.Parse(typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen.csharp1-standard-crosswalk.json")!)!.AsObject();
+        foreach(var row in map["productions"]!.AsArray())
+        {row!["status"]="verified";foreach(var key in row["reviews"]!.AsObject().Select(p=>p.Key).ToArray())row["reviews"]![key]="verified";}
+        var report=CSharp1CoverageGateAudit.Evaluate(ledger,inventory,crosswalk:map);
+        Assert.Empty(report.Errors);Assert.False(report.Complete);
+        Assert.Contains(report.Blockers,b=>b.Contains("runtime-profile-contract",StringComparison.Ordinal));
+        var profile=ProfileResolver.Resolve("CSharp1").Profile!;
+        Assert.False(profile.Complete);Assert.Equal(21,profile.MissingFeatures.Count);
+        Assert.Contains("csharp-1.0.events",profile.MissingFeatures);
+        Assert.Contains(ProfileResolver.ResolveCustom("events-only",["csharp-1.0.events"]).Issues,i=>i.Code=="unknown-feature");
     }
 
     [Theory]
@@ -72,6 +93,8 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
         foreach (var item in ledger["modules"]!.AsArray().Concat(ledger["policies"]!.AsArray())) item!["status"] = "verified";
         var inventory = CSharp1CoverageGateAudit.Inventory();
         foreach (var feature in inventory["features"]!.AsArray()) feature!["status"] = "verified";
+        foreach(var obligation in ledger["obligations"]!.AsArray())
+            obligation!["status"]=obligation["id"]!.GetValue<string>()=="historical-standard-crosswalk"?"pending":"verified";
         var report = CSharp1CoverageGateAudit.Evaluate(ledger, inventory);
         Assert.False(report.Complete); Assert.Contains(report.Blockers, b => b.Contains("historical-standard-crosswalk", StringComparison.Ordinal));
     }

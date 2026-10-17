@@ -8,7 +8,7 @@
       "productions": [
         "rule:LegacyCompilationUnit"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -22,7 +22,7 @@
           "method": "Legacy_alias_preserves_full_consumption"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Lexical.ngr",
@@ -475,7 +475,7 @@
         "rule:UnicodeStart",
         "rule:VerbatimString"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -489,7 +489,7 @@
           "method": "String_fragments"
         }
       ],
-      "scope": "Grouped finite fixture evidence; individual production/context review remains pending. Generated lexical helper names are authored fragments, not separate ECMA syntax obligations."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/NamesTypes.ngr",
@@ -506,7 +506,7 @@
         "rule:TypeFragment",
         "rule:TypeReference"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -520,7 +520,7 @@
           "method": "Safe_type_fragment_rejects_malformed_later_and_unsafe_forms"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Expressions.ngr",
@@ -598,7 +598,7 @@
         "rule:RightShiftOp",
         "rule:SizedArray"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -612,7 +612,7 @@
           "method": "Malformed_arrays_initializers_and_arguments_are_rejected"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Statements.ngr",
@@ -651,7 +651,7 @@
         "rule:VariableInitializer",
         "rule:WhileStatement"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -665,7 +665,7 @@
           "method": "Malformed_or_ineligible_statement_contexts_are_rejected"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Attributes.ngr",
@@ -687,7 +687,7 @@
         "rule:Parameters",
         "rule:PositionalAttributeArgument"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -701,7 +701,7 @@
           "method": "Recovery_nodes_remain_rejected_without_policy_exceptions"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Declarations.ngr",
@@ -749,7 +749,7 @@
         "rule:StructDeclaration",
         "rule:TypeDeclaration"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -763,7 +763,7 @@
           "method": "Malformed_later_and_class_only_forms_are_excluded"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/CompilationUnits.ngr",
@@ -775,7 +775,7 @@
         "rule:NamespaceMember",
         "rule:UsingDirective"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -789,7 +789,7 @@
           "method": "Invalid_or_later_source_contexts_are_rejected"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/Unsafe.ngr",
@@ -812,7 +812,7 @@
         "rule:SizeOfExtendedType",
         "rule:UnsafeBlock"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -826,7 +826,7 @@
           "method": "Unsafe_module_omission_rejects_each_selected_surface"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     },
     {
       "grammar": "Grammars/GlobalTargetsHistorical.ngr",
@@ -837,7 +837,7 @@
         "rule:TargetPart",
         "rule:TargetToken"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -851,7 +851,7 @@
           "method": "Longer_target_names_are_not_global_targets"
         }
       ],
-      "scope": "Grouped finite fixture evidence; standard production crosswalk and individual context review remain pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
     }
   ],
   "policies": [
@@ -859,14 +859,19 @@
       "source": "Parsing/CSharpAttributePolicy.cs",
       "codes": [
         "CSN2005",
-        "CSN2006"
+        "CSN2006",
+        "CSN2014"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
           "path": "tests/CSNitrogen.Tests/Syntax/AttributeConformanceTests.cs",
           "method": "Attribute_syntax_contexts"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/PendingNormativeGapTests.cs",
+          "method": "Unrecognized_historical_attribute_targets_warn_without_binding_rejection"
         }
       ],
       "negative": [
@@ -881,7 +886,7 @@
       "codes": [
         "CSN2012"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -902,7 +907,7 @@
         "CSN2010",
         "CSN2011"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -926,20 +931,30 @@
         "CSN2004",
         "CSN2005",
         "CSN2006",
-        "CSN2013"
+        "CSN2013",
+        "CSN2015",
+        "CSN2016"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
           "path": "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
           "method": "Source_contexts"
+        },
+        {
+          "path": "tests/CSNitrogen.Oracle.Tests/PendingExpressionClosureTests.cs",
+          "method": "Parentheses_allow_type_operator_results_at_tighter_binary_tiers"
         }
       ],
       "negative": [
         {
           "path": "tests/CSNitrogen.Tests/Syntax/ContextConformanceTests.cs",
           "method": "Recovered_declarations_are_rejected_without_policy_exceptions"
+        },
+        {
+          "path": "tests/CSNitrogen.Oracle.Tests/PendingExpressionClosureTests.cs",
+          "method": "Tighter_binary_operators_cannot_take_an_unparenthesized_type_operator_result"
         }
       ]
     },
@@ -949,7 +964,7 @@
         "CSN2020",
         "CSN2021"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -973,7 +988,7 @@
         "CSN1104",
         "CSN1105"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -1000,12 +1015,16 @@
         "CSN1207",
         "CSN1208"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
           "path": "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs",
           "method": "Directive_effects_and_invalid_forms"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Preprocessing/ExactLineMappingTests.cs",
+          "method": "Exact_query_preserves_large_values_spelling_spans_filename_and_reset"
         }
       ],
       "negative": [
@@ -1021,7 +1040,7 @@
         "CSN1001",
         "CSN1002"
       ],
-      "status": "observed",
+      "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "positive": [
         {
@@ -1041,7 +1060,7 @@
     "attribute-argument-order": [
       "Parsing/CSharpAttributePolicy.cs"
     ],
-    "attribute-non-assignment-expression": [
+    "attribute-target-recognition": [
       "Parsing/CSharpAttributePolicy.cs"
     ],
     "csharp-trivia": [
@@ -1074,15 +1093,21 @@
   ],
   "obligations": [
     {
-      "id": "historical-standard-crosswalk",
+      "id": "runtime-profile-contract",
       "status": "pending",
-      "reason": "The independent Appendix A heading index and candidate crosswalk now exist. Close each nominated mapping against normative RHS/prose and production-specific evidence; source headings and owner identity alone do not establish historical conformance.",
+      "reason": "The public CSharp1 resolver reports 21 coverage inventory identities missing from selectable canonical capabilities. Choose explicit bundle coverage mappings versus granular feature modules before claiming public profile completeness; see csharp1-feature-catalog-decision.md.",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
+    },
+    {
+      "id": "historical-standard-crosswalk",
+      "status": "verified",
+      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is a separate pending obligation.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     },
     {
       "id": "independent-context-review",
-      "status": "pending",
-      "reason": "Close production-specific positive, negative, ambiguity, source-context and diagnostic observations against the historical crosswalk; grouped fixture links remain finite evidence.",
+      "status": "verified",
+      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is a separate pending obligation.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     }
   ]

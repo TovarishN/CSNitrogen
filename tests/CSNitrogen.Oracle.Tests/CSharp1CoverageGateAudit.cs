@@ -143,7 +143,7 @@ internal static class CSharp1CoverageGateAudit
             Exact("PolicyGroups", policyGroups, ledger.PolicyGroups.Keys);
             Exact("SemanticExclusions", exclusions, ledger.SemanticExclusions.Select(e => e.Id));
             foreach (var exclusion in ledger.SemanticExclusions) { if (string.IsNullOrWhiteSpace(exclusion.Reason)) errors.Add("SemanticExclusions: missing reason"); Reference(exclusion.Reference, exclusion.Id); }
-            Exact("Obligations", new[] { "historical-standard-crosswalk", "independent-context-review" }, ledger.Obligations.Select(o => o.Id));
+            Exact("Obligations", new[] { "historical-standard-crosswalk", "independent-context-review", "runtime-profile-contract" }, ledger.Obligations.Select(o => o.Id));
             foreach (var obligation in ledger.Obligations) { Status(obligation.Status, "Obligation " + obligation.Id); if (string.IsNullOrWhiteSpace(obligation.Reason)) errors.Add("Obligations: missing reason"); Reference(obligation.Reference, obligation.Id); }
         }
         catch (Exception error) { errors.Add("Schema: " + error.Message); }

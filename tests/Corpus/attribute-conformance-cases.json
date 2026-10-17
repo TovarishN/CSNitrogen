@@ -33,12 +33,12 @@
   },
   {
     "source": "[A(x+=1)]",
-    "expected": false,
+    "expected": true,
     "oracleDifference": "non-assignment-expression"
   },
   {
     "source": "[A(X=y=1)]",
-    "expected": false,
+    "expected": true,
     "oracleDifference": "non-assignment-expression"
   },
   {

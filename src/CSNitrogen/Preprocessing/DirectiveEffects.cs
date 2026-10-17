@@ -25,9 +25,9 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
                 if(d.Active)issues.Add(new(d.Kind=="error"?"CSN1202":"CSN1203",d.Argument.Trim(),d.Span,IssueCategory.Preprocessing,
                     d.Kind=="error"?DiagnosticSeverity.Error:DiagnosticSeverity.Warning));break;
             case "line":if(d.Active||UnicodePolicy.IsHistorical(version))ApplyLine(d,argument);break;
-            case "nullable":if(d.Active)Later(d,8);break;
-            case "pragma":if(d.Active)Later(d,2);break;
-            case "" when d.Argument.StartsWith(':'):if(d.Active)Later(d,14);break;
+            case "nullable":if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,8);break;
+            case "pragma":if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,2);break;
+            case "" when d.Argument.StartsWith(':'):if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,14);break;
             default:Error("CSN1204","Unknown preprocessing directive.",d);break;
         }
     }

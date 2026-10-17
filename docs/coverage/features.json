@@ -9,7 +9,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/attributes",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.expressions"
       ],
@@ -21,7 +21,7 @@
       ],
       "policies": [
         "attribute-argument-order",
-        "attribute-non-assignment-expression"
+        "attribute-target-recognition"
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
@@ -34,8 +34,8 @@
         "tests/CSNitrogen.Tests/Syntax/CompilationUnitConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CompilationUnitConformanceParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Version profiles select exactly one global-target extension. The listed extensions are alternatives, not simultaneous module requirements. Attribute binding and target applicability remain excluded. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded."
+      "status": "verified",
+      "scopeNote": "Version profiles select exactly one global-target extension. The listed extensions are alternatives, not simultaneous module requirements. Attribute binding and target applicability remain excluded. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.character-literals",
@@ -43,7 +43,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -55,7 +55,7 @@
         "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.conditional-compilation",
@@ -63,7 +63,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.unicode-identifiers"
       ],
@@ -80,7 +80,7 @@
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.constant-expressions",
@@ -103,7 +103,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.unicode-identifiers"
       ],
@@ -118,7 +118,7 @@
         "tests/CSNitrogen.Oracle.Tests/PreprocessingParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.escaped-identifiers",
@@ -126,7 +126,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -140,17 +140,17 @@
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 lexical category; recorded BMP Unicode table agrees with pinned Roslyn. Supplementary identifier characters remain outside the compiler-compatible subset."
+      "scopeNote": "C# 1 lexical category; recorded BMP Unicode table agrees with pinned Roslyn. Supplementary identifier characters remain outside the compiler-compatible subset. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.expressions",
       "title": "expressions",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "conflicts": [],
       "reviewed": true,
-      "status": "implemented",
+      "status": "verified",
       "requires": [
         "baseline.names-and-types",
         "baseline.numeric-literals"
@@ -171,7 +171,7 @@
         "tests/CSNitrogen.Tests/Syntax/ArrayArgumentConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/ArrayArgumentConformanceParityTests.cs"
       ],
-      "scopeNote": "Targeted C# 1 expression family implemented; cast/operator and array/initializer/argument evidence recorded in their production ledgers. CSN2005 enforces direct array creation element-target restriction; initialized direct indexing is an explicit Roslyn discrepancy. Remaining expression/context closure pending. All profiles remain partial."
+      "scopeNote": "Targeted C# 1 expression family implemented; cast/operator and array/initializer/argument evidence recorded in their production ledgers. CSN2005 enforces direct array creation element-target restriction; initialized direct indexing is an explicit Roslyn discrepancy. Finite expression/context source review is recorded in csharp1-pending-normative-review.md. All profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.location-directives",
@@ -179,7 +179,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.unicode-identifiers"
       ],
@@ -196,7 +196,7 @@
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.members",
@@ -204,7 +204,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.attributes",
         "baseline.statements"
@@ -223,8 +223,8 @@
         "tests/CSNitrogen.Oracle.Tests/ContextConformanceParityTests.cs",
         "tests/CSNitrogen.Oracle.Tests/DeclarationConformanceParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded."
+      "status": "verified",
+      "scopeNote": "Historical source alternatives/context are reviewed with finite witnesses; universal diagnostic-phase parity is not claimed. See csharp1-source-production-map.md. All profiles remain partial. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.names-and-types",
@@ -232,7 +232,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.unicode-identifiers"
       ],
@@ -249,8 +249,8 @@
         "tests/CSNitrogen.Tests/Syntax/TypeConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/TypeConformanceParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Nonpointer module has explicit per-production finite positive/negative and typed child/span evidence; see csharp1-type-productions.json and csharp1-type-conformance-evidence.md. Full consuming-context closure remains pending. All profiles remain partial."
+      "status": "verified",
+      "scopeNote": "Nonpointer module has explicit per-production finite positive/negative and typed child/span evidence; see csharp1-type-productions.json and csharp1-type-conformance-evidence.md. Consuming-context source review is recorded in csharp1-pending-normative-review.md. All profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.namespace-declarations",
@@ -258,7 +258,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.members"
       ],
@@ -275,8 +275,8 @@
         "tests/CSNitrogen.Tests/Syntax/CompilationUnitConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CompilationUnitConformanceParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded."
+      "status": "verified",
+      "scopeNote": "Historical source alternatives/context are reviewed with finite witnesses; universal diagnostic-phase parity is not claimed. See csharp1-source-production-map.md. All profiles remain partial. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.numeric-literals",
@@ -284,7 +284,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -296,7 +296,7 @@
         "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.regular-strings",
@@ -304,7 +304,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -316,7 +316,7 @@
         "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.statement-expressions",
@@ -324,7 +324,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.expressions"
       ],
@@ -339,8 +339,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "status": "verified",
+      "scopeNote": "Historical source alternatives/context are reviewed with finite witnesses; universal diagnostic-phase parity is not claimed. See csharp1-source-production-map.md. All profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.statements",
@@ -348,7 +348,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.statement-expressions"
       ],
@@ -367,8 +367,8 @@
         "tests/CSNitrogen.Tests/Syntax/StatementConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/StatementConformanceParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Finite per-family statement/control-tree evidence recorded in csharp1-statement-productions.json. CSN2006 enforces default-label cardinality. Missing using initializers, constant values, jump target resolution and other semantic validity remain excluded. Broader context/recovery closure pending; all profiles remain partial."
+      "status": "verified",
+      "scopeNote": "Finite per-family statement/control-tree evidence recorded in csharp1-statement-productions.json. CSN2006 enforces default-label cardinality. Missing using initializers, constant values, jump target resolution and other semantic validity remain excluded. Finite context/source diagnostics are reviewed; universal recovery parity is not claimed and public profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.trivia",
@@ -376,7 +376,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [],
@@ -391,7 +391,7 @@
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.unicode-identifiers",
@@ -399,7 +399,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -413,17 +413,17 @@
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "CSharp1 selects pinned Unicode 3.0 BMP categories; other partial profiles retain current .NET categories. Shared grammar is a union; public pipeline applies the selected category policy. Supplementary identifiers and semantic normalization/binding are not claimed."
+      "scopeNote": "CSharp1 selects pinned Unicode 3.0 BMP categories; other partial profiles retain current .NET categories. Shared grammar is a union; public pipeline applies the selected category policy. Supplementary identifiers and semantic normalization/binding are not claimed. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.unsafe-syntax",
       "title": "unsafe-syntax",
       "introduced": "1.0",
       "classification": "syntax-or-policy",
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "conflicts": [],
       "reviewed": true,
-      "status": "implemented",
+      "status": "verified",
       "requires": [
         "baseline.members"
       ],
@@ -439,7 +439,7 @@
         "tests/CSNitrogen.Tests/Syntax/UnsafeConformanceTests.cs",
         "tests/CSNitrogen.Oracle.Tests/UnsafeConformanceParityTests.cs"
       ],
-      "scopeNote": "Finite typed unsafe syntax and exact configured module-omission evidence is mapped in csharp1-unsafe-productions.json and csharp1-unsafe-conformance-evidence.md. This is syntactic composition, not semantic safety. Full conformance and runtime customization remain open; profiles remain partial."
+      "scopeNote": "Finite typed unsafe syntax and exact configured module-omission evidence is mapped in csharp1-unsafe-productions.json and csharp1-unsafe-conformance-evidence.md. This is syntactic composition, not semantic safety. Full conformance and runtime customization remain open; profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "baseline.verbatim-strings",
@@ -447,7 +447,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/grammar",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [],
       "conflicts": [],
       "grammars": [
@@ -459,7 +459,7 @@
         "tests/CSNitrogen.Oracle.Tests/LexicalParityTests.cs"
       ],
       "status": "verified",
-      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial."
+      "scopeNote": "C# 1 subset verified by targeted fixtures; all language profiles remain partial. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.attributes",
@@ -481,8 +481,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.boxing-and-unboxing",
@@ -520,8 +520,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.delegates",
@@ -543,8 +543,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.enums",
@@ -566,8 +566,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.events",
@@ -589,8 +589,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.expressions",
@@ -612,8 +612,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.goto-statement",
@@ -635,8 +635,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.indexers",
@@ -658,8 +658,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.interfaces",
@@ -681,8 +681,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.literals",
@@ -708,8 +708,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.operator-overloading",
@@ -731,8 +731,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.output-parameters-out-https-docs-microsoft-com-dotnet-csharp-language-reference-keywords-out-and-ref-https-docs-microsoft-com-dotnet-csharp-language-reference-keywords-ref",
@@ -755,8 +755,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.params-arrays",
@@ -779,8 +779,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.preprocessor-directives",
@@ -806,8 +806,8 @@
         "tests/CSNitrogen.Tests/Preprocessing/ConditionalPreprocessorTests.cs",
         "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim. Explicitly maps to csharp1-preprocessing; completion remains pending the historical production crosswalk and context review in csharp1-coverage-gate.json."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Maps to the reviewed csharp1-preprocessing policy and historical source/context review; public capability mapping remains separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.properties",
@@ -829,8 +829,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.structs",
@@ -852,8 +852,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.unsafe-code-and-pointers",
@@ -875,8 +875,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.unsigned-integer-types",
@@ -898,8 +898,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.user-defined-conversion-operators",
@@ -921,8 +921,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.using-statement",
@@ -944,8 +944,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.0.verbatim-identifier",
@@ -967,8 +967,8 @@
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
         "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
       ],
-      "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "status": "verified",
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context source recognition is reviewed; public release/capability completeness is separately pending. Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     },
     {
       "id": "csharp-1.2.dispose-in-foreach",
@@ -3451,7 +3451,7 @@
       "introduced": "1.0",
       "classification": "syntax-or-policy",
       "reviewed": true,
-      "reference": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
       "requires": [
         "baseline.unicode-identifiers"
       ],
@@ -3466,7 +3466,8 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/GeneratedSyntaxTests.cs"
       ],
-      "status": "verified"
+      "status": "verified",
+      "scopeNote": " Source recognition reviewed against the pinned first edition in csharp1-pending-normative-review.md. This inventory identity does not imply independently selectable/removable capability support; runtime-profile-contract remains pending."
     }
   ]
 }

@@ -6,7 +6,7 @@ namespace CSNitrogen.Parsing;
 /// <summary>Attribute argument restrictions that depend only on generated syntax.</summary>
 internal static class CSharpAttributePolicy
 {
-    public static IReadOnlyList<ParseIssue> Check(SyntaxTree tree)
+    public static IReadOnlyList<ParseIssue> Check(SyntaxTree tree,Version version)
     {
         var issues = new List<ParseIssue>();
         var namedOwners = new HashSet<int>();
@@ -17,6 +17,18 @@ internal static class CSharpAttributePolicy
         for (int node = 0; node < tree.NodeCount; node++)
         {
             string kind = Kind(node);
+            if (UnicodePolicy.IsHistorical(version) && kind == "AttributeSection" && tree.ChildCount(node) >= 5)
+            {
+                var section=SyntaxView.Cast<AttributeSectionNode>(tree,node);
+                if(section.Target.HasValue && section.Target.Value.ChildCount>0)
+                {
+                    var target=section.Target.Value.Child(0);
+                    bool recognized=UnicodePolicy.TryNormalize(target.ToString(),version,true,out var name)
+                        && name is "field" or "event" or "method" or "param" or "property" or "return" or "type";
+                    if(!recognized)issues.Add(new("CSN2014","Unrecognized attribute target; applicability is deferred to the semantic consumer.",
+                        target.Span,IssueCategory.Syntax,DiagnosticSeverity.Warning));
+                }
+            }
             bool named = kind == "NamedAttributeArgument";
             if (!named && kind != "PositionalAttributeArgument") continue;
             if (tree.ChildCount(node) < (named ? 3 : 1)) continue; // recovered node
@@ -34,7 +46,7 @@ internal static class CSharpAttributePolicy
             int value = named
                 ? SyntaxView.Cast<NamedAttributeArgumentNode>(tree, node).Value.Index
                 : SyntaxView.Cast<PositionalAttributeArgumentNode>(tree, node).Value.Index;
-            if (Kind(value) == "AssignmentExpression")
+            if (!UnicodePolicy.IsHistorical(version) && Kind(value) == "AssignmentExpression")
                 issues.Add(new("CSN2006", "An attribute argument requires a non-assignment expression.",
                     tree.Span(value), IssueCategory.Syntax));
         }
