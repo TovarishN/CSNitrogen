@@ -69,3 +69,7 @@ The reviewer did not certify normative RHS/prose equivalence, unchanged cast/sta
 ## Normative helper continuation
 
 The [name/rank normative review](csharp1-name-rank-normative-evidence.md) closes eleven helper-production occurrences against normative chapters and targeted observations. The current crosswalk has 11 verified and 351 pending rows. Parent array/type/return rows, feature/module/policy states and global completion obligations remain pending; the initial 362-pending result above is checkpoint history.
+
+## Parent-type continuation
+
+After PR #12, the [parent type/array/return review](csharp1-parent-type-normative-evidence.md) reviews sixteen additional normalized contributing type-category, base/rank and return-wrapper occurrences. Current declarations are 27 verified and 335 pending. Root type, pointer and unmanaged rows retain the explicit array-pointer oracle phase difference and remain pending; module/policy/feature/global obligations are not promoted. Earlier counts above record their respective checkpoints.
