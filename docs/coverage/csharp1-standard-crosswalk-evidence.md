@@ -21,7 +21,7 @@ The [candidate crosswalk](csharp1-standard-crosswalk.json) nominates exact autho
 | directive/comment productions | scanner/preprocessor/trivia policies | inactive text, line structure and diagnostic behavior |
 | attribute target productions | historical target recognizer/attribute tokens | normative target prose, including implementation-defined targets |
 
-Every row remains observed, with four pending review dimensions: normative prose, positive/negative evidence, ambiguity/source context, and authored spans/diagnostics. Existing gate module/policy fixture links provide family-level evidence only. This checkpoint does not claim 362 independent conformance tests. An owner nomination does not prove that missing syntax has been ruled out. A future discovered gap can be marked `unresolved` with a reason while preserving its source occurrence.
+At the initial source-index checkpoint every row remained observed, with four pending review dimensions: normative prose, positive/negative evidence, ambiguity/source context, and authored spans/diagnostics. Existing gate module/policy fixture links provide family-level evidence only. This checkpoint does not claim 362 independent conformance tests. An owner nomination does not prove that missing syntax has been ruled out. A future discovered gap can be marked `unresolved` with a reason while preserving its source occurrence.
 
 Appendix A is expressly informative. The normative chapters and prose constraints remain authoritative; the source inventory cannot substitute for their review. No module, policy or feature status is promoted, and both historical-crosswalk/context obligations remain pending. Semantic binding, constant evaluation, lowering and execution remain outside the approved parser scope.
 
@@ -65,3 +65,7 @@ All 118 source hashes match both the original and isolated Nitrogen copies. The 
 Fresh read-only whole-branch review of `3e2ed67..0c8aecf` found no Critical, Important or Minor issues and judged this partial structural-traceability checkpoint ready to merge. It independently compared the extracted-text heading list with all 362 committed occurrences in order, checked the supplied PDF hash, and reviewed the complete branch, audit failure paths, identity integration and saved test evidence. No fix pass was required.
 
 The reviewer did not certify normative RHS/prose equivalence, unchanged cast/statement/interface/source-context/unsafe behavior, or the authenticity/sufficiency of future human review declarations. Those remain substantive obligations. It did not rerun tests or independently repeat sibling/corpus hashing; those results remain author-run evidence. No profile promotion follows from this review.
+
+## Normative helper continuation
+
+The [name/rank normative review](csharp1-name-rank-normative-evidence.md) closes eleven helper-production occurrences against normative chapters and targeted observations. The current crosswalk has 11 verified and 351 pending rows. Parent array/type/return rows, feature/module/policy states and global completion obligations remain pending; the initial 362-pending result above is checkpoint history.

@@ -32,12 +32,12 @@ public class CSharp1StandardCrosswalkTests
     }
 
     [Fact]
-    public void Every_standard_occurrence_has_a_valid_but_unverified_owner_mapping()
+    public void Every_standard_occurrence_has_a_valid_owner_mapping_with_remaining_review_obligations()
     {
         var report = CSharp1StandardCrosswalkAudit.Evaluate(Resource("csharp1-standard-index.json"), Resource("csharp1-standard-crosswalk.json"), Resource("csharp1-coverage-gate.json"));
         Assert.Empty(report.Errors);
         Assert.Equal(362, report.Occurrences); Assert.Equal(346, report.DistinctNames);
-        Assert.Equal(362, report.Pending); Assert.Single(report.Blockers);
+        Assert.Equal(351, report.Pending); Assert.Single(report.Blockers);
     }
 
     [Fact]
@@ -142,5 +142,22 @@ public class CSharp1StandardCrosswalkTests
         Assert.Equal(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs));
         Assert.NotEqual(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs.Where(p => p.Key != "CSNitrogen." + suffix)));
         Assert.NotEqual(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs.Select(p => p.Key == "CSNitrogen." + suffix ? new(p.Key, p.Value.Concat(Encoding.UTF8.GetBytes(" ")).ToArray()) : p)));
+    }
+
+    [Fact]
+    public void Narrow_normative_name_rank_review_does_not_promote_parent_families()
+    {
+        var map = Resource("csharp1-standard-crosswalk.json");
+        var rows = map["productions"]!.AsArray();
+        var verified = rows.Where(r => r!["status"]!.GetValue<string>() == "verified").ToArray();
+        Assert.Equal(11, verified.Length);
+        string[] reviewedNames = ["namespace-name", "type-name", "namespace-or-type-name", "qualified-identifier", "rank-specifiers", "rank-specifier", "dim-separators", "predefined-type"];
+        var expectedIds = Resource("csharp1-standard-index.json")["productions"]!.AsArray()
+            .Where(p => reviewedNames.Contains(p!["name"]!.GetValue<string>(), StringComparer.Ordinal)).Select(p => p!["id"]!.GetValue<string>()).Order(StringComparer.Ordinal);
+        Assert.Equal(expectedIds, verified.Select(r => r!["standardId"]!.GetValue<string>()).Order(StringComparer.Ordinal));
+        Assert.All(verified, r => Assert.All(r!["reviews"]!.AsObject(), p => Assert.Equal("verified", p.Value!.GetValue<string>())));
+        var report = CSharp1CoverageGateAudit.Evaluate(Resource("csharp1-coverage-gate.json"));
+        Assert.Empty(report.Errors); Assert.False(report.Complete);
+        Assert.Contains(report.Blockers, b => b.StartsWith("Crosswalk: 351 ", StringComparison.Ordinal));
     }
 }
