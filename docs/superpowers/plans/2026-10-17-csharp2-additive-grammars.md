@@ -74,7 +74,7 @@ Files: source-review/coverage evidence, README and reviewed CSharp2 gate only if
 
 - [x] Review all source obligations, policies, version availability, actual factories and dependency/corpus identities. Keep CSharp2 partial if any obligation remains pending.
 - [x] Run full solution tests and dependency/corpus preservation checks; obtain one fresh independent whole-branch review and reproduce/fix material findings.
-- [ ] Commit/push on the current codex branch, publish a reviewable PR with explicit implemented/remaining scope, attach it and verify remote head/clean state.
+- [x] Commit/push on the current codex branch, publish a reviewable PR with explicit implemented/remaining scope, attach it and verify remote head/clean state.
 
 Ruling: user approval plus the standing instruction to continue until a real decision authorizes inline execution; no additional plan/execution-method approval is needed. Existing clean codex branch is retained in the authorized workspace rather than creating another checkout.
 
