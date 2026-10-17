@@ -22,7 +22,7 @@
           "method": "Legacy_alias_preserves_full_consumption"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Lexical.ngr",
@@ -67,7 +67,7 @@
           "method": "String_fragments"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/NamesTypes.ngr",
@@ -98,7 +98,7 @@
           "method": "Safe_type_fragment_rejects_malformed_later_and_unsafe_forms"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Expressions.ngr",
@@ -190,7 +190,7 @@
           "method": "Malformed_arrays_initializers_and_arguments_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Statements.ngr",
@@ -243,7 +243,7 @@
           "method": "Malformed_or_ineligible_statement_contexts_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Attributes.ngr",
@@ -279,7 +279,7 @@
           "method": "Recovery_nodes_remain_rejected_without_policy_exceptions"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Declarations.ngr",
@@ -341,7 +341,7 @@
           "method": "Malformed_later_and_class_only_forms_are_excluded"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/CompilationUnits.ngr",
@@ -367,7 +367,7 @@
           "method": "Invalid_or_later_source_contexts_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/Unsafe.ngr",
@@ -404,7 +404,7 @@
           "method": "Unsafe_module_omission_rejects_each_selected_surface"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     },
     {
       "grammar": "Grammars/GlobalTargetsHistorical.ngr",
@@ -429,7 +429,7 @@
           "method": "Longer_target_names_are_not_global_targets"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public runtime profile contract remains pending."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
     }
   ],
   "policies": [
@@ -672,20 +672,20 @@
   "obligations": [
     {
       "id": "runtime-profile-contract",
-      "status": "pending",
-      "reason": "The public CSharp1 resolver reports 21 coverage inventory identities missing from selectable canonical capabilities. Choose explicit bundle coverage mappings versus granular feature modules before claiming public profile completeness; see csharp1-feature-catalog-decision.md.",
+      "status": "verified",
+      "reason": "Approved canonical bundles with explicit hashed inventory coverage mappings. Runtime resolution validates required capabilities/policies, exact configured and actual CSharp1 factory membership/start, reviewed source obligations and feature status; later/custom profiles remain partial. See canonical coverage tests and csharp1-feature-catalog-decision.md.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     },
     {
       "id": "historical-standard-crosswalk",
       "status": "verified",
-      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is a separate pending obligation.",
+      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is separately verified through canonical mappings and factory/policy checks.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     },
     {
       "id": "independent-context-review",
       "status": "verified",
-      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is a separate pending obligation.",
+      "reason": "All 362 source occurrences and their normalized owners/policies have normative and finite positive/negative, ambiguity/context and authored-span/diagnostic reviews, with independent domain/code review. See csharp1-pending-normative-review.md. Public runtime profile contract is separately verified through canonical mappings and factory/policy checks.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     }
   ]

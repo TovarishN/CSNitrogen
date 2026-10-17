@@ -11,12 +11,12 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
     private static JsonObject Ledger() => JsonNode.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "csharp1-coverage-gate.json")))!.AsObject();
 
     [Fact]
-    public void Current_catalog_is_valid_but_cannot_promote_the_partial_profile()
+    public void Current_catalog_and_runtime_contract_agree_on_complete_historical_syntax()
     {
         var report = CSharp1CoverageGateAudit.Evaluate(Ledger());
-        Assert.Empty(report.Errors); Assert.False(report.Complete);
-        Assert.Single(report.Blockers);
-        Assert.Contains(report.Blockers, b => b.Contains("runtime-profile-contract", StringComparison.Ordinal));
+        Assert.Empty(report.Errors); Assert.True(report.Complete);
+        Assert.Empty(report.Blockers);
+        Assert.True(ProfileResolver.Resolve("CSharp1").Profile!.Complete);
         output.WriteLine($"Audit: modules={report.Modules}, authored={report.Productions}, policySources={report.PolicySources}, sourceCodes={report.PolicyCodes}, syntaxFeatures={report.SyntaxFeatures}, blockers={report.Blockers.Count}");
     }
 
@@ -27,7 +27,7 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
         foreach(string group in new[]{"modules","policies"})
             foreach(var row in ledger[group]!.AsArray())row!["status"]="verified";
         foreach(var obligation in ledger["obligations"]!.AsArray())
-            if(obligation!["id"]!.GetValue<string>()!="runtime-profile-contract")obligation["status"]="verified";
+            obligation!["status"]=obligation["id"]!.GetValue<string>()=="runtime-profile-contract"?"pending":"verified";
         foreach(var feature in inventory["features"]!.AsArray()){feature!["status"]="verified";feature["reviewed"]=true;}
         var map=JsonNode.Parse(typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen.csharp1-standard-crosswalk.json")!)!.AsObject();
         foreach(var row in map["productions"]!.AsArray())
@@ -36,9 +36,8 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
         Assert.Empty(report.Errors);Assert.False(report.Complete);
         Assert.Contains(report.Blockers,b=>b.Contains("runtime-profile-contract",StringComparison.Ordinal));
         var profile=ProfileResolver.Resolve("CSharp1").Profile!;
-        Assert.False(profile.Complete);Assert.Equal(21,profile.MissingFeatures.Count);
-        Assert.Contains("csharp-1.0.events",profile.MissingFeatures);
-        Assert.Contains(ProfileResolver.ResolveCustom("events-only",["csharp-1.0.events"]).Issues,i=>i.Code=="unknown-feature");
+        Assert.True(profile.Complete);Assert.Empty(profile.MissingFeatures);
+        Assert.Contains(ProfileResolver.ResolveCustom("events-only",["csharp-1.0.events"]).Issues,i=>i.Code=="coverage-only-feature");
     }
 
     [Theory]
@@ -97,6 +96,24 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
             obligation!["status"]=obligation["id"]!.GetValue<string>()=="historical-standard-crosswalk"?"pending":"verified";
         var report = CSharp1CoverageGateAudit.Evaluate(ledger, inventory);
         Assert.False(report.Complete); Assert.Contains(report.Blockers, b => b.Contains("historical-standard-crosswalk", StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData("missing")][InlineData("empty")][InlineData("unknown-capability")][InlineData("unknown-policy")]
+    public void Coverage_mappings_are_an_audited_completeness_requirement(string mutation)
+    {
+        var inventory=CSharp1CoverageGateAudit.Inventory();
+        var feature=inventory["features"]!.AsArray().First(f=>f!["id"]!.GetValue<string>()=="csharp-1.0.events")!;
+        switch(mutation)
+        {
+            case "missing":feature.AsObject().Remove("coverage");break;
+            case "empty":feature["coverage"]!["capabilities"]=new JsonArray();feature["coverage"]!["policies"]=new JsonArray();break;
+            case "unknown-capability":feature["coverage"]!["capabilities"]![0]="fake";break;
+            case "unknown-policy":feature["coverage"]!["policies"]=new JsonArray("fake");break;
+        }
+        var report=CSharp1CoverageGateAudit.Evaluate(Ledger(),inventory);
+        Assert.False(report.Complete);
+        Assert.True(report.Errors.Any(e=>e.StartsWith("CoverageMappings",StringComparison.Ordinal)) || report.Blockers.Any(b=>b.StartsWith("RuntimeCoverage",StringComparison.Ordinal)));
     }
 
     [Fact]

@@ -3,12 +3,12 @@ using CSNitrogen.Parsing;
 namespace CSNitrogen.Tests.Profiles;
 public class ProfileResolverTests
 {
-    [Fact] public void Named_profiles_are_explicit_and_partial()
+    [Fact] public void Named_profiles_are_explicit_and_only_reviewed_CSharp1_is_complete()
     {
         foreach(var name in Enumerable.Range(1,14).Select(i=>$"CSharp{i}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var resolution=ProfileResolver.Resolve(name); Assert.Empty(resolution.Issues); Assert.NotNull(resolution.Profile);
-            Assert.False(resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
+            Assert.Equal(name=="CSharp1",resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
             Assert.Contains("baseline.conditional-compilation",resolution.Profile.Features);
             Assert.Contains("Grammars/Lexical.ngr",resolution.Profile.Grammars);
             Assert.Contains("Grammars/CompilationUnits.ngr",resolution.Profile.Grammars);

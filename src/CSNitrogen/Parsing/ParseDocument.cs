@@ -6,9 +6,9 @@ namespace CSNitrogen.Parsing;
 public sealed class ParseDocument : IDisposable
 {
     private readonly ParseResult _parsed;
-    internal ParseDocument(ParseRequest request, ParseResult parsed, IEnumerable<ParseIssue> issues, PreprocessResult preprocessing)
+    internal ParseDocument(ParseRequest request, ParseResult parsed, IEnumerable<ParseIssue> issues, PreprocessResult preprocessing,bool profileComplete)
     {
-        OriginalText = request.Source; Profile = request.Profile; DocumentId = request.DocumentId;
+        OriginalText = request.Source; Profile = request.Profile; ProfileComplete=profileComplete; DocumentId = request.DocumentId;
         _parsed = parsed; Preprocessing=preprocessing; Issues = Array.AsReadOnly(issues.ToArray());
         Accepted = parsed.Success && !Issues.Any(i => i.Severity == DiagnosticSeverity.Error);
     }
@@ -25,7 +25,7 @@ public sealed class ParseDocument : IDisposable
     public string Profile { get; }
     public string DocumentId { get; }
     public bool Accepted { get; }
-    public bool ProfileComplete => false;
+    public bool ProfileComplete { get; }
     public string CoverageIdentity => CSNitrogen.Profiles.FeatureCatalog.CoverageIdentity;
     public SyntaxTree Tree => _parsed.Tree;
     public CompilationUnitNode Root => SyntaxView.Cast<CompilationUnitNode>(Tree, Tree.Root);

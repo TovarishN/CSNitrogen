@@ -1,5 +1,8 @@
 namespace CSNitrogen.Profiles;
-public sealed record FeatureDefinition(string Id, IReadOnlyList<string> Requires, IReadOnlyList<string> Conflicts, IReadOnlyList<string> Grammars);
+public sealed record FeatureDefinition(string Id, IReadOnlyList<string> Requires, IReadOnlyList<string> Conflicts, IReadOnlyList<string> Grammars)
+{
+    public IReadOnlyList<string> Policies {get;init;} = Array.Empty<string>();
+}
 public sealed record LanguageProfile(string Name, Version? Version, IReadOnlyList<string> Features,
     IReadOnlyList<string> Grammars, IReadOnlyList<string> Policies, bool Complete)
 {

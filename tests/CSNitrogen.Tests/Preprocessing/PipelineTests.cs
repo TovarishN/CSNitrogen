@@ -9,7 +9,7 @@ public class PipelineTests
         using var doc=CSharpParser.Parse(new(source,"CSharp1","original.cs",defined?["X"]:[]));
         Assert.True(doc.Accepted);Assert.Equal(source,doc.OriginalText);Assert.Equal(source.Length,doc.MaskedText.Length);
         Assert.Equal(name,doc.Classes[0].Name.ToString());Assert.Equal(source.IndexOf(name,StringComparison.Ordinal),doc.Tree.Span(doc.Classes[0].Name.Index).Start);
-        Assert.Equal(3,doc.Directives.Count);Assert.NotEmpty(doc.InactiveSpans);Assert.False(doc.ProfileComplete);
+        Assert.Equal(3,doc.Directives.Count);Assert.NotEmpty(doc.InactiveSpans);Assert.True(doc.ProfileComplete);
     }
     [Theory][InlineData("#error bad\nclass C {}",false)][InlineData("#warning message\nclass C {}",true)]
     [InlineData("#if F()\nclass C {}\n#endif",false)][InlineData("#if false\n\"broken\n#endif\nclass C {}",true)]

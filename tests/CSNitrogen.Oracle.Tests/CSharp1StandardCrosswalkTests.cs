@@ -23,13 +23,13 @@ public class CSharp1StandardCrosswalkTests
     }
 
     [Fact]
-    public void Completion_evaluator_distinguishes_closed_source_review_from_pending_runtime_contract()
+    public void Completion_evaluator_confirms_both_source_and_runtime_contracts()
     {
         var ledger = Resource("csharp1-coverage-gate.json");
         var report = CSharp1CoverageGateAudit.Evaluate(ledger);
         Assert.DoesNotContain(report.Blockers, b => b.StartsWith("Crosswalk:", StringComparison.Ordinal));
-        Assert.Contains(report.Blockers,b=>b.Contains("runtime-profile-contract",StringComparison.Ordinal));
-        Assert.False(report.Complete);
+        Assert.Empty(report.Blockers);
+        Assert.True(report.Complete);
     }
 
     [Fact]
@@ -149,7 +149,7 @@ public class CSharp1StandardCrosswalkTests
     }
 
     [Fact]
-    public void Whole_pending_corpus_review_closes_all_source_occurrences_without_promoting_runtime_profiles()
+    public void Whole_source_review_and_runtime_contract_promote_only_the_historical_profile()
     {
         var rows=Resource("csharp1-standard-crosswalk.json")["productions"]!.AsArray();
         Assert.Equal(362,rows.Count);
@@ -160,9 +160,9 @@ public class CSharp1StandardCrosswalkTests
             Assert.NotEmpty(r["notes"]!.GetValue<string>());
         });
         var report=CSharp1CoverageGateAudit.Evaluate(Resource("csharp1-coverage-gate.json"));
-        Assert.Empty(report.Errors);Assert.False(report.Complete);
-        Assert.Single(report.Blockers);Assert.Contains("runtime-profile-contract",report.Blockers[0]);
-        Assert.False(ProfileResolver.Resolve("CSharp1").Profile!.Complete);
+        Assert.Empty(report.Errors);Assert.True(report.Complete);
+        Assert.Empty(report.Blockers);
+        Assert.True(ProfileResolver.Resolve("CSharp1").Profile!.Complete);
     }
 
     [Fact]

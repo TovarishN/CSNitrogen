@@ -1,5 +1,7 @@
 # C# 1 historical grammar crosswalk — 2026-10-17
 
+Current continuation: [canonical coverage implementation](csharp1-canonical-coverage-evidence.md) supersedes earlier runtime-gap and all-profiles-partial status below. Historical test counts and scope observations are retained.
+
 This Task 8 continuation starts from PR #11 merged as `3e2ed67`. Its premerge full run passed 706 normal and 2,014 oracle tests. It supplies the independent source inventory missing from the authored-rule catalog. **CSharp1 remains partial.**
 
 ## Source inventory and mapping boundary
