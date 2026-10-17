@@ -33,3 +33,9 @@ Full solution build/test command: `dotnet test CSNitrogen.slnx --no-restore -m:1
 All 118 pinned dependency hashes match both the original and isolated Nitrogen copies. Original sibling dirty status is unchanged (` M docs/editor-support.md` only). All six external corpus hashes match provenance; original context/attribute corpora are unchanged. Both production runtime dependency manifests exclude Microsoft.CodeAnalysis. Nitrogen core and production grammar/API remain unchanged; the new policy is included in the coverage identity.
 
 Decision: reject source-level global attribute misplacement while preserving local applicability as semantic validation. The cost is accepted local syntax that may still warn or fail compilation. This checkpoint does not close exhaustive recovery, alias/name resolution, semantic compilation or whole-language conformance. Next is the explicit unsafe-composition revalidation, followed by the remaining C# 1 production/coverage gate.
+
+## Fresh review
+
+Fresh read-only review of `3beffc0..8c9ec0e` found no Critical, Important or Minor issues and judged this checkpoint ready to merge. It inspected the complete diff, approved Task 6/spec, saved full-run log and relevant generated parser/view integration. No fix pass was needed.
+
+Review limits are retained: execution and dependency/corpus/sibling audits were author-run, not independently rerun by the reviewer. Cast/statement-expression/interface families rely on preceding evidence; this step does not claim exhaustive revalidation. Unsafe omission/leakage remains the next continuation. Semantic attribute applicability, binding, alias resolution and compilation success remain excluded. Exhaustive recovery/resource limits and complete C# 1–14 conformance remain open. The cost is finite scoped evidence and accepted syntax that can still fail semantic compilation; no profile status is promoted.
