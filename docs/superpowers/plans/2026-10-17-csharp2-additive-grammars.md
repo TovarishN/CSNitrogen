@@ -51,11 +51,11 @@ Files: src/CSNitrogen.Syntax/Grammars/Generics.ngr and narrow seams in NamesType
 
 Consumes: proven seams and source disambiguation rules. Produces: csharp2.generics capability, real CSharp2 compilation-unit parsing and typed parameters/arguments/constraints.
 
-- [ ] Write public failing generics/constraint/method/type/typeof fixtures and preceding-version/omission checks; run RED.
-- [ ] Introduce shared typed seams and additive alternatives; preserve ordinary QualifiedName.Parts and existing declaration projections. Include full syntactic generic follower rules and delimiter spans.
-- [ ] Add minimum-version selection without changing FeatureDefinition positional constructor compatibility; register production module in CSharp2+ factories only. Explicit custom dependency validation remains unchanged.
-- [ ] Integrate new syntax alternatives with cast/postfix/assignment/context policies; exercise typed trees and authored spans against matching Roslyn version with classified discrepancies.
-- [ ] Run focused and full CSharp1 regression gates; update pending coverage evidence and commit.
+- [x] Write public failing generics/constraint/method/type/typeof fixtures and preceding-version/omission checks; run RED.
+- [x] Introduce shared typed seams and additive alternatives; preserve ordinary QualifiedName.Parts and existing declaration projections. Include full syntactic generic follower rules and delimiter spans.
+- [x] Add minimum-version selection without changing FeatureDefinition positional constructor compatibility; register production module in CSharp2+ factories only. Explicit custom dependency validation remains unchanged.
+- [x] Integrate new syntax alternatives with cast/postfix/assignment/context policies; exercise typed trees and authored spans against matching Roslyn version with classified discrepancies.
+- [x] Run focused and full CSharp1 regression gates; update pending coverage evidence and commit.
 
 ## Task 4: Remaining audited CSharp2 deltas
 
@@ -77,3 +77,5 @@ Files: source-review/coverage evidence, README and reviewed CSharp2 gate only if
 - [ ] Commit/push on the current codex branch, publish a reviewable PR with explicit implemented/remaining scope, attach it and verify remote head/clean state.
 
 Ruling: user approval plus the standing instruction to continue until a real decision authorizes inline execution; no additional plan/execution-method approval is needed. Existing clean codex branch is retained in the authorized workspace rather than creating another checkout.
+
+Ruling: task3 is a partial vertical slice with an unreviewed historical generics mapping, not a claim that every generic unsafe/cross-feature form is implemented. Those source obligations continue in task4/5; CSharp2 stays partial.

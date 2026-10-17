@@ -1,0 +1,43 @@
+syntax module CSharp.Generics
+{
+ syntax TypeArgumentList = "<" Items:(CSharp.NamesTypes.TypeReference; ",")+ ">";
+ syntax GenericNamePart = Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList?;
+ syntax GenericQualifiedName = Prefix:(CSharp.Lexical.Identifier ".")* Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList Suffix:("." GenericNamePart)*;
+ syntax TypeParameter = Attributes:CSharp.Attributes.AttributeSection* Name:CSharp.Lexical.Identifier;
+ syntax Constraint = ("class" / "struct" / "new" "(" ")") / CSharp.NamesTypes.TypeReference;
+ syntax ConstraintClause = "where" Name:CSharp.Lexical.Identifier ":" Items:(Constraint; ",")+;
+ syntax GenericFollower = "(" / ")" / "]" / ":" / ";" / "," / "." / ("?" !"?") / "==" / "!=";
+ syntax UnboundPart = Name:CSharp.Lexical.Identifier "<" Commas:","* ">";
+ syntax UnboundName = Prefix:(CSharp.Lexical.Identifier ".")* Generic:UnboundPart Suffix:("." (UnboundPart / CSharp.Lexical.Identifier))*;
+ extend syntax CSharp.Declarations.TypeParameters
+ {
+  | GenericParameters = "<" Items:(TypeParameter; ",")+ ">"
+ }
+ extend syntax CSharp.Declarations.TypeConstraints
+ {
+  | GenericConstraints = Items:ConstraintClause+
+ }
+ extend syntax CSharp.NamesTypes.TypeNameSuffix
+ {
+  | GenericTypeSuffix = Arguments:TypeArgumentList Suffix:("." GenericNamePart)*
+ }
+ extend syntax CSharp.Declarations.MemberNameSuffix
+ {
+  | GenericMemberNameSuffix = Arguments:TypeArgumentList "." Prefix:(GenericNamePart ".")* Name:CSharp.Lexical.Identifier
+ }
+ extend syntax CSharp.NamesTypes.TypeBase
+ {
+  | GenericTypeName = Name:GenericQualifiedName
+ }
+ extend syntax CSharp.Expressions.CastHead
+ {
+  | GenericArrayCast = "(" Type:GenericQualifiedName Ranks:CSharp.NamesTypes.ArrayRank+ ")"
+  | GenericCast = "(" Type:GenericQualifiedName ")" &CSharp.Expressions.AfterNamedCast
+ }
+ extend syntax CSharp.Expressions.Expression
+ {
+  | GenericNameExpression = Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower
+  | GenericMemberExpression = Target:Expression "." Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower precedence 180 left
+  | UnboundTypeOfExpression = "typeof" "(" Type:UnboundName ")"
+ }
+}

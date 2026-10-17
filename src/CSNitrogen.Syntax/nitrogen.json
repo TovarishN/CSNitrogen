@@ -31,7 +31,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -48,7 +49,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -65,7 +67,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -82,7 +85,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -99,7 +103,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -116,7 +121,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -133,7 +139,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -150,7 +157,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -167,7 +175,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -184,7 +193,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -201,7 +211,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -218,7 +229,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -235,7 +247,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -252,7 +265,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -269,7 +283,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {
@@ -286,7 +301,8 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr"
+        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/Generics.ngr"
       ]
     },
     {

@@ -2225,10 +2225,24 @@
       "inventoryLine": 197,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/Generics.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp2GenericsTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/CSharp2GenericsParityTests.cs"
+      ],
+      "status": "implemented",
+      "scopeNote": "Initial additive generic type/header/method/call/alias/cast/typeof slice has finite typed and oracle coverage. Full fourth-edition normative review, generic unsafe interactions and cross-feature closure remain pending; CSharp2 remains partial.",
+      "coverage": {
+        "capabilities": [
+          "csharp2.generics"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-2.0.getter-setter-separate-accessibility",

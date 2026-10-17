@@ -82,6 +82,7 @@
         "rule:ReturnType",
         "rule:TypeBase",
         "rule:TypeFragment",
+        "rule:TypeNameSuffix",
         "rule:TypeReference"
       ],
       "status": "verified",
@@ -98,7 +99,7 @@
           "method": "Safe_type_fragment_rejects_malformed_later_and_unsafe_forms"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates."
     },
     {
       "grammar": "Grammars/Expressions.ngr",
@@ -318,6 +319,7 @@
         "rule:InterfaceMethod",
         "rule:InterfaceProperty",
         "rule:MemberDeclaration",
+        "rule:MemberNameSuffix",
         "rule:MethodBody",
         "rule:MethodDeclaration",
         "rule:Modifier",
@@ -325,7 +327,9 @@
         "rule:OperatorToken",
         "rule:PropertyDeclaration",
         "rule:StructDeclaration",
-        "rule:TypeDeclaration"
+        "rule:TypeConstraints",
+        "rule:TypeDeclaration",
+        "rule:TypeParameters"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
@@ -341,7 +345,7 @@
           "method": "Malformed_later_and_class_only_forms_are_excluded"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates."
     },
     {
       "grammar": "Grammars/CompilationUnits.ngr",

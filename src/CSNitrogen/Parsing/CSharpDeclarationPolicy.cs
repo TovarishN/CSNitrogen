@@ -49,6 +49,34 @@ internal static class CSharpDeclarationPolicy
         for(int node=0;node<tree.NodeCount;node++)
         {
             string kind=Kind(node);
+            if(kind=="GenericConstraints")
+            {
+                int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","DelegateDeclaration","MethodDeclaration","InterfaceMethod");
+                bool parameters=owner>=0 && (Kind(owner) switch
+                {
+                    "ClassDeclaration"=>SyntaxView.Cast<ClassDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "StructDeclaration"=>SyntaxView.Cast<StructDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "InterfaceDeclaration"=>SyntaxView.Cast<InterfaceDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "DelegateDeclaration"=>SyntaxView.Cast<DelegateDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "MethodDeclaration"=>SyntaxView.Cast<MethodDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "InterfaceMethod"=>SyntaxView.Cast<InterfaceMethodNode>(tree,owner).TypeParameters.HasValue,
+                    _=>false
+                });
+                if(!parameters)Error(node,"Constraint clauses require type parameters on the owning declaration.");
+            }
+            if(kind=="ConstraintClause")
+            {
+                var items=SyntaxView.Cast<ConstraintClauseNode>(tree,node).Items;
+                for(int i=0;i<items.Count;i++)
+                {
+                    string text=Text(items[i].Index).Trim();
+                    if((text is "class" or "struct") && i!=0)Error(items[i].Index,"A class or struct constraint must be first.");
+                    int first=items[i].Index;
+                    while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    if(Text(first)=="new" && i!=items.Count-1)
+                        Error(items[i].Index,"A constructor constraint must be last.");
+                }
+            }
             if(kind is "Accessor" or "InterfaceAccessor" or "EventAccessor")
             {
                 if(tree.ChildCount(node)<3)continue;

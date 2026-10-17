@@ -6,6 +6,7 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp2.generics", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.expressions","baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Generics.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("foundation.empty-classes", Array.AsReadOnly(new[]{"baseline.unicode-identifiers"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Core.ngr","Grammars/Declarations.ngr"})),
         new FeatureDefinition("baseline.unicode-identifiers", Array.Empty<string>(), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Lexical.ngr"})) { Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("baseline.escaped-identifiers", Array.Empty<string>(), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Lexical.ngr"})) { Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },

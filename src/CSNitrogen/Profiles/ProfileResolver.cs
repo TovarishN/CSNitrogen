@@ -8,7 +8,7 @@ public static class ProfileResolver
         for(int major=1;major<=14;major++) if(name == $"CSharp{major}") version = new(major,0);
         for(int minor=1;minor<=3;minor++) if(name == $"CSharp7_{minor}") version = new(7,minor);
         if(version is null) return new(null,Array.AsReadOnly(new[]{new ProfileIssue("unknown-profile",$"Unknown profile '{name}'.")}));
-        var custom = ResolveCustom(name,FeatureCatalog.Implemented.Select(f=>f.Id));
+        var custom = ResolveCustom(name,FeatureCatalog.Implemented.Where(f=>f.Introduced<=version).Select(f=>f.Id));
         var requested = FeatureCatalog.Inventory.Where(f => f.Classification == "syntax-or-policy" && f.Introduced <= version)
             .Select(f => f.Id).Order(StringComparer.Ordinal).ToArray();
         if(custom.Profile is null)return custom;

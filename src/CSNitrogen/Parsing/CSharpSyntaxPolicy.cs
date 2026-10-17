@@ -36,6 +36,7 @@ public static class CSharpSyntaxPolicy
             {
                 var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;
                 bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "ThisExpression" or
+                    "GenericNameExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or
                     "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
                     "ObjectCreationExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
@@ -147,7 +148,7 @@ public static class CSharpSyntaxPolicy
         }
         return Array.AsReadOnly(issues.ToArray());
     }
-    private static bool IsPrimaryKind(string kind) => kind is "NameExpression" or "LiteralExpression" or "ThisExpression" or
+    private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "NameExpression" or "LiteralExpression" or "ThisExpression" or
         "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
