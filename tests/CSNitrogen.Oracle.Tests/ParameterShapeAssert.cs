@@ -24,34 +24,38 @@ internal static class ParameterShapeAssert
             Assert.Equal(reference.Target is not null, section.Target.HasValue);
             if (reference.Target is not null)
             { var target = section.Target.Value; Span(reference.Target.Span, target.Span); Span(reference.Target.Identifier.Span, target.Child(0).Span); }
-            Assert.Equal(reference.Attributes.Count, section.Items.Count);
-            var separators = reference.Attributes.GetSeparators().ToArray();
-            var trailing = new Node(section.Tree, section.Index).Child(3);
-            Assert.Equal(separators.Length == reference.Attributes.Count, trailing.Kind != SyntaxKinds.Empty);
-            if (separators.Length == reference.Attributes.Count) Span(separators[^1].Span, trailing.Span);
-            Assert.Equal(reference.Attributes.Count - 1, section.Items.SeparatorCount);
-            for (int j = 0; j < section.Items.Count; j++)
+            AttributeItems(reference, section.Items, new Node(section.Tree, section.Index).Child(3));
+        }
+    }
+
+    internal static void AttributeItems(AttributeListSyntax reference, SeparatedList<AttributeNode> items, Node trailing)
+    {
+        Assert.Equal(reference.Attributes.Count, items.Count);
+        var separators = reference.Attributes.GetSeparators().ToArray();
+        Assert.Equal(separators.Length == reference.Attributes.Count, trailing.Kind != SyntaxKinds.Empty);
+        if (separators.Length == reference.Attributes.Count) Span(separators[^1].Span, trailing.Span);
+        Assert.Equal(reference.Attributes.Count - 1, items.SeparatorCount);
+        for (int j = 0; j < items.Count; j++)
+        {
+            var attribute = items[j]; var attr = reference.Attributes[j];
+            Span(attr.Span, attribute.Span); Text(attr.Name, new Node(attribute.Tree, attribute.Name.Index));
+            Assert.Equal(attr.ArgumentList is not null, attribute.Arguments.HasValue);
+            if (attr.ArgumentList is not null)
             {
-                var attribute = section.Items[j]; var attr = reference.Attributes[j];
-                Span(attr.Span, attribute.Span); Text(attr.Name, new Node(attribute.Tree, attribute.Name.Index));
-                Assert.Equal(attr.ArgumentList is not null, attribute.Arguments.HasValue);
-                if (attr.ArgumentList is not null)
+                var group = attribute.Arguments.Value; Span(attr.ArgumentList.Span, group.Span); Assert.Equal(3, group.ChildCount);
+                var args = new SeparatedList<Node>(group.Tree, group.Child(1).Index);
+                Assert.Equal(attr.ArgumentList.Arguments.Count, args.Count);
+                var argSeparators = attr.ArgumentList.Arguments.GetSeparators().ToArray(); Assert.Equal(argSeparators.Length, args.SeparatorCount);
+                for (int k = 0; k < args.Count; k++)
                 {
-                    var group = attribute.Arguments.Value; Span(attr.ArgumentList.Span, group.Span); Assert.Equal(3, group.ChildCount);
-                    var args = new SeparatedList<Node>(group.Tree, group.Child(1).Index);
-                    Assert.Equal(attr.ArgumentList.Arguments.Count, args.Count);
-                    var argSeparators = attr.ArgumentList.Arguments.GetSeparators().ToArray(); Assert.Equal(argSeparators.Length, args.SeparatorCount);
-                    for (int k = 0; k < args.Count; k++)
-                    {
-                        var arg = attr.ArgumentList.Arguments[k]; Span(arg.Span, args[k].Span); Assert.Null(arg.NameColon);
-                        if (arg.NameEquals is not null)
-                        { var named = SyntaxView.Cast<NamedAttributeArgumentNode>(group.Tree, args[k].Index); Span(arg.NameEquals.Name.Span, named.Name.Span); ExpressionShapeAssert.Compare(arg.Expression, named.Value); }
-                        else ExpressionShapeAssert.Compare(arg.Expression, SyntaxView.Cast<PositionalAttributeArgumentNode>(group.Tree, args[k].Index).Value);
-                        if (k < argSeparators.Length) Span(argSeparators[k].Span, args.Separator(k).Span);
-                    }
+                    var arg = attr.ArgumentList.Arguments[k]; Span(arg.Span, args[k].Span); Assert.Null(arg.NameColon);
+                    if (arg.NameEquals is not null)
+                    { var named = SyntaxView.Cast<NamedAttributeArgumentNode>(group.Tree, args[k].Index); Span(arg.NameEquals.Name.Span, named.Name.Span); ExpressionShapeAssert.Compare(arg.Expression, named.Value); }
+                    else ExpressionShapeAssert.Compare(arg.Expression, SyntaxView.Cast<PositionalAttributeArgumentNode>(group.Tree, args[k].Index).Value);
+                    if (k < argSeparators.Length) Span(argSeparators[k].Span, args.Separator(k).Span);
                 }
-                if (j < section.Items.SeparatorCount) Span(separators[j].Span, section.Items.Separator(j).Span);
             }
+            if (j < items.SeparatorCount) Span(separators[j].Span, items.Separator(j).Span);
         }
     }
 

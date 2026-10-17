@@ -71,3 +71,5 @@ The [array/argument continuation](docs/coverage/csharp1-array-argument-evidence.
 The [statement/control-tree continuation](docs/coverage/csharp1-statement-conformance-evidence.md) checks nested bodies, dangling else, loop headers, switch sections and exception handlers. `CSN2006` rejects duplicate default labels per switch. Missing using-resource initializers and other semantic validity remain excluded.
 
 The [declaration/member continuation](docs/coverage/csharp1-declaration-conformance-evidence.md) compares selected typed headers, nested member order, signatures, parameters, accessors and bodies against Roslyn. The added observations require no grammar changes; constructor-name matching, modifier compatibility and operator type/arity checks remain semantic exclusions.
+
+The [compilation-unit/namespace continuation](docs/coverage/csharp1-compilation-unit-conformance-evidence.md) checks ordered typed roots, namespaces, using aliases, global attributes, masked-source spans and borrowed-view disposal. `CSN2012` rejects global attribute targets misplaced on source-level types; local member target applicability remains excluded.

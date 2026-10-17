@@ -10,6 +10,7 @@ public static class CSharpSyntaxPolicy
         ArgumentNullException.ThrowIfNull(tree);version??=new(1,0);var issues=new List<ParseIssue>();
         issues.AddRange(UnicodePolicy.Check(tree,version));
         issues.AddRange(CSharpAttributePolicy.Check(tree));
+        issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
         string Text(int n){var span=tree.Span(n);return tree.Text.Substring(span.Start,span.Length);}
