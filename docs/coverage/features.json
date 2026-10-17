@@ -30,10 +30,12 @@
         "tests/CSNitrogen.Oracle.Tests/AttributeConformanceParityTests.cs",
         "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
         "tests/CSNitrogen.Oracle.Tests/HistoricalUnicodeParityTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/DeclarationConformanceParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/DeclarationConformanceParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CompilationUnitConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/CompilationUnitConformanceParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Version profiles select exactly one global-target extension. The listed extensions are alternatives, not simultaneous module requirements. Attribute binding and target applicability remain excluded. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded."
+      "scopeNote": "Version profiles select exactly one global-target extension. The listed extensions are alternatives, not simultaneous module requirements. Attribute binding and target applicability remain excluded. Selected owning declaration/member/parameter fields and spans are compared in csharp1-declaration-conformance-evidence.md; semantic validity and exhaustive context closure remain excluded. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded."
     },
     {
       "id": "baseline.character-literals",
@@ -269,10 +271,12 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CompilationUnitConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/CompilationUnitConformanceParityTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial. Selected compilation-unit/namespace projections, preprocessing spans and source-level global-attribute placement (CSN2012) are checked in csharp1-compilation-unit-conformance-evidence.md. Local target applicability and exhaustive context closure remain excluded."
     },
     {
       "id": "baseline.numeric-literals",
