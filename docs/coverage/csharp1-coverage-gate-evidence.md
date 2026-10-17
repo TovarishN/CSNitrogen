@@ -66,3 +66,7 @@ All 118 original/isolated Nitrogen source hashes match. Original revision remain
 Fresh read-only review of `d2d1805..cfce8e2` found no Critical, Important or Minor issues and judged the bounded structural-audit checkpoint ready to merge. It inspected the complete diff, approved plan/design, execution rulings and saved full-test log. No fix pass was needed.
 
 Review limits are retained: exhaustive historical completeness, unchanged-family assertion/context closure and human review authenticity are not proved by this catalog. Later Unicode, larger corpus work and C# 2–14 remain separate. The reviewer did not execute tests/audits; the 2,720-pass run and dependency/corpus/sibling checks remain author-run evidence. Task 8 and CSharp1 completion remain open.
+
+## Historical-source continuation
+
+After PR #11, the [standard crosswalk checkpoint](csharp1-standard-crosswalk-evidence.md) adds an independent 362-occurrence Appendix A index and candidate owner mappings. Its aggregate pending-production blocker brings the evaluator to 50 overlapping blocker reports; the earlier 49-state result above records the pre-crosswalk checkpoint. All source rows remain unverified, and both closure obligations remain pending.

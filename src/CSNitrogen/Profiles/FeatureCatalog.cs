@@ -46,6 +46,8 @@ public static class FeatureCatalog
         Read("CSNitrogen.composition.json");
         Read("CSNitrogen.reference-policy.json");
         Read("CSNitrogen.csharp1-coverage-gate.json");
+        Read("CSNitrogen.csharp1-standard-index.json");
+        Read("CSNitrogen.csharp1-standard-crosswalk.json");
         foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)))Read(name);
         using var document = JsonDocument.Parse(inventory);
         var entries = document.RootElement.GetProperty("features").EnumerateArray().Select(f => new CoverageFeature(

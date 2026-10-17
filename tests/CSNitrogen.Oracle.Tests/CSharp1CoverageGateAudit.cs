@@ -25,11 +25,13 @@ internal static class CSharp1CoverageGateAudit
     { using var stream = Assembly.GetManifestResourceStream(resource) ?? throw new InvalidDataException("Missing resource " + resource); using var bytes = new MemoryStream(); stream.CopyTo(bytes); return bytes.ToArray(); }
     internal static JsonObject Inventory() => JsonNode.Parse(Read("CSNitrogen.coverage.json"))!.AsObject();
 
-    internal static Report Evaluate(JsonObject input, JsonObject? inventory = null)
+    internal static Report Evaluate(JsonObject input, JsonObject? inventory = null, JsonObject? crosswalk = null)
     {
         var errors = new List<string>(); var blockers = new List<string>(); int moduleCount = 0, productionCount = 0, policyCount = 0, codeCount = 0, featureCount = 0;
         try
         {
+            var standard = CSharp1StandardCrosswalkAudit.Evaluate(CSharp1StandardCrosswalkAudit.Resource("csharp1-standard-index.json"), crosswalk ?? CSharp1StandardCrosswalkAudit.Resource("csharp1-standard-crosswalk.json"), input);
+            errors.AddRange(standard.Errors); blockers.AddRange(standard.Blockers);
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow, RespectRequiredConstructorParameters = true };
             var ledger = input.Deserialize<Ledger>(options) ?? throw new InvalidDataException("Empty ledger");
             if (ledger.SchemaVersion != 1 || ledger.Profile != "CSharp1") errors.Add("Schema: expected schema 1 and CSharp1");
