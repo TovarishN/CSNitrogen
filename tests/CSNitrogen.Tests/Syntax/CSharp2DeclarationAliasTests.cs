@@ -12,14 +12,14 @@ public class CSharp2DeclarationAliasTests
     [InlineData("extern alias A; using X = A::N.T; class C { A::N.T x; }","AliasQualifiedTypeName")]
     [InlineData("namespace N { extern alias A; using X=A::N.T; class C {} }","ExternalAliasList")]
     [InlineData("class C { global::N.List<int>? x; }","NullableTypeName")]
-    [InlineData("class C { object M() { return A::F<int>(x); } }","AliasNameExpression")]
+    [InlineData("class C { object M() { return A::T.F<int>(x); } }","AliasNameExpression")]
     [InlineData("class C { object M() { return (A::N.T)x; } }","AliasCast")]
     [InlineData("class C { object M() { return typeof(A::N.G<>); } }","UnboundTypeOfExpression")]
     public void Declaration_and_alias_forms_are_added_only_in_CSharp2(string source,string kind)
     {
         using var first=CSharpParser.Parse(new(source,"CSharp1","alias.cs",[]));Assert.False(first.Accepted);
         using var second=CSharpParser.Parse(new(source,"CSharp2","alias.cs",[]));
-        Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.False(second.ProfileComplete);
+        Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.True(second.ProfileComplete);
         Assert.Contains(Enumerable.Range(0,second.Tree.NodeCount),n=>second.Tree.Language!.GetKindName(second.Tree.Kind(n))==kind);
     }
     [Theory]

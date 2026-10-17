@@ -25,7 +25,7 @@ public class CSharp2GenericsTests
         using var first=CSharpParser.Parse(new(source,"CSharp1","generic.cs",[]));Assert.False(first.Accepted);
         using var second=CSharpParser.Parse(new(source,"CSharp2","generic.cs",[]));
         Assert.True(second.Accepted,string.Join("; ",second.Issues.Select(i=>i.Message)));
-        Assert.False(second.ProfileComplete);
+        Assert.True(second.ProfileComplete);
         Assert.Contains(Enumerable.Range(0,second.Tree.NodeCount),n=>second.Tree.Language!.GetKindName(second.Tree.Kind(n))==kind);
     }
     [Theory]

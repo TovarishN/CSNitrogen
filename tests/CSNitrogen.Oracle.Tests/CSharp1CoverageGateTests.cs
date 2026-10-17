@@ -140,8 +140,8 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
         var assembly = typeof(FeatureCatalog).Assembly;
         const string gate = "CSNitrogen.csharp1-coverage-gate.json";
         Assert.Contains(gate, assembly.GetManifestResourceNames());
-        string[] fixedInputs = ["CSNitrogen.csharp2-reference-policy.json", "CSNitrogen.csharp2-standard-index.json", "CSNitrogen.coverage.json", "CSNitrogen.dependencies.json", "CSNitrogen.composition.json", "CSNitrogen.reference-policy.json", gate, "CSNitrogen.csharp1-standard-index.json", "CSNitrogen.csharp1-standard-crosswalk.json"];
-        var names = assembly.GetManifestResourceNames().Where(n => fixedInputs.Contains(n) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal));
+        string[] fixedInputs = ["CSNitrogen.csharp2-coverage-gate.json", "CSNitrogen.csharp2-standard-crosswalk.json", "CSNitrogen.csharp2-reference-policy.json", "CSNitrogen.csharp2-standard-index.json", "CSNitrogen.coverage.json", "CSNitrogen.dependencies.json", "CSNitrogen.composition.json", "CSNitrogen.reference-policy.json", gate, "CSNitrogen.csharp1-standard-index.json", "CSNitrogen.csharp1-standard-crosswalk.json"];
+        var names = assembly.GetManifestResourceNames().Where(n => fixedInputs.Contains(n) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.review.", StringComparison.Ordinal));
         var inputs = names.Select(n => { using var stream = assembly.GetManifestResourceStream(n)!; using var bytes = new MemoryStream(); stream.CopyTo(bytes); return new KeyValuePair<string, byte[]>(n, bytes.ToArray()); }).ToArray();
         Assert.Equal(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs));
         var without = inputs.Where(p => p.Key != gate); Assert.NotEqual(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(without));

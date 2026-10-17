@@ -5,7 +5,7 @@ syntax module CSharp.Generics
  syntax GenericQualifiedName = Prefix:(CSharp.Lexical.Identifier ".")* Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList Suffix:("." GenericNamePart)*;
  syntax TypeParameter = Attributes:CSharp.Attributes.AttributeSection* Name:CSharp.Lexical.Identifier;
  syntax Constraint = ("class" / "struct" / "new" "(" ")") / CSharp.NamesTypes.TypeReference;
- syntax ConstraintClause = "where" Name:CSharp.Lexical.Identifier ":" Items:(Constraint; ",")+;
+ syntax ConstraintClause = CSharp.Lexical.ContextualWhere Name:CSharp.Lexical.Identifier ":" Items:(Constraint; ",")+;
  syntax GenericFollower = "(" / ")" / "]" / ":" / ";" / "," / "." / ("?" !"?") / "==" / "!=";
  syntax UnboundPart = Name:CSharp.Lexical.Identifier "<" Commas:","* ">";
  syntax UnboundName = Alias:CSharp.NamesTypes.TypeNamePrefix? Prefix:(CSharp.Lexical.Identifier ".")* Generic:UnboundPart Suffix:("." (UnboundPart / CSharp.Lexical.Identifier))*;

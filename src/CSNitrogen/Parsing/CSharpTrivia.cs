@@ -6,13 +6,14 @@ internal static class CSharpTrivia
     internal static bool IsNewline(char value,bool historical=false) => value is '\r' or '\n' or '\u2028' or '\u2029' || (!historical && value=='\u0085');
     internal static int Skip(ReadOnlySpan<char> text, int position)=>SkipCore(text,position,false);
     internal static int SkipHistorical(ReadOnlySpan<char> text,int position)=>SkipCore(text,position,true);
-    private static int SkipCore(ReadOnlySpan<char> text,int position,bool historical)
+    internal static int SkipCSharp2(ReadOnlySpan<char> text,int position)=>SkipCore(text,position,false,true);
+    private static int SkipCore(ReadOnlySpan<char> text,int position,bool historical,bool csharp2=false)
     {
         int i = position;
         if (i == 0 && text.Length > 0 && text[0] == '\uFEFF') i++;
         while (i < text.Length)
         {
-            if (historical?UnicodePolicy.IsWhiteSpace(text[i],HistoricalVersion):char.IsWhiteSpace(text[i])) { i++; continue; }
+            if (historical?UnicodePolicy.IsWhiteSpace(text[i],HistoricalVersion):csharp2?UnicodePolicy.IsWhiteSpace(text[i],new(2,0)):char.IsWhiteSpace(text[i])) { i++; continue; }
             if (text[i] == '/' && i + 1 < text.Length)
             {
                 if (text[i + 1] == '/')

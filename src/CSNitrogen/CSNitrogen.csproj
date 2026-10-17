@@ -1,4 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup><ItemGroup>
+<EmbeddedResource Include="../../docs/coverage/csharp2-coverage-gate.json" LogicalName="CSNitrogen.csharp2-coverage-gate.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp2-standard-crosswalk.json" LogicalName="CSNitrogen.csharp2-standard-crosswalk.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp2-*-review.md"><LogicalName>CSNitrogen.review.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp2-reference-policy.json" LogicalName="CSNitrogen.csharp2-reference-policy.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp2-standard-index.json" LogicalName="CSNitrogen.csharp2-standard-index.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp1-reference-policy.json" LogicalName="CSNitrogen.reference-policy.json"/>

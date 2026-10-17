@@ -15,7 +15,7 @@ public static class ConditionalPreprocessor
             if(supplied is null || !ConditionalSymbols.TryNormalize(supplied,request.Version,out var name))issues.Add(new("CSN1101","Invalid supplied conditional symbol.",new(0,0),IssueCategory.Preprocessing));
             else symbols.Add(name);
         }
-        string lexicalSource=UnicodePolicy.IsHistorical(request.Version)&&request.Source.EndsWith('\u001a')?request.Source[..^1]+" ":request.Source;
+        string lexicalSource=request.Version.Major<=2&&request.Source.EndsWith('\u001a')?request.Source[..^1]+" ":request.Source;
         var scanner=new DirectiveScanner(lexicalSource,request.Version);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
         var inactive=new List<TextSpan>();char[] masked=lexicalSource.ToCharArray();
         var effects=new DirectiveEffects(request.Version,issues);

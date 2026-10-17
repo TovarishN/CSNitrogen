@@ -1,5 +1,7 @@
 syntax module CSharp.Expressions
 {
+ extensible syntax ConditionalTypeOperand {}
+ syntax TypeOperatorOperand = Value:(ConditionalTypeOperand / CSharp.NamesTypes.TypeReference);
  token PlusOp = "+" !['+' '='];
  token MinusOp = "-" !['-' '=' '>'];
  token MultiplyOp = "*" !"=";
@@ -66,8 +68,8 @@ syntax module CSharp.Expressions
   | GreaterExpression = Left:Expression GreaterOp Right:Expression precedence 130 left
   | LessEqualExpression = Left:Expression "<=" Right:Expression precedence 130 left
   | GreaterEqualExpression = Left:Expression ">=" Right:Expression precedence 130 left
-  | IsExpression = Value:Expression "is" Type:CSharp.NamesTypes.TypeReference precedence 130 left
-  | AsExpression = Value:Expression "as" Type:CSharp.NamesTypes.TypeReference precedence 130 left
+  | IsExpression = Value:Expression "is" Type:TypeOperatorOperand precedence 130 left
+  | AsExpression = Value:Expression "as" Type:TypeOperatorOperand precedence 130 left
   | EqualExpression = Left:Expression "==" Right:Expression precedence 120 left
   | NotEqualExpression = Left:Expression "!=" Right:Expression precedence 120 left
   | BitAndExpression = Left:Expression BitAndOp Right:Expression precedence 110 left

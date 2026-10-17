@@ -52,6 +52,9 @@ internal static class CSharpDeclarationPolicy
             if(kind=="FixedBufferMember")
             {
                 if(!InStruct(node))Error(node,"A fixed buffer declaration requires a struct owner.");
+                var buffer=SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node);
+                if(Text(buffer.Type.Index) is not ("bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong" or "char" or "float" or "double"))
+                    Error(buffer.Type.Index,"A fixed buffer requires a primitive element type permitted by the CSharp2 supplement.");
                 foreach(var modifier in SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node).Modifiers)
                     if(Text(modifier.Index)=="static")Error(modifier.Index,"A fixed buffer declaration cannot be static.");
             }
@@ -77,7 +80,25 @@ internal static class CSharpDeclarationPolicy
                 var items=kind=="PropertyDeclaration"?SyntaxView.Cast<PropertyDeclarationNode>(tree,node).Accessors:SyntaxView.Cast<IndexerDeclarationNode>(tree,node).Accessors;
                 int count=0;
                 foreach(var item in items)if(item.Modifiers.HasValue)count++;
-                if(count>1 || count==1 && items.Count!=2)Error(node,"Accessor accessibility requires two accessors and may appear on only one.");
+                bool overriding=false;
+                int member=Ancestor(node,"MemberDeclaration");
+                if(member>=0)
+                    foreach(var modifier in SyntaxView.Cast<MemberDeclarationNode>(tree,member).Modifiers)
+                        overriding |= Text(modifier.Index)=="override";
+                if(count>1 || count==1 && items.Count!=2 && !overriding)Error(node,"Accessor accessibility requires two accessors unless overriding, and may appear on only one.");
+                if(count>0 && kind=="PropertyDeclaration")
+                {
+                    var property=SyntaxView.Cast<PropertyDeclarationNode>(tree,node);
+                    if(property.NamePrefix.HasValue || property.NameExtension.HasValue || property.Name.Parts.Count>1)
+                        Error(node,"Explicit-interface properties cannot declare accessor accessibility.");
+                }
+                if(count>0 && kind=="IndexerDeclaration")
+                {
+                    var indexer=SyntaxView.Cast<IndexerDeclarationNode>(tree,node);
+                    // A simple indexer-name consists solely of the this token.
+                    int first=indexer.Name.Index;while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    if(Text(first)!="this")Error(node,"Explicit-interface indexers cannot declare accessor accessibility.");
+                }
             }
             if(kind=="GenericConstraints")
             {
@@ -94,15 +115,37 @@ internal static class CSharpDeclarationPolicy
                 });
                 if(!parameters)Error(node,"Constraint clauses require type parameters on the owning declaration.");
             }
+            if(version.Major>=2 && kind=="FixedParameter")
+            {
+                var parameter=SyntaxView.Cast<FixedParameterNode>(tree,node);
+                if(parameter.Mode.HasValue && Ancestor(node,"IndexerParameterList")>=0)
+                    Error(node,"Indexer parameters cannot have ref or out modifiers.");
+            }
             if(kind=="ConstraintClause")
             {
                 var items=SyntaxView.Cast<ConstraintClauseNode>(tree,node).Items;
+                bool hasStruct=false;foreach(var item in items)hasStruct |= Text(item.Index).Trim()=="struct";
                 for(int i=0;i<items.Count;i++)
                 {
                     string text=Text(items[i].Index).Trim();
                     if((text is "class" or "struct") && i!=0)Error(items[i].Index,"A class or struct constraint must be first.");
                     int first=items[i].Index;
                     while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    if(Text(first)=="new" && hasStruct)
+                        Error(items[i].Index,"A struct constraint cannot be combined with a constructor constraint.");
+                    var pending=new Stack<int>();pending.Push(items[i].Index);
+                    while(pending.TryPop(out int part))
+                    {
+                        if(Kind(part)=="TypeSyntax")
+                        {
+                            var type=SyntaxView.Cast<TypeSyntaxTypeReference>(tree,part);
+                            if(type.Ranks.Count>0 || Kind(type.Element.Index) is "NullableTypeName" or "PointerTypeName" or "VoidPointerTypeName" ||
+                                Kind(type.Element.Index)=="BuiltinTypeName" && Text(type.Element.Index) is not ("object" or "string"))
+                                Error(part,"A named constraint requires a class/interface/type-parameter name, not a value, nullable, pointer or array type.");
+                            break;
+                        }
+                        for(int child=tree.ChildCount(part)-1;child>=0;child--)pending.Push(tree.Child(part,child));
+                    }
                     if(Text(first)=="new" && i!=items.Count-1)
                         Error(items[i].Index,"A constructor constraint must be last.");
                 }
@@ -118,7 +161,9 @@ internal static class CSharpDeclarationPolicy
                 if(owner>=0)
                 {
                     if(!accessors.TryGetValue(owner,out var names))accessors[owner]=names=new(StringComparer.Ordinal);
-                    if(!names.Add(Text(keyword)))Error(keyword,"An accessor kind can occur only once in this declaration.");
+                    string keywordName=Text(keyword);
+                    if(UnicodePolicy.TryNormalize(keywordName,version,true,out var normalizedKeyword))keywordName=normalizedKeyword;
+                    if(!names.Add(keywordName))Error(keyword,"An accessor kind can occur only once in this declaration.");
                 }
             }
             if(kind=="DestructorDeclaration" && InStruct(node))
