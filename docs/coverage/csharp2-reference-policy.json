@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp2",
+  "primary": {
+    "title": "ECMA-334, fourth edition, June 2006",
+    "url": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
+    "sha256": "de596c178a4a80a8d86e91877544025822ec0749d8c04ecca25af60c75937652",
+    "pages": 553,
+    "annexAPdfPages": [465, 494]
+  },
+  "oracle": { "package": "Microsoft.CodeAnalysis.CSharp", "version": "5.0.0", "languageVersion": "CSharp2" },
+  "status": "pending",
+  "unicode": { "specified": "Unicode 4.0", "source": "clause 2", "implemented": "Current .NET BMP compatibility only", "status": "pending historical data and policy" },
+  "completion": "Reference pin and candidate index do not establish reviewed source coverage or profile completeness. Supplementary Microsoft CSharp2 differences require explicit sources and classification."
+}

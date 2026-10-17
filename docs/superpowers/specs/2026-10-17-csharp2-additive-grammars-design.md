@@ -1,6 +1,6 @@
 # C# 2 additive grammar design
 
-Status: proposed for approval. Builds on merged PR15 (`81da89d`) and the approved canonical coverage contract. This is the first bounded milestone in the C# 2–6 release group, not an implementation or CSharp2 completeness claim.
+Status: approved by the user on 2026-10-17. Builds on merged PR15 (`81da89d`) and the approved canonical coverage contract. This is the first bounded milestone in the C# 2–6 release group, not an implementation or CSharp2 completeness claim.
 
 ## Intent and boundaries
 
