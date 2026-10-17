@@ -797,13 +797,17 @@
       ],
       "conflicts": [],
       "grammars": [],
-      "policies": [],
+      "policies": [
+        "csharp1-preprocessing"
+      ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Preprocessing/ConditionalPreprocessorTests.cs",
+        "tests/CSNitrogen.Tests/Preprocessing/DirectiveEffectsTests.cs"
       ],
       "status": "implemented",
-      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim."
+      "scopeNote": "Historical feature classification and module association reviewed; only the syntax portion is implemented. Binding/type/value semantics excluded. Per-production/context closure remains pending; this is not a verified release-feature completeness claim. Explicitly maps to csharp1-preprocessing; completion remains pending the historical production crosswalk and context review in csharp1-coverage-gate.json."
     },
     {
       "id": "csharp-1.0.properties",
