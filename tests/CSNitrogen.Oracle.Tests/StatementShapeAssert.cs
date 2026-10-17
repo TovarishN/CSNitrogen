@@ -38,7 +38,7 @@ internal static class StatementShapeAssert
                 Assert.Equal(";", actual.Child(1).ToString());
                 if (declaration.IsConst)
                 { Assert.Equal(declaration.Modifiers[0].SpanStart, actual.Child(0).Span.Start); Assert.Equal(declaration.Declaration.Span.End, actual.Child(0).Span.End); }
-                Declaration(declaration.Declaration, actual.Child(0), declaration.IsConst); break;
+                CompareDeclaration(declaration.Declaration, actual.Child(0), declaration.IsConst); break;
             case IfStatementSyntax conditional:
                 var c = SyntaxView.Cast<IfStatementNode>(tree, n);
                 ExpressionShapeAssert.Compare(conditional.Condition, c.Condition); Body(conditional.Statement, c.Body.Index);
@@ -57,7 +57,7 @@ internal static class StatementShapeAssert
             case ForStatementSyntax loop:
                 var f = SyntaxView.Cast<ForStatementNode>(tree, n);
                 Assert.Equal(loop.Declaration is not null || loop.Initializers.Count > 0, f.Initializer.HasValue);
-                if (loop.Declaration is not null) Declaration(loop.Declaration, f.Initializer.Value, false);
+                if (loop.Declaration is not null) CompareDeclaration(loop.Declaration, f.Initializer.Value, false);
                 else if (loop.Initializers.Count > 0) Expressions(loop.Initializers, SyntaxView.Cast<StatementExpressionListNode>(tree, f.Initializer.Value.Index));
                 Assert.Equal(loop.Condition is not null, f.Condition.HasValue);
                 if (loop.Condition is not null) ExpressionShapeAssert.Compare(loop.Condition, f.Condition.Value);
@@ -71,7 +71,7 @@ internal static class StatementShapeAssert
                 ExpressionShapeAssert.Compare(loop.Expression, fe.Source); Body(loop.Statement, fe.Body.Index); break;
             case UsingStatementSyntax resource:
                 var u = SyntaxView.Cast<UsingStatementNode>(tree, n);
-                if (resource.Declaration is not null) Declaration(resource.Declaration, u.Resource, false);
+                if (resource.Declaration is not null) CompareDeclaration(resource.Declaration, u.Resource, false);
                 else ExpressionShapeAssert.Compare(resource.Expression!, new ExpressionNode(tree, u.Resource.Index));
                 Body(resource.Statement, u.Body.Index); break;
             case LockStatementSyntax locked:
@@ -158,7 +158,7 @@ internal static class StatementShapeAssert
         }
     }
 
-    private static void Declaration(VariableDeclarationSyntax expected, Node actual, bool constant)
+    internal static void CompareDeclaration(VariableDeclarationSyntax expected, Node actual, bool constant)
     {
         if (!constant) Span(expected.Span, actual.Span);
         TypeReferenceNode type; int count;
