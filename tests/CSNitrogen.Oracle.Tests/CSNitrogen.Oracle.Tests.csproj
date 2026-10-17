@@ -2,4 +2,9 @@
 <ProjectReference Include="$(NitrogenRoot)/Nitrogen.Generator/Nitrogen.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
 <AdditionalFiles Include="../CSNitrogen.Tests/Grammars/*.ngr" Namespace="CSNitrogen.Tests.Probes"/>
 <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="Namespace"/>
-</ItemGroup><ItemGroup><None Include="../../docs/coverage/unicode-data.json" Link="unicode-data.json" CopyToOutputDirectory="PreserveNewest"/></ItemGroup><ItemGroup><None Include="../Corpus/**/*" Link="Corpus/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/></ItemGroup><ItemGroup><None Include="../../docs/coverage/sources/Unicode3/*" Link="Unicode3/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/></ItemGroup></Project>
+</ItemGroup><ItemGroup><None Include="../../docs/coverage/unicode-data.json" Link="unicode-data.json" CopyToOutputDirectory="PreserveNewest"/></ItemGroup><ItemGroup><None Include="../Corpus/**/*" Link="Corpus/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/></ItemGroup><ItemGroup><None Include="../../docs/coverage/sources/Unicode3/*" Link="Unicode3/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/></ItemGroup><ItemGroup>
+<ProjectReference Include="$(NitrogenRoot)/Nitrogen.Grammar/Nitrogen.Grammar.csproj"/>
+<None Include="../../docs/coverage/csharp1-coverage-gate.json" Link="csharp1-coverage-gate.json" CopyToOutputDirectory="PreserveNewest"/>
+<None Include="../CSNitrogen.Tests/**/*.cs" Exclude="../CSNitrogen.Tests/obj/**;../CSNitrogen.Tests/bin/**" Link="CoverageInputs/tests/CSNitrogen.Tests/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/>
+<None Include="**/*.cs" Exclude="obj/**;bin/**" Link="CoverageInputs/tests/CSNitrogen.Oracle.Tests/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest"/>
+</ItemGroup></Project>
