@@ -1,0 +1,37 @@
+# C# 1 unsafe composition continuation — 2026-10-17
+
+PR #9 was merged at its verified head after a fresh 2,577-test run. This checkpoint starts from merged main `88cdb55` and follows approved source-grammar plan Task 7. The existing unsafe grammar and configured safe subset are revalidated, with no new public parsing/customization API. All profiles remain partial. The [finite family ledger](csharp1-unsafe-productions.json) maps all 16 authored unsafe productions/alternatives to selected observations; it is not exhaustive conformance proof.
+
+## Configured membership evidence
+
+The full factory includes `CSharp.Unsafe`; the configured `CSharp1Safe` factory contains exactly the other full-factory modules, including the historical global-target module. Thirty-one paired whole-file observations retain unsafe syntax in the public CSharp1 parser and reject it from the configured safe factory: pointers and pointer arrays, unary dereference/address-of, pointer member access, pointer casts, extended sizeof, unsafe modifiers/blocks, fixed statements, stackalloc and signatures across fields/methods/delegates/interfaces/properties/indexers. Safe parse trees, including recovery trees, contain no node owned by the unsafe module. Alternating factory use checks that another language's extension registration does not leak into the safe snapshot.
+
+Fifteen built-in sizeof spellings and eight shared-expression cases remain accepted by both compositions. An inactive unsafe region is preprocessed before the safe parse without changing buffer length. `T*p;` is deliberately classified: without unsafe pointer syntax, it can parse as multiplication but is rejected by the existing statement-expression policy; `T**p;` cannot complete a safe parse. Successful raw parsing is not presented as public acceptance. Module omission and syntax policy remain separate requirements.
+
+The safe factory is used directly because `CSharp1Safe` is not an exposed CSharpParser profile. The full public parser uses its historical trivia scanner; the direct safe factory uses default trivia. These fixtures use their common whitespace/comment subset. This proves selected syntax membership and preprocessing interaction, not full trivia/lexer-profile equivalence or executable runtime custom-language resolution.
+
+## Independent typed observations
+
+Twenty-eight expression cases compare recursive precedence and child structure for pointer unary operators, pointer member/call/index chains, casts and extended sizeof. Eight statement cases follow the actual unsafe embedded wrapper, then compare unsafe blocks, fixed pointer element/stars, declarators, initializers, commas and nested bodies. Four stackalloc cases compare element and size fields. Seven pointer-type cases compare recursive type-base alternatives, star spans and array ranks. Pointer casts additionally check the owning nonarray pointer/rank fields. Unsafe modifier kind/span is checked against the authored keyword. The existing test comparers now handle these forms; no production behavior is changed by the comparer additions.
+
+Five compiler observations distinguish parsed sizeof syntax from type/context validity. Roslyn accepts the selected int/decimal examples without errors, and reports CS0233 for S/string/object operands outside unsafe context. Parser acceptance remains true. Eight selected malformed/later cases reject incomplete fixed/stackalloc forms and later fixed buffers/stackalloc initializers. These are finite observations with pinned Roslyn CSharp1, not a semantic compiler implementation or proof that each rejection has the same diagnostic category.
+
+The pinned [ECMA-334 first edition](https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf), chapter 25, is the historical unsafe production reference. Unmanaged-type meaning, addressability, fixed-variable readonly semantics, pointer arithmetic typing, layout, bounds, escapes/lifetimes and unsafe-context requirements remain compiler work. The existing built-in sizeof grammar includes string/object spellings despite semantic invalidity in the selected context. A language omitting unsafe syntax is not thereby a semantic memory-safety validator.
+
+## Execution record and scope
+
+No production defect was reproduced in this checkpoint. The first build exposed test-only assumptions about a nonexistent ReturnStatement view and internal trivia visibility. Correcting these yielded 58 passing membership checks and 19 oracle helper failures for unhandled pointer-member/extended-sizeof/unsafe/fixed forms. A later helper build corrected a missing Roslyn extension namespace. After extending those comparers and adding further type/negative/compilation observations, 58 normal and 60 oracle focused tests passed. These are characterization/helper failures, not claimed product RED/GREEN evidence. Production source, grammar, configuration and Nitrogen core are unchanged.
+
+Decisions: retain this as characterization instead of inventing a product correction; use the existing configured safe factory over the common trivia subset rather than expose internal implementation just for tests; preserve all existing semantic exclusions. The costs are finite membership evidence, no complete lexer-profile equivalence, and accepted syntax that can still fail compilation. Next is the remaining C# 1 production/coverage gate; no C# 2–6 implementation or whole-language status promotion follows merely from these samples.
+
+## Verification
+
+Full solution build/test: `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s`. **706 normal + 1,989 oracle = 2,695 tests pass**, zero failed/skipped. This adds 58 normal and 60 oracle observations. The final run includes strengthened pointer-cast fields, unsafe modifier kind/span and raw safe-parse versus statement-policy classification.
+
+All 118 pinned original/isolated Nitrogen source hashes match. Original revision remains `f5bf525e3e2723a8fe39e127f800f6376345feb1`, with only the preexisting ` M docs/editor-support.md` dirty state. Six external corpus hashes match provenance; original context/attribute corpora are unchanged. Both production runtime dependency manifests exclude Microsoft.CodeAnalysis. The 16 ledger observation targets resolve to existing fixtures. The unsafe feature inventory remains implemented rather than promoted to exhaustive verification.
+
+## Fresh review
+
+Fresh read-only review of `88cdb55..c0fafd98` found no Critical, Important or Minor issues requiring correction and judged the bounded Task 7 checkpoint ready to merge. No fix pass was needed. The reviewer inspected the complete diff, approved plan/spec, execution rulings and relevant unchanged grammar/parser/policy integration.
+
+Review limits remain semantic unsafe/type/address/fixed/pointer/sizeof validity, full trivia equivalence, public safe-profile/custom-language execution, exhaustive revalidation of unchanged Tasks 2–6, whole C# 1 closure and later versions. Test totals and dependency/corpus/sibling audits are author-run evidence, not independently rerun by this reviewer. No production or profile-completion claim is added by the review.

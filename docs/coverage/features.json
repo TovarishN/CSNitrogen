@@ -435,9 +435,11 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Oracle.Tests/SourceMatrixTests.cs",
-        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs"
+        "tests/CSNitrogen.Oracle.Tests/SourceGrammarParityTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/UnsafeConformanceTests.cs",
+        "tests/CSNitrogen.Oracle.Tests/UnsafeConformanceParityTests.cs"
       ],
-      "scopeNote": "Targeted C# 1 production family implemented; exhaustive production/context verification pending. See csharp1-source-production-map.md. All profiles remain partial."
+      "scopeNote": "Finite typed unsafe syntax and exact configured module-omission evidence is mapped in csharp1-unsafe-productions.json and csharp1-unsafe-conformance-evidence.md. This is syntactic composition, not semantic safety. Full conformance and runtime customization remain open; profiles remain partial."
     },
     {
       "id": "baseline.verbatim-strings",

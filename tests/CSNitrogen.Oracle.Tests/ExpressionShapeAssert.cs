@@ -123,7 +123,7 @@ internal static class ExpressionShapeAssert
                 Assert.Equal(cast.CloseParenToken.Span.End, c.Head.Span.End);
                 Nitrogen.TextSpan typeSpan;
                 if (cast.Type is PointerTypeSyntax || cast.Type is ArrayTypeSyntax { ElementType: PointerTypeSyntax })
-                { Assert.Equal("PointerCastHead", tree.Language.GetKindName(c.Head.Kind)); typeSpan = SyntaxView.Cast<PointerCastHeadCastHead>(tree, c.Head.Index).Type.Span; }
+                { Assert.Equal("PointerCastHead", tree.Language.GetKindName(c.Head.Kind)); var pointerCast=SyntaxView.Cast<PointerCastHeadCastHead>(tree, c.Head.Index).Type; typeSpan=pointerCast.Span; UnsafeShapeAssert.PointerCast(cast.Type,pointerCast); }
                 else if (cast.Type is PredefinedTypeSyntax or ArrayTypeSyntax)
                 { Assert.Equal("DefiniteCast", tree.Language.GetKindName(c.Head.Kind)); typeSpan = SyntaxView.Cast<DefiniteCastCastHead>(tree, c.Head.Index).Type.Span; }
                 else
@@ -147,9 +147,9 @@ internal static class ExpressionShapeAssert
                 Compare(conditional.Condition, q.Condition); Compare(conditional.WhenTrue, q.True); Compare(conditional.WhenFalse, q.False.Value); break;
             case PrefixUnaryExpressionSyntax unary:
                 if (unary.IsKind(SyntaxKind.PointerIndirectionExpression))
-                { Kind("PointerIndirectionExpression"); Compare(unary.Operand, SyntaxView.Cast<PointerIndirectionExpressionExpression>(tree, actual.Index).Value); }
+                { Kind("PointerIndirectionExpression"); var indirect = SyntaxView.Cast<PointerIndirectionExpressionExpression>(tree, actual.Index); Span(unary.OperatorToken.Span, indirect.MultiplyOp.Span); Compare(unary.Operand, indirect.Value); }
                 else if (unary.IsKind(SyntaxKind.AddressOfExpression))
-                { Kind("AddressExpression"); Compare(unary.Operand, SyntaxView.Cast<AddressExpressionExpression>(tree, actual.Index).Value); }
+                { Kind("AddressExpression"); var address = SyntaxView.Cast<AddressExpressionExpression>(tree, actual.Index); Span(unary.OperatorToken.Span, address.BitAndOp.Span); Compare(unary.Operand, address.Value); }
                 else
                 { Kind("UnaryExpression"); var u = SyntaxView.Cast<UnaryExpressionExpression>(tree, actual.Index); Span(unary.OperatorToken.Span, u.Operator.Span); Assert.Equal(unary.OperatorToken.Text, tree.Text.Substring(u.Operator.Span.Start, u.Operator.Span.Length)); Compare(unary.Operand, u.Value); }
                 break;
@@ -159,6 +159,10 @@ internal static class ExpressionShapeAssert
                 else
                 { Kind("PostfixDecrementExpression"); Compare(postfix.Operand, SyntaxView.Cast<PostfixDecrementExpressionExpression>(tree, actual.Index).Value); }
                 break;
+            case MemberAccessExpressionSyntax pointerMember when pointerMember.IsKind(SyntaxKind.PointerMemberAccessExpression):
+                Kind("PointerMemberExpression"); var pointer = SyntaxView.Cast<PointerMemberExpressionExpression>(tree, actual.Index);
+                Compare(pointerMember.Expression, pointer.Target); Span(pointerMember.Name.Span, pointer.Name.Span); Assert.Equal(pointerMember.Name.ToString(), pointer.Name.ToString());
+                Span(pointerMember.OperatorToken.Span, new Nitrogen.SyntaxNode(tree, actual.Index).Child(1).Span); break;
             case MemberAccessExpressionSyntax member when member.Expression is BaseExpressionSyntax:
                 Kind("BaseMemberExpression"); Span(member.Name.Span, SyntaxView.Cast<BaseMemberExpressionExpression>(tree, actual.Index).Name.Span); Assert.Equal(member.Name.ToString(), SyntaxView.Cast<BaseMemberExpressionExpression>(tree, actual.Index).Name.ToString()); break;
             case MemberAccessExpressionSyntax member:
@@ -184,7 +188,14 @@ internal static class ExpressionShapeAssert
             case TypeOfExpressionSyntax typeOf:
                 Kind("TypeOfExpression"); Type(typeOf.Type, SyntaxView.Cast<TypeOfExpressionExpression>(tree, actual.Index).Type.Span); break;
             case SizeOfExpressionSyntax sizeOf:
-                Kind("SizeOfBuiltinExpression"); Type(sizeOf.Type, SyntaxView.Cast<SizeOfBuiltinExpressionExpression>(tree, actual.Index).Type.Span); break;
+                if(sizeOf.Type is PredefinedTypeSyntax)
+                { Kind("SizeOfBuiltinExpression"); Type(sizeOf.Type, SyntaxView.Cast<SizeOfBuiltinExpressionExpression>(tree, actual.Index).Type.Span); }
+                else { Kind("SizeOfExtendedExpression"); Type(sizeOf.Type, SyntaxView.Cast<SizeOfExtendedExpressionExpression>(tree, actual.Index).Type.Span); }
+                break;
+            case StackAllocArrayCreationExpressionSyntax stack:
+                Kind("StackAllocExpression"); var allocated=SyntaxView.Cast<StackAllocExpressionExpression>(tree,actual.Index);
+                Assert.Null(stack.Initializer); var allocatedType=Assert.IsType<ArrayTypeSyntax>(stack.Type);
+                Type(allocatedType.ElementType,allocated.Type.Span); Compare(Assert.Single(Assert.Single(allocatedType.RankSpecifiers).Sizes),allocated.Size); break;
             default: Assert.Fail("Uncompared oracle expression kind: " + expected.Kind()); break;
         }
     }

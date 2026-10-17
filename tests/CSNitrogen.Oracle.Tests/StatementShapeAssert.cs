@@ -16,15 +16,31 @@ internal static class StatementShapeAssert
     {
         Span(expected.Span, actual.Span);
         var tree = actual.Tree;
-        while (StandardStatementStatement.Is(tree, actual.Index) || StandardEmbeddedStatementEmbeddedStatement.Is(tree, actual.Index))
+        while (StandardStatementStatement.Is(tree, actual.Index) || StandardEmbeddedStatementEmbeddedStatement.Is(tree, actual.Index) || UnsafeEmbeddedStatementEmbeddedStatement.Is(tree,actual.Index))
             actual = StandardStatementStatement.Is(tree, actual.Index)
                 ? SyntaxView.Cast<StandardStatementStatement>(tree, actual.Index).Body
-                : SyntaxView.Cast<StandardEmbeddedStatementEmbeddedStatement>(tree, actual.Index).Body;
+                : UnsafeEmbeddedStatementEmbeddedStatement.Is(tree,actual.Index)
+                    ? SyntaxView.Cast<UnsafeEmbeddedStatementEmbeddedStatement>(tree,actual.Index).Value
+                    : SyntaxView.Cast<StandardEmbeddedStatementEmbeddedStatement>(tree, actual.Index).Body;
         Span(expected.Span, actual.Span);
         int n = actual.Index;
         void Body(StatementSyntax statement, int index) => Compare(statement, new Node(tree, index));
         switch (expected)
         {
+            case UnsafeStatementSyntax unsafeStatement:
+                var unsafeBlock=SyntaxView.Cast<UnsafeBlockNode>(tree,n); Body(unsafeStatement.Block,unsafeBlock.Body.Index); break;
+            case FixedStatementSyntax fixedStatement:
+                var pinned=SyntaxView.Cast<FixedStatementNode>(tree,n); UnsafeShapeAssert.NonArrayPointer(fixedStatement.Declaration.Type,pinned.Type);
+                Assert.Equal(fixedStatement.Declaration.Variables.Count,pinned.Variables.Count);
+                var commas=fixedStatement.Declaration.Variables.GetSeparators().ToArray();Assert.Equal(commas.Length,pinned.Variables.SeparatorCount);
+                for(int i=0;i<pinned.Variables.Count;i++)
+                {
+                    var reference=fixedStatement.Declaration.Variables[i];var variable=pinned.Variables[i];Span(reference.Span,variable.Span);
+                    Span(reference.Identifier.Span,variable.Name.Span);Assert.Equal(reference.Identifier.Text,variable.Name.ToString());
+                    Assert.NotNull(reference.Initializer); ExpressionShapeAssert.Compare(reference.Initializer.Value,variable.Value);
+                    if(i<commas.Length)Span(commas[i].Span,pinned.Variables.Separator(i).Span);
+                }
+                Body(fixedStatement.Statement,pinned.Body.Index);break;
             case BlockSyntax block:
                 var b = SyntaxView.Cast<BlockNode>(tree, n); Assert.Equal(block.Statements.Count, b.Statements.Count);
                 for (int i = 0; i < b.Statements.Count; i++) Body(block.Statements[i], b.Statements[i].Index);
