@@ -26,10 +26,10 @@ public class PendingLexicalGapTests
         Assert.Equal(0,result.Preprocessing.MapLocation(source.Length).PhysicalLine);
     }
     [Theory][InlineData("#line 2147483648\nclass C{}")][InlineData("#line 16707566\nclass C{}")]
-    public void Current_line_mapping_limit_is_exposed_for_the_pending_API_decision(string source)
+    public void Historical_large_line_mapping_is_preserved_after_API_approval(string source)
     {
         var result=ConditionalPreprocessor.Process(new(source,new(1,0),[]));
-        Assert.Contains(result.Issues,i=>i.Code is "CSN1207" or "CSN1208");
-        Assert.Empty(result.LineMappings);
+        Assert.Empty(result.Issues);
+        Assert.Single(result.ExactLineMappings);
     }
 }

@@ -1,11 +1,12 @@
 using System.Globalization;
+using System.Numerics;
 using CSNitrogen.Parsing;
 using Nitrogen;
 namespace CSNitrogen.Preprocessing;
 internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
 {
     private readonly Stack<(int Depth,int Start)> _regions=[];
-    internal List<LineMapping> Mappings {get;}=[];
+    internal List<ExactLineMapping> Mappings {get;}=[];
     private void Error(string code,string message,DirectiveRecord d,IssueCategory category=IssueCategory.Preprocessing)=>issues.Add(new(code,message,d.Span,category));
     internal void ConditionalBoundary(DirectiveRecord d,int depth)
     {
@@ -40,17 +41,17 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
         int physical=d.Line+1;
         var previous=Mappings.LastOrDefault();
         if(argument=="default")
-        { if(d.Active)Mappings.Add(new(physical,null,null,false));return; }
+        { if(d.Active)Mappings.Add(new(physical,null,null,false,null,d.Span));return; }
         if(argument=="hidden")
         {
             if(UnicodePolicy.IsHistorical(version)){Error("CSN1207","The pinned C# 1 line-indicator has no hidden alternative.",d);return;}
-            if(d.Active)Mappings.Add(new(physical,previous?.LogicalLine is int logical?logical+physical-previous.PhysicalLine:null,previous?.File,true));return;
+            if(d.Active)Mappings.Add(new(physical,previous?.LogicalLine is { } logical?logical+physical-previous.PhysicalLine:null,previous?.File,true,null,d.Span));return;
         }
         if(argument.StartsWith('(')){Later(d,10);return;}
         int end=0;while(end<argument.Length&&char.IsAsciiDigit(argument[end]))end++;
-        if(end==0||!int.TryParse(argument.AsSpan(0,end),NumberStyles.None,CultureInfo.InvariantCulture,out int number)||number<1)
-        {Error("CSN1207","Expected a positive #line number representable by Int32.",d);return;}
-        bool ignored=number>=16707566;
+        if(end==0||!BigInteger.TryParse(argument.AsSpan(0,end),NumberStyles.None,CultureInfo.InvariantCulture,out var number)||(!UnicodePolicy.IsHistorical(version)&&(number<1||number>int.MaxValue)))
+        {Error("CSN1207","Expected decimal #line digits (positive Int32 for current profiles).",d);return;}
+        bool ignored=!UnicodePolicy.IsHistorical(version)&&number>=16707566;
         if(ignored)issues.Add(new("CSN1208","Line number exceeds the PDB representable limit; this mapping is ignored.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
         string? file=previous?.File;
         if(end<argument.Length)
@@ -61,7 +62,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
             {Error("CSN1207","Expected a quoted mapped file name.",d);return;}
             file=rest[1..^1];
         }
-        if(d.Active&&!ignored)Mappings.Add(new(physical,number-1,file,false));
+        if(d.Active&&!ignored)Mappings.Add(new(physical,number-1,file,false,argument[..end],d.Span));
     }
     internal void Finish()
     {

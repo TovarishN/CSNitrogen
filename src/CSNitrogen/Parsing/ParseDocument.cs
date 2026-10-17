@@ -18,6 +18,9 @@ public sealed class ParseDocument : IDisposable
     public IReadOnlyList<DirectiveRecord> Directives => Preprocessing.Directives;
     public IReadOnlyList<TextSpan> InactiveSpans => Preprocessing.InactiveSpans;
     public IReadOnlyList<LineMapping> LineMappings => Preprocessing.LineMappings;
+    public IReadOnlyList<ExactLineMapping> ExactLineMappings => Preprocessing.ExactLineMappings;
+    public ExactMappedLocation MapLocationExact(int offset) => Preprocessing.MapLocationExact(offset);
+    public bool TryMapLocation(int offset,out MappedLocation? location) => Preprocessing.TryMapLocation(offset,out location);
     public MappedLocation MapLocation(int offset) => Preprocessing.MapLocation(offset);
     public string Profile { get; }
     public string DocumentId { get; }

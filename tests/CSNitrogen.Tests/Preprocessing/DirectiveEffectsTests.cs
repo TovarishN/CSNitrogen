@@ -8,7 +8,7 @@ public class DirectiveEffectsTests
     [InlineData("#region group",true)][InlineData("#endregion",true)]
     [InlineData("#error failed",true)][InlineData("#warning message",false)]
     [InlineData("#if false\n#error ignored\n#endif\nclass C {}",false)]
-    [InlineData("#unknown",true)][InlineData("#line 0",true)][InlineData("#line 16707566",false)]
+    [InlineData("#unknown",true)][InlineData("#line 0",false)][InlineData("#line 16707566",false)]
     public void Directive_effects_and_invalid_forms(string source,bool error)=>Assert.Equal(error,Process(source).HasErrors);
     [Fact] public void Warnings_preserve_authored_message_and_severity()
     { var issue=Assert.Single(Process("#warning text // content").Issues);Assert.Equal(DiagnosticSeverity.Warning,issue.Severity);Assert.Contains("text // content",issue.Message); }

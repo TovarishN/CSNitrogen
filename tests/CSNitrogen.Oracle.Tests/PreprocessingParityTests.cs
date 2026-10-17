@@ -15,7 +15,6 @@ public class PreprocessingParityTests
         yield return ["#line 16707566 nonsense\nclass C {}"];
         yield return ["#line 16707567 \"unterminated\nclass C {}"];
         yield return ["#line 16707566 \"valid.cs\" junk\nclass C {}"];
-        yield return ["#line 16707566 \"valid.cs\"\nclass C {}"];
 
         yield return ["#define X\n#if X\nclass A {}\n#else\nclass B {}\n#endif"];
         yield return ["#if false\n\"unterminated\n#endif\nclass C {}"];
@@ -28,7 +27,6 @@ public class PreprocessingParityTests
         yield return ["#if true\n#region group\n#else\n#endregion\n#endif"];
         yield return ["#if true\n#endif junk"];
         yield return ["#if true\nclass C {}"];
-        yield return ["#line 16707566\nclass C {}"];
         yield return ["#error failed\nclass C {}"];
         yield return ["#warning text // content\nclass C {}"];
         yield return ["#warning123\nclass C {}"];
@@ -52,6 +50,25 @@ public class PreprocessingParityTests
         Assert.False(historical.Accepted);
         Assert.True(current.Accepted);
         Assert.DoesNotContain(Oracle.Observe(source,LanguageVersion.CSharp1).CompilationDiagnostics,d=>d.Severity==DiagnosticSeverity.Error);
+    }
+    public static IEnumerable<object[]> HistoricalMappingDifferences()
+    {
+        yield return ["#line 16707566 \"valid.cs\"\nclass C {}"];
+        yield return ["#line 16707566\nclass C {}"];
+    }
+    [Theory][MemberData(nameof(HistoricalMappingDifferences))]
+    public void Historical_mapping_preserves_values_ignored_by_current_PDB_policy(string source)
+    {
+        using var historical=CSharpParser.Parse(new(source,"CSharp1","physical.cs",[]));
+        using var current=CSharpParser.Parse(new(source,"CSharp14","physical.cs",[]));
+        Assert.True(historical.Accepted);Assert.True(current.Accepted);
+        int offset=source.IndexOf("class",StringComparison.Ordinal);
+        Assert.Equal(16707565,historical.MapLocation(offset).LogicalLine);
+        var oracle=Oracle.Observe(source,LanguageVersion.CSharp1);
+        var identifier=oracle.Tree.GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>().Single().Identifier;
+        Assert.Equal(oracle.Tree.GetMappedLineSpan(identifier.Span).StartLinePosition.Line,current.MapLocation(identifier.SpanStart).LogicalLine);
+        Assert.Contains(current.Issues,i=>i.Code=="CSN1208");
+        Assert.DoesNotContain(historical.Issues,i=>i.Code=="CSN1208");
     }
     [Theory][MemberData(nameof(Sources))]
     public void Public_pipeline_matches_active_source_and_directive_diagnostics(string source)
