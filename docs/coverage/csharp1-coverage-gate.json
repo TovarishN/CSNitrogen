@@ -1074,7 +1074,7 @@
     {
       "id": "historical-standard-crosswalk",
       "status": "pending",
-      "reason": "Map the pinned historical standard productions to authored rule families and justified semantic/sugar equivalents. An authored-rule catalog alone cannot find missing language productions.",
+      "reason": "The independent Appendix A heading index and candidate crosswalk now exist. Close each nominated mapping against normative RHS/prose and production-specific evidence; source headings and owner identity alone do not establish historical conformance.",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf"
     },
     {

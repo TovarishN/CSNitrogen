@@ -100,7 +100,7 @@ public class CSharp1CoverageGateTests(ITestOutputHelper output)
         var assembly = typeof(FeatureCatalog).Assembly;
         const string gate = "CSNitrogen.csharp1-coverage-gate.json";
         Assert.Contains(gate, assembly.GetManifestResourceNames());
-        string[] fixedInputs = ["CSNitrogen.coverage.json", "CSNitrogen.dependencies.json", "CSNitrogen.composition.json", "CSNitrogen.reference-policy.json", gate];
+        string[] fixedInputs = ["CSNitrogen.coverage.json", "CSNitrogen.dependencies.json", "CSNitrogen.composition.json", "CSNitrogen.reference-policy.json", gate, "CSNitrogen.csharp1-standard-index.json", "CSNitrogen.csharp1-standard-crosswalk.json"];
         var names = assembly.GetManifestResourceNames().Where(n => fixedInputs.Contains(n) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal));
         var inputs = names.Select(n => { using var stream = assembly.GetManifestResourceStream(n)!; using var bytes = new MemoryStream(); stream.CopyTo(bytes); return new KeyValuePair<string, byte[]>(n, bytes.ToArray()); }).ToArray();
         Assert.Equal(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs));
