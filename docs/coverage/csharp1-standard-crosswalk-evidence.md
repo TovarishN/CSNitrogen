@@ -73,3 +73,7 @@ The [name/rank normative review](csharp1-name-rank-normative-evidence.md) closes
 ## Parent-type continuation
 
 After PR #12, the [parent type/array/return review](csharp1-parent-type-normative-evidence.md) reviews sixteen additional normalized contributing type-category, base/rank and return-wrapper occurrences. Current declarations are 27 verified and 335 pending. Root type, pointer and unmanaged rows retain the explicit array-pointer oracle phase difference and remain pending; module/policy/feature/global obligations are not promoted. Earlier counts above record their respective checkpoints.
+
+## Root-type/pointer continuation
+
+The [root-type/pointer boundary review](csharp1-pointer-boundary-normative-evidence.md) records four further historical valid-recognition/contributing-production closures: current declarations are 31 verified and 331 pending. Managed-referent and unsafe-context semantics remain excluded; the modern array-pointer diagnostic-phase difference is retained as a limitation. No broader family/module/policy/feature/global completion promotion follows. Earlier row counts and pending-boundary statements above describe their respective checkpoints.
