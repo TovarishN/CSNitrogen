@@ -2,7 +2,7 @@
 
 C# syntax experiments and versioned grammar foundations built with Nitrogen.
 
-**Every version profile is partial.** Production Nitrogen modules now implement a C# 1 source-syntax baseline: names/types, expressions, statements, attributes, declarations, namespaces, and optional unsafe syntax, with source-preserving preprocessing. C# 2–14 feature syntax remains future work. This is a parser, not a C# semantic compiler.
+**CSharp1 has reviewed syntax coverage; CSharp2–14 and custom profiles remain partial.** Production Nitrogen modules now implement a C# 1 source-syntax baseline: names/types, expressions, statements, attributes, declarations, namespaces, and optional unsafe syntax, with source-preserving preprocessing. C# 2–14 feature syntax remains future work. This is a parser, not a C# semantic compiler.
 
 ## Build and test
 
@@ -10,7 +10,7 @@ Requires the .NET SDK 10.0.100, the .NET 10.0.0 reference pack (oracle tests), a
 
 ```sh
 git clone https://github.com/TovarishN/Nitrogen.git .dependencies/NitrogenSource
-git -C .dependencies/NitrogenSource checkout --detach f5bf525e3e2723a8fe39e127f800f6376345feb1
+git -C .dependencies/NitrogenSource checkout --detach 6149713ea5348e3fff61d032c441fc6d6cf733e2
 python3 eng/prepare-dependencies.py --source .dependencies/NitrogenSource
 dotnet build CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
 dotnet test tests/CSNitrogen.Tests -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s
@@ -37,7 +37,7 @@ The result owns the pooled Nitrogen tree. Borrowed nodes and typed views expire 
 
 Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. Each currently selects the baseline grammar modules in `src/CSNitrogen.Syntax/nitrogen.json`; differing names do not imply later syntax is implemented. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
 
-`ProfileResolver.ResolveCustom` validates feature requirements/conflicts and gives deterministic module selections. It does not build arbitrary runtime grammars or execute a custom profile through `CSharpParser`. Implemented metadata separates source grammar families, lexical categories, trivia, preprocessing and unsafe syntax. Full language coverage remains unfinished.
+`ProfileResolver.ResolveCustom` validates feature requirements/conflicts and gives deterministic module selections. It does not build arbitrary runtime grammars or execute a custom profile through `CSharpParser`. Implemented metadata separates source grammar families, lexical categories, trivia, preprocessing and unsafe syntax. Custom resolutions describe canonical capability bundles and do not advertise independently removable inventory entries.
 
 ## Composition and capability evidence
 
@@ -62,7 +62,7 @@ The [context conformance continuation](docs/coverage/csharp1-context-conformance
 
 CSharp1 now selects the pinned Unicode 3.0 BMP category policy; other partial profiles retain current .NET categories. Raw identifier grammar is a union and requires `CSharpSyntaxPolicy.Check(tree, version)` when bypassing the public parser. See [historical Unicode evidence](docs/coverage/csharp1-historical-unicode-evidence.md). Global attribute targets now expose a typed alternative containing their Token.
 
-The [names/types conformance continuation](docs/coverage/csharp1-type-conformance-evidence.md) maps every NamesTypes production to direct fixtures and independent typed child/span comparisons. Compiler-deferred void and standalone array-rank oracle differences are recorded explicitly; all profiles remain partial.
+The [names/types conformance continuation](docs/coverage/csharp1-type-conformance-evidence.md) maps every NamesTypes production to direct fixtures and independent typed child/span comparisons. Compiler-deferred void and standalone array-rank oracle differences are recorded explicitly.
 
 The [cast/expression conformance continuation](docs/coverage/csharp1-cast-conformance-evidence.md) compares recursive cast operands, operator grouping and authored spans. It adds finite malformed and safe-module observations without claiming full expression coverage.
 
@@ -76,4 +76,6 @@ The [compilation-unit/namespace continuation](docs/coverage/csharp1-compilation-
 
 The [unsafe-composition continuation](docs/coverage/csharp1-unsafe-conformance-evidence.md) checks pointer/fixed/stackalloc views and paired module omission. The configured safe factory differs by exactly `CSharp.Unsafe`; built-in `sizeof` and ordinary shared operators remain available. This demonstrates syntax membership, while semantic safety and runtime customization remain separate work.
 
-The [C# 1 coverage gate](docs/coverage/csharp1-coverage-gate-evidence.md) now audits the configured grammar catalog, policy mappings, fixture links and explicit completion obligations. Run `dotnet test tests/CSNitrogen.Oracle.Tests --filter FullyQualifiedName~CSharp1CoverageGateTests`. The [historical standard crosswalk](docs/coverage/csharp1-standard-crosswalk-evidence.md) now preserves 362 independently extracted grammar-heading occurrences and their candidate owners. The [root-type/pointer review](docs/coverage/csharp1-pointer-boundary-normative-evidence.md) brings reviewed source occurrences to 31, with 331 pending. Its historical valid-syntax scope and invalid-referent phase differences remain explicit; CSharp1 remains partial.
+The [C# 1 coverage gate](docs/coverage/csharp1-coverage-gate-evidence.md) now audits the configured grammar catalog, policy mappings, fixture links and explicit completion obligations. Run `dotnet test tests/CSNitrogen.Oracle.Tests --filter FullyQualifiedName~CSharp1CoverageGateTests`. The [historical standard crosswalk](docs/coverage/csharp1-standard-crosswalk-evidence.md) now preserves 362 independently extracted grammar-heading occurrences and their candidate owners. The [root-type/pointer review](docs/coverage/csharp1-pointer-boundary-normative-evidence.md) records an earlier 31-occurrence milestone; its historical valid-syntax scope and invalid-referent phase differences remain explicit.
+
+The [whole pending C# 1 source review](docs/coverage/csharp1-pending-normative-review.md) closes the remaining 331 occurrences: all 362 now have scoped normative/context/span review. Historical lexical/directive and Pratt-category discrepancies are corrected, and [exact logical line mapping](docs/coverage/csharp1-line-mapping-decision.md) uses `BigInteger` with checked legacy access. The approved [canonical capability contract](docs/coverage/csharp1-feature-catalog-decision.md) maps all 40 historical syntax inventory identities to 19 canonical capabilities and required policies. `FeatureCatalog.CoverageMappings` exposes these reporting mappings; selecting an inventory-only name produces `coverage-only-feature` with the required bundle. `CSharp1` reports `Complete` and `ProfileComplete` only when source, mappings, factory and policies agree. Completeness describes syntax coverage independently of input acceptance and excludes binding/type/value semantics. Later/custom profiles remain partial. See [verification evidence](docs/coverage/csharp1-canonical-coverage-evidence.md).

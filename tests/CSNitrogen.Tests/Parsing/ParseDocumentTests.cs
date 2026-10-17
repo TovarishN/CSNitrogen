@@ -2,10 +2,10 @@ using CSNitrogen.Parsing;
 namespace CSNitrogen.Tests.Parsing;
 public class ParseDocumentTests
 {
-    [Fact] public void Supported_input_is_accepted_but_profile_is_partial()
+    [Fact] public void Supported_input_is_accepted_under_the_reviewed_historical_profile()
     {
         using var doc = CSharpParser.Parse(new("class C {}", "CSharp1", "test.cs", []));
-        Assert.True(doc.Accepted); Assert.False(doc.ProfileComplete); Assert.Equal("class C {}", doc.OriginalText);
+        Assert.True(doc.Accepted); Assert.True(doc.ProfileComplete); Assert.Equal("class C {}", doc.OriginalText);
         Assert.Equal("test.cs", doc.DocumentId); Assert.Equal("C", doc.Classes[0].Name.ToString());
     }
     [Fact] public void Tree_access_cannot_outlive_owner()
@@ -49,7 +49,7 @@ public class ParseDocumentTests
     [Theory][InlineData("\r")][InlineData("\u0085")][InlineData("\u2028")][InlineData("\u2029")]
     public void All_CSharp_line_terminators_end_line_comments(string newline)
     {
-        using var doc=CSharpParser.Parse(new("class C {} // text"+newline+"class D {}","CSharp1","test.cs",[]));
+        using var doc=CSharpParser.Parse(new("class C {} // text"+newline+"class D {}","CSharp14","test.cs",[]));
         Assert.True(doc.Accepted); Assert.Equal(2,doc.Classes.Count);
     }
     [Fact] public void Leading_bom_preserves_original_offsets()

@@ -35,7 +35,7 @@ public class CompilationUnitConformanceParityTests
         Assert.DoesNotContain(reference.GetDiagnostics(), d => d.Severity == Microsoft.CodeAnalysis.DiagnosticSeverity.Error);
         using var ours = CSharpParser.Parse(new(source, "CSharp1", "units.cs", []));
         Assert.True(ours.Accepted, source + " :: " + string.Join(";", ours.Issues));
-        Assert.False(ours.ProfileComplete);
+        Assert.True(ours.ProfileComplete);
         CompilationUnitShapeAssert.Compare((CompilationUnitSyntax)reference.GetRoot(), ours);
     }
 

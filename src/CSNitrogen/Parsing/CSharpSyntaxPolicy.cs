@@ -9,7 +9,7 @@ public static class CSharpSyntaxPolicy
     {
         ArgumentNullException.ThrowIfNull(tree);version??=new(1,0);var issues=new List<ParseIssue>();
         issues.AddRange(UnicodePolicy.Check(tree,version));
-        issues.AddRange(CSharpAttributePolicy.Check(tree));
+        issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
@@ -31,6 +31,51 @@ public static class CSharpSyntaxPolicy
                         issues.Add(new("CSN2002","Adjacent word tokens must be separated; Unicode escapes do not form keyword boundaries.",current,IssueCategory.Syntax));
                 }
                 previous=n;
+            }
+            if(kind=="AssignmentExpression" && tree.ChildCount(n)>=3)
+            {
+                var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;
+                bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "ThisExpression" or
+                    "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
+                    "ObjectCreationExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
+                    "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
+                    "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or
+                    "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
+                    "PointerIndirectionExpression" or "AddressExpression" or "PointerMemberExpression" or "SizeOfExtendedExpression";
+                if(!unary)issues.Add(new("CSN2013","An assignment target must be a unary expression; writability is a separate semantic check.",tree.Span(target.Index),IssueCategory.Syntax));
+            }
+            if(tree.ChildCount(n)>0 && kind is "MultiplyExpression" or "DivideExpression" or "RemainderExpression" or
+                "AddExpression" or "SubtractExpression" or "ShiftLeftExpression" or "ShiftRightExpression")
+            {
+                var left=kind switch
+                {
+                    "MultiplyExpression" => SyntaxView.Cast<MultiplyExpressionExpression>(tree,n).Left,
+                    "DivideExpression" => SyntaxView.Cast<DivideExpressionExpression>(tree,n).Left,
+                    "RemainderExpression" => SyntaxView.Cast<RemainderExpressionExpression>(tree,n).Left,
+                    "AddExpression" => SyntaxView.Cast<AddExpressionExpression>(tree,n).Left,
+                    "SubtractExpression" => SyntaxView.Cast<SubtractExpressionExpression>(tree,n).Left,
+                    "ShiftLeftExpression" => SyntaxView.Cast<ShiftLeftExpressionExpression>(tree,n).Left,
+                    _ => SyntaxView.Cast<ShiftRightExpressionExpression>(tree,n).Left
+                };
+                if(Kind(left.Index) is "IsExpression" or "AsExpression")
+                    issues.Add(new("CSN2016","A type-operator result requires parentheses before an operator at this tighter precedence.",tree.Span(n),IssueCategory.Syntax));
+            }
+            if(tree.ChildCount(n)>0 && kind is "MemberExpression" or "InvocationExpression" or "ElementExpression" or
+                "PostfixIncrementExpression" or "PostfixDecrementExpression" or "PointerMemberExpression")
+            {
+                // A Pratt type operand (is/as) is not an expression recursion and can
+                // leave a following suffix for the outer loop. Such a suffix still
+                // requires the primary-expression category specified by the grammar.
+                var target=kind switch
+                {
+                    "MemberExpression" => SyntaxView.Cast<MemberExpressionExpression>(tree,n).Target,
+                    "InvocationExpression" => SyntaxView.Cast<InvocationExpressionExpression>(tree,n).Target,
+                    "ElementExpression" => SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target,
+                    "PostfixIncrementExpression" => SyntaxView.Cast<PostfixIncrementExpressionExpression>(tree,n).Value,
+                    "PostfixDecrementExpression" => SyntaxView.Cast<PostfixDecrementExpressionExpression>(tree,n).Value,
+                    _ => SyntaxView.Cast<PointerMemberExpressionExpression>(tree,n).Target
+                };
+                if(!IsPrimaryKind(Kind(target.Index)))issues.Add(new("CSN2015","A primary suffix requires a primary expression target; parenthesize a type-operator result.",tree.Span(n),IssueCategory.Syntax));
             }
             if(kind=="ElementExpression" && tree.ChildCount(n)>0)
             {
@@ -102,6 +147,12 @@ public static class CSharpSyntaxPolicy
         }
         return Array.AsReadOnly(issues.ToArray());
     }
+    private static bool IsPrimaryKind(string kind) => kind is "NameExpression" or "LiteralExpression" or "ThisExpression" or
+        "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or
+        "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
+        "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
+        "InvocationExpression" or "ElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or
+        "PointerMemberExpression" or "SizeOfExtendedExpression";
     private static bool IsIdentifierPart(char c)=>char.IsLetterOrDigit(c)||c=='_'||
         char.GetUnicodeCategory(c) is UnicodeCategory.LetterNumber or UnicodeCategory.ConnectorPunctuation or UnicodeCategory.NonSpacingMark or UnicodeCategory.SpacingCombiningMark or UnicodeCategory.Format;
 }

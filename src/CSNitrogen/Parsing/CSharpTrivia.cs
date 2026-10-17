@@ -3,7 +3,7 @@ namespace CSNitrogen.Parsing;
 internal static class CSharpTrivia
 {
     private static readonly Version HistoricalVersion=new(1,0);
-    internal static bool IsNewline(char value) => value is '\r' or '\n' or '\u0085' or '\u2028' or '\u2029';
+    internal static bool IsNewline(char value,bool historical=false) => value is '\r' or '\n' or '\u2028' or '\u2029' || (!historical && value=='\u0085');
     internal static int Skip(ReadOnlySpan<char> text, int position)=>SkipCore(text,position,false);
     internal static int SkipHistorical(ReadOnlySpan<char> text,int position)=>SkipCore(text,position,true);
     private static int SkipCore(ReadOnlySpan<char> text,int position,bool historical)
@@ -18,7 +18,7 @@ internal static class CSharpTrivia
                 if (text[i + 1] == '/')
                 {
                     i += 2;
-                    while (i < text.Length && !IsNewline(text[i])) i++;
+                    while (i < text.Length && !IsNewline(text[i],historical)) i++;
                     continue;
                 }
                 if (text[i + 1] == '*')

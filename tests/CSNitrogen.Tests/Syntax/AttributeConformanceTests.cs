@@ -63,6 +63,6 @@ public class AttributeConformanceTests
   var issue=Assert.Single(bad.Issues,i=>i.Code=="CSN2005");
   Assert.Equal(invalid.IndexOf("2",StringComparison.Ordinal),issue.Span.Start);
   using var good=CSharpParser.Parse(new("[A(X=1)] class C{void M(){x=1;}}",profile,"ordinary.cs",[]));
-  Assert.True(good.Accepted);Assert.False(good.ProfileComplete);
+  Assert.True(good.Accepted);Assert.Equal(profile=="CSharp1",good.ProfileComplete);
  }
 }

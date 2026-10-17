@@ -1,5 +1,7 @@
 # C# 1 production/coverage gate — 2026-10-17
 
+Current continuation: [canonical coverage implementation](csharp1-canonical-coverage-evidence.md) supersedes earlier runtime-gap and all-profiles-partial status below. Historical test counts and scope observations are retained.
+
 PR #10 was merged at its verified head after a fresh 2,695-test run. This checkpoint starts from merged main `d2d1805` and follows approved source-grammar plan Task 8. It makes the existing completion contract auditable; it does not declare C# 1 complete or begin later-version implementation.
 
 ## Current gate result

@@ -18,11 +18,11 @@ public class AttributeConformanceParityTests
   string full=source.StartsWith("class",StringComparison.Ordinal)||source.Contains(" using ",StringComparison.Ordinal)?source:source+" class C{}";
   var oracle=Oracle.Observe(full,LanguageVersion.CSharp1);
   bool accepted=!oracle.SyntaxDiagnostics.Any(d=>d.Severity==DiagnosticSeverity.Error)&&!oracle.CompilationDiagnostics.Any(d=>d.Id is "CS8022" or "CS1016");
-  // Roslyn preserves a general expression here. The specification's
-  // attribute_argument_expression is non_assignment_expression.
+  // The pinned first edition uses expression; modern editions use
+  // non_assignment_expression. Roslyn preserves general syntax here.
   if(source is "[A(x+=1)]" or "[A(X=y=1)]")
   {
-   Assert.True(accepted);Assert.False(expected);
+   Assert.True(accepted);Assert.True(expected);
    var attribute=Assert.Single(oracle.Tree.GetRoot().DescendantNodes().OfType<AttributeSyntax>());
    Assert.IsAssignableFrom<AssignmentExpressionSyntax>(Assert.Single(attribute.ArgumentList!.Arguments).Expression);
   }

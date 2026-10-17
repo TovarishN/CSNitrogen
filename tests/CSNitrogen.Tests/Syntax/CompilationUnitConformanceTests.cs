@@ -42,7 +42,7 @@ public class CompilationUnitConformanceTests
         using var document = CSharpParser.Parse(new(source, "CSharp1", "accepted.cs", []));
         Assert.True(document.Accepted, string.Join(";", document.Issues));
         Assert.DoesNotContain(document.Issues, i => i.Code == "CSN2012");
-        Assert.False(document.ProfileComplete);
+        Assert.True(document.ProfileComplete);
     }
 
     [Fact]

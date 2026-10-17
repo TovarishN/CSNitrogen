@@ -17,7 +17,7 @@ public class HistoricalUnicodeParityTests
   var language=CSharp1Composition.CreateBuilder().Build();
   for(int code=0;code<65536;code++)
   {
-   bool start=code==95||categories[code] is "Lu" or "Ll" or "Lt" or "Lm" or "Lo" or "Nl";
+   bool start=categories[code] is "Lu" or "Ll" or "Lt" or "Lm" or "Lo" or "Nl";
    bool part=start||categories[code] is "Nd" or "Pc" or "Mn" or "Mc" or "Cf";
    string escape="\\u"+code.ToString("X4");
    using var a=language.Parse(escape,LexicalModule.IdentifierFragment);
@@ -55,7 +55,7 @@ public class HistoricalUnicodeParityTests
   var categories=ReadCategories();
   for(int code=0;code<65536;code++)
   {
-   bool space=categories[code]=="Zs"||code is 9 or 10 or 11 or 12 or 13 or 0x85 or 0x2028 or 0x2029;
+   bool space=categories[code]=="Zs"||code is 9 or 10 or 11 or 12 or 13 or 0x2028 or 0x2029;
    using var parsed=CSharpParser.Parse(new("class C{"+(char)code+"}","CSharp1","space.cs",[]));
    Assert.True(space==parsed.Accepted,"Historical whitespace U+"+code.ToString("X4"));
   }

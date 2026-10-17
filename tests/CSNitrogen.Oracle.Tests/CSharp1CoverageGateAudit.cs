@@ -140,10 +140,22 @@ internal static class CSharp1CoverageGateAudit
                 foreach (string path in fixturePaths) if (!path.StartsWith("tests/", StringComparison.Ordinal) || path.Contains("..", StringComparison.Ordinal) || !File.Exists(Path.Combine(AppContext.BaseDirectory, "CoverageInputs", path))) errors.Add("InventoryEvidence: missing fixture " + path);
                 if (!feature["reviewed"]!.GetValue<bool>() || feature["status"]!.GetValue<string>() != "verified") blockers.Add("Feature " + id + ": not verified");
             }
+            // Reuse the production coverage evaluator on the supplied (possibly
+            // mutated) inventory; verified source/status declarations cannot hide
+            // missing or malformed capability/policy coverage mappings.
+            var runtime=ProfileResolver.Resolve("CSharp1").Profile ?? throw new InvalidOperationException("Named CSharp1 profile resolution failed.");
+            var coverageInventory=features.Select(f=>new CoverageFeature(f!["id"]!.GetValue<string>(),Version.Parse(f["introduced"]!.GetValue<string>()),
+                f["classification"]!.GetValue<string>(),f["reviewed"]!.GetValue<bool>(),f["status"]!.GetValue<string>())).ToArray();
+            var coverageMappings=features.Where(f=>f!["coverage"] is not null).Select(f=>new CoverageMapping(f!["id"]!.GetValue<string>(),
+                f["coverage"]!["capabilities"]!.AsArray().Select(c=>c!.GetValue<string>()).ToArray(),f["coverage"]!["policies"]!.AsArray().Select(c=>c!.GetValue<string>()).ToArray())).ToArray();
+            var coverage=CoverageContract.Evaluate(new(1,0),coverageInventory,coverageMappings,FeatureCatalog.Implemented,runtime.Features,runtime.Policies,
+                FeatureCatalog.KnownPolicies,runtime.Grammars,FeatureCatalog.FactoryGrammars("CSharp1"),true,CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules));
+            foreach(var issue in coverage.Issues)errors.Add("CoverageMappings: "+issue.Code+": "+issue.Message);
+            if(coverage.Missing.Count>0)blockers.Add("RuntimeCoverage: "+coverage.Missing.Count+" inventory requirements are not supplied.");
             Exact("PolicyGroups", policyGroups, ledger.PolicyGroups.Keys);
             Exact("SemanticExclusions", exclusions, ledger.SemanticExclusions.Select(e => e.Id));
             foreach (var exclusion in ledger.SemanticExclusions) { if (string.IsNullOrWhiteSpace(exclusion.Reason)) errors.Add("SemanticExclusions: missing reason"); Reference(exclusion.Reference, exclusion.Id); }
-            Exact("Obligations", new[] { "historical-standard-crosswalk", "independent-context-review" }, ledger.Obligations.Select(o => o.Id));
+            Exact("Obligations", new[] { "historical-standard-crosswalk", "independent-context-review", "runtime-profile-contract" }, ledger.Obligations.Select(o => o.Id));
             foreach (var obligation in ledger.Obligations) { Status(obligation.Status, "Obligation " + obligation.Id); if (string.IsNullOrWhiteSpace(obligation.Reason)) errors.Add("Obligations: missing reason"); Reference(obligation.Reference, obligation.Id); }
         }
         catch (Exception error) { errors.Add("Schema: " + error.Message); }

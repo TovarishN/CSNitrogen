@@ -11,19 +11,21 @@ public static class ProfileResolver
         var custom = ResolveCustom(name,FeatureCatalog.Implemented.Select(f=>f.Id));
         var requested = FeatureCatalog.Inventory.Where(f => f.Classification == "syntax-or-policy" && f.Introduced <= version)
             .Select(f => f.Id).Order(StringComparer.Ordinal).ToArray();
-        return custom with { Profile = custom.Profile! with {
-            Version = version,
-            Grammars = Array.AsReadOnly(custom.Profile.Grammars.Select(g=>version.Major==1 && g=="Grammars/GlobalTargetsCurrent.ngr"?"Grammars/GlobalTargetsHistorical.ngr":g).Order(StringComparer.Ordinal).ToArray()),
-            Policies = Array.AsReadOnly(new[]{version.Major==1?"unicode-3.0-bmp":"unicode-current-bmp"}),
-            RequestedFeatures = Array.AsReadOnly(requested),
-            MissingFeatures = Array.AsReadOnly(requested.Except(custom.Profile!.Features,StringComparer.Ordinal).ToArray())
-        } };
+        if(custom.Profile is null)return custom;
+        var grammars=Array.AsReadOnly(custom.Profile.Grammars.Select(g=>version.Major==1 && g=="Grammars/GlobalTargetsCurrent.ngr"?"Grammars/GlobalTargetsHistorical.ngr":g).Order(StringComparer.Ordinal).ToArray());
+        var policies=Array.AsReadOnly(custom.Profile.Policies.Append(version.Major==1?"unicode-3.0-bmp":"unicode-current-bmp").Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray());
+        bool factory=version!=new Version(1,0) || CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules);
+        var coverage=CoverageContract.Evaluate(version,FeatureCatalog.Inventory,FeatureCatalog.CoverageMappings,FeatureCatalog.Implemented,
+            custom.Profile.Features,policies,FeatureCatalog.KnownPolicies,grammars,FeatureCatalog.FactoryGrammars(name),FeatureCatalog.SourceReviewed,factory);
+        if(coverage.Issues.Count>0)return new(null,coverage.Issues);
+        return new(custom.Profile with {Version=version,Grammars=grammars,Policies=policies,RequestedFeatures=Array.AsReadOnly(requested),
+            MissingFeatures=coverage.Missing,Complete=coverage.Complete},custom.Issues);
     }
     public static ProfileResolution ResolveCustom(string name, IEnumerable<string> featureIds,
         IReadOnlyList<FeatureDefinition>? definitions = null)
     {
         ArgumentException.ThrowIfNullOrEmpty(name); ArgumentNullException.ThrowIfNull(featureIds);
-        var features=featureIds.ToArray(); definitions ??= FeatureCatalog.Implemented;
+        var features=featureIds.ToArray(); bool canonical=definitions is null; definitions ??= FeatureCatalog.Implemented;
         var issues=new List<ProfileIssue>();
         foreach(var duplicate in definitions.GroupBy(d=>d.Id,StringComparer.Ordinal).Where(g=>g.Count()>1))
             issues.Add(new("catalog-duplicate",$"Duplicate catalog feature '{duplicate.Key}'."));
@@ -44,7 +46,13 @@ public static class ProfileResolver
         var selected=features.ToHashSet(StringComparer.Ordinal);
         foreach(var id in selected.Order(StringComparer.Ordinal))
         {
-            if(!catalog.TryGetValue(id,out var feature)) { issues.Add(new("unknown-feature",$"Unknown feature '{id}'.")); continue; }
+            if(!catalog.TryGetValue(id,out var feature))
+            {
+                var mapping=canonical?FeatureCatalog.CoverageMappings.FirstOrDefault(m=>m.InventoryId==id):null;
+                if(mapping is null)issues.Add(new("unknown-feature",$"Unknown feature '{id}'."));
+                else issues.Add(new("coverage-only-feature",$"Coverage identity '{id}' is not independently selectable. Required canonical bundles: {string.Join(", ",mapping.Capabilities)}; policies: {string.Join(", ",mapping.Policies)}. Select canonical capabilities with their explicit dependencies."));
+                continue;
+            }
             foreach(var requirement in feature.Requires.Where(r=>!selected.Contains(r)))
                 issues.Add(new("missing-requirement",$"Feature '{id}' requires '{requirement}'."));
             foreach(var conflict in feature.Conflicts.Where(selected.Contains))
@@ -54,6 +62,6 @@ public static class ProfileResolver
         if(orderedIssues.Length>0) return new(null,Array.AsReadOnly(orderedIssues));
         return new(new(name,null,Array.AsReadOnly(selected.Order(StringComparer.Ordinal).ToArray()),
             Array.AsReadOnly(selected.SelectMany(id=>catalog[id].Grammars).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray()),
-            Array.Empty<string>(),false),Array.Empty<ProfileIssue>());
+            Array.AsReadOnly(selected.SelectMany(id=>catalog[id].Policies).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray()),false),Array.Empty<ProfileIssue>());
     }
 }

@@ -165,12 +165,27 @@ internal static class ExpressionShapeAssert
                 Span(pointerMember.OperatorToken.Span, new Nitrogen.SyntaxNode(tree, actual.Index).Child(1).Span); break;
             case MemberAccessExpressionSyntax member when member.Expression is BaseExpressionSyntax:
                 Kind("BaseMemberExpression"); Span(member.Name.Span, SyntaxView.Cast<BaseMemberExpressionExpression>(tree, actual.Index).Name.Span); Assert.Equal(member.Name.ToString(), SyntaxView.Cast<BaseMemberExpressionExpression>(tree, actual.Index).Name.ToString()); break;
+            case MemberAccessExpressionSyntax member when member.Expression is PredefinedTypeSyntax predefined:
+                Kind("PredefinedMemberExpression"); var predefinedMember = SyntaxView.Cast<PredefinedMemberExpressionExpression>(tree, actual.Index);
+                Type(predefined, predefinedMember.Type.Span); Span(member.Name.Span, predefinedMember.Name.Span);
+                Assert.Equal(member.Name.ToString(), predefinedMember.Name.ToString()); break;
             case MemberAccessExpressionSyntax member:
                 Kind("MemberExpression"); var m = SyntaxView.Cast<MemberExpressionExpression>(tree, actual.Index);
                 Compare(member.Expression, m.Target); Span(member.Name.Span, m.Name.Span); Assert.Equal(member.Name.ToString(), m.Name.ToString()); break;
             case InvocationExpressionSyntax invocation:
                 Kind("InvocationExpression"); var call = SyntaxView.Cast<InvocationExpressionExpression>(tree, actual.Index);
                 Compare(invocation.Expression, call.Target); CompareArguments(invocation.ArgumentList, call.Args); break;
+            case ElementAccessExpressionSyntax element when element.Expression is BaseExpressionSyntax:
+                Kind("BaseIndexExpression"); var baseIndex = SyntaxView.Cast<BaseIndexExpressionExpression>(tree, actual.Index);
+                Assert.Equal(element.ArgumentList.Arguments.Count, baseIndex.Indices.Count);
+                Assert.Equal(element.ArgumentList.Arguments.SeparatorCount, baseIndex.Indices.SeparatorCount);
+                for (int i = 0; i < baseIndex.Indices.Count; i++)
+                {
+                    Compare(element.ArgumentList.Arguments[i].Expression, baseIndex.Indices[i]);
+                    if (i < baseIndex.Indices.SeparatorCount)
+                        Span(element.ArgumentList.Arguments.GetSeparator(i).Span, baseIndex.Indices.Separator(i).Span);
+                }
+                break;
             case ElementAccessExpressionSyntax element:
                 Kind("ElementExpression"); var e = SyntaxView.Cast<ElementExpressionExpression>(tree, actual.Index);
                 Compare(element.Expression, e.Target); Assert.Equal(element.ArgumentList.Arguments.Count, e.Indices.Count);

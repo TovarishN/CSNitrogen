@@ -8,14 +8,14 @@ public class DirectiveEffectsTests
     [InlineData("#region group",true)][InlineData("#endregion",true)]
     [InlineData("#error failed",true)][InlineData("#warning message",false)]
     [InlineData("#if false\n#error ignored\n#endif\nclass C {}",false)]
-    [InlineData("#unknown",true)][InlineData("#line 0",true)][InlineData("#line 16707566",false)]
+    [InlineData("#unknown",true)][InlineData("#line 0",false)][InlineData("#line 16707566",false)]
     public void Directive_effects_and_invalid_forms(string source,bool error)=>Assert.Equal(error,Process(source).HasErrors);
     [Fact] public void Warnings_preserve_authored_message_and_severity()
     { var issue=Assert.Single(Process("#warning text // content").Issues);Assert.Equal(DiagnosticSeverity.Warning,issue.Severity);Assert.Contains("text // content",issue.Message); }
     [Fact] public void Line_mapping_retains_physical_coordinates_and_resets()
     {
         const string source="#line 100 \"generated.cs\"\nclass A {}\n#line hidden\nclass B {}\n#line default\nclass C {}";
-        var result=Process(source);Assert.False(result.HasErrors);
+        var result=Process(source,new(14,0));Assert.False(result.HasErrors);
         var a=result.MapLocation(source.IndexOf("class A",StringComparison.Ordinal));
         Assert.Equal(1,a.PhysicalLine);Assert.Equal(99,a.LogicalLine);Assert.Equal("generated.cs",a.File);Assert.False(a.Hidden);
         Assert.True(result.MapLocation(source.IndexOf("class B",StringComparison.Ordinal)).Hidden);
