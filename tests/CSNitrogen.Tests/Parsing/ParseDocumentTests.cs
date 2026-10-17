@@ -49,7 +49,7 @@ public class ParseDocumentTests
     [Theory][InlineData("\r")][InlineData("\u0085")][InlineData("\u2028")][InlineData("\u2029")]
     public void All_CSharp_line_terminators_end_line_comments(string newline)
     {
-        using var doc=CSharpParser.Parse(new("class C {} // text"+newline+"class D {}","CSharp1","test.cs",[]));
+        using var doc=CSharpParser.Parse(new("class C {} // text"+newline+"class D {}","CSharp14","test.cs",[]));
         Assert.True(doc.Accepted); Assert.Equal(2,doc.Classes.Count);
     }
     [Fact] public void Leading_bom_preserves_original_offsets()

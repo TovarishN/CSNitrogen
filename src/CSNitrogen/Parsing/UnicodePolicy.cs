@@ -16,7 +16,7 @@ internal static class UnicodePolicy
         UnicodeCategory.NonSpacingMark or UnicodeCategory.SpacingCombiningMark or UnicodeCategory.Format;
     internal static bool IsFormat(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsFormat(c):char.GetUnicodeCategory(c)==UnicodeCategory.Format;
     internal static bool IsWhiteSpace(char c,Version version)=>IsHistorical(version)?
-        c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c)||HistoricalUnicodeTables.IsSpace(c):char.IsWhiteSpace(c);
+        c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c,true)||HistoricalUnicodeTables.IsSpace(c):char.IsWhiteSpace(c);
     internal static string Trim(string text,Version version)
     {
         int first=0,last=text.Length;
@@ -32,13 +32,15 @@ internal static class UnicodePolicy
         for(int index=first;index<text.Length;index++)
         {
             char value=text[index];
-            if(value=='\\')
+            bool escaped=value=='\\';
+            if(escaped)
             {
                 if(index+1>=text.Length || text[index+1] is not ('u' or 'U'))return false;
                 int count=text[index+1]=='u'?4:8;
                 if(index+2+count>text.Length||!uint.TryParse(text.AsSpan(index+2,count),NumberStyles.HexNumber,CultureInfo.InvariantCulture,out uint code)||code>65535)return false;
                 value=(char)code;index+=count+1;
             }
+            if(start && escaped && value=='_' && IsHistorical(version))return false;
             if(start?!IsStart(value,version):!IsPart(value,version))return false;
             if(!IsFormat(value,version))result.Append(value);
             start=false;
@@ -52,7 +54,14 @@ internal static class UnicodePolicy
         var issues=new List<ParseIssue>();
         for(int node=0;node<tree.NodeCount;node++)
         {
-            if(tree.Language!.GetKindName(tree.Kind(node))!="Identifier")continue;
+            string kind=tree.Language!.GetKindName(tree.Kind(node));
+            if(!IsHistorical(version) && kind is "Character" or "RegularString")
+            {
+                var literal=tree.Span(node);
+                if(tree.Text.AsSpan(literal.Start,literal.Length).Contains('\u0085'))
+                    issues.Add(new("CSN2021","A raw NEL is a line terminator under the selected current lexical policy.",literal,IssueCategory.Syntax));
+            }
+            if(kind!="Identifier")continue;
             var span=tree.Span(node);string text=tree.Text.Substring(span.Start,span.Length);
             if(!TryNormalize(text,version,true,out _))
                 issues.Add(new("CSN2020","Identifier characters are not valid under the selected Unicode category policy.",span,IssueCategory.Syntax));

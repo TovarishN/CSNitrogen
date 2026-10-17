@@ -15,8 +15,9 @@ public static class ConditionalPreprocessor
             if(supplied is null || !ConditionalSymbols.TryNormalize(supplied,request.Version,out var name))issues.Add(new("CSN1101","Invalid supplied conditional symbol.",new(0,0),IssueCategory.Preprocessing));
             else symbols.Add(name);
         }
-        var scanner=new DirectiveScanner(request.Source,request.Version);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
-        var inactive=new List<TextSpan>();char[] masked=request.Source.ToCharArray();
+        string lexicalSource=UnicodePolicy.IsHistorical(request.Version)&&request.Source.EndsWith('\u001a')?request.Source[..^1]+" ":request.Source;
+        var scanner=new DirectiveScanner(lexicalSource,request.Version);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
+        var inactive=new List<TextSpan>();char[] masked=lexicalSource.ToCharArray();
         var effects=new DirectiveEffects(request.Version,issues);
         bool Active()=>branches.Count==0||branches.Peek().Active;
         void Mask(SourceLine line){for(int i=line.Start;i<line.End;i++)masked[i]=' ';}
@@ -27,7 +28,7 @@ public static class ConditionalPreprocessor
             if(result.Error>=0)issues.Add(new("CSN1102",result.Message!,new(Math.Min(request.Source.Length,d.ArgumentStart+result.Error),0),IssueCategory.Preprocessing));
             return result.Value;
         }
-        foreach(var line in SourceLines.Enumerate(request.Source))
+        foreach(var line in SourceLines.Enumerate(lexicalSource,request.Version))
         {
             bool active=Active();var d=scanner.ScanLine(line,active);
             if(d is null){if(!active){Mask(line);inactive.Add(new(line.Start,line.End-line.Start));}continue;}
@@ -66,6 +67,6 @@ public static class ConditionalPreprocessor
         foreach(int position in scanner.HistoricalWhitespace)masked[position]=' ';
         scanner.Finish();effects.Finish();issues.AddRange(scanner.Issues);
         foreach(var branch in branches)issues.Add(new("CSN1103","Expected #endif.",new(branch.Start,0),IssueCategory.Preprocessing));
-        return new(request.Source,new(masked),directives,inactive,issues,effects.Mappings);
+        return new(request.Source,new(masked),directives,inactive,issues,effects.Mappings,request.Version);
     }
 }

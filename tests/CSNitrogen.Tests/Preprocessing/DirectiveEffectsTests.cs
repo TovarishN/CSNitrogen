@@ -15,7 +15,7 @@ public class DirectiveEffectsTests
     [Fact] public void Line_mapping_retains_physical_coordinates_and_resets()
     {
         const string source="#line 100 \"generated.cs\"\nclass A {}\n#line hidden\nclass B {}\n#line default\nclass C {}";
-        var result=Process(source);Assert.False(result.HasErrors);
+        var result=Process(source,new(14,0));Assert.False(result.HasErrors);
         var a=result.MapLocation(source.IndexOf("class A",StringComparison.Ordinal));
         Assert.Equal(1,a.PhysicalLine);Assert.Equal(99,a.LogicalLine);Assert.Equal("generated.cs",a.File);Assert.False(a.Hidden);
         Assert.True(result.MapLocation(source.IndexOf("class B",StringComparison.Ordinal)).Hidden);

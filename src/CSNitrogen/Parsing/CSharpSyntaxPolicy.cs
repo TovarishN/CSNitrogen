@@ -32,6 +32,18 @@ public static class CSharpSyntaxPolicy
                 }
                 previous=n;
             }
+            if(kind=="AssignmentExpression" && tree.ChildCount(n)>=3)
+            {
+                var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;
+                bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "ThisExpression" or
+                    "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
+                    "ObjectCreationExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
+                    "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
+                    "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or
+                    "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
+                    "PointerIndirectionExpression" or "AddressExpression" or "PointerMemberExpression" or "SizeOfExtendedExpression";
+                if(!unary)issues.Add(new("CSN2013","An assignment target must be a unary expression; writability is a separate semantic check.",tree.Span(target.Index),IssueCategory.Syntax));
+            }
             if(kind=="ElementExpression" && tree.ChildCount(n)>0)
             {
                 var target=SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target;

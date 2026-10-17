@@ -71,7 +71,16 @@ public sealed class DirectiveScanner
     {
         int i=hash+1;while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
         int start=i;while(i<line.End&&IsDirectiveNamePart(_source[i]))i++;
-        string kind=_source[start..i];while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
+        string kind=_source[start..i];
+        bool separated=i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version);
+        if(UnicodePolicy.IsHistorical(_version))
+        {
+            bool requires=kind is "if" or "elif" or "define" or "undef" or "line";
+            bool message=kind is "error" or "warning" or "region" or "endregion";
+            if(!separated && (requires || (message && i<line.End)))
+                Issues.Add(new("CSN1001","Whitespace is required before this directive argument.",new(i,0),IssueCategory.Preprocessing));
+        }
+        while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
         return new(kind,_source[i..line.End],new(hash,line.End-hash),i,line.Number,active);
     }
     private bool IsDirectiveNamePart(char c)=>c=='\\'||UnicodePolicy.IsPart(c,_version);

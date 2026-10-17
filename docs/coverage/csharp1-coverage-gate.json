@@ -925,7 +925,8 @@
         "CSN2003",
         "CSN2004",
         "CSN2005",
-        "CSN2006"
+        "CSN2006",
+        "CSN2013"
       ],
       "status": "observed",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
@@ -945,7 +946,8 @@
     {
       "source": "Parsing/UnicodePolicy.cs",
       "codes": [
-        "CSN2020"
+        "CSN2020",
+        "CSN2021"
       ],
       "status": "observed",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",

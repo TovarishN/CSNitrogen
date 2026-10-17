@@ -23,7 +23,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
             case "error":case "warning":
                 if(d.Active)issues.Add(new(d.Kind=="error"?"CSN1202":"CSN1203",d.Argument.Trim(),d.Span,IssueCategory.Preprocessing,
                     d.Kind=="error"?DiagnosticSeverity.Error:DiagnosticSeverity.Warning));break;
-            case "line":if(d.Active)ApplyLine(d,argument);break;
+            case "line":if(d.Active||UnicodePolicy.IsHistorical(version))ApplyLine(d,argument);break;
             case "nullable":if(d.Active)Later(d,8);break;
             case "pragma":if(d.Active)Later(d,2);break;
             case "" when d.Argument.StartsWith(':'):if(d.Active)Later(d,14);break;
@@ -43,6 +43,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
         { if(d.Active)Mappings.Add(new(physical,null,null,false));return; }
         if(argument=="hidden")
         {
+            if(UnicodePolicy.IsHistorical(version)){Error("CSN1207","The pinned C# 1 line-indicator has no hidden alternative.",d);return;}
             if(d.Active)Mappings.Add(new(physical,previous?.LogicalLine is int logical?logical+physical-previous.PhysicalLine:null,previous?.File,true));return;
         }
         if(argument.StartsWith('(')){Later(d,10);return;}
@@ -56,7 +57,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
         {
             if(!UnicodePolicy.IsWhiteSpace(argument[end],version)){Error("CSN1207","Whitespace is required before the mapped file name.",d);return;}
             string rest=UnicodePolicy.Trim(argument[end..],version);
-            if(rest.Length<2||rest[0]!='"'||rest[^1]!='"'||rest[1..^1].Contains('"'))
+            if(rest.Length<(UnicodePolicy.IsHistorical(version)?3:2)||rest[0]!='"'||rest[^1]!='"'||rest[1..^1].Contains('"'))
             {Error("CSN1207","Expected a quoted mapped file name.",d);return;}
             file=rest[1..^1];
         }

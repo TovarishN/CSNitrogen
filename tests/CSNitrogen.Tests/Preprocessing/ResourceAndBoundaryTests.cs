@@ -12,7 +12,7 @@ public class ResourceAndBoundaryTests
     public void Masking_retains_every_newline_and_supplementary_code_unit_position(string newline)
     {
         string source="\uFEFF#if false"+newline+"🧪 broken"+newline+"#endif"+newline+"class C {}";
-        var result=ConditionalPreprocessor.Process(new(source,new(1,0),[]));Assert.False(result.HasErrors);Assert.Equal(source.Length,result.MaskedText.Length);
+        var result=ConditionalPreprocessor.Process(new(source,new(newline=="\u0085"?14:1,0),[]));Assert.False(result.HasErrors);Assert.Equal(source.Length,result.MaskedText.Length);
         for(int i=0;i<source.Length;i++)if(source[i] is '\r' or '\n' or '\u0085' or '\u2028' or '\u2029')Assert.Equal(source[i],result.MaskedText[i]);
         Assert.Equal(source.IndexOf("class",StringComparison.Ordinal),result.MaskedText.IndexOf("class",StringComparison.Ordinal));
     }

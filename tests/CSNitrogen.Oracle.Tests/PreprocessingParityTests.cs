@@ -21,11 +21,9 @@ public class PreprocessingParityTests
         yield return ["#if false\n\"unterminated\n#endif\nclass C {}"];
         yield return ["#if true\n/*\n#else\n*/ class C {}\n#endif"];
         yield return ["#region group\nclass C {}\n#endregion"];
-        yield return ["#line 100 \"mapped.cs\"\nclass A {}\n#line hidden\nclass B {}\n#line default\nclass C {}"];
         yield return ["#define class\n#if class\nclass C {}\n#endif"];
         yield return ["#define \\u0058\n#if X\nclass C {}\n#endif"];
         yield return ["#if false\n#if F()\n#endif\n#endif"];
-        yield return ["#if false\n#line nonsense\n#endif\nclass C {}"];
         yield return ["#if false\n#nullable enable\n#endif\nclass C {}"];
         yield return ["#if true\n#region group\n#else\n#endregion\n#endif"];
         yield return ["#if true\n#endif junk"];
@@ -35,11 +33,25 @@ public class PreprocessingParityTests
         yield return ["#warning text // content\nclass C {}"];
         yield return ["#warning123\nclass C {}"];
         yield return ["#warningΔ\nclass C {}"];
-        yield return ["#warning\"text\"\nclass C {}"];
-        yield return ["#if(true)\nclass C {}\n#endif"];
         yield return ["#line100\nclass C {}"];
         yield return ["#if false\n#define true\n#endif\nclass C {}"];
         yield return ["#if false\n#unknown\n#endif\nclass C {}"];
+    }
+    public static IEnumerable<object[]> HistoricalDifferences()
+    {
+        yield return ["#line 100 \"mapped.cs\"\nclass A {}\n#line hidden\nclass B {}\n#line default\nclass C {}"];
+        yield return ["#if false\n#line nonsense\n#endif\nclass C {}"];
+        yield return ["#warning\"text\"\nclass C {}"];
+        yield return ["#if(true)\nclass C {}\n#endif"];
+    }
+    [Theory][MemberData(nameof(HistoricalDifferences))]
+    public void Pinned_historical_directive_grammar_differs_from_current_compiler(string source)
+    {
+        using var historical=CSharpParser.Parse(new(source,"CSharp1","physical.cs",[]));
+        using var current=CSharpParser.Parse(new(source,"CSharp14","physical.cs",[]));
+        Assert.False(historical.Accepted);
+        Assert.True(current.Accepted);
+        Assert.DoesNotContain(Oracle.Observe(source,LanguageVersion.CSharp1).CompilationDiagnostics,d=>d.Severity==DiagnosticSeverity.Error);
     }
     [Theory][MemberData(nameof(Sources))]
     public void Public_pipeline_matches_active_source_and_directive_diagnostics(string source)
