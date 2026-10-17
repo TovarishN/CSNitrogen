@@ -49,6 +49,36 @@ internal static class CSharpDeclarationPolicy
         for(int node=0;node<tree.NodeCount;node++)
         {
             string kind=Kind(node);
+            if(kind=="FixedBufferMember")
+            {
+                if(!InStruct(node))Error(node,"A fixed buffer declaration requires a struct owner.");
+                foreach(var modifier in SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node).Modifiers)
+                    if(Text(modifier.Index)=="static")Error(modifier.Index,"A fixed buffer declaration cannot be static.");
+            }
+            if(kind=="PartialModifier")
+            {
+                int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","EnumDeclaration","DelegateDeclaration","MemberDeclaration");
+                if(owner<0 || Kind(owner) is not ("ClassDeclaration" or "StructDeclaration" or "InterfaceDeclaration"))
+                    Error(node,"This composition supports partial class, struct and interface declarations only.");
+                else
+                {
+                    var modifiers=Kind(owner) switch
+                    {
+                        "ClassDeclaration"=>SyntaxView.Cast<ClassDeclarationNode>(tree,owner).Modifiers,
+                        "StructDeclaration"=>SyntaxView.Cast<StructDeclarationNode>(tree,owner).Modifiers,
+                        _=>SyntaxView.Cast<InterfaceDeclarationNode>(tree,owner).Modifiers
+                    };
+                    if(modifiers.Count==0 || modifiers[modifiers.Count-1].Index!=node)
+                        Error(node,"The partial modifier must occur once after the ordinary type modifiers.");
+                }
+            }
+            if(kind is "PropertyDeclaration" or "IndexerDeclaration")
+            {
+                var items=kind=="PropertyDeclaration"?SyntaxView.Cast<PropertyDeclarationNode>(tree,node).Accessors:SyntaxView.Cast<IndexerDeclarationNode>(tree,node).Accessors;
+                int count=0;
+                foreach(var item in items)if(item.Modifiers.HasValue)count++;
+                if(count>1 || count==1 && items.Count!=2)Error(node,"Accessor accessibility requires two accessors and may appear on only one.");
+            }
             if(kind=="GenericConstraints")
             {
                 int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","DelegateDeclaration","MethodDeclaration","InterfaceMethod");

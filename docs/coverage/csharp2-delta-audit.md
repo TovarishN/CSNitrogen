@@ -19,6 +19,8 @@ Reproduce extraction with `python3 eng/extract-csharp2-reference.py reference.pd
 | Pragma payloads and line-indicator implementation-defined forms | 9.5.7–9.5.8 | preprocessing policy; unknown pragma interpretation cannot cause compile-time error; pending |
 | Attribute/context and unsafe generic pointer-member changes | 24, 27 | existing policies plus additive typed alternatives; pending |
 | Covariance, contravariance, delegate inference/conversions | conversion/member binding clauses | semantic exclusions; imported inventory classification needs correction without erasing history |
-| Microsoft-specific CSharp2 surfaces, including fixed buffers | not found as fixed-buffer productions in fourth-edition annex | source supplement required; preserve pending witness rather than treating ECMA annex as the exhaustive Microsoft delta |
+| Microsoft-specific CSharp2 surfaces, including fixed buffers | not found as fixed-buffer productions in fourth-edition annex | Pinned Microsoft VS2005 supplement p959 confirms fixed buffers; initial grammar/context fixtures implemented, normative closure still pending |
 
 The first edition's Unicode 3.0 contract remains unchanged. New source classification must preserve explicit compiler phase differences. Normalization, symbol lookup, overload resolution, constraint satisfaction and execution are not implemented by syntax recognition.
+
+Implementation continuation: generic/nullable/default/anonymous/iterator/declaration/alias and unsafe/fixed-buffer bundles now have finite typed, omission and oracle witnesses. Fourth-edition CSharp2 #line digit ranges/identifier indicators and opaque pragma handling are implemented with explicit current-Roslyn differences. Source rows remain pending; historical Unicode4.0 data, full lexical/prose review and universal context closure are not promoted.

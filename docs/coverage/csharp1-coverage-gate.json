@@ -78,10 +78,12 @@
         "alternative:TypeReference.TypeSyntax",
         "rule:ArrayRank",
         "rule:BuiltinType",
+        "rule:ExpressionTypeArguments",
         "rule:QualifiedName",
         "rule:ReturnType",
         "rule:TypeBase",
         "rule:TypeFragment",
+        "rule:TypeNamePrefix",
         "rule:TypeNameSuffix",
         "rule:TypeReference"
       ],
@@ -99,7 +101,7 @@
           "method": "Safe_type_fragment_rejects_malformed_later_and_unsafe_forms"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates. Additional empty type/name, accessor and alias seams are unpopulated in CSharp1; historical typed/source gates remain required."
     },
     {
       "grammar": "Grammars/Expressions.ngr",
@@ -150,6 +152,7 @@
         "alternative:Expression.TypeOfExpression",
         "alternative:Expression.UnaryExpression",
         "alternative:Expression.UncheckedExpression",
+        "rule:AdditionalCastFollower",
         "rule:AfterNamedCast",
         "rule:Argument",
         "rule:Arguments",
@@ -191,7 +194,7 @@
           "method": "Malformed_arrays_initializers_and_arguments_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. The empty optional cast-follower seam has no CSharp1 alternatives; later delegate/default keyword followers remain module-scoped."
     },
     {
       "grammar": "Grammars/Statements.ngr",
@@ -294,6 +297,7 @@
         "alternative:TypeDeclaration.InterfaceTypeDeclaration",
         "alternative:TypeDeclaration.StructTypeDeclaration",
         "rule:Accessor",
+        "rule:AccessorModifiers",
         "rule:Bases",
         "rule:ClassDeclaration",
         "rule:ClassMember",
@@ -345,7 +349,7 @@
           "method": "Malformed_later_and_class_only_forms_are_excluded"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates. Additional empty type/name, accessor and alias seams are unpopulated in CSharp1; historical typed/source gates remain required."
     },
     {
       "grammar": "Grammars/CompilationUnits.ngr",
@@ -353,6 +357,7 @@
       "productions": [
         "alternative:NamespaceMember.NamespaceMemberBody",
         "rule:CompilationUnit",
+        "rule:ExternalAliasDirectives",
         "rule:NamespaceDeclaration",
         "rule:NamespaceMember",
         "rule:UsingDirective"
@@ -371,7 +376,7 @@
           "method": "Invalid_or_later_source_contexts_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Additional empty type/name, accessor and alias seams are unpopulated in CSharp1; historical typed/source gates remain required."
     },
     {
       "grammar": "Grammars/Unsafe.ngr",
@@ -387,6 +392,8 @@
         "extension:CSharp.NamesTypes.TypeBase.PointerTypeName",
         "extension:CSharp.NamesTypes.TypeBase.VoidPointerTypeName",
         "extension:CSharp.Statements.EmbeddedStatement.UnsafeEmbeddedStatement",
+        "rule:AdditionalSizeofType",
+        "rule:ExtendedPointerElement",
         "rule:FixedDeclarator",
         "rule:FixedStatement",
         "rule:PointerCastType",
@@ -408,7 +415,7 @@
           "method": "Unsafe_module_omission_rejects_each_selected_surface"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional unsafe element/sizeof extension seams have no CSharp1 alternatives; original pointer and sizeof projections remain covered by historical gates."
     },
     {
       "grammar": "Grammars/GlobalTargetsHistorical.ngr",

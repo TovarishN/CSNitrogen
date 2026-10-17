@@ -7,6 +7,8 @@ public class CSharp2GenericsTests
 {
     [Theory]
     [InlineData("class Box<T> where T : class, new() { T value; }","GenericParameters")]
+    [InlineData("class B { public T M<T>() { return default(T); } } class C:B { int N() { return base.M<int>(); } }","GenericBaseMemberExpression")]
+    [InlineData("class C { object M() { return string.F<int>(); } }","GenericPredefinedMemberExpression")]
     [InlineData("using L = N.List<int>; class C { L x; }","GenericTypeSuffix")]
     [InlineData("class C { T I<T>.M<U>(U x) { return x; } }","GenericMemberNameSuffix")]
     [InlineData("struct Box<T> { N.List<T[]> value; }","GenericTypeName")]

@@ -36,7 +36,7 @@ public static class CSharpSyntaxPolicy
             {
                 var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;
                 bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "ThisExpression" or
-                    "GenericNameExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or
+                    "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or
                     "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
                     "ObjectCreationExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
@@ -62,7 +62,7 @@ public static class CSharpSyntaxPolicy
                     issues.Add(new("CSN2016","A type-operator result requires parentheses before an operator at this tighter precedence.",tree.Span(n),IssueCategory.Syntax));
             }
             if(tree.ChildCount(n)>0 && kind is "MemberExpression" or "InvocationExpression" or "ElementExpression" or
-                "PostfixIncrementExpression" or "PostfixDecrementExpression" or "PointerMemberExpression")
+                "PostfixIncrementExpression" or "PostfixDecrementExpression" or "PointerMemberExpression" or "GenericPointerMemberExpression" or "GenericMemberExpression")
             {
                 // A Pratt type operand (is/as) is not an expression recursion and can
                 // leave a following suffix for the outer loop. Such a suffix still
@@ -74,6 +74,8 @@ public static class CSharpSyntaxPolicy
                     "ElementExpression" => SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target,
                     "PostfixIncrementExpression" => SyntaxView.Cast<PostfixIncrementExpressionExpression>(tree,n).Value,
                     "PostfixDecrementExpression" => SyntaxView.Cast<PostfixDecrementExpressionExpression>(tree,n).Value,
+                    "GenericMemberExpression" => SyntaxView.Cast<GenericMemberExpressionExpression>(tree,n).Target,
+                    "GenericPointerMemberExpression" => SyntaxView.Cast<GenericPointerMemberExpressionExpression>(tree,n).Target,
                     _ => SyntaxView.Cast<PointerMemberExpressionExpression>(tree,n).Target
                 };
                 if(!IsPrimaryKind(Kind(target.Index)))issues.Add(new("CSN2015","A primary suffix requires a primary expression target; parenthesize a type-operator result.",tree.Span(n),IssueCategory.Syntax));
@@ -119,7 +121,7 @@ public static class CSharpSyntaxPolicy
             if(kind=="ClassDeclaration")
             {
                 var declaration=SyntaxView.Cast<ClassDeclarationNode>(tree,n);
-                foreach(var modifier in declaration.Modifiers)if(Text(modifier.Index)=="static")Later(n,2,"Static classes");
+                foreach(var modifier in declaration.Modifiers)if(Text(modifier.Index)=="static" && version<new Version(2,0))Later(n,2,"Static classes");
             }
             if(kind=="PropertyDeclaration")
             {
@@ -148,7 +150,7 @@ public static class CSharpSyntaxPolicy
         }
         return Array.AsReadOnly(issues.ToArray());
     }
-    private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "NameExpression" or "LiteralExpression" or "ThisExpression" or
+    private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or "ThisExpression" or
         "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or

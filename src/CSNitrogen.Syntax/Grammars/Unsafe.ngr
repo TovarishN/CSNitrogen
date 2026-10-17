@@ -1,6 +1,8 @@
 syntax module CSharp.Unsafe
 {
- syntax PointerNonArrayType = Element:(CSharp.NamesTypes.QualifiedName / CSharp.NamesTypes.BuiltinType / "void") Stars:"*"+;
+ extensible syntax ExtendedPointerElement { }
+ extensible syntax AdditionalSizeofType { }
+ syntax PointerNonArrayType = Element:(ExtendedPointerElement /CSharp.NamesTypes.QualifiedName / CSharp.NamesTypes.BuiltinType / "void") Stars:"*"+;
  syntax PointerCastType = Type:PointerNonArrayType Ranks:CSharp.NamesTypes.ArrayRank*;
  extend syntax CSharp.NamesTypes.TypeBase
  {
@@ -8,7 +10,7 @@ syntax module CSharp.Unsafe
   | VoidPointerTypeName = "void" "*"
  }
  extend syntax CSharp.Expressions.CastHead { | PointerCastHead = "(" Type:PointerCastType ")" }
- syntax SizeOfExtendedType = PointerCastType / (CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank+) / CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank*;
+ syntax SizeOfExtendedType = AdditionalSizeofType / PointerCastType / (CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank+) / CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank*;
  extend syntax CSharp.Expressions.Expression
  {
   | PointerIndirectionExpression = CSharp.Expressions.MultiplyOp Value:Expression precedence 170

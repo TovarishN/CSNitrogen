@@ -63,19 +63,21 @@ Files: additive NullableValues/AnonymousMethods/Iterators/DeclarationForms/Alias
 
 Consumes: baseline + required earlier bundles. Produces: source-owned capability mappings for implemented deltas; partial named profiles with honest remaining inventory.
 
-- [ ] For each bundle, write positive/malformed/preceding-version/omission/typed-span failing fixtures; observe RED before production changes.
-- [ ] Implement the smallest module and policy integration; preserve contextual identifier usage and later-only rejection.
-- [ ] Audit source-derived additions such as fixed buffers and pragma policy separately, retaining semantic exclusions and unsupported witnesses.
-- [ ] Run focused tests per bundle and full gates before each coherent commit; record measured evidence.
+- [x] For each bundle, write positive/malformed/preceding-version/omission/typed-span failing fixtures; observe RED before production changes.
+- [x] Implement the smallest module and policy integration; preserve contextual identifier usage and later-only rejection.
+- [x] Audit source-derived additions such as fixed buffers and pragma policy separately, retaining semantic exclusions and unsupported witnesses.
+- [x] Run focused tests per bundle and full gates before each coherent commit; record measured evidence.
 
 ## Task 5: Whole milestone review and publication
 
 Files: source-review/coverage evidence, README and reviewed CSharp2 gate only if all normative obligations actually close.
 
-- [ ] Review all source obligations, policies, version availability, actual factories and dependency/corpus identities. Keep CSharp2 partial if any obligation remains pending.
-- [ ] Run full solution tests and dependency/corpus preservation checks; obtain one fresh independent whole-branch review and reproduce/fix material findings.
+- [x] Review all source obligations, policies, version availability, actual factories and dependency/corpus identities. Keep CSharp2 partial if any obligation remains pending.
+- [x] Run full solution tests and dependency/corpus preservation checks; obtain one fresh independent whole-branch review and reproduce/fix material findings.
 - [ ] Commit/push on the current codex branch, publish a reviewable PR with explicit implemented/remaining scope, attach it and verify remote head/clean state.
 
 Ruling: user approval plus the standing instruction to continue until a real decision authorizes inline execution; no additional plan/execution-method approval is needed. Existing clean codex branch is retained in the authorized workspace rather than creating another checkout.
 
 Ruling: task3 is a partial vertical slice with an unreviewed historical generics mapping, not a claim that every generic unsafe/cross-feature form is implemented. Those source obligations continue in task4/5; CSharp2 stays partial.
+
+Task4 ruling: shared seams, policies and factory registrations form one coherent continuation commit after individual RED cycles and combined full gates. Task5 keeps all397source occurrences pending and historicalUnicode4unverified; initial mappings and finite fixtures are not completeness evidence. Independent review P2 generic-base gap fixed with RED3, final4195pass.

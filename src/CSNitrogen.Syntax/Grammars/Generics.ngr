@@ -8,7 +8,7 @@ syntax module CSharp.Generics
  syntax ConstraintClause = "where" Name:CSharp.Lexical.Identifier ":" Items:(Constraint; ",")+;
  syntax GenericFollower = "(" / ")" / "]" / ":" / ";" / "," / "." / ("?" !"?") / "==" / "!=";
  syntax UnboundPart = Name:CSharp.Lexical.Identifier "<" Commas:","* ">";
- syntax UnboundName = Prefix:(CSharp.Lexical.Identifier ".")* Generic:UnboundPart Suffix:("." (UnboundPart / CSharp.Lexical.Identifier))*;
+ syntax UnboundName = Alias:CSharp.NamesTypes.TypeNamePrefix? Prefix:(CSharp.Lexical.Identifier ".")* Generic:UnboundPart Suffix:("." (UnboundPart / CSharp.Lexical.Identifier))*;
  extend syntax CSharp.Declarations.TypeParameters
  {
   | GenericParameters = "<" Items:(TypeParameter; ",")+ ">"
@@ -17,6 +17,7 @@ syntax module CSharp.Generics
  {
   | GenericConstraints = Items:ConstraintClause+
  }
+ extend syntax CSharp.NamesTypes.ExpressionTypeArguments { | GenericExpressionArguments = Value:TypeArgumentList &GenericFollower }
  extend syntax CSharp.NamesTypes.TypeNameSuffix
  {
   | GenericTypeSuffix = Arguments:TypeArgumentList Suffix:("." GenericNamePart)*
@@ -37,6 +38,8 @@ syntax module CSharp.Generics
  extend syntax CSharp.Expressions.Expression
  {
   | GenericNameExpression = Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower
+  | GenericBaseMemberExpression = "base" "." Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower
+  | GenericPredefinedMemberExpression = Type:CSharp.NamesTypes.BuiltinType "." Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower
   | GenericMemberExpression = Target:Expression "." Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList &GenericFollower precedence 180 left
   | UnboundTypeOfExpression = "typeof" "(" Type:UnboundName ")"
  }

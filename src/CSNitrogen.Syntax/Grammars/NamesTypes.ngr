@@ -1,6 +1,8 @@
 syntax module CSharp.NamesTypes
 {
  extensible syntax TypeNameSuffix { }
+ extensible syntax TypeNamePrefix { }
+ extensible syntax ExpressionTypeArguments { }
  syntax QualifiedName = Parts:(CSharp.Lexical.Identifier; ".")+;
  syntax BuiltinType = "bool" / "byte" / "sbyte" / "short" / "ushort" / "int" / "uint" / "long" / "ulong" / "char" / "float" / "double" / "decimal" / "string" / "object";
  syntax ArrayRank = "[" Commas:","* "]";

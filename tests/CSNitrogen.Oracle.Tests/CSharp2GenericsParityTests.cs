@@ -13,6 +13,8 @@ public class CSharp2GenericsParityTests
     [InlineData("delegate T D<T>(T x) where T : class;")]
     [InlineData("class C { object M() { return F<G<int>>(x); } }")]
     [InlineData("class C { object M() { return x.F<int>(x); } }")]
+    [InlineData("class B { public T M<T>() { return default(T); } } class C:B { int N() { return base.M<int>(); } }")]
+    [InlineData("class C { object M() { return string.F<int>(); } }")]
     [InlineData("using L = N.List<int>; class C { T I<T>.M<U>(U x) { return x; } }")]
     public void Typed_generic_list_items_separators_and_constraint_spans_match_the_reference(string source)
     {
