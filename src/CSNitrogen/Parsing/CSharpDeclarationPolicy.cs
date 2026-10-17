@@ -49,6 +49,64 @@ internal static class CSharpDeclarationPolicy
         for(int node=0;node<tree.NodeCount;node++)
         {
             string kind=Kind(node);
+            if(kind=="FixedBufferMember")
+            {
+                if(!InStruct(node))Error(node,"A fixed buffer declaration requires a struct owner.");
+                foreach(var modifier in SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node).Modifiers)
+                    if(Text(modifier.Index)=="static")Error(modifier.Index,"A fixed buffer declaration cannot be static.");
+            }
+            if(kind=="PartialModifier")
+            {
+                int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","EnumDeclaration","DelegateDeclaration","MemberDeclaration");
+                if(owner<0 || Kind(owner) is not ("ClassDeclaration" or "StructDeclaration" or "InterfaceDeclaration"))
+                    Error(node,"This composition supports partial class, struct and interface declarations only.");
+                else
+                {
+                    var modifiers=Kind(owner) switch
+                    {
+                        "ClassDeclaration"=>SyntaxView.Cast<ClassDeclarationNode>(tree,owner).Modifiers,
+                        "StructDeclaration"=>SyntaxView.Cast<StructDeclarationNode>(tree,owner).Modifiers,
+                        _=>SyntaxView.Cast<InterfaceDeclarationNode>(tree,owner).Modifiers
+                    };
+                    if(modifiers.Count==0 || modifiers[modifiers.Count-1].Index!=node)
+                        Error(node,"The partial modifier must occur once after the ordinary type modifiers.");
+                }
+            }
+            if(kind is "PropertyDeclaration" or "IndexerDeclaration")
+            {
+                var items=kind=="PropertyDeclaration"?SyntaxView.Cast<PropertyDeclarationNode>(tree,node).Accessors:SyntaxView.Cast<IndexerDeclarationNode>(tree,node).Accessors;
+                int count=0;
+                foreach(var item in items)if(item.Modifiers.HasValue)count++;
+                if(count>1 || count==1 && items.Count!=2)Error(node,"Accessor accessibility requires two accessors and may appear on only one.");
+            }
+            if(kind=="GenericConstraints")
+            {
+                int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","DelegateDeclaration","MethodDeclaration","InterfaceMethod");
+                bool parameters=owner>=0 && (Kind(owner) switch
+                {
+                    "ClassDeclaration"=>SyntaxView.Cast<ClassDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "StructDeclaration"=>SyntaxView.Cast<StructDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "InterfaceDeclaration"=>SyntaxView.Cast<InterfaceDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "DelegateDeclaration"=>SyntaxView.Cast<DelegateDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "MethodDeclaration"=>SyntaxView.Cast<MethodDeclarationNode>(tree,owner).TypeParameters.HasValue,
+                    "InterfaceMethod"=>SyntaxView.Cast<InterfaceMethodNode>(tree,owner).TypeParameters.HasValue,
+                    _=>false
+                });
+                if(!parameters)Error(node,"Constraint clauses require type parameters on the owning declaration.");
+            }
+            if(kind=="ConstraintClause")
+            {
+                var items=SyntaxView.Cast<ConstraintClauseNode>(tree,node).Items;
+                for(int i=0;i<items.Count;i++)
+                {
+                    string text=Text(items[i].Index).Trim();
+                    if((text is "class" or "struct") && i!=0)Error(items[i].Index,"A class or struct constraint must be first.");
+                    int first=items[i].Index;
+                    while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    if(Text(first)=="new" && i!=items.Count-1)
+                        Error(items[i].Index,"A constructor constraint must be last.");
+                }
+            }
             if(kind is "Accessor" or "InterfaceAccessor" or "EventAccessor")
             {
                 if(tree.ChildCount(node)<3)continue;

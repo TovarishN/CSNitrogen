@@ -73,9 +73,9 @@ public sealed class DirectiveScanner
         int start=i;while(i<line.End&&IsDirectiveNamePart(_source[i]))i++;
         string kind=_source[start..i];
         bool separated=i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version);
-        if(UnicodePolicy.IsHistorical(_version))
+        if(UnicodePolicy.IsHistorical(_version) || kind=="pragma" && _version>=new Version(2,0))
         {
-            bool requires=kind is "if" or "elif" or "define" or "undef" or "line";
+            bool requires=kind is "if" or "elif" or "define" or "undef" or "line" || kind=="pragma" && i<line.End;
             bool message=kind is "error" or "warning" or "region" or "endregion";
             if(!separated && (requires || (message && i<line.End)))
                 Issues.Add(new("CSN1001","Whitespace is required before this directive argument.",new(i,0),IssueCategory.Preprocessing));

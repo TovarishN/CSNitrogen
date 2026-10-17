@@ -1,0 +1,33 @@
+# CSharp2 additive syntax continuation
+
+Status: implemented partial syntax; no CSharp2 completeness promotion. The approved design is in docs/superpowers/specs/2026-10-17-csharp2-additive-grammars-design.md.
+
+Ten additive canonical bundles now describe generics, nullable values/coalescing, anonymous methods, iterators, declaration forms/accessor accessibility, alias qualification, typed defaults, generic unsafe interactions, fixed buffers and opaque pragmas. Named selection respects minimum versions while custom dependency validation remains explicit. Reporting aliases map to their supplying bundles and policies. Conversion/delegate-inference history entries are classified as semantic exclusions, not generic variance declaration syntax.
+
+Shared optional extension seams remain unpopulated in CSharp1. All nineteen original capability selections and historical factory membership remain intact; the source catalog now includes 652 declarations/alternatives, eleven of which are empty seams. Ordinary typed name/declaration projections retain their fields. New parameter/argument/constraint lists, bodies, aliases, accessor modifiers and fixed-buffer declarators have typed views and original-source spans.
+
+Module-omission tests reject each advertised additive grammar surface while retaining an ordinary class. Removing generics also removes its dependent generic-unsafe module; custom metadata rejects missing dependencies instead of adding them. Static-class spelling already exists in the shared modifier grammar and is governed by version policy; its bundle does not promise independent raw removal of that spelling. Arbitrary custom executable profiles remain deferred.
+
+Fourth-edition line rules use exact decimal mappings and identifier equality for default; unknown line indicators warn and retain prior mappings. Pragma payloads are retained verbatim as opaque compiler information with a warning, without changing compiler warning/optimization behavior. Historical zero/large/unknown line-indicator cases retain explicit modern Roslyn disagreements. CSharp1 directive behavior remains covered by its existing gates; later profiles keep their documented current-category/line-number compatibility behavior.
+
+## Verification and preserved outcomes
+
+The generics cycle and typed observations are recorded in csharp2-generics-evidence.md. Subsequent acceptance regressions failed before implementation: eleven expression/statement, eleven declaration/alias, nine directive and six unsafe cases. The first unsafe run exposed an actual NG3 ambiguity between alias-generic pointer alternatives; the overlapping prefixes were separated and the case retained. Adding reference resources first failed the identity assertion, then exposed two other tests with stale input lists; all input lists and removal/mutation witnesses were expanded rather than weakening hash checks.
+
+The broader suite before the final metadata refresh passed **921 normal + 3,266 oracle = 4,187 tests**, zero failures/skips. Seventeen composition/typed checks cover module omission, explicit dependency failures, bounded generic depths 8/32/64, coalescing associativity and owning typed fields. Twelve added oracle cases compare structural spans or preserve historical directive discrepancies. Earlier generic oracle cases compare list delimiters, items, separators, type parameter names and constraints. Final verification and independent review follow below.
+
+Three external generic fixtures were selected deterministically before parsing from Mono revision 4d1b9d0d7b412552566206a513e90df6d9121eec (gtest-001 through gtest-003). Every source/hash/version outcome is retained in tests/Corpus/Mono2006/provenance.json and CSharp2ExternalCorpusTests. They are a small generic regression corpus, not evidence for all CSharp2 surfaces. Original bytes and the upstream compiler LICENSE, LICENSE.GPL and COPYING are retained alongside them. Test fixtures are separate from production grammar/runtime inputs.
+
+The fourth-edition PDF is pinned by SHA256 in csharp2-reference-policy.json, with a pinned pypdf 6.10.0 candidate extractor. The candidate index reproduces byte-for-byte from the pinned PDF; all 397 occurrences remain pending. Microsoft's VS2005 documentation supplement is independently pinned; PDF page 959 supplies the fixed-buffer CSharp2 provenance absent from the ECMA annex.
+
+## Remaining completion obligations
+
+Historical Unicode4.0 categories/supplementary identifiers, a complete normative/prose crosswalk, exhaustive declared context gates and a separate actual CSharp2 factory/policy admission gate remain pending. All new inventory states stay implemented/unreviewed. CSharp2, CSharp3–14 and custom profiles remain partial. An empty MissingFeatures list means the requested inventory has supplying mappings; it does not mean the source review or profile contract is complete. Binding, type/value validity, capture/iterator lowering, semantic unsafe safety and universal recovery/diagnostic phase parity remain excluded.
+
+## Final review and verification
+
+Fresh independent read-only review found one P2 gap: generic calls through base were not represented by an expression-target member extension. Dedicated generic base/predefined-type member alternatives now retain typed argument lists and enter primary/unary policy categories. Three regressions failed before correction; public preceding-version checks, module omission and Roslyn list/span cases cover the fix. The reviewer rechecked it with no remaining important blocker.
+
+Final full solution: **925 normal + 3,270 oracle = 4,195 passed**, zero failures/skips or compiler warnings, using `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s`. Actual public named factory module membership and compilation-unit root provenance are checked for CSharp2–14 and 7.x minors. Hash mutation checks bind both CSharp2 reference inputs alongside the existing production inputs. `git diff --check` passes with path-specific attributes preserving the original trailing whitespace in two pinned upstream license notices; those bytes remain hash-identical.
+
+Preservation: all 123 isolated build-copy hashes match; all 118 source artifacts match in original and isolated Nitrogen trees. The original checkout remains at b8bae6283874dcb49cb7cefacf25ab27e43d802e with its preexisting docs/editor-support.md modification; its build-property difference from the older snapshot is unrelated to this branch. Six older external source hashes and all three new source plus three new license hashes match provenance. Both production dependency manifests exclude Roslyn and Nitrogen.Grammar. No sibling edits were performed.

@@ -13,7 +13,7 @@ public class CoverageContractTests
             System.Text.Json.JsonSerializer.SerializeToElement(reference??Resource("reference-policy.json")),System.Text.Json.JsonSerializer.SerializeToElement(config??Resource("composition.json")));
     [Fact] public void Embedded_contract_agrees_with_the_actual_named_factory_and_immutable_mapping_catalog()
     {
-        Assert.True(Reviewed());Assert.Equal(40,FeatureCatalog.CoverageMappings.Count);
+        Assert.True(Reviewed());Assert.Equal(40,FeatureCatalog.CoverageMappings.Count(m=>FeatureCatalog.Inventory.Any(f=>f.Id==m.InventoryId && f.Introduced==new Version(1,0))));
         Assert.True(CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules));
         Assert.False(CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules.Skip(1).ToArray()));
         var list=Assert.IsAssignableFrom<IList<CoverageMapping>>(FeatureCatalog.CoverageMappings);
