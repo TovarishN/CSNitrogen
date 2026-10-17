@@ -1,0 +1,8 @@
+language CSharp2SeamGeneric { start Probe.CSharp2Seam.Header; namespace CSNitrogen.Tests.Probes; grammars "CSharp2SeamProbe.ngr"; }
+syntax module Probe.CSharp2SeamGeneric
+{
+ extend syntax Probe.CSharp2Seam.TypeParameters
+ {
+  | GenericParameters = "<" Items:(Probe.CSharp2Seam.Identifier; ",")+ ">"
+ }
+}

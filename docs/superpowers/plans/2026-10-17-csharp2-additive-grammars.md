@@ -40,10 +40,10 @@ Files: tests/CSNitrogen.Tests/Grammars/CSharp2SeamProbe.ngr and Syntax/CSharp2Se
 
 Consumes: pinned Nitrogen generator and .ngr extensible syntax. Produces: executable baseline/loaded/omitted seam witnesses and typed compatibility observations.
 
-- [ ] Write a failing test expecting generic-header syntax through an optional typed seam, plus baseline identifier projection and omitted-feature rejection.
-- [ ] Observe failure before adding the probe extension; then implement optional extension/fallback and generic argument/declaration witnesses in test grammar.
-- [ ] Prove ordinary typed fields, malformed fallback rejection, nested generic closers, relational followers and shifts under paired compositions. If the pinned mechanism cannot satisfy the design, retain the evidence and report the concrete limitation.
-- [ ] Run focused tests and full existing suite; commit the independent feasibility result.
+- [x] Write a failing test expecting generic-header syntax through an optional typed seam, plus baseline identifier projection and omitted-feature rejection.
+- [x] Observe failure before adding the probe extension; then implement optional extension/fallback and generic argument/declaration witnesses in test grammar.
+- [x] Prove ordinary typed fields, malformed fallback rejection, nested generic closers, relational followers and shifts under paired compositions. If the pinned mechanism cannot satisfy the design, retain the evidence and report the concrete limitation.
+- [x] Run focused tests and full existing suite; commit the independent feasibility result.
 
 ## Task 3: Production generics vertical slice
 

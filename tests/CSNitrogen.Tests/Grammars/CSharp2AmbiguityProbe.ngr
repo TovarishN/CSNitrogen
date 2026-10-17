@@ -1,0 +1,15 @@
+language CSharp2Ambiguity { start Probe.Expression.Document; namespace CSNitrogen.Tests.Probes; grammars "ExpressionProbe.ngr"; }
+syntax module Probe.CSharp2Ambiguity
+{
+ syntax CandidateType = Name:(Probe.Expression.Identifier / "int") Arguments:CandidateArguments?;
+ syntax CandidateArguments = "<" Items:(CandidateType; ",")+ ">";
+ syntax GenericFollower = "(" / ")" / "]" / ":" / ";" / "," / "." / "?" / "==" / "!=";
+ extend syntax Probe.Expression.Expr
+ {
+  | SeamGenericName = Name:Identifier Arguments:Probe.CSharp2Ambiguity.CandidateArguments &Probe.CSharp2Ambiguity.GenericFollower
+  | SeamCall = Target:Expr "(" Arguments:(Expr; ",")* ")" precedence 40 left
+  | SeamEqual = Left:Expr "==" Right:Expr precedence 4 left
+  | SeamGreater = Left:Expr ">" !">" Right:Expr precedence 5 left
+  | SeamPositive = "+" Value:Expr precedence 30
+ }
+}
