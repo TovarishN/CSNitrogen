@@ -24,13 +24,13 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
             case "error":case "warning":
                 if(d.Active)issues.Add(new(d.Kind=="error"?"CSN1202":"CSN1203",d.Argument.Trim(),d.Span,IssueCategory.Preprocessing,
                     d.Kind=="error"?DiagnosticSeverity.Error:DiagnosticSeverity.Warning));break;
-            case "line":if(d.Active||UnicodePolicy.IsHistorical(version))ApplyLine(d,argument);break;
-            case "nullable":if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,8);break;
+            case "line":if(d.Active||version.Major<=2)ApplyLine(d,argument);break;
+            case "nullable":if(d.Active||version.Major<=2)Later(d,8);break;
             case "pragma":
-                if(version<new Version(2,0)){if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,2);}
+                if(version<new Version(2,0)){if(d.Active||version.Major<=2)Later(d,2);}
                 else if(d.Active)issues.Add(new("CSN1203","Pragma payload preserved as implementation-defined compiler information; compiler effects are not applied.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
                 break;
-            case "" when d.Argument.StartsWith(':'):if(d.Active||UnicodePolicy.IsHistorical(version))Later(d,14);break;
+            case "" when d.Argument.StartsWith(':'):if(d.Active||version.Major<=2)Later(d,14);break;
             default:Error("CSN1204","Unknown preprocessing directive.",d);break;
         }
     }

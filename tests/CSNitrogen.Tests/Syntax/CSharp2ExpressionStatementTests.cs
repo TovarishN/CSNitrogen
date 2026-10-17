@@ -19,7 +19,7 @@ public class CSharp2ExpressionStatementTests
     {
         using var first=CSharpParser.Parse(new(source,"CSharp1","slice.cs",[]));Assert.False(first.Accepted);
         using var second=CSharpParser.Parse(new(source,"CSharp2","slice.cs",[]));
-        Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.False(second.ProfileComplete);
+        Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.True(second.ProfileComplete);
         Assert.Contains(Enumerable.Range(0,second.Tree.NodeCount),n=>second.Tree.Language!.GetKindName(second.Tree.Kind(n))==kind);
     }
     [Theory]

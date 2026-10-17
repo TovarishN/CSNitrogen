@@ -31,7 +31,7 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/GlobalTargetsSecond.ngr",
         "Grammars/Generics.ngr",
         "Grammars/NullableValues.ngr",
         "Grammars/AnonymousMethods.ngr",

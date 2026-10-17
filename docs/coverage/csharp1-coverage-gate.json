@@ -32,21 +32,34 @@
         "rule:CharacterFragment",
         "rule:ConditionalSymbol",
         "rule:ConditionalSymbolFragment",
+        "rule:ContextualAdd",
+        "rule:ContextualAlias",
+        "rule:ContextualFormat",
+        "rule:ContextualGet",
+        "rule:ContextualGlobal",
+        "rule:ContextualPartial",
+        "rule:ContextualRemove",
+        "rule:ContextualSet",
+        "rule:ContextualValue",
+        "rule:ContextualWhere",
+        "rule:ContextualYield",
         "rule:Digits",
         "rule:Escape16",
         "rule:Escape32",
         "rule:Exponent",
         "rule:Hex",
-        "rule:IdPart",
-        "rule:IdStart",
         "rule:Identifier",
         "rule:IdentifierFragment",
+        "rule:IdPart",
+        "rule:IdStart",
         "rule:Integer",
         "rule:IntegerFragment",
         "rule:Real",
         "rule:RealFragment",
         "rule:RealSuffix",
         "rule:RegularString",
+        "rule:ScalarPart",
+        "rule:ScalarStart",
         "rule:SimpleEscape",
         "rule:StringFragment",
         "rule:UnicodePart",
@@ -145,8 +158,8 @@
         "alternative:Expression.RemainderExpression",
         "alternative:Expression.ShiftLeftExpression",
         "alternative:Expression.ShiftRightExpression",
-        "alternative:Expression.SizeOfBuiltinExpression",
         "alternative:Expression.SizedArrayExpression",
+        "alternative:Expression.SizeOfBuiltinExpression",
         "alternative:Expression.SubtractExpression",
         "alternative:Expression.ThisExpression",
         "alternative:Expression.TypeOfExpression",
@@ -164,6 +177,7 @@
         "rule:BitXorOp",
         "rule:CastHead",
         "rule:ConditionalOperand",
+        "rule:ConditionalTypeOperand",
         "rule:DefiniteCastType",
         "rule:DivideOp",
         "rule:Expression",
@@ -178,7 +192,8 @@
         "rule:PlusOp",
         "rule:RemainderOp",
         "rule:RightShiftOp",
-        "rule:SizedArray"
+        "rule:SizedArray",
+        "rule:TypeOperatorOperand"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
@@ -186,6 +201,10 @@
         {
           "path": "tests/CSNitrogen.Oracle.Tests/CastConformanceParityTests.cs",
           "method": "Cast_disambiguation_and_recursive_operands_match"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp2TypeOperandViewTests.cs",
+          "method": "Approved_wrapper_preserves_the_ordinary_type_child_and_source_span"
         }
       ],
       "negative": [
@@ -194,7 +213,7 @@
           "method": "Malformed_arrays_initializers_and_arguments_are_rejected"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. The empty optional cast-follower seam has no CSharp1 alternatives; later delegate/default keyword followers remain module-scoped."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. The empty optional cast-follower seam has no CSharp1 alternatives; later delegate/default keyword followers remain module-scoped. The user-approved CSharp2 type-operand revision adds a scoped operand wrapper to shared is/as views; underlying CSharp1 type syntax and original spans are preserved. See csharp2-type-operand-migration.md."
     },
     {
       "grammar": "Grammars/Statements.ngr",
@@ -211,8 +230,8 @@
         "rule:EmbeddedStatement",
         "rule:ExpressionStatement",
         "rule:FinallyClause",
-        "rule:ForStatement",
         "rule:ForeachStatement",
+        "rule:ForStatement",
         "rule:GeneralCatchClause",
         "rule:IfStatement",
         "rule:JumpStatement",
@@ -522,7 +541,8 @@
         "CSN2006",
         "CSN2013",
         "CSN2015",
-        "CSN2016"
+        "CSN2016",
+        "CSN2022"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",

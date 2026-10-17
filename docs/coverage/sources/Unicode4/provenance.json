@@ -1,0 +1,7 @@
+{
+  "version": "4.0.0",
+  "dataUrl": "https://www.unicode.org/Public/4.0-Update/UnicodeData-4.0.0.txt",
+  "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
+  "licenseUrl": "https://www.unicode.org/license.txt",
+  "licenseSha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+}

@@ -9,7 +9,7 @@ internal static unsafe class ConditionalSymbols
     {
         normalized="";if(value.Length==0)return false;
         using var parsed=Language.Value.Parse(value,LexicalModule.ConditionalSymbolFragment);
-        return parsed.Success&&!parsed.HasErrors&&UnicodePolicy.TryNormalize(value,version,false,out normalized);
+        return parsed.Success&&!parsed.HasErrors&&UnicodePolicy.TryNormalize(value,version,version.Major==2,out normalized);
     }
 }
 internal static class DirectiveArguments
@@ -60,7 +60,7 @@ internal sealed class ConditionalExpression
             if(!ConditionalSymbols.TryNormalize(token,_version,out var normalized)){_position=start;throw new FormatException("Expected a conditional symbol or boolean literal.");}
             // Current compiler compatibility decodes boolean spellings as literals.
             // The first edition treats escaped/formatting spellings as symbols.
-            if(!UnicodePolicy.IsHistorical(_version))
+            if(_version.Major>2)
             {if(normalized=="true")return true;if(normalized=="false")return false;}
             return _symbols.Contains(normalized);
         }

@@ -16,6 +16,6 @@ public class CSharp2ExternalCorpusTests
         string source=System.Text.Encoding.UTF8.GetString(bytes);
         var reference=CSharpSyntaxTree.ParseText(source,new CSharpParseOptions(LanguageVersion.CSharp2));Assert.DoesNotContain(reference.GetDiagnostics(),d=>d.Severity==DiagnosticSeverity.Error);
         using var first=CSharpParser.Parse(new(source,"CSharp1",name,[]));Assert.False(first.Accepted);
-        using var second=CSharpParser.Parse(new(source,"CSharp2",name,[]));Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.False(second.ProfileComplete);
+        using var second=CSharpParser.Parse(new(source,"CSharp2",name,[]));Assert.True(second.Accepted,string.Join(";",second.Issues));Assert.True(second.ProfileComplete);
     }
 }

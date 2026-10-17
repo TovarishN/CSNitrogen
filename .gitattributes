@@ -8,3 +8,5 @@
 /tests/Corpus/Mono2006/* -text
 /tests/Corpus/Mono2006/LICENSE whitespace=-blank-at-eof
 /tests/Corpus/Mono2006/LICENSE.GPL whitespace=-blank-at-eol
+/docs/coverage/sources/Unicode4/UnicodeData-4.0.0.txt -text
+/docs/coverage/sources/Unicode4/LICENSE.txt -text

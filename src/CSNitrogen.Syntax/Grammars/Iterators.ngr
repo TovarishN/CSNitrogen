@@ -2,7 +2,7 @@ syntax module CSharp.Iterators
 {
  extend syntax CSharp.Statements.EmbeddedStatement
  {
-  | YieldReturnStatement = "yield" "return" Value:CSharp.Expressions.Expression ";"
-  | YieldBreakStatement = "yield" "break" ";"
+  | YieldReturnStatement = CSharp.Lexical.ContextualYield "return" Value:CSharp.Expressions.Expression ";"
+  | YieldBreakStatement = CSharp.Lexical.ContextualYield "break" ";"
  }
 }

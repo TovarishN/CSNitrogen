@@ -24,11 +24,11 @@ syntax module CSharp.Declarations
  syntax ConstructorDeclaration = Name:CSharp.Lexical.Identifier Parameters:CSharp.Attributes.ParameterList Initializer:(":" ("base" / "this") CSharp.Expressions.Arguments)? Body:MethodBody;
  syntax DestructorDeclaration = "~" Name:CSharp.Lexical.Identifier "(" ")" Body:MethodBody;
  syntax MethodDeclaration = Return:CSharp.NamesTypes.ReturnType NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? Body:MethodBody;
- syntax Accessor = Attributes:CSharp.Attributes.AttributeSection* Modifiers:AccessorModifiers? Keyword:("get" / "set") Body:MethodBody;
+ syntax Accessor = Attributes:CSharp.Attributes.AttributeSection* Modifiers:AccessorModifiers? Keyword:(CSharp.Lexical.ContextualGet / CSharp.Lexical.ContextualSet) Body:MethodBody;
  syntax PropertyDeclaration = Type:CSharp.NamesTypes.TypeReference NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? "{" Accessors:Accessor+ "}";
  syntax IndexerName = (CSharp.NamesTypes.TypeNamePrefix? CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.TypeNameSuffix? ".")? "this";
  syntax IndexerDeclaration = Type:CSharp.NamesTypes.TypeReference Name:IndexerName Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:Accessor+ "}";
- syntax EventAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:("add" / "remove") Body:CSharp.Statements.Block;
+ syntax EventAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:(CSharp.Lexical.ContextualAdd / CSharp.Lexical.ContextualRemove) Body:CSharp.Statements.Block;
  syntax EventPropertyDeclaration = !CSharp.Lexical.Identifier "event" Type:CSharp.NamesTypes.TypeReference NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? "{" Accessors:EventAccessor+ "}";
  syntax EventFieldDeclaration = !CSharp.Lexical.Identifier "event" Variables:CSharp.Statements.VariableDeclaration ";";
  syntax OperatorToken = "++" / "--" / "<<" / ">>" / "==" / "!=" / "<=" / ">=" / "+" / "-" / "!" / "~" / "*" / "/" / "%" / "&" / "|" / "^" / "<" / ">" / "true" / "false";
@@ -38,7 +38,7 @@ syntax module CSharp.Declarations
  syntax FieldDeclaration = Value:CSharp.Statements.VariableDeclaration ";";
  syntax MemberDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration);
  extensible syntax ClassMember { | StandardClassMember = Value:(TypeDeclaration / MemberDeclaration) }
- syntax InterfaceAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:("get" / "set") ";";
+ syntax InterfaceAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:(CSharp.Lexical.ContextualGet / CSharp.Lexical.ContextualSet) ";";
  syntax InterfaceMethod = Return:CSharp.NamesTypes.ReturnType Name:CSharp.Lexical.Identifier TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? ";";
  syntax InterfaceProperty = Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier "{" Accessors:InterfaceAccessor+ "}";
  syntax InterfaceIndexer = Type:CSharp.NamesTypes.TypeReference "this" Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:InterfaceAccessor+ "}";

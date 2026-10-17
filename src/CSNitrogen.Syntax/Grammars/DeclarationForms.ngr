@@ -1,6 +1,6 @@
 syntax module CSharp.DeclarationForms
 {
- extend syntax CSharp.Declarations.Modifier { | PartialModifier = "partial" }
+ extend syntax CSharp.Declarations.Modifier { | PartialModifier = CSharp.Lexical.ContextualPartial }
  extend syntax CSharp.Declarations.AccessorModifiers
  {
   | AccessorAccessibility = Value:("protected" "internal"? / "internal" "protected"? / "private")

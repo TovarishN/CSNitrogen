@@ -16,14 +16,17 @@
     "version": "5.0.0",
     "languageVersion": "CSharp2"
   },
-  "status": "pending",
+  "status": "verified",
   "unicode": {
     "specified": "Unicode 4.0",
     "source": "clause 2",
-    "implemented": "Current .NET BMP compatibility only",
-    "status": "pending historical data and policy"
+    "implemented": "Pinned Unicode 4.0 scalar identifier, formatting and whitespace policy; UTF16 original spans",
+    "status": "verified",
+    "policy": "unicode-4.0-scalar",
+    "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
+    "provenance": "sources/Unicode4/provenance.json"
   },
-  "completion": "Reference pin and candidate index do not establish reviewed source coverage or profile completeness. Supplementary Microsoft CSharp2 differences require explicit sources and classification.",
+  "completion": "Completeness is admitted only by the reviewed source/crosswalk/source-hash/factory/policy contract. Binding, type validity, lowering and execution are excluded; later/custom profiles remain partial.",
   "supplements": [
     {
       "title": "Microsoft Visual C# / Visual Studio 2005 documentation",
@@ -32,5 +35,6 @@
       "pdfPage": 959,
       "scope": "Fixed Size Buffers programming guide: CSharp2 addition, struct instance field/vector syntax; not a replacement for normative review"
     }
-  ]
+  ],
+  "disposition": "csharp2-conformance-review.md"
 }

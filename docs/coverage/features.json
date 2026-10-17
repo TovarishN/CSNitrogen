@@ -2175,7 +2175,7 @@
       "title": "Anonymous methods",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-functions",
       "inventoryLine": 199,
       "requires": [],
@@ -2188,7 +2188,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.anonymous-methods"
@@ -2202,7 +2202,7 @@
       "title": "Covariance and contravariance",
       "introduced": "2.0",
       "classification": "semantic-or-tooling",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/covariance-contravariance/",
       "inventoryLine": 207,
       "requires": [],
@@ -2218,7 +2218,7 @@
       "title": "Delegate inference",
       "introduced": "2.0",
       "classification": "semantic-or-tooling",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 205,
       "requires": [],
@@ -2234,7 +2234,7 @@
       "title": "Generics",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/",
       "inventoryLine": 197,
       "requires": [],
@@ -2250,7 +2250,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Initial additive syntax has finite typed, preceding-version, omission and oracle witnesses. Historical normative/lexical/context closure remains pending; CSharp2 stays partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -2267,7 +2267,7 @@
       "title": "Getter/setter separate accessibility",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 202,
       "requires": [],
@@ -2282,7 +2282,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.declaration-forms"
@@ -2298,7 +2298,7 @@
       "title": "Iterators, a.k.a yield statement",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/yield",
       "inventoryLine": 200,
       "requires": [],
@@ -2311,7 +2311,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.iterators"
@@ -2325,7 +2325,7 @@
       "title": "Method group conversions (delegates)",
       "introduced": "2.0",
       "classification": "semantic-or-tooling",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 203,
       "requires": [],
@@ -2340,7 +2340,7 @@
       "title": "Nullable types",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/builtin-types/nullable-value-types",
       "inventoryLine": 201,
       "requires": [],
@@ -2353,7 +2353,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.nullable-values"
@@ -2367,7 +2367,7 @@
       "title": "Partial types",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-type",
       "inventoryLine": 198,
       "requires": [],
@@ -2382,7 +2382,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.declaration-forms"
@@ -2398,7 +2398,7 @@
       "title": "Static classes",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members",
       "inventoryLine": 204,
       "requires": [],
@@ -2413,7 +2413,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.declaration-forms"
@@ -2429,7 +2429,7 @@
       "title": "Type and namespace aliases",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 206,
       "requires": [],
@@ -2444,7 +2444,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs",
         "tests/CSNitrogen.Oracle.Tests/CSharp2AddedSyntaxParityTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp2.alias-qualification"
@@ -3870,7 +3870,7 @@
       "title": "generics",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.names-and-types",
@@ -3887,7 +3887,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -3903,7 +3903,7 @@
       "title": "nullable-values",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.names-and-types",
@@ -3917,7 +3917,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -3931,7 +3931,7 @@
       "title": "anonymous-methods",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.expressions",
@@ -3946,7 +3946,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -3960,7 +3960,7 @@
       "title": "iterators",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.statements",
@@ -3974,7 +3974,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -3988,7 +3988,7 @@
       "title": "default-values",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.expressions",
@@ -4002,7 +4002,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -4016,7 +4016,7 @@
       "title": "declaration-forms",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.members",
@@ -4032,7 +4032,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -4048,7 +4048,7 @@
       "title": "alias-qualification",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.names-and-types",
@@ -4064,7 +4064,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -4080,7 +4080,7 @@
       "title": "pragmas",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "baseline.conditional-compilation"
@@ -4093,7 +4093,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Preprocessing/CSharp2DirectiveTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -4109,7 +4109,7 @@
       "title": "generic-unsafe",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_4th_edition_june_2006.pdf",
       "requires": [
         "csharp2.generics",
@@ -4125,7 +4125,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [
@@ -4141,7 +4141,7 @@
       "title": "fixed-buffers",
       "introduced": "2.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://download.microsoft.com/download/1/6/d/16d24ada-5317-4de1-b2b2-890b51813d6e/VS2005_CSharp_en-us.pdf",
       "requires": [
         "baseline.members",
@@ -4157,7 +4157,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp2CompositionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "scopeNote": "Finite additive syntax/policy witnesses; full historical source, lexical and context review remains pending. CSharp2 is partial. See csharp2-additive-evidence.md.",
       "coverage": {
         "capabilities": [

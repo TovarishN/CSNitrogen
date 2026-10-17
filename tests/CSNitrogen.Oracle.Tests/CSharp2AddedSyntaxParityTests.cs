@@ -42,6 +42,6 @@ public class CSharp2AddedSyntaxParityTests
     public void Fourth_edition_line_rules_remain_explicit_reference_discrepancies(string source)
     {
         var reference=CSharpSyntaxTree.ParseText(source,new CSharpParseOptions(LanguageVersion.CSharp2));Assert.Contains(reference.GetDiagnostics(),d=>d.Severity==Microsoft.CodeAnalysis.DiagnosticSeverity.Error);
-        using var result=CSharpParser.Parse(new(source,"CSharp2","historical-line.cs",[]));Assert.True(result.Accepted);Assert.False(result.ProfileComplete);
+        using var result=CSharpParser.Parse(new(source,"CSharp2","historical-line.cs",[]));Assert.True(result.Accepted);Assert.True(result.ProfileComplete);
     }
 }

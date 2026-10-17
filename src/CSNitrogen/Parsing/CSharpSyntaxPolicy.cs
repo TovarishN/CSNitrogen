@@ -12,6 +12,7 @@ public static class CSharpSyntaxPolicy
         issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
+        if(version.Major==2)CheckIterators(tree,issues);
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
         string Text(int n){var span=tree.Span(n);return tree.Text.Substring(span.Start,span.Length);}
         void Later(int n,int minimum,string feature)=>issues.Add(new("CSN2003",
@@ -26,8 +27,8 @@ public static class CSharpSyntaxPolicy
                 if(previous>=0)
                 {
                     var before=tree.Span(previous);var current=tree.Span(n);
-                    if(before.Start+before.Length==current.Start && IsIdentifierPart(tree.Text[before.Start+before.Length-1]) &&
-                        (IsIdentifierPart(tree.Text[current.Start]) || tree.Text[current.Start]=='\\'))
+                    if(before.Start+before.Length==current.Start && IsIdentifierPartAt(tree.Text,before.Start+before.Length-1,version) &&
+                        (IsIdentifierPartAt(tree.Text,current.Start,version) || tree.Text[current.Start]=='\\'))
                         issues.Add(new("CSN2002","Adjacent word tokens must be separated; Unicode escapes do not form keyword boundaries.",current,IssueCategory.Syntax));
                 }
                 previous=n;
@@ -150,12 +151,79 @@ public static class CSharpSyntaxPolicy
         }
         return Array.AsReadOnly(issues.ToArray());
     }
+    // ECMA-334 fourth edition §15.14 and §26.1: containment is determined
+    // from generated syntax; return types, conversions and execution are deferred.
+    private static void CheckIterators(SyntaxTree tree,List<ParseIssue> issues)
+    {
+        string Kind(int node)=>tree.Language!.GetKindName(tree.Kind(node));
+        string Text(int node){var span=tree.Span(node);return tree.Text.Substring(span.Start,span.Length);}
+        bool Boundary(int node)=>Kind(node) is "MethodDeclaration" or "OperatorDeclaration" or "ConversionDeclaration" or
+            "Accessor" or "EventAccessor" or "ConstructorDeclaration" or "DestructorDeclaration" or "AnonymousMethodExpression";
+        int Owner(int node)
+        {for(int p=tree.Parent(node);p>=0;p=tree.Parent(p))if(Boundary(p))return p;return -1;}
+        void Error(int node,string message)=>issues.Add(new("CSN2022",message,tree.Span(node),IssueCategory.Syntax));
+        var iterators=new HashSet<int>();
+        for(int node=0;node<tree.NodeCount;node++)
+        {
+            string kind=Kind(node);
+            if(kind is not ("YieldReturnStatement" or "YieldBreakStatement"))continue;
+            int owner=Owner(node);
+            if(owner<0 || Kind(owner) is not ("MethodDeclaration" or "OperatorDeclaration" or "ConversionDeclaration" or "Accessor"))
+            {Error(node,"A yield statement requires a method, operator or accessor body and cannot occur in an anonymous method.");continue;}
+            iterators.Add(owner);
+            for(int parent=tree.Parent(node);parent>=0&&parent!=owner;parent=tree.Parent(parent))
+            {
+                if(Kind(parent)=="FinallyClause")Error(node,"A yield statement cannot occur in a finally clause.");
+                if(kind=="YieldReturnStatement" && Kind(parent)=="TryStatement")
+                {
+                    var statement=SyntaxView.Cast<TryStatementNode>(tree,parent);
+                    bool hasCatch=false;
+                    var pending=new Stack<int>();pending.Push(statement.Handlers.Index);
+                    while(pending.TryPop(out int part))
+                    {
+                        if(Kind(part) is "SpecificCatchClause" or "GeneralCatchClause"){hasCatch=true;break;}
+                        if(Kind(part) is "Block" or "AnonymousMethodExpression")continue;
+                        for(int c=0;c<tree.ChildCount(part);c++)pending.Push(tree.Child(part,c));
+                    }
+                    if(hasCatch)Error(node,"A yield return statement cannot occur in a try statement containing catches.");
+                }
+            }
+        }
+        for(int node=0;node<tree.NodeCount;node++)
+        {
+            if(!iterators.Contains(Owner(node)))continue;
+            string kind=Kind(node);
+            if(kind=="FixedParameter")
+            {
+                var parameter=SyntaxView.Cast<FixedParameterNode>(tree,node);
+                if(parameter.Mode.HasValue)Error(node,"An iterator member cannot declare ref or out parameters.");
+            }
+            if(kind=="JumpStatement")
+            {
+                int first=node;while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                if(Text(first)=="return")Error(node,"An iterator block cannot contain an ordinary return statement.");
+            }
+            if(kind=="UnsafeBlock")Error(node,"An iterator block cannot contain an unsafe context.");
+        }
+    }
     private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or "ThisExpression" or
         "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
         "InvocationExpression" or "ElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or
         "PointerMemberExpression" or "SizeOfExtendedExpression";
+    private static bool IsIdentifierPartAt(string text,int index,Version version)
+    {
+        char c=text[index];
+        if(version.Major==2)
+        {
+            if(char.IsLowSurrogate(c)&&index>0&&char.IsHighSurrogate(text[index-1]))index--;
+            if(char.IsHighSurrogate(text[index])&&index+1<text.Length&&char.IsLowSurrogate(text[index+1]))
+                return CSharp2UnicodeTables.IsPart(char.ConvertToUtf32(text,index));
+            return UnicodePolicy.IsPart(c,version);
+        }
+        return IsIdentifierPart(c);
+    }
     private static bool IsIdentifierPart(char c)=>char.IsLetterOrDigit(c)||c=='_'||
         char.GetUnicodeCategory(c) is UnicodeCategory.LetterNumber or UnicodeCategory.ConnectorPunctuation or UnicodeCategory.NonSpacingMark or UnicodeCategory.SpacingCombiningMark or UnicodeCategory.Format;
 }

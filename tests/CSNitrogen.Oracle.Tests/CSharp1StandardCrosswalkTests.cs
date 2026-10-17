@@ -137,13 +137,15 @@ public class CSharp1StandardCrosswalkTests
     [Theory]
     [InlineData("csharp2-reference-policy.json")]
     [InlineData("csharp2-standard-index.json")]
+    [InlineData("csharp2-standard-crosswalk.json")]
+    [InlineData("csharp2-coverage-gate.json")]
     [InlineData("csharp1-standard-index.json")]
     [InlineData("csharp1-standard-crosswalk.json")]
     public void Coverage_identity_binds_each_standard_input(string suffix)
     {
         var assembly = typeof(FeatureCatalog).Assembly;
-        string[] fixedNames = ["csharp2-reference-policy.json", "csharp2-standard-index.json", "coverage.json", "dependencies.json", "composition.json", "reference-policy.json", "csharp1-coverage-gate.json", "csharp1-standard-index.json", "csharp1-standard-crosswalk.json"];
-        var inputs = assembly.GetManifestResourceNames().Where(n => fixedNames.Any(s => n == "CSNitrogen." + s) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal))
+        string[] fixedNames = ["csharp2-coverage-gate.json", "csharp2-standard-crosswalk.json", "csharp2-reference-policy.json", "csharp2-standard-index.json", "coverage.json", "dependencies.json", "composition.json", "reference-policy.json", "csharp1-coverage-gate.json", "csharp1-standard-index.json", "csharp1-standard-crosswalk.json"];
+        var inputs = assembly.GetManifestResourceNames().Where(n => fixedNames.Any(s => n == "CSNitrogen." + s) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.review.", StringComparison.Ordinal))
             .Select(n => { using var stream = assembly.GetManifestResourceStream(n)!; using var bytes = new MemoryStream(); stream.CopyTo(bytes); return new KeyValuePair<string, byte[]>(n, bytes.ToArray()); }).ToArray();
         Assert.Equal(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs));
         Assert.NotEqual(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs.Where(p => p.Key != "CSNitrogen." + suffix)));

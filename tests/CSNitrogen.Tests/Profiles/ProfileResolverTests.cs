@@ -3,12 +3,12 @@ using CSNitrogen.Parsing;
 namespace CSNitrogen.Tests.Profiles;
 public class ProfileResolverTests
 {
-    [Fact] public void Named_profiles_are_explicit_and_only_reviewed_CSharp1_is_complete()
+    [Fact] public void Named_profiles_are_explicit_and_only_reviewed_historical_profiles_are_complete()
     {
         foreach(var name in Enumerable.Range(1,14).Select(i=>$"CSharp{i}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var resolution=ProfileResolver.Resolve(name); Assert.Empty(resolution.Issues); Assert.NotNull(resolution.Profile);
-            Assert.Equal(name=="CSharp1",resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
+            Assert.Equal(name is "CSharp1" or "CSharp2",resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
             Assert.Contains("baseline.conditional-compilation",resolution.Profile.Features);
             Assert.Contains("Grammars/Lexical.ngr",resolution.Profile.Grammars);
             Assert.Contains("Grammars/CompilationUnits.ngr",resolution.Profile.Grammars);
@@ -66,7 +66,7 @@ public class ProfileResolverTests
    string name=language.GetProperty("name").GetString()!;if(name=="CSharp1Safe")continue;
    var profile=ProfileResolver.Resolve(name).Profile!;
    Assert.Equal(language.GetProperty("grammars").EnumerateArray().Select(g=>g.GetString()!).Order(StringComparer.Ordinal),profile.Grammars);
-   Assert.Contains(name=="CSharp1"?"unicode-3.0-bmp":"unicode-current-bmp",profile.Policies);
+   Assert.Contains(name=="CSharp1"?"unicode-3.0-bmp":name=="CSharp2"?"unicode-4.0-scalar":"unicode-current-bmp",profile.Policies);
   }
  }
 }

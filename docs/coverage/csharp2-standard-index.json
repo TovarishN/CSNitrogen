@@ -7,7 +7,7 @@
     465,
     494
   ],
-  "scope": "Candidate Annex A headings; verify source bounds and prose before coverage promotion",
+  "scope": "Reproducible Annex A occurrences and body bounds; indexing does not establish conformance review",
   "productions": [
     {
       "id": "A:465:8:input",
@@ -15,7 +15,13 @@
       "line": 8,
       "name": "input",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1 Lexical grammar",
+      "endPdfPage": 465,
+      "endLine": 9,
+      "bodyLines": [
+        "input-sectionopt"
+      ]
     },
     {
       "id": "A:465:10:input-section",
@@ -23,7 +29,14 @@
       "line": 10,
       "name": "input-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1 Lexical grammar",
+      "endPdfPage": 465,
+      "endLine": 12,
+      "bodyLines": [
+        "input-section-part",
+        "input-section   input-section-part"
+      ]
     },
     {
       "id": "A:465:13:input-section-part",
@@ -31,7 +44,14 @@
       "line": 13,
       "name": "input-section-part",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1 Lexical grammar",
+      "endPdfPage": 465,
+      "endLine": 15,
+      "bodyLines": [
+        "input-elementsopt   new-line",
+        "pp-directive"
+      ]
     },
     {
       "id": "A:465:16:input-elements",
@@ -39,7 +59,14 @@
       "line": 16,
       "name": "input-elements",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1 Lexical grammar",
+      "endPdfPage": 465,
+      "endLine": 18,
+      "bodyLines": [
+        "input-element",
+        "input-elements   input-element"
+      ]
     },
     {
       "id": "A:465:19:input-element",
@@ -47,7 +74,15 @@
       "line": 19,
       "name": "input-element",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1 Lexical grammar",
+      "endPdfPage": 465,
+      "endLine": 22,
+      "bodyLines": [
+        "whitespace",
+        "comment",
+        "token"
+      ]
     },
     {
       "id": "A:465:24:new-line",
@@ -55,7 +90,19 @@
       "line": 24,
       "name": "new-line",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.1 Line terminators",
+      "endPdfPage": 465,
+      "endLine": 31,
+      "bodyLines": [
+        "Carriage return character (",
+        "U+000D)",
+        "Line feed character (U+000A)",
+        "Carriage return character (U+000D) followed by line feed character (U+000A)",
+        "Next line character (U+2085)",
+        "Line separator character (U+2028)",
+        "Paragraph separator character (U+2029)"
+      ]
     },
     {
       "id": "A:465:33:whitespace",
@@ -63,7 +110,13 @@
       "line": 33,
       "name": "whitespace",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.2 White space",
+      "endPdfPage": 465,
+      "endLine": 34,
+      "bodyLines": [
+        "whitespace-characters"
+      ]
     },
     {
       "id": "A:465:35:whitespace-characters",
@@ -71,7 +124,14 @@
       "line": 35,
       "name": "whitespace-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.2 White space",
+      "endPdfPage": 465,
+      "endLine": 37,
+      "bodyLines": [
+        "whitespace-character",
+        "whitespace-characters   whitespace-character"
+      ]
     },
     {
       "id": "A:465:38:whitespace-character",
@@ -79,7 +139,17 @@
       "line": 38,
       "name": "whitespace-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.2 White space",
+      "endPdfPage": 465,
+      "endLine": 43,
+      "bodyLines": [
+        "Any character with Unicode class Zs",
+        "Horizontal tab character (",
+        "U+0009)",
+        "Vertical tab character (U+000B)",
+        "Form feed character (U+000C)"
+      ]
     },
     {
       "id": "A:466:3:comment",
@@ -87,7 +157,14 @@
       "line": 3,
       "name": "comment",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 5,
+      "bodyLines": [
+        "single-line-comment",
+        "delimited-comment"
+      ]
     },
     {
       "id": "A:466:6:single-line-comment",
@@ -95,7 +172,13 @@
       "line": 6,
       "name": "single-line-comment",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 7,
+      "bodyLines": [
+        "//   input-charactersopt"
+      ]
     },
     {
       "id": "A:466:8:input-characters",
@@ -103,7 +186,14 @@
       "line": 8,
       "name": "input-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 10,
+      "bodyLines": [
+        "input-character",
+        "input-characters   input-character"
+      ]
     },
     {
       "id": "A:466:11:input-character",
@@ -111,7 +201,13 @@
       "line": 11,
       "name": "input-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 12,
+      "bodyLines": [
+        "Any Unicode character except a new-line-character"
+      ]
     },
     {
       "id": "A:466:14:new-line-character",
@@ -119,7 +215,17 @@
       "line": 14,
       "name": "new-line-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 19,
+      "bodyLines": [
+        "Carriage return character (U+000D)",
+        "Line feed character (U+000A)",
+        "Next line character (U+0085)",
+        "Line separator character (U+2028)",
+        "Paragraph separator character (U+2029)"
+      ]
     },
     {
       "id": "A:466:20:delimited-comment",
@@ -127,7 +233,13 @@
       "line": 20,
       "name": "delimited-comment",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 21,
+      "bodyLines": [
+        "/*   delimited-comment-textopt   asterisks   /"
+      ]
     },
     {
       "id": "A:466:22:delimited-comment-text",
@@ -135,7 +247,14 @@
       "line": 22,
       "name": "delimited-comment-text",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 24,
+      "bodyLines": [
+        "delimited-comment-section",
+        "delimited-comment-text   delimited-comment-section"
+      ]
     },
     {
       "id": "A:466:25:delimited-comment-section",
@@ -143,7 +262,14 @@
       "line": 25,
       "name": "delimited-comment-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 27,
+      "bodyLines": [
+        "not-asterisk",
+        "asterisks   not-slash"
+      ]
     },
     {
       "id": "A:466:29:asterisks",
@@ -151,7 +277,14 @@
       "line": 29,
       "name": "asterisks",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 31,
+      "bodyLines": [
+        "*",
+        "asterisks   *"
+      ]
     },
     {
       "id": "A:466:32:not-asterisk",
@@ -159,7 +292,13 @@
       "line": 32,
       "name": "not-asterisk",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 33,
+      "bodyLines": [
+        "Any Unicode character except *"
+      ]
     },
     {
       "id": "A:466:34:not-slash",
@@ -167,7 +306,13 @@
       "line": 34,
       "name": "not-slash",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.3 Comments",
+      "endPdfPage": 466,
+      "endLine": 35,
+      "bodyLines": [
+        "Any Unicode character except /"
+      ]
     },
     {
       "id": "A:466:38:token",
@@ -175,7 +320,20 @@
       "line": 38,
       "name": "token",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.4 Tokens",
+      "endPdfPage": 467,
+      "endLine": 1,
+      "bodyLines": [
+        "identifier",
+        "keyword",
+        "integer-literal",
+        "real-literal",
+        "character-literal",
+        "string-literal",
+        "operator-or-punctuator",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:467:3:unicode-escape-sequence",
@@ -183,7 +341,14 @@
       "line": 3,
       "name": "unicode-escape-sequence",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.5 Unicode escape sequences",
+      "endPdfPage": 467,
+      "endLine": 5,
+      "bodyLines": [
+        "\\u   hex-digit   hex-digit   hex-digit   hex-digit",
+        "\\U   hex-digit   hex-digit   hex-digit  hex-digit   hex-digit   hex-digit   hex-digit   hex-digit"
+      ]
     },
     {
       "id": "A:467:7:identifier",
@@ -191,7 +356,14 @@
       "line": 7,
       "name": "identifier",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 9,
+      "bodyLines": [
+        "available-identifier",
+        "@   identifier-or-keyword"
+      ]
     },
     {
       "id": "A:467:10:available-identifier",
@@ -199,7 +371,13 @@
       "line": 10,
       "name": "available-identifier",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 11,
+      "bodyLines": [
+        "An identifier-or-keyword that is not a keyword"
+      ]
     },
     {
       "id": "A:467:12:identifier-or-keyword",
@@ -207,7 +385,13 @@
       "line": 12,
       "name": "identifier-or-keyword",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 13,
+      "bodyLines": [
+        "identifier-start-character   identifier-part-charactersopt"
+      ]
     },
     {
       "id": "A:467:15:identifier-start-character",
@@ -215,7 +399,14 @@
       "line": 15,
       "name": "identifier-start-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 17,
+      "bodyLines": [
+        "letter-character",
+        "_ (the underscore character U+005F)"
+      ]
     },
     {
       "id": "A:467:18:identifier-part-characters",
@@ -223,7 +414,14 @@
       "line": 18,
       "name": "identifier-part-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 20,
+      "bodyLines": [
+        "identifier-part-character",
+        "identifier-part-characters   identifier-part-character"
+      ]
     },
     {
       "id": "A:467:21:identifier-part-character",
@@ -231,7 +429,17 @@
       "line": 21,
       "name": "identifier-part-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 26,
+      "bodyLines": [
+        "letter-character",
+        "decimal-digit-character",
+        "connecting-character",
+        "combining-character",
+        "formatting-character"
+      ]
     },
     {
       "id": "A:467:28:letter-character",
@@ -239,7 +447,14 @@
       "line": 28,
       "name": "letter-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 30,
+      "bodyLines": [
+        "A Unicode character of classes Lu, Ll, Lt, Lm, Lo, or Nl",
+        "A unicode-escape-sequence representing a character of classes Lu, Ll, Lt, Lm, Lo, or Nl"
+      ]
     },
     {
       "id": "A:467:31:combining-character",
@@ -247,7 +462,14 @@
       "line": 31,
       "name": "combining-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 33,
+      "bodyLines": [
+        "A Unicode character of classes Mn or Mc",
+        "A unicode-escape-sequence representing a character of classes Mn or Mc"
+      ]
     },
     {
       "id": "A:467:34:decimal-digit-character",
@@ -255,7 +477,14 @@
       "line": 34,
       "name": "decimal-digit-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 36,
+      "bodyLines": [
+        "A Unicode character of the class Nd",
+        "A unicode-escape-sequence representing a character of the class Nd"
+      ]
     },
     {
       "id": "A:467:37:connecting-character",
@@ -263,7 +492,14 @@
       "line": 37,
       "name": "connecting-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 39,
+      "bodyLines": [
+        "A Unicode character of the class Pc",
+        "A unicode-escape-sequence representing a character of the class Pc"
+      ]
     },
     {
       "id": "A:467:40:formatting-character",
@@ -271,7 +507,43 @@
       "line": 40,
       "name": "formatting-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.6 Identifiers",
+      "endPdfPage": 467,
+      "endLine": 42,
+      "bodyLines": [
+        "A Unicode character of the class Cf",
+        "A unicode-escape-sequence representing a character of the class Cf"
+      ]
+    },
+    {
+      "id": "A:468:3:keyword",
+      "pdfPage": 468,
+      "line": 3,
+      "name": "keyword",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.7 Keywords",
+      "endPdfPage": 468,
+      "endLine": 19,
+      "bodyLines": [
+        "abstract  as    base   bool   break",
+        "byte   case   catch   char   checked",
+        "class   const   continue  decimal  default",
+        "delegate  do    double  else   enum",
+        "event   explicit  extern  false   finally",
+        "fixed   float   for   foreach  goto",
+        "if    implicit  in    int   interface",
+        "internal  is    lock   long   namespace",
+        "new   null   object  operator  out",
+        "override  params  private  protected public",
+        "readonly  ref   return  sbyte   sealed",
+        "short   sizeof  stackalloc static  string",
+        "struct  switch  this   throw   true",
+        "try   typeof  uint   ulong   unchecked",
+        "unsafe  ushort  using   virtual  void",
+        "volatile  while"
+      ]
     },
     {
       "id": "A:468:21:literal",
@@ -279,7 +551,18 @@
       "line": 21,
       "name": "literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 27,
+      "bodyLines": [
+        "boolean-literal",
+        "integer-literal",
+        "real-literal",
+        "character-literal",
+        "string-literal",
+        "null-literal"
+      ]
     },
     {
       "id": "A:468:28:boolean-literal",
@@ -287,7 +570,14 @@
       "line": 28,
       "name": "boolean-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 30,
+      "bodyLines": [
+        "true",
+        "false"
+      ]
     },
     {
       "id": "A:468:31:integer-literal",
@@ -295,7 +585,14 @@
       "line": 31,
       "name": "integer-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 33,
+      "bodyLines": [
+        "decimal-integer-literal",
+        "hexadecimal-integer-literal"
+      ]
     },
     {
       "id": "A:468:34:decimal-integer-literal",
@@ -303,7 +600,13 @@
       "line": 34,
       "name": "decimal-integer-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 35,
+      "bodyLines": [
+        "decimal-digits   integer-type-suffixopt"
+      ]
     },
     {
       "id": "A:468:36:decimal-digits",
@@ -311,7 +614,42 @@
       "line": 36,
       "name": "decimal-digits",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 38,
+      "bodyLines": [
+        "decimal-digit",
+        "decimal-digits   decimal-digit"
+      ]
+    },
+    {
+      "id": "A:468:39:decimal-digit",
+      "pdfPage": 468,
+      "line": 39,
+      "name": "decimal-digit",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 40,
+      "bodyLines": [
+        "0  1  2  3  4  5  6  7  8  9"
+      ]
+    },
+    {
+      "id": "A:468:42:integer-type-suffix",
+      "pdfPage": 468,
+      "line": 42,
+      "name": "integer-type-suffix",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 43,
+      "bodyLines": [
+        "U  u  L  l  UL  Ul  uL  ul  LU  Lu  lU  lu"
+      ]
     },
     {
       "id": "A:468:44:hexadecimal-integer-literal",
@@ -319,7 +657,14 @@
       "line": 44,
       "name": "hexadecimal-integer-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 468,
+      "endLine": 46,
+      "bodyLines": [
+        "0x   hex-digits   integer-type-suffixopt",
+        "0X   hex-digits   integer-type-suffixopt"
+      ]
     },
     {
       "id": "A:468:47:hex-digits",
@@ -327,7 +672,29 @@
       "line": 47,
       "name": "hex-digits",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 1,
+      "bodyLines": [
+        "hex-digit",
+        "hex-digits   hex-digit",
+        "Annex A   Grammar"
+      ]
+    },
+    {
+      "id": "A:469:2:hex-digit",
+      "pdfPage": 469,
+      "line": 2,
+      "name": "hex-digit",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 3,
+      "bodyLines": [
+        "0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F  a  b  c  d  e  f"
+      ]
     },
     {
       "id": "A:469:4:real-literal",
@@ -335,7 +702,16 @@
       "line": 4,
       "name": "real-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 8,
+      "bodyLines": [
+        "decimal-digits   .   decimal-digits   exponent-partopt   real-type-suffixopt",
+        ".   decimal-digits   exponent-partopt   real-type-suffixopt",
+        "decimal-digits   exponent-part   real-type-suffixopt",
+        "decimal-digits   real-type-suffix"
+      ]
     },
     {
       "id": "A:469:9:exponent-part",
@@ -343,7 +719,42 @@
       "line": 9,
       "name": "exponent-part",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 11,
+      "bodyLines": [
+        "e   signopt   decimal-digits",
+        "E   signopt   decimal-digits"
+      ]
+    },
+    {
+      "id": "A:469:12:sign",
+      "pdfPage": 469,
+      "line": 12,
+      "name": "sign",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 13,
+      "bodyLines": [
+        "+  -"
+      ]
+    },
+    {
+      "id": "A:469:15:real-type-suffix",
+      "pdfPage": 469,
+      "line": 15,
+      "name": "real-type-suffix",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 16,
+      "bodyLines": [
+        "F  f  D  d  M  m"
+      ]
     },
     {
       "id": "A:469:17:character-literal",
@@ -351,7 +762,13 @@
       "line": 17,
       "name": "character-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 18,
+      "bodyLines": [
+        "'   character   '"
+      ]
     },
     {
       "id": "A:469:19:character",
@@ -359,7 +776,16 @@
       "line": 19,
       "name": "character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 23,
+      "bodyLines": [
+        "single-character",
+        "simple-escape-sequence",
+        "hexadecimal-escape-sequence",
+        "unicode-escape-sequence"
+      ]
     },
     {
       "id": "A:469:24:single-character",
@@ -367,7 +793,27 @@
       "line": 24,
       "name": "single-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 25,
+      "bodyLines": [
+        "Any character except ' (U+0027), \\ (U+005C), and new-line-character"
+      ]
+    },
+    {
+      "id": "A:469:26:simple-escape-sequence",
+      "pdfPage": 469,
+      "line": 26,
+      "name": "simple-escape-sequence",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 27,
+      "bodyLines": [
+        "\\'  \\\"  \\\\  \\0  \\a  \\b  \\f  \\n  \\r  \\t  \\v"
+      ]
     },
     {
       "id": "A:469:28:hexadecimal-escape-sequence",
@@ -375,7 +821,13 @@
       "line": 28,
       "name": "hexadecimal-escape-sequence",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 29,
+      "bodyLines": [
+        "\\x   hex-digit   hex-digitopt   hex-digitopt   hex-digitopt"
+      ]
     },
     {
       "id": "A:469:30:string-literal",
@@ -383,7 +835,14 @@
       "line": 30,
       "name": "string-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 32,
+      "bodyLines": [
+        "regular-string-literal",
+        "verbatim-string-literal"
+      ]
     },
     {
       "id": "A:469:33:regular-string-literal",
@@ -391,7 +850,13 @@
       "line": 33,
       "name": "regular-string-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 34,
+      "bodyLines": [
+        "\"   regular-string-literal-charactersopt   \""
+      ]
     },
     {
       "id": "A:469:36:regular-string-literal-characters",
@@ -399,7 +864,14 @@
       "line": 36,
       "name": "regular-string-literal-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 38,
+      "bodyLines": [
+        "regular-string-literal-character",
+        "regular-string-literal-characters   regular-string-literal-character"
+      ]
     },
     {
       "id": "A:469:39:regular-string-literal-character",
@@ -407,7 +879,16 @@
       "line": 39,
       "name": "regular-string-literal-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 43,
+      "bodyLines": [
+        "single-regular-string-literal-character",
+        "simple-escape-sequence",
+        "hexadecimal-escape-sequence",
+        "unicode-escape-sequence"
+      ]
     },
     {
       "id": "A:469:44:single-regular-string-literal-character",
@@ -415,7 +896,14 @@
       "line": 44,
       "name": "single-regular-string-literal-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 46,
+      "bodyLines": [
+        "Any character except",
+        "\" (U+0022), \\ (U+005C), and new-line-character"
+      ]
     },
     {
       "id": "A:469:47:verbatim-string-literal",
@@ -423,7 +911,13 @@
       "line": 47,
       "name": "verbatim-string-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 469,
+      "endLine": 48,
+      "bodyLines": [
+        "@\"   verbatim-string-literal-charactersopt   \""
+      ]
     },
     {
       "id": "A:470:2:verbatim-string-literal-characters",
@@ -431,7 +925,14 @@
       "line": 2,
       "name": "verbatim-string-literal-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 470,
+      "endLine": 4,
+      "bodyLines": [
+        "verbatim-string-literal-character",
+        "verbatim-string-literal-characters   verbatim-string-literal-character"
+      ]
     },
     {
       "id": "A:470:5:verbatim-string-literal-character",
@@ -439,7 +940,14 @@
       "line": 5,
       "name": "verbatim-string-literal-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 470,
+      "endLine": 7,
+      "bodyLines": [
+        "single-verbatim-string-literal-character",
+        "quote-escape-sequence"
+      ]
     },
     {
       "id": "A:470:8:single-verbatim-string-literal-character",
@@ -447,7 +955,14 @@
       "line": 8,
       "name": "single-verbatim-string-literal-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 470,
+      "endLine": 10,
+      "bodyLines": [
+        "Any character except",
+        "\""
+      ]
     },
     {
       "id": "A:470:12:quote-escape-sequence",
@@ -455,7 +970,13 @@
       "line": 12,
       "name": "quote-escape-sequence",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 470,
+      "endLine": 13,
+      "bodyLines": [
+        "\"\""
+      ]
     },
     {
       "id": "A:470:14:null-literal",
@@ -463,7 +984,31 @@
       "line": 14,
       "name": "null-literal",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.8 Literals",
+      "endPdfPage": 470,
+      "endLine": 15,
+      "bodyLines": [
+        "null"
+      ]
+    },
+    {
+      "id": "A:470:18:operator-or-punctuator",
+      "pdfPage": 470,
+      "line": 18,
+      "name": "operator-or-punctuator",
+      "kind": "lexical",
+      "status": "indexed",
+      "annexSection": "A.1.9 Operators and punctuators",
+      "endPdfPage": 470,
+      "endLine": 23,
+      "bodyLines": [
+        "{  }  [  ]  (  )  .  ,  :  ;",
+        "+  -  *  /  %  &  |  ^  !  ~",
+        "=  <  >  ?  ??  ::  ++  --  &&  ||",
+        "->  ==  !=  <=  >=  +=  -=  *=  /=  %=",
+        "&=  |=  ^=  <<  <<="
+      ]
     },
     {
       "id": "A:470:24:right-shift",
@@ -471,7 +1016,13 @@
       "line": 24,
       "name": "right-shift",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.9 Operators and punctuators",
+      "endPdfPage": 470,
+      "endLine": 25,
+      "bodyLines": [
+        ">   >"
+      ]
     },
     {
       "id": "A:470:26:right-shift-assignment",
@@ -479,7 +1030,13 @@
       "line": 26,
       "name": "right-shift-assignment",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.9 Operators and punctuators",
+      "endPdfPage": 470,
+      "endLine": 27,
+      "bodyLines": [
+        ">   >="
+      ]
     },
     {
       "id": "A:470:29:pp-directive",
@@ -487,7 +1044,18 @@
       "line": 29,
       "name": "pp-directive",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 470,
+      "endLine": 35,
+      "bodyLines": [
+        "pp-declaration",
+        "pp-conditional",
+        "pp-line",
+        "pp-diagnostic",
+        "pp-region",
+        "pp-pragma"
+      ]
     },
     {
       "id": "A:470:36:conditional-symbol",
@@ -495,7 +1063,15 @@
       "line": 36,
       "name": "conditional-symbol",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 470,
+      "endLine": 39,
+      "bodyLines": [
+        "identifier",
+        "Any keyword except",
+        "true or false"
+      ]
     },
     {
       "id": "A:470:40:pp-expression",
@@ -503,7 +1079,13 @@
       "line": 40,
       "name": "pp-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 470,
+      "endLine": 41,
+      "bodyLines": [
+        "whitespaceopt   pp-or-expression   whitespaceopt"
+      ]
     },
     {
       "id": "A:470:42:pp-or-expression",
@@ -511,7 +1093,14 @@
       "line": 42,
       "name": "pp-or-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 470,
+      "endLine": 44,
+      "bodyLines": [
+        "pp-and-expression",
+        "pp-or-expression   whitespaceopt   ||   whitespaceopt   pp-and-expression"
+      ]
     },
     {
       "id": "A:470:45:pp-and-expression",
@@ -519,7 +1108,16 @@
       "line": 45,
       "name": "pp-and-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 1,
+      "bodyLines": [
+        "pp-equality-expression",
+        "pp-and-expression   whitespace",
+        "opt   &&   whitespaceopt   pp-equality-expression",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:471:2:pp-equality-expression",
@@ -527,7 +1125,15 @@
       "line": 2,
       "name": "pp-equality-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 5,
+      "bodyLines": [
+        "pp-unary-expression",
+        "pp-equality-expression   whitespaceopt   ==   whitespaceopt   pp-unary-expression",
+        "pp-equality-expression   whitespaceopt   !=   whitespaceopt   pp-unary-expression"
+      ]
     },
     {
       "id": "A:471:7:pp-unary-expression",
@@ -535,7 +1141,14 @@
       "line": 7,
       "name": "pp-unary-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 9,
+      "bodyLines": [
+        "pp-primary-expression",
+        "!   whitespaceopt   pp-unary-expression"
+      ]
     },
     {
       "id": "A:471:10:pp-primary-expression",
@@ -543,7 +1156,16 @@
       "line": 10,
       "name": "pp-primary-expression",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 14,
+      "bodyLines": [
+        "true",
+        "false",
+        "conditional-symbol",
+        "(   whitespaceopt   pp-expression   whitespaceopt   )"
+      ]
     },
     {
       "id": "A:471:15:pp-declaration",
@@ -551,7 +1173,14 @@
       "line": 15,
       "name": "pp-declaration",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 17,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   define   whitespace   conditional-symbol   pp-new-line",
+        "whitespaceopt   #   whitespaceopt   undef   whitespace   conditional-symbol   pp-new-line"
+      ]
     },
     {
       "id": "A:471:18:pp-new-line",
@@ -559,7 +1188,13 @@
       "line": 18,
       "name": "pp-new-line",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 19,
+      "bodyLines": [
+        "whitespaceopt   single-line-commentopt   new-line"
+      ]
     },
     {
       "id": "A:471:20:pp-conditional",
@@ -567,7 +1202,13 @@
       "line": 20,
       "name": "pp-conditional",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 21,
+      "bodyLines": [
+        "pp-if-section   pp-elif-sectionsopt   pp-else-sectionopt   pp-endif"
+      ]
     },
     {
       "id": "A:471:22:pp-if-section",
@@ -575,7 +1216,14 @@
       "line": 22,
       "name": "pp-if-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 24,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   if   whitespace  pp-expression   pp-new-line",
+        "conditional-section opt"
+      ]
     },
     {
       "id": "A:471:25:pp-elif-sections",
@@ -583,7 +1231,14 @@
       "line": 25,
       "name": "pp-elif-sections",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 27,
+      "bodyLines": [
+        "pp-elif-section",
+        "pp-elif-sections   pp-elif-section"
+      ]
     },
     {
       "id": "A:471:28:pp-elif-section",
@@ -591,7 +1246,14 @@
       "line": 28,
       "name": "pp-elif-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 30,
+      "bodyLines": [
+        "whitespaceopt  #  whitespaceopt elif whitespace  pp-expression  pp-new-line",
+        "conditional-section opt"
+      ]
     },
     {
       "id": "A:471:31:pp-else-section",
@@ -599,7 +1261,13 @@
       "line": 31,
       "name": "pp-else-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 32,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   else   pp-new-line   conditional-sectionopt"
+      ]
     },
     {
       "id": "A:471:33:pp-endif",
@@ -607,7 +1275,13 @@
       "line": 33,
       "name": "pp-endif",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 34,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   endif   pp-new-line"
+      ]
     },
     {
       "id": "A:471:35:conditional-section",
@@ -615,7 +1289,14 @@
       "line": 35,
       "name": "conditional-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 37,
+      "bodyLines": [
+        "input-section",
+        "skipped-section"
+      ]
     },
     {
       "id": "A:471:38:skipped-section",
@@ -623,7 +1304,14 @@
       "line": 38,
       "name": "skipped-section",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 40,
+      "bodyLines": [
+        "skipped-section-part",
+        "skipped-section   skipped-section-part"
+      ]
     },
     {
       "id": "A:471:41:skipped-section-part",
@@ -631,7 +1319,15 @@
       "line": 41,
       "name": "skipped-section-part",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 44,
+      "bodyLines": [
+        "whitespace",
+        "opt   skipped-charactersopt   new-line",
+        "pp-directive"
+      ]
     },
     {
       "id": "A:471:45:skipped-characters",
@@ -639,7 +1335,13 @@
       "line": 45,
       "name": "skipped-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 46,
+      "bodyLines": [
+        "not-number-sign   input-charactersopt"
+      ]
     },
     {
       "id": "A:471:47:not-number-sign",
@@ -647,7 +1349,13 @@
       "line": 47,
       "name": "not-number-sign",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 471,
+      "endLine": 48,
+      "bodyLines": [
+        "Any input-character except #"
+      ]
     },
     {
       "id": "A:472:2:pp-line",
@@ -655,7 +1363,13 @@
       "line": 2,
       "name": "pp-line",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 3,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   line   whitespace   line-indicator   pp-new-line"
+      ]
     },
     {
       "id": "A:472:4:line-indicator",
@@ -663,7 +1377,15 @@
       "line": 4,
       "name": "line-indicator",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 7,
+      "bodyLines": [
+        "decimal-digits   whitespace   file-name",
+        "decimal-digits",
+        "identifier-or-keyword"
+      ]
     },
     {
       "id": "A:472:8:file-name",
@@ -671,7 +1393,13 @@
       "line": 8,
       "name": "file-name",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 9,
+      "bodyLines": [
+        "\"  file-name-characters  \""
+      ]
     },
     {
       "id": "A:472:10:file-name-characters",
@@ -679,7 +1407,14 @@
       "line": 10,
       "name": "file-name-characters",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 12,
+      "bodyLines": [
+        "file-name-character",
+        "file-name-characters  file-name-character"
+      ]
     },
     {
       "id": "A:472:13:file-name-character",
@@ -687,7 +1422,13 @@
       "line": 13,
       "name": "file-name-character",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 14,
+      "bodyLines": [
+        "Any character except \" (U+0022), and new-line-character"
+      ]
     },
     {
       "id": "A:472:15:pp-diagnostic",
@@ -695,7 +1436,14 @@
       "line": 15,
       "name": "pp-diagnostic",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 17,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   error   pp-message",
+        "whitespaceopt   #   whitespaceopt   warning   pp-message"
+      ]
     },
     {
       "id": "A:472:18:pp-message",
@@ -703,7 +1451,15 @@
       "line": 18,
       "name": "pp-message",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 21,
+      "bodyLines": [
+        "new-line",
+        "whitespace   input-characters",
+        "opt   new-line"
+      ]
     },
     {
       "id": "A:472:22:pp-region",
@@ -711,7 +1467,13 @@
       "line": 22,
       "name": "pp-region",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 23,
+      "bodyLines": [
+        "pp-start-region   conditional-sectionopt   pp-end-region"
+      ]
     },
     {
       "id": "A:472:24:pp-start-region",
@@ -719,7 +1481,13 @@
       "line": 24,
       "name": "pp-start-region",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 25,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   region   pp-message"
+      ]
     },
     {
       "id": "A:472:26:pp-end-region",
@@ -727,7 +1495,13 @@
       "line": 26,
       "name": "pp-end-region",
       "kind": "lexical",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 27,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   endregion   pp-message"
+      ]
     },
     {
       "id": "A:472:28:pp-pragma",
@@ -735,7 +1509,13 @@
       "line": 28,
       "name": "pp-pragma",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 29,
+      "bodyLines": [
+        "whitespaceopt   #   whitespaceopt   pragma   pp-pragma-text"
+      ]
     },
     {
       "id": "A:472:30:pp-pragma-text",
@@ -743,7 +1523,14 @@
       "line": 30,
       "name": "pp-pragma-text",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.1.10 Pre-processing directives",
+      "endPdfPage": 472,
+      "endLine": 32,
+      "bodyLines": [
+        "new-line",
+        "whitespace   input-charactersopt   new-line"
+      ]
     },
     {
       "id": "A:472:36:compilation-unit",
@@ -751,7 +1538,14 @@
       "line": 36,
       "name": "compilation-unit",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.1 Basic concepts",
+      "endPdfPage": 472,
+      "endLine": 38,
+      "bodyLines": [
+        "extern-alias-directivesopt    using-directivesopt   global-attributesopt",
+        "namespace-member-declarations opt"
+      ]
     },
     {
       "id": "A:472:39:namespace-name",
@@ -759,7 +1553,13 @@
       "line": 39,
       "name": "namespace-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.1 Basic concepts",
+      "endPdfPage": 472,
+      "endLine": 40,
+      "bodyLines": [
+        "namespace-or-type-name"
+      ]
     },
     {
       "id": "A:472:41:type-name",
@@ -767,7 +1567,13 @@
       "line": 41,
       "name": "type-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.1 Basic concepts",
+      "endPdfPage": 472,
+      "endLine": 42,
+      "bodyLines": [
+        "namespace-or-type-name"
+      ]
     },
     {
       "id": "A:472:43:namespace-or-type-name",
@@ -775,7 +1581,16 @@
       "line": 43,
       "name": "namespace-or-type-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.1 Basic concepts",
+      "endPdfPage": 473,
+      "endLine": 1,
+      "bodyLines": [
+        "identifier   type-argument-listopt",
+        "qualified-alias-member",
+        "namespace-or-type-name   .   identifier   type-argument-listopt",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:473:3:type",
@@ -783,7 +1598,15 @@
       "line": 3,
       "name": "type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 6,
+      "bodyLines": [
+        "value-type",
+        "reference-type",
+        "type-parameter"
+      ]
     },
     {
       "id": "A:473:7:value-type",
@@ -791,7 +1614,14 @@
       "line": 7,
       "name": "value-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 9,
+      "bodyLines": [
+        "struct-type",
+        "enum-type"
+      ]
     },
     {
       "id": "A:473:10:struct-type",
@@ -799,7 +1629,15 @@
       "line": 10,
       "name": "struct-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 13,
+      "bodyLines": [
+        "type-name",
+        "simple-type",
+        "nullable-type"
+      ]
     },
     {
       "id": "A:473:14:simple-type",
@@ -807,7 +1645,14 @@
       "line": 14,
       "name": "simple-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 16,
+      "bodyLines": [
+        "numeric-type",
+        "bool"
+      ]
     },
     {
       "id": "A:473:17:numeric-type",
@@ -815,7 +1660,15 @@
       "line": 17,
       "name": "numeric-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 20,
+      "bodyLines": [
+        "integral-type",
+        "floating-point-type",
+        "decimal"
+      ]
     },
     {
       "id": "A:473:21:integral-type",
@@ -823,7 +1676,21 @@
       "line": 21,
       "name": "integral-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 30,
+      "bodyLines": [
+        "sbyte",
+        "byte",
+        "short",
+        "ushort",
+        "int",
+        "uint",
+        "long",
+        "ulong",
+        "char"
+      ]
     },
     {
       "id": "A:473:32:floating-point-type",
@@ -831,7 +1698,14 @@
       "line": 32,
       "name": "floating-point-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 34,
+      "bodyLines": [
+        "float",
+        "double"
+      ]
     },
     {
       "id": "A:473:36:enum-type",
@@ -839,7 +1713,13 @@
       "line": 36,
       "name": "enum-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 37,
+      "bodyLines": [
+        "type-name"
+      ]
     },
     {
       "id": "A:473:38:nullable-type",
@@ -847,7 +1727,13 @@
       "line": 38,
       "name": "nullable-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 39,
+      "bodyLines": [
+        "non-nullable-value-type   ?"
+      ]
     },
     {
       "id": "A:473:40:non-nullable-value-type",
@@ -855,7 +1741,15 @@
       "line": 40,
       "name": "non-nullable-value-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 43,
+      "bodyLines": [
+        "enum-type",
+        "type-name",
+        "simple-type"
+      ]
     },
     {
       "id": "A:473:44:reference-type",
@@ -863,7 +1757,16 @@
       "line": 44,
       "name": "reference-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 48,
+      "bodyLines": [
+        "class-type",
+        "interface-type",
+        "array-type",
+        "delegate-type"
+      ]
     },
     {
       "id": "A:473:49:class-type",
@@ -871,7 +1774,15 @@
       "line": 49,
       "name": "class-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 473,
+      "endLine": 52,
+      "bodyLines": [
+        "type-name",
+        "object",
+        "string"
+      ]
     },
     {
       "id": "A:474:2:interface-type",
@@ -879,7 +1790,13 @@
       "line": 2,
       "name": "interface-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 3,
+      "bodyLines": [
+        "type-name"
+      ]
     },
     {
       "id": "A:474:4:array-type",
@@ -887,7 +1804,13 @@
       "line": 4,
       "name": "array-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 5,
+      "bodyLines": [
+        "non-array-type   rank-specifiers"
+      ]
     },
     {
       "id": "A:474:6:non-array-type",
@@ -895,7 +1818,17 @@
       "line": 6,
       "name": "non-array-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 11,
+      "bodyLines": [
+        "value-type",
+        "class-type",
+        "interface-type",
+        "delegate-type",
+        "type-parameter"
+      ]
     },
     {
       "id": "A:474:12:rank-specifiers",
@@ -903,7 +1836,14 @@
       "line": 12,
       "name": "rank-specifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 14,
+      "bodyLines": [
+        "rank-specifier",
+        "rank-specifiers   rank-specifier"
+      ]
     },
     {
       "id": "A:474:15:rank-specifier",
@@ -911,7 +1851,13 @@
       "line": 15,
       "name": "rank-specifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 16,
+      "bodyLines": [
+        "[   dim-separatorsopt   ]"
+      ]
     },
     {
       "id": "A:474:17:dim-separators",
@@ -919,7 +1865,14 @@
       "line": 17,
       "name": "dim-separators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 19,
+      "bodyLines": [
+        ",",
+        "dim-separators   ,"
+      ]
     },
     {
       "id": "A:474:20:delegate-type",
@@ -927,7 +1880,13 @@
       "line": 20,
       "name": "delegate-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.2 Types",
+      "endPdfPage": 474,
+      "endLine": 21,
+      "bodyLines": [
+        "type-name"
+      ]
     },
     {
       "id": "A:474:24:variable-reference",
@@ -935,7 +1894,13 @@
       "line": 24,
       "name": "variable-reference",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.3 Variables",
+      "endPdfPage": 474,
+      "endLine": 25,
+      "bodyLines": [
+        "expression"
+      ]
     },
     {
       "id": "A:474:28:argument-list",
@@ -943,7 +1908,15 @@
       "line": 28,
       "name": "argument-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 474,
+      "endLine": 31,
+      "bodyLines": [
+        "argument",
+        "argument-list",
+        ",   argument"
+      ]
     },
     {
       "id": "A:474:32:argument",
@@ -951,7 +1924,15 @@
       "line": 32,
       "name": "argument",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 474,
+      "endLine": 35,
+      "bodyLines": [
+        "expression",
+        "ref   variable-reference",
+        "out   variable-reference"
+      ]
     },
     {
       "id": "A:474:36:primary-expression",
@@ -959,7 +1940,15 @@
       "line": 36,
       "name": "primary-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 1,
+      "bodyLines": [
+        "array-creation-expression",
+        "primary-no-array-creation-expression",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:475:2:primary-no-array-creation-expression",
@@ -967,7 +1956,29 @@
       "line": 2,
       "name": "primary-no-array-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 19,
+      "bodyLines": [
+        "literal",
+        "simple-name",
+        "parenthesized-expression",
+        "member-access",
+        "invocation-expression",
+        "element-access",
+        "this-access",
+        "base-access",
+        "post-increment-expression",
+        "post-decrement-expression",
+        "object-creation-expression",
+        "delegate-creation-expression",
+        "typeof-expression",
+        "checked-expression",
+        "unchecked-expression",
+        "default-value-expression",
+        "anonymous-method-expression"
+      ]
     },
     {
       "id": "A:475:20:simple-name",
@@ -975,7 +1986,14 @@
       "line": 20,
       "name": "simple-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 22,
+      "bodyLines": [
+        "identifier   type-argument-list",
+        "opt"
+      ]
     },
     {
       "id": "A:475:23:parenthesized-expression",
@@ -983,7 +2001,13 @@
       "line": 23,
       "name": "parenthesized-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 24,
+      "bodyLines": [
+        "(   expression   )"
+      ]
     },
     {
       "id": "A:475:25:member-access",
@@ -991,7 +2015,30 @@
       "line": 25,
       "name": "member-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 28,
+      "bodyLines": [
+        "primary-expression   .   identifier    type-argument-listopt",
+        "predefined-type   .   identifier   type-argument-listopt",
+        "qualified-alias-member   .   identifier   type-argument-listopt"
+      ]
+    },
+    {
+      "id": "A:475:29:predefined-type",
+      "pdfPage": 475,
+      "line": 29,
+      "name": "predefined-type",
+      "kind": "syntactic",
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 31,
+      "bodyLines": [
+        "bool  byte  char  decimal double float  int  long",
+        "object sbyte  short  string uint  ulong  ushort"
+      ]
     },
     {
       "id": "A:475:32:invocation-expression",
@@ -999,7 +2046,13 @@
       "line": 32,
       "name": "invocation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 33,
+      "bodyLines": [
+        "primary-expression   (   argument-listopt   )"
+      ]
     },
     {
       "id": "A:475:34:element-access",
@@ -1007,7 +2060,13 @@
       "line": 34,
       "name": "element-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 35,
+      "bodyLines": [
+        "primary-no-array-creation-expression   [   expression-list   ]"
+      ]
     },
     {
       "id": "A:475:36:expression-list",
@@ -1015,7 +2074,14 @@
       "line": 36,
       "name": "expression-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 38,
+      "bodyLines": [
+        "expression",
+        "expression-list   ,   expression"
+      ]
     },
     {
       "id": "A:475:39:this-access",
@@ -1023,7 +2089,13 @@
       "line": 39,
       "name": "this-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 40,
+      "bodyLines": [
+        "this"
+      ]
     },
     {
       "id": "A:475:41:base-access",
@@ -1031,7 +2103,14 @@
       "line": 41,
       "name": "base-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 43,
+      "bodyLines": [
+        "base   .   identifier   type-argument-listopt",
+        "base   [   expression-list   ]"
+      ]
     },
     {
       "id": "A:475:44:post-increment-expression",
@@ -1039,7 +2118,13 @@
       "line": 44,
       "name": "post-increment-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 45,
+      "bodyLines": [
+        "primary-expression   ++"
+      ]
     },
     {
       "id": "A:475:46:post-decrement-expression",
@@ -1047,7 +2132,13 @@
       "line": 46,
       "name": "post-decrement-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 47,
+      "bodyLines": [
+        "primary-expression   --"
+      ]
     },
     {
       "id": "A:475:48:object-creation-expression",
@@ -1055,7 +2146,13 @@
       "line": 48,
       "name": "object-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 475,
+      "endLine": 49,
+      "bodyLines": [
+        "new   type   (   argument-listopt   )"
+      ]
     },
     {
       "id": "A:476:2:array-creation-expression",
@@ -1063,7 +2160,14 @@
       "line": 2,
       "name": "array-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 4,
+      "bodyLines": [
+        "new   non-array-type   [   expression-list   ]   rank-specifiersopt   array-initializeropt",
+        "new   array-type   array-initializer"
+      ]
     },
     {
       "id": "A:476:5:delegate-creation-expression",
@@ -1071,7 +2175,13 @@
       "line": 5,
       "name": "delegate-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 6,
+      "bodyLines": [
+        "new   delegate-type   (   expression   )"
+      ]
     },
     {
       "id": "A:476:7:typeof-expression",
@@ -1079,7 +2189,15 @@
       "line": 7,
       "name": "typeof-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 10,
+      "bodyLines": [
+        "typeof   (   type   )",
+        "typeof   (   unbound-type-name   )",
+        "typeof ( void )"
+      ]
     },
     {
       "id": "A:476:11:unbound-type-name",
@@ -1087,7 +2205,15 @@
       "line": 11,
       "name": "unbound-type-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 14,
+      "bodyLines": [
+        "identifier   generic-dimension-specifieropt",
+        "identifier   ::   identifier   generic-dimension-specifieropt",
+        "unbound-type-name   .   identifier   generic-dimension-specifieropt"
+      ]
     },
     {
       "id": "A:476:15:generic-dimension-specifier",
@@ -1095,7 +2221,13 @@
       "line": 15,
       "name": "generic-dimension-specifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 16,
+      "bodyLines": [
+        "<   commasopt   >"
+      ]
     },
     {
       "id": "A:476:17:commas",
@@ -1103,7 +2235,14 @@
       "line": 17,
       "name": "commas",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 19,
+      "bodyLines": [
+        ",",
+        "commas   ,"
+      ]
     },
     {
       "id": "A:476:20:checked-expression",
@@ -1111,7 +2250,13 @@
       "line": 20,
       "name": "checked-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 21,
+      "bodyLines": [
+        "checked   (   expression   )"
+      ]
     },
     {
       "id": "A:476:22:unchecked-expression",
@@ -1119,7 +2264,13 @@
       "line": 22,
       "name": "unchecked-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 23,
+      "bodyLines": [
+        "unchecked   (   expression   )"
+      ]
     },
     {
       "id": "A:476:24:default-value-expression",
@@ -1127,7 +2278,13 @@
       "line": 24,
       "name": "default-value-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 25,
+      "bodyLines": [
+        "default   (   type   )"
+      ]
     },
     {
       "id": "A:476:26:anonymous-method-expression",
@@ -1135,7 +2292,13 @@
       "line": 26,
       "name": "anonymous-method-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 27,
+      "bodyLines": [
+        "delegate   anonymous-method-signatureopt   block"
+      ]
     },
     {
       "id": "A:476:28:anonymous-method-signature",
@@ -1143,7 +2306,13 @@
       "line": 28,
       "name": "anonymous-method-signature",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 29,
+      "bodyLines": [
+        "(   anonymous-method-parameter-listopt   )"
+      ]
     },
     {
       "id": "A:476:30:anonymous-method-parameter-list",
@@ -1151,7 +2320,14 @@
       "line": 30,
       "name": "anonymous-method-parameter-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 32,
+      "bodyLines": [
+        "anonymous-method-parameter",
+        "anonymous-method-parameter-list   ,   anonymous-method-parameter"
+      ]
     },
     {
       "id": "A:476:33:anonymous-method-parameter",
@@ -1159,7 +2335,13 @@
       "line": 33,
       "name": "anonymous-method-parameter",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 34,
+      "bodyLines": [
+        "parameter-modifieropt   type   identifier"
+      ]
     },
     {
       "id": "A:476:35:unary-expression",
@@ -1167,7 +2349,20 @@
       "line": 35,
       "name": "unary-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 43,
+      "bodyLines": [
+        "primary-expression",
+        "+   unary-expression",
+        "-   unary-expression",
+        "!   unary-expression",
+        "~   unary-expression",
+        "pre-increment-expression",
+        "pre-decrement-expression",
+        "cast-expression"
+      ]
     },
     {
       "id": "A:476:44:pre-increment-expression",
@@ -1175,7 +2370,13 @@
       "line": 44,
       "name": "pre-increment-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 45,
+      "bodyLines": [
+        "++   unary-expression"
+      ]
     },
     {
       "id": "A:476:46:pre-decrement-expression",
@@ -1183,7 +2384,13 @@
       "line": 46,
       "name": "pre-decrement-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 476,
+      "endLine": 47,
+      "bodyLines": [
+        "--   unary-expression"
+      ]
     },
     {
       "id": "A:476:48:cast-expression",
@@ -1191,7 +2398,14 @@
       "line": 48,
       "name": "cast-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 1,
+      "bodyLines": [
+        "(   type   )   unary-expression",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:477:2:multiplicative-expression",
@@ -1199,7 +2413,16 @@
       "line": 2,
       "name": "multiplicative-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 6,
+      "bodyLines": [
+        "unary-expression",
+        "multiplicative-expression   *   unary-expression",
+        "multiplicative-expression   /   unary-expression",
+        "multiplicative-expression   %   unary-expression"
+      ]
     },
     {
       "id": "A:477:7:additive-expression",
@@ -1207,7 +2430,15 @@
       "line": 7,
       "name": "additive-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 10,
+      "bodyLines": [
+        "multiplicative-expression",
+        "additive-expression   +   multiplicative-expression",
+        "additive-expression   \u2013   multiplicative-expression"
+      ]
     },
     {
       "id": "A:477:11:shift-expression",
@@ -1215,7 +2446,15 @@
       "line": 11,
       "name": "shift-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 14,
+      "bodyLines": [
+        "additive-expression",
+        "shift-expression   <<   additive-expression",
+        "shift-expression   right-shift   additive-expression"
+      ]
     },
     {
       "id": "A:477:15:relational-expression",
@@ -1223,7 +2462,19 @@
       "line": 15,
       "name": "relational-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 22,
+      "bodyLines": [
+        "shift-expression",
+        "relational-expression   <   shift-expression",
+        "relational-expression   >   shift-expression",
+        "relational-expression   <=   shift-expression",
+        "relational-expression   >=   shift-expression",
+        "relational-expression   is   type",
+        "relational-expression   as   type"
+      ]
     },
     {
       "id": "A:477:23:equality-expression",
@@ -1231,7 +2482,15 @@
       "line": 23,
       "name": "equality-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 26,
+      "bodyLines": [
+        "relational-expression",
+        "equality-expression   ==   relational-expression",
+        "equality-expression   !=   relational-expression"
+      ]
     },
     {
       "id": "A:477:27:and-expression",
@@ -1239,7 +2498,14 @@
       "line": 27,
       "name": "and-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 29,
+      "bodyLines": [
+        "equality-expression",
+        "and-expression   &   equality-expression"
+      ]
     },
     {
       "id": "A:477:30:exclusive-or-expression",
@@ -1247,7 +2513,15 @@
       "line": 30,
       "name": "exclusive-or-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 33,
+      "bodyLines": [
+        "and-expression",
+        "exclusive-or-expression",
+        "^   and-expression"
+      ]
     },
     {
       "id": "A:477:34:inclusive-or-expression",
@@ -1255,7 +2529,15 @@
       "line": 34,
       "name": "inclusive-or-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 37,
+      "bodyLines": [
+        "exclusive-or-expression",
+        "inclusive-or-expression",
+        "|   exclusive-or-expression"
+      ]
     },
     {
       "id": "A:477:38:conditional-and-expression",
@@ -1263,7 +2545,15 @@
       "line": 38,
       "name": "conditional-and-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 41,
+      "bodyLines": [
+        "inclusive-or-expression",
+        "conditional-and-expression",
+        "&&   inclusive-or-expression"
+      ]
     },
     {
       "id": "A:477:42:conditional-or-expression",
@@ -1271,7 +2561,15 @@
       "line": 42,
       "name": "conditional-or-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 45,
+      "bodyLines": [
+        "conditional-and-expression",
+        "conditional-or-expression",
+        "||   conditional-and-expression"
+      ]
     },
     {
       "id": "A:477:46:null-coalescing-expression",
@@ -1279,7 +2577,15 @@
       "line": 46,
       "name": "null-coalescing-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 49,
+      "bodyLines": [
+        "conditional-or-expression",
+        "conditional-or-expression",
+        "??   null-coalescing-expression"
+      ]
     },
     {
       "id": "A:477:50:conditional-expression",
@@ -1287,7 +2593,15 @@
       "line": 50,
       "name": "conditional-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 53,
+      "bodyLines": [
+        "null-coalescing-expression",
+        "null-coalescing-expression",
+        "?   expression   :   expression"
+      ]
     },
     {
       "id": "A:477:54:assignment",
@@ -1295,7 +2609,27 @@
       "line": 54,
       "name": "assignment",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 477,
+      "endLine": 55,
+      "bodyLines": [
+        "unary-expression   assignment-operator   expression"
+      ]
+    },
+    {
+      "id": "A:478:2:assignment-operator",
+      "pdfPage": 478,
+      "line": 2,
+      "name": "assignment-operator",
+      "kind": "syntactic",
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 478,
+      "endLine": 3,
+      "bodyLines": [
+        "=   +=   -=   *=   /=   %=   &=   |=   ^=   <<=   right-shift-assignment"
+      ]
     },
     {
       "id": "A:478:4:expression",
@@ -1303,7 +2637,14 @@
       "line": 4,
       "name": "expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 478,
+      "endLine": 6,
+      "bodyLines": [
+        "conditional-expression",
+        "assignment"
+      ]
     },
     {
       "id": "A:478:7:constant-expression",
@@ -1311,7 +2652,13 @@
       "line": 7,
       "name": "constant-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 478,
+      "endLine": 8,
+      "bodyLines": [
+        "expression"
+      ]
     },
     {
       "id": "A:478:9:boolean-expression",
@@ -1319,7 +2666,13 @@
       "line": 9,
       "name": "boolean-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.4 Expressions",
+      "endPdfPage": 478,
+      "endLine": 10,
+      "bodyLines": [
+        "expression"
+      ]
     },
     {
       "id": "A:478:13:statement",
@@ -1327,7 +2680,15 @@
       "line": 13,
       "name": "statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 16,
+      "bodyLines": [
+        "labeled-statement",
+        "declaration-statement",
+        "embedded-statement"
+      ]
     },
     {
       "id": "A:478:17:embedded-statement",
@@ -1335,7 +2696,24 @@
       "line": 17,
       "name": "embedded-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 29,
+      "bodyLines": [
+        "block",
+        "empty-statement",
+        "expression-statement",
+        "selection-statement",
+        "iteration-statement",
+        "jump-statement",
+        "try-statement",
+        "checked-statement",
+        "unchecked-statement",
+        "lock-statement",
+        "using-statement",
+        "yield-statement"
+      ]
     },
     {
       "id": "A:478:30:block",
@@ -1343,7 +2721,13 @@
       "line": 30,
       "name": "block",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 31,
+      "bodyLines": [
+        "{   statement-listopt   }"
+      ]
     },
     {
       "id": "A:478:32:statement-list",
@@ -1351,7 +2735,14 @@
       "line": 32,
       "name": "statement-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 34,
+      "bodyLines": [
+        "statement",
+        "statement-list   statement"
+      ]
     },
     {
       "id": "A:478:35:empty-statement",
@@ -1359,7 +2750,13 @@
       "line": 35,
       "name": "empty-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 36,
+      "bodyLines": [
+        ";"
+      ]
     },
     {
       "id": "A:478:37:labeled-statement",
@@ -1367,7 +2764,13 @@
       "line": 37,
       "name": "labeled-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 38,
+      "bodyLines": [
+        "identifier   :   statement"
+      ]
     },
     {
       "id": "A:478:39:declaration-statement",
@@ -1375,7 +2778,14 @@
       "line": 39,
       "name": "declaration-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 41,
+      "bodyLines": [
+        "local-variable-declaration   ;",
+        "local-constant-declaration   ;"
+      ]
     },
     {
       "id": "A:478:42:local-variable-declaration",
@@ -1383,7 +2793,13 @@
       "line": 42,
       "name": "local-variable-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 43,
+      "bodyLines": [
+        "type   local-variable-declarators"
+      ]
     },
     {
       "id": "A:478:44:local-variable-declarators",
@@ -1391,7 +2807,14 @@
       "line": 44,
       "name": "local-variable-declarators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 478,
+      "endLine": 46,
+      "bodyLines": [
+        "local-variable-declarator",
+        "local-variable-declarators   ,   local-variable-declarator"
+      ]
     },
     {
       "id": "A:478:47:local-variable-declarator",
@@ -1399,7 +2822,15 @@
       "line": 47,
       "name": "local-variable-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 1,
+      "bodyLines": [
+        "identifier",
+        "identifier   =   local-variable-initializer",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:479:2:local-variable-initializer",
@@ -1407,7 +2838,14 @@
       "line": 2,
       "name": "local-variable-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 4,
+      "bodyLines": [
+        "expression",
+        "array-initializer"
+      ]
     },
     {
       "id": "A:479:5:local-constant-declaration",
@@ -1415,7 +2853,13 @@
       "line": 5,
       "name": "local-constant-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 6,
+      "bodyLines": [
+        "const   type   constant-declarators"
+      ]
     },
     {
       "id": "A:479:7:constant-declarators",
@@ -1423,7 +2867,14 @@
       "line": 7,
       "name": "constant-declarators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 9,
+      "bodyLines": [
+        "constant-declarator",
+        "constant-declarators   ,   constant-declarator"
+      ]
     },
     {
       "id": "A:479:10:constant-declarator",
@@ -1431,7 +2882,13 @@
       "line": 10,
       "name": "constant-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 11,
+      "bodyLines": [
+        "identifier   =   constant-expression"
+      ]
     },
     {
       "id": "A:479:12:expression-statement",
@@ -1439,7 +2896,13 @@
       "line": 12,
       "name": "expression-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 13,
+      "bodyLines": [
+        "statement-expression   ;"
+      ]
     },
     {
       "id": "A:479:14:statement-expression",
@@ -1447,7 +2910,19 @@
       "line": 14,
       "name": "statement-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 21,
+      "bodyLines": [
+        "invocation-expression",
+        "object-creation-expression",
+        "assignment",
+        "post-increment-expression",
+        "post-decrement-expression",
+        "pre-increment-expression",
+        "pre-decrement-expression"
+      ]
     },
     {
       "id": "A:479:22:selection-statement",
@@ -1455,7 +2930,14 @@
       "line": 22,
       "name": "selection-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 24,
+      "bodyLines": [
+        "if-statement",
+        "switch-statement"
+      ]
     },
     {
       "id": "A:479:25:if-statement",
@@ -1463,7 +2945,14 @@
       "line": 25,
       "name": "if-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 27,
+      "bodyLines": [
+        "if   (   boolean-expression   )   embedded-statement",
+        "if   (   boolean-expression   )   embedded-statement   else   embedded-statement"
+      ]
     },
     {
       "id": "A:479:28:switch-statement",
@@ -1471,7 +2960,13 @@
       "line": 28,
       "name": "switch-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 29,
+      "bodyLines": [
+        "switch   (   expression   )   switch-block"
+      ]
     },
     {
       "id": "A:479:30:switch-block",
@@ -1479,7 +2974,13 @@
       "line": 30,
       "name": "switch-block",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 31,
+      "bodyLines": [
+        "{   switch-sectionsopt   }"
+      ]
     },
     {
       "id": "A:479:32:switch-sections",
@@ -1487,7 +2988,14 @@
       "line": 32,
       "name": "switch-sections",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 34,
+      "bodyLines": [
+        "switch-section",
+        "switch-sections   switch-section"
+      ]
     },
     {
       "id": "A:479:35:switch-section",
@@ -1495,7 +3003,13 @@
       "line": 35,
       "name": "switch-section",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 36,
+      "bodyLines": [
+        "switch-labels   statement-list"
+      ]
     },
     {
       "id": "A:479:37:switch-labels",
@@ -1503,7 +3017,14 @@
       "line": 37,
       "name": "switch-labels",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 39,
+      "bodyLines": [
+        "switch-label",
+        "switch-labels   switch-label"
+      ]
     },
     {
       "id": "A:479:40:switch-label",
@@ -1511,7 +3032,14 @@
       "line": 40,
       "name": "switch-label",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 42,
+      "bodyLines": [
+        "case   constant-expression   :",
+        "default   :"
+      ]
     },
     {
       "id": "A:479:43:iteration-statement",
@@ -1519,7 +3047,16 @@
       "line": 43,
       "name": "iteration-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 47,
+      "bodyLines": [
+        "while-statement",
+        "do-statement",
+        "for-statement",
+        "foreach-statement"
+      ]
     },
     {
       "id": "A:479:48:while-statement",
@@ -1527,7 +3064,13 @@
       "line": 48,
       "name": "while-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 479,
+      "endLine": 49,
+      "bodyLines": [
+        "while   (   boolean-expression   )   embedded-statement"
+      ]
     },
     {
       "id": "A:480:2:do-statement",
@@ -1535,7 +3078,13 @@
       "line": 2,
       "name": "do-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 3,
+      "bodyLines": [
+        "do   embedded-statement   while   (   boolean-expression   )   ;"
+      ]
     },
     {
       "id": "A:480:4:for-statement",
@@ -1543,7 +3092,13 @@
       "line": 4,
       "name": "for-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 5,
+      "bodyLines": [
+        "for   (   for-initializeropt   ;   for-conditionopt   ;   for-iteratoropt   )   embedded-statement"
+      ]
     },
     {
       "id": "A:480:6:for-initializer",
@@ -1551,7 +3106,14 @@
       "line": 6,
       "name": "for-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 8,
+      "bodyLines": [
+        "local-variable-declaration",
+        "statement-expression-list"
+      ]
     },
     {
       "id": "A:480:9:for-condition",
@@ -1559,7 +3121,13 @@
       "line": 9,
       "name": "for-condition",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 10,
+      "bodyLines": [
+        "boolean-expression"
+      ]
     },
     {
       "id": "A:480:11:for-iterator",
@@ -1567,7 +3135,13 @@
       "line": 11,
       "name": "for-iterator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 12,
+      "bodyLines": [
+        "statement-expression-list"
+      ]
     },
     {
       "id": "A:480:13:statement-expression-list",
@@ -1575,7 +3149,15 @@
       "line": 13,
       "name": "statement-expression-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 16,
+      "bodyLines": [
+        "statement-expression",
+        "statement-expression-list",
+        ",   statement-expression"
+      ]
     },
     {
       "id": "A:480:17:foreach-statement",
@@ -1583,7 +3165,13 @@
       "line": 17,
       "name": "foreach-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 18,
+      "bodyLines": [
+        "foreach   (   type   identifier   in   expression   )   embedded-statement"
+      ]
     },
     {
       "id": "A:480:19:jump-statement",
@@ -1591,7 +3179,17 @@
       "line": 19,
       "name": "jump-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 24,
+      "bodyLines": [
+        "break-statement",
+        "continue-statement",
+        "goto-statement",
+        "return-statement",
+        "throw-statement"
+      ]
     },
     {
       "id": "A:480:25:break-statement",
@@ -1599,7 +3197,13 @@
       "line": 25,
       "name": "break-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 26,
+      "bodyLines": [
+        "break   ;"
+      ]
     },
     {
       "id": "A:480:27:continue-statement",
@@ -1607,7 +3211,13 @@
       "line": 27,
       "name": "continue-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 28,
+      "bodyLines": [
+        "continue   ;"
+      ]
     },
     {
       "id": "A:480:29:goto-statement",
@@ -1615,7 +3225,15 @@
       "line": 29,
       "name": "goto-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 32,
+      "bodyLines": [
+        "goto   identifier   ;",
+        "goto   case   constant-expression   ;",
+        "goto   default   ;"
+      ]
     },
     {
       "id": "A:480:33:return-statement",
@@ -1623,7 +3241,13 @@
       "line": 33,
       "name": "return-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 34,
+      "bodyLines": [
+        "return   expressionopt   ;"
+      ]
     },
     {
       "id": "A:480:35:throw-statement",
@@ -1631,7 +3255,13 @@
       "line": 35,
       "name": "throw-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 36,
+      "bodyLines": [
+        "throw   expressionopt   ;"
+      ]
     },
     {
       "id": "A:480:37:try-statement",
@@ -1639,7 +3269,14 @@
       "line": 37,
       "name": "try-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 39,
+      "bodyLines": [
+        "try   block   catch-clauses",
+        "try   block   catch-clausesopt   finally-clause"
+      ]
     },
     {
       "id": "A:480:40:catch-clauses",
@@ -1647,7 +3284,15 @@
       "line": 40,
       "name": "catch-clauses",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 43,
+      "bodyLines": [
+        "specific-catch-clauses",
+        "specific-catch-clauses",
+        "opt   general-catch-clause"
+      ]
     },
     {
       "id": "A:480:44:specific-catch-clauses",
@@ -1655,7 +3300,14 @@
       "line": 44,
       "name": "specific-catch-clauses",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 46,
+      "bodyLines": [
+        "specific-catch-clause",
+        "specific-catch-clauses   specific-catch-clause"
+      ]
     },
     {
       "id": "A:480:47:specific-catch-clause",
@@ -1663,7 +3315,13 @@
       "line": 47,
       "name": "specific-catch-clause",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 480,
+      "endLine": 48,
+      "bodyLines": [
+        "catch   (   class-type   identifieropt   )   block"
+      ]
     },
     {
       "id": "A:480:49:general-catch-clause",
@@ -1671,7 +3329,14 @@
       "line": 49,
       "name": "general-catch-clause",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 1,
+      "bodyLines": [
+        "catch   block",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:481:2:finally-clause",
@@ -1679,7 +3344,13 @@
       "line": 2,
       "name": "finally-clause",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 3,
+      "bodyLines": [
+        "finally   block"
+      ]
     },
     {
       "id": "A:481:4:checked-statement",
@@ -1687,7 +3358,13 @@
       "line": 4,
       "name": "checked-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 5,
+      "bodyLines": [
+        "checked   block"
+      ]
     },
     {
       "id": "A:481:6:unchecked-statement",
@@ -1695,7 +3372,13 @@
       "line": 6,
       "name": "unchecked-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 7,
+      "bodyLines": [
+        "unchecked   block"
+      ]
     },
     {
       "id": "A:481:8:lock-statement",
@@ -1703,7 +3386,13 @@
       "line": 8,
       "name": "lock-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 9,
+      "bodyLines": [
+        "lock   (   expression   )   embedded-statement"
+      ]
     },
     {
       "id": "A:481:10:using-statement",
@@ -1711,7 +3400,13 @@
       "line": 10,
       "name": "using-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 11,
+      "bodyLines": [
+        "using   (    resource-acquisition   )    embedded-statement"
+      ]
     },
     {
       "id": "A:481:12:resource-acquisition",
@@ -1719,7 +3414,14 @@
       "line": 12,
       "name": "resource-acquisition",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 14,
+      "bodyLines": [
+        "local-variable-declaration",
+        "expression"
+      ]
     },
     {
       "id": "A:481:15:yield-statement",
@@ -1727,7 +3429,14 @@
       "line": 15,
       "name": "yield-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 17,
+      "bodyLines": [
+        "yield   return   expression   ;",
+        "yield   break   ;"
+      ]
     },
     {
       "id": "A:481:18:namespace-declaration",
@@ -1735,7 +3444,13 @@
       "line": 18,
       "name": "namespace-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 19,
+      "bodyLines": [
+        "namespace   qualified-identifier   namespace-body   ;opt"
+      ]
     },
     {
       "id": "A:481:20:qualified-identifier",
@@ -1743,7 +3458,14 @@
       "line": 20,
       "name": "qualified-identifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 22,
+      "bodyLines": [
+        "identifier",
+        "qualified-identifier   .   identifier"
+      ]
     },
     {
       "id": "A:481:23:namespace-body",
@@ -1751,7 +3473,13 @@
       "line": 23,
       "name": "namespace-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 24,
+      "bodyLines": [
+        "{   extern-alias-directivesopt   using-directivesopt   namespace-member-declarationsopt   }"
+      ]
     },
     {
       "id": "A:481:25:extern-alias-directives",
@@ -1759,7 +3487,14 @@
       "line": 25,
       "name": "extern-alias-directives",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 27,
+      "bodyLines": [
+        "extern-alias-directive",
+        "extern-alias-directives   extern-alias-directive"
+      ]
     },
     {
       "id": "A:481:28:extern-alias-directive",
@@ -1767,7 +3502,13 @@
       "line": 28,
       "name": "extern-alias-directive",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 29,
+      "bodyLines": [
+        "extern   alias   identifier   ;"
+      ]
     },
     {
       "id": "A:481:30:using-directives",
@@ -1775,7 +3516,14 @@
       "line": 30,
       "name": "using-directives",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 32,
+      "bodyLines": [
+        "using-directive",
+        "using-directives   using-directive"
+      ]
     },
     {
       "id": "A:481:33:using-directive",
@@ -1783,7 +3531,14 @@
       "line": 33,
       "name": "using-directive",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 35,
+      "bodyLines": [
+        "using-alias-directive",
+        "using-namespace-directive"
+      ]
     },
     {
       "id": "A:481:36:using-alias-directive",
@@ -1791,7 +3546,13 @@
       "line": 36,
       "name": "using-alias-directive",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 37,
+      "bodyLines": [
+        "using   identifier   =   namespace-or-type-name   ;"
+      ]
     },
     {
       "id": "A:481:38:using-namespace-directive",
@@ -1799,7 +3560,13 @@
       "line": 38,
       "name": "using-namespace-directive",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 39,
+      "bodyLines": [
+        "using   namespace-name   ;"
+      ]
     },
     {
       "id": "A:481:40:namespace-member-declarations",
@@ -1807,7 +3574,14 @@
       "line": 40,
       "name": "namespace-member-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 42,
+      "bodyLines": [
+        "namespace-member-declaration",
+        "namespace-member-declarations   namespace-member-declaration"
+      ]
     },
     {
       "id": "A:481:43:namespace-member-declaration",
@@ -1815,7 +3589,14 @@
       "line": 43,
       "name": "namespace-member-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 481,
+      "endLine": 45,
+      "bodyLines": [
+        "namespace-declaration",
+        "type-declaration"
+      ]
     },
     {
       "id": "A:482:2:type-declaration",
@@ -1823,7 +3604,17 @@
       "line": 2,
       "name": "type-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 482,
+      "endLine": 7,
+      "bodyLines": [
+        "class-declaration",
+        "struct-declaration",
+        "interface-declaration",
+        "enum-declaration",
+        "delegate-declaration"
+      ]
     },
     {
       "id": "A:482:9:qualified-alias-member",
@@ -1831,7 +3622,14 @@
       "line": 9,
       "name": "qualified-alias-member",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.5 Statements",
+      "endPdfPage": 482,
+      "endLine": 11,
+      "bodyLines": [
+        "identifier",
+        "::   identifier   type-argument-listopt"
+      ]
     },
     {
       "id": "A:482:14:class-declaration",
@@ -1839,7 +3637,14 @@
       "line": 14,
       "name": "class-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 16,
+      "bodyLines": [
+        "attributesopt   class-modifiersopt   partialopt   class   identifier   type-parameter-listopt",
+        "class-base opt    type-parameter-constraints-clausesopt   class-body   ;opt"
+      ]
     },
     {
       "id": "A:482:17:class-modifiers",
@@ -1847,7 +3652,14 @@
       "line": 17,
       "name": "class-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 19,
+      "bodyLines": [
+        "class-modifier",
+        "class-modifiers   class-modifier"
+      ]
     },
     {
       "id": "A:482:20:class-modifier",
@@ -1855,7 +3667,20 @@
       "line": 20,
       "name": "class-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 29,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "abstract",
+        "sealed",
+        "static"
+      ]
     },
     {
       "id": "A:482:30:class-base",
@@ -1863,7 +3688,15 @@
       "line": 30,
       "name": "class-base",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 33,
+      "bodyLines": [
+        ":   class-type",
+        ":   interface-type-list",
+        ":   class-type   ,   interface-type-list"
+      ]
     },
     {
       "id": "A:482:34:interface-type-list",
@@ -1871,7 +3704,14 @@
       "line": 34,
       "name": "interface-type-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 36,
+      "bodyLines": [
+        "interface-type",
+        "interface-type-list   ,   interface-type"
+      ]
     },
     {
       "id": "A:482:37:class-body",
@@ -1879,7 +3719,13 @@
       "line": 37,
       "name": "class-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 482,
+      "endLine": 38,
+      "bodyLines": [
+        "{   class-member-declarationsopt   }"
+      ]
     },
     {
       "id": "A:482:39:class-member-declarations",
@@ -1887,7 +3733,15 @@
       "line": 39,
       "name": "class-member-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 1,
+      "bodyLines": [
+        "class-member-declaration",
+        "class-member-declarations   class-member-declaration",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:483:2:class-member-declaration",
@@ -1895,7 +3749,23 @@
       "line": 2,
       "name": "class-member-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 13,
+      "bodyLines": [
+        "constant-declaration",
+        "field-declaration",
+        "method-declaration",
+        "property-declaration",
+        "event-declaration",
+        "indexer-declaration",
+        "operator-declaration",
+        "constructor-declaration",
+        "finalizer-declaration",
+        "static-constructor-declaration",
+        "type-declaration"
+      ]
     },
     {
       "id": "A:483:14:constant-declaration",
@@ -1903,7 +3773,14 @@
       "line": 14,
       "name": "constant-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 16,
+      "bodyLines": [
+        "attributes",
+        "opt   constant-modifiersopt   const   type   constant-declarators   ;"
+      ]
     },
     {
       "id": "A:483:17:constant-modifiers",
@@ -1911,7 +3788,14 @@
       "line": 17,
       "name": "constant-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 19,
+      "bodyLines": [
+        "constant-modifier",
+        "constant-modifiers   constant-modifier"
+      ]
     },
     {
       "id": "A:483:20:constant-modifier",
@@ -1919,7 +3803,17 @@
       "line": 20,
       "name": "constant-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 25,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private"
+      ]
     },
     {
       "id": "A:483:26:constant-declarators",
@@ -1927,7 +3821,14 @@
       "line": 26,
       "name": "constant-declarators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 28,
+      "bodyLines": [
+        "constant-declarator",
+        "constant-declarators   ,   constant-declarator"
+      ]
     },
     {
       "id": "A:483:29:constant-declarator",
@@ -1935,7 +3836,13 @@
       "line": 29,
       "name": "constant-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 30,
+      "bodyLines": [
+        "identifier   =   constant-expression"
+      ]
     },
     {
       "id": "A:483:31:field-declaration",
@@ -1943,7 +3850,13 @@
       "line": 31,
       "name": "field-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 32,
+      "bodyLines": [
+        "attributesopt   field-modifiersopt   type   variable-declarators   ;"
+      ]
     },
     {
       "id": "A:483:33:field-modifiers",
@@ -1951,7 +3864,14 @@
       "line": 33,
       "name": "field-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 35,
+      "bodyLines": [
+        "field-modifier",
+        "field-modifiers   field-modifier"
+      ]
     },
     {
       "id": "A:483:36:field-modifier",
@@ -1959,7 +3879,20 @@
       "line": 36,
       "name": "field-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 44,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "static",
+        "readonly",
+        "volatile"
+      ]
     },
     {
       "id": "A:483:46:variable-declarators",
@@ -1967,7 +3900,14 @@
       "line": 46,
       "name": "variable-declarators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 48,
+      "bodyLines": [
+        "variable-declarator",
+        "variable-declarators   ,   variable-declarator"
+      ]
     },
     {
       "id": "A:483:49:variable-declarator",
@@ -1975,7 +3915,14 @@
       "line": 49,
       "name": "variable-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 483,
+      "endLine": 51,
+      "bodyLines": [
+        "identifier",
+        "identifier   =   variable-initializer"
+      ]
     },
     {
       "id": "A:484:2:variable-initializer",
@@ -1983,7 +3930,14 @@
       "line": 2,
       "name": "variable-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 4,
+      "bodyLines": [
+        "expression",
+        "array-initializer"
+      ]
     },
     {
       "id": "A:484:5:method-declaration",
@@ -1991,7 +3945,13 @@
       "line": 5,
       "name": "method-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 6,
+      "bodyLines": [
+        "method-header   method-body"
+      ]
     },
     {
       "id": "A:484:7:method-header",
@@ -1999,7 +3959,14 @@
       "line": 7,
       "name": "method-header",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 9,
+      "bodyLines": [
+        "attributesopt   method-modifiersopt   return-type   member-name   type-parameter-listopt",
+        "(    formal-parameter-listopt   )   type-parameter-constraints-clausesopt"
+      ]
     },
     {
       "id": "A:484:10:method-modifiers",
@@ -2007,7 +3974,14 @@
       "line": 10,
       "name": "method-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 12,
+      "bodyLines": [
+        "method-modifier",
+        "method-modifiers   method-modifier"
+      ]
     },
     {
       "id": "A:484:13:method-modifier",
@@ -2015,7 +3989,23 @@
       "line": 13,
       "name": "method-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 24,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "static",
+        "virtual",
+        "sealed",
+        "override",
+        "abstract",
+        "extern"
+      ]
     },
     {
       "id": "A:484:25:return-type",
@@ -2023,7 +4013,14 @@
       "line": 25,
       "name": "return-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 27,
+      "bodyLines": [
+        "type",
+        "void"
+      ]
     },
     {
       "id": "A:484:28:member-name",
@@ -2031,7 +4028,14 @@
       "line": 28,
       "name": "member-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 30,
+      "bodyLines": [
+        "identifier",
+        "interface-type   .   identifier"
+      ]
     },
     {
       "id": "A:484:31:method-body",
@@ -2039,7 +4043,14 @@
       "line": 31,
       "name": "method-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 33,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:484:34:formal-parameter-list",
@@ -2047,7 +4058,16 @@
       "line": 34,
       "name": "formal-parameter-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 38,
+      "bodyLines": [
+        "fixed-parameters",
+        "fixed-parameters",
+        ",   parameter-array",
+        "parameter-array"
+      ]
     },
     {
       "id": "A:484:39:fixed-parameters",
@@ -2055,7 +4075,14 @@
       "line": 39,
       "name": "fixed-parameters",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 41,
+      "bodyLines": [
+        "fixed-parameter",
+        "fixed-parameters   ,   fixed-parameter"
+      ]
     },
     {
       "id": "A:484:42:fixed-parameter",
@@ -2063,7 +4090,13 @@
       "line": 42,
       "name": "fixed-parameter",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 43,
+      "bodyLines": [
+        "attributesopt   parameter-modifieropt   type   identifier"
+      ]
     },
     {
       "id": "A:484:44:parameter-modifier",
@@ -2071,7 +4104,14 @@
       "line": 44,
       "name": "parameter-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 46,
+      "bodyLines": [
+        "ref",
+        "out"
+      ]
     },
     {
       "id": "A:484:47:parameter-array",
@@ -2079,7 +4119,13 @@
       "line": 47,
       "name": "parameter-array",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 484,
+      "endLine": 48,
+      "bodyLines": [
+        "attributesopt   params   array-type   identifier"
+      ]
     },
     {
       "id": "A:484:49:property-declaration",
@@ -2087,7 +4133,14 @@
       "line": 49,
       "name": "property-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 1,
+      "bodyLines": [
+        "attributesopt   property-modifiersopt   type   member-name   {   accessor-declarations   }",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:485:2:property-modifiers",
@@ -2095,7 +4148,14 @@
       "line": 2,
       "name": "property-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 4,
+      "bodyLines": [
+        "property-modifier",
+        "property-modifiers   property-modifier"
+      ]
     },
     {
       "id": "A:485:5:property-modifier",
@@ -2103,7 +4163,23 @@
       "line": 5,
       "name": "property-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 16,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "static",
+        "virtual",
+        "sealed",
+        "override",
+        "abstract",
+        "extern"
+      ]
     },
     {
       "id": "A:485:18:accessor-declarations",
@@ -2111,7 +4187,14 @@
       "line": 18,
       "name": "accessor-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 20,
+      "bodyLines": [
+        "get-accessor-declaration   set-accessor-declarationopt",
+        "set-accessor-declaration   get-accessor-declarationopt"
+      ]
     },
     {
       "id": "A:485:21:get-accessor-declaration",
@@ -2119,7 +4202,13 @@
       "line": 21,
       "name": "get-accessor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 22,
+      "bodyLines": [
+        "attributesopt   accessor-modifieropt    get   accessor-body"
+      ]
     },
     {
       "id": "A:485:23:set-accessor-declaration",
@@ -2127,7 +4216,13 @@
       "line": 23,
       "name": "set-accessor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 24,
+      "bodyLines": [
+        "attributesopt   accessor-modifieropt    set   accessor-body"
+      ]
     },
     {
       "id": "A:485:25:accessor-modifier",
@@ -2135,7 +4230,18 @@
       "line": 25,
       "name": "accessor-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 31,
+      "bodyLines": [
+        "protected",
+        "internal",
+        "private",
+        "protected",
+        "internal",
+        "internal   protected"
+      ]
     },
     {
       "id": "A:485:32:accessor-body",
@@ -2143,7 +4249,14 @@
       "line": 32,
       "name": "accessor-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 34,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:485:35:event-declaration",
@@ -2151,7 +4264,15 @@
       "line": 35,
       "name": "event-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 38,
+      "bodyLines": [
+        "attributesopt   event-modifiersopt   event   type   variable-declarators   ;",
+        "attributesopt   event-modifiersopt   event   type   member-name",
+        "{   event-accessor-declarations   }"
+      ]
     },
     {
       "id": "A:485:39:event-modifiers",
@@ -2159,7 +4280,14 @@
       "line": 39,
       "name": "event-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 41,
+      "bodyLines": [
+        "event-modifier",
+        "event-modifiers   event-modifier"
+      ]
     },
     {
       "id": "A:485:42:event-modifier",
@@ -2167,7 +4295,23 @@
       "line": 42,
       "name": "event-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 485,
+      "endLine": 53,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "static",
+        "virtual",
+        "sealed",
+        "override",
+        "abstract",
+        "extern"
+      ]
     },
     {
       "id": "A:486:2:event-accessor-declarations",
@@ -2175,7 +4319,14 @@
       "line": 2,
       "name": "event-accessor-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 4,
+      "bodyLines": [
+        "add-accessor-declaration   remove-accessor-declaration",
+        "remove-accessor-declaration   add-accessor-declaration"
+      ]
     },
     {
       "id": "A:486:5:add-accessor-declaration",
@@ -2183,7 +4334,13 @@
       "line": 5,
       "name": "add-accessor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 6,
+      "bodyLines": [
+        "attributesopt   add   block"
+      ]
     },
     {
       "id": "A:486:7:remove-accessor-declaration",
@@ -2191,7 +4348,13 @@
       "line": 7,
       "name": "remove-accessor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 8,
+      "bodyLines": [
+        "attributesopt   remove   block"
+      ]
     },
     {
       "id": "A:486:9:indexer-declaration",
@@ -2199,7 +4362,13 @@
       "line": 9,
       "name": "indexer-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 10,
+      "bodyLines": [
+        "attributesopt   indexer-modifiersopt   indexer-declarator   {   accessor-declarations   }"
+      ]
     },
     {
       "id": "A:486:11:indexer-modifiers",
@@ -2207,7 +4376,14 @@
       "line": 11,
       "name": "indexer-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 13,
+      "bodyLines": [
+        "indexer-modifier",
+        "indexer-modifiers   indexer-modifier"
+      ]
     },
     {
       "id": "A:486:14:indexer-modifier",
@@ -2215,7 +4391,22 @@
       "line": 14,
       "name": "indexer-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 24,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "virtual",
+        "sealed",
+        "override",
+        "abstract",
+        "extern"
+      ]
     },
     {
       "id": "A:486:25:indexer-declarator",
@@ -2223,7 +4414,14 @@
       "line": 25,
       "name": "indexer-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 27,
+      "bodyLines": [
+        "type   this   [   formal-parameter-list   ]",
+        "type   interface-type   .   this   [   formal-parameter-list   ]"
+      ]
     },
     {
       "id": "A:486:28:operator-declaration",
@@ -2231,7 +4429,13 @@
       "line": 28,
       "name": "operator-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 29,
+      "bodyLines": [
+        "attributesopt   operator-modifiers   operator-declarator   operator-body"
+      ]
     },
     {
       "id": "A:486:30:operator-modifiers",
@@ -2239,7 +4443,14 @@
       "line": 30,
       "name": "operator-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 32,
+      "bodyLines": [
+        "operator-modifier",
+        "operator-modifiers   operator-modifier"
+      ]
     },
     {
       "id": "A:486:33:operator-modifier",
@@ -2247,7 +4458,15 @@
       "line": 33,
       "name": "operator-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 36,
+      "bodyLines": [
+        "public",
+        "static",
+        "extern"
+      ]
     },
     {
       "id": "A:486:37:operator-declarator",
@@ -2255,7 +4474,15 @@
       "line": 37,
       "name": "operator-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 40,
+      "bodyLines": [
+        "unary-operator-declarator",
+        "binary-operator-declarator",
+        "conversion-operator-declarator"
+      ]
     },
     {
       "id": "A:486:41:unary-operator-declarator",
@@ -2263,7 +4490,27 @@
       "line": 41,
       "name": "unary-operator-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 42,
+      "bodyLines": [
+        "type   operator   overloadable-unary-operator   (   type   identifier   )"
+      ]
+    },
+    {
+      "id": "A:486:43:overloadable-unary-operator",
+      "pdfPage": 486,
+      "line": 43,
+      "name": "overloadable-unary-operator",
+      "kind": "syntactic",
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 486,
+      "endLine": 44,
+      "bodyLines": [
+        "+   -   !   ~   ++   --   true   false"
+      ]
     },
     {
       "id": "A:486:45:binary-operator-declarator",
@@ -2271,7 +4518,31 @@
       "line": 45,
       "name": "binary-operator-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 1,
+      "bodyLines": [
+        "type   operator   overloadable-binary-operator   (   type   identifier   ,   type   identifier   )",
+        "Annex A   Grammar"
+      ]
+    },
+    {
+      "id": "A:487:2:overloadable-binary-operator",
+      "pdfPage": 487,
+      "line": 2,
+      "name": "overloadable-binary-operator",
+      "kind": "syntactic",
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 6,
+      "bodyLines": [
+        "+  -  *  /  %",
+        "&  |  ^",
+        "<<  right-shift",
+        "==  !=  >  <  >=  <="
+      ]
     },
     {
       "id": "A:487:7:conversion-operator-declarator",
@@ -2279,7 +4550,14 @@
       "line": 7,
       "name": "conversion-operator-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 9,
+      "bodyLines": [
+        "implicit   operator   type   (   type   identifier   )",
+        "explicit   operator   type   (   type   identifier   )"
+      ]
     },
     {
       "id": "A:487:10:operator-body",
@@ -2287,7 +4565,14 @@
       "line": 10,
       "name": "operator-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 12,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:487:13:constructor-declaration",
@@ -2295,7 +4580,13 @@
       "line": 13,
       "name": "constructor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 14,
+      "bodyLines": [
+        "attributesopt   constructor-modifiersopt   constructor-declarator   constructor-body"
+      ]
     },
     {
       "id": "A:487:15:constructor-modifiers",
@@ -2303,7 +4594,14 @@
       "line": 15,
       "name": "constructor-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 17,
+      "bodyLines": [
+        "constructor-modifier",
+        "constructor-modifiers   constructor-modifier"
+      ]
     },
     {
       "id": "A:487:18:constructor-modifier",
@@ -2311,7 +4609,17 @@
       "line": 18,
       "name": "constructor-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 23,
+      "bodyLines": [
+        "public",
+        "protected",
+        "internal",
+        "private",
+        "extern"
+      ]
     },
     {
       "id": "A:487:25:constructor-declarator",
@@ -2319,7 +4627,13 @@
       "line": 25,
       "name": "constructor-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 26,
+      "bodyLines": [
+        "identifier   (   formal-parameter-listopt   )   constructor-initializeropt"
+      ]
     },
     {
       "id": "A:487:27:constructor-initializer",
@@ -2327,7 +4641,14 @@
       "line": 27,
       "name": "constructor-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 29,
+      "bodyLines": [
+        ":   base   (   argument-listopt   )",
+        ":   this   (   argument-listopt   )"
+      ]
     },
     {
       "id": "A:487:30:constructor-body",
@@ -2335,7 +4656,14 @@
       "line": 30,
       "name": "constructor-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 32,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:487:33:static-constructor-declaration",
@@ -2343,7 +4671,13 @@
       "line": 33,
       "name": "static-constructor-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 34,
+      "bodyLines": [
+        "attributesopt   static-constructor-modifiers  identifier   (   )   static-constructor-body"
+      ]
     },
     {
       "id": "A:487:35:static-constructor-modifiers",
@@ -2351,7 +4685,14 @@
       "line": 35,
       "name": "static-constructor-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 37,
+      "bodyLines": [
+        "externopt static",
+        "static externopt"
+      ]
     },
     {
       "id": "A:487:38:static-constructor-body",
@@ -2359,7 +4700,14 @@
       "line": 38,
       "name": "static-constructor-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 40,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:487:41:finalizer-declaration",
@@ -2367,7 +4715,13 @@
       "line": 41,
       "name": "finalizer-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 42,
+      "bodyLines": [
+        "attributesopt   externopt   ~   identifier   (   )    finalizer-body"
+      ]
     },
     {
       "id": "A:487:43:finalizer-body",
@@ -2375,7 +4729,14 @@
       "line": 43,
       "name": "finalizer-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.6 Classes",
+      "endPdfPage": 487,
+      "endLine": 45,
+      "bodyLines": [
+        "block",
+        ";"
+      ]
     },
     {
       "id": "A:487:47:struct-declaration",
@@ -2383,7 +4744,14 @@
       "line": 47,
       "name": "struct-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 487,
+      "endLine": 49,
+      "bodyLines": [
+        "attributesopt   struct-modifiersopt   partialopt   struct   identifier   type-parameter-listopt",
+        "struct-interfacesopt   type-parameter-constraints-clausesopt   struct-body   ;opt"
+      ]
     },
     {
       "id": "A:488:2:struct-modifiers",
@@ -2391,7 +4759,14 @@
       "line": 2,
       "name": "struct-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 4,
+      "bodyLines": [
+        "struct-modifier",
+        "struct-modifiers   struct-modifier"
+      ]
     },
     {
       "id": "A:488:5:struct-modifier",
@@ -2399,7 +4774,17 @@
       "line": 5,
       "name": "struct-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 11,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private"
+      ]
     },
     {
       "id": "A:488:12:struct-interfaces",
@@ -2407,7 +4792,13 @@
       "line": 12,
       "name": "struct-interfaces",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 13,
+      "bodyLines": [
+        ":   interface-type-list"
+      ]
     },
     {
       "id": "A:488:14:struct-body",
@@ -2415,7 +4806,13 @@
       "line": 14,
       "name": "struct-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 15,
+      "bodyLines": [
+        "{   struct-member-declarationsopt   }"
+      ]
     },
     {
       "id": "A:488:16:struct-member-declarations",
@@ -2423,7 +4820,14 @@
       "line": 16,
       "name": "struct-member-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 18,
+      "bodyLines": [
+        "struct-member-declaration",
+        "struct-member-declarations   struct-member-declaration"
+      ]
     },
     {
       "id": "A:488:19:struct-member-declaration",
@@ -2431,7 +4835,22 @@
       "line": 19,
       "name": "struct-member-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.7 Structs",
+      "endPdfPage": 488,
+      "endLine": 29,
+      "bodyLines": [
+        "constant-declaration",
+        "field-declaration",
+        "method-declaration",
+        "property-declaration",
+        "event-declaration",
+        "indexer-declaration",
+        "operator-declaration",
+        "constructor-declaration",
+        "static-constructor-declaration",
+        "type-declaration"
+      ]
     },
     {
       "id": "A:488:32:array-type",
@@ -2439,7 +4858,13 @@
       "line": 32,
       "name": "array-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 488,
+      "endLine": 33,
+      "bodyLines": [
+        "non-array-type   rank-specifiers"
+      ]
     },
     {
       "id": "A:488:34:non-array-type",
@@ -2447,7 +4872,17 @@
       "line": 34,
       "name": "non-array-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 488,
+      "endLine": 39,
+      "bodyLines": [
+        "value-type",
+        "class-type",
+        "interface-type",
+        "delegate-type",
+        "type-parameter"
+      ]
     },
     {
       "id": "A:488:40:rank-specifiers",
@@ -2455,7 +4890,14 @@
       "line": 40,
       "name": "rank-specifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 488,
+      "endLine": 42,
+      "bodyLines": [
+        "rank-specifier",
+        "rank-specifiers   rank-specifier"
+      ]
     },
     {
       "id": "A:488:43:rank-specifier",
@@ -2463,7 +4905,13 @@
       "line": 43,
       "name": "rank-specifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 488,
+      "endLine": 44,
+      "bodyLines": [
+        "[   dim-separatorsopt   ]"
+      ]
     },
     {
       "id": "A:488:45:dim-separators",
@@ -2471,7 +4919,14 @@
       "line": 45,
       "name": "dim-separators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 488,
+      "endLine": 47,
+      "bodyLines": [
+        ",",
+        "dim-separators   ,"
+      ]
     },
     {
       "id": "A:488:48:array-initializer",
@@ -2479,7 +4934,15 @@
       "line": 48,
       "name": "array-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 489,
+      "endLine": 1,
+      "bodyLines": [
+        "{   variable-initializer-listopt   }",
+        "{   variable-initializer-list   ,   }",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:489:2:variable-initializer-list",
@@ -2487,7 +4950,14 @@
       "line": 2,
       "name": "variable-initializer-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 489,
+      "endLine": 4,
+      "bodyLines": [
+        "variable-initializer",
+        "variable-initializer-list   ,   variable-initializer"
+      ]
     },
     {
       "id": "A:489:5:variable-initializer",
@@ -2495,7 +4965,14 @@
       "line": 5,
       "name": "variable-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.8 Arrays",
+      "endPdfPage": 489,
+      "endLine": 7,
+      "bodyLines": [
+        "expression",
+        "array-initializer"
+      ]
     },
     {
       "id": "A:489:10:interface-declaration",
@@ -2503,7 +4980,15 @@
       "line": 10,
       "name": "interface-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 13,
+      "bodyLines": [
+        "attributes",
+        "opt   interface-modifiersopt   partialopt   interface   identifier   type-parameter-listopt",
+        "interface-base opt   type-parameter-constraints-clausesopt   interface-body   ;opt"
+      ]
     },
     {
       "id": "A:489:14:interface-modifiers",
@@ -2511,7 +4996,14 @@
       "line": 14,
       "name": "interface-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 16,
+      "bodyLines": [
+        "interface-modifier",
+        "interface-modifiers   interface-modifier"
+      ]
     },
     {
       "id": "A:489:17:interface-modifier",
@@ -2519,7 +5011,17 @@
       "line": 17,
       "name": "interface-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 23,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private"
+      ]
     },
     {
       "id": "A:489:24:interface-base",
@@ -2527,7 +5029,13 @@
       "line": 24,
       "name": "interface-base",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 25,
+      "bodyLines": [
+        ":   interface-type-list"
+      ]
     },
     {
       "id": "A:489:26:interface-body",
@@ -2535,7 +5043,13 @@
       "line": 26,
       "name": "interface-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 27,
+      "bodyLines": [
+        "{   interface-member-declarationsopt   }"
+      ]
     },
     {
       "id": "A:489:28:interface-member-declarations",
@@ -2543,7 +5057,14 @@
       "line": 28,
       "name": "interface-member-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 30,
+      "bodyLines": [
+        "interface-member-declaration",
+        "interface-member-declarations   interface-member-declaration"
+      ]
     },
     {
       "id": "A:489:31:interface-member-declaration",
@@ -2551,7 +5072,16 @@
       "line": 31,
       "name": "interface-member-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 35,
+      "bodyLines": [
+        "interface-method-declaration",
+        "interface-property-declaration",
+        "interface-event-declaration",
+        "interface-indexer-declaration"
+      ]
     },
     {
       "id": "A:489:36:interface-method-declaration",
@@ -2559,7 +5089,15 @@
       "line": 36,
       "name": "interface-method-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 39,
+      "bodyLines": [
+        "attributes",
+        "opt   newopt   return-type   identifier   type-parameter-listopt",
+        "(   formal-parameter-listopt   )   type-parameter-constraints-clausesopt   ;"
+      ]
     },
     {
       "id": "A:489:40:interface-property-declaration",
@@ -2567,7 +5105,13 @@
       "line": 40,
       "name": "interface-property-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 41,
+      "bodyLines": [
+        "attributesopt   newopt   type   identifier   {   interface-accessors   }"
+      ]
     },
     {
       "id": "A:489:42:interface-accessors",
@@ -2575,7 +5119,16 @@
       "line": 42,
       "name": "interface-accessors",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 46,
+      "bodyLines": [
+        "attributesopt   get   ;",
+        "attributesopt   set   ;",
+        "attributesopt   get   ;   attributesopt   set   ;",
+        "attributesopt   set   ;   attributesopt   get   ;"
+      ]
     },
     {
       "id": "A:489:47:interface-event-declaration",
@@ -2583,7 +5136,13 @@
       "line": 47,
       "name": "interface-event-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 48,
+      "bodyLines": [
+        "attributesopt   newopt   event   type   identifier   ;"
+      ]
     },
     {
       "id": "A:489:49:interface-indexer-declaration",
@@ -2591,7 +5150,13 @@
       "line": 49,
       "name": "interface-indexer-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.9 Interfaces",
+      "endPdfPage": 489,
+      "endLine": 50,
+      "bodyLines": [
+        "attributesopt   newopt   type   this   [   formal-parameter-list   ]   {   interface-accessors   }"
+      ]
     },
     {
       "id": "A:490:3:enum-declaration",
@@ -2599,7 +5164,13 @@
       "line": 3,
       "name": "enum-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 4,
+      "bodyLines": [
+        "attributesopt   enum-modifiersopt   enum   identifier   enum-baseopt   enum-body   ;opt"
+      ]
     },
     {
       "id": "A:490:5:enum-base",
@@ -2607,7 +5178,13 @@
       "line": 5,
       "name": "enum-base",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 6,
+      "bodyLines": [
+        ":   integral-type"
+      ]
     },
     {
       "id": "A:490:7:enum-body",
@@ -2615,7 +5192,14 @@
       "line": 7,
       "name": "enum-body",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 9,
+      "bodyLines": [
+        "{   enum-member-declarationsopt   }",
+        "{   enum-member-declarations   ,   }"
+      ]
     },
     {
       "id": "A:490:10:enum-modifiers",
@@ -2623,7 +5207,14 @@
       "line": 10,
       "name": "enum-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 12,
+      "bodyLines": [
+        "enum-modifier",
+        "enum-modifiers   enum-modifier"
+      ]
     },
     {
       "id": "A:490:13:enum-modifier",
@@ -2631,7 +5222,17 @@
       "line": 13,
       "name": "enum-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 18,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private"
+      ]
     },
     {
       "id": "A:490:19:enum-member-declarations",
@@ -2639,7 +5240,14 @@
       "line": 19,
       "name": "enum-member-declarations",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 21,
+      "bodyLines": [
+        "enum-member-declaration",
+        "enum-member-declarations   ,   enum-member-declaration"
+      ]
     },
     {
       "id": "A:490:22:enum-member-declaration",
@@ -2647,7 +5255,14 @@
       "line": 22,
       "name": "enum-member-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.10 Enums",
+      "endPdfPage": 490,
+      "endLine": 24,
+      "bodyLines": [
+        "attributesopt   identifier",
+        "attributesopt   identifier   =   constant-expression"
+      ]
     },
     {
       "id": "A:490:27:delegate-declaration",
@@ -2655,7 +5270,14 @@
       "line": 27,
       "name": "delegate-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.11 Delegates",
+      "endPdfPage": 490,
+      "endLine": 29,
+      "bodyLines": [
+        "attributesopt  delegate-modifiersopt   delegate   return-type   identifier   type-parameter-listopt",
+        "(   formal-parameter-listopt  )   type-parameter-constraints-clausesopt   ;"
+      ]
     },
     {
       "id": "A:490:30:delegate-modifiers",
@@ -2663,7 +5285,14 @@
       "line": 30,
       "name": "delegate-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.11 Delegates",
+      "endPdfPage": 490,
+      "endLine": 32,
+      "bodyLines": [
+        "delegate-modifier",
+        "delegate-modifiers   delegate-modifier"
+      ]
     },
     {
       "id": "A:490:33:delegate-modifier",
@@ -2671,7 +5300,17 @@
       "line": 33,
       "name": "delegate-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.11 Delegates",
+      "endPdfPage": 490,
+      "endLine": 39,
+      "bodyLines": [
+        "new",
+        "public",
+        "protected",
+        "internal",
+        "private"
+      ]
     },
     {
       "id": "A:490:42:global-attributes",
@@ -2679,7 +5318,13 @@
       "line": 42,
       "name": "global-attributes",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 490,
+      "endLine": 43,
+      "bodyLines": [
+        "global-attribute-sections"
+      ]
     },
     {
       "id": "A:490:44:global-attribute-sections",
@@ -2687,7 +5332,15 @@
       "line": 44,
       "name": "global-attribute-sections",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 1,
+      "bodyLines": [
+        "global-attribute-section",
+        "global-attribute-sections  global-attribute-section",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:491:2:global-attribute-section",
@@ -2695,7 +5348,14 @@
       "line": 2,
       "name": "global-attribute-section",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 4,
+      "bodyLines": [
+        "[   global-attribute-target-specifier   attribute-list   ]",
+        "[   global-attribute-target-specifier   attribute-list   , ]"
+      ]
     },
     {
       "id": "A:491:5:global-attribute-target-specifier",
@@ -2703,7 +5363,13 @@
       "line": 5,
       "name": "global-attribute-target-specifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 6,
+      "bodyLines": [
+        "global-attribute-target   :"
+      ]
     },
     {
       "id": "A:491:7:global-attribute-target",
@@ -2711,7 +5377,14 @@
       "line": 7,
       "name": "global-attribute-target",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 9,
+      "bodyLines": [
+        "identifier",
+        "keyword"
+      ]
     },
     {
       "id": "A:491:10:attributes",
@@ -2719,7 +5392,13 @@
       "line": 10,
       "name": "attributes",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 11,
+      "bodyLines": [
+        "attribute-sections"
+      ]
     },
     {
       "id": "A:491:12:attribute-sections",
@@ -2727,7 +5406,14 @@
       "line": 12,
       "name": "attribute-sections",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 14,
+      "bodyLines": [
+        "attribute-section",
+        "attribute-sections   attribute-section"
+      ]
     },
     {
       "id": "A:491:15:attribute-section",
@@ -2735,7 +5421,14 @@
       "line": 15,
       "name": "attribute-section",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 17,
+      "bodyLines": [
+        "[   attribute-target-specifieropt   attribute-list   ]",
+        "[   attribute-target-specifieropt   attribute-list   , ]"
+      ]
     },
     {
       "id": "A:491:18:attribute-target-specifier",
@@ -2743,7 +5436,13 @@
       "line": 18,
       "name": "attribute-target-specifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 19,
+      "bodyLines": [
+        "attribute-target   :"
+      ]
     },
     {
       "id": "A:491:20:attribute-target",
@@ -2751,7 +5450,14 @@
       "line": 20,
       "name": "attribute-target",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 22,
+      "bodyLines": [
+        "identifier",
+        "keyword"
+      ]
     },
     {
       "id": "A:491:23:attribute-list",
@@ -2759,7 +5465,15 @@
       "line": 23,
       "name": "attribute-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 26,
+      "bodyLines": [
+        "attribute",
+        "attribute-list",
+        ",   attribute"
+      ]
     },
     {
       "id": "A:491:27:attribute",
@@ -2767,7 +5481,13 @@
       "line": 27,
       "name": "attribute",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 28,
+      "bodyLines": [
+        "attribute-name   attribute-argumentsopt"
+      ]
     },
     {
       "id": "A:491:29:attribute-name",
@@ -2775,7 +5495,13 @@
       "line": 29,
       "name": "attribute-name",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 30,
+      "bodyLines": [
+        "type-name"
+      ]
     },
     {
       "id": "A:491:31:attribute-arguments",
@@ -2783,7 +5509,15 @@
       "line": 31,
       "name": "attribute-arguments",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 34,
+      "bodyLines": [
+        "(   positional-argument-listopt   )",
+        "(   positional-argument-list   ,   named-argument-list   )",
+        "(   named-argument-list   )"
+      ]
     },
     {
       "id": "A:491:35:positional-argument-list",
@@ -2791,7 +5525,14 @@
       "line": 35,
       "name": "positional-argument-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 37,
+      "bodyLines": [
+        "positional-argument",
+        "positional-argument-list   ,   positional-argument"
+      ]
     },
     {
       "id": "A:491:38:positional-argument",
@@ -2799,7 +5540,13 @@
       "line": 38,
       "name": "positional-argument",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 39,
+      "bodyLines": [
+        "attribute-argument-expression"
+      ]
     },
     {
       "id": "A:491:40:named-argument-list",
@@ -2807,7 +5554,15 @@
       "line": 40,
       "name": "named-argument-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 43,
+      "bodyLines": [
+        "named-argument",
+        "named-argument-list",
+        ",   named-argument"
+      ]
     },
     {
       "id": "A:491:44:named-argument",
@@ -2815,7 +5570,13 @@
       "line": 44,
       "name": "named-argument",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 45,
+      "bodyLines": [
+        "identifier   =   attribute-argument-expression"
+      ]
     },
     {
       "id": "A:491:46:attribute-argument-expression",
@@ -2823,7 +5584,13 @@
       "line": 46,
       "name": "attribute-argument-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.12 Attributes",
+      "endPdfPage": 491,
+      "endLine": 47,
+      "bodyLines": [
+        "expression"
+      ]
     },
     {
       "id": "A:492:3:type-parameter-list",
@@ -2831,7 +5598,13 @@
       "line": 3,
       "name": "type-parameter-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 4,
+      "bodyLines": [
+        "<   type-parameters   >"
+      ]
     },
     {
       "id": "A:492:5:type-parameters",
@@ -2839,7 +5612,14 @@
       "line": 5,
       "name": "type-parameters",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 7,
+      "bodyLines": [
+        "attributesopt   type-parameter",
+        "type-parameters   ,   attributesopt   type-parameter"
+      ]
     },
     {
       "id": "A:492:8:type-parameter",
@@ -2847,7 +5627,13 @@
       "line": 8,
       "name": "type-parameter",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 9,
+      "bodyLines": [
+        "identifier"
+      ]
     },
     {
       "id": "A:492:10:type-argument-list",
@@ -2855,7 +5641,13 @@
       "line": 10,
       "name": "type-argument-list",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 11,
+      "bodyLines": [
+        "<   type-arguments   >"
+      ]
     },
     {
       "id": "A:492:12:type-arguments",
@@ -2863,7 +5655,14 @@
       "line": 12,
       "name": "type-arguments",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 14,
+      "bodyLines": [
+        "type-argument",
+        "type-arguments   ,   type-argument"
+      ]
     },
     {
       "id": "A:492:15:type-argument",
@@ -2871,7 +5670,13 @@
       "line": 15,
       "name": "type-argument",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 16,
+      "bodyLines": [
+        "type"
+      ]
     },
     {
       "id": "A:492:17:type-parameter-constraints-clauses",
@@ -2879,7 +5684,14 @@
       "line": 17,
       "name": "type-parameter-constraints-clauses",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 19,
+      "bodyLines": [
+        "type-parameter-constraints-clause",
+        "type-parameter-constraints-clauses   type-parameter-constraints-clause"
+      ]
     },
     {
       "id": "A:492:20:type-parameter-constraints-clause",
@@ -2887,7 +5699,13 @@
       "line": 20,
       "name": "type-parameter-constraints-clause",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 21,
+      "bodyLines": [
+        "where   type-parameter   :   type-parameter-constraints"
+      ]
     },
     {
       "id": "A:492:22:type-parameter-constraints",
@@ -2895,7 +5713,19 @@
       "line": 22,
       "name": "type-parameter-constraints",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 29,
+      "bodyLines": [
+        "primary-constraint",
+        "secondary-constraints",
+        "constructor-constraint",
+        "primary-constraint   ,   secondary-constraints",
+        "primary-constraint   ,   constructor-constraint",
+        "secondary-constraints   ,   constructor-constraint",
+        "primary-constraint   ,   secondary-constraints   ,   constructor-constraint"
+      ]
     },
     {
       "id": "A:492:30:primary-constraint",
@@ -2903,7 +5733,15 @@
       "line": 30,
       "name": "primary-constraint",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 33,
+      "bodyLines": [
+        "class-type",
+        "class",
+        "struct"
+      ]
     },
     {
       "id": "A:492:34:secondary-constraints",
@@ -2911,7 +5749,17 @@
       "line": 34,
       "name": "secondary-constraints",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 39,
+      "bodyLines": [
+        "interface-type",
+        "type-parameter",
+        "secondary-constraints",
+        ",   interface-type",
+        "secondary-constraints   ,   type-parameter"
+      ]
     },
     {
       "id": "A:492:40:constructor-constraint",
@@ -2919,7 +5767,13 @@
       "line": 40,
       "name": "constructor-constraint",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.2.13 Generics",
+      "endPdfPage": 492,
+      "endLine": 41,
+      "bodyLines": [
+        "new   (   )"
+      ]
     },
     {
       "id": "A:492:44:class-modifier",
@@ -2927,7 +5781,14 @@
       "line": 44,
       "name": "class-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 492,
+      "endLine": 46,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:492:47:struct-modifier",
@@ -2935,7 +5796,15 @@
       "line": 47,
       "name": "struct-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 1,
+      "bodyLines": [
+        "...",
+        "unsafe",
+        "Annex A   Grammar"
+      ]
     },
     {
       "id": "A:493:2:interface-modifier",
@@ -2943,7 +5812,14 @@
       "line": 2,
       "name": "interface-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 4,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:5:delegate-modifier",
@@ -2951,7 +5827,14 @@
       "line": 5,
       "name": "delegate-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 7,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:8:field-modifier",
@@ -2959,7 +5842,14 @@
       "line": 8,
       "name": "field-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 10,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:11:method-modifier",
@@ -2967,7 +5857,14 @@
       "line": 11,
       "name": "method-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 13,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:14:property-modifier",
@@ -2975,7 +5872,14 @@
       "line": 14,
       "name": "property-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 16,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:17:event-modifier",
@@ -2983,7 +5887,14 @@
       "line": 17,
       "name": "event-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 19,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:20:indexer-modifier",
@@ -2991,7 +5902,14 @@
       "line": 20,
       "name": "indexer-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 22,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:23:operator-modifier",
@@ -2999,7 +5917,14 @@
       "line": 23,
       "name": "operator-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 25,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:26:constructor-modifier",
@@ -3007,7 +5932,14 @@
       "line": 26,
       "name": "constructor-modifier",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 28,
+      "bodyLines": [
+        "...",
+        "unsafe"
+      ]
     },
     {
       "id": "A:493:29:finalizer-declaration",
@@ -3015,7 +5947,14 @@
       "line": 29,
       "name": "finalizer-declaration",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 31,
+      "bodyLines": [
+        "attributesopt   externopt   unsafeopt   ~   identifier   (   )    finalizer-body",
+        "attributesopt   unsafeopt   externopt   ~   identifier   (   )    finalizer-body"
+      ]
     },
     {
       "id": "A:493:32:static-constructor-modifiers",
@@ -3023,7 +5962,18 @@
       "line": 32,
       "name": "static-constructor-modifiers",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 38,
+      "bodyLines": [
+        "externopt   unsafeopt   static",
+        "unsafeopt   externopt   static",
+        "externopt   static   unsafeopt",
+        "unsafeopt  static   externopt",
+        "static   externopt   unsafeopt",
+        "static   unsafeopt   externopt"
+      ]
     },
     {
       "id": "A:493:39:embedded-statement",
@@ -3031,7 +5981,14 @@
       "line": 39,
       "name": "embedded-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 41,
+      "bodyLines": [
+        "...",
+        "unsafe-statement"
+      ]
     },
     {
       "id": "A:493:42:unsafe-statement",
@@ -3039,7 +5996,13 @@
       "line": 42,
       "name": "unsafe-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 43,
+      "bodyLines": [
+        "unsafe   block"
+      ]
     },
     {
       "id": "A:493:44:type",
@@ -3047,7 +6010,16 @@
       "line": 44,
       "name": "type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 493,
+      "endLine": 48,
+      "bodyLines": [
+        "value-type",
+        "reference-type",
+        "type-parameter",
+        "pointer-type"
+      ]
     },
     {
       "id": "A:494:3:pointer-type",
@@ -3055,7 +6027,14 @@
       "line": 3,
       "name": "pointer-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 5,
+      "bodyLines": [
+        "unmanaged-type   *",
+        "void   *"
+      ]
     },
     {
       "id": "A:494:6:unmanaged-type",
@@ -3063,7 +6042,13 @@
       "line": 6,
       "name": "unmanaged-type",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 7,
+      "bodyLines": [
+        "type"
+      ]
     },
     {
       "id": "A:494:8:primary-no-array-creation-expression",
@@ -3071,7 +6056,14 @@
       "line": 8,
       "name": "primary-no-array-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 10,
+      "bodyLines": [
+        "\u2026",
+        "sizeof-expression"
+      ]
     },
     {
       "id": "A:494:11:primary-no-array-creation-expression",
@@ -3079,7 +6071,15 @@
       "line": 11,
       "name": "primary-no-array-creation-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 14,
+      "bodyLines": [
+        "\u2026",
+        "pointer-member-access",
+        "pointer-element-access"
+      ]
     },
     {
       "id": "A:494:15:unary-expression",
@@ -3087,7 +6087,15 @@
       "line": 15,
       "name": "unary-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 18,
+      "bodyLines": [
+        "\u2026",
+        "pointer-indirection-expression",
+        "addressof-expression"
+      ]
     },
     {
       "id": "A:494:19:pointer-indirection-expression",
@@ -3095,7 +6103,13 @@
       "line": 19,
       "name": "pointer-indirection-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 20,
+      "bodyLines": [
+        "*   unary-expression"
+      ]
     },
     {
       "id": "A:494:21:pointer-member-access",
@@ -3103,7 +6117,13 @@
       "line": 21,
       "name": "pointer-member-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 22,
+      "bodyLines": [
+        "primary-expression   ->   identifier    type-argument-listopt"
+      ]
     },
     {
       "id": "A:494:23:pointer-element-access",
@@ -3111,7 +6131,13 @@
       "line": 23,
       "name": "pointer-element-access",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 24,
+      "bodyLines": [
+        "primary-no-array-creation-expression   [   expression   ]"
+      ]
     },
     {
       "id": "A:494:25:addressof-expression",
@@ -3119,7 +6145,13 @@
       "line": 25,
       "name": "addressof-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 26,
+      "bodyLines": [
+        "&   unary-expression"
+      ]
     },
     {
       "id": "A:494:27:sizeof-expression",
@@ -3127,7 +6159,13 @@
       "line": 27,
       "name": "sizeof-expression",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 28,
+      "bodyLines": [
+        "sizeof   (   unmanaged-type   )"
+      ]
     },
     {
       "id": "A:494:29:embedded-statement",
@@ -3135,7 +6173,14 @@
       "line": 29,
       "name": "embedded-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 31,
+      "bodyLines": [
+        "...",
+        "fixed-statement"
+      ]
     },
     {
       "id": "A:494:32:fixed-statement",
@@ -3143,7 +6188,13 @@
       "line": 32,
       "name": "fixed-statement",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 33,
+      "bodyLines": [
+        "fixed   (   pointer-type   fixed-pointer-declarators   )   embedded-statement"
+      ]
     },
     {
       "id": "A:494:34:fixed-pointer-declarators",
@@ -3151,7 +6202,15 @@
       "line": 34,
       "name": "fixed-pointer-declarators",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 37,
+      "bodyLines": [
+        "fixed-pointer-declarator",
+        "fixed-pointer-declarators",
+        ",   fixed-pointer-declarator"
+      ]
     },
     {
       "id": "A:494:38:fixed-pointer-declarator",
@@ -3159,7 +6218,13 @@
       "line": 38,
       "name": "fixed-pointer-declarator",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 39,
+      "bodyLines": [
+        "identifier =  fixed-pointer-initializer"
+      ]
     },
     {
       "id": "A:494:40:fixed-pointer-initializer",
@@ -3167,7 +6232,14 @@
       "line": 40,
       "name": "fixed-pointer-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 42,
+      "bodyLines": [
+        "&   variable-reference",
+        "expression"
+      ]
     },
     {
       "id": "A:494:43:local-variable-initializer",
@@ -3175,7 +6247,15 @@
       "line": 43,
       "name": "local-variable-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 46,
+      "bodyLines": [
+        "expression",
+        "array-initializer",
+        "stackalloc-initializer"
+      ]
     },
     {
       "id": "A:494:47:stackalloc-initializer",
@@ -3183,7 +6263,14 @@
       "line": 47,
       "name": "stackalloc-initializer",
       "kind": "syntactic",
-      "status": "pending"
+      "status": "indexed",
+      "annexSection": "A.3 Grammar extensions for unsafe code",
+      "endPdfPage": 494,
+      "endLine": 50,
+      "bodyLines": [
+        "stackalloc   unmanaged-type   [   expression   ]",
+        "End of informative text."
+      ]
     }
   ]
 }

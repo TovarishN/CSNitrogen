@@ -17,16 +17,26 @@ internal static class CSharpAttributePolicy
         for (int node = 0; node < tree.NodeCount; node++)
         {
             string kind = Kind(node);
-            if (UnicodePolicy.IsHistorical(version) && kind == "AttributeSection" && tree.ChildCount(node) >= 5)
+            if (version.Major<=2 && (kind == "AttributeSection" || version.Major==2 && kind=="GlobalAttributeSection") && tree.ChildCount(node) >= 5)
             {
-                var section=SyntaxView.Cast<AttributeSectionNode>(tree,node);
-                if(section.Target.HasValue && section.Target.Value.ChildCount>0)
+                int targetIndex;
+                if(kind=="GlobalAttributeSection")targetIndex=SyntaxView.Cast<GlobalAttributeSectionNode>(tree,node).Target.Index;
+                else
                 {
-                    var target=section.Target.Value.Child(0);
-                    bool recognized=UnicodePolicy.TryNormalize(target.ToString(),version,true,out var name)
-                        && name is "field" or "event" or "method" or "param" or "property" or "return" or "type";
+                    var section=SyntaxView.Cast<AttributeSectionNode>(tree,node);
+                    targetIndex=section.Target.HasValue?section.Target.Value.Index:-1;
+                }
+                if(targetIndex>=0 && tree.ChildCount(targetIndex)>0)
+                {
+                    int leaf=tree.Child(targetIndex,0);
+                    while(tree.ChildCount(leaf)>0)leaf=tree.Child(leaf,0);
+                    var targetSpan=tree.Span(leaf);
+                    string targetText=tree.Text.Substring(targetSpan.Start,targetSpan.Length);
+                    bool recognized=UnicodePolicy.TryNormalize(targetText,version,true,out var name)
+                        && name is "field" or "event" or "method" or "param" or "property" or "return" or "type" || version.Major==2 && name=="typevar";
+                    if(kind=="GlobalAttributeSection")recognized=name is "assembly" or "module";
                     if(!recognized)issues.Add(new("CSN2014","Unrecognized attribute target; applicability is deferred to the semantic consumer.",
-                        target.Span,IssueCategory.Syntax,DiagnosticSeverity.Warning));
+                        targetSpan,IssueCategory.Syntax,DiagnosticSeverity.Warning));
                 }
             }
             bool named = kind == "NamedAttributeArgument";
@@ -46,7 +56,7 @@ internal static class CSharpAttributePolicy
             int value = named
                 ? SyntaxView.Cast<NamedAttributeArgumentNode>(tree, node).Value.Index
                 : SyntaxView.Cast<PositionalAttributeArgumentNode>(tree, node).Value.Index;
-            if (!UnicodePolicy.IsHistorical(version) && Kind(value) == "AssignmentExpression")
+            if (version.Major>2 && Kind(value) == "AssignmentExpression")
                 issues.Add(new("CSN2006", "An attribute argument requires a non-assignment expression.",
                     tree.Span(value), IssueCategory.Syntax));
         }
