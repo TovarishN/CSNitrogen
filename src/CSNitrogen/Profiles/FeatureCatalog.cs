@@ -74,6 +74,7 @@ public static class FeatureCatalog
         var composition=Read("CSNitrogen.composition.json");
         var reference=Read("CSNitrogen.reference-policy.json");
         Read("CSNitrogen.csharp3-reference-policy.json");Read("CSNitrogen.csharp3-standard-index.json");
+        Read("CSNitrogen.csharp3-standard-crosswalk.json");
         var secondReference=Read("CSNitrogen.csharp2-reference-policy.json");var secondIndex=Read("CSNitrogen.csharp2-standard-index.json");
         var secondGate=Read("CSNitrogen.csharp2-coverage-gate.json");var secondCrosswalk=Read("CSNitrogen.csharp2-standard-crosswalk.json");
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");
