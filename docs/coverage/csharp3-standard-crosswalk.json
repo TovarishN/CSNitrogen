@@ -68,7 +68,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8394:input/1",
+          "caseId": "B:8394:input/1"
+        }
+      ]
     },
     {
       "standardId": "B:8395:input-section",
@@ -122,7 +128,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8395:input-section/1",
+          "caseId": "B:8395:input-section/1"
+        },
+        {
+          "alternativeId": "B:8395:input-section/2",
+          "caseId": "B:8395:input-section/2"
+        }
+      ]
     },
     {
       "standardId": "B:8396:input-section-part",
@@ -176,7 +192,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8396:input-section-part/1",
+          "caseId": "B:8396:input-section-part/1"
+        },
+        {
+          "alternativeId": "B:8396:input-section-part/2",
+          "caseId": "B:8396:input-section-part/2"
+        }
+      ]
     },
     {
       "standardId": "B:8397:input-elements",
@@ -230,7 +256,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8397:input-elements/1",
+          "caseId": "B:8397:input-elements/1"
+        },
+        {
+          "alternativeId": "B:8397:input-elements/2",
+          "caseId": "B:8397:input-elements/2"
+        }
+      ]
     },
     {
       "standardId": "B:8398:input-element",
@@ -284,7 +320,21 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8398:input-element/1",
+          "caseId": "B:8398:input-element/1"
+        },
+        {
+          "alternativeId": "B:8398:input-element/2",
+          "caseId": "B:8398:input-element/2"
+        },
+        {
+          "alternativeId": "B:8398:input-element/3",
+          "caseId": "B:8398:input-element/3"
+        }
+      ]
     },
     {
       "standardId": "B:8400:new-line",
@@ -336,7 +386,33 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8400:new-line/1",
+          "caseId": "B:8400:new-line/1"
+        },
+        {
+          "alternativeId": "B:8400:new-line/2",
+          "caseId": "B:8400:new-line/2"
+        },
+        {
+          "alternativeId": "B:8400:new-line/3",
+          "caseId": "B:8400:new-line/3"
+        },
+        {
+          "alternativeId": "B:8400:new-line/4",
+          "caseId": "B:8400:new-line/4"
+        },
+        {
+          "alternativeId": "B:8400:new-line/5",
+          "caseId": "B:8400:new-line/5"
+        },
+        {
+          "alternativeId": "B:8400:new-line/6",
+          "caseId": "B:8400:new-line/6"
+        }
+      ]
     },
     {
       "standardId": "B:8402:comment",
@@ -388,7 +464,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8402:comment/1",
+          "caseId": "B:8402:comment/1"
+        },
+        {
+          "alternativeId": "B:8402:comment/2",
+          "caseId": "B:8402:comment/2"
+        }
+      ]
     },
     {
       "standardId": "B:8403:single-line-comment",
@@ -440,7 +526,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8403:single-line-comment/1",
+          "caseId": "B:8403:single-line-comment/1"
+        }
+      ]
     },
     {
       "standardId": "B:8404:input-characters",
@@ -492,7 +584,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8404:input-characters/1",
+          "caseId": "B:8404:input-characters/1"
+        },
+        {
+          "alternativeId": "B:8404:input-characters/2",
+          "caseId": "B:8404:input-characters/2"
+        }
+      ]
     },
     {
       "standardId": "B:8405:input-character",
@@ -544,7 +646,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8405:input-character/1",
+          "caseId": "B:8405:input-character/1"
+        }
+      ]
     },
     {
       "standardId": "B:8406:new-line-character",
@@ -596,7 +704,29 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8406:new-line-character/1",
+          "caseId": "B:8406:new-line-character/1"
+        },
+        {
+          "alternativeId": "B:8406:new-line-character/2",
+          "caseId": "B:8406:new-line-character/2"
+        },
+        {
+          "alternativeId": "B:8406:new-line-character/3",
+          "caseId": "B:8406:new-line-character/3"
+        },
+        {
+          "alternativeId": "B:8406:new-line-character/4",
+          "caseId": "B:8406:new-line-character/4"
+        },
+        {
+          "alternativeId": "B:8406:new-line-character/5",
+          "caseId": "B:8406:new-line-character/5"
+        }
+      ]
     },
     {
       "standardId": "B:8407:delimited-comment",
@@ -648,7 +778,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8407:delimited-comment/1",
+          "caseId": "B:8407:delimited-comment/1"
+        }
+      ]
     },
     {
       "standardId": "B:8408:delimited-comment-text",
@@ -700,7 +836,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8408:delimited-comment-text/1",
+          "caseId": "B:8408:delimited-comment-text/1"
+        },
+        {
+          "alternativeId": "B:8408:delimited-comment-text/2",
+          "caseId": "B:8408:delimited-comment-text/2"
+        }
+      ]
     },
     {
       "standardId": "B:8409:delimited-comment-section",
@@ -752,7 +898,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8409:delimited-comment-section/1",
+          "caseId": "B:8409:delimited-comment-section/1"
+        },
+        {
+          "alternativeId": "B:8409:delimited-comment-section/2",
+          "caseId": "B:8409:delimited-comment-section/2"
+        }
+      ]
     },
     {
       "standardId": "B:8410:asterisks",
@@ -804,7 +960,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8410:asterisks/1",
+          "caseId": "B:8410:asterisks/1"
+        },
+        {
+          "alternativeId": "B:8410:asterisks/2",
+          "caseId": "B:8410:asterisks/2"
+        }
+      ]
     },
     {
       "standardId": "B:8411:not-slash-or-asterisk",
@@ -854,7 +1020,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8411:not-slash-or-asterisk/1",
+          "caseId": "B:8411:not-slash-or-asterisk/1"
+        }
+      ]
     },
     {
       "standardId": "B:8413:whitespace",
@@ -906,7 +1078,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8413:whitespace/1",
+          "caseId": "B:8413:whitespace/1"
+        },
+        {
+          "alternativeId": "B:8413:whitespace/2",
+          "caseId": "B:8413:whitespace/2"
+        },
+        {
+          "alternativeId": "B:8413:whitespace/3",
+          "caseId": "B:8413:whitespace/3"
+        },
+        {
+          "alternativeId": "B:8413:whitespace/4",
+          "caseId": "B:8413:whitespace/4"
+        }
+      ]
     },
     {
       "standardId": "B:8415:token",
@@ -960,7 +1150,37 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8415:token/1",
+          "caseId": "B:8415:token/1"
+        },
+        {
+          "alternativeId": "B:8415:token/2",
+          "caseId": "B:8415:token/2"
+        },
+        {
+          "alternativeId": "B:8415:token/3",
+          "caseId": "B:8415:token/3"
+        },
+        {
+          "alternativeId": "B:8415:token/4",
+          "caseId": "B:8415:token/4"
+        },
+        {
+          "alternativeId": "B:8415:token/5",
+          "caseId": "B:8415:token/5"
+        },
+        {
+          "alternativeId": "B:8415:token/6",
+          "caseId": "B:8415:token/6"
+        },
+        {
+          "alternativeId": "B:8415:token/7",
+          "caseId": "B:8415:token/7"
+        }
+      ]
     },
     {
       "standardId": "B:8417:unicode-escape-sequence",
@@ -1016,7 +1236,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8417:unicode-escape-sequence/1",
+          "caseId": "B:8417:unicode-escape-sequence/1"
+        },
+        {
+          "alternativeId": "B:8417:unicode-escape-sequence/2",
+          "caseId": "B:8417:unicode-escape-sequence/2"
+        }
+      ]
     },
     {
       "standardId": "B:8419:identifier",
@@ -1081,7 +1311,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8419:identifier/1",
+          "caseId": "B:8419:identifier/1"
+        },
+        {
+          "alternativeId": "B:8419:identifier/2",
+          "caseId": "B:8419:identifier/2"
+        }
+      ]
     },
     {
       "standardId": "B:8420:available-identifier",
@@ -1138,7 +1378,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8420:available-identifier/1",
+          "caseId": "B:8420:available-identifier/1"
+        }
+      ]
     },
     {
       "standardId": "B:8421:identifier-or-keyword",
@@ -1203,7 +1449,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8421:identifier-or-keyword/1",
+          "caseId": "B:8421:identifier-or-keyword/1"
+        }
+      ]
     },
     {
       "standardId": "B:8422:identifier-start-character",
@@ -1260,7 +1512,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8422:identifier-start-character/1",
+          "caseId": "B:8422:identifier-start-character/1"
+        },
+        {
+          "alternativeId": "B:8422:identifier-start-character/2",
+          "caseId": "B:8422:identifier-start-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8423:identifier-part-characters",
@@ -1321,7 +1583,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8423:identifier-part-characters/1",
+          "caseId": "B:8423:identifier-part-characters/1"
+        },
+        {
+          "alternativeId": "B:8423:identifier-part-characters/2",
+          "caseId": "B:8423:identifier-part-characters/2"
+        }
+      ]
     },
     {
       "standardId": "B:8424:identifier-part-character",
@@ -1386,7 +1658,29 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8424:identifier-part-character/1",
+          "caseId": "B:8424:identifier-part-character/1"
+        },
+        {
+          "alternativeId": "B:8424:identifier-part-character/2",
+          "caseId": "B:8424:identifier-part-character/2"
+        },
+        {
+          "alternativeId": "B:8424:identifier-part-character/3",
+          "caseId": "B:8424:identifier-part-character/3"
+        },
+        {
+          "alternativeId": "B:8424:identifier-part-character/4",
+          "caseId": "B:8424:identifier-part-character/4"
+        },
+        {
+          "alternativeId": "B:8424:identifier-part-character/5",
+          "caseId": "B:8424:identifier-part-character/5"
+        }
+      ]
     },
     {
       "standardId": "B:8425:letter-character",
@@ -1443,7 +1737,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8425:letter-character/1",
+          "caseId": "B:8425:letter-character/1"
+        },
+        {
+          "alternativeId": "B:8425:letter-character/2",
+          "caseId": "B:8425:letter-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8426:combining-character",
@@ -1508,7 +1812,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8426:combining-character/1",
+          "caseId": "B:8426:combining-character/1"
+        },
+        {
+          "alternativeId": "B:8426:combining-character/2",
+          "caseId": "B:8426:combining-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8427:decimal-digit-character",
@@ -1565,7 +1879,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8427:decimal-digit-character/1",
+          "caseId": "B:8427:decimal-digit-character/1"
+        },
+        {
+          "alternativeId": "B:8427:decimal-digit-character/2",
+          "caseId": "B:8427:decimal-digit-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8428:connecting-character",
@@ -1622,7 +1946,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8428:connecting-character/1",
+          "caseId": "B:8428:connecting-character/1"
+        },
+        {
+          "alternativeId": "B:8428:connecting-character/2",
+          "caseId": "B:8428:connecting-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8429:formatting-character",
@@ -1687,7 +2021,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8429:formatting-character/1",
+          "caseId": "B:8429:formatting-character/1"
+        },
+        {
+          "alternativeId": "B:8429:formatting-character/2",
+          "caseId": "B:8429:formatting-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8431:keyword",
@@ -2107,7 +2451,33 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8433:literal/1",
+          "caseId": "B:8433:literal/1"
+        },
+        {
+          "alternativeId": "B:8433:literal/2",
+          "caseId": "B:8433:literal/2"
+        },
+        {
+          "alternativeId": "B:8433:literal/3",
+          "caseId": "B:8433:literal/3"
+        },
+        {
+          "alternativeId": "B:8433:literal/4",
+          "caseId": "B:8433:literal/4"
+        },
+        {
+          "alternativeId": "B:8433:literal/5",
+          "caseId": "B:8433:literal/5"
+        },
+        {
+          "alternativeId": "B:8433:literal/6",
+          "caseId": "B:8433:literal/6"
+        }
+      ]
     },
     {
       "standardId": "B:8434:boolean-literal",
@@ -2158,7 +2528,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8434:boolean-literal/1",
+          "caseId": "B:8434:boolean-literal/1"
+        },
+        {
+          "alternativeId": "B:8434:boolean-literal/2",
+          "caseId": "B:8434:boolean-literal/2"
+        }
+      ]
     },
     {
       "standardId": "B:8435:integer-literal",
@@ -2209,7 +2589,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8435:integer-literal/1",
+          "caseId": "B:8435:integer-literal/1"
+        },
+        {
+          "alternativeId": "B:8435:integer-literal/2",
+          "caseId": "B:8435:integer-literal/2"
+        }
+      ]
     },
     {
       "standardId": "B:8436:decimal-integer-literal",
@@ -2260,7 +2650,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8436:decimal-integer-literal/1",
+          "caseId": "B:8436:decimal-integer-literal/1"
+        }
+      ]
     },
     {
       "standardId": "B:8437:decimal-digits",
@@ -2311,7 +2707,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8437:decimal-digits/1",
+          "caseId": "B:8437:decimal-digits/1"
+        },
+        {
+          "alternativeId": "B:8437:decimal-digits/2",
+          "caseId": "B:8437:decimal-digits/2"
+        }
+      ]
     },
     {
       "standardId": "B:8438:decimal-digit",
@@ -2556,7 +2962,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8440:hexadecimal-integer-literal/1",
+          "caseId": "B:8440:hexadecimal-integer-literal/1"
+        },
+        {
+          "alternativeId": "B:8440:hexadecimal-integer-literal/2",
+          "caseId": "B:8440:hexadecimal-integer-literal/2"
+        }
+      ]
     },
     {
       "standardId": "B:8441:hex-digits",
@@ -2607,7 +3023,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8441:hex-digits/1",
+          "caseId": "B:8441:hex-digits/1"
+        },
+        {
+          "alternativeId": "B:8441:hex-digits/2",
+          "caseId": "B:8441:hex-digits/2"
+        }
+      ]
     },
     {
       "standardId": "B:8442:hex-digit",
@@ -2799,7 +3225,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8443:real-literal/1",
+          "caseId": "B:8443:real-literal/1"
+        },
+        {
+          "alternativeId": "B:8443:real-literal/2",
+          "caseId": "B:8443:real-literal/2"
+        },
+        {
+          "alternativeId": "B:8443:real-literal/3",
+          "caseId": "B:8443:real-literal/3"
+        },
+        {
+          "alternativeId": "B:8443:real-literal/4",
+          "caseId": "B:8443:real-literal/4"
+        }
+      ]
     },
     {
       "standardId": "B:8444:exponent-part",
@@ -2850,7 +3294,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8444:exponent-part/1",
+          "caseId": "B:8444:exponent-part/1"
+        },
+        {
+          "alternativeId": "B:8444:exponent-part/2",
+          "caseId": "B:8444:exponent-part/2"
+        }
+      ]
     },
     {
       "standardId": "B:8445:sign",
@@ -3041,7 +3495,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8447:character-literal/1",
+          "caseId": "B:8447:character-literal/1"
+        }
+      ]
     },
     {
       "standardId": "B:8448:character",
@@ -3092,7 +3552,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8448:character/1",
+          "caseId": "B:8448:character/1"
+        },
+        {
+          "alternativeId": "B:8448:character/2",
+          "caseId": "B:8448:character/2"
+        },
+        {
+          "alternativeId": "B:8448:character/3",
+          "caseId": "B:8448:character/3"
+        },
+        {
+          "alternativeId": "B:8448:character/4",
+          "caseId": "B:8448:character/4"
+        }
+      ]
     },
     {
       "standardId": "B:8449:single-character",
@@ -3143,7 +3621,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8449:single-character/1",
+          "caseId": "B:8449:single-character/1"
+        }
+      ]
     },
     {
       "standardId": "B:8450:simple-escape-sequence",
@@ -3292,7 +3776,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8451:hexadecimal-escape-sequence/1",
+          "caseId": "B:8451:hexadecimal-escape-sequence/1"
+        }
+      ]
     },
     {
       "standardId": "B:8452:string-literal",
@@ -3344,7 +3834,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8452:string-literal/1",
+          "caseId": "B:8452:string-literal/1"
+        },
+        {
+          "alternativeId": "B:8452:string-literal/2",
+          "caseId": "B:8452:string-literal/2"
+        }
+      ]
     },
     {
       "standardId": "B:8453:regular-string-literal",
@@ -3395,7 +3895,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8453:regular-string-literal/1",
+          "caseId": "B:8453:regular-string-literal/1"
+        }
+      ]
     },
     {
       "standardId": "B:8454:regular-string-literal-characters",
@@ -3446,7 +3952,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8454:regular-string-literal-characters/1",
+          "caseId": "B:8454:regular-string-literal-characters/1"
+        },
+        {
+          "alternativeId": "B:8454:regular-string-literal-characters/2",
+          "caseId": "B:8454:regular-string-literal-characters/2"
+        }
+      ]
     },
     {
       "standardId": "B:8455:regular-string-literal-character",
@@ -3497,7 +4013,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8455:regular-string-literal-character/1",
+          "caseId": "B:8455:regular-string-literal-character/1"
+        },
+        {
+          "alternativeId": "B:8455:regular-string-literal-character/2",
+          "caseId": "B:8455:regular-string-literal-character/2"
+        },
+        {
+          "alternativeId": "B:8455:regular-string-literal-character/3",
+          "caseId": "B:8455:regular-string-literal-character/3"
+        },
+        {
+          "alternativeId": "B:8455:regular-string-literal-character/4",
+          "caseId": "B:8455:regular-string-literal-character/4"
+        }
+      ]
     },
     {
       "standardId": "B:8456:single-regular-string-literal-character",
@@ -3548,7 +4082,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8456:single-regular-string-literal-character/1",
+          "caseId": "B:8456:single-regular-string-literal-character/1"
+        }
+      ]
     },
     {
       "standardId": "B:8457:verbatim-string-literal",
@@ -3599,7 +4139,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8457:verbatim-string-literal/1",
+          "caseId": "B:8457:verbatim-string-literal/1"
+        }
+      ]
     },
     {
       "standardId": "B:8458:verbatim-string-literal-characters",
@@ -3650,7 +4196,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8458:verbatim-string-literal-characters/1",
+          "caseId": "B:8458:verbatim-string-literal-characters/1"
+        },
+        {
+          "alternativeId": "B:8458:verbatim-string-literal-characters/2",
+          "caseId": "B:8458:verbatim-string-literal-characters/2"
+        }
+      ]
     },
     {
       "standardId": "B:8459:verbatim-string-literal-character",
@@ -3701,7 +4257,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8459:verbatim-string-literal-character/1",
+          "caseId": "B:8459:verbatim-string-literal-character/1"
+        },
+        {
+          "alternativeId": "B:8459:verbatim-string-literal-character/2",
+          "caseId": "B:8459:verbatim-string-literal-character/2"
+        }
+      ]
     },
     {
       "standardId": "B:8460:single-verbatim-string-literal-character",
@@ -3752,7 +4318,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8460:single-verbatim-string-literal-character/1",
+          "caseId": "B:8460:single-verbatim-string-literal-character/1"
+        }
+      ]
     },
     {
       "standardId": "B:8461:quote-escape-sequence",
@@ -3803,7 +4375,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8461:quote-escape-sequence/1",
+          "caseId": "B:8461:quote-escape-sequence/1"
+        }
+      ]
     },
     {
       "standardId": "B:8462:null-literal",
@@ -3854,7 +4432,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8462:null-literal/1",
+          "caseId": "B:8462:null-literal/1"
+        }
+      ]
     },
     {
       "standardId": "B:8464:operator-or-punctuator",
@@ -4145,7 +4729,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8465:right-shift/1",
+          "caseId": "B:8465:right-shift/1"
+        }
+      ]
     },
     {
       "standardId": "B:8466:right-shift-assignment",
@@ -4198,7 +4788,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8466:right-shift-assignment/1",
+          "caseId": "B:8466:right-shift-assignment/1"
+        }
+      ]
     },
     {
       "standardId": "B:8468:pp-directive",
@@ -4249,7 +4845,33 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8468:pp-directive/1",
+          "caseId": "B:8468:pp-directive/1"
+        },
+        {
+          "alternativeId": "B:8468:pp-directive/2",
+          "caseId": "B:8468:pp-directive/2"
+        },
+        {
+          "alternativeId": "B:8468:pp-directive/3",
+          "caseId": "B:8468:pp-directive/3"
+        },
+        {
+          "alternativeId": "B:8468:pp-directive/4",
+          "caseId": "B:8468:pp-directive/4"
+        },
+        {
+          "alternativeId": "B:8468:pp-directive/5",
+          "caseId": "B:8468:pp-directive/5"
+        },
+        {
+          "alternativeId": "B:8468:pp-directive/6",
+          "caseId": "B:8468:pp-directive/6"
+        }
+      ]
     },
     {
       "standardId": "B:8469:conditional-symbol",
@@ -4302,7 +4924,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8469:conditional-symbol/1",
+          "caseId": "B:8469:conditional-symbol/1"
+        }
+      ]
     },
     {
       "standardId": "B:8470:pp-expression",
@@ -4353,7 +4981,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8470:pp-expression/1",
+          "caseId": "B:8470:pp-expression/1"
+        }
+      ]
     },
     {
       "standardId": "B:8471:pp-or-expression",
@@ -4404,7 +5038,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8471:pp-or-expression/1",
+          "caseId": "B:8471:pp-or-expression/1"
+        },
+        {
+          "alternativeId": "B:8471:pp-or-expression/2",
+          "caseId": "B:8471:pp-or-expression/2"
+        }
+      ]
     },
     {
       "standardId": "B:8472:pp-and-expression",
@@ -4455,7 +5099,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8472:pp-and-expression/1",
+          "caseId": "B:8472:pp-and-expression/1"
+        },
+        {
+          "alternativeId": "B:8472:pp-and-expression/2",
+          "caseId": "B:8472:pp-and-expression/2"
+        }
+      ]
     },
     {
       "standardId": "B:8473:pp-equality-expression",
@@ -4506,7 +5160,21 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8473:pp-equality-expression/1",
+          "caseId": "B:8473:pp-equality-expression/1"
+        },
+        {
+          "alternativeId": "B:8473:pp-equality-expression/2",
+          "caseId": "B:8473:pp-equality-expression/2"
+        },
+        {
+          "alternativeId": "B:8473:pp-equality-expression/3",
+          "caseId": "B:8473:pp-equality-expression/3"
+        }
+      ]
     },
     {
       "standardId": "B:8474:pp-unary-expression",
@@ -4557,7 +5225,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8474:pp-unary-expression/1",
+          "caseId": "B:8474:pp-unary-expression/1"
+        },
+        {
+          "alternativeId": "B:8474:pp-unary-expression/2",
+          "caseId": "B:8474:pp-unary-expression/2"
+        }
+      ]
     },
     {
       "standardId": "B:8475:pp-primary-expression",
@@ -4608,7 +5286,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8475:pp-primary-expression/1",
+          "caseId": "B:8475:pp-primary-expression/1"
+        },
+        {
+          "alternativeId": "B:8475:pp-primary-expression/2",
+          "caseId": "B:8475:pp-primary-expression/2"
+        },
+        {
+          "alternativeId": "B:8475:pp-primary-expression/3",
+          "caseId": "B:8475:pp-primary-expression/3"
+        },
+        {
+          "alternativeId": "B:8475:pp-primary-expression/4",
+          "caseId": "B:8475:pp-primary-expression/4"
+        }
+      ]
     },
     {
       "standardId": "B:8476:pp-declaration",
@@ -4659,7 +5355,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8476:pp-declaration/1",
+          "caseId": "B:8476:pp-declaration/1"
+        },
+        {
+          "alternativeId": "B:8476:pp-declaration/2",
+          "caseId": "B:8476:pp-declaration/2"
+        }
+      ]
     },
     {
       "standardId": "B:8477:pp-new-line",
@@ -4710,7 +5416,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8477:pp-new-line/1",
+          "caseId": "B:8477:pp-new-line/1"
+        }
+      ]
     },
     {
       "standardId": "B:8478:pp-conditional",
@@ -4761,7 +5473,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8478:pp-conditional/1",
+          "caseId": "B:8478:pp-conditional/1"
+        }
+      ]
     },
     {
       "standardId": "B:8479:pp-if-section",
@@ -4812,7 +5530,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8479:pp-if-section/1",
+          "caseId": "B:8479:pp-if-section/1"
+        }
+      ]
     },
     {
       "standardId": "B:8480:pp-elif-sections",
@@ -4863,7 +5587,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8480:pp-elif-sections/1",
+          "caseId": "B:8480:pp-elif-sections/1"
+        },
+        {
+          "alternativeId": "B:8480:pp-elif-sections/2",
+          "caseId": "B:8480:pp-elif-sections/2"
+        }
+      ]
     },
     {
       "standardId": "B:8481:pp-elif-section",
@@ -4914,7 +5648,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8481:pp-elif-section/1",
+          "caseId": "B:8481:pp-elif-section/1"
+        }
+      ]
     },
     {
       "standardId": "B:8482:pp-else-section",
@@ -4965,7 +5705,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8482:pp-else-section/1",
+          "caseId": "B:8482:pp-else-section/1"
+        }
+      ]
     },
     {
       "standardId": "B:8483:pp-endif",
@@ -5016,7 +5762,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8483:pp-endif/1",
+          "caseId": "B:8483:pp-endif/1"
+        }
+      ]
     },
     {
       "standardId": "B:8484:conditional-section",
@@ -5067,7 +5819,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8484:conditional-section/1",
+          "caseId": "B:8484:conditional-section/1"
+        },
+        {
+          "alternativeId": "B:8484:conditional-section/2",
+          "caseId": "B:8484:conditional-section/2"
+        }
+      ]
     },
     {
       "standardId": "B:8485:skipped-section",
@@ -5118,7 +5880,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8485:skipped-section/1",
+          "caseId": "B:8485:skipped-section/1"
+        },
+        {
+          "alternativeId": "B:8485:skipped-section/2",
+          "caseId": "B:8485:skipped-section/2"
+        }
+      ]
     },
     {
       "standardId": "B:8486:skipped-section-part",
@@ -5169,7 +5941,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8486:skipped-section-part/1",
+          "caseId": "B:8486:skipped-section-part/1"
+        },
+        {
+          "alternativeId": "B:8486:skipped-section-part/2",
+          "caseId": "B:8486:skipped-section-part/2"
+        }
+      ]
     },
     {
       "standardId": "B:8487:skipped-characters",
@@ -5220,7 +6002,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8487:skipped-characters/1",
+          "caseId": "B:8487:skipped-characters/1"
+        }
+      ]
     },
     {
       "standardId": "B:8488:not-number-sign",
@@ -5271,7 +6059,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8488:not-number-sign/1",
+          "caseId": "B:8488:not-number-sign/1"
+        }
+      ]
     },
     {
       "standardId": "B:8489:pp-diagnostic",
@@ -5322,7 +6116,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8489:pp-diagnostic/1",
+          "caseId": "B:8489:pp-diagnostic/1"
+        },
+        {
+          "alternativeId": "B:8489:pp-diagnostic/2",
+          "caseId": "B:8489:pp-diagnostic/2"
+        }
+      ]
     },
     {
       "standardId": "B:8490:pp-message",
@@ -5373,7 +6177,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8490:pp-message/1",
+          "caseId": "B:8490:pp-message/1"
+        },
+        {
+          "alternativeId": "B:8490:pp-message/2",
+          "caseId": "B:8490:pp-message/2"
+        }
+      ]
     },
     {
       "standardId": "B:8491:pp-region",
@@ -5424,7 +6238,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8491:pp-region/1",
+          "caseId": "B:8491:pp-region/1"
+        }
+      ]
     },
     {
       "standardId": "B:8492:pp-start-region",
@@ -5475,7 +6295,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8492:pp-start-region/1",
+          "caseId": "B:8492:pp-start-region/1"
+        }
+      ]
     },
     {
       "standardId": "B:8493:pp-end-region",
@@ -5526,7 +6352,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8493:pp-end-region/1",
+          "caseId": "B:8493:pp-end-region/1"
+        }
+      ]
     },
     {
       "standardId": "B:8494:pp-line",
@@ -5577,7 +6409,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8494:pp-line/1",
+          "caseId": "B:8494:pp-line/1"
+        }
+      ]
     },
     {
       "standardId": "B:8495:line-indicator",
@@ -5628,7 +6466,25 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8495:line-indicator/1",
+          "caseId": "B:8495:line-indicator/1"
+        },
+        {
+          "alternativeId": "B:8495:line-indicator/2",
+          "caseId": "B:8495:line-indicator/2"
+        },
+        {
+          "alternativeId": "B:8495:line-indicator/3",
+          "caseId": "B:8495:line-indicator/3"
+        },
+        {
+          "alternativeId": "B:8495:line-indicator/4",
+          "caseId": "B:8495:line-indicator/4"
+        }
+      ]
     },
     {
       "standardId": "B:8496:file-name",
@@ -5679,7 +6535,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8496:file-name/1",
+          "caseId": "B:8496:file-name/1"
+        }
+      ]
     },
     {
       "standardId": "B:8497:file-name-characters",
@@ -5730,7 +6592,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8497:file-name-characters/1",
+          "caseId": "B:8497:file-name-characters/1"
+        },
+        {
+          "alternativeId": "B:8497:file-name-characters/2",
+          "caseId": "B:8497:file-name-characters/2"
+        }
+      ]
     },
     {
       "standardId": "B:8498:file-name-character",
@@ -5781,7 +6653,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8498:file-name-character/1",
+          "caseId": "B:8498:file-name-character/1"
+        }
+      ]
     },
     {
       "standardId": "B:8499:pp-pragma",
@@ -5832,7 +6710,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8499:pp-pragma/1",
+          "caseId": "B:8499:pp-pragma/1"
+        }
+      ]
     },
     {
       "standardId": "B:8500:pragma-body",
@@ -5882,7 +6766,13 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8500:pragma-body/1",
+          "caseId": "B:8500:pragma-body/1"
+        }
+      ]
     },
     {
       "standardId": "B:8501:pragma-warning-body",
@@ -5932,7 +6822,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8501:pragma-warning-body/1",
+          "caseId": "B:8501:pragma-warning-body/1"
+        },
+        {
+          "alternativeId": "B:8501:pragma-warning-body/2",
+          "caseId": "B:8501:pragma-warning-body/2"
+        }
+      ]
     },
     {
       "standardId": "B:8502:warning-action",
@@ -5982,7 +6882,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8502:warning-action/1",
+          "caseId": "B:8502:warning-action/1"
+        },
+        {
+          "alternativeId": "B:8502:warning-action/2",
+          "caseId": "B:8502:warning-action/2"
+        }
+      ]
     },
     {
       "standardId": "B:8503:warning-list",
@@ -6032,7 +6942,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "lexicalProductionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8503:warning-list/1",
+          "caseId": "B:8503:warning-list/1"
+        },
+        {
+          "alternativeId": "B:8503:warning-list/2",
+          "caseId": "B:8503:warning-list/2"
+        }
+      ]
     },
     {
       "standardId": "B:8506:namespace-name",
@@ -25037,5 +25957,15 @@
     "markerCount": 18,
     "referenceCount": 148,
     "scope": "Explicit ellipses trace all earlier non-placeholder alternatives of their source production; this source-reference closure does not admit target alternatives or overall completeness."
+  },
+  "lexicalProductionAlternativeEvidence": {
+    "path": "tests/Corpus/CSharp3/lexical-production-cases.json",
+    "sha256": "07f34155802477e6749eafe62760c4e0d41b5390cd01156b7b0eda0b2a9c0554",
+    "status": "representative-witnesses",
+    "count": 184,
+    "witness": {
+      "path": "tests/CSNitrogen.Tests/Lexing/CSharp3LexicalAlternativeTests.cs",
+      "method": "Lexical_production_alternatives_retain_context_effects_and_original_coordinates"
+    }
   }
 }

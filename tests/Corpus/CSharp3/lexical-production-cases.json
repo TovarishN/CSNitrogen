@@ -1,0 +1,6790 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp3",
+  "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+  "scope": "Representative owning-context and contrast observations for all184 lexical production alternatives, including explicit Unicode/input/diagnostic/opaque-pragma normalization boundaries; not exhaustive inputs or semantic compilation.",
+  "cases": [
+    {
+      "id": "B:8394:input/1",
+      "sourceOccurrence": "B:8394:input",
+      "sourceAlternativeSha256": "2f9219aef198d1783646a7429db75f3e7a386fecee090eba1b2d46d70120e093",
+      "disposition": "source-input-normalization",
+      "notes": "Empty input, virtual final terminator and terminal Control-Z retain authored coordinates.",
+      "positives": [
+        {
+          "source": "",
+          "accepted": true,
+          "classNames": [],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [],
+          "arguments": {}
+        },
+        {
+          "source": "class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{}\u001a",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "@",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8395:input-section/1",
+      "sourceOccurrence": "B:8395:input-section",
+      "sourceAlternativeSha256": "69fb99f6c7725505c1e5832af44afbcf17c336e98b832287735361408cfc97a0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{}\n",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class {}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8395:input-section/2",
+      "sourceOccurrence": "B:8395:input-section",
+      "sourceAlternativeSha256": "6ec6de6fc8f241b4cd0ad9ac6242e3a4ed6a39f5d6e1bd23b1614618b6a5766c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "\nclass C{}\n",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 7
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class {}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8396:input-section-part/1",
+      "sourceOccurrence": "B:8396:input-section-part",
+      "sourceAlternativeSha256": "81f2bebbf3c94e11a783e42231f31e52f0ea0233eb13154862012a26013ee506",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 7
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class {}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8396:input-section-part/2",
+      "sourceOccurrence": "B:8396:input-section-part",
+      "sourceAlternativeSha256": "d46cdefbe474f6c772da8d036a2ba8d3f271dfe63bc0f07e5e83718267883c43",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define X\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#define\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8397:input-elements/1",
+      "sourceOccurrence": "B:8397:input-elements",
+      "sourceAlternativeSha256": "d714c41e1caba22490fbada5caede013bb4a326a0ee95c664e5ffbc40526ff48",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": " ",
+          "accepted": true,
+          "classNames": [],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "\u0001",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8397:input-elements/2",
+      "sourceOccurrence": "B:8397:input-elements",
+      "sourceAlternativeSha256": "55dd5be4432ba83de3fec4217a4e99283597af5548efb3c165e789c0d07ead2f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": " /*x*/",
+          "accepted": true,
+          "classNames": [],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": " \u0001",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8398:input-element/1",
+      "sourceOccurrence": "B:8398:input-element",
+      "sourceAlternativeSha256": "6db1c4fb63e9999133390382e0399dc7a336b9454d56542ea0dd98d8e8912a62",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "\tclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 7
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "\u0001class C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8398:input-element/2",
+      "sourceOccurrence": "B:8398:input-element",
+      "sourceAlternativeSha256": "c44bb2fd516909dab78ae0bfedcd5672b131b996c4b7a4328ee55fba170da776",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*x*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8398:input-element/3",
+      "sourceOccurrence": "B:8398:input-element",
+      "sourceAlternativeSha256": "3c469e9d6c5875d37a43f353d4f88e61fcf812c66eee3457465a40b0da4153e0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class {}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/1",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "041c882d1087ff47f8585d6fa10519dd933612b08a08c0f09f45022e9d5b1216",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\rclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\rb\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/2",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "c693a45b2531165970ef902803577af4b9fa3f6b33e8d58f53767ce54de36ca5",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\nb\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/3",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "11a252c9074dc0b1e9adef9810d7297058fffd2f5e65ffbe9d8edc65509a0905",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\r\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\r\nb\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/4",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "c6fc5c84f5c4edbbea89242ac34aed30f4d51103c253432e106d3a800fda98b9",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u0085class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u0085b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/5",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "5842e2372e775de5c45f5066af0b9a41db2a1780e664baf05bf951958bfa92af",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u2028class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u2028b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8400:new-line/6",
+      "sourceOccurrence": "B:8400:new-line",
+      "sourceAlternativeSha256": "7ca2149966a6ed76a216826b4a731a8bef732470655799c95c0633cf0de6f674",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u2029class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u2029b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8402:comment/1",
+      "sourceOccurrence": "B:8402:comment",
+      "sourceAlternativeSha256": "2f999d7dda0683cf752d35673a0e8b36821fc2f108331e4f23e917642d9416b4",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8402:comment/2",
+      "sourceOccurrence": "B:8402:comment",
+      "sourceAlternativeSha256": "7136f096ba335b7164af7a8c060401e9272022cefb894c25adab567772efe7af",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*x*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8403:single-line-comment/1",
+      "sourceOccurrence": "B:8403:single-line-comment",
+      "sourceAlternativeSha256": "a892616fbd818ad83167f23d5874dfcb7cdf6e5dc087aee9720c962703cb428b",
+      "disposition": "syntax-witness",
+      "notes": "Any non-newline payload is valid; the contrast is an unterminated neighboring block delimiter.",
+      "positives": [
+        {
+          "source": "//\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 9
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "//x\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8404:input-characters/1",
+      "sourceOccurrence": "B:8404:input-characters",
+      "sourceAlternativeSha256": "98482908be1c8dcb39838df04772ee2da11ae04fc0be207f0420afcfaf9ea19b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//a\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8404:input-characters/2",
+      "sourceOccurrence": "B:8404:input-characters",
+      "sourceAlternativeSha256": "faef1a62d8190a014747c0f114177fc605cb020de27147e4ecede1b2ffae50cb",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//ab\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8405:input-character/1",
+      "sourceOccurrence": "B:8405:input-character",
+      "sourceAlternativeSha256": "d28461d047a61cb9e423850c76e0a7add15f4d3888b18862edd18f00dd488436",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//\ud801\udc00\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8406:new-line-character/1",
+      "sourceOccurrence": "B:8406:new-line-character",
+      "sourceAlternativeSha256": "041c882d1087ff47f8585d6fa10519dd933612b08a08c0f09f45022e9d5b1216",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\rclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\rb\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8406:new-line-character/2",
+      "sourceOccurrence": "B:8406:new-line-character",
+      "sourceAlternativeSha256": "c693a45b2531165970ef902803577af4b9fa3f6b33e8d58f53767ce54de36ca5",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\nb\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8406:new-line-character/3",
+      "sourceOccurrence": "B:8406:new-line-character",
+      "sourceAlternativeSha256": "c6fc5c84f5c4edbbea89242ac34aed30f4d51103c253432e106d3a800fda98b9",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u0085class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u0085b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8406:new-line-character/4",
+      "sourceOccurrence": "B:8406:new-line-character",
+      "sourceAlternativeSha256": "5842e2372e775de5c45f5066af0b9a41db2a1780e664baf05bf951958bfa92af",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u2028class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u2028b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8406:new-line-character/5",
+      "sourceOccurrence": "B:8406:new-line-character",
+      "sourceAlternativeSha256": "7ca2149966a6ed76a216826b4a731a8bef732470655799c95c0633cf0de6f674",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "//x\u2029class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a\u2029b\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8407:delimited-comment/1",
+      "sourceOccurrence": "B:8407:delimited-comment",
+      "sourceAlternativeSha256": "28de1affacc93534c71fbb53cde5f1177a8b8c86c5aae7fbb41b03ca4e9b9871",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/**/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 10
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "/*x*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8408:delimited-comment-text/1",
+      "sourceOccurrence": "B:8408:delimited-comment-text",
+      "sourceAlternativeSha256": "7f38bfecdd5034e9c08680f0798ad20cbc8d01fab890a7f75ccd1bfed40a20e2",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*/*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8408:delimited-comment-text/2",
+      "sourceOccurrence": "B:8408:delimited-comment-text",
+      "sourceAlternativeSha256": "05b2b75cab53a6d1395c5d8f649cda0031165cf228bc66dbfd51fb14be26a688",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*a/b*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 13
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8409:delimited-comment-section/1",
+      "sourceOccurrence": "B:8409:delimited-comment-section",
+      "sourceAlternativeSha256": "8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*/*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8409:delimited-comment-section/2",
+      "sourceOccurrence": "B:8409:delimited-comment-section",
+      "sourceAlternativeSha256": "bb62afa7f410ac5baaec224e74fc3e8639c567fd423e735db886d749364118c0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/**a*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 12
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "/*a*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8410:asterisks/1",
+      "sourceOccurrence": "B:8410:asterisks",
+      "sourceAlternativeSha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*a*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 11
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8410:asterisks/2",
+      "sourceOccurrence": "B:8410:asterisks",
+      "sourceAlternativeSha256": "cb8e35f68ef00c1fbaf215f142d9dca6f86972b372ec082a53afce289dbe1ab6",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*a***/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 13
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8411:not-slash-or-asterisk/1",
+      "sourceOccurrence": "B:8411:not-slash-or-asterisk",
+      "sourceAlternativeSha256": "b7017283885290d50bf896a4999fb9f45f5a45f31b70cae8c76ce36f6b7b9db9",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "/*\ud83d\ude00*/class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 12
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "/*unterminated",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8413:whitespace/1",
+      "sourceOccurrence": "B:8413:whitespace",
+      "sourceAlternativeSha256": "f10af79119eec63d41f43578b23faa87fe26a820964cae7562886fd5da59b8e9",
+      "disposition": "unicode-policy",
+      "notes": "Every frozen Unicode4 Zs scalar; no current-host category lookup.",
+      "positives": [
+        {
+          "source": "class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u00a0C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u1680C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u180eC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2000C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2001C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2002C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2003C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2004C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2005C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2006C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2007C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2008C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u2009C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u200aC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u200bC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u202fC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u205fC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class\u3000C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class\u0001C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8413:whitespace/2",
+      "sourceOccurrence": "B:8413:whitespace",
+      "sourceAlternativeSha256": "7b8b529115b5aea33374cd5ea94e1c6d9b26d8c2bcd14167272266aec3b1cdff",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class\tC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class\u0001C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8413:whitespace/3",
+      "sourceOccurrence": "B:8413:whitespace",
+      "sourceAlternativeSha256": "570d25b8324e9a404fff243df47dfd83fd73a33f4db4b3d1c94f15409fed8e02",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class\u000bC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class\u0001C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8413:whitespace/4",
+      "sourceOccurrence": "B:8413:whitespace",
+      "sourceAlternativeSha256": "5afea6e77f700040a70409a926655cf2e71c14f62b00a93431a2ad7ab20d3f26",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class\fC{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class\u0001C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/1",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Alpha{}",
+          "accepted": true,
+          "classNames": [
+            "Alpha"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Alpha",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class for{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/2",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "d6d198dd68bbff3e3fef3ae8aa7c4d9608c0b13cc99e15077b82dfa3233be364",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class {}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/3",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "f77c108e9f4e35757bcb2c32d571b74369cb0fd099905625ea11da71268864a8",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/4",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "4837ca5eb0f93d1477be67bed1439941ea2f44a75be63c6a0c09fd0c5a161455",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1.5;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1e;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/5",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "18f3074393bd4752d5f67175e2dc4351c0f6e760663fd14c06934a81eadc510d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='a';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='ab';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/6",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "d074d4b909be3b300f0105eba1f15385e32f1fc3919a76aed444f80af9b8eb48",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8415:token/7",
+      "sourceOccurrence": "B:8415:token",
+      "sourceAlternativeSha256": "e0a621c346ce753f0e03c9f0f99f110725acaa02b23900d146f6277b3c62848e",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=a+b;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=a+;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8417:unicode-escape-sequence/1",
+      "sourceOccurrence": "B:8417:unicode-escape-sequence",
+      "sourceAlternativeSha256": "124ccc6032c509ac844b38ed616964cbe25500b18efb3281446a4372a924dda1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class \\u0041{}",
+          "accepted": true,
+          "classNames": [
+            "\\u0041"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u0041",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u00GG{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8417:unicode-escape-sequence/2",
+      "sourceOccurrence": "B:8417:unicode-escape-sequence",
+      "sourceAlternativeSha256": "507c919b1917ff00f3d602f099a1e8b6c4c9fe769c880d38b2607aea55916742",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class \\U00010400{}",
+          "accepted": true,
+          "classNames": [
+            "\\U00010400"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\U00010400",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\U00110000{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8419:identifier/1",
+      "sourceOccurrence": "B:8419:identifier",
+      "sourceAlternativeSha256": "f0e619b5836b63931290bcc46f8f784688d5223cc56d0d502dc9ec16561022ca",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Alpha{}",
+          "accepted": true,
+          "classNames": [
+            "Alpha"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Alpha",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class for{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8419:identifier/2",
+      "sourceOccurrence": "B:8419:identifier",
+      "sourceAlternativeSha256": "234db5fad1da10cf800f4073f6dd2121f523e738f6cae3e71249840476b0182c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class @for{}",
+          "accepted": true,
+          "classNames": [
+            "@for"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "@for",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class for{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8420:available-identifier/1",
+      "sourceOccurrence": "B:8420:available-identifier",
+      "sourceAlternativeSha256": "69dee45ef6e2e508b5a4bc372a4d2a9b3190c00481bc864b931d7aafe6a17bf2",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Alpha{}",
+          "accepted": true,
+          "classNames": [
+            "Alpha"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Alpha",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class for{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8421:identifier-or-keyword/1",
+      "sourceOccurrence": "B:8421:identifier-or-keyword",
+      "sourceAlternativeSha256": "e27883e3b2aab57179566dfa3e8564d4430e06495f07445d43e8b9bf1f718e5b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A{}",
+          "accepted": true,
+          "classNames": [
+            "A"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class Ab1{}",
+          "accepted": true,
+          "classNames": [
+            "Ab1"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Ab1",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class 1A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8422:identifier-start-character/1",
+      "sourceOccurrence": "B:8422:identifier-start-character",
+      "sourceAlternativeSha256": "b56ece4ebf44100decdfe158aad41fc597c2d8825fad5921095503a75d05d58b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A{}",
+          "accepted": true,
+          "classNames": [
+            "A"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class 1A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8422:identifier-start-character/2",
+      "sourceOccurrence": "B:8422:identifier-start-character",
+      "sourceAlternativeSha256": "95f40ae53280d89b07b052be791d09ba64bf4704f8bbc3f77dad6aad103ebd9b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class _{}",
+          "accepted": true,
+          "classNames": [
+            "_"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "_",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u005f{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8423:identifier-part-characters/1",
+      "sourceOccurrence": "B:8423:identifier-part-characters",
+      "sourceAlternativeSha256": "fda84d43083f4a872df6bf90c649c19e505d2c86f0352f403cf8464abaef38c0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Aa{}",
+          "accepted": true,
+          "classNames": [
+            "Aa"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Aa",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class A-{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8423:identifier-part-characters/2",
+      "sourceOccurrence": "B:8423:identifier-part-characters",
+      "sourceAlternativeSha256": "907e37e189e38f655430cb0c10dafc34d178430afeff23733cb7c398dc12c1c3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Aa1_{}",
+          "accepted": true,
+          "classNames": [
+            "Aa1_"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Aa1_",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class A-a{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8424:identifier-part-character/1",
+      "sourceOccurrence": "B:8424:identifier-part-character",
+      "sourceAlternativeSha256": "b56ece4ebf44100decdfe158aad41fc597c2d8825fad5921095503a75d05d58b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class Aa{}",
+          "accepted": true,
+          "classNames": [
+            "Aa"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "Aa",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class A-{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8424:identifier-part-character/2",
+      "sourceOccurrence": "B:8424:identifier-part-character",
+      "sourceAlternativeSha256": "2df759f2b12b4068c40e44e68d1276a2a35217d2acb6067e8921c4da5a54dfa3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u0661{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0661"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0661",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u0661A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8424:identifier-part-character/3",
+      "sourceOccurrence": "B:8424:identifier-part-character",
+      "sourceAlternativeSha256": "1622ee81ea68592177d979748c02f686c1e0c45650532cdc148dd940a9d7c78c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u203f{}",
+          "accepted": true,
+          "classNames": [
+            "A\u203f"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u203f",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u203fA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8424:identifier-part-character/4",
+      "sourceOccurrence": "B:8424:identifier-part-character",
+      "sourceAlternativeSha256": "a51e8f41f37e1bd95668872bc1c4a4b453e84164943d2ef50305af613addb937",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u0301{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0301"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0301",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class A\u0903{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0903"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0903",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u0301A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8424:identifier-part-character/5",
+      "sourceOccurrence": "B:8424:identifier-part-character",
+      "sourceAlternativeSha256": "65e87c597a48c677caf0b3feb38ef266212ddc9054262591d0a2e5c78c78caf3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u200c{}",
+          "accepted": true,
+          "classNames": [
+            "A\u200c"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u200c",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u200cA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8425:letter-character/1",
+      "sourceOccurrence": "B:8425:letter-character",
+      "sourceAlternativeSha256": "ddc23fba399f4deb195012e3f70f3ebc086f50bfb1cc4ecb85ff9b3df42b6df4",
+      "disposition": "unicode-policy",
+      "notes": "Representative Lu/Ll/Lt/Lm/Lo/Nl and supplementary letters in approved Unicode4.",
+      "positives": [
+        {
+          "source": "class A{}",
+          "accepted": true,
+          "classNames": [
+            "A"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class a{}",
+          "accepted": true,
+          "classNames": [
+            "a"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "a",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \u01c5{}",
+          "accepted": true,
+          "classNames": [
+            "\u01c5"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\u01c5",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \u02b0{}",
+          "accepted": true,
+          "classNames": [
+            "\u02b0"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\u02b0",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \u4e00{}",
+          "accepted": true,
+          "classNames": [
+            "\u4e00"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\u4e00",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \u2160{}",
+          "accepted": true,
+          "classNames": [
+            "\u2160"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\u2160",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \ud801\udc00{}",
+          "accepted": true,
+          "classNames": [
+            "\ud801\udc00"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\ud801\udc00",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class 1A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8425:letter-character/2",
+      "sourceOccurrence": "B:8425:letter-character",
+      "sourceAlternativeSha256": "e540c60c66296583286218712002262eb2c3d2fc6f1ce741fd0ea605cac00dc5",
+      "disposition": "unicode-policy",
+      "notes": "Escaped counterparts retain original spelling and selected category.",
+      "positives": [
+        {
+          "source": "class \\u0041{}",
+          "accepted": true,
+          "classNames": [
+            "\\u0041"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u0041",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\u0061{}",
+          "accepted": true,
+          "classNames": [
+            "\\u0061"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u0061",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\u01c5{}",
+          "accepted": true,
+          "classNames": [
+            "\\u01c5"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u01c5",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\u02b0{}",
+          "accepted": true,
+          "classNames": [
+            "\\u02b0"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u02b0",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\u4e00{}",
+          "accepted": true,
+          "classNames": [
+            "\\u4e00"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u4e00",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\u2160{}",
+          "accepted": true,
+          "classNames": [
+            "\\u2160"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\u2160",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class \\U00010400{}",
+          "accepted": true,
+          "classNames": [
+            "\\U00010400"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "\\U00010400",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u0030A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8426:combining-character/1",
+      "sourceOccurrence": "B:8426:combining-character",
+      "sourceAlternativeSha256": "1826781a180e701e2cdbedad50b9007c424b9ac21246cb78bb9e16766c0c2639",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u0301{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0301"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0301",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class A\u0903{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0903"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0903",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u0301A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8426:combining-character/2",
+      "sourceOccurrence": "B:8426:combining-character",
+      "sourceAlternativeSha256": "9e9549956ec56423daff949cabf8318c3fa7a3b55a9dd53f931e7c20495017df",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\\u0301{}",
+          "accepted": true,
+          "classNames": [
+            "A\\u0301"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\\u0301",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class A\\u0903{}",
+          "accepted": true,
+          "classNames": [
+            "A\\u0903"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\\u0903",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u0301A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8427:decimal-digit-character/1",
+      "sourceOccurrence": "B:8427:decimal-digit-character",
+      "sourceAlternativeSha256": "117d5cce93b690261322c4a7f84b8e873560dd507bd44642d27587db63b432af",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u0661{}",
+          "accepted": true,
+          "classNames": [
+            "A\u0661"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u0661",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u0661A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8427:decimal-digit-character/2",
+      "sourceOccurrence": "B:8427:decimal-digit-character",
+      "sourceAlternativeSha256": "b7c2908668847c4fa60a8f43dcea3c3336063bd1aa37eda1d54ab57c1aecb8ff",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\\u0661{}",
+          "accepted": true,
+          "classNames": [
+            "A\\u0661"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\\u0661",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u0661A{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8428:connecting-character/1",
+      "sourceOccurrence": "B:8428:connecting-character",
+      "sourceAlternativeSha256": "7b174eff8edcf5884403fc15cba8b265da2a329ca8f2fa338b22da47f24e4e14",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u203f{}",
+          "accepted": true,
+          "classNames": [
+            "A\u203f"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u203f",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u203fA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8428:connecting-character/2",
+      "sourceOccurrence": "B:8428:connecting-character",
+      "sourceAlternativeSha256": "52ed1abf5d1a1c87cb31619738334bf60b35c0928782b63c7249113510f3eae7",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\\u203f{}",
+          "accepted": true,
+          "classNames": [
+            "A\\u203f"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\\u203f",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u203fA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8429:formatting-character/1",
+      "sourceOccurrence": "B:8429:formatting-character",
+      "sourceAlternativeSha256": "bdf843556373ccc2e60ec85cf058a8737e83bae586ba5638cd4d370635727f99",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\u200c{}",
+          "accepted": true,
+          "classNames": [
+            "A\u200c"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\u200c",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \u200cA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8429:formatting-character/2",
+      "sourceOccurrence": "B:8429:formatting-character",
+      "sourceAlternativeSha256": "17e819a2a4cb27c1cbb030d4fdc88dcd9ae7226059a98e9a2cce2af499b3cb87",
+      "disposition": "unicode-policy",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class A\\u200c{}",
+          "accepted": true,
+          "classNames": [
+            "A\\u200c"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "A\\u200c",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class \\u200cA{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/1",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "30e880890e9e040a7c249ce364683730531c5260141c4bc35d94dc16d3f794d9",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=true;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=tru@;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/2",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "f77c108e9f4e35757bcb2c32d571b74369cb0fd099905625ea11da71268864a8",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/3",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "4837ca5eb0f93d1477be67bed1439941ea2f44a75be63c6a0c09fd0c5a161455",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1.5;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1e;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/4",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "18f3074393bd4752d5f67175e2dc4351c0f6e760663fd14c06934a81eadc510d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='a';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='ab';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/5",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "d074d4b909be3b300f0105eba1f15385e32f1fc3919a76aed444f80af9b8eb48",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8433:literal/6",
+      "sourceOccurrence": "B:8433:literal",
+      "sourceAlternativeSha256": "001796667a25d7659392f8dacffee8175d58fab24e3bbc68fc9baa053033063b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=null;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=null@;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8434:boolean-literal/1",
+      "sourceOccurrence": "B:8434:boolean-literal",
+      "sourceAlternativeSha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=true;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=true@;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8434:boolean-literal/2",
+      "sourceOccurrence": "B:8434:boolean-literal",
+      "sourceAlternativeSha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=false;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=false@;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8435:integer-literal/1",
+      "sourceOccurrence": "B:8435:integer-literal",
+      "sourceAlternativeSha256": "0cdf3fa9da67ca4c091d3292643469faf2192983d488bd3f653594b9ad8c1a38",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=12;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=12_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8435:integer-literal/2",
+      "sourceOccurrence": "B:8435:integer-literal",
+      "sourceAlternativeSha256": "0d16f66d2f23c666d7e5174fe0620060c629ecdd9784d5536c4f302e1286dcf3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=0xFF;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=0x;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8436:decimal-integer-literal/1",
+      "sourceOccurrence": "B:8436:decimal-integer-literal",
+      "sourceAlternativeSha256": "29a74d5e127b6526c5266a27f7cccc47a47eea4a0e8ffd51d17e36efdf6a6123",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=12;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=12UL;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=12_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8437:decimal-digits/1",
+      "sourceOccurrence": "B:8437:decimal-digits",
+      "sourceAlternativeSha256": "63dd820c4ace5a7c74493047f13cf35ed762b1b74db99ef920686bcb0c430941",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8437:decimal-digits/2",
+      "sourceOccurrence": "B:8437:decimal-digits",
+      "sourceAlternativeSha256": "371c6776a133ee8cecb7017905d5bb17ddb3a75690764ab01ffbc24f48ddc5f4",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=12;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=12_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8440:hexadecimal-integer-literal/1",
+      "sourceOccurrence": "B:8440:hexadecimal-integer-literal",
+      "sourceAlternativeSha256": "aead12f8d9683567831382d4cd139809f06eaac974e14624e07fbd6a9499af28",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=0xff;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=0xffUL;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=0x;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8440:hexadecimal-integer-literal/2",
+      "sourceOccurrence": "B:8440:hexadecimal-integer-literal",
+      "sourceAlternativeSha256": "c68cf4b3cac154486dfd12f6df340f305b803b9bbfb38061bbcfab1b7440de16",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=0Xff;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=0XffUL;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=0X;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8441:hex-digits/1",
+      "sourceOccurrence": "B:8441:hex-digits",
+      "sourceAlternativeSha256": "e8d9a629718e096c6b66cbabb0a04d6b8ca620f6b9a1bba9bf6fa85c2cbb3e3a",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=0xA;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=0x_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8441:hex-digits/2",
+      "sourceOccurrence": "B:8441:hex-digits",
+      "sourceAlternativeSha256": "bc9733aab470a954a2de43cc95e1a907ab9ede465e69e615e948e718343c654e",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=0xAb;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=0xAb_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8443:real-literal/1",
+      "sourceOccurrence": "B:8443:real-literal",
+      "sourceAlternativeSha256": "6dd13910855b48dc869c6f4e0c362d31fb8684040c3ab11a4321a342073a8e2a",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1.25;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=1.25e+2D;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1.;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8443:real-literal/2",
+      "sourceOccurrence": "B:8443:real-literal",
+      "sourceAlternativeSha256": "30d93bfe766cd479f9364170d37acf34638597a5e7b217aa4097b56a97782b33",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=.25;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=.25e-2F;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=.;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8443:real-literal/3",
+      "sourceOccurrence": "B:8443:real-literal",
+      "sourceAlternativeSha256": "c412cdc736d15da4ca823ce884c14c3b3ddc012ff3d7c9febd74101567455c5f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1e2;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=1e2m;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1e;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8443:real-literal/4",
+      "sourceOccurrence": "B:8443:real-literal",
+      "sourceAlternativeSha256": "be4423f7ae37ac160769391ae77b47863510b3f7d6756ec2fb55c19e57fe5102",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1f;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1f_;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8444:exponent-part/1",
+      "sourceOccurrence": "B:8444:exponent-part",
+      "sourceAlternativeSha256": "314790dc8960d310eb9ac0e605e6cba2c2b226f47f208447d9bd81a6e7ab1717",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1e2;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=1e+2;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1e+;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8444:exponent-part/2",
+      "sourceOccurrence": "B:8444:exponent-part",
+      "sourceAlternativeSha256": "e49d01c7bedce453500fff363f73fcaa92ce9c68338d765d2d2d4deb36c685c3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=1E2;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=1E-2;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=1E-;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8447:character-literal/1",
+      "sourceOccurrence": "B:8447:character-literal",
+      "sourceAlternativeSha256": "5ee05956da8a0fc9d98d7aae4b0399ab4b24ee021dc2e9d723bab637e6e74fb6",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='a';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='ab';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8448:character/1",
+      "sourceOccurrence": "B:8448:character",
+      "sourceAlternativeSha256": "1d1b9ff77c085b2a860140bd05937672c422f22dc5c26fe496f49db6db0bb675",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='a';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='ab';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8448:character/2",
+      "sourceOccurrence": "B:8448:character",
+      "sourceAlternativeSha256": "c491d82a21f1ec792882e068afd6319388ef4e105c1ab2dbb9ff062aaec01aca",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='\\n';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='\\q';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8448:character/3",
+      "sourceOccurrence": "B:8448:character",
+      "sourceAlternativeSha256": "b3500ba5fd3578540dae5a3d92065fef17da4aa386ab000b182f2265b1d07e87",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='\\x41';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='\\x';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8448:character/4",
+      "sourceOccurrence": "B:8448:character",
+      "sourceAlternativeSha256": "6cdbc5519bc6da99cd0a0053d650075c6d9963ce4bd6eb02fa4ae04e330aaa40",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='\\u0041';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x='\\U00000041';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='\\U00010400';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8449:single-character/1",
+      "sourceOccurrence": "B:8449:single-character",
+      "sourceAlternativeSha256": "e94486ab4d9dbefa82d7bcbc49abc3760bded0faf09160378501b5c097fa713f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='a';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='ab';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8451:hexadecimal-escape-sequence/1",
+      "sourceOccurrence": "B:8451:hexadecimal-escape-sequence",
+      "sourceAlternativeSha256": "196c25ec74e7359dc6b7c1f86ff873f24618a4ab7e5cae80ee9b5fbd315986a1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x='\\x1';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x='\\x12';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x='\\x123';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x='\\x1234';}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x='\\x';}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8452:string-literal/1",
+      "sourceOccurrence": "B:8452:string-literal",
+      "sourceAlternativeSha256": "6082ae53b70f37d59a5f20c4aac8948451e336741026b3bbdc47f1696faab7cf",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8452:string-literal/2",
+      "sourceOccurrence": "B:8452:string-literal",
+      "sourceAlternativeSha256": "03e1dfd0f85f300cb81a8c3e9ef86e403d08e92cd48156f45c2ef6eb8e1c4adb",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8453:regular-string-literal/1",
+      "sourceOccurrence": "B:8453:regular-string-literal",
+      "sourceAlternativeSha256": "4dcd202b7c6a562d978ef49f7f9129c471cca933bed6c17d261ab8532d6f1f01",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8454:regular-string-literal-characters/1",
+      "sourceOccurrence": "B:8454:regular-string-literal-characters",
+      "sourceAlternativeSha256": "2e770c1ce5d0f9e7979ea37c7f05a12e2b8246b601a4416752b6d3ec1e9a53d2",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8454:regular-string-literal-characters/2",
+      "sourceOccurrence": "B:8454:regular-string-literal-characters",
+      "sourceAlternativeSha256": "f6348911486bc6d0343ee3ce945ebf82e44c9954fab32cd97986a6c5e4bd2c1e",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"ab\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"ab;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8455:regular-string-literal-character/1",
+      "sourceOccurrence": "B:8455:regular-string-literal-character",
+      "sourceAlternativeSha256": "88a45ca86fb9f47d36d5a2903a75ee274de11d9cc80de5546303ec58d199d1b1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8455:regular-string-literal-character/2",
+      "sourceOccurrence": "B:8455:regular-string-literal-character",
+      "sourceAlternativeSha256": "c491d82a21f1ec792882e068afd6319388ef4e105c1ab2dbb9ff062aaec01aca",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"\\n\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"\\q\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8455:regular-string-literal-character/3",
+      "sourceOccurrence": "B:8455:regular-string-literal-character",
+      "sourceAlternativeSha256": "b3500ba5fd3578540dae5a3d92065fef17da4aa386ab000b182f2265b1d07e87",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"\\x41\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"\\x\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8455:regular-string-literal-character/4",
+      "sourceOccurrence": "B:8455:regular-string-literal-character",
+      "sourceAlternativeSha256": "6cdbc5519bc6da99cd0a0053d650075c6d9963ce4bd6eb02fa4ae04e330aaa40",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"\\u0041\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=\"\\U00010400\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"\\U00110000\";}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8456:single-regular-string-literal-character/1",
+      "sourceOccurrence": "B:8456:single-regular-string-literal-character",
+      "sourceAlternativeSha256": "4639f895a2cfb444fac048ddc03388ac65e546f608c93bc7461b3a0bb0826a77",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8457:verbatim-string-literal/1",
+      "sourceOccurrence": "B:8457:verbatim-string-literal",
+      "sourceAlternativeSha256": "62bbb4e94e1da2546f6e3a65056254c417e67040992d8611cda1820597611e0d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "class C{object x=@\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8458:verbatim-string-literal-characters/1",
+      "sourceOccurrence": "B:8458:verbatim-string-literal-characters",
+      "sourceAlternativeSha256": "adcbb0feb0b77ab4f26a7edd89da3ad2f285a1b8b3ac0f5fb00348219c516b6d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8458:verbatim-string-literal-characters/2",
+      "sourceOccurrence": "B:8458:verbatim-string-literal-characters",
+      "sourceAlternativeSha256": "efa96eab4249c262be8ccc1c8966e97f82569639fadff9d0eff7c0573e94683c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"ab\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"ab;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8459:verbatim-string-literal-character/1",
+      "sourceOccurrence": "B:8459:verbatim-string-literal-character",
+      "sourceAlternativeSha256": "884336d45eedf1866a8331fac34a8c4f5d1bd7dfee22500e3c53c60d93564cf4",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8459:verbatim-string-literal-character/2",
+      "sourceOccurrence": "B:8459:verbatim-string-literal-character",
+      "sourceAlternativeSha256": "31316778f4700b70ea3723e7df819373f03f085577d85d55a403f10f2a564ae0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\"\"b\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a\"\"b;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8460:single-verbatim-string-literal-character/1",
+      "sourceOccurrence": "B:8460:single-verbatim-string-literal-character",
+      "sourceAlternativeSha256": "48a853c683d33e4c9b42626d2130708e6c6c1c6aabe82313fc9a51772ec55e59",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\nb\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a\nb;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8461:quote-escape-sequence/1",
+      "sourceOccurrence": "B:8461:quote-escape-sequence",
+      "sourceAlternativeSha256": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=@\"a\"\"b\";}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=@\"a\"\"b;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8462:null-literal/1",
+      "sourceOccurrence": "B:8462:null-literal",
+      "sourceAlternativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=null;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=null@;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8465:right-shift/1",
+      "sourceOccurrence": "B:8465:right-shift",
+      "sourceAlternativeSha256": "e780b598e089cc1c45b4a90ee4b16b2d880f8857e34e17ab0fec5a470d579613",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=a>>b;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=a> >b;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8466:right-shift-assignment/1",
+      "sourceOccurrence": "B:8466:right-shift-assignment",
+      "sourceAlternativeSha256": "0fc0e41a89084db3c61b22b26ffd3cb920f70310e6d0c373fb9a68c17bc3f51a",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "class C{object x=a>>=b;}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 6
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{object x=a> >=b;}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/1",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "b2a64aca97c2f003bc072a5ff3a60227e32dbea31a60006d6b60b44b72c7a238",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define X\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#define\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/2",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "22221149ff99148c1a00f19e4f0b55c64473237064949029a988b4705379daee",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/3",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "a7a7aafa696e8a24776876fc9c4fbba4650ae82770ce1d749ac3686b13ae735c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 14
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line bad\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/4",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "839c12f6842f38977cde0443269174efb49249c13d0a200f9acbe7636cd9d51b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#warning x\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "warning"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 17
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#warning!x\nclass C{}",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/5",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "022168d37a39bddc0d86b2acf99bd716172a1dc78df0db27c40d20fc409d3af7",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#region x\nclass C{}\n#endregion",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "region",
+            "endregion"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#region x\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8468:pp-directive/6",
+      "sourceOccurrence": "B:8468:pp-directive",
+      "sourceAlternativeSha256": "02d92ba3e3e046f507a24535a1bd174f96592dbadf45191a1b2a425ee03a7852",
+      "disposition": "opaque-pragma",
+      "notes": "Outer directive shape is checked; compiler payload is opaque.",
+      "positives": [
+        {
+          "source": "#pragma warning disable\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "class C{} #pragma warning disable",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8469:conditional-symbol/1",
+      "sourceOccurrence": "B:8469:conditional-symbol",
+      "sourceAlternativeSha256": "1c8c7ec1cf0180c63c050c5adb127bdaca787fcd848d71945785a68c5fed0ace",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define class\n#if class\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define",
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#define @class\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8470:pp-expression/1",
+      "sourceOccurrence": "B:8470:pp-expression",
+      "sourceAlternativeSha256": "f5d25a53dd8cca0927530ddbe2eabfe4cfaaf7a0701e98ce6e7f0d22405da707",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#if  \ttrue \t\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 19
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8471:pp-or-expression/1",
+      "sourceOccurrence": "B:8471:pp-or-expression",
+      "sourceAlternativeSha256": "678231fde13cc4060ba677bcc36191c93649f400891d0d92e013c30854f1767d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8471:pp-or-expression/2",
+      "sourceOccurrence": "B:8471:pp-or-expression",
+      "sourceAlternativeSha256": "38628b5c2cb34eea54b1c35f7bb646f5d959dd188455a863a7775eed34638a08",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false || true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 24
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false ||\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8472:pp-and-expression/1",
+      "sourceOccurrence": "B:8472:pp-and-expression",
+      "sourceAlternativeSha256": "c41cd227925e3734af38344c856bbe88b1225562730bdf0bd89700cd0434449a",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8472:pp-and-expression/2",
+      "sourceOccurrence": "B:8472:pp-and-expression",
+      "sourceAlternativeSha256": "ec880a6faecedf4dca14c4739c4f39fa295fd50de065221d43974e2c678a249e",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true && false\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "D"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "D",
+              "start": 40
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true &&\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8473:pp-equality-expression/1",
+      "sourceOccurrence": "B:8473:pp-equality-expression",
+      "sourceAlternativeSha256": "b644dc3409b6fc9662377bf63f947a96b6ba0e57380bac9c3c9c89941c2b9d34",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8473:pp-equality-expression/2",
+      "sourceOccurrence": "B:8473:pp-equality-expression",
+      "sourceAlternativeSha256": "de02b9d4f0f5a6b2afd93e924d5d393436625e7181d052d7be36f22cf7be631e",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true == true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 23
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true ==\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8473:pp-equality-expression/3",
+      "sourceOccurrence": "B:8473:pp-equality-expression",
+      "sourceAlternativeSha256": "524c13c9ba62593aa3f50e581b701333623534676858f70c56e8f8f7a0394df8",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true != true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "D"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "D",
+              "start": 39
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true !=\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8474:pp-unary-expression/1",
+      "sourceOccurrence": "B:8474:pp-unary-expression",
+      "sourceAlternativeSha256": "284f7ae362f79c5229a01983301f54b06e350f4ebc6767d24995747b0c85064f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8474:pp-unary-expression/2",
+      "sourceOccurrence": "B:8474:pp-unary-expression",
+      "sourceAlternativeSha256": "1ca40217c7cefec0de8fbc16603c0d0c9e16be20e9c0995dff1257d2f53edbd0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if ! true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "D"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "D",
+              "start": 33
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if !\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8475:pp-primary-expression/1",
+      "sourceOccurrence": "B:8475:pp-primary-expression",
+      "sourceAlternativeSha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true false\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8475:pp-primary-expression/2",
+      "sourceOccurrence": "B:8475:pp-primary-expression",
+      "sourceAlternativeSha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "D"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "D",
+              "start": 32
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false true\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8475:pp-primary-expression/3",
+      "sourceOccurrence": "B:8475:pp-primary-expression",
+      "sourceAlternativeSha256": "40dd8a7f2c5a1ba50447c3fb7c75b761504cc881f2180609767f3c717977f15d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define X\n#if X\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define",
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 22
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if @X\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8475:pp-primary-expression/4",
+      "sourceOccurrence": "B:8475:pp-primary-expression",
+      "sourceAlternativeSha256": "3735edfc4531027b98fe4eeed9237765750ae528549c96aaf5bb612afd930866",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if ( true || false )\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 28
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if (true\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8476:pp-declaration/1",
+      "sourceOccurrence": "B:8476:pp-declaration",
+      "sourceAlternativeSha256": "75e4128f990eb2d4ac5bce853632b0b9365f486096a7ecd6f8e63e3832e8738a",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define X\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#define\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8476:pp-declaration/2",
+      "sourceOccurrence": "B:8476:pp-declaration",
+      "sourceAlternativeSha256": "a5e739a8688a0002a2ec55f9775a29fd1112fe3be604690b498592ebe1306145",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#undef X\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "undef"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#undef\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8477:pp-new-line/1",
+      "sourceOccurrence": "B:8477:pp-new-line",
+      "sourceAlternativeSha256": "a24eebb4012ccbf01c3fe4966e3762d747ad3f479dd22d379e5e658a355828dc",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#define X\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#define X //text\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "define"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 23
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#define X Y\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8478:pp-conditional/1",
+      "sourceOccurrence": "B:8478:pp-conditional",
+      "sourceAlternativeSha256": "28cdcec2644cc0494af2f0ab8dfe07bc947e394472c45be960bb3147bc6c9091",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#if false\ninvalid\n#elif true\nclass C{}\n#else\ninvalid\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "elif",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 35
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8479:pp-if-section/1",
+      "sourceOccurrence": "B:8479:pp-if-section",
+      "sourceAlternativeSha256": "1c76b74376b6affeebc66a086aa45680e418a5ed961b6b61b464a88634f7bc33",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#if true\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 22
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if\nclass C{}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8480:pp-elif-sections/1",
+      "sourceOccurrence": "B:8480:pp-elif-sections",
+      "sourceAlternativeSha256": "efdce476ac7a461a6a6797d6b9d3fc1b7a56392699eb019ba054d043a725385b",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n#elif true\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "elif",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 27
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#elif\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8480:pp-elif-sections/2",
+      "sourceOccurrence": "B:8480:pp-elif-sections",
+      "sourceAlternativeSha256": "d1a11c0e12a94c489252b7fb02116d87e9e26baaeb412e17cb38ba81ebaed2a1",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n#elif false\n#elif true\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "elif",
+            "elif",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 39
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#elif true\n#else\n#elif true\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8481:pp-elif-section/1",
+      "sourceOccurrence": "B:8481:pp-elif-section",
+      "sourceAlternativeSha256": "fc112e09e4647c62c35636abbde4f9e9f4dd325e9a29ddbd5c0b98f500b43a46",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n#elif true\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "elif",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 27
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#elif true\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8482:pp-else-section/1",
+      "sourceOccurrence": "B:8482:pp-else-section",
+      "sourceAlternativeSha256": "643ce99b0289df06b8b4a553be69c5f76c3176992c699c54e6cb8d1772be2bce",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\nclass C{}\n#else\nclass D{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "D"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "D",
+              "start": 32
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#if false\n#else\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "else",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 29
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#else\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8483:pp-endif/1",
+      "sourceOccurrence": "B:8483:pp-endif",
+      "sourceAlternativeSha256": "279d1aad94acf38ee625a9c0d592206a437795b3198962af1a344c401f66109d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 22
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#endif\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8484:conditional-section/1",
+      "sourceOccurrence": "B:8484:conditional-section",
+      "sourceAlternativeSha256": "6577956eb22a1071fb0512ecc90a00b7becde49864b5c4cc0b63385077d328d2",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if true\nclass C{}\n#endif",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if true\nclass {}\n#endif",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8484:conditional-section/2",
+      "sourceOccurrence": "B:8484:conditional-section",
+      "sourceAlternativeSha256": "46490bd65a4872eff3bd77919b7dba92ff8096d61aa9a0826850fc332823d983",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n\"unclosed disabled text\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 47
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#line bad\n#endif\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8485:skipped-section/1",
+      "sourceOccurrence": "B:8485:skipped-section",
+      "sourceAlternativeSha256": "beb6fe6c30a925faa459ab9aa8d75e4b4a2a59332066d178deacbdd2bc16e8ce",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\ninvalid\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 31
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\ninvalid\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8485:skipped-section/2",
+      "sourceOccurrence": "B:8485:skipped-section",
+      "sourceAlternativeSha256": "741d21073e9ee05cfd0be486dabf46e93ccbec7b1d370731df784390467795d3",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\ninvalid\nmore invalid\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 44
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\ninvalid\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8486:skipped-section-part/1",
+      "sourceOccurrence": "B:8486:skipped-section-part",
+      "sourceAlternativeSha256": "7fc3daf3f7522eb82d7d9ad04456d9764f525fb9baf63b059eae178f9bc970cf",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 24
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#if false\ninvalid\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 31
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\ninvalid\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8486:skipped-section-part/2",
+      "sourceOccurrence": "B:8486:skipped-section-part",
+      "sourceAlternativeSha256": "d46cdefbe474f6c772da8d036a2ba8d3f271dfe63bc0f07e5e83718267883c43",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n#line 1\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "line",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 31
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#line bad\n#endif\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8487:skipped-characters/1",
+      "sourceOccurrence": "B:8487:skipped-characters",
+      "sourceAlternativeSha256": "f5b135afaaf135831fa0081e30a0e8d300c06c769933e830d3f430ae76e5591d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\n invalid\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 32
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#unknown\n#endif\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8488:not-number-sign/1",
+      "sourceOccurrence": "B:8488:not-number-sign",
+      "sourceAlternativeSha256": "1b0820c2fee880c3743bbf45546753ce1f99bb0c5e5ff997dcf5ca27b9449151",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#if false\nx\n#endif\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "if",
+            "endif"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 25
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#if false\n#unknown\n#endif\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8489:pp-diagnostic/1",
+      "sourceOccurrence": "B:8489:pp-diagnostic",
+      "sourceAlternativeSha256": "c27f315b8af01f4068496dc04e880e14810e44be3310c9d630be844f119742e2",
+      "disposition": "diagnostic-effect",
+      "notes": "The positive intentionally emits its required error effect; grammar acceptance is distinguished from whole-document Accepted.",
+      "positives": [
+        {
+          "source": "#error message\nclass C{}",
+          "accepted": false,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "error"
+          ],
+          "issueCodes": [
+            "CSN1202"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 21
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#error!message\nclass C{}",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8489:pp-diagnostic/2",
+      "sourceOccurrence": "B:8489:pp-diagnostic",
+      "sourceAlternativeSha256": "8a184a60bc39693a97674a28c4d3c69f8998e2fd4f4727ba8b1a210ef2149e09",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#warning message\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "warning"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 23
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#warning!message\nclass C{}",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8490:pp-message/1",
+      "sourceOccurrence": "B:8490:pp-message",
+      "sourceAlternativeSha256": "73282de40d55848f5d672168d8fcc454805d2ecdaa8fad9adba9ba32f6cc3944",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#warning\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "warning"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 15
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#warning!message\nclass C{}",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8490:pp-message/2",
+      "sourceOccurrence": "B:8490:pp-message",
+      "sourceAlternativeSha256": "411bae0c4e05d9ad3ac19285f5d2e793a59c7f1ef1d0e3c001946d8d5a0fbe81",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#warning message\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "warning"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 23
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#warning \nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "warning"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#warning!message\nclass C{}",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8491:pp-region/1",
+      "sourceOccurrence": "B:8491:pp-region",
+      "sourceAlternativeSha256": "3901ece61019ff20be335f8c724cc42102706cac63042a974621ca8d1d3b0b33",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#region\n#endregion\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "region",
+            "endregion"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 25
+            }
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "#region x\nclass C{}\n#endregion",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "region",
+            "endregion"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#region x\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8492:pp-start-region/1",
+      "sourceOccurrence": "B:8492:pp-start-region",
+      "sourceAlternativeSha256": "b46752a0c6aee978d9e263a6c6545ea2288f45d7c63e5503dfe3b73d1b4ad5a0",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#region x\nclass C{}\n#endregion",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "region",
+            "endregion"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#region!x\nclass C{}\n#endregion",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8493:pp-end-region/1",
+      "sourceOccurrence": "B:8493:pp-end-region",
+      "sourceAlternativeSha256": "77ef3fef7023d90d9cd2053b204736641c60d0263cd81828cfdc27d73160a8aa",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#region x\nclass C{}\n#endregion x",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "region",
+            "endregion"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 16
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#region x\nclass C{}\n#endregion!x",
+        "accepted": false,
+        "requiredCodes": [
+          "CSN1001"
+        ]
+      }
+    },
+    {
+      "id": "B:8494:pp-line/1",
+      "sourceOccurrence": "B:8494:pp-line",
+      "sourceAlternativeSha256": "8b461499fd830a376d35b47f7dd95ec885c7a52db1662442dc49fd196150000f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 0001 \"a.cs\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 24
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line bad\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8495:line-indicator/1",
+      "sourceOccurrence": "B:8495:line-indicator",
+      "sourceAlternativeSha256": "e5cf0ffe6edaecbd98871de3c735bd24c7d7adb2cf8f6b537370ed9e0b5f0d77",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1 \"a.cs\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 21
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 1 \"\"\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8495:line-indicator/2",
+      "sourceOccurrence": "B:8495:line-indicator",
+      "sourceAlternativeSha256": "aa8c255666881ae9afc464fe25d2b21b7ad7bb5d1171e5801b0f7665ed972585",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 0000\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 17
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 0x1\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8495:line-indicator/3",
+      "sourceOccurrence": "B:8495:line-indicator",
+      "sourceAlternativeSha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line default\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 20
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line @default\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8495:line-indicator/4",
+      "sourceOccurrence": "B:8495:line-indicator",
+      "sourceAlternativeSha256": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line hidden\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 19
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line Hidden\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8496:file-name/1",
+      "sourceOccurrence": "B:8496:file-name",
+      "sourceAlternativeSha256": "2caaa59a81f9a84e4728b831a30da6f4ff10386ae8c02adfeee36d15157c5a0d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1 \"a\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 18
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 1 \"\"\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8497:file-name-characters/1",
+      "sourceOccurrence": "B:8497:file-name-characters",
+      "sourceAlternativeSha256": "63d4b3e5f9f217a3aef2ad0725e63642e3f785d5da7b52d05ed6ca2f7073aefe",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1 \"a\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 18
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 1 \"\"\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8497:file-name-characters/2",
+      "sourceOccurrence": "B:8497:file-name-characters",
+      "sourceAlternativeSha256": "0fca6a969a1371e96a561edc60f52bd8893b7d3036d8ad35cbc04615d5275f2d",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1 \"ab\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 19
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 1 \"a\"b\"\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8498:file-name-character/1",
+      "sourceOccurrence": "B:8498:file-name-character",
+      "sourceAlternativeSha256": "0fabbc38b6b2f4c56c82a9a690bfccd494dd51f42cb5336ea1291d99e24fba10",
+      "disposition": "syntax-witness",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#line 1 \"a#b\\c\"\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "line"
+          ],
+          "issueCodes": [],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 22
+            }
+          ],
+          "arguments": {}
+        }
+      ],
+      "contrast": {
+        "source": "#line 1 \"a\"b\"\nclass C{}",
+        "accepted": false,
+        "requiredCodes": []
+      }
+    },
+    {
+      "id": "B:8499:pp-pragma/1",
+      "sourceOccurrence": "B:8499:pp-pragma",
+      "sourceAlternativeSha256": "6d77d04f9007bb8c6c90b78ee01b2b3d00c463f46ca3b192d053b81284c3b7af",
+      "disposition": "opaque-pragma",
+      "notes": "Payload information is preserved with the reviewed warning-bearing compiler-effect exclusion.",
+      "positives": [
+        {
+          "source": "#pragma warning disable\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8500:pragma-body/1",
+      "sourceOccurrence": "B:8500:pragma-body",
+      "sourceAlternativeSha256": "1765b870289ef92130d99e513c1bd223c238a3d75db419876ca68ddec92c3018",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8501:pragma-warning-body/1",
+      "sourceOccurrence": "B:8501:pragma-warning-body",
+      "sourceAlternativeSha256": "da0143bb4d305199f6137d8328ad774d81a7fb4aaab706344307cccaaddd6ab7",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8501:pragma-warning-body/2",
+      "sourceOccurrence": "B:8501:pragma-warning-body",
+      "sourceAlternativeSha256": "9915eb06634024ad57aada23235f9ae7b0d9b421f212652320b502aed1ff4972",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable 1,2\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 34
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable 1,2"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8502:warning-action/1",
+      "sourceOccurrence": "B:8502:warning-action",
+      "sourceAlternativeSha256": "e9d8992f348162fd95acf6d07922aff61ebd06a143eaf134f29d72e76cb420ce",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8502:warning-action/2",
+      "sourceOccurrence": "B:8502:warning-action",
+      "sourceAlternativeSha256": "f329e3a317eee6a8a1a7357f69bc0488e0fad238ad58b30fc99139445f51e6ab",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning restore\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 30
+            }
+          ],
+          "arguments": {
+            "pragma": "warning restore"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8503:warning-list/1",
+      "sourceOccurrence": "B:8503:warning-list",
+      "sourceAlternativeSha256": "aa8c255666881ae9afc464fe25d2b21b7ad7bb5d1171e5801b0f7665ed972585",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable 1\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 32
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable 1"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    },
+    {
+      "id": "B:8503:warning-list/2",
+      "sourceOccurrence": "B:8503:warning-list",
+      "sourceAlternativeSha256": "32998f2ded4455d466caf18525f8cb9be39ea4e840bc8df13b748b7a1fe0526a",
+      "disposition": "opaque-pragma",
+      "notes": "",
+      "positives": [
+        {
+          "source": "#pragma warning disable 1,2\nclass C{}",
+          "accepted": true,
+          "classNames": [
+            "C"
+          ],
+          "directiveKinds": [
+            "pragma"
+          ],
+          "issueCodes": [
+            "CSN1203"
+          ],
+          "anchors": [
+            {
+              "text": "C",
+              "start": 34
+            }
+          ],
+          "arguments": {
+            "pragma": "warning disable 1,2"
+          }
+        }
+      ],
+      "contrast": {
+        "source": "#pragma warning disable 1,,2\nclass C{}",
+        "accepted": true,
+        "requiredCodes": [
+          "CSN1203"
+        ]
+      }
+    }
+  ]
+}
