@@ -542,7 +542,7 @@
     "CSNitrogen.source.Parsing/ParseDocument.cs": "5a68949af658b709cd02dafd3544a48ac32d418408a569b395149cecf62d8c33",
     "CSNitrogen.source.Parsing/ParseIssue.cs": "64d46aa134367a4dc9cbf83bddd778050ca416a00c97a2425815504d1cda607e",
     "CSNitrogen.source.Parsing/ParseRequest.cs": "806720faeb044642c001b25ee8655e7209b27b7fde1d656e126ee8b2ffd6587b",
-    "CSNitrogen.source.Parsing/UnicodePolicy.cs": "7297fe555e67231fe3f19190abc2334c89d5d2080a23754a8e5b4ba5afb75565",
+    "CSNitrogen.source.Parsing/UnicodePolicy.cs": "bb9883af13bafad68eb786fe8b765d65b91d4e863d61a253281b29023bdfa499",
     "CSNitrogen.source.Preprocessing/ConditionalExpression.cs": "26569777fa29aebb1c9b35d763162f26f198e2b946803e89fa26f8d9e46978e9",
     "CSNitrogen.source.Preprocessing/ConditionalPreprocessor.cs": "613619634697f855ca835d3b349e48e078893c59198491b4c04e30d728e27988",
     "CSNitrogen.source.Preprocessing/DirectiveEffects.cs": "b471582116162f9df29655d38d7ddba0719109b667ab9fdf6b9f349d20132049",

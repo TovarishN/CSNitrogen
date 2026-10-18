@@ -572,7 +572,8 @@
       "source": "Parsing/UnicodePolicy.cs",
       "codes": [
         "CSN2020",
-        "CSN2021"
+        "CSN2021",
+        "CSN2023"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
@@ -580,12 +581,20 @@
         {
           "path": "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
           "method": "Historical_identifiers_are_accepted_only_in_the_historical_policy"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+          "method": "Ordinary_identifier_marks_and_actual_format_characters_remain_available"
         }
       ],
       "negative": [
         {
           "path": "tests/CSNitrogen.Tests/Lexing/HistoricalUnicodeTests.cs",
           "method": "Changed_categories_respect_profile"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+          "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
         }
       ]
     },

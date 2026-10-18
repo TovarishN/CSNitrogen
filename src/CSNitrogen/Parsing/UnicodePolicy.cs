@@ -74,8 +74,11 @@ internal static class UnicodePolicy
             }
             if(kind!="Identifier" && !kind.StartsWith("Contextual",StringComparison.Ordinal))continue;
             var span=tree.Span(node);string text=tree.Text.Substring(span.Start,span.Length);
-            if(!TryNormalize(text,version,true,out _))
+            if(!TryNormalize(text,version,true,out string identity))
                 issues.Add(new("CSN2020","Identifier characters are not valid under the selected Unicode category policy.",span,IssueCategory.Syntax));
+            else if(kind.StartsWith("Contextual",StringComparison.Ordinal) && kind!="ContextualFormat" &&
+                identity!=kind["Contextual".Length..].ToLowerInvariant())
+                issues.Add(new("CSN2023","Contextual spelling does not name the required identifier under the selected Unicode identity policy.",span,IssueCategory.Syntax));
         }
         return issues.AsReadOnly();
     }
