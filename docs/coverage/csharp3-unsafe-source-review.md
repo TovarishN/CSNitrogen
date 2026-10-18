@@ -1,5 +1,7 @@
 # CSharp3 unsafe source disposition
 
+Historical source-inspection report: candidate/pending statements below describe its original audit stage. Final reviewed normalized syntax admission is recorded in csharp3-reviewed-admission-evidence.md and the separate pinned coverage gate.
+
 Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all39 unsafe Appendix B occurrences B8835–8873 and controlling §18. This report records normalized syntax/policy inspection and finite selected-factory evidence. All overall rows remain candidate/pending and CSharp3 remains partial.
 
 ## Modifier and statement extensions: B8835–8849

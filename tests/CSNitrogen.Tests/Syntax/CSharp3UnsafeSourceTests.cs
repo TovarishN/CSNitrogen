@@ -36,7 +36,7 @@ public class CSharp3UnsafeSourceTests
  public void Source_unsafe_forms_and_context_neighbors_are_checked(string source,bool accepted)
  {
   source="/*𐐀*/"+source;using var p=CSharpParser.Parse(new(source,"CSharp3","unsafe-source.cs",[]));
-  Assert.True(p.Accepted==accepted,source+" :: "+string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  Assert.True(p.Accepted==accepted,source+" :: "+string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
   foreach(int n in Enumerable.Range(0,p.Tree.NodeCount)){var s=p.Tree.Span(n);Assert.InRange(s.Start,0,source.Length);Assert.InRange(s.Length,0,source.Length-s.Start);}
   foreach(var i in p.Issues){Assert.InRange(i.Span.Start,0,source.Length);Assert.InRange(i.Span.Length,0,source.Length-i.Span.Start);}
  }

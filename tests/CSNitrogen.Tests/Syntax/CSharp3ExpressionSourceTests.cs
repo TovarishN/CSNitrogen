@@ -70,13 +70,13 @@ public class CSharp3ExpressionSourceTests
  public void Type_shapes_preserve_grammar_and_defer_named_type_identity(string type,bool accepted)
  {
   string source="unsafe class C{"+type+" field;}";using var p=CSharpParser.Parse(new(source,"CSharp3","type-source.cs",[]));
-  Assert.True(p.Accepted==accepted,type+" :: "+string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  Assert.True(p.Accepted==accepted,type+" :: "+string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
  }
  private static void Check(string expression,bool expected)
  {
   string source="/*𐐀*/unsafe class C{object M(){return "+expression+";}}";
   using var p=CSharpParser.Parse(new(source,"CSharp3","expression-source.cs",[]));
-  Assert.True(p.Accepted==expected,expression+" :: "+string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  Assert.True(p.Accepted==expected,expression+" :: "+string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
   foreach(int n in Enumerable.Range(0,p.Tree.NodeCount)){var s=p.Tree.Span(n);Assert.InRange(s.Start,0,source.Length);Assert.InRange(s.Length,0,source.Length-s.Start);}
   foreach(var i in p.Issues){Assert.InRange(i.Span.Start,0,source.Length);Assert.InRange(i.Span.Length,0,source.Length-i.Span.Start);}
  }

@@ -21,7 +21,7 @@ public class CSharp3ProductionTests
  public void Third_version_expressions_are_accepted_and_unavailable_in_the_second(string expression)
  {
   string source="class C{object value="+expression+";}";
-  using var third=CSharpParser.Parse(new(source,"CSharp3","third.cs",[]));Assert.True(third.Accepted,string.Join(";",third.Issues));Assert.False(third.ProfileComplete);
+  using var third=CSharpParser.Parse(new(source,"CSharp3","third.cs",[]));Assert.True(third.Accepted,string.Join(";",third.Issues));Assert.True(third.ProfileComplete);
   using var second=CSharpParser.Parse(new(source,"CSharp2","second.cs",[]));Assert.False(second.Accepted);Assert.True(second.ProfileComplete);
  }
  [Theory]
@@ -48,8 +48,8 @@ public class CSharp3ProductionTests
  public void Capabilities_require_their_explicit_baseline_bundles(string id)
  {var result=ProfileResolver.ResolveCustom("incomplete",[id]);Assert.Null(result.Profile);Assert.Contains(result.Issues,i=>i.Code=="missing-requirement");}
  [Theory][InlineData("CSharp3")][InlineData("CSharp7_3")][InlineData("CSharp14")]
- public void Later_factories_include_the_third_version_modules_but_remain_partial(string profile)
- {using var parsed=CSharpParser.Parse(new("class C{object x=a=>a;}",profile,"later.cs",[]));Assert.True(parsed.Accepted);Assert.False(parsed.ProfileComplete);} [Fact]public void Lambda_parameters_and_body_have_typed_owners_and_authored_spans()
+ public void Third_and_later_factories_have_explicit_version_specific_completeness(string profile)
+ {using var parsed=CSharpParser.Parse(new("class C{object x=a=>a;}",profile,"later.cs",[]));Assert.True(parsed.Accepted);Assert.Equal(profile=="CSharp3",parsed.ProfileComplete);} [Fact]public void Lambda_parameters_and_body_have_typed_owners_and_authored_spans()
  {
   const string source="class C{object value=(ref int x,out int y)=>{y=x;};}";
   var language=P.CSharp3Composition.CreateBuilder().Build();using var parsed=language.Parse(source,P.CSharp3Composition.Start);Assert.True(parsed.Success&&!parsed.HasErrors);

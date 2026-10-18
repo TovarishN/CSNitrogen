@@ -21,7 +21,7 @@ public class CSharp3ExternalCorpusTests
   var reference=CSharpSyntaxTree.ParseText(source,new CSharpParseOptions(LanguageVersion.CSharp3));
   Assert.DoesNotContain(reference.GetDiagnostics(),d=>d.Severity==DiagnosticSeverity.Error);
   using var third=CSharpParser.Parse(new(source,"CSharp3",name,[]));
-  Assert.True(third.Accepted,string.Join(";",third.Issues));Assert.False(third.ProfileComplete);
+  Assert.True(third.Accepted,string.Join(";",third.Issues));Assert.True(third.ProfileComplete);
   Assert.Equal(source,third.OriginalText);
  }
  [Fact]public void Predeclared_selection_and_license_notices_are_retained()

@@ -16,7 +16,7 @@ public class CSharp3GenericMemberDecisionTests
   foreach(string profile in new[]{"CSharp2","CSharp3"})
   {
    using var parsed=CSharpParser.Parse(new(source,profile,"generic-member.cs",[]));
-   Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.Equal(profile=="CSharp2",parsed.ProfileComplete);
+   Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);
    int node=Assert.Single(Enumerable.Range(0,parsed.Tree.NodeCount),n=>parsed.Tree.Language!.GetKindName(parsed.Tree.Kind(n))==kind);
    var span=parsed.Tree.Span(node);Assert.Equal(spelling,source.Substring(span.Start,span.Length));
   }

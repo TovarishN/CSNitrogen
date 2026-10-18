@@ -7,7 +7,7 @@ public class CSharp3InheritedAlternativeTests
  {using var s=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen."+name)!;return JsonNode.Parse(s)!.AsObject();}
  private static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  [Fact]public void Every_explicit_inheritance_marker_has_exact_earlier_source_links()
- {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  [Theory]
  [InlineData("B:8835:class-modifier/1","B:8694:class-modifier")]
  [InlineData("B:8836:struct-modifier/1","B:8775:struct-modifier")]
@@ -40,7 +40,7 @@ public class CSharp3InheritedAlternativeTests
  [InlineData("missing-parent","inherited source set")][InlineData("duplicate-parent","inherited source set")]
  [InlineData("future-parent","inherited source set")][InlineData("other-family-parent","inherited source set")]
  [InlineData("placeholder-parent","inherited source set")][InlineData("changed-status","link status")]
- [InlineData("wrong-count","evidence metadata")][InlineData("premature-admission","premature admission")]
+ [InlineData("wrong-count","evidence metadata")][InlineData("review-regression","review status")]
  public void Inheritance_mutations_fail_on_their_source_invariant(string change,string expectedError)
  {
   var index=Read("csharp3-standard-index.json");var map=Read("csharp3-standard-crosswalk.json");var rows=map["productions"]!.AsArray();
@@ -56,9 +56,9 @@ public class CSharp3InheritedAlternativeTests
    case "placeholder-parent":parents[0]="B:8835:class-modifier/1";break;
    case "changed-status":link["status"]="verified";break;
    case "wrong-count":map["sourceInheritanceEvidence"]!["referenceCount"]=0;break;
-   case "premature-admission":row["status"]="verified";break;
+   case "review-regression":row["status"]="candidate";break;
   }
-  Assert.Contains(expectedError,Evaluate(index,map));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.Contains(expectedError,Evaluate(index,map));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  internal static IReadOnlyList<string> Evaluate(JsonObject index,JsonObject map)
  {
@@ -71,7 +71,7 @@ public class CSharp3InheritedAlternativeTests
    var actual=new List<string>();int references=0;
    foreach(var row in map["productions"]!.AsArray())
    {
-    if(Text(row!,"status")!="candidate"||Text(row!,"reviewStatus")!="pending")errors.Add("premature admission");
+    if(Text(row!,"status")!="verified"||Text(row!,"reviewStatus")!="verified")errors.Add("review status");
     string id=Text(row!,"standardId");var heading=rows.Single(r=>Text(r!,"id")==id)!;
     foreach(var link in row!["inheritedSourceAlternatives"]?.AsArray()??new JsonArray())
     {

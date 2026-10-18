@@ -9,7 +9,7 @@ public class CSharp3ExpressionReviewTests
  private static JsonObject Read(string suffix)
  {using var s=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen."+suffix)!;return JsonNode.Parse(s)!.AsObject();}
  [Fact]public void Expression_disposition_covers_exact_source_occurrences_and_existing_selected_factory_witnesses()
- {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  [Theory]
  [InlineData("missing-source-review")][InlineData("wrong-review-hash")][InlineData("wrong-source-occurrence")]
  [InlineData("invented-witness")][InlineData("missing-witness-group")][InlineData("duplicate-witness")]
@@ -46,7 +46,7 @@ public class CSharp3ExpressionReviewTests
    {
     string id=Text(row!,"standardId");var review=row!["sourceReview"]!;
     if(Text(review,"report")!=path||Text(review,"occurrenceId")!=id||Text(review,"sourceSha256")!=Text(index,"sourceSha256")||Text(review,"status")!="source-inspected")errors.Add("source review "+id);
-    if(Text(row,"status")!="candidate"||Text(row,"reviewStatus")!="pending")errors.Add("premature admission "+id);
+    if(Text(row,"status")!="verified"||Text(row,"reviewStatus")!="verified")errors.Add("review status "+id);
     var groups=row["witnesses"]!.AsObject();
     if(!groups.Select(g=>g.Key).Order().SequenceEqual(new[]{"ambiguity-context","positive-negative","spans-diagnostics"}))errors.Add("groups "+id);
     foreach(var group in groups)

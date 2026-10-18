@@ -15,7 +15,7 @@ public class CSharp3LexicalProductionEvidenceTests
  static JsonObject Read(string name){using var stream=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen."+name)!;return JsonNode.Parse(stream)!.AsObject();}
  static byte[] Bytes()=>File.ReadAllBytes(Path.Combine(AppContext.BaseDirectory,"Corpus/CSharp3/lexical-production-cases.json"));
  [Fact]public void Lexical_production_evidence_links_every_exact_alternative_without_admission()
- {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),Bytes()));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),Bytes()));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  static List<string> Evaluate(JsonObject index,JsonObject map,byte[] bytes)
  {
   var errors=new List<string>();
@@ -54,7 +54,7 @@ public class CSharp3LexicalProductionEvidenceTests
    var linked=new List<string>();
    foreach(var row in map["productions"]!.AsArray())
    {
-    if(Text(row!,"status")!="candidate"||Text(row!,"reviewStatus")!="pending")errors.Add("premature admission");
+    if(Text(row!,"status")!="verified"||Text(row!,"reviewStatus")!="verified")errors.Add("review status");
     foreach(var link in row!["lexicalProductionAlternativeWitnesses"]?.AsArray()??new JsonArray())
     {string id=Text(link!,"alternativeId");linked.Add(id);if(!expected.ContainsKey(id)||!id.StartsWith(Text(row,"standardId")+"/",StringComparison.Ordinal)||Text(link!,"caseId")!=id)errors.Add("case link");}
    }
@@ -67,7 +67,7 @@ public class CSharp3LexicalProductionEvidenceTests
  [InlineData("missing-case","case set")][InlineData("duplicate-case","case set")][InlineData("alternative-hash","alternative identity")]
  [InlineData("anchor","anchor spelling/range")][InlineData("class-anchor","class anchors")][InlineData("disposition","disposition")]
  [InlineData("pragma","pragma boundary")][InlineData("accepted-contrast","accepted contrast boundary")][InlineData("error","diagnostic boundary")]
- [InlineData("missing-link","link set")][InlineData("wrong-link","case link")][InlineData("metadata","evidence metadata")][InlineData("method","witness metadata")][InlineData("admission","premature admission")]
+ [InlineData("missing-link","link set")][InlineData("wrong-link","case link")][InlineData("metadata","evidence metadata")][InlineData("method","witness metadata")][InlineData("review-regression","review status")]
  public void Mutations_reject_the_specific_broken_lexical_obligation(string mutation,string error)
  {
   var index=Read("csharp3-standard-index.json");var map=Read("csharp3-standard-crosswalk.json");var bytes=Bytes();var fixture=JsonNode.Parse(bytes)!;var cases=fixture["cases"]!.AsArray();var first=cases[0]!;
@@ -84,7 +84,7 @@ public class CSharp3LexicalProductionEvidenceTests
    case "wrong-link":row["lexicalProductionAlternativeWitnesses"]![0]!["caseId"]="invented";break;
    case "metadata":map["lexicalProductionAlternativeEvidence"]!["sha256"]="wrong";break;
    case "method":map["lexicalProductionAlternativeEvidence"]!["witness"]!["method"]="invented";break;
-   case "admission":row["status"]="verified";break;
+   case "review-regression":row["status"]="candidate";break;
   }
   if(new[]{"missing-case","duplicate-case","alternative-hash","anchor","class-anchor","disposition","pragma","accepted-contrast","error"}.Contains(mutation))bytes=Encoding.UTF8.GetBytes(fixture.ToJsonString());
   Assert.Contains(error,Evaluate(index,map,bytes));

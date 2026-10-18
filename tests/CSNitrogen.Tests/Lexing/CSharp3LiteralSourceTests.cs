@@ -17,7 +17,7 @@ public class CSharp3LiteralSourceTests
  {
   string source=category==nameof(LexicalTests.Identifier_fragments)?"class "+spelling+"{}":"class C{object value="+spelling+";}";
   using var parsed=CSharpParser.Parse(new(source,"CSharp3","literal.cs",[]));
-  Assert.True(parsed.Accepted==accepted,source+" :: "+string.Join(";",parsed.Issues));Assert.False(parsed.ProfileComplete);
+  Assert.True(parsed.Accepted==accepted,source+" :: "+string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);
   if(accepted)
   {
    int start=category==nameof(LexicalTests.Identifier_fragments)?6:21;

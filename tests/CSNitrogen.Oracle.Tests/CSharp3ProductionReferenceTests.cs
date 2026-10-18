@@ -29,7 +29,7 @@ public class CSharp3ProductionReferenceTests
  {
   var observation=Oracle.Observe(source,LanguageVersion.CSharp3);
   Assert.DoesNotContain(observation.SyntaxDiagnostics,d=>d.Severity==DiagnosticSeverity.Error);
-  using var parsed=CSharpParser.Parse(new(source,"CSharp3","positive.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.False(parsed.ProfileComplete);
+  using var parsed=CSharpParser.Parse(new(source,"CSharp3","positive.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);
  }
  [Fact]public void Historical_raw_query_reservation_agrees_with_Roslyn_syntax_rejection()
  {

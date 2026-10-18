@@ -22,7 +22,7 @@ public class CSharp3AlternativeWitnessTests
    foreach(var a in row["alternatives"]!.AsArray())
    {Assert.Equal(++ordinal,a!["ordinal"]!.GetValue<int>());Assert.Equal(id+"/"+ordinal,a["id"]!.GetValue<string>());Assert.Matches("^[a-f0-9]{64}$",a["sourceAlternativeSha256"]!.GetValue<string>());}
   }
-  Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  private const string AlternativeIdentity="7d4761a0a218673210b624e57baf88f738b1319f53bd67cf2eeddc421ae3c6f2";
  private const string FixtureSha="1f57a55da4a3e8e6deb9d879137c5f169eb180a23b9bb65930d7fda44615425c";
@@ -31,7 +31,7 @@ public class CSharp3AlternativeWitnessTests
  private const string WitnessMethod="Every_finite_one_of_alternative_has_positive_negative_and_original_range_witnesses";
  private static byte[] CasesBytes()=>File.ReadAllBytes(Path.Combine(AppContext.BaseDirectory,"Corpus/CSharp3/finite-alternative-cases.json"));
  [Fact]public void Finite_alternative_evidence_matches_exact_source_tokens_and_executable_case_links()
- {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),CasesBytes()));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),CasesBytes()));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  [Fact]public void Long_source_continuations_and_repeated_lists_keep_independent_alternative_structure()
  {
   var rows=Read("csharp3-standard-index.json")["productions"]!.AsArray();
@@ -44,7 +44,7 @@ public class CSharp3AlternativeWitnessTests
  [Theory]
  [InlineData("missing-alternative","source alternative identity")][InlineData("duplicate-alternative","source alternative identity")][InlineData("changed-alternative","source alternative identity")][InlineData("changed-kind","source alternative identity")][InlineData("changed-ordinal","alternative ordinal")]
  [InlineData("missing-finite-case","finite case set")][InlineData("duplicate-finite-case","finite case set")][InlineData("changed-token","token alternative")][InlineData("bad-range","fixture spelling/range")]
- [InlineData("missing-case-link","finite link set")][InlineData("wrong-case-link","case link")][InlineData("wrong-fixture-hash","evidence metadata")][InlineData("invented-witness","witness metadata")][InlineData("premature-admission","premature admission")]
+ [InlineData("missing-case-link","finite link set")][InlineData("wrong-case-link","case link")][InlineData("wrong-fixture-hash","evidence metadata")][InlineData("invented-witness","witness metadata")][InlineData("review-regression","review status")]
  public void Alternative_and_fixture_mutations_fail_closed(string change,string expectedError)
  {
   var index=Read("csharp3-standard-index.json");var map=Read("csharp3-standard-crosswalk.json");var bytes=CasesBytes();var fixture=JsonNode.Parse(bytes)!;
@@ -64,10 +64,10 @@ public class CSharp3AlternativeWitnessTests
    case "wrong-case-link":keyword["finiteAlternativeWitnesses"]![0]!["caseId"]="invented";break;
    case "wrong-fixture-hash":map["finiteAlternativeEvidence"]!["sha256"]=new string('0',64);break;
    case "invented-witness":map["finiteAlternativeEvidence"]!["witness"]!["method"]="Invented";break;
-   case "premature-admission":rows[0]!["status"]="verified";break;
+   case "review-regression":rows[0]!["status"]="candidate";break;
   }
   if(change is "missing-finite-case" or "duplicate-finite-case" or "changed-token" or "bad-range")bytes=Encoding.UTF8.GetBytes(fixture.ToJsonString());
-  Assert.Contains(expectedError,Evaluate(index,map,bytes));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.Contains(expectedError,Evaluate(index,map,bytes));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  private static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  private static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
@@ -106,7 +106,7 @@ public class CSharp3AlternativeWitnessTests
    var linked=new List<string>();
    foreach(var row in map["productions"]!.AsArray())
    {
-    if(Text(row!,"status")!="candidate"||Text(row!,"reviewStatus")!="pending")errors.Add("premature admission");
+    if(Text(row!,"status")!="verified"||Text(row!,"reviewStatus")!="verified")errors.Add("review status");
     foreach(var link in row!["finiteAlternativeWitnesses"]?.AsArray()??new JsonArray())
     {
      string id=Text(link!,"alternativeId");linked.Add(id);

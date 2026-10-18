@@ -1,4 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup><ItemGroup>
+<EmbeddedResource Include="../../docs/coverage/csharp3-coverage-gate.json" LogicalName="CSNitrogen.csharp3-coverage-gate.json"/>
+<EmbeddedResource Include="../../tests/Corpus/CSharp3/*-production-cases.json;../../tests/Corpus/CSharp3/finite-alternative-cases.json"><LogicalName>CSNitrogen.csharp3-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-reference-policy.json" LogicalName="CSNitrogen.csharp3-reference-policy.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp3-standard-index.json" LogicalName="CSNitrogen.csharp3-standard-index.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp3-standard-crosswalk.json" LogicalName="CSNitrogen.csharp3-standard-crosswalk.json"/>

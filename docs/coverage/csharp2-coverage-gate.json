@@ -535,7 +535,7 @@
     "CSNitrogen.source.Parsing/CSharpAttributePolicy.cs": "b47cf8fccfaa5457d8b5b2772ac98274517aa3b166e29f89d3034fdef4a154f2",
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "10adcc90a05d70b3f54ade628f802458d8c4777fe56d07a5cc120a6d27b342f5",
     "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "e3b772f56c327bfea84868396c4e09664e4c3b230d2c75b84fe9f3a2f84d3778",
-    "CSNitrogen.source.Parsing/CSharpParser.cs": "27bc462f41ac298f5a7d24adee720c882c33ed456220671f20360bbdf49ba5ed",
+    "CSNitrogen.source.Parsing/CSharpParser.cs": "91f068f45fca75694d70aa5c2a9aa9df21bb3eb40c116603ab24abe6291d134c",
     "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "d465f0590e2f7e14337584ef3440d128dd27a892fc0623784958dbb3795fdeca",
     "CSNitrogen.source.Parsing/CSharpTrivia.cs": "13c99794aebf55f540edf908a0b75b585fe2795d1ecb0605a004865a9f83fd5b",
     "CSNitrogen.source.Parsing/HistoricalUnicodeTables.g.cs": "8d5796736ed15c03e8eb7949123b88771af58c39b4ee70bf0ff77f03c043165f",
@@ -549,12 +549,13 @@
     "CSNitrogen.source.Preprocessing/DirectiveScanner.cs": "73d75833a22cd44dc5d709d6c89b414929762302c3a3615969dd888347c9ce27",
     "CSNitrogen.source.Preprocessing/PreprocessRequest.cs": "c08dd55af7403cd37d269b6000489137878630db6fcaf9e26e827131763e9862",
     "CSNitrogen.source.Preprocessing/PreprocessResult.cs": "c49b1b4e072d8a60f91fada692baf0f0ee554e142bcc00cb43a74f2f2d04d71c",
-    "CSNitrogen.source.Profiles/CoverageContract.cs": "ad826f1eb163ca3b0f440b4a8132c7c32777de94e163acd0382822071cd7b3d4",
+    "CSNitrogen.source.Profiles/CSharp3CoverageContract.cs": "a72ae5d2ccc10cf445a7c3d4f764ea34a0d585a3aa8880c082c553a9c7334698",
+    "CSNitrogen.source.Profiles/CoverageContract.cs": "2e5acdd59a995996857b7366465776352dd7ec14f3fe9df5fa276df89f25ea77",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
     "CSNitrogen.source.Profiles/CoverageMapping.cs": "892a0a337331bf30c2e288a4aaa27edf3668fabc79fdd0a4af10640ad569ae17",
-    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "4b41f544026e131321951833ac099d1863927ca55d63696e0515d8164026d2f9",
+    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "1f54df448c9bf0517c2c7f36ef4a08b58ea8a3817074d6152b9988f005a1aeeb",
     "CSNitrogen.source.Profiles/LanguageProfile.cs": "83d4fc689ee2d24ed6a6e3bf918c030d9b1973f098523b6dedad4eb62ddc3bac",
-    "CSNitrogen.source.Profiles/ProfileResolver.cs": "ab08c8d93b10aff3fd390641aa7f6142280205b397a92e466a391a0b0f238e00"
+    "CSNitrogen.source.Profiles/ProfileResolver.cs": "9b99743d31f7a8b75c47397c55546b07dcef2efdf6d4555d75a3b4858beb6423"
   },
   "scope": "Normalized source syntax and declared policies; see csharp2-conformance-review.md for semantic exclusions.",
   "evidence": {

@@ -1,5 +1,7 @@
 # CSharp3 lexical source disposition
 
+Historical source-inspection report: candidate/pending statements below describe its original audit stage. Final reviewed normalized syntax admission is recorded in csharp3-reviewed-admission-evidence.md and the separate pinned coverage gate.
+
 Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: §2.1–2.5 and all100 lexical Appendix B occurrences (B8394–8503), interpreted with controlling prose and the approved Unicode4 authority. This is a source-domain disposition with finite selected-factory evidence. CSharp3 whole-source admission remains pending; no row acquires overall verified status from this report.
 
 ## Source input, trivia and tokens

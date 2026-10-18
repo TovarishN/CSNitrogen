@@ -1,5 +1,7 @@
 # CSharp3 statement and iterator source disposition
 
+Historical source-inspection report: candidate/pending statements below describe its original audit stage. Final reviewed normalized syntax admission is recorded in csharp3-reviewed-admission-evidence.md and the separate pinned coverage gate.
+
 Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all52 Appendix B statement occurrences B8624–8675, controlling §8 and iterator declaration restriction §10.14/main6617. Unsafe statements/stack allocation remain in the separate unsafe domain. This is source inspection with finite selected-CSharp3 evidence; overall crosswalk entries stay candidate/pending and CSharp3 stays partial.
 
 ## Statement categories, declarations and expressions: B8624–8640

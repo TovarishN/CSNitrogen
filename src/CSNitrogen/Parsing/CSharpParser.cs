@@ -50,6 +50,18 @@ public static unsafe class CSharpParser
     internal static bool MatchesSecondFactory(IReadOnlyList<string> modules)
         =>SecondFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
             && SecondFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
+    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> ThirdFactoryContract=new(()=>
+    {
+        var factory=Compositions["CSharp3"];var language=factory.Language.Value;
+        using var parsed=language.Parse("",factory.Start);
+        bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
+            && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
+            && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
+        return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
+    });
+    internal static bool MatchesThirdFactory(IReadOnlyList<string> modules)
+        =>ThirdFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
+            && ThirdFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
     public static ParseDocument Parse(ParseRequest request)
     {
         ArgumentNullException.ThrowIfNull(request);

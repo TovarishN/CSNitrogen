@@ -16,9 +16,9 @@
   },
   "extraction": {
     "method": "Local macOS textutil -convert txt",
-    "status": "Reproducible macOS textutil Appendix B index; 455 occurrence identities, unreviewed; no portable extraction claim"
+    "status": "Reproducible macOS textutil Appendix B index:455 source occurrences and1175 alternatives; reviewed normalized syntax snapshot, no portable extraction claim"
   },
-  "status": "pending",
+  "status": "verified",
   "unicode": {
     "status": "approved",
     "policy": "unicode-4.0-scalar",
@@ -27,7 +27,7 @@
     "decision": "../superpowers/specs/2026-10-18-csharp3-unicode-contract-decision.md",
     "authority": "User-approved continuity of reviewed CSharp2 Unicode4 scalar tables; DOC Unicode3 reference treated as informational. CSharp3 lexical productions retain separate review."
   },
-  "completion": "Bounded CSharp3 syntax is implemented; historical source/crosswalk/admission work remains pending. Later/custom profiles remain partial.",
+  "completion": "Reviewed normalized Version3 syntax admission requires the pinned source/factory/policy/evidence ledger. Binding, inference, semantic compilation and runtime behavior remain excluded; later/custom profiles remain partial.",
   "sourceCorrections": {
     "status": "approved",
     "decision": "../superpowers/specs/2026-10-18-csharp3-generic-member-source-decision.md",
