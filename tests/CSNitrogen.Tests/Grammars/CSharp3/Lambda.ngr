@@ -1,0 +1,14 @@
+language CSharp3LambdaProbe { start CSharp.CompilationUnits.CompilationUnit; namespace CSNitrogen.Tests.CSharp3Probes; grammars "Base.ngr"; }
+syntax module Probe.CSharp3Lambda
+{
+ syntax EmptySignature = "(" ")";
+ syntax SingleSignature = Name:CSharp.Lexical.Identifier;
+ syntax ImplicitSignature = "(" Items:(CSharp.Lexical.Identifier; ",")+ ")";
+ syntax ExplicitSignature = "(" Items:(CSharp.AnonymousMethods.AnonymousParameter; ",")+ ")";
+ syntax Signature = EmptySignature / ExplicitSignature / ImplicitSignature / SingleSignature;
+ syntax Body = CSharp.Statements.Block / CSharp.Expressions.Expression;
+ extend syntax CSharp.Expressions.Expression
+ {
+  | LambdaExpression = Parameters:Signature "=>" Body:Body precedence 10 right
+ }
+}

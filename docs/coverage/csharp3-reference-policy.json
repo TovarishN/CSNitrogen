@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp3",
+  "primary": {
+    "title": "Microsoft C# Language Specification Version 3.0",
+    "url": "https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc",
+    "sha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+    "bytes": 2384896,
+    "format": "Word binary DOC",
+    "discovery": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language#c-language-specification"
+  },
+  "oracle": {
+    "package": "Microsoft.CodeAnalysis.CSharp",
+    "version": "5.0.0",
+    "languageVersion": "CSharp3"
+  },
+  "extraction": {
+    "method": "Local macOS textutil -convert txt",
+    "status": "inspection only; no portable source index or complete coverage claim"
+  },
+  "status": "pending",
+  "unicode": {
+    "status": "pending historical source review; current CSharp3 partial profile policy unchanged"
+  },
+  "completion": "Feasibility probes do not implement a named production profile or admit CSharp3 completeness."
+}

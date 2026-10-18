@@ -1,0 +1,1 @@
+language CSharp3AllProbe { start CSharp.CompilationUnits.CompilationUnit; namespace CSNitrogen.Tests.CSharp3Probes; grammars "Lambda.ngr", "Initializers.ngr", "Queries.ngr"; }
