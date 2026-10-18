@@ -285,6 +285,7 @@
         "rule:ParameterArray",
         "rule:ParameterFragment",
         "rule:ParameterList",
+        "rule:ParameterReceiver",
         "rule:Parameters",
         "rule:PositionalAttributeArgument"
       ],
@@ -663,6 +664,47 @@
           "method": "Structural_and_definition_errors_are_reported"
         }
       ]
+    },
+    {
+      "source": "Parsing/CSharp3ExpressionPolicy.cs",
+      "codes": [
+        "CSN2030",
+        "CSN2031"
+      ],
+      "status": "verified",
+      "reference": "https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs",
+          "method": "Third_version_expressions_are_accepted_and_unavailable_in_the_second"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs",
+          "method": "Invalid_expression_neighbors_are_rejected"
+        }
+      ]
+    },
+    {
+      "source": "Parsing/CSharp3DeclarationPolicy.cs",
+      "codes": [
+        "CSN2032"
+      ],
+      "status": "verified",
+      "reference": "https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs",
+          "method": "Third_version_declarations_have_a_preceding_version_boundary"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs",
+          "method": "Historical_declaration_context_restrictions_are_enforced"
+        }
+      ]
     }
   ],
   "policyGroups": {
@@ -685,7 +727,9 @@
       "Parsing/CSharpAttributePolicy.cs",
       "Parsing/CSharpDeclarationPolicy.cs",
       "Parsing/CSharpCompilationUnitPolicy.cs",
-      "Parsing/UnicodePolicy.cs"
+      "Parsing/UnicodePolicy.cs",
+      "Parsing/CSharp3ExpressionPolicy.cs",
+      "Parsing/CSharp3DeclarationPolicy.cs"
     ]
   },
   "semanticExclusions": [

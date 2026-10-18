@@ -9,10 +9,12 @@ public static class CSharpSyntaxPolicy
     {
         ArgumentNullException.ThrowIfNull(tree);version??=new(1,0);var issues=new List<ParseIssue>();
         issues.AddRange(UnicodePolicy.Check(tree,version));
+        issues.AddRange(CSharp3ExpressionPolicy.Check(tree,version));
+        issues.AddRange(CSharp3DeclarationPolicy.Check(tree,version));
         issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
-        if(version.Major==2)CheckIterators(tree,issues);
+        if(version.Major is 2 or 3)CheckIterators(tree,issues);
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
         string Text(int n){var span=tree.Span(n);return tree.Text.Substring(span.Start,span.Length);}
         void Later(int n,int minimum,string feature)=>issues.Add(new("CSN2003",
@@ -39,7 +41,7 @@ public static class CSharpSyntaxPolicy
                 bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "ThisExpression" or
                     "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or
                     "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
-                    "ObjectCreationExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
+                    "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
                     "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or
                     "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
@@ -84,7 +86,7 @@ public static class CSharpSyntaxPolicy
             if(kind=="ElementExpression" && tree.ChildCount(n)>0)
             {
                 var target=SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target;
-                if(Kind(target.Index) is "SizedArrayExpression" or "InitializedArrayExpression")
+                if(Kind(target.Index) is "SizedArrayExpression" or "InitializedArrayExpression" or "ImplicitArrayExpression")
                     issues.Add(new("CSN2005","Direct array creation requires parentheses before element access.",tree.Span(n),IssueCategory.Syntax));
             }
             if(kind=="SwitchStatement" && tree.ChildCount(n)>5)
@@ -139,12 +141,12 @@ public static class CSharpSyntaxPolicy
                         foreach(var modifier in member.Modifiers)abstractOrExtern |= Text(modifier.Index) is "abstract" or "extern";
                         break;
                     }
-                    if(!abstractOrExtern)Later(n,3,"Automatically implemented properties");
+                    if(!abstractOrExtern && version.Major<3)Later(n,3,"Automatically implemented properties");
                 }
             }
             if(kind!="StatementExpression"||tree.ChildCount(n)==0)continue;
             int value=tree.Child(n,0);string expression=Kind(value);
-            bool allowed=expression is "InvocationExpression" or "ObjectCreationExpression" or "AssignmentExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression";
+            bool allowed=expression is "InvocationExpression" or "InitializedObjectExpression" or "ObjectCreationExpression" or "AssignmentExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression";
             if(expression=="UnaryExpression")
             {string text=Text(value).TrimStart();allowed=text.StartsWith("++",StringComparison.Ordinal)||text.StartsWith("--",StringComparison.Ordinal);}
             if(!allowed)issues.Add(new("CSN2001","Only invocation, object creation, assignment or increment/decrement is a statement expression.",tree.Span(value),IssueCategory.Syntax));
@@ -158,7 +160,7 @@ public static class CSharpSyntaxPolicy
         string Kind(int node)=>tree.Language!.GetKindName(tree.Kind(node));
         string Text(int node){var span=tree.Span(node);return tree.Text.Substring(span.Start,span.Length);}
         bool Boundary(int node)=>Kind(node) is "MethodDeclaration" or "OperatorDeclaration" or "ConversionDeclaration" or
-            "Accessor" or "EventAccessor" or "ConstructorDeclaration" or "DestructorDeclaration" or "AnonymousMethodExpression";
+            "Accessor" or "EventAccessor" or "ConstructorDeclaration" or "DestructorDeclaration" or "AnonymousMethodExpression" or "LambdaExpression";
         int Owner(int node)
         {for(int p=tree.Parent(node);p>=0;p=tree.Parent(p))if(Boundary(p))return p;return -1;}
         void Error(int node,string message)=>issues.Add(new("CSN2022",message,tree.Span(node),IssueCategory.Syntax));
@@ -207,7 +209,7 @@ public static class CSharpSyntaxPolicy
         }
     }
     private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or "ThisExpression" or
-        "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or
+        "BaseMemberExpression" or "BaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
         "InvocationExpression" or "ElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or

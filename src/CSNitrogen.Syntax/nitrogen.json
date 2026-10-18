@@ -66,7 +66,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -92,7 +98,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -118,7 +130,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -144,7 +162,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -170,7 +194,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -196,7 +226,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -222,7 +258,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -248,7 +290,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -274,7 +322,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -300,7 +354,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -326,7 +386,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -352,7 +418,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -378,7 +450,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -404,7 +482,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {
@@ -430,7 +514,13 @@
         "Grammars/DeclarationForms.ngr",
         "Grammars/AliasQualification.ngr",
         "Grammars/GenericUnsafe.ngr",
-        "Grammars/FixedBuffers.ngr"
+        "Grammars/FixedBuffers.ngr",
+        "Grammars/Lambdas.ngr",
+        "Grammars/Queries.ngr",
+        "Grammars/ObjectInitializers.ngr",
+        "Grammars/AnonymousTypes.ngr",
+        "Grammars/ImplicitArrays.ngr",
+        "Grammars/ExtensionReceivers.ngr"
       ]
     },
     {

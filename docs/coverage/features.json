@@ -2465,10 +2465,24 @@
       "inventoryLine": 188,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/AnonymousTypes.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.anonymous-types"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.auto-implemented-properties",
@@ -2481,9 +2495,21 @@
       "requires": [],
       "conflicts": [],
       "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.auto-properties"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.expression-trees",
@@ -2510,10 +2536,24 @@
       "inventoryLine": 189,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ExtensionReceivers.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.extension-receivers"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.implicitly-typed-local-variables",
@@ -2540,10 +2580,24 @@
       "inventoryLine": 191,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/Lambdas.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.lambdas"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.lock-statement",
@@ -2558,7 +2612,16 @@
       "grammars": [],
       "policies": [],
       "fixtures": [],
-      "status": "unimplemented"
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "baseline.statements"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      },
+      "notes": "Historical inventory duplicate: lock is CSharp1 syntax, not a CSharp3 addition."
     },
     {
       "id": "csharp-3.0.object-and-collection-initializers",
@@ -2570,10 +2633,24 @@
       "inventoryLine": 186,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ObjectInitializers.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.object-initializers"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.partial-methods",
@@ -2586,9 +2663,21 @@
       "requires": [],
       "conflicts": [],
       "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.partial-methods"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-3.0.query-expressions-a-k-a-linq-language-integrated-query",
@@ -2600,10 +2689,24 @@
       "inventoryLine": 190,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/Queries.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.queries"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-4.0.co-and-contra-variance-for-generic-delegates-and-interfaces",
@@ -4167,6 +4270,35 @@
           "generated-syntax-context-checks"
         ]
       }
+    },
+    {
+      "id": "csharp-3.0.implicitly-typed-array-creation",
+      "title": "Implicitly typed array creation",
+      "introduced": "3.0",
+      "classification": "syntax-or-policy",
+      "reviewed": false,
+      "reference": "https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc",
+      "requires": [],
+      "conflicts": [],
+      "grammars": [
+        "Grammars/ImplicitArrays.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp3.implicit-arrays"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      },
+      "notes": "Source-only addition absent from imported release inventory; historical specification 7.5.10.4."
     }
   ]
 }
