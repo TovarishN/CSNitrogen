@@ -57,7 +57,7 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/GlobalTargetsThird.ngr",
         "Grammars/Generics.ngr",
         "Grammars/NullableValues.ngr",
         "Grammars/AnonymousMethods.ngr",
@@ -72,7 +72,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -104,7 +105,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -136,7 +138,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -168,7 +171,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -200,7 +204,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -232,7 +237,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -264,7 +270,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -296,7 +303,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -328,7 +336,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -360,7 +369,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -392,7 +402,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -424,7 +435,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -456,7 +468,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -488,7 +501,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {
@@ -520,7 +534,8 @@
         "Grammars/ObjectInitializers.ngr",
         "Grammars/AnonymousTypes.ngr",
         "Grammars/ImplicitArrays.ngr",
-        "Grammars/ExtensionReceivers.ngr"
+        "Grammars/ExtensionReceivers.ngr",
+        "Grammars/GenericFollowersThird.ngr"
       ]
     },
     {

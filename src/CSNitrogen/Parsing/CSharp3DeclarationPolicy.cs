@@ -9,11 +9,12 @@ internal static class CSharp3DeclarationPolicy
   var issues=new List<ParseIssue>();if(version.Major<3)return issues;
   string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
   string Text(int n){var s=tree.Span(n);return tree.Text.Substring(s.Start,s.Length);}
+  string ModifierName(int n)=>UnicodePolicy.TryNormalize(Text(n),version,true,out string name)?name:Text(n);
   int Ancestor(int n,params string[] names)
   {for(int p=tree.Parent(n);p>=0;p=tree.Parent(p))if(names.Contains(Kind(p),StringComparer.Ordinal))return p;return -1;}
   void Error(int n,string message)=>issues.Add(new("CSN2032",message,tree.Span(n),IssueCategory.Syntax));
   bool Has(SyntaxList<ModifierNode> modifiers,string value)
-  {foreach(var m in modifiers)if(Text(m.Index)==value)return true;return false;}
+  {foreach(var m in modifiers)if(ModifierName(m.Index)==value)return true;return false;}
   for(int n=0;n<tree.NodeCount;n++)
   {
    string kind=Kind(n);
@@ -41,9 +42,9 @@ internal static class CSharp3DeclarationPolicy
     var member=SyntaxView.Cast<MemberDeclarationNode>(tree,n);if(!Has(member.Modifiers,"partial"))continue;
     if(Kind(member.Body.Index)!="MethodDeclaration")continue; // Shared declaration policy rejects other owners.
     var method=SyntaxView.Cast<MethodDeclarationNode>(tree,member.Body.Index);
-    bool valid=Text(method.Return.Index)=="void"&&member.Modifiers.Count>0&&Text(member.Modifiers[member.Modifiers.Count-1].Index)=="partial";
-    foreach(var m in member.Modifiers)if(Text(m.Index) is not ("partial" or "static" or "unsafe"))valid=false;
-    int partialCount=0;foreach(var m in member.Modifiers)if(Text(m.Index)=="partial")partialCount++;if(partialCount!=1)valid=false;
+    bool valid=Text(method.Return.Index)=="void"&&member.Modifiers.Count>0&&ModifierName(member.Modifiers[member.Modifiers.Count-1].Index)=="partial";
+    foreach(var m in member.Modifiers)if(ModifierName(m.Index) is not ("partial" or "static" or "unsafe"))valid=false;
+    int partialCount=0;foreach(var m in member.Modifiers)if(ModifierName(m.Index)=="partial")partialCount++;if(partialCount!=1)valid=false;
     int owner=Ancestor(n,"ClassDeclaration","StructDeclaration","InterfaceDeclaration");
     valid &= owner>=0 && Kind(owner) is "ClassDeclaration" or "StructDeclaration";
     if(owner>=0 && Kind(owner)=="ClassDeclaration")valid &= Has(SyntaxView.Cast<ClassDeclarationNode>(tree,owner).Modifiers,"partial");

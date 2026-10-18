@@ -66,7 +66,7 @@ public class ProfileResolverTests
    string name=language.GetProperty("name").GetString()!;if(name=="CSharp1Safe")continue;
    var profile=ProfileResolver.Resolve(name).Profile!;
    Assert.Equal(language.GetProperty("grammars").EnumerateArray().Select(g=>g.GetString()!).Order(StringComparer.Ordinal),profile.Grammars);
-   Assert.Contains(name=="CSharp1"?"unicode-3.0-bmp":name=="CSharp2"?"unicode-4.0-scalar":"unicode-current-bmp",profile.Policies);
+   Assert.Contains(name=="CSharp1"?"unicode-3.0-bmp":name is "CSharp2" or "CSharp3"?"unicode-4.0-scalar":"unicode-current-bmp",profile.Policies);
   }
  }
 }

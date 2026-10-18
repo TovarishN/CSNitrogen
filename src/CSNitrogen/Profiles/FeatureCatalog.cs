@@ -12,6 +12,7 @@ public static class FeatureCatalog
         new FeatureDefinition("csharp3.extension-receivers", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ExtensionReceivers.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp3.partial-methods", Array.AsReadOnly(new[]{"csharp2.declaration-forms"}), Array.Empty<string>(), Array.Empty<string>()) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp3.auto-properties", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.Empty<string>()) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
+        new FeatureDefinition("csharp3.generic-disambiguation", Array.AsReadOnly(new[]{"csharp2.generics"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/GenericFollowersThird.ngr"})) { Introduced=new(3,0) },
         new FeatureDefinition("csharp3.lambdas", Array.AsReadOnly(new[]{"baseline.expressions","baseline.statements","csharp2.anonymous-methods"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Lambdas.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp3.queries", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Queries.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp2.generics", Array.AsReadOnly(new[]{"baseline.names-and-types","baseline.expressions","baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Generics.ngr"})) { Introduced=new(2,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
@@ -72,6 +73,7 @@ public static class FeatureCatalog
         Read("CSNitrogen.dependencies.json");
         var composition=Read("CSNitrogen.composition.json");
         var reference=Read("CSNitrogen.reference-policy.json");
+        Read("CSNitrogen.csharp3-reference-policy.json");Read("CSNitrogen.csharp3-standard-index.json");
         var secondReference=Read("CSNitrogen.csharp2-reference-policy.json");var secondIndex=Read("CSNitrogen.csharp2-standard-index.json");
         var secondGate=Read("CSNitrogen.csharp2-coverage-gate.json");var secondCrosswalk=Read("CSNitrogen.csharp2-standard-crosswalk.json");
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");

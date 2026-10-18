@@ -217,7 +217,7 @@ public static class CSharpSyntaxPolicy
     private static bool IsIdentifierPartAt(string text,int index,Version version)
     {
         char c=text[index];
-        if(version.Major==2)
+        if(UnicodePolicy.UsesUnicode4(version))
         {
             if(char.IsLowSurrogate(c)&&index>0&&char.IsHighSurrogate(text[index-1]))index--;
             if(char.IsHighSurrogate(text[index])&&index+1<text.Length&&char.IsLowSurrogate(text[index+1]))

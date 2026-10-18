@@ -60,7 +60,7 @@ internal sealed class ConditionalExpression
             if(!ConditionalSymbols.TryNormalize(token,_version,out var normalized)){_position=start;throw new FormatException("Expected a conditional symbol or boolean literal.");}
             // Current compiler compatibility decodes boolean spellings as literals.
             // The first edition treats escaped/formatting spellings as symbols.
-            if(_version.Major>2)
+            if(_version.Major>3)
             {if(normalized=="true")return true;if(normalized=="false")return false;}
             return _symbols.Contains(normalized);
         }

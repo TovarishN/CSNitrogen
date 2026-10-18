@@ -46,4 +46,4 @@ No sibling Nitrogen writes, handwritten C# parser, semantic compiler or arbitrar
 - [ ] Add a separate fail-closed source/factory/policy completeness gate only after all obligations close.
 - [ ] Run full solution, generated source reproduction, dependency/runtime-boundary checks and independent review; publish reviewable PRs.
 
-Task1 evidence: [source and seam proof](../../coverage/csharp3-seam-proof-evidence.md). Tasks2–3 are implemented; [production evidence](../../coverage/csharp3-production-evidence.md) records tests/review and remaining Task4 admission work. A [Unicode contract decision](../specs/2026-10-18-csharp3-unicode-contract-decision.md) is required before historical lexical admission.
+Task1 evidence: [source and seam proof](../../coverage/csharp3-seam-proof-evidence.md). Tasks2–3 are implemented; [production evidence](../../coverage/csharp3-production-evidence.md) records tests/review and remaining Task4 admission work. The [Unicode contract decision](../specs/2026-10-18-csharp3-unicode-contract-decision.md) was approved for Unicode4 scalar tables; implementation and source review are continuing before historical admission.
