@@ -16,11 +16,16 @@
   },
   "extraction": {
     "method": "Local macOS textutil -convert txt",
-    "status": "inspection only; no portable source index or complete coverage claim"
+    "status": "Reproducible macOS textutil Appendix B index; 454 occurrence identities, unreviewed; no portable extraction claim"
   },
   "status": "pending",
   "unicode": {
-    "status": "pending historical source review; current CSharp3 partial profile policy unchanged"
+    "status": "approved",
+    "policy": "unicode-4.0-scalar",
+    "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
+    "provenance": "sources/Unicode4/provenance.json",
+    "decision": "../superpowers/specs/2026-10-18-csharp3-unicode-contract-decision.md",
+    "authority": "User-approved continuity of reviewed CSharp2 Unicode4 scalar tables; DOC Unicode3 reference treated as informational. CSharp3 lexical productions retain separate review."
   },
-  "completion": "Feasibility probes do not implement a named production profile or admit CSharp3 completeness."
+  "completion": "Bounded CSharp3 syntax is implemented; historical source/crosswalk/admission work remains pending. Later/custom profiles remain partial."
 }

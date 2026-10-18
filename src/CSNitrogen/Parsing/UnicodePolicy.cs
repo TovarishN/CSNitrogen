@@ -7,16 +7,17 @@ namespace CSNitrogen.Parsing;
 
 internal static class UnicodePolicy
 {
+    internal static bool UsesUnicode4(Version version)=>version.Major is 2 or 3;
     internal static bool IsHistorical(Version version)=>version.Major==1;
-    internal static bool IsStart(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsStart(c):version.Major==2?CSharp2UnicodeTables.IsStart(c):
+    internal static bool IsStart(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsStart(c):UsesUnicode4(version)?CSharp2UnicodeTables.IsStart(c):
         c=='_'||char.GetUnicodeCategory(c) is UnicodeCategory.UppercaseLetter or UnicodeCategory.LowercaseLetter or
         UnicodeCategory.TitlecaseLetter or UnicodeCategory.ModifierLetter or UnicodeCategory.OtherLetter or UnicodeCategory.LetterNumber;
-    internal static bool IsPart(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsPart(c):version.Major==2?CSharp2UnicodeTables.IsPart(c):
+    internal static bool IsPart(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsPart(c):UsesUnicode4(version)?CSharp2UnicodeTables.IsPart(c):
         IsStart(c,version)||char.GetUnicodeCategory(c) is UnicodeCategory.DecimalDigitNumber or UnicodeCategory.ConnectorPunctuation or
         UnicodeCategory.NonSpacingMark or UnicodeCategory.SpacingCombiningMark or UnicodeCategory.Format;
-    internal static bool IsFormat(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsFormat(c):version.Major==2?CSharp2UnicodeTables.IsFormat(c):char.GetUnicodeCategory(c)==UnicodeCategory.Format;
+    internal static bool IsFormat(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsFormat(c):UsesUnicode4(version)?CSharp2UnicodeTables.IsFormat(c):char.GetUnicodeCategory(c)==UnicodeCategory.Format;
     internal static bool IsWhiteSpace(char c,Version version)=>IsHistorical(version)?
-        c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c,true)||HistoricalUnicodeTables.IsSpace(c):version.Major==2?c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c)||CSharp2UnicodeTables.IsSpace(c):char.IsWhiteSpace(c);
+        c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c,true)||HistoricalUnicodeTables.IsSpace(c):UsesUnicode4(version)?c is '\t' or '\v' or '\f'||CSharpTrivia.IsNewline(c)||CSharp2UnicodeTables.IsSpace(c):char.IsWhiteSpace(c);
     internal static string Trim(string text,Version version)
     {
         int first=0,last=text.Length;
@@ -37,13 +38,13 @@ internal static class UnicodePolicy
             {
                 if(index+1>=text.Length || text[index+1] is not ('u' or 'U'))return false;
                 int count=text[index+1]=='u'?4:8;
-                if(index+2+count>text.Length||!uint.TryParse(text.AsSpan(index+2,count),NumberStyles.HexNumber,CultureInfo.InvariantCulture,out uint code)||code>(version.Major==2?0x10ffffu:65535u))return false;
+                if(index+2+count>text.Length||!uint.TryParse(text.AsSpan(index+2,count),NumberStyles.HexNumber,CultureInfo.InvariantCulture,out uint code)||code>(UsesUnicode4(version)?0x10ffffu:65535u))return false;
                 value=(int)code;index+=count+1;
             }
-            else if(version.Major==2 && char.IsHighSurrogate((char)value) && index+1<text.Length && char.IsLowSurrogate(text[index+1]))
+            else if(UsesUnicode4(version) && char.IsHighSurrogate((char)value) && index+1<text.Length && char.IsLowSurrogate(text[index+1]))
             {value=char.ConvertToUtf32((char)value,text[++index]);}
-            if(start && escaped && value=='_' && version.Major<=2)return false;
-            if(version.Major==2)
+            if(start && escaped && value=='_' && version.Major<=3)return false;
+            if(UsesUnicode4(version))
             {
                 if(start?!CSharp2UnicodeTables.IsStart(value):!CSharp2UnicodeTables.IsPart(value))return false;
                 if(!CSharp2UnicodeTables.IsFormat(value))result.Append(char.ConvertFromUtf32(value));

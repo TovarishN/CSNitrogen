@@ -9,8 +9,8 @@ public static unsafe class CSharpParser
         new Dictionary<string, (Lazy<Language>, Rule)>(StringComparer.Ordinal)
         {
             ["CSharp1"] = (new(() => CSharp1Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipHistorical).Build()), CSharp1Composition.Start),
-            ["CSharp2"] = (new(() => CSharp2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipCSharp2).Build()), CSharp2Composition.Start),
-            ["CSharp3"] = (new(() => CSharp3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp3Composition.Start),
+            ["CSharp2"] = (new(() => CSharp2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp2Composition.Start),
+            ["CSharp3"] = (new(() => CSharp3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp3Composition.Start),
             ["CSharp4"] = (new(() => CSharp4Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp4Composition.Start),
             ["CSharp5"] = (new(() => CSharp5Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp5Composition.Start),
             ["CSharp6"] = (new(() => CSharp6Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp6Composition.Start),
