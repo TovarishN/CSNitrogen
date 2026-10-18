@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('doc', type=Path)
 parser.add_argument('--check', action='store_true')
+parser.add_argument('--check-crosswalk', type=Path, metavar='CROSSWALK',
+                    help='also verify every candidate body identity and main-text heading reference')
 args = parser.parse_args()
 policy = json.loads((ROOT / 'docs/coverage/csharp3-reference-policy.json').read_text())
 primary = policy['primary']
@@ -61,4 +63,21 @@ if args.check:
         raise SystemExit('Fresh extraction differs from the committed CSharp3 index')
 else:
     path.write_text(output)
+if args.check_crosswalk:
+    crosswalk = json.loads(args.check_crosswalk.read_text())
+    if crosswalk['sourceSha256'] != primary['sha256']:
+        raise SystemExit('Crosswalk uses a different primary')
+    candidates = crosswalk['productions']
+    if len(candidates) != len(rows) or len({r['standardId'] for r in candidates}) != len(rows):
+        raise SystemExit('Missing or duplicate crosswalk occurrence')
+    indexed = {r['id']: r for r in rows}
+    for candidate in candidates:
+        heading = indexed.get(candidate['standardId'])
+        if heading is None or candidate['sourceBodySha256'] != heading['sourceBodySha256']:
+            raise SystemExit('Crosswalk source occurrence/body differs: ' + candidate['standardId'])
+        pattern = re.compile('^' + re.escape(heading['name']) + r'(?::|\u2028)')
+        main = [n+1 for n, line in enumerate(lines[:start]) if pattern.match(line)]
+        if not main or candidate['mainTextOccurrences'] != main:
+            raise SystemExit('Crosswalk main-text references differ: ' + candidate['standardId'])
+    print(f'{len(candidates)} crosswalk occurrence bodies and main-text heading references checked')
 print(f'{len(rows)} indexed occurrences; {len({r["name"] for r in rows})} unique names; status indexed-unreviewed')

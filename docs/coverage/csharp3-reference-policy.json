@@ -27,5 +27,15 @@
     "decision": "../superpowers/specs/2026-10-18-csharp3-unicode-contract-decision.md",
     "authority": "User-approved continuity of reviewed CSharp2 Unicode4 scalar tables; DOC Unicode3 reference treated as informational. CSharp3 lexical productions retain separate review."
   },
-  "completion": "Bounded CSharp3 syntax is implemented; historical source/crosswalk/admission work remains pending. Later/custom profiles remain partial."
+  "completion": "Bounded CSharp3 syntax is implemented; historical source/crosswalk/admission work remains pending. Later/custom profiles remain partial.",
+  "sourceCorrections": {
+    "status": "approved",
+    "decision": "../superpowers/specs/2026-10-18-csharp3-generic-member-source-decision.md",
+    "scope": "Preserve optional generic argument suffixes omitted by three printed productions, supported by their prose equivalences and reviewed CSharp2 behavior.",
+    "occurrences": [
+      "B:8542:member-access",
+      "B:8548:base-access",
+      "B:8856:pointer-member-access"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 # CSharp3 generic-member source authority decision
 
-Status: proposed; no acceptance behavior has been changed for this discrepancy.
+Status: approved 2026-10-18. The user selected preservation of all three forms as bounded source corrections. Existing shared grammar/API acceptance is retained; full CSharp3 admission remains pending.
 
 The approved Unicode4 implementation is merged in PR20. Continued Task4 source comparison found three CSharp3 primary grammar productions that omit generic argument suffixes accepted by reviewed CSharp2. The omission occurs in the main text as well as Appendix B; it is not an extraction artifact.
 
@@ -21,4 +21,4 @@ Executable observations in `CSharp3GenericMemberDecisionTests` retain three comp
 1. **Preserve the three generic-member forms (recommended).** Record a bounded correction to the CSharp3 printed productions, supported by their member-access equivalences, reviewed CSharp2 grammar and compiler observations. Keep current shared Nitrogen grammar/API behavior. Crosswalk these specific source occurrences with an explicit correction disposition, rather than claiming literal correspondence.
 2. **Follow the three printed productions literally.** Add a CSharp3-specific rejection policy for these generic-member owners/receiver shapes. CSharp2 continues accepting them. Record the deliberate narrowing between named versions and the discrepancy from Roslyn's CSharp3 mode. No semantic compiler or shared core change is needed.
 
-Approval should choose the source authority for these three forms only. Other historical discrepancies still require their own evidence. Until the choice, retain current partial behavior and observations; do not admit CSharp3 as complete.
+The approval applies to these three forms only. Record their exact source occurrences as corrected in the CSharp3 crosswalk. Other historical discrepancies still require their own evidence; do not admit CSharp3 as complete until all source obligations close.
