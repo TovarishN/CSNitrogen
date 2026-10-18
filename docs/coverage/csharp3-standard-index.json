@@ -19,7 +19,7 @@
   },
   "counts": {
     "lexical": 100,
-    "syntactic": 315,
+    "syntactic": 316,
     "unsafe": 39
   },
   "productions": [
@@ -981,7 +981,15 @@
       "line": 8526,
       "grammar": "syntactic",
       "headingStyle": "colon",
-      "sourceBodySha256": "e853192dc4e66f4bb6a655cd6043ed152b387715e3ceb7b79f7e07cdab7b6aed"
+      "sourceBodySha256": "aaa14b98adfe79a7258399a9b6d6c2caacbc433f6a7c6e12e34e1658d336d08e"
+    },
+    {
+      "id": "B:8527:dim-separators",
+      "name": "dim-separators",
+      "line": 8527,
+      "grammar": "syntactic",
+      "headingStyle": "indented-colon",
+      "sourceBodySha256": "20bf370ddb327972b449fbbee4560469f35af6ba320c49c337b910609b6306c4"
     },
     {
       "id": "B:8528:delegate-type",

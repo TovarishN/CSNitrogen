@@ -10,7 +10,7 @@ syntax module CSharp.Unsafe
   | VoidPointerTypeName = "void" "*"
  }
  extend syntax CSharp.Expressions.CastHead { | PointerCastHead = "(" Type:PointerCastType ")" }
- syntax SizeOfExtendedType = AdditionalSizeofType / PointerCastType / (CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank+) / CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank*;
+ syntax SizeOfExtendedType = PointerCastType / AdditionalSizeofType / (CSharp.NamesTypes.BuiltinType CSharp.NamesTypes.ArrayRank+) / CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.ArrayRank*;
  extend syntax CSharp.Expressions.Expression
  {
   | PointerIndirectionExpression = CSharp.Expressions.MultiplyOp Value:Expression precedence 170

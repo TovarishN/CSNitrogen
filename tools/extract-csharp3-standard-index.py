@@ -29,26 +29,27 @@ start = next(i for i, line in enumerate(lines) if line == 'Grammar')
 end = next(i for i in range(start, len(lines)) if lines[i].strip('\f') == 'References')
 section = None
 rows = []
+heading_pattern = re.compile(r'^([ \t]*)([a-z][a-z0-9-]*)(:|\u2028)')
 for i in range(start + 1, end):
     line = lines[i]
     if line in ('Lexical grammar', 'Syntactic grammar', 'Grammar extensions for unsafe code'):
         section = {'Lexical grammar': 'lexical', 'Syntactic grammar': 'syntactic',
                    'Grammar extensions for unsafe code': 'unsafe'}[line]
-    match = re.match(r'^([a-z][a-z0-9-]*)(:|\u2028)', line)
+    match = heading_pattern.match(line)
     if not match:
         continue
-    if match[2] != ':' and match[1] not in {'explicit-anonymous-function-parameter-list', 'implicit-anonymous-function-parameter-list'}:
-        raise SystemExit('Unreviewed heading without a source colon: ' + match[1])
+    if match[3] != ':' and match[2] not in {'explicit-anonymous-function-parameter-list', 'implicit-anonymous-function-parameter-list'}:
+        raise SystemExit('Unreviewed heading without a source colon: ' + match[2])
     if section is None:
         raise SystemExit('Grammar occurrence has no source section')
     # Preserve authored continuation lines; prose/headings are not copied.
     body = [line]
     j = i + 1
-    while j < end and lines[j].startswith((' ', '\t')) and lines[j].strip():
+    while j < end and lines[j].startswith((' ', '\t')) and lines[j].strip() and not heading_pattern.match(lines[j]):
         body.append(lines[j])
         j += 1
-    rows.append(dict(id=f'B:{i+1}:{match[1]}', name=match[1], line=i+1,
-                     grammar=section, headingStyle='colon' if match[2] == ':' else 'missing-source-colon', sourceBodySha256=hashlib.sha256('\n'.join(body).encode()).hexdigest()))
+    rows.append(dict(id=f'B:{i+1}:{match[2]}', name=match[2], line=i+1,
+                     grammar=section, headingStyle=('indented-colon' if match[1] else 'colon') if match[3] == ':' else 'missing-source-colon', sourceBodySha256=hashlib.sha256('\n'.join(body).encode()).hexdigest()))
 result = dict(schemaVersion=1, profile='CSharp3', status='indexed-unreviewed',
               source=primary, sourceSha256=primary['sha256'],
               extraction=dict(tool='macOS textutil -convert txt -stdout', lineSplit='LF only',
@@ -75,7 +76,7 @@ if args.check_crosswalk:
         heading = indexed.get(candidate['standardId'])
         if heading is None or candidate['sourceBodySha256'] != heading['sourceBodySha256']:
             raise SystemExit('Crosswalk source occurrence/body differs: ' + candidate['standardId'])
-        pattern = re.compile('^' + re.escape(heading['name']) + r'(?::|\u2028)')
+        pattern = re.compile(r'^[ \t]*' + re.escape(heading['name']) + r'(?::|\u2028)')
         main = [n+1 for n, line in enumerate(lines[:start]) if pattern.match(line)]
         if not main or candidate['mainTextOccurrences'] != main:
             raise SystemExit('Crosswalk main-text references differ: ' + candidate['standardId'])

@@ -1,0 +1,19 @@
+# CSharp3 declaration/unsafe source disposition and sizeof correction
+
+Base: merged PR27 `4a873479a83cd54ff4c195c0f607b5bbf7100733`, tree `e842d5a1f0d76a2e60a77cd3a1e485bfc5081717`, matching tested feature `86ff366`. This slice inspects all150 remaining syntactic declaration/array/attribute occurrences B8677–8833 and all39 unsafe occurrences B8835–8873. Their separate reports declare normalized owners and inherited semantic exclusions. All455 source occurrences now have domain dispositions; every overall status remains candidate/pending and CSharp3 remains partial.
+
+The first95 declaration/unsafe cases yielded93 passes and two failures. One expected enum E:char rejection incorrectly crossed the reviewed enum-underlying-type semantic boundary; that original source is retained as an explicit accepted-boundary test, without changing production behavior. The other failure exposed valid sizeof(A::N.G<int>*) syntax being rejected. The ordered SizeOfExtendedType choice accepted the generic/alias non-pointer prefix before trying pointer syntax. Putting PointerCastType first corrects the underlying grammar commitment without adding nodes or changing properties.
+
+Seven paired regressions observed both CSharp2/CSharp3 rejecting generic/alias pointer operands; six non-pointer/malformed neighbors passed. After the single choice-order fix,108 parser cases and seven independent pinned Roslyn syntax observations pass, including exact type ranges and retained non-pointer node owners. Compilation validity and historical compiler parity are unclaimed. Both report metadata suites initially failed12 cases with two passes before reports/source links existed; all14 now pass, including twelve metadata mutations. The CSharp2 reviewed source hash/approved-ledger hash is refreshed; admission logic and source-category boundaries are unchanged.
+
+Full verification:
+
+```
+dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
+```
+
+The first full run passed **2,077 normal +3,506 oracle =5,583**, zero failures/skips. That run reproduced the then-indexed454 source/crosswalk bodies and main-text heading references; all123 dependency hashes match. All four lexical/contextual/global-target generators reproduce exact bytes. Authored whitespace checks pass. Explicit alternative-specific witness obligations and a separate source/factory/policy contract remain before CSharp3 completeness admission.
+
+Subsequent whole-source review found one omitted heading: the leading space before B8527 dim-separators had made the extractor absorb it into B8526. A regression first observed only B8785 instead of both independent occurrences. The extractor now recognizes indented headings and stops continuation collection at them, preserving the raw source body. The corrected index has455 occurrences/425 names (316 syntactic,100 lexical,39 unsafe); expression/type disposition has114 occurrences. B8526 body identity and the independent B8527 crosswalk entry are corrected; earlier run counts remain historical snapshots. No parser/typed API change results from this inventory repair. Final verification follows.
+
+Independent review found no parser/API/backward-compatibility issue and identified the inventory omission as its sole outstanding P2 finding. The repeated-dimensions regression failed before repair and now passes; the final full suite passes **2,077 normal +3,507 oracle =5,584**, zero failures/skips. Fresh extraction checks all455 body identities and main-text references. This closes that finding by regression/full verification; no second review was dispatched. The review leaves exhaustive alternatives/depth, semantic execution and final admission explicitly unclaimed. Authored test line-end whitespace was cleaned without changing literals or executable syntax.

@@ -1,6 +1,8 @@
 # CSharp3 names, types and expressions source disposition
 
-Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all113 syntactic Appendix B occurrences B8506–8622, with controlling §§3.8,4,5.3,7.4–7.17 prose. Unsafe expression additions are retained for the separate unsafe disposition. This report records source inspection and finite selected-CSharp3 execution evidence, not complete alternative-specific admission. All overall crosswalk statuses remain candidate/pending.
+Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all114 syntactic Appendix B occurrences B8506–8622, with controlling §§3.8,4,5.3,7.4–7.17 prose. Unsafe expression additions are retained for the separate unsafe disposition. This report records source inspection and finite selected-CSharp3 execution evidence, not complete alternative-specific admission. All overall crosswalk statuses remain candidate/pending.
+
+The leading space before B8527 dim-separators is a source heading, not a continuation of B8526 rank-specifier. Both repeated dim-separators occurrences are independently indexed; punctuation-list ownership normalizes to ArrayRank.Commas.
 
 ## Names, types and variables: B8506–8534
 
@@ -34,6 +36,6 @@ Queries supplies typed/untyped bindings, additional from/let/where/join/join-int
 
 ## Finite execution evidence and remaining obligations
 
-CSharp3ExpressionSourceTests executes acceptance/rejection neighbors across these source categories, type shapes and nested precedence/ambiguity ranges after a supplementary-character comment. CSharp3ProductionTests and CSharp3ConstructionTests retain typed children, delimiter/separator spans, preceding-version and module-omission witnesses; CSharp3InheritedSourceTests and CSharp3InheritedClosureTests execute retained baseline cases under the actual third factory. The crosswalk references these finite groups and validates their source methods and exact113 source occurrences. Hash/occurrence/witness mutation checks fail closed. Method existence is metadata evidence only; recorded test runs establish execution.
+CSharp3ExpressionSourceTests executes acceptance/rejection neighbors across these source categories, type shapes and nested precedence/ambiguity ranges after a supplementary-character comment. CSharp3ProductionTests and CSharp3ConstructionTests retain typed children, delimiter/separator spans, preceding-version and module-omission witnesses; CSharp3InheritedSourceTests and CSharp3InheritedClosureTests execute retained baseline cases under the actual third factory. The crosswalk references these finite groups and validates their source methods and exact114 source occurrences. Hash/occurrence/witness mutation checks fail closed. Method existence is metadata evidence only; recorded test runs establish execution.
 
 These groups are not per-alternative closure, exhaustive input/depth evidence, or historical compiler reproduction. Remaining statement/declaration/unsafe dispositions and explicit alternative-specific witness obligations must close before a separate source/factory/policy admission gate can promote CSharp3 completeness.
