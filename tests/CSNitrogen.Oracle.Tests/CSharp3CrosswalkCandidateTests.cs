@@ -48,7 +48,7 @@ public class CSharp3CrosswalkCandidateTests
    const string sourceHash="ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1";
    if(Text(map,"profile")!="CSharp3"||Text(map,"status")!="candidate"||Text(map,"sourceSha256")!=sourceHash||Text(index,"sourceSha256")!=sourceHash)errors.Add("authority");
    var headings=index["productions"]!.AsArray().ToDictionary(n=>Text(n!,"id"),n=>n!);var rows=map["productions"]!.AsArray();
-   if(headings.Count!=454)errors.Add("source count");
+   if(headings.Count!=455)errors.Add("source count");
    Exact("occurrences",headings.Keys,rows.Select(n=>Text(n!,"standardId")));
    var assembly=typeof(FeatureCatalog).Assembly;var factory=CSharp3Composition.CreateBuilder().Build();var owners=new HashSet<string>();
    var declaredModules=assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal))

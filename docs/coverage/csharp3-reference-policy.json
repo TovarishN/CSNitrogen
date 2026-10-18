@@ -16,7 +16,7 @@
   },
   "extraction": {
     "method": "Local macOS textutil -convert txt",
-    "status": "Reproducible macOS textutil Appendix B index; 454 occurrence identities, unreviewed; no portable extraction claim"
+    "status": "Reproducible macOS textutil Appendix B index; 455 occurrence identities, unreviewed; no portable extraction claim"
   },
   "status": "pending",
   "unicode": {

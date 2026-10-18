@@ -523,7 +523,7 @@
     "CSNitrogen.grammar.ObjectInitializers.ngr": "dde6274e5a85578db960fa21b6c980a3ec1ab961ea9495236dd20270819e6fbc",
     "CSNitrogen.grammar.Queries.ngr": "7fc1d68096a7fd25a5659e55193be360734e2c21bc590dc1ea87b56e1097bdd4",
     "CSNitrogen.grammar.Statements.ngr": "0c7202d5c1385b71c7cf405f5c82c0501a2eee0937a5cfb3e82455285f1e0fa4",
-    "CSNitrogen.grammar.Unsafe.ngr": "5662592dc6c1ddbc2ff1a90198cf35a8c201f1d9356faebba9a7c07f067b3e21",
+    "CSNitrogen.grammar.Unsafe.ngr": "5b8eec36842078bb8ab7850830420a7593db52137ff876bdea1f6856aa1da6dd",
     "CSNitrogen.review.csharp2-conformance-review.md": "702a2e9a9ec733e7b5720b488608e043ac21bbfaf60742775e1da3e5f5d439f8",
     "CSNitrogen.review.csharp2-declaration-source-review.md": "97d40dd37ae06ed57f7d61b5ea22d2dc7fd5a3051335bb98f76f1d8a5ade5a71",
     "CSNitrogen.review.csharp2-expression-source-review.md": "8d22bc8743a555a5ba5fd9b8e1f7e6638986f0a8799844435773fce19a2e5c0d",
