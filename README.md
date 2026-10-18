@@ -35,7 +35,7 @@ Console.WriteLine(document.Classes[0].Name); // Example
 
 The result owns the pooled Nitrogen tree. Borrowed nodes and typed views expire when it is disposed. Access `Root` when the parse is accepted; an error tree may not have a compilation-unit root. The generated views are syntax types; the API does not bind or type-check C# programs.
 
-Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. CSharp2 and later select the baseline plus the implemented C# 2 modules in `src/CSNitrogen.Syntax/nitrogen.json`; differing names do not imply C# 3–14 syntax is implemented. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
+Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. CSharp2 selects the baseline plus the implemented C# 2 modules; CSharp3 and later also select the bounded C# 3 additions in `src/CSNitrogen.Syntax/nitrogen.json`; differing names do not imply complete C# 3–14 syntax coverage. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
 
 `ProfileResolver.ResolveCustom` validates feature requirements/conflicts and gives deterministic module selections. It does not build arbitrary runtime grammars or execute a custom profile through `CSharpParser`. Implemented metadata separates source grammar families, lexical categories, trivia, preprocessing and unsafe syntax. Custom resolutions describe canonical capability bundles and do not advertise independently removable inventory entries.
 
@@ -83,3 +83,5 @@ The [whole pending C# 1 source review](docs/coverage/csharp1-pending-normative-r
 The [C# 2 conformance closure](docs/coverage/csharp2-conformance-review.md) reviews all 409 fourth-edition Annex A occurrences and the separate fixed-buffer supplement. CSharp2 completeness requires the pinned source/crosswalk/code/factory/policy gate; capability mapping alone is insufficient. [Verification evidence](docs/coverage/csharp2-conformance-evidence.md) records the actual commands and limits. The [generated is/as operand API migration](docs/coverage/csharp2-type-operand-migration.md) is an approved compatibility change. Custom resolutions remain metadata only.
 
 The [CSharp3 historical source and seam proof](docs/coverage/csharp3-seam-proof-evidence.md) pins the original Version 3.0 specification and exercises test-only additive lambda, query and construction grammars over the CSharp2 baseline. It records known source-policy gaps and the production continuation plan; named profiles remain unchanged.
+
+The [CSharp3 production continuation](docs/coverage/csharp3-production-evidence.md) adds lambda/query/construction/receiver modules and historical declaration context policies. Whole-source admission awaits the [Unicode contract decision](docs/superpowers/specs/2026-10-18-csharp3-unicode-contract-decision.md) and remaining conformance review.

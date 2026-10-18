@@ -10,7 +10,8 @@ syntax module CSharp.Attributes
  syntax Attribute = Alias:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName Suffix:CSharp.NamesTypes.TypeNameSuffix? Arguments:("(" Items:(AttributeArgument; ",")* ")")?;
  syntax AttributeSection = "[" Target:(AttributeTarget ":" !":")? Items:(Attribute; ",")+ ","? "]";
  syntax GlobalAttributeSection = "[" Target:GlobalAttributeTarget ":" Items:(Attribute; ",")+ ","? "]";
- syntax FixedParameter = Attributes:AttributeSection* Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier;
+ extensible syntax ParameterReceiver {}
+ syntax FixedParameter = Attributes:AttributeSection* Receiver:ParameterReceiver? Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier;
  syntax ParameterArray = Attributes:AttributeSection* "params" Element:CSharp.NamesTypes.TypeBase Ranks:CSharp.NamesTypes.ArrayRank+ Name:CSharp.Lexical.Identifier;
  syntax Parameters = (FixedParameter ",")* ParameterArray / (FixedParameter; ",")*;
  syntax ParameterList = "(" Items:Parameters ")";

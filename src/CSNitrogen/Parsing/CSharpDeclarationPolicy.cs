@@ -61,6 +61,8 @@ internal static class CSharpDeclarationPolicy
             if(kind=="PartialModifier")
             {
                 int owner=Ancestor(node,"ClassDeclaration","StructDeclaration","InterfaceDeclaration","EnumDeclaration","DelegateDeclaration","MemberDeclaration");
+                if(version.Major>=3 && owner>=0 && Kind(owner)=="MemberDeclaration" &&
+                    Kind(SyntaxView.Cast<MemberDeclarationNode>(tree,owner).Body.Index)=="MethodDeclaration")continue;
                 if(owner<0 || Kind(owner) is not ("ClassDeclaration" or "StructDeclaration" or "InterfaceDeclaration"))
                     Error(node,"This composition supports partial class, struct and interface declarations only.");
                 else
