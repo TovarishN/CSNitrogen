@@ -32,7 +32,7 @@ Final verification:
 dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s
 ```
 
-**1,378 normal + 3,416 oracle = 4,794 passed, zero failed/skipped.** The merged baseline was 4,616 tests. `git diff --check` passes. All 123 dependency source hashes match the pinned snapshot. Production generated code was rebuilt from changed `.ngr` inputs during verification. Dependency snapshot and sibling repositories were not edited.
+**1,384 normal + 3,416 oracle = 4,800 passed, zero failed/skipped.** The merged baseline was 4,616 tests. `git diff --check` passes. All 123 dependency source hashes match the pinned snapshot. Production generated code was rebuilt from changed `.ngr` inputs during verification. Dependency snapshot and sibling repositories were not edited.
 
 ## Remaining admission work
 

@@ -73,5 +73,29 @@ public class CSharp3ProductionTests
   var items=SyntaxView.Cast<P.OrderByClauseNode>(parsed.Tree,order).Items;Assert.Equal(2,items.Count);Assert.Equal(",",items.Separator(0).ToString());
   Assert.True(items[0].Direction.HasValue);var span=items[0].Direction.Value.Span;Assert.Equal("descending",source.Substring(span.Start,span.Length));
  }
+ [Theory][InlineData(8)][InlineData(32)]
+ public void Nested_lambdas_have_bounded_valid_and_missing_body_witnesses(int depth)
+ {
+  string expression=string.Concat(Enumerable.Range(0,depth).Select(n=>"x"+n+"=>"))+"1";
+  var language=P.CSharp3Composition.CreateBuilder().Build();using var good=language.Parse("class C{object value="+expression+";}",P.CSharp3Composition.Start);Assert.True(good.Success&&!good.HasErrors);
+  Assert.Equal(depth,Enumerable.Range(0,good.Tree.NodeCount).Count(n=>language.GetKindName(good.Tree.Kind(n))=="LambdaExpression"));
+  using var bad=language.Parse("class C{object value="+expression[..^1]+";}",P.CSharp3Composition.Start);Assert.False(bad.Success&&!bad.HasErrors);
+ }
+ [Theory][InlineData("x=>x+1","x+1")][InlineData("x=>y=>x+y","y=>x+y")][InlineData("f=x=>x+1","x+1")][InlineData("x=>y=x+1","y=x+1")]
+ public void Lambda_body_owns_arithmetic_nested_lambda_and_assignment(string expression,string expectedBody)
+ {
+  string source="/*𐐀*/class C{object value="+expression+";}";
+  var language=P.CSharp3Composition.CreateBuilder().Build();using var parsed=language.Parse(source,P.CSharp3Composition.Start);Assert.True(parsed.Success&&!parsed.HasErrors);
+  int node=Enumerable.Range(0,parsed.Tree.NodeCount).Where(n=>language.GetKindName(parsed.Tree.Kind(n))=="LambdaExpression").OrderBy(n=>parsed.Tree.Span(n).Start).First();
+  var lambda=SyntaxView.Cast<P.LambdaExpressionExpression>(parsed.Tree,node);Assert.Equal(expectedBody,source.Substring(lambda.Body.Span.Start,lambda.Body.Span.Length));
+  Assert.Equal(source.IndexOf("x=>",StringComparison.Ordinal),lambda.Span.Start);
+  var add=SyntaxView.Cast<P.AddExpressionExpression>(parsed.Tree,Enumerable.Range(0,parsed.Tree.NodeCount).Single(n=>language.GetKindName(parsed.Tree.Kind(n))=="AddExpression"));
+  Assert.Equal("x",source.Substring(add.Left.Span.Start,add.Left.Span.Length));Assert.Equal(expression.Contains("x+y")?"y":"1",source.Substring(add.Right.Span.Start,add.Right.Span.Length));
+  if(expression.StartsWith("f=",StringComparison.Ordinal))
+  {
+   var assignment=SyntaxView.Cast<P.AssignmentExpressionExpression>(parsed.Tree,Enumerable.Range(0,parsed.Tree.NodeCount).Single(n=>language.GetKindName(parsed.Tree.Kind(n))=="AssignmentExpression"));
+   Assert.Equal("x=>x+1",source.Substring(assignment.Value.Span.Start,assignment.Value.Span.Length));
+  }
+ }
 
 }
