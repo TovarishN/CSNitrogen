@@ -14,4 +14,6 @@ dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:N
 
 An initial test invocation was not executed because automatic approval review hit an account usage limit. After the user requested continuation, the same escalated command succeeded; no approval bypass was used.
 
+Integration: concurrent PR23 merged as `d90d5f2` while this slice was under review. Its Lexical.ngr grammar-function refactor and both generator changes are preserved. The sole merge conflict was the CSharp2 approved-ledger hash; the combined source snapshot was rehashed without changing gate logic. Both lexical generators reproduce the upstream bytes, and the complete integrated suite again passes all5,226 tests. The dependency snapshot is unchanged.
+
 Remaining Task4 work: normative expression/type, statement/iterator and declaration/unsafe domain dispositions, traceable alternative-specific witness obligations, then a separate fail-closed CSharp3 source/factory/policy admission contract and its review. This evidence does not substitute for those steps.

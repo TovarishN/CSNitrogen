@@ -27,22 +27,29 @@ lines=['// Generated identifier superset from pinned current, Unicode 3.0 and Un
  '    let part = values & [low .. (low + size - 1)];',
  '    where part != [] : HexDigit(d) HexIn(width - 1, part - low)',
  '  };']
+lines += [
+ '// The UTF-16 surrogate pairs of the code points in `plane` whose low 16 bits are in `values`.',
+ 'function Pairs(plane: Grammar.Int, values: Grammar.Class) : Grammar.Rule =',
+ '  choice h in 0 .. 63 {',
+ '    let part = values & [(h * 1024) .. (h * 1024 + 1023)];',
+ '    let low = part - h * 1024 + 56320;',
+ '    where part != [] : [(55296 + (plane - 1) * 64 + h)] low',
+ '  };',
+ '// Those code points as a \\U escape when `escaped` is 1, otherwise as surrogate pairs.',
+ 'function Plane(escaped: Grammar.Int, plane: Grammar.Int, values: Grammar.Class) : Grammar.Rule =',
+ '  if escaped == 1 then "\\\\U" HexIn(4, [(plane)]) HexIn(4, values) else Pairs(plane, values);']
+# Each identifier set is a superset of the start set, so a part rule lists only what it adds.
+start=set(data['start']);start_supplementary={n for n in csharp2['start'] if n>65535}
+def planes(values):return ' / '.join(f'Plane(escaped, {p}, {ranges([n&65535 for n in values if n>>16==p])})' for p in sorted({n>>16 for n in values}))
 for label,key in [('Start','start'),('Part','part')]:
- values=data[key];lines.append(f'token Id{label} = {ranges(values)};')
- supplementary=[n for n in csharp2[key] if n>65535]
- pairs={}
- for n in supplementary:
-  high=0xd800+((n-0x10000)>>10);low=0xdc00+((n-0x10000)&1023)
-  pairs.setdefault(high,[]).append(low)
- raw=' / '.join(ranges([h])+' '+ranges(v) for h,v in sorted(pairs.items()))
- lines.append(f'token Scalar{label} = {raw};')
- escapes=[f'"\\\\u" HexIn(4, Id{label})',f'"\\\\U0000" HexIn(4, Id{label})']
- for plane in range(1,17):
-  values=[n&65535 for n in supplementary if n>>16==plane]
-  if values:
-   prefix=' '.join(("['"+c+"' '"+c.upper()+"']") if c in 'abcdef' else q(c) for c in f'{plane:04x}')
-   escapes.append('"\\\\U" '+prefix+f' HexIn(4, {ranges(values)})')
- lines.append(f'token Unicode{label} = '+ ' / '.join(escapes)+';')
+ supplementary={n for n in csharp2[key] if n>65535}
+ lines.append(f'// Supplementary identifier {key} characters, escaped or as surrogate pairs.')
+ body=planes(supplementary) if key=='start' else 'StartPlanes(escaped) / '+planes(supplementary-start_supplementary)
+ lines.append(f'function {label}Planes(escaped: Grammar.Int) : Grammar.Rule = {body};')
+for label,key in [('Start','start'),('Part','part')]:
+ lines.append(f'token Id{label} = {ranges(data[key])};' if key=='start' else f'token IdPart = IdStart / {ranges(sorted(set(data[key])-start))};')
+ lines.append(f'token Scalar{label} = {label}Planes(0);')
+ lines.append(f'token Unicode{label} = "\\\\u" HexIn(4, Id{label}) / "\\\\U0000" HexIn(4, Id{label}) / {label}Planes(1);')
 words=re.search(r'except (.*?);', (root/'src/CSNitrogen.Syntax/Grammars/Core.ngr').read_text())
 if words: reserved=words[1]
 else: reserved=(root/'docs/coverage/reserved-keywords.txt').read_text().strip()
