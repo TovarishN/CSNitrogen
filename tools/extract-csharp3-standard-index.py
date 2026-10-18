@@ -111,6 +111,14 @@ if args.check_crosswalk:
         for link in links:
             if link['alternativeId'] not in finite or link['caseId'] != link['alternativeId']:
                 raise SystemExit('Crosswalk finite alternative differs: ' + candidate['standardId'])
+        if 'lexicalProductionAlternativeEvidence' in crosswalk:
+            expected_lexical = {a['id'] for a in heading['alternatives']
+                                if heading['grammar'] == 'lexical' and a['kind'] == 'production'}
+            lexical_links = candidate.get('lexicalProductionAlternativeWitnesses', [])
+            if sorted(link['alternativeId'] for link in lexical_links) != sorted(expected_lexical):
+                raise SystemExit('Crosswalk lexical production set differs: ' + candidate['standardId'])
+            if any(link['caseId'] != link['alternativeId'] for link in lexical_links):
+                raise SystemExit('Crosswalk lexical production case differs: ' + candidate['standardId'])
         markers = {a['id'] for a in heading['alternatives'] if a['kind'] == 'inherited-placeholder'}
         inherited = candidate.get('inheritedSourceAlternatives', [])
         if 'sourceInheritanceEvidence' in crosswalk:
