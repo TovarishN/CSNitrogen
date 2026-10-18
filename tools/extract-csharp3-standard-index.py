@@ -119,6 +119,16 @@ if args.check_crosswalk:
                 raise SystemExit('Crosswalk lexical production set differs: ' + candidate['standardId'])
             if any(link['caseId'] != link['alternativeId'] for link in lexical_links):
                 raise SystemExit('Crosswalk lexical production case differs: ' + candidate['standardId'])
+        for domain in crosswalk.get('productionAlternativeEvidence', {}):
+            in_domain = ((domain == 'expression' and heading['grammar'] == 'syntactic' and heading['line'] <= 8622)
+                         or (domain == 'statement' and heading['grammar'] == 'syntactic' and 8624 <= heading['line'] <= 8675)
+                         or (domain == 'unsafe' and heading['grammar'] == 'unsafe'))
+            expected_production = {a['id'] for a in heading['alternatives'] if in_domain and a['kind'] == 'production'}
+            production_links = [link for link in candidate.get('productionAlternativeWitnesses', []) if link['domain'] == domain]
+            if sorted(link['alternativeId'] for link in production_links) != sorted(expected_production):
+                raise SystemExit('Crosswalk production alternative set differs: ' + candidate['standardId'])
+            if any(link['caseId'] != link['alternativeId'] for link in production_links):
+                raise SystemExit('Crosswalk production case differs: ' + candidate['standardId'])
         markers = {a['id'] for a in heading['alternatives'] if a['kind'] == 'inherited-placeholder'}
         inherited = candidate.get('inheritedSourceAlternatives', [])
         if 'sourceInheritanceEvidence' in crosswalk:
