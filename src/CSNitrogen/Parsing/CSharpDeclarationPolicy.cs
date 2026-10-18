@@ -53,8 +53,12 @@ internal static class CSharpDeclarationPolicy
             {
                 if(!InStruct(node))Error(node,"A fixed buffer declaration requires a struct owner.");
                 var buffer=SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node);
-                if(Text(buffer.Type.Index) is not ("bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong" or "char" or "float" or "double"))
-                    Error(buffer.Type.Index,"A fixed buffer requires a primitive element type permitted by the CSharp2 supplement.");
+                // CSharp3 spells buffer-element-type as type. A named type can
+                // denote a permitted primitive through an alias; binding is deferred.
+                bool deferredName=version.Major>=3 && SyntaxView.TryCast<TypeSyntaxTypeReference>(tree,buffer.Type.Index,out var element)
+                    && element.Ranks.Count==0 && Kind(element.Element.Index) is "NamedTypeName" or "AliasQualifiedTypeName" or "GenericTypeName";
+                if(!deferredName && Text(buffer.Type.Index) is not ("bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong" or "char" or "float" or "double"))
+                    Error(buffer.Type.Index,"A fixed buffer requires a permitted primitive element type; named element denotation is deferred in CSharp3 and later.");
                 foreach(var modifier in SyntaxView.Cast<FixedBufferMemberClassMember>(tree,node).Modifiers)
                     if(Text(modifier.Index)=="static")Error(modifier.Index,"A fixed buffer declaration cannot be static.");
             }

@@ -534,7 +534,7 @@
     "CSNitrogen.source.Parsing/CSharp3ExpressionPolicy.cs": "e3581a51332f814d5b5e600d0a5dd28ab597f3881aade8894bf31ee14e5d351a",
     "CSNitrogen.source.Parsing/CSharpAttributePolicy.cs": "b47cf8fccfaa5457d8b5b2772ac98274517aa3b166e29f89d3034fdef4a154f2",
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "10adcc90a05d70b3f54ade628f802458d8c4777fe56d07a5cc120a6d27b342f5",
-    "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "4bbad25d13611f70a8e4a51f0a843ecdfda599119989984c1463a1e9687056d2",
+    "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "e3b772f56c327bfea84868396c4e09664e4c3b230d2c75b84fe9f3a2f84d3778",
     "CSNitrogen.source.Parsing/CSharpParser.cs": "27bc462f41ac298f5a7d24adee720c882c33ed456220671f20360bbdf49ba5ed",
     "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "d465f0590e2f7e14337584ef3440d128dd27a892fc0623784958dbb3795fdeca",
     "CSNitrogen.source.Parsing/CSharpTrivia.cs": "13c99794aebf55f540edf908a0b75b585fe2795d1ecb0605a004865a9f83fd5b",

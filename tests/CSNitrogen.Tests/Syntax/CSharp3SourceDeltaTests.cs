@@ -44,4 +44,17 @@ public class CSharp3SourceDeltaTests
  [Fact]public void Third_generic_follower_capability_requires_explicit_generics()
  {var p=CSNitrogen.Profiles.ProfileResolver.ResolveCustom("incomplete",["csharp3.generic-disambiguation"]);Assert.Null(p.Profile);Assert.Contains(p.Issues,i=>i.Code=="missing-requirement");}
 
+ [Theory]
+ [InlineData("using I=System.Int32; unsafe struct S{fixed I x[2];}")]
+ [InlineData("unsafe struct S{fixed System.Int32 x[2];}")]
+ [InlineData("using N=System; unsafe struct S{fixed N::Int32 x[2];}")]
+ public void Fixed_buffer_named_element_types_defer_denotation_in_the_third_version(string source)
+ {using var third=CSharpParser.Parse(new(source,"CSharp3","buffer.cs",[]));Assert.True(third.Accepted,string.Join(";",third.Issues));using var second=CSharpParser.Parse(new(source,"CSharp2","buffer.cs",[]));Assert.False(second.Accepted);Assert.True(second.ProfileComplete);}
+ [Theory][InlineData("object")][InlineData("string")][InlineData("decimal")][InlineData("int[]")][InlineData("int?")][InlineData("int*")]
+ public void Fixed_buffer_known_nonprimitive_shapes_remain_rejected(string type)
+ {using var p=CSharpParser.Parse(new("unsafe struct S{fixed "+type+" x[2];}","CSharp3","buffer.cs",[]));Assert.False(p.Accepted);}
+
+ [Fact]public void Primitive_keyword_using_aliases_are_not_third_version_syntax()
+ {using var p=CSharpParser.Parse(new("using I=int; unsafe struct S{fixed I x[2];}","CSharp3","alias.cs",[]));Assert.False(p.Accepted);}
+
 }
