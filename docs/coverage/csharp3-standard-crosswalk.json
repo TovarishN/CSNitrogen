@@ -7005,7 +7005,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8506:namespace-name/1",
+          "caseId": "B:8506:namespace-name/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8507:type-name",
@@ -7058,7 +7065,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8507:type-name/1",
+          "caseId": "B:8507:type-name/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8508:namespace-or-type-name",
@@ -7112,7 +7126,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8508:namespace-or-type-name/1",
+          "caseId": "B:8508:namespace-or-type-name/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8508:namespace-or-type-name/2",
+          "caseId": "B:8508:namespace-or-type-name/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8508:namespace-or-type-name/3",
+          "caseId": "B:8508:namespace-or-type-name/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8510:type",
@@ -7170,7 +7201,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8510:type/1",
+          "caseId": "B:8510:type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8510:type/2",
+          "caseId": "B:8510:type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8510:type/3",
+          "caseId": "B:8510:type/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8511:value-type",
@@ -7224,7 +7272,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8511:value-type/1",
+          "caseId": "B:8511:value-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8511:value-type/2",
+          "caseId": "B:8511:value-type/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8512:struct-type",
@@ -7280,7 +7340,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8512:struct-type/1",
+          "caseId": "B:8512:struct-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8512:struct-type/2",
+          "caseId": "B:8512:struct-type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8512:struct-type/3",
+          "caseId": "B:8512:struct-type/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8513:simple-type",
@@ -7331,7 +7408,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8513:simple-type/1",
+          "caseId": "B:8513:simple-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8513:simple-type/2",
+          "caseId": "B:8513:simple-type/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8514:numeric-type",
@@ -7382,7 +7471,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8514:numeric-type/1",
+          "caseId": "B:8514:numeric-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8514:numeric-type/2",
+          "caseId": "B:8514:numeric-type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8514:numeric-type/3",
+          "caseId": "B:8514:numeric-type/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8515:integral-type",
@@ -7433,7 +7539,54 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8515:integral-type/1",
+          "caseId": "B:8515:integral-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/2",
+          "caseId": "B:8515:integral-type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/3",
+          "caseId": "B:8515:integral-type/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/4",
+          "caseId": "B:8515:integral-type/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/5",
+          "caseId": "B:8515:integral-type/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/6",
+          "caseId": "B:8515:integral-type/6",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/7",
+          "caseId": "B:8515:integral-type/7",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/8",
+          "caseId": "B:8515:integral-type/8",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8515:integral-type/9",
+          "caseId": "B:8515:integral-type/9",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8516:floating-point-type",
@@ -7484,7 +7637,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8516:floating-point-type/1",
+          "caseId": "B:8516:floating-point-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8516:floating-point-type/2",
+          "caseId": "B:8516:floating-point-type/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8517:nullable-type",
@@ -7539,7 +7704,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8517:nullable-type/1",
+          "caseId": "B:8517:nullable-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8518:non-nullable-value-type",
@@ -7593,7 +7765,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8518:non-nullable-value-type/1",
+          "caseId": "B:8518:non-nullable-value-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8519:enum-type",
@@ -7645,7 +7824,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8519:enum-type/1",
+          "caseId": "B:8519:enum-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8520:reference-type",
@@ -7699,7 +7885,29 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8520:reference-type/1",
+          "caseId": "B:8520:reference-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8520:reference-type/2",
+          "caseId": "B:8520:reference-type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8520:reference-type/3",
+          "caseId": "B:8520:reference-type/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8520:reference-type/4",
+          "caseId": "B:8520:reference-type/4",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8521:class-type",
@@ -7755,7 +7963,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8521:class-type/1",
+          "caseId": "B:8521:class-type/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8521:class-type/2",
+          "caseId": "B:8521:class-type/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8521:class-type/3",
+          "caseId": "B:8521:class-type/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8522:interface-type",
@@ -7809,7 +8034,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8522:interface-type/1",
+          "caseId": "B:8522:interface-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8523:array-type",
@@ -7864,7 +8096,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8523:array-type/1",
+          "caseId": "B:8523:array-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8524:non-array-type",
@@ -7918,7 +8157,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8524:non-array-type/1",
+          "caseId": "B:8524:non-array-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8525:rank-specifiers",
@@ -7971,7 +8217,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8525:rank-specifiers/1",
+          "caseId": "B:8525:rank-specifiers/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8525:rank-specifiers/2",
+          "caseId": "B:8525:rank-specifiers/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8526:rank-specifier",
@@ -8024,7 +8282,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8526:rank-specifier/1",
+          "caseId": "B:8526:rank-specifier/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8527:dim-separators",
@@ -8077,7 +8342,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8527:dim-separators/1",
+          "caseId": "B:8527:dim-separators/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8527:dim-separators/2",
+          "caseId": "B:8527:dim-separators/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8528:delegate-type",
@@ -8131,7 +8408,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8528:delegate-type/1",
+          "caseId": "B:8528:delegate-type/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8529:type-argument-list",
@@ -8185,7 +8469,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8529:type-argument-list/1",
+          "caseId": "B:8529:type-argument-list/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8530:type-arguments",
@@ -8239,7 +8530,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8530:type-arguments/1",
+          "caseId": "B:8530:type-arguments/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8530:type-arguments/2",
+          "caseId": "B:8530:type-arguments/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8531:type-argument",
@@ -8293,7 +8596,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8531:type-argument/1",
+          "caseId": "B:8531:type-argument/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8532:type-parameter",
@@ -8348,7 +8658,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8532:type-parameter/1",
+          "caseId": "B:8532:type-parameter/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8534:variable-reference",
@@ -8399,7 +8716,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8534:variable-reference/1",
+          "caseId": "B:8534:variable-reference/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8536:argument-list",
@@ -8447,7 +8771,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8536:argument-list/1",
+          "caseId": "B:8536:argument-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8536:argument-list/2",
+          "caseId": "B:8536:argument-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8537:argument",
@@ -8495,7 +8831,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8537:argument/1",
+          "caseId": "B:8537:argument/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8537:argument/2",
+          "caseId": "B:8537:argument/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8537:argument/3",
+          "caseId": "B:8537:argument/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8538:primary-expression",
@@ -8552,7 +8905,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8538:primary-expression/1",
+          "caseId": "B:8538:primary-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8538:primary-expression/2",
+          "caseId": "B:8538:primary-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8539:primary-no-array-creation-expression",
@@ -8608,7 +8973,99 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/1",
+          "caseId": "B:8539:primary-no-array-creation-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/2",
+          "caseId": "B:8539:primary-no-array-creation-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/3",
+          "caseId": "B:8539:primary-no-array-creation-expression/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/4",
+          "caseId": "B:8539:primary-no-array-creation-expression/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/5",
+          "caseId": "B:8539:primary-no-array-creation-expression/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/6",
+          "caseId": "B:8539:primary-no-array-creation-expression/6",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/7",
+          "caseId": "B:8539:primary-no-array-creation-expression/7",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/8",
+          "caseId": "B:8539:primary-no-array-creation-expression/8",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/9",
+          "caseId": "B:8539:primary-no-array-creation-expression/9",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/10",
+          "caseId": "B:8539:primary-no-array-creation-expression/10",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/11",
+          "caseId": "B:8539:primary-no-array-creation-expression/11",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/12",
+          "caseId": "B:8539:primary-no-array-creation-expression/12",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/13",
+          "caseId": "B:8539:primary-no-array-creation-expression/13",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/14",
+          "caseId": "B:8539:primary-no-array-creation-expression/14",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/15",
+          "caseId": "B:8539:primary-no-array-creation-expression/15",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/16",
+          "caseId": "B:8539:primary-no-array-creation-expression/16",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/17",
+          "caseId": "B:8539:primary-no-array-creation-expression/17",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8539:primary-no-array-creation-expression/18",
+          "caseId": "B:8539:primary-no-array-creation-expression/18",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8540:simple-name",
@@ -8655,7 +9112,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8540:simple-name/1",
+          "caseId": "B:8540:simple-name/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8541:parenthesized-expression",
@@ -8702,7 +9166,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8541:parenthesized-expression/1",
+          "caseId": "B:8541:parenthesized-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8542:member-access",
@@ -8751,7 +9222,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8542:member-access/1",
+          "caseId": "B:8542:member-access/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8542:member-access/2",
+          "caseId": "B:8542:member-access/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8542:member-access/3",
+          "caseId": "B:8542:member-access/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8543:predefined-type",
@@ -8907,7 +9395,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8544:invocation-expression/1",
+          "caseId": "B:8544:invocation-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8545:element-access",
@@ -8956,7 +9451,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8545:element-access/1",
+          "caseId": "B:8545:element-access/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8546:expression-list",
@@ -9003,7 +9505,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8546:expression-list/1",
+          "caseId": "B:8546:expression-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8546:expression-list/2",
+          "caseId": "B:8546:expression-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8547:this-access",
@@ -9050,7 +9564,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8547:this-access/1",
+          "caseId": "B:8547:this-access/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8548:base-access",
@@ -9099,7 +9620,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8548:base-access/1",
+          "caseId": "B:8548:base-access/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8548:base-access/2",
+          "caseId": "B:8548:base-access/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8549:post-increment-expression",
@@ -9146,7 +9679,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8549:post-increment-expression/1",
+          "caseId": "B:8549:post-increment-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8550:post-decrement-expression",
@@ -9193,7 +9733,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8550:post-decrement-expression/1",
+          "caseId": "B:8550:post-decrement-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8551:object-creation-expression",
@@ -9244,7 +9791,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8551:object-creation-expression/1",
+          "caseId": "B:8551:object-creation-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8551:object-creation-expression/2",
+          "caseId": "B:8551:object-creation-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8552:object-or-collection-initializer",
@@ -9296,7 +9855,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8552:object-or-collection-initializer/1",
+          "caseId": "B:8552:object-or-collection-initializer/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8552:object-or-collection-initializer/2",
+          "caseId": "B:8552:object-or-collection-initializer/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8553:object-initializer",
@@ -9348,7 +9919,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8553:object-initializer/1",
+          "caseId": "B:8553:object-initializer/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8553:object-initializer/2",
+          "caseId": "B:8553:object-initializer/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8554:member-initializer-list",
@@ -9400,7 +9983,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8554:member-initializer-list/1",
+          "caseId": "B:8554:member-initializer-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8554:member-initializer-list/2",
+          "caseId": "B:8554:member-initializer-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8555:member-initializer",
@@ -9452,7 +10047,14 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8555:member-initializer/1",
+          "caseId": "B:8555:member-initializer/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8556:initializer-value",
@@ -9504,7 +10106,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8556:initializer-value/1",
+          "caseId": "B:8556:initializer-value/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8556:initializer-value/2",
+          "caseId": "B:8556:initializer-value/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8557:collection-initializer",
@@ -9556,7 +10170,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8557:collection-initializer/1",
+          "caseId": "B:8557:collection-initializer/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8557:collection-initializer/2",
+          "caseId": "B:8557:collection-initializer/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8558:element-initializer-list",
@@ -9608,7 +10234,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8558:element-initializer-list/1",
+          "caseId": "B:8558:element-initializer-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8558:element-initializer-list/2",
+          "caseId": "B:8558:element-initializer-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8559:element-initializer",
@@ -9660,7 +10298,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8559:element-initializer/1",
+          "caseId": "B:8559:element-initializer/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8559:element-initializer/2",
+          "caseId": "B:8559:element-initializer/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8560:array-creation-expression",
@@ -9715,7 +10365,24 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8560:array-creation-expression/1",
+          "caseId": "B:8560:array-creation-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8560:array-creation-expression/2",
+          "caseId": "B:8560:array-creation-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8560:array-creation-expression/3",
+          "caseId": "B:8560:array-creation-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8561:delegate-creation-expression",
@@ -9766,7 +10433,14 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8561:delegate-creation-expression/1",
+          "caseId": "B:8561:delegate-creation-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8562:anonymous-object-creation-expression",
@@ -9818,7 +10492,14 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8562:anonymous-object-creation-expression/1",
+          "caseId": "B:8562:anonymous-object-creation-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8563:anonymous-object-initializer",
@@ -9870,7 +10551,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8563:anonymous-object-initializer/1",
+          "caseId": "B:8563:anonymous-object-initializer/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8563:anonymous-object-initializer/2",
+          "caseId": "B:8563:anonymous-object-initializer/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8564:member-declarator-list",
@@ -9922,7 +10615,19 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8564:member-declarator-list/1",
+          "caseId": "B:8564:member-declarator-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8564:member-declarator-list/2",
+          "caseId": "B:8564:member-declarator-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8565:member-declarator",
@@ -9974,7 +10679,24 @@
             "method": "Construction_children_lists_and_UTF16_spans_are_authored"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8565:member-declarator/1",
+          "caseId": "B:8565:member-declarator/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8565:member-declarator/2",
+          "caseId": "B:8565:member-declarator/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8565:member-declarator/3",
+          "caseId": "B:8565:member-declarator/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8566:typeof-expression",
@@ -10021,7 +10743,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8566:typeof-expression/1",
+          "caseId": "B:8566:typeof-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8566:typeof-expression/2",
+          "caseId": "B:8566:typeof-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8566:typeof-expression/3",
+          "caseId": "B:8566:typeof-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8567:unbound-type-name",
@@ -10070,7 +10809,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8567:unbound-type-name/1",
+          "caseId": "B:8567:unbound-type-name/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8567:unbound-type-name/2",
+          "caseId": "B:8567:unbound-type-name/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8567:unbound-type-name/3",
+          "caseId": "B:8567:unbound-type-name/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8568:generic-dimension-specifier",
@@ -10119,7 +10875,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8568:generic-dimension-specifier/1",
+          "caseId": "B:8568:generic-dimension-specifier/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8569:commas",
@@ -10168,7 +10931,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8569:commas/1",
+          "caseId": "B:8569:commas/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8569:commas/2",
+          "caseId": "B:8569:commas/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8570:checked-expression",
@@ -10215,7 +10990,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8570:checked-expression/1",
+          "caseId": "B:8570:checked-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8571:unchecked-expression",
@@ -10262,7 +11044,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8571:unchecked-expression/1",
+          "caseId": "B:8571:unchecked-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8572:default-value-expression",
@@ -10311,7 +11100,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8572:default-value-expression/1",
+          "caseId": "B:8572:default-value-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8573:unary-expression",
@@ -10365,7 +11161,49 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8573:unary-expression/1",
+          "caseId": "B:8573:unary-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/2",
+          "caseId": "B:8573:unary-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/3",
+          "caseId": "B:8573:unary-expression/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/4",
+          "caseId": "B:8573:unary-expression/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/5",
+          "caseId": "B:8573:unary-expression/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/6",
+          "caseId": "B:8573:unary-expression/6",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/7",
+          "caseId": "B:8573:unary-expression/7",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8573:unary-expression/8",
+          "caseId": "B:8573:unary-expression/8",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8574:pre-increment-expression",
@@ -10412,7 +11250,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8574:pre-increment-expression/1",
+          "caseId": "B:8574:pre-increment-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8575:pre-decrement-expression",
@@ -10459,7 +11304,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8575:pre-decrement-expression/1",
+          "caseId": "B:8575:pre-decrement-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8576:cast-expression",
@@ -10509,7 +11361,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8576:cast-expression/1",
+          "caseId": "B:8576:cast-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8577:multiplicative-expression",
@@ -10558,7 +11417,29 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8577:multiplicative-expression/1",
+          "caseId": "B:8577:multiplicative-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8577:multiplicative-expression/2",
+          "caseId": "B:8577:multiplicative-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8577:multiplicative-expression/3",
+          "caseId": "B:8577:multiplicative-expression/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8577:multiplicative-expression/4",
+          "caseId": "B:8577:multiplicative-expression/4",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8578:additive-expression",
@@ -10606,7 +11487,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8578:additive-expression/1",
+          "caseId": "B:8578:additive-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8578:additive-expression/2",
+          "caseId": "B:8578:additive-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8578:additive-expression/3",
+          "caseId": "B:8578:additive-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8579:shift-expression",
@@ -10654,7 +11552,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8579:shift-expression/1",
+          "caseId": "B:8579:shift-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8579:shift-expression/2",
+          "caseId": "B:8579:shift-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8579:shift-expression/3",
+          "caseId": "B:8579:shift-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8580:relational-expression",
@@ -10709,7 +11624,44 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8580:relational-expression/1",
+          "caseId": "B:8580:relational-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/2",
+          "caseId": "B:8580:relational-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/3",
+          "caseId": "B:8580:relational-expression/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/4",
+          "caseId": "B:8580:relational-expression/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/5",
+          "caseId": "B:8580:relational-expression/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/6",
+          "caseId": "B:8580:relational-expression/6",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8580:relational-expression/7",
+          "caseId": "B:8580:relational-expression/7",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8581:equality-expression",
@@ -10757,7 +11709,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8581:equality-expression/1",
+          "caseId": "B:8581:equality-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8581:equality-expression/2",
+          "caseId": "B:8581:equality-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8581:equality-expression/3",
+          "caseId": "B:8581:equality-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8582:and-expression",
@@ -10804,7 +11773,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8582:and-expression/1",
+          "caseId": "B:8582:and-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8582:and-expression/2",
+          "caseId": "B:8582:and-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8583:exclusive-or-expression",
@@ -10851,7 +11832,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8583:exclusive-or-expression/1",
+          "caseId": "B:8583:exclusive-or-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8583:exclusive-or-expression/2",
+          "caseId": "B:8583:exclusive-or-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8584:inclusive-or-expression",
@@ -10898,7 +11891,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8584:inclusive-or-expression/1",
+          "caseId": "B:8584:inclusive-or-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8584:inclusive-or-expression/2",
+          "caseId": "B:8584:inclusive-or-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8585:conditional-and-expression",
@@ -10945,7 +11950,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8585:conditional-and-expression/1",
+          "caseId": "B:8585:conditional-and-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8585:conditional-and-expression/2",
+          "caseId": "B:8585:conditional-and-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8586:conditional-or-expression",
@@ -10992,7 +12009,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8586:conditional-or-expression/1",
+          "caseId": "B:8586:conditional-or-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8586:conditional-or-expression/2",
+          "caseId": "B:8586:conditional-or-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8587:null-coalescing-expression",
@@ -11041,7 +12070,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8587:null-coalescing-expression/1",
+          "caseId": "B:8587:null-coalescing-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8587:null-coalescing-expression/2",
+          "caseId": "B:8587:null-coalescing-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8588:conditional-expression",
@@ -11088,7 +12129,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8588:conditional-expression/1",
+          "caseId": "B:8588:conditional-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8588:conditional-expression/2",
+          "caseId": "B:8588:conditional-expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8589:lambda-expression",
@@ -11140,7 +12193,14 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8589:lambda-expression/1",
+          "caseId": "B:8589:lambda-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8590:anonymous-method-expression",
@@ -11193,7 +12253,14 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8590:anonymous-method-expression/1",
+          "caseId": "B:8590:anonymous-method-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8591:anonymous-function-signature",
@@ -11243,7 +12310,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8591:anonymous-function-signature/1",
+          "caseId": "B:8591:anonymous-function-signature/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8591:anonymous-function-signature/2",
+          "caseId": "B:8591:anonymous-function-signature/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8592:explicit-anonymous-function-signature",
@@ -11293,7 +12372,14 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8592:explicit-anonymous-function-signature/1",
+          "caseId": "B:8592:explicit-anonymous-function-signature/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8593:explicit-anonymous-function-parameter-list",
@@ -11344,7 +12430,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8593:explicit-anonymous-function-parameter-list/1",
+          "caseId": "B:8593:explicit-anonymous-function-parameter-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8593:explicit-anonymous-function-parameter-list/2",
+          "caseId": "B:8593:explicit-anonymous-function-parameter-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8594:explicit-anonymous-function-parameter",
@@ -11394,7 +12492,14 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8594:explicit-anonymous-function-parameter/1",
+          "caseId": "B:8594:explicit-anonymous-function-parameter/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8595:anonymous-function-parameter-modifier",
@@ -11444,7 +12549,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8595:anonymous-function-parameter-modifier/1",
+          "caseId": "B:8595:anonymous-function-parameter-modifier/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8595:anonymous-function-parameter-modifier/2",
+          "caseId": "B:8595:anonymous-function-parameter-modifier/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8596:implicit-anonymous-function-signature",
@@ -11496,7 +12613,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8596:implicit-anonymous-function-signature/1",
+          "caseId": "B:8596:implicit-anonymous-function-signature/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8596:implicit-anonymous-function-signature/2",
+          "caseId": "B:8596:implicit-anonymous-function-signature/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8597:implicit-anonymous-function-parameter-list",
@@ -11546,7 +12675,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8597:implicit-anonymous-function-parameter-list/1",
+          "caseId": "B:8597:implicit-anonymous-function-parameter-list/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8597:implicit-anonymous-function-parameter-list/2",
+          "caseId": "B:8597:implicit-anonymous-function-parameter-list/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8598:implicit-anonymous-function-parameter",
@@ -11596,7 +12737,14 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8598:implicit-anonymous-function-parameter/1",
+          "caseId": "B:8598:implicit-anonymous-function-parameter/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8599:anonymous-function-body",
@@ -11646,7 +12794,19 @@
             "method": "Lambda_parameters_and_body_have_typed_owners_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8599:anonymous-function-body/1",
+          "caseId": "B:8599:anonymous-function-body/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8599:anonymous-function-body/2",
+          "caseId": "B:8599:anonymous-function-body/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8600:query-expression",
@@ -11698,7 +12858,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8600:query-expression/1",
+          "caseId": "B:8600:query-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8601:from-clause",
@@ -11750,7 +12917,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8601:from-clause/1",
+          "caseId": "B:8601:from-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8602:query-body",
@@ -11802,7 +12976,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8602:query-body/1",
+          "caseId": "B:8602:query-body/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8603:query-body-clauses",
@@ -11854,7 +13035,19 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8603:query-body-clauses/1",
+          "caseId": "B:8603:query-body-clauses/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8603:query-body-clauses/2",
+          "caseId": "B:8603:query-body-clauses/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8604:query-body-clause",
@@ -11906,7 +13099,39 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8604:query-body-clause/1",
+          "caseId": "B:8604:query-body-clause/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8604:query-body-clause/2",
+          "caseId": "B:8604:query-body-clause/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8604:query-body-clause/3",
+          "caseId": "B:8604:query-body-clause/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8604:query-body-clause/4",
+          "caseId": "B:8604:query-body-clause/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8604:query-body-clause/5",
+          "caseId": "B:8604:query-body-clause/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8604:query-body-clause/6",
+          "caseId": "B:8604:query-body-clause/6",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8605:let-clause",
@@ -11958,7 +13183,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8605:let-clause/1",
+          "caseId": "B:8605:let-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8606:where-clause",
@@ -12010,7 +13242,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8606:where-clause/1",
+          "caseId": "B:8606:where-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8607:join-clause",
@@ -12062,7 +13301,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8607:join-clause/1",
+          "caseId": "B:8607:join-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8608:join-into-clause",
@@ -12114,7 +13360,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8608:join-into-clause/1",
+          "caseId": "B:8608:join-into-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8609:orderby-clause",
@@ -12166,7 +13419,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8609:orderby-clause/1",
+          "caseId": "B:8609:orderby-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8610:orderings",
@@ -12218,7 +13478,19 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8610:orderings/1",
+          "caseId": "B:8610:orderings/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8610:orderings/2",
+          "caseId": "B:8610:orderings/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8611:ordering",
@@ -12270,7 +13542,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8611:ordering/1",
+          "caseId": "B:8611:ordering/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8612:ordering-direction",
@@ -12322,7 +13601,19 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8612:ordering-direction/1",
+          "caseId": "B:8612:ordering-direction/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8612:ordering-direction/2",
+          "caseId": "B:8612:ordering-direction/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8613:select-or-group-clause",
@@ -12375,7 +13666,19 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8613:select-or-group-clause/1",
+          "caseId": "B:8613:select-or-group-clause/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8613:select-or-group-clause/2",
+          "caseId": "B:8613:select-or-group-clause/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8614:select-clause",
@@ -12427,7 +13730,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8614:select-clause/1",
+          "caseId": "B:8614:select-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8615:group-clause",
@@ -12479,7 +13789,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8615:group-clause/1",
+          "caseId": "B:8615:group-clause/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8616:query-continuation",
@@ -12531,7 +13848,14 @@
             "method": "Query_clause_lists_and_continuation_preserve_typed_structure"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8616:query-continuation/1",
+          "caseId": "B:8616:query-continuation/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8617:assignment",
@@ -12580,7 +13904,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8617:assignment/1",
+          "caseId": "B:8617:assignment/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8618:assignment-operator",
@@ -12627,7 +13958,64 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8618:assignment-operator/1",
+          "caseId": "B:8618:assignment-operator/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/2",
+          "caseId": "B:8618:assignment-operator/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/3",
+          "caseId": "B:8618:assignment-operator/3",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/4",
+          "caseId": "B:8618:assignment-operator/4",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/5",
+          "caseId": "B:8618:assignment-operator/5",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/6",
+          "caseId": "B:8618:assignment-operator/6",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/7",
+          "caseId": "B:8618:assignment-operator/7",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/8",
+          "caseId": "B:8618:assignment-operator/8",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/9",
+          "caseId": "B:8618:assignment-operator/9",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/10",
+          "caseId": "B:8618:assignment-operator/10",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8618:assignment-operator/11",
+          "caseId": "B:8618:assignment-operator/11",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8619:expression",
@@ -12680,7 +14068,19 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8619:expression/1",
+          "caseId": "B:8619:expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8619:expression/2",
+          "caseId": "B:8619:expression/2",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8620:non-assignment-expression",
@@ -12728,7 +14128,24 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8620:non-assignment-expression/1",
+          "caseId": "B:8620:non-assignment-expression/1",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8620:non-assignment-expression/2",
+          "caseId": "B:8620:non-assignment-expression/2",
+          "domain": "expression"
+        },
+        {
+          "alternativeId": "B:8620:non-assignment-expression/3",
+          "caseId": "B:8620:non-assignment-expression/3",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8621:constant-expression",
@@ -12775,7 +14192,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8621:constant-expression/1",
+          "caseId": "B:8621:constant-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8622:boolean-expression",
@@ -12822,7 +14246,14 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8622:boolean-expression/1",
+          "caseId": "B:8622:boolean-expression/1",
+          "domain": "expression"
+        }
+      ]
     },
     {
       "standardId": "B:8624:statement",
@@ -12877,7 +14308,24 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8624:statement/1",
+          "caseId": "B:8624:statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8624:statement/2",
+          "caseId": "B:8624:statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8624:statement/3",
+          "caseId": "B:8624:statement/3",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8625:embedded-statement",
@@ -12934,7 +14382,69 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8625:embedded-statement/1",
+          "caseId": "B:8625:embedded-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/2",
+          "caseId": "B:8625:embedded-statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/3",
+          "caseId": "B:8625:embedded-statement/3",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/4",
+          "caseId": "B:8625:embedded-statement/4",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/5",
+          "caseId": "B:8625:embedded-statement/5",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/6",
+          "caseId": "B:8625:embedded-statement/6",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/7",
+          "caseId": "B:8625:embedded-statement/7",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/8",
+          "caseId": "B:8625:embedded-statement/8",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/9",
+          "caseId": "B:8625:embedded-statement/9",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/10",
+          "caseId": "B:8625:embedded-statement/10",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/11",
+          "caseId": "B:8625:embedded-statement/11",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8625:embedded-statement/12",
+          "caseId": "B:8625:embedded-statement/12",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8626:block",
@@ -12991,7 +14501,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8626:block/1",
+          "caseId": "B:8626:block/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8627:statement-list",
@@ -13048,7 +14565,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8627:statement-list/1",
+          "caseId": "B:8627:statement-list/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8627:statement-list/2",
+          "caseId": "B:8627:statement-list/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8628:empty-statement",
@@ -13103,7 +14632,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8628:empty-statement/1",
+          "caseId": "B:8628:empty-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8629:labeled-statement",
@@ -13158,7 +14694,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8629:labeled-statement/1",
+          "caseId": "B:8629:labeled-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8630:declaration-statement",
@@ -13214,7 +14757,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8630:declaration-statement/1",
+          "caseId": "B:8630:declaration-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8630:declaration-statement/2",
+          "caseId": "B:8630:declaration-statement/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8631:local-variable-declaration",
@@ -13269,7 +14824,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8631:local-variable-declaration/1",
+          "caseId": "B:8631:local-variable-declaration/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8632:local-variable-type",
@@ -13323,7 +14885,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8632:local-variable-type/1",
+          "caseId": "B:8632:local-variable-type/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8632:local-variable-type/2",
+          "caseId": "B:8632:local-variable-type/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8633:local-variable-declarators",
@@ -13379,7 +14953,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8633:local-variable-declarators/1",
+          "caseId": "B:8633:local-variable-declarators/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8633:local-variable-declarators/2",
+          "caseId": "B:8633:local-variable-declarators/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8634:local-variable-declarator",
@@ -13434,7 +15020,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8634:local-variable-declarator/1",
+          "caseId": "B:8634:local-variable-declarator/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8634:local-variable-declarator/2",
+          "caseId": "B:8634:local-variable-declarator/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8635:local-variable-initializer",
@@ -13493,7 +15091,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8635:local-variable-initializer/1",
+          "caseId": "B:8635:local-variable-initializer/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8635:local-variable-initializer/2",
+          "caseId": "B:8635:local-variable-initializer/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8636:local-constant-declaration",
@@ -13548,7 +15158,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8636:local-constant-declaration/1",
+          "caseId": "B:8636:local-constant-declaration/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8637:constant-declarators",
@@ -13605,7 +15222,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8637:constant-declarators/1",
+          "caseId": "B:8637:constant-declarators/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8637:constant-declarators/2",
+          "caseId": "B:8637:constant-declarators/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8638:constant-declarator",
@@ -13661,7 +15290,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8638:constant-declarator/1",
+          "caseId": "B:8638:constant-declarator/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8639:expression-statement",
@@ -13719,7 +15355,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8639:expression-statement/1",
+          "caseId": "B:8639:expression-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8640:statement-expression",
@@ -13777,7 +15420,44 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8640:statement-expression/1",
+          "caseId": "B:8640:statement-expression/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/2",
+          "caseId": "B:8640:statement-expression/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/3",
+          "caseId": "B:8640:statement-expression/3",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/4",
+          "caseId": "B:8640:statement-expression/4",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/5",
+          "caseId": "B:8640:statement-expression/5",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/6",
+          "caseId": "B:8640:statement-expression/6",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8640:statement-expression/7",
+          "caseId": "B:8640:statement-expression/7",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8641:selection-statement",
@@ -13833,7 +15513,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8641:selection-statement/1",
+          "caseId": "B:8641:selection-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8641:selection-statement/2",
+          "caseId": "B:8641:selection-statement/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8642:if-statement",
@@ -13888,7 +15580,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8642:if-statement/1",
+          "caseId": "B:8642:if-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8642:if-statement/2",
+          "caseId": "B:8642:if-statement/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8643:switch-statement",
@@ -13945,7 +15649,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8643:switch-statement/1",
+          "caseId": "B:8643:switch-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8644:switch-block",
@@ -14002,7 +15713,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8644:switch-block/1",
+          "caseId": "B:8644:switch-block/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8645:switch-sections",
@@ -14059,7 +15777,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8645:switch-sections/1",
+          "caseId": "B:8645:switch-sections/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8645:switch-sections/2",
+          "caseId": "B:8645:switch-sections/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8646:switch-section",
@@ -14114,7 +15844,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8646:switch-section/1",
+          "caseId": "B:8646:switch-section/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8647:switch-labels",
@@ -14170,7 +15907,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8647:switch-labels/1",
+          "caseId": "B:8647:switch-labels/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8647:switch-labels/2",
+          "caseId": "B:8647:switch-labels/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8648:switch-label",
@@ -14225,7 +15974,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8648:switch-label/1",
+          "caseId": "B:8648:switch-label/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8648:switch-label/2",
+          "caseId": "B:8648:switch-label/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8649:iteration-statement",
@@ -14283,7 +16044,29 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8649:iteration-statement/1",
+          "caseId": "B:8649:iteration-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8649:iteration-statement/2",
+          "caseId": "B:8649:iteration-statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8649:iteration-statement/3",
+          "caseId": "B:8649:iteration-statement/3",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8649:iteration-statement/4",
+          "caseId": "B:8649:iteration-statement/4",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8650:while-statement",
@@ -14339,7 +16122,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8650:while-statement/1",
+          "caseId": "B:8650:while-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8651:do-statement",
@@ -14394,7 +16184,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8651:do-statement/1",
+          "caseId": "B:8651:do-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8652:for-statement",
@@ -14449,7 +16246,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8652:for-statement/1",
+          "caseId": "B:8652:for-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8653:for-initializer",
@@ -14506,7 +16310,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8653:for-initializer/1",
+          "caseId": "B:8653:for-initializer/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8653:for-initializer/2",
+          "caseId": "B:8653:for-initializer/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8654:for-condition",
@@ -14562,7 +16378,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8654:for-condition/1",
+          "caseId": "B:8654:for-condition/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8655:for-iterator",
@@ -14618,7 +16441,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8655:for-iterator/1",
+          "caseId": "B:8655:for-iterator/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8656:statement-expression-list",
@@ -14676,7 +16506,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8656:statement-expression-list/1",
+          "caseId": "B:8656:statement-expression-list/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8656:statement-expression-list/2",
+          "caseId": "B:8656:statement-expression-list/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8657:foreach-statement",
@@ -14731,7 +16573,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8657:foreach-statement/1",
+          "caseId": "B:8657:foreach-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8658:jump-statement",
@@ -14786,7 +16635,34 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8658:jump-statement/1",
+          "caseId": "B:8658:jump-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8658:jump-statement/2",
+          "caseId": "B:8658:jump-statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8658:jump-statement/3",
+          "caseId": "B:8658:jump-statement/3",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8658:jump-statement/4",
+          "caseId": "B:8658:jump-statement/4",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8658:jump-statement/5",
+          "caseId": "B:8658:jump-statement/5",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8659:break-statement",
@@ -14841,7 +16717,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8659:break-statement/1",
+          "caseId": "B:8659:break-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8660:continue-statement",
@@ -14896,7 +16779,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8660:continue-statement/1",
+          "caseId": "B:8660:continue-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8661:goto-statement",
@@ -14951,7 +16841,24 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8661:goto-statement/1",
+          "caseId": "B:8661:goto-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8661:goto-statement/2",
+          "caseId": "B:8661:goto-statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8661:goto-statement/3",
+          "caseId": "B:8661:goto-statement/3",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8662:return-statement",
@@ -15006,7 +16913,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8662:return-statement/1",
+          "caseId": "B:8662:return-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8663:throw-statement",
@@ -15061,7 +16975,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8663:throw-statement/1",
+          "caseId": "B:8663:throw-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8664:try-statement",
@@ -15116,7 +17037,24 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8664:try-statement/1",
+          "caseId": "B:8664:try-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8664:try-statement/2",
+          "caseId": "B:8664:try-statement/2",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8664:try-statement/3",
+          "caseId": "B:8664:try-statement/3",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8665:catch-clauses",
@@ -15171,7 +17109,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8665:catch-clauses/1",
+          "caseId": "B:8665:catch-clauses/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8665:catch-clauses/2",
+          "caseId": "B:8665:catch-clauses/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8666:specific-catch-clauses",
@@ -15226,7 +17176,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8666:specific-catch-clauses/1",
+          "caseId": "B:8666:specific-catch-clauses/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8666:specific-catch-clauses/2",
+          "caseId": "B:8666:specific-catch-clauses/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8667:specific-catch-clause",
@@ -15282,7 +17244,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8667:specific-catch-clause/1",
+          "caseId": "B:8667:specific-catch-clause/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8668:general-catch-clause",
@@ -15338,7 +17307,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8668:general-catch-clause/1",
+          "caseId": "B:8668:general-catch-clause/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8669:finally-clause",
@@ -15393,7 +17369,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8669:finally-clause/1",
+          "caseId": "B:8669:finally-clause/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8670:checked-statement",
@@ -15448,7 +17431,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8670:checked-statement/1",
+          "caseId": "B:8670:checked-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8671:unchecked-statement",
@@ -15503,7 +17493,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8671:unchecked-statement/1",
+          "caseId": "B:8671:unchecked-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8672:lock-statement",
@@ -15558,7 +17555,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8672:lock-statement/1",
+          "caseId": "B:8672:lock-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8673:using-statement",
@@ -15614,7 +17618,14 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8673:using-statement/1",
+          "caseId": "B:8673:using-statement/1",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8674:resource-acquisition",
@@ -15671,7 +17682,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8674:resource-acquisition/1",
+          "caseId": "B:8674:resource-acquisition/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8674:resource-acquisition/2",
+          "caseId": "B:8674:resource-acquisition/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8675:yield-statement",
@@ -15729,7 +17752,19 @@
             "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8675:yield-statement/1",
+          "caseId": "B:8675:yield-statement/1",
+          "domain": "statement"
+        },
+        {
+          "alternativeId": "B:8675:yield-statement/2",
+          "caseId": "B:8675:yield-statement/2",
+          "domain": "statement"
+        }
+      ]
     },
     {
       "standardId": "B:8677:compilation-unit",
@@ -23744,6 +25779,13 @@
             "B:8694:class-modifier/8"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8835:class-modifier/2",
+          "caseId": "B:8835:class-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -23807,6 +25849,13 @@
             "B:8775:struct-modifier/4",
             "B:8775:struct-modifier/5"
           ]
+        }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8836:struct-modifier/2",
+          "caseId": "B:8836:struct-modifier/2",
+          "domain": "unsafe"
         }
       ]
     },
@@ -23872,6 +25921,13 @@
             "B:8792:interface-modifier/5"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8837:interface-modifier/2",
+          "caseId": "B:8837:interface-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -23935,6 +25991,13 @@
             "B:8813:delegate-modifier/4",
             "B:8813:delegate-modifier/5"
           ]
+        }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8838:delegate-modifier/2",
+          "caseId": "B:8838:delegate-modifier/2",
+          "domain": "unsafe"
         }
       ]
     },
@@ -24002,6 +26065,13 @@
             "B:8716:field-modifier/7",
             "B:8716:field-modifier/8"
           ]
+        }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8839:field-modifier/2",
+          "caseId": "B:8839:field-modifier/2",
+          "domain": "unsafe"
         }
       ]
     },
@@ -24073,6 +26143,13 @@
             "B:8723:method-modifier/11"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8840:method-modifier/2",
+          "caseId": "B:8840:method-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24142,6 +26219,13 @@
             "B:8734:property-modifier/10",
             "B:8734:property-modifier/11"
           ]
+        }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8841:property-modifier/2",
+          "caseId": "B:8841:property-modifier/2",
+          "domain": "unsafe"
         }
       ]
     },
@@ -24213,6 +26297,13 @@
             "B:8743:event-modifier/11"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8842:event-modifier/2",
+          "caseId": "B:8842:event-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24282,6 +26373,13 @@
             "B:8749:indexer-modifier/10"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8843:indexer-modifier/2",
+          "caseId": "B:8843:indexer-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24343,6 +26441,13 @@
             "B:8753:operator-modifier/2",
             "B:8753:operator-modifier/3"
           ]
+        }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8844:operator-modifier/2",
+          "caseId": "B:8844:operator-modifier/2",
+          "domain": "unsafe"
         }
       ]
     },
@@ -24408,6 +26513,13 @@
             "B:8763:constructor-modifier/5"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8845:constructor-modifier/2",
+          "caseId": "B:8845:constructor-modifier/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24459,7 +26571,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8846:destructor-declaration/1",
+          "caseId": "B:8846:destructor-declaration/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8846:destructor-declaration/2",
+          "caseId": "B:8846:destructor-declaration/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8847:static-constructor-modifiers",
@@ -24510,7 +26634,39 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/1",
+          "caseId": "B:8847:static-constructor-modifiers/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/2",
+          "caseId": "B:8847:static-constructor-modifiers/2",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/3",
+          "caseId": "B:8847:static-constructor-modifiers/3",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/4",
+          "caseId": "B:8847:static-constructor-modifiers/4",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/5",
+          "caseId": "B:8847:static-constructor-modifiers/5",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8847:static-constructor-modifiers/6",
+          "caseId": "B:8847:static-constructor-modifiers/6",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8848:embedded-statement",
@@ -24579,6 +26735,13 @@
             "B:8625:embedded-statement/12"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8848:embedded-statement/2",
+          "caseId": "B:8848:embedded-statement/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24626,7 +26789,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8849:unsafe-statement/1",
+          "caseId": "B:8849:unsafe-statement/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8850:type",
@@ -24686,6 +26856,13 @@
             "B:8510:type/3"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8850:type/2",
+          "caseId": "B:8850:type/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24737,7 +26914,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8851:pointer-type/1",
+          "caseId": "B:8851:pointer-type/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8851:pointer-type/2",
+          "caseId": "B:8851:pointer-type/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8852:unmanaged-type",
@@ -24784,7 +26973,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8852:unmanaged-type/1",
+          "caseId": "B:8852:unmanaged-type/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8853:primary-no-array-creation-expression",
@@ -24862,6 +27058,23 @@
             "B:8539:primary-no-array-creation-expression/18"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8853:primary-no-array-creation-expression/2",
+          "caseId": "B:8853:primary-no-array-creation-expression/2",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8853:primary-no-array-creation-expression/3",
+          "caseId": "B:8853:primary-no-array-creation-expression/3",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8853:primary-no-array-creation-expression/4",
+          "caseId": "B:8853:primary-no-array-creation-expression/4",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24932,6 +27145,18 @@
             "B:8573:unary-expression/8"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8854:unary-expression/2",
+          "caseId": "B:8854:unary-expression/2",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8854:unary-expression/3",
+          "caseId": "B:8854:unary-expression/3",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -24979,7 +27204,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8855:pointer-indirection-expression/1",
+          "caseId": "B:8855:pointer-indirection-expression/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8856:pointer-member-access",
@@ -25028,7 +27260,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8856:pointer-member-access/1",
+          "caseId": "B:8856:pointer-member-access/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8857:pointer-element-access",
@@ -25075,7 +27314,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8857:pointer-element-access/1",
+          "caseId": "B:8857:pointer-element-access/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8858:addressof-expression",
@@ -25122,7 +27368,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8858:addressof-expression/1",
+          "caseId": "B:8858:addressof-expression/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8859:sizeof-expression",
@@ -25172,7 +27425,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8859:sizeof-expression/1",
+          "caseId": "B:8859:sizeof-expression/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8860:embedded-statement",
@@ -25242,6 +27502,13 @@
             "B:8848:embedded-statement/2"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8860:embedded-statement/2",
+          "caseId": "B:8860:embedded-statement/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -25289,7 +27556,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8861:fixed-statement/1",
+          "caseId": "B:8861:fixed-statement/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8862:fixed-pointer-declarators",
@@ -25337,7 +27611,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8862:fixed-pointer-declarators/1",
+          "caseId": "B:8862:fixed-pointer-declarators/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8862:fixed-pointer-declarators/2",
+          "caseId": "B:8862:fixed-pointer-declarators/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8863:fixed-pointer-declarator",
@@ -25385,7 +27671,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8863:fixed-pointer-declarator/1",
+          "caseId": "B:8863:fixed-pointer-declarator/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8864:fixed-pointer-initializer",
@@ -25433,7 +27726,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8864:fixed-pointer-initializer/1",
+          "caseId": "B:8864:fixed-pointer-initializer/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8864:fixed-pointer-initializer/2",
+          "caseId": "B:8864:fixed-pointer-initializer/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8865:struct-member-declaration",
@@ -25501,6 +27806,13 @@
             "B:8779:struct-member-declaration/10"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8865:struct-member-declaration/2",
+          "caseId": "B:8865:struct-member-declaration/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -25549,7 +27861,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8866:fixed-size-buffer-declaration/1",
+          "caseId": "B:8866:fixed-size-buffer-declaration/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8867:fixed-size-buffer-modifiers",
@@ -25597,7 +27916,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8867:fixed-size-buffer-modifiers/1",
+          "caseId": "B:8867:fixed-size-buffer-modifiers/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8867:fixed-size-buffer-modifiers/2",
+          "caseId": "B:8867:fixed-size-buffer-modifiers/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8868:fixed-size-buffer-modifier",
@@ -25645,7 +27976,39 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/1",
+          "caseId": "B:8868:fixed-size-buffer-modifier/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/2",
+          "caseId": "B:8868:fixed-size-buffer-modifier/2",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/3",
+          "caseId": "B:8868:fixed-size-buffer-modifier/3",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/4",
+          "caseId": "B:8868:fixed-size-buffer-modifier/4",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/5",
+          "caseId": "B:8868:fixed-size-buffer-modifier/5",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8868:fixed-size-buffer-modifier/6",
+          "caseId": "B:8868:fixed-size-buffer-modifier/6",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8869:buffer-element-type",
@@ -25693,7 +28056,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8869:buffer-element-type/1",
+          "caseId": "B:8869:buffer-element-type/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8870:fixed-size-buffer-declarators",
@@ -25742,7 +28112,19 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8870:fixed-size-buffer-declarators/1",
+          "caseId": "B:8870:fixed-size-buffer-declarators/1",
+          "domain": "unsafe"
+        },
+        {
+          "alternativeId": "B:8870:fixed-size-buffer-declarators/2",
+          "caseId": "B:8870:fixed-size-buffer-declarators/2",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8871:fixed-size-buffer-declarator",
@@ -25790,7 +28172,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8871:fixed-size-buffer-declarator/1",
+          "caseId": "B:8871:fixed-size-buffer-declarator/1",
+          "domain": "unsafe"
+        }
+      ]
     },
     {
       "standardId": "B:8872:local-variable-initializer",
@@ -25851,6 +28240,13 @@
             "B:8635:local-variable-initializer/2"
           ]
         }
+      ],
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8872:local-variable-initializer/2",
+          "caseId": "B:8872:local-variable-initializer/2",
+          "domain": "unsafe"
+        }
       ]
     },
     {
@@ -25900,7 +28296,14 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8873:stackalloc-initializer/1",
+          "caseId": "B:8873:stackalloc-initializer/1",
+          "domain": "unsafe"
+        }
+      ]
     }
   ],
   "sourceReviews": [
@@ -25966,6 +28369,38 @@
     "witness": {
       "path": "tests/CSNitrogen.Tests/Lexing/CSharp3LexicalAlternativeTests.cs",
       "method": "Lexical_production_alternatives_retain_context_effects_and_original_coordinates"
+    }
+  },
+  "productionAlternativeEvidence": {
+    "expression": {
+      "path": "tests/Corpus/CSharp3/expression-production-cases.json",
+      "sha256": "ed5ec61b89a1af6db35e771742dc11c4d0ff38a803db790bfa7ef108920d00ef",
+      "status": "representative-witnesses",
+      "count": 241,
+      "witness": {
+        "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs",
+        "method": "Production_alternatives_have_owning_context_positive_contrast_and_original_range_observations"
+      }
+    },
+    "statement": {
+      "path": "tests/Corpus/CSharp3/statement-production-cases.json",
+      "sha256": "c69be200c5b1dd9c5d97f6c3de05a30716ca8111c6ce00cf9541f34245f8c664",
+      "status": "representative-witnesses",
+      "count": 100,
+      "witness": {
+        "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs",
+        "method": "Production_alternatives_have_owning_context_positive_contrast_and_original_range_observations"
+      }
+    },
+    "unsafe": {
+      "path": "tests/Corpus/CSharp3/unsafe-production-cases.json",
+      "sha256": "607c62d06bf9db2f832ab5599c0e1ec7f46dd153391a4c18d1e7863fb7e1427f",
+      "status": "representative-witnesses",
+      "count": 58,
+      "witness": {
+        "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs",
+        "method": "Production_alternatives_have_owning_context_positive_contrast_and_original_range_observations"
+      }
     }
   }
 }
