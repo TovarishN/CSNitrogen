@@ -80,7 +80,7 @@ public static class FeatureCatalog
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");
         var index=Read("CSNitrogen.csharp1-standard-index.json");
         var crosswalk=Read("CSNitrogen.csharp1-standard-crosswalk.json");
-        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)))Read(name);
+        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-review.",StringComparison.Ordinal)))Read(name);
         using var document = JsonDocument.Parse(inventory);
         var entries = document.RootElement.GetProperty("features").EnumerateArray().Select(f => new CoverageFeature(
             f.GetProperty("id").GetString()!, Version.Parse(f.GetProperty("introduced").GetString()!),
