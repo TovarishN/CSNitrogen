@@ -27,6 +27,34 @@ text = subprocess.check_output(['/usr/bin/textutil', '-convert', 'txt', '-stdout
 lines = text.split('\n')
 start = next(i for i, line in enumerate(lines) if line == 'Grammar')
 end = next(i for i in range(start, len(lines)) if lines[i].strip('\f') == 'References')
+def source_alternatives(body, occurrence):
+    fragments = '\n'.join(body).split('\u2028')
+    one_of = 'one of' in fragments[0]
+    if one_of:
+        alternatives = ' '.join(fragments[1:]).split()
+    else:
+        alternatives = []
+        for fragment in fragments[1:]:
+            if not fragment.strip():
+                continue
+            # Word indents long right-hand sides with two tabs. These continue
+            # the preceding alternative rather than introduce another choice.
+            if fragment.startswith('\t\t'):
+                if not alternatives:
+                    raise SystemExit('Continuation has no alternative: ' + occurrence)
+                alternatives[-1] += ' ' + fragment.strip()
+            else:
+                alternatives.append(fragment.strip())
+    result = []
+    for ordinal, alternative in enumerate(alternatives, 1):
+        canonical = ' '.join(alternative.split())
+        kind = 'one-of-token' if one_of else 'inherited-placeholder' if canonical in ('...', '…') else 'production'
+        result.append(dict(id=f'{occurrence}/{ordinal}', ordinal=ordinal, kind=kind,
+                           sourceAlternativeSha256=hashlib.sha256(canonical.encode()).hexdigest()))
+    if not result:
+        raise SystemExit('Source occurrence has no alternatives: ' + occurrence)
+    return result
+
 section = None
 rows = []
 heading_pattern = re.compile(r'^([ \t]*)([a-z][a-z0-9-]*)(:|\u2028)')
@@ -49,13 +77,15 @@ for i in range(start + 1, end):
         body.append(lines[j])
         j += 1
     rows.append(dict(id=f'B:{i+1}:{match[2]}', name=match[2], line=i+1,
-                     grammar=section, headingStyle=('indented-colon' if match[1] else 'colon') if match[3] == ':' else 'missing-source-colon', sourceBodySha256=hashlib.sha256('\n'.join(body).encode()).hexdigest()))
+                     grammar=section, headingStyle=('indented-colon' if match[1] else 'colon') if match[3] == ':' else 'missing-source-colon', sourceBodySha256=hashlib.sha256('\n'.join(body).encode()).hexdigest(),
+                     alternatives=source_alternatives(body, f'B:{i+1}:{match[2]}')))
 result = dict(schemaVersion=1, profile='CSharp3', status='indexed-unreviewed',
               source=primary, sourceSha256=primary['sha256'],
               extraction=dict(tool='macOS textutil -convert txt -stdout', lineSplit='LF only',
                               textSha256=hashlib.sha256(text.encode()).hexdigest(),
-                              scope='Appendix B grammar occurrences; no printed-page or portable extraction claim'),
+                              scope='Appendix B grammar occurrences and source-alternative identities; no printed-page or portable extraction claim'),
               counts={kind: sum(r['grammar'] == kind for r in rows) for kind in ('lexical', 'syntactic', 'unsafe')},
+              alternativeCounts={kind: sum(len(r['alternatives']) for r in rows if r['grammar'] == kind) for kind in ('lexical', 'syntactic', 'unsafe')},
               productions=rows)
 output = json.dumps(result, indent=2) + '\n'
 path = ROOT / 'docs/coverage/csharp3-standard-index.json'
@@ -76,6 +106,11 @@ if args.check_crosswalk:
         heading = indexed.get(candidate['standardId'])
         if heading is None or candidate['sourceBodySha256'] != heading['sourceBodySha256']:
             raise SystemExit('Crosswalk source occurrence/body differs: ' + candidate['standardId'])
+        finite = {a['id'] for a in heading['alternatives'] if a['kind'] == 'one-of-token'}
+        links = candidate.get('finiteAlternativeWitnesses', [])
+        for link in links:
+            if link['alternativeId'] not in finite or link['caseId'] != link['alternativeId']:
+                raise SystemExit('Crosswalk finite alternative differs: ' + candidate['standardId'])
         pattern = re.compile(r'^[ \t]*' + re.escape(heading['name']) + r'(?::|\u2028)')
         main = [n+1 for n, line in enumerate(lines[:start]) if pattern.match(line)]
         if not main or candidate['mainTextOccurrences'] != main:

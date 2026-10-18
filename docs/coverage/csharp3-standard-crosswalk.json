@@ -1746,7 +1746,317 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8431:keyword/1",
+          "caseId": "B:8431:keyword/1"
+        },
+        {
+          "alternativeId": "B:8431:keyword/2",
+          "caseId": "B:8431:keyword/2"
+        },
+        {
+          "alternativeId": "B:8431:keyword/3",
+          "caseId": "B:8431:keyword/3"
+        },
+        {
+          "alternativeId": "B:8431:keyword/4",
+          "caseId": "B:8431:keyword/4"
+        },
+        {
+          "alternativeId": "B:8431:keyword/5",
+          "caseId": "B:8431:keyword/5"
+        },
+        {
+          "alternativeId": "B:8431:keyword/6",
+          "caseId": "B:8431:keyword/6"
+        },
+        {
+          "alternativeId": "B:8431:keyword/7",
+          "caseId": "B:8431:keyword/7"
+        },
+        {
+          "alternativeId": "B:8431:keyword/8",
+          "caseId": "B:8431:keyword/8"
+        },
+        {
+          "alternativeId": "B:8431:keyword/9",
+          "caseId": "B:8431:keyword/9"
+        },
+        {
+          "alternativeId": "B:8431:keyword/10",
+          "caseId": "B:8431:keyword/10"
+        },
+        {
+          "alternativeId": "B:8431:keyword/11",
+          "caseId": "B:8431:keyword/11"
+        },
+        {
+          "alternativeId": "B:8431:keyword/12",
+          "caseId": "B:8431:keyword/12"
+        },
+        {
+          "alternativeId": "B:8431:keyword/13",
+          "caseId": "B:8431:keyword/13"
+        },
+        {
+          "alternativeId": "B:8431:keyword/14",
+          "caseId": "B:8431:keyword/14"
+        },
+        {
+          "alternativeId": "B:8431:keyword/15",
+          "caseId": "B:8431:keyword/15"
+        },
+        {
+          "alternativeId": "B:8431:keyword/16",
+          "caseId": "B:8431:keyword/16"
+        },
+        {
+          "alternativeId": "B:8431:keyword/17",
+          "caseId": "B:8431:keyword/17"
+        },
+        {
+          "alternativeId": "B:8431:keyword/18",
+          "caseId": "B:8431:keyword/18"
+        },
+        {
+          "alternativeId": "B:8431:keyword/19",
+          "caseId": "B:8431:keyword/19"
+        },
+        {
+          "alternativeId": "B:8431:keyword/20",
+          "caseId": "B:8431:keyword/20"
+        },
+        {
+          "alternativeId": "B:8431:keyword/21",
+          "caseId": "B:8431:keyword/21"
+        },
+        {
+          "alternativeId": "B:8431:keyword/22",
+          "caseId": "B:8431:keyword/22"
+        },
+        {
+          "alternativeId": "B:8431:keyword/23",
+          "caseId": "B:8431:keyword/23"
+        },
+        {
+          "alternativeId": "B:8431:keyword/24",
+          "caseId": "B:8431:keyword/24"
+        },
+        {
+          "alternativeId": "B:8431:keyword/25",
+          "caseId": "B:8431:keyword/25"
+        },
+        {
+          "alternativeId": "B:8431:keyword/26",
+          "caseId": "B:8431:keyword/26"
+        },
+        {
+          "alternativeId": "B:8431:keyword/27",
+          "caseId": "B:8431:keyword/27"
+        },
+        {
+          "alternativeId": "B:8431:keyword/28",
+          "caseId": "B:8431:keyword/28"
+        },
+        {
+          "alternativeId": "B:8431:keyword/29",
+          "caseId": "B:8431:keyword/29"
+        },
+        {
+          "alternativeId": "B:8431:keyword/30",
+          "caseId": "B:8431:keyword/30"
+        },
+        {
+          "alternativeId": "B:8431:keyword/31",
+          "caseId": "B:8431:keyword/31"
+        },
+        {
+          "alternativeId": "B:8431:keyword/32",
+          "caseId": "B:8431:keyword/32"
+        },
+        {
+          "alternativeId": "B:8431:keyword/33",
+          "caseId": "B:8431:keyword/33"
+        },
+        {
+          "alternativeId": "B:8431:keyword/34",
+          "caseId": "B:8431:keyword/34"
+        },
+        {
+          "alternativeId": "B:8431:keyword/35",
+          "caseId": "B:8431:keyword/35"
+        },
+        {
+          "alternativeId": "B:8431:keyword/36",
+          "caseId": "B:8431:keyword/36"
+        },
+        {
+          "alternativeId": "B:8431:keyword/37",
+          "caseId": "B:8431:keyword/37"
+        },
+        {
+          "alternativeId": "B:8431:keyword/38",
+          "caseId": "B:8431:keyword/38"
+        },
+        {
+          "alternativeId": "B:8431:keyword/39",
+          "caseId": "B:8431:keyword/39"
+        },
+        {
+          "alternativeId": "B:8431:keyword/40",
+          "caseId": "B:8431:keyword/40"
+        },
+        {
+          "alternativeId": "B:8431:keyword/41",
+          "caseId": "B:8431:keyword/41"
+        },
+        {
+          "alternativeId": "B:8431:keyword/42",
+          "caseId": "B:8431:keyword/42"
+        },
+        {
+          "alternativeId": "B:8431:keyword/43",
+          "caseId": "B:8431:keyword/43"
+        },
+        {
+          "alternativeId": "B:8431:keyword/44",
+          "caseId": "B:8431:keyword/44"
+        },
+        {
+          "alternativeId": "B:8431:keyword/45",
+          "caseId": "B:8431:keyword/45"
+        },
+        {
+          "alternativeId": "B:8431:keyword/46",
+          "caseId": "B:8431:keyword/46"
+        },
+        {
+          "alternativeId": "B:8431:keyword/47",
+          "caseId": "B:8431:keyword/47"
+        },
+        {
+          "alternativeId": "B:8431:keyword/48",
+          "caseId": "B:8431:keyword/48"
+        },
+        {
+          "alternativeId": "B:8431:keyword/49",
+          "caseId": "B:8431:keyword/49"
+        },
+        {
+          "alternativeId": "B:8431:keyword/50",
+          "caseId": "B:8431:keyword/50"
+        },
+        {
+          "alternativeId": "B:8431:keyword/51",
+          "caseId": "B:8431:keyword/51"
+        },
+        {
+          "alternativeId": "B:8431:keyword/52",
+          "caseId": "B:8431:keyword/52"
+        },
+        {
+          "alternativeId": "B:8431:keyword/53",
+          "caseId": "B:8431:keyword/53"
+        },
+        {
+          "alternativeId": "B:8431:keyword/54",
+          "caseId": "B:8431:keyword/54"
+        },
+        {
+          "alternativeId": "B:8431:keyword/55",
+          "caseId": "B:8431:keyword/55"
+        },
+        {
+          "alternativeId": "B:8431:keyword/56",
+          "caseId": "B:8431:keyword/56"
+        },
+        {
+          "alternativeId": "B:8431:keyword/57",
+          "caseId": "B:8431:keyword/57"
+        },
+        {
+          "alternativeId": "B:8431:keyword/58",
+          "caseId": "B:8431:keyword/58"
+        },
+        {
+          "alternativeId": "B:8431:keyword/59",
+          "caseId": "B:8431:keyword/59"
+        },
+        {
+          "alternativeId": "B:8431:keyword/60",
+          "caseId": "B:8431:keyword/60"
+        },
+        {
+          "alternativeId": "B:8431:keyword/61",
+          "caseId": "B:8431:keyword/61"
+        },
+        {
+          "alternativeId": "B:8431:keyword/62",
+          "caseId": "B:8431:keyword/62"
+        },
+        {
+          "alternativeId": "B:8431:keyword/63",
+          "caseId": "B:8431:keyword/63"
+        },
+        {
+          "alternativeId": "B:8431:keyword/64",
+          "caseId": "B:8431:keyword/64"
+        },
+        {
+          "alternativeId": "B:8431:keyword/65",
+          "caseId": "B:8431:keyword/65"
+        },
+        {
+          "alternativeId": "B:8431:keyword/66",
+          "caseId": "B:8431:keyword/66"
+        },
+        {
+          "alternativeId": "B:8431:keyword/67",
+          "caseId": "B:8431:keyword/67"
+        },
+        {
+          "alternativeId": "B:8431:keyword/68",
+          "caseId": "B:8431:keyword/68"
+        },
+        {
+          "alternativeId": "B:8431:keyword/69",
+          "caseId": "B:8431:keyword/69"
+        },
+        {
+          "alternativeId": "B:8431:keyword/70",
+          "caseId": "B:8431:keyword/70"
+        },
+        {
+          "alternativeId": "B:8431:keyword/71",
+          "caseId": "B:8431:keyword/71"
+        },
+        {
+          "alternativeId": "B:8431:keyword/72",
+          "caseId": "B:8431:keyword/72"
+        },
+        {
+          "alternativeId": "B:8431:keyword/73",
+          "caseId": "B:8431:keyword/73"
+        },
+        {
+          "alternativeId": "B:8431:keyword/74",
+          "caseId": "B:8431:keyword/74"
+        },
+        {
+          "alternativeId": "B:8431:keyword/75",
+          "caseId": "B:8431:keyword/75"
+        },
+        {
+          "alternativeId": "B:8431:keyword/76",
+          "caseId": "B:8431:keyword/76"
+        },
+        {
+          "alternativeId": "B:8431:keyword/77",
+          "caseId": "B:8431:keyword/77"
+        }
+      ]
     },
     {
       "standardId": "B:8433:literal",
@@ -2052,7 +2362,49 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8438:decimal-digit/1",
+          "caseId": "B:8438:decimal-digit/1"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/2",
+          "caseId": "B:8438:decimal-digit/2"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/3",
+          "caseId": "B:8438:decimal-digit/3"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/4",
+          "caseId": "B:8438:decimal-digit/4"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/5",
+          "caseId": "B:8438:decimal-digit/5"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/6",
+          "caseId": "B:8438:decimal-digit/6"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/7",
+          "caseId": "B:8438:decimal-digit/7"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/8",
+          "caseId": "B:8438:decimal-digit/8"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/9",
+          "caseId": "B:8438:decimal-digit/9"
+        },
+        {
+          "alternativeId": "B:8438:decimal-digit/10",
+          "caseId": "B:8438:decimal-digit/10"
+        }
+      ]
     },
     {
       "standardId": "B:8439:integer-type-suffix",
@@ -2103,7 +2455,57 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8439:integer-type-suffix/1",
+          "caseId": "B:8439:integer-type-suffix/1"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/2",
+          "caseId": "B:8439:integer-type-suffix/2"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/3",
+          "caseId": "B:8439:integer-type-suffix/3"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/4",
+          "caseId": "B:8439:integer-type-suffix/4"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/5",
+          "caseId": "B:8439:integer-type-suffix/5"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/6",
+          "caseId": "B:8439:integer-type-suffix/6"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/7",
+          "caseId": "B:8439:integer-type-suffix/7"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/8",
+          "caseId": "B:8439:integer-type-suffix/8"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/9",
+          "caseId": "B:8439:integer-type-suffix/9"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/10",
+          "caseId": "B:8439:integer-type-suffix/10"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/11",
+          "caseId": "B:8439:integer-type-suffix/11"
+        },
+        {
+          "alternativeId": "B:8439:integer-type-suffix/12",
+          "caseId": "B:8439:integer-type-suffix/12"
+        }
+      ]
     },
     {
       "standardId": "B:8440:hexadecimal-integer-literal",
@@ -2256,7 +2658,97 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8442:hex-digit/1",
+          "caseId": "B:8442:hex-digit/1"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/2",
+          "caseId": "B:8442:hex-digit/2"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/3",
+          "caseId": "B:8442:hex-digit/3"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/4",
+          "caseId": "B:8442:hex-digit/4"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/5",
+          "caseId": "B:8442:hex-digit/5"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/6",
+          "caseId": "B:8442:hex-digit/6"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/7",
+          "caseId": "B:8442:hex-digit/7"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/8",
+          "caseId": "B:8442:hex-digit/8"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/9",
+          "caseId": "B:8442:hex-digit/9"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/10",
+          "caseId": "B:8442:hex-digit/10"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/11",
+          "caseId": "B:8442:hex-digit/11"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/12",
+          "caseId": "B:8442:hex-digit/12"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/13",
+          "caseId": "B:8442:hex-digit/13"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/14",
+          "caseId": "B:8442:hex-digit/14"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/15",
+          "caseId": "B:8442:hex-digit/15"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/16",
+          "caseId": "B:8442:hex-digit/16"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/17",
+          "caseId": "B:8442:hex-digit/17"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/18",
+          "caseId": "B:8442:hex-digit/18"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/19",
+          "caseId": "B:8442:hex-digit/19"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/20",
+          "caseId": "B:8442:hex-digit/20"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/21",
+          "caseId": "B:8442:hex-digit/21"
+        },
+        {
+          "alternativeId": "B:8442:hex-digit/22",
+          "caseId": "B:8442:hex-digit/22"
+        }
+      ]
     },
     {
       "standardId": "B:8443:real-literal",
@@ -2409,7 +2901,17 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8445:sign/1",
+          "caseId": "B:8445:sign/1"
+        },
+        {
+          "alternativeId": "B:8445:sign/2",
+          "caseId": "B:8445:sign/2"
+        }
+      ]
     },
     {
       "standardId": "B:8446:real-type-suffix",
@@ -2462,7 +2964,33 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8446:real-type-suffix/1",
+          "caseId": "B:8446:real-type-suffix/1"
+        },
+        {
+          "alternativeId": "B:8446:real-type-suffix/2",
+          "caseId": "B:8446:real-type-suffix/2"
+        },
+        {
+          "alternativeId": "B:8446:real-type-suffix/3",
+          "caseId": "B:8446:real-type-suffix/3"
+        },
+        {
+          "alternativeId": "B:8446:real-type-suffix/4",
+          "caseId": "B:8446:real-type-suffix/4"
+        },
+        {
+          "alternativeId": "B:8446:real-type-suffix/5",
+          "caseId": "B:8446:real-type-suffix/5"
+        },
+        {
+          "alternativeId": "B:8446:real-type-suffix/6",
+          "caseId": "B:8446:real-type-suffix/6"
+        }
+      ]
     },
     {
       "standardId": "B:8447:character-literal",
@@ -2666,7 +3194,53 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/1",
+          "caseId": "B:8450:simple-escape-sequence/1"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/2",
+          "caseId": "B:8450:simple-escape-sequence/2"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/3",
+          "caseId": "B:8450:simple-escape-sequence/3"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/4",
+          "caseId": "B:8450:simple-escape-sequence/4"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/5",
+          "caseId": "B:8450:simple-escape-sequence/5"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/6",
+          "caseId": "B:8450:simple-escape-sequence/6"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/7",
+          "caseId": "B:8450:simple-escape-sequence/7"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/8",
+          "caseId": "B:8450:simple-escape-sequence/8"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/9",
+          "caseId": "B:8450:simple-escape-sequence/9"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/10",
+          "caseId": "B:8450:simple-escape-sequence/10"
+        },
+        {
+          "alternativeId": "B:8450:simple-escape-sequence/11",
+          "caseId": "B:8450:simple-escape-sequence/11"
+        }
+      ]
     },
     {
       "standardId": "B:8451:hexadecimal-escape-sequence",
@@ -3332,7 +3906,193 @@
             "method": "Supplementary_spans_and_conditional_identity_remain_UTF16_based"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/1",
+          "caseId": "B:8464:operator-or-punctuator/1"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/2",
+          "caseId": "B:8464:operator-or-punctuator/2"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/3",
+          "caseId": "B:8464:operator-or-punctuator/3"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/4",
+          "caseId": "B:8464:operator-or-punctuator/4"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/5",
+          "caseId": "B:8464:operator-or-punctuator/5"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/6",
+          "caseId": "B:8464:operator-or-punctuator/6"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/7",
+          "caseId": "B:8464:operator-or-punctuator/7"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/8",
+          "caseId": "B:8464:operator-or-punctuator/8"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/9",
+          "caseId": "B:8464:operator-or-punctuator/9"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/10",
+          "caseId": "B:8464:operator-or-punctuator/10"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/11",
+          "caseId": "B:8464:operator-or-punctuator/11"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/12",
+          "caseId": "B:8464:operator-or-punctuator/12"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/13",
+          "caseId": "B:8464:operator-or-punctuator/13"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/14",
+          "caseId": "B:8464:operator-or-punctuator/14"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/15",
+          "caseId": "B:8464:operator-or-punctuator/15"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/16",
+          "caseId": "B:8464:operator-or-punctuator/16"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/17",
+          "caseId": "B:8464:operator-or-punctuator/17"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/18",
+          "caseId": "B:8464:operator-or-punctuator/18"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/19",
+          "caseId": "B:8464:operator-or-punctuator/19"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/20",
+          "caseId": "B:8464:operator-or-punctuator/20"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/21",
+          "caseId": "B:8464:operator-or-punctuator/21"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/22",
+          "caseId": "B:8464:operator-or-punctuator/22"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/23",
+          "caseId": "B:8464:operator-or-punctuator/23"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/24",
+          "caseId": "B:8464:operator-or-punctuator/24"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/25",
+          "caseId": "B:8464:operator-or-punctuator/25"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/26",
+          "caseId": "B:8464:operator-or-punctuator/26"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/27",
+          "caseId": "B:8464:operator-or-punctuator/27"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/28",
+          "caseId": "B:8464:operator-or-punctuator/28"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/29",
+          "caseId": "B:8464:operator-or-punctuator/29"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/30",
+          "caseId": "B:8464:operator-or-punctuator/30"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/31",
+          "caseId": "B:8464:operator-or-punctuator/31"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/32",
+          "caseId": "B:8464:operator-or-punctuator/32"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/33",
+          "caseId": "B:8464:operator-or-punctuator/33"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/34",
+          "caseId": "B:8464:operator-or-punctuator/34"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/35",
+          "caseId": "B:8464:operator-or-punctuator/35"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/36",
+          "caseId": "B:8464:operator-or-punctuator/36"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/37",
+          "caseId": "B:8464:operator-or-punctuator/37"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/38",
+          "caseId": "B:8464:operator-or-punctuator/38"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/39",
+          "caseId": "B:8464:operator-or-punctuator/39"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/40",
+          "caseId": "B:8464:operator-or-punctuator/40"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/41",
+          "caseId": "B:8464:operator-or-punctuator/41"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/42",
+          "caseId": "B:8464:operator-or-punctuator/42"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/43",
+          "caseId": "B:8464:operator-or-punctuator/43"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/44",
+          "caseId": "B:8464:operator-or-punctuator/44"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/45",
+          "caseId": "B:8464:operator-or-punctuator/45"
+        },
+        {
+          "alternativeId": "B:8464:operator-or-punctuator/46",
+          "caseId": "B:8464:operator-or-punctuator/46"
+        }
+      ]
     },
     {
       "standardId": "B:8465:right-shift",
@@ -7118,7 +7878,69 @@
             "method": "Ambiguity_and_precedence_keep_authored_nested_expression_ranges"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8543:predefined-type/1",
+          "caseId": "B:8543:predefined-type/1"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/2",
+          "caseId": "B:8543:predefined-type/2"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/3",
+          "caseId": "B:8543:predefined-type/3"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/4",
+          "caseId": "B:8543:predefined-type/4"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/5",
+          "caseId": "B:8543:predefined-type/5"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/6",
+          "caseId": "B:8543:predefined-type/6"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/7",
+          "caseId": "B:8543:predefined-type/7"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/8",
+          "caseId": "B:8543:predefined-type/8"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/9",
+          "caseId": "B:8543:predefined-type/9"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/10",
+          "caseId": "B:8543:predefined-type/10"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/11",
+          "caseId": "B:8543:predefined-type/11"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/12",
+          "caseId": "B:8543:predefined-type/12"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/13",
+          "caseId": "B:8543:predefined-type/13"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/14",
+          "caseId": "B:8543:predefined-type/14"
+        },
+        {
+          "alternativeId": "B:8543:predefined-type/15",
+          "caseId": "B:8543:predefined-type/15"
+        }
+      ]
     },
     {
       "standardId": "B:8544:invocation-expression",
@@ -18151,7 +18973,41 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "finiteAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/1",
+          "caseId": "B:8756:overloadable-unary-operator/1"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/2",
+          "caseId": "B:8756:overloadable-unary-operator/2"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/3",
+          "caseId": "B:8756:overloadable-unary-operator/3"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/4",
+          "caseId": "B:8756:overloadable-unary-operator/4"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/5",
+          "caseId": "B:8756:overloadable-unary-operator/5"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/6",
+          "caseId": "B:8756:overloadable-unary-operator/6"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/7",
+          "caseId": "B:8756:overloadable-unary-operator/7"
+        },
+        {
+          "alternativeId": "B:8756:overloadable-unary-operator/8",
+          "caseId": "B:8756:overloadable-unary-operator/8"
+        }
+      ]
     },
     {
       "standardId": "B:8757:binary-operator-declarator",
@@ -23871,5 +24727,16 @@
       "status": "source-inspected",
       "scope": "Normalized source-domain syntax/policy and finite selected-factory evidence; whole-row and alternative-specific review remains pending."
     }
-  ]
+  ],
+  "finiteAlternativeEvidence": {
+    "status": "finite-witnesses",
+    "path": "tests/Corpus/CSharp3/finite-alternative-cases.json",
+    "sha256": "1f57a55da4a3e8e6deb9d879137c5f169eb180a23b9bb65930d7fda44615425c",
+    "count": 209,
+    "witness": {
+      "path": "tests/CSNitrogen.Tests/Syntax/CSharp3FiniteAlternativeTests.cs",
+      "method": "Every_finite_one_of_alternative_has_positive_negative_and_original_range_witnesses"
+    },
+    "scope": "Exact positive/negative/range cases for ten one-of families; other source alternatives, normative admission and all overall review statuses remain pending."
+  }
 }
