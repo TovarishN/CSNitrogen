@@ -1,0 +1,16 @@
+# CSharp3 source-alternative witness obligations
+
+Status: pending. Primary: Microsoft C#3 DOC SHA256 ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1. The corrected455-occurrence index now records1175 independent alternative identities. Canonical alternative hashes normalize whitespace only; complete source-body hashes retain original extraction geometry. Word U+2028 separates alternatives, eight two-tab continuations remain part of their preceding right-hand side, and ten one-of families split into individual tokens. Eighteen explicit unsafe ellipses are inherited placeholders, not newly implemented syntax. Source text is not redistributed by the index.
+
+| Source domain | Indexed alternatives | Explicit finite token cases | Other production obligations | Inherited placeholders |
+| --- | ---: | ---: | ---: | ---: |
+| Lexical |370|186|184|0|
+| Syntactic |729|23|706|0|
+| Unsafe |76|0|58|18|
+| Total |1175|209|948|18|
+
+The209 finite cases cover every token in keyword, decimal-digit, integer-type-suffix, hex-digit, sign, real-type-suffix, simple-escape-sequence, operator-or-punctuator, predefined-type and overloadable-unary-operator. Each case has a selected-CSharp3 positive, a malformed or reserved-word negative and an exact authored span after a supplementary-character comment. Keyword positives preserve verbatim identifier spelling and negatives reject each raw reserved name. Numeric/literal/operator/declaration cases use owning source contexts. These are syntax observations; binding/type/operator legality is not implied.
+
+Each finite crosswalk link names the exact source alternative and a uniquely pinned corpus case. Independent checks validate the1175-alternative identity, all209 case identities/token hashes/ranges, the fixture checksum and the actual attributed witness method. Fourteen mutations require their specific invariant errors, including token/range errors independently of the checksum. A fresh pinned-DOC check rejects an invented finite case link. Method existence alone is metadata evidence; recorded test runs establish execution.
+
+All455 overall rows remain candidate/pending and CSharp3 remains partial. The948 other production alternatives and18 inherited placeholders are explicit remaining obligations. Their source/owner normalization and finite selected-factory groups are already recorded by the five domain reports, but they do not gain alternative-specific closure from those common groups or from this finite-token matrix. Inherited placeholders need traceable links to their earlier source alternatives; other obligations need representative owning-context cases or explicit reviewed normalization/exclusion evidence. The separate fail-closed source/factory/policy admission contract follows that work.

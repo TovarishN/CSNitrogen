@@ -1,0 +1,2098 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp3",
+  "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+  "scope": "Finite positive/negative and original-range witnesses for every token in the ten source one-of families; remaining alternatives and overall admission remain pending.",
+  "cases": [
+    {
+      "id": "B:8431:keyword/1",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "c59ddd3f7ba697a4b82003cd37637cd7fc3aac92cb9c6e4b308809dd9409e65c",
+      "token": "abstract",
+      "positive": "class @abstract{}",
+      "negative": "class abstract{}",
+      "spanText": "@abstract",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/2",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "f4bf9f7fcbedaba0392f108c59d8f4a38b3838efb64877380171b54475c2ade8",
+      "token": "as",
+      "positive": "class @as{}",
+      "negative": "class as{}",
+      "spanText": "@as",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/3",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "cae662172fd450bb0cd710a769079c05bfc5d8e35efa6576edc7d0377afdd4a2",
+      "token": "base",
+      "positive": "class @base{}",
+      "negative": "class base{}",
+      "spanText": "@base",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/4",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+      "token": "bool",
+      "positive": "class @bool{}",
+      "negative": "class bool{}",
+      "spanText": "@bool",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/5",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "14ebe56a5008e7c251101e9e1fdbe281ab0a82bd6fa00a5cef746b9ee0dd31d1",
+      "token": "break",
+      "positive": "class @break{}",
+      "negative": "class break{}",
+      "spanText": "@break",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/6",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "1c31626f568a075d2fd6934828ba678fe64655ef4e78e42c49367cbbfcaf42f5",
+      "token": "byte",
+      "positive": "class @byte{}",
+      "negative": "class byte{}",
+      "spanText": "@byte",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/7",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "bbfcd4160a1e8674dac62292ae48be4785262ad7078f9ec11b74a254ce70fa06",
+      "token": "case",
+      "positive": "class @case{}",
+      "negative": "class case{}",
+      "spanText": "@case",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/8",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "9f925cdc4feedda4d9ae06f2e1b476680f4781ac2e0fb95fcc819be70328453d",
+      "token": "catch",
+      "positive": "class @catch{}",
+      "negative": "class catch{}",
+      "spanText": "@catch",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/9",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "411b0496da5eeced5314a3b5e9532bac97008d09ce9969ab4fa6a52b8c7ef634",
+      "token": "char",
+      "positive": "class @char{}",
+      "negative": "class char{}",
+      "spanText": "@char",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/10",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "e61a3d78c65133c7260c43e719d97c46e16bd50c64ee7800536cf14c6407a617",
+      "token": "checked",
+      "positive": "class @checked{}",
+      "negative": "class checked{}",
+      "spanText": "@checked",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/11",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "0889113e04d3203f0c401c17c0fd8b352b740dc607433779d3edcaa13320b001",
+      "token": "class",
+      "positive": "class @class{}",
+      "negative": "class class{}",
+      "spanText": "@class",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/12",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "f75c6596507878933aa2bc17dfd9a8689ad0da4f85427ba457666ae5917fa631",
+      "token": "const",
+      "positive": "class @const{}",
+      "negative": "class const{}",
+      "spanText": "@const",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/13",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "e256ee8e7aff6957a781d8328f0f68e26996564c81fa458da59fbca2305138ad",
+      "token": "continue",
+      "positive": "class @continue{}",
+      "negative": "class continue{}",
+      "spanText": "@continue",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/14",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "3e6d4b43d473c69d919c7550b0468718a2e66daf934e0428b401e230c5d34d85",
+      "token": "decimal",
+      "positive": "class @decimal{}",
+      "negative": "class decimal{}",
+      "spanText": "@decimal",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/15",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f",
+      "token": "default",
+      "positive": "class @default{}",
+      "negative": "class default{}",
+      "spanText": "@default",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/16",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "6f216e33c5cf9add9d70e7cd8c28e3dafe27e7723ea93918b27c60f118532154",
+      "token": "delegate",
+      "positive": "class @delegate{}",
+      "negative": "class delegate{}",
+      "spanText": "@delegate",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/17",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "ac0b52a2ae6ef99999bc08fb31e19188bf0085a4614204068e677e140e1458be",
+      "token": "do",
+      "positive": "class @do{}",
+      "negative": "class do{}",
+      "spanText": "@do",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/18",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "2ce06a9e7f8c3e6bf85a6067d0b220fb0ad03de983053942a90c43e73ec76f89",
+      "token": "double",
+      "positive": "class @double{}",
+      "negative": "class double{}",
+      "spanText": "@double",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/19",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "7dd530c4d36da47cd33396718ef1fa1e8c0f7d91ee551d7fdc1c73aa65edb454",
+      "token": "else",
+      "positive": "class @else{}",
+      "negative": "class else{}",
+      "spanText": "@else",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/20",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "f3ebea48a05fad64a0cedc6f8c2acefcde2cfba440692b29f10a561f27a9d8a0",
+      "token": "enum",
+      "positive": "class @enum{}",
+      "negative": "class enum{}",
+      "spanText": "@enum",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/21",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "b8e1f80bd70ae0784c7855a451731b745fddb67749d23f637be9082b75e9575b",
+      "token": "event",
+      "positive": "class @event{}",
+      "negative": "class event{}",
+      "spanText": "@event",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/22",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "3b283e93debf035e990dfce1f21468476dc57c69313c5574f43ad1a185840277",
+      "token": "explicit",
+      "positive": "class @explicit{}",
+      "negative": "class explicit{}",
+      "spanText": "@explicit",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/23",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "6d58c986f159d1e9eb4d48ee3b0552cb3aeb8c15efc7209c944e4387b87c0f09",
+      "token": "extern",
+      "positive": "class @extern{}",
+      "negative": "class extern{}",
+      "spanText": "@extern",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/24",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+      "token": "false",
+      "positive": "class @false{}",
+      "negative": "class false{}",
+      "spanText": "@false",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/25",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "205c3e16c66ff0b845700155d0394219f64e9eb6ed9db9f7758382bb4106eb11",
+      "token": "finally",
+      "positive": "class @finally{}",
+      "negative": "class finally{}",
+      "spanText": "@finally",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/26",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "992a93455c71fedd36ac9bbc439952c041cf61445958472af479269b8d873513",
+      "token": "fixed",
+      "positive": "class @fixed{}",
+      "negative": "class fixed{}",
+      "spanText": "@fixed",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/27",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "76a7e234dc54e9c605b2cc9fdf71279526150df48c574bdfa69e436e0b3d5c18",
+      "token": "float",
+      "positive": "class @float{}",
+      "negative": "class float{}",
+      "spanText": "@float",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/28",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "10c22bcf4c768b515be4e94bcafc71bf3e8fb5f70b2584bcc8c7533217f2e7f9",
+      "token": "for",
+      "positive": "class @for{}",
+      "negative": "class for{}",
+      "spanText": "@for",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/29",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "755b4274c42c72ddee35ecdb34b9ad4c8b5569e3094bcf85ca656cf50e7842d6",
+      "token": "foreach",
+      "positive": "class @foreach{}",
+      "negative": "class foreach{}",
+      "spanText": "@foreach",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/30",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "a3cacc8283f848a097f3ca0af7767556bc9a84ff5cc7447d6d68e42f0de115e0",
+      "token": "goto",
+      "positive": "class @goto{}",
+      "negative": "class goto{}",
+      "spanText": "@goto",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/31",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "935f68319d4f227e02bfd54a0ddf85b8a242e42a4277aa5ef5eaab691710924e",
+      "token": "if",
+      "positive": "class @if{}",
+      "negative": "class if{}",
+      "spanText": "@if",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/32",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "3a8f7b6c00a3d17deeefc1ef97f60fb7d062c3844dcf61eb6507b9724a1871e7",
+      "token": "implicit",
+      "positive": "class @implicit{}",
+      "negative": "class implicit{}",
+      "spanText": "@implicit",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/33",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "582967534d0f909d196b97f9e6921342777aea87b46fa52df165389db1fb8ccf",
+      "token": "in",
+      "positive": "class @in{}",
+      "negative": "class in{}",
+      "spanText": "@in",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/34",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8",
+      "token": "int",
+      "positive": "class @int{}",
+      "negative": "class int{}",
+      "spanText": "@int",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/35",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "c796d37c6d491e8f0c6e9b83eed34c15c0f377f9f0f3cbb3216fbbf776da6325",
+      "token": "interface",
+      "positive": "class @interface{}",
+      "negative": "class interface{}",
+      "spanText": "@interface",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/36",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "3bed2cb3a3acf7b6a8ef408420cc682d5520e26976d354254f528c965612054f",
+      "token": "internal",
+      "positive": "class @internal{}",
+      "negative": "class internal{}",
+      "spanText": "@internal",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/37",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "fa51fd49abf67705d6a35d18218c115ff5633aec1f9ebfdc9d5d4956416f57f6",
+      "token": "is",
+      "positive": "class @is{}",
+      "negative": "class is{}",
+      "spanText": "@is",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/38",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "0c030586945fe504b604ecc2e875c38ede400cd5cd73da9730302162e6b02c6f",
+      "token": "lock",
+      "positive": "class @lock{}",
+      "negative": "class lock{}",
+      "spanText": "@lock",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/39",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "fc66f021c67d064c1490a12b5a4d4d2f5167ca692a16ca12f1f3a4cda29a6fa9",
+      "token": "long",
+      "positive": "class @long{}",
+      "negative": "class long{}",
+      "spanText": "@long",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/40",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "9359f3bb2efa7aabd0264fb67fb1d99f91871778e9b887179d6b2debaa251ec6",
+      "token": "namespace",
+      "positive": "class @namespace{}",
+      "negative": "class namespace{}",
+      "spanText": "@namespace",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/41",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+      "token": "new",
+      "positive": "class @new{}",
+      "negative": "class new{}",
+      "spanText": "@new",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/42",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "token": "null",
+      "positive": "class @null{}",
+      "negative": "class null{}",
+      "spanText": "@null",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/43",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "2958d416d08aa5a472d7b509036cb7eafd542add84527e66a145ea64cb4cdc75",
+      "token": "object",
+      "positive": "class @object{}",
+      "negative": "class object{}",
+      "spanText": "@object",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/44",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "06e55b633481f7bb072957eabcf110c972e86691c3cfedabe088024bffe42f23",
+      "token": "operator",
+      "positive": "class @operator{}",
+      "negative": "class operator{}",
+      "spanText": "@operator",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/45",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "762069bc07a6e1b5df123a5ae7bd91c10daa04694fbaa17fba0cd6a8dcce8f22",
+      "token": "out",
+      "positive": "class @out{}",
+      "negative": "class out{}",
+      "spanText": "@out",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/46",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "ce603774135699e9abdfd65eb1f2733774da58af91782528e82ef5f9efdb8fba",
+      "token": "override",
+      "positive": "class @override{}",
+      "negative": "class override{}",
+      "spanText": "@override",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/47",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "a20b52fae57cc7a99c9651f1b573950fd211823e3ace3bb9c273c06430f24cd3",
+      "token": "params",
+      "positive": "class @params{}",
+      "negative": "class params{}",
+      "spanText": "@params",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/48",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "715dc8493c36579a5b116995100f635e3572fdf8703e708ef1a08d943b36774e",
+      "token": "private",
+      "positive": "class @private{}",
+      "negative": "class private{}",
+      "spanText": "@private",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/49",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "9b2bbce6c72dd9bbd9c7a9976d5d76d1fcc2bb9832dec246375bb92006beccc3",
+      "token": "protected",
+      "positive": "class @protected{}",
+      "negative": "class protected{}",
+      "spanText": "@protected",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/50",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7",
+      "token": "public",
+      "positive": "class @public{}",
+      "negative": "class public{}",
+      "spanText": "@public",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/51",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "8171bacf32668a8f44b90087ad107ed63170f57154763ba7e44047bf9e5a7be3",
+      "token": "readonly",
+      "positive": "class @readonly{}",
+      "negative": "class readonly{}",
+      "spanText": "@readonly",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/52",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "3ff6c05723bb069d19953340320fa9512f0be584742703e60226ded28bb43861",
+      "token": "ref",
+      "positive": "class @ref{}",
+      "negative": "class ref{}",
+      "spanText": "@ref",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/53",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "7187f0675eb3827939741acf7342ba78836ecec21a31ecf3f34a55309d3bee8a",
+      "token": "return",
+      "positive": "class @return{}",
+      "negative": "class return{}",
+      "spanText": "@return",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/54",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "dce87edbef693781bdf969b784e6a708825c3fa2dacebd6f1623df9379c08d96",
+      "token": "sbyte",
+      "positive": "class @sbyte{}",
+      "negative": "class sbyte{}",
+      "spanText": "@sbyte",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/55",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "c9d0036bed6744bcdf692fc980d8717d7e5f5a4f4e8266b4a84982602fb1cd09",
+      "token": "sealed",
+      "positive": "class @sealed{}",
+      "negative": "class sealed{}",
+      "spanText": "@sealed",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/56",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "f9b0078b5df596d2ea19010c001bbd009e651de2c57e8fb7e355f31eb9d3f739",
+      "token": "short",
+      "positive": "class @short{}",
+      "negative": "class short{}",
+      "spanText": "@short",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/57",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "fdff50a13a2163caa82f3c2872d2f854077834127758f72e3b564ee32feb64b4",
+      "token": "sizeof",
+      "positive": "class @sizeof{}",
+      "negative": "class sizeof{}",
+      "spanText": "@sizeof",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/58",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "4cbe8e999d99e594989b9a08f941a2bd138c6d036c80b10bb39889d2b8162d8c",
+      "token": "stackalloc",
+      "positive": "class @stackalloc{}",
+      "negative": "class stackalloc{}",
+      "spanText": "@stackalloc",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/59",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "2053dbbf6ec7135c4e994d3464c478db6f48d3ca21052c8f44915edc96e02c39",
+      "token": "static",
+      "positive": "class @static{}",
+      "negative": "class static{}",
+      "spanText": "@static",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/60",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8",
+      "token": "string",
+      "positive": "class @string{}",
+      "negative": "class string{}",
+      "spanText": "@string",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/61",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70",
+      "token": "struct",
+      "positive": "class @struct{}",
+      "negative": "class struct{}",
+      "spanText": "@struct",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/62",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "78b49fb2cc2d2ed6c1bb8383b3d267b3bc623a8a0fb4aff4aa5d3db74c3b4967",
+      "token": "switch",
+      "positive": "class @switch{}",
+      "negative": "class switch{}",
+      "spanText": "@switch",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/63",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408",
+      "token": "this",
+      "positive": "class @this{}",
+      "negative": "class this{}",
+      "spanText": "@this",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/64",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "7b0456581bef4cb1f0e2c9c52ab9a3d80989f8aabe74e609d3cc183c365363de",
+      "token": "throw",
+      "positive": "class @throw{}",
+      "negative": "class throw{}",
+      "spanText": "@throw",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/65",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+      "token": "true",
+      "positive": "class @true{}",
+      "negative": "class true{}",
+      "spanText": "@true",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/66",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "1e262cd7d110812f5726055a6e672b92cde43648b76adff51a12441fbdf7e667",
+      "token": "try",
+      "positive": "class @try{}",
+      "negative": "class try{}",
+      "spanText": "@try",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/67",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "c60cdfd6c0ec8670af4a162359e438a2225b91ef27f16874d7f73cc7be0c2dab",
+      "token": "typeof",
+      "positive": "class @typeof{}",
+      "negative": "class typeof{}",
+      "spanText": "@typeof",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/68",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "c3f2029bb0eab1c09a6f13df3a14edf6359b3c36cf9610941220786f2c751f6b",
+      "token": "uint",
+      "positive": "class @uint{}",
+      "negative": "class uint{}",
+      "spanText": "@uint",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/69",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "6ccc44e523c092e74b94e78db91f471558b584cac7f60097db8b603b80d2206e",
+      "token": "ulong",
+      "positive": "class @ulong{}",
+      "negative": "class ulong{}",
+      "spanText": "@ulong",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/70",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "54bfa4373eaf956917d71576ed0514b8e4a563f5e4e726760d09d2ef01ddd046",
+      "token": "unchecked",
+      "positive": "class @unchecked{}",
+      "negative": "class unchecked{}",
+      "spanText": "@unchecked",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/71",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "629e3fc948fb5ca55eb9f2cc1cd815703841a4f6be23b038925fbe56bdc19c24",
+      "token": "unsafe",
+      "positive": "class @unsafe{}",
+      "negative": "class unsafe{}",
+      "spanText": "@unsafe",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/72",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "bf73430c738e6602ffea61623ac4cb5ff2104589fa035ea1896f359521b82937",
+      "token": "ushort",
+      "positive": "class @ushort{}",
+      "negative": "class ushort{}",
+      "spanText": "@ushort",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/73",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "a24e10fde71a121ae709d6d866e36dfce91ce464e196f718721d848cbd56d24d",
+      "token": "using",
+      "positive": "class @using{}",
+      "negative": "class using{}",
+      "spanText": "@using",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/74",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "e2efdd7db924f31dc81b659db07e6eba303497f110acbe8dddb8c13f2e3786d7",
+      "token": "virtual",
+      "positive": "class @virtual{}",
+      "negative": "class virtual{}",
+      "spanText": "@virtual",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/75",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "445be54d48a2e6294369c84c61cd0929209d4e1084536159bdf7002bddfe094b",
+      "token": "void",
+      "positive": "class @void{}",
+      "negative": "class void{}",
+      "spanText": "@void",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/76",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "021f0c9a23ee444122f8ac8eef8555adbc57b873de449f81ee8898a5448925ad",
+      "token": "volatile",
+      "positive": "class @volatile{}",
+      "negative": "class volatile{}",
+      "spanText": "@volatile",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8431:keyword/77",
+      "sourceOccurrence": "B:8431:keyword",
+      "sourceAlternativeSha256": "07a8750738828ffd36a9bbfc198cf5d3bfd93e9f86b0e16e5aedeef8426804cf",
+      "token": "while",
+      "positive": "class @while{}",
+      "negative": "class while{}",
+      "spanText": "@while",
+      "spanStart": 6
+    },
+    {
+      "id": "B:8438:decimal-digit/1",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "token": "0",
+      "positive": "class C{object x=0;}",
+      "negative": "class C{object x=0_;}",
+      "spanText": "0",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/2",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "token": "1",
+      "positive": "class C{object x=1;}",
+      "negative": "class C{object x=1_;}",
+      "spanText": "1",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/3",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "token": "2",
+      "positive": "class C{object x=2;}",
+      "negative": "class C{object x=2_;}",
+      "spanText": "2",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/4",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "token": "3",
+      "positive": "class C{object x=3;}",
+      "negative": "class C{object x=3_;}",
+      "spanText": "3",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/5",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "token": "4",
+      "positive": "class C{object x=4;}",
+      "negative": "class C{object x=4_;}",
+      "spanText": "4",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/6",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "token": "5",
+      "positive": "class C{object x=5;}",
+      "negative": "class C{object x=5_;}",
+      "spanText": "5",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/7",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "token": "6",
+      "positive": "class C{object x=6;}",
+      "negative": "class C{object x=6_;}",
+      "spanText": "6",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/8",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+      "token": "7",
+      "positive": "class C{object x=7;}",
+      "negative": "class C{object x=7_;}",
+      "spanText": "7",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/9",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+      "token": "8",
+      "positive": "class C{object x=8;}",
+      "negative": "class C{object x=8_;}",
+      "spanText": "8",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8438:decimal-digit/10",
+      "sourceOccurrence": "B:8438:decimal-digit",
+      "sourceAlternativeSha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7",
+      "token": "9",
+      "positive": "class C{object x=9;}",
+      "negative": "class C{object x=9_;}",
+      "spanText": "9",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/1",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "a25513c7e0f6eaa80a3337ee18081b9e2ed09e00af8531c8f7bb2542764027e7",
+      "token": "U",
+      "positive": "class C{object x=1U;}",
+      "negative": "class C{object x=1U_;}",
+      "spanText": "1U",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/2",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6",
+      "token": "u",
+      "positive": "class C{object x=1u;}",
+      "negative": "class C{object x=1u_;}",
+      "spanText": "1u",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/3",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "72dfcfb0c470ac255cde83fb8fe38de8a128188e03ea5ba5b2a93adbea1062fa",
+      "token": "L",
+      "positive": "class C{object x=1L;}",
+      "negative": "class C{object x=1L_;}",
+      "spanText": "1L",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/4",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0",
+      "token": "l",
+      "positive": "class C{object x=1l;}",
+      "negative": "class C{object x=1l_;}",
+      "spanText": "1l",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/5",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "6138f40c9673bed147f3f8518c86671ad641ad93c754b21aa7aa5d2b8aa4aa4f",
+      "token": "UL",
+      "positive": "class C{object x=1UL;}",
+      "negative": "class C{object x=1UL_;}",
+      "spanText": "1UL",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/6",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "7dcce8d0905d943f5dd29c168686613620c51cea789ab582c87b7162fecbf853",
+      "token": "Ul",
+      "positive": "class C{object x=1Ul;}",
+      "negative": "class C{object x=1Ul_;}",
+      "spanText": "1Ul",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/7",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "b41165e1c13b027699e4aea107e066b74eac41b686d5b33d3036a55c957f446e",
+      "token": "uL",
+      "positive": "class C{object x=1uL;}",
+      "negative": "class C{object x=1uL_;}",
+      "spanText": "1uL",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/8",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "51db253425817abff5f9d6cb749a42d8cbb7cd4dc95128efb59d788fcc570593",
+      "token": "ul",
+      "positive": "class C{object x=1ul;}",
+      "negative": "class C{object x=1ul_;}",
+      "spanText": "1ul",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/9",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "50326770c34ca13ba42c6b62ea8ab1d5f04f12c23d8c597457ea4c303639e99a",
+      "token": "LU",
+      "positive": "class C{object x=1LU;}",
+      "negative": "class C{object x=1LU_;}",
+      "spanText": "1LU",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/10",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "1ce3fb2cb03a19b8fd1afdb0e0bd4aa977b8254805e1d4e15d52b6f94cfd21c7",
+      "token": "Lu",
+      "positive": "class C{object x=1Lu;}",
+      "negative": "class C{object x=1Lu_;}",
+      "spanText": "1Lu",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/11",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "ff014b07f652ce1bb820b747324d7b6334152e7da10fd48000209dcfdf1d6145",
+      "token": "lU",
+      "positive": "class C{object x=1lU;}",
+      "negative": "class C{object x=1lU_;}",
+      "spanText": "1lU",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8439:integer-type-suffix/12",
+      "sourceOccurrence": "B:8439:integer-type-suffix",
+      "sourceAlternativeSha256": "80c0fcbbfa9d03d861b22230e67c380afb545c12de43094f3985128625858361",
+      "token": "lu",
+      "positive": "class C{object x=1lu;}",
+      "negative": "class C{object x=1lu_;}",
+      "spanText": "1lu",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/1",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "token": "0",
+      "positive": "class C{object x=0x0;}",
+      "negative": "class C{object x=0x0_;}",
+      "spanText": "0x0",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/2",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "token": "1",
+      "positive": "class C{object x=0x1;}",
+      "negative": "class C{object x=0x1_;}",
+      "spanText": "0x1",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/3",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "token": "2",
+      "positive": "class C{object x=0x2;}",
+      "negative": "class C{object x=0x2_;}",
+      "spanText": "0x2",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/4",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "token": "3",
+      "positive": "class C{object x=0x3;}",
+      "negative": "class C{object x=0x3_;}",
+      "spanText": "0x3",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/5",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "token": "4",
+      "positive": "class C{object x=0x4;}",
+      "negative": "class C{object x=0x4_;}",
+      "spanText": "0x4",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/6",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "token": "5",
+      "positive": "class C{object x=0x5;}",
+      "negative": "class C{object x=0x5_;}",
+      "spanText": "0x5",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/7",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "token": "6",
+      "positive": "class C{object x=0x6;}",
+      "negative": "class C{object x=0x6_;}",
+      "spanText": "0x6",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/8",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+      "token": "7",
+      "positive": "class C{object x=0x7;}",
+      "negative": "class C{object x=0x7_;}",
+      "spanText": "0x7",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/9",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+      "token": "8",
+      "positive": "class C{object x=0x8;}",
+      "negative": "class C{object x=0x8_;}",
+      "spanText": "0x8",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/10",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7",
+      "token": "9",
+      "positive": "class C{object x=0x9;}",
+      "negative": "class C{object x=0x9_;}",
+      "spanText": "0x9",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/11",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "token": "A",
+      "positive": "class C{object x=0xA;}",
+      "negative": "class C{object x=0xA_;}",
+      "spanText": "0xA",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/12",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+      "token": "B",
+      "positive": "class C{object x=0xB;}",
+      "negative": "class C{object x=0xB_;}",
+      "spanText": "0xB",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/13",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d",
+      "token": "C",
+      "positive": "class C{object x=0xC;}",
+      "negative": "class C{object x=0xC_;}",
+      "spanText": "0xC",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/14",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+      "token": "D",
+      "positive": "class C{object x=0xD;}",
+      "negative": "class C{object x=0xD_;}",
+      "spanText": "0xD",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/15",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "a9f51566bd6705f7ea6ad54bb9deb449f795582d6529a0e22207b8981233ec58",
+      "token": "E",
+      "positive": "class C{object x=0xE;}",
+      "negative": "class C{object x=0xE_;}",
+      "spanText": "0xE",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/16",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+      "token": "F",
+      "positive": "class C{object x=0xF;}",
+      "negative": "class C{object x=0xF_;}",
+      "spanText": "0xF",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/17",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+      "token": "a",
+      "positive": "class C{object x=0xa;}",
+      "negative": "class C{object x=0xa_;}",
+      "spanText": "0xa",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/18",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d",
+      "token": "b",
+      "positive": "class C{object x=0xb;}",
+      "negative": "class C{object x=0xb_;}",
+      "spanText": "0xb",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/19",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6",
+      "token": "c",
+      "positive": "class C{object x=0xc;}",
+      "negative": "class C{object x=0xc_;}",
+      "spanText": "0xc",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/20",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
+      "token": "d",
+      "positive": "class C{object x=0xd;}",
+      "negative": "class C{object x=0xd_;}",
+      "spanText": "0xd",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/21",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "3f79bb7b435b05321651daefd374cdc681dc06faa65e374e38337b88ca046dea",
+      "token": "e",
+      "positive": "class C{object x=0xe;}",
+      "negative": "class C{object x=0xe_;}",
+      "spanText": "0xe",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8442:hex-digit/22",
+      "sourceOccurrence": "B:8442:hex-digit",
+      "sourceAlternativeSha256": "252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111",
+      "token": "f",
+      "positive": "class C{object x=0xf;}",
+      "negative": "class C{object x=0xf_;}",
+      "spanText": "0xf",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8445:sign/1",
+      "sourceOccurrence": "B:8445:sign",
+      "sourceAlternativeSha256": "a318c24216defe206feeb73ef5be00033fa9c4a74d0b967f6532a26ca5906d3b",
+      "token": "+",
+      "positive": "class C{object x=1e+1;}",
+      "negative": "class C{object x=1e+;}",
+      "spanText": "1e+1",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8445:sign/2",
+      "sourceOccurrence": "B:8445:sign",
+      "sourceAlternativeSha256": "3973e022e93220f9212c18d0d0c543ae7c309e46640da93a4a0314de999f5112",
+      "token": "-",
+      "positive": "class C{object x=1e-1;}",
+      "negative": "class C{object x=1e-;}",
+      "spanText": "1e-1",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/1",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "f67ab10ad4e4c53121b6a5fe4da9c10ddee905b978d3788d2723d7bfacbe28a9",
+      "token": "F",
+      "positive": "class C{object x=1F;}",
+      "negative": "class C{object x=1F_;}",
+      "spanText": "1F",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/2",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111",
+      "token": "f",
+      "positive": "class C{object x=1f;}",
+      "negative": "class C{object x=1f_;}",
+      "spanText": "1f",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/3",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+      "token": "D",
+      "positive": "class C{object x=1D;}",
+      "negative": "class C{object x=1D_;}",
+      "spanText": "1D",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/4",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
+      "token": "d",
+      "positive": "class C{object x=1d;}",
+      "negative": "class C{object x=1d_;}",
+      "spanText": "1d",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/5",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "08f271887ce94707da822d5263bae19d5519cb3614e0daedc4c7ce5dab7473f1",
+      "token": "M",
+      "positive": "class C{object x=1M;}",
+      "negative": "class C{object x=1M_;}",
+      "spanText": "1M",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8446:real-type-suffix/6",
+      "sourceOccurrence": "B:8446:real-type-suffix",
+      "sourceAlternativeSha256": "62c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a",
+      "token": "m",
+      "positive": "class C{object x=1m;}",
+      "negative": "class C{object x=1m_;}",
+      "spanText": "1m",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/1",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "76702b32875e7d3af7368727a331ed16e20815cde7a73ee8682497bd487261a8",
+      "token": "\\'",
+      "positive": "class C{object x='\\'';}",
+      "negative": "class C{object x='\\'q';}",
+      "spanText": "'\\''",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/2",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "1ad070bb285bc0fd762522584ce502efa24749d6734857332a928804c2907aab",
+      "token": "\\\"",
+      "positive": "class C{object x='\\\"';}",
+      "negative": "class C{object x='\\\"q';}",
+      "spanText": "'\\\"'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/3",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "b11b4ca186c00769a40d69f084d0f73538b4c3942e13b0ae9b7c5ff763876e3c",
+      "token": "\\\\",
+      "positive": "class C{object x='\\\\';}",
+      "negative": "class C{object x='\\\\q';}",
+      "spanText": "'\\\\'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/4",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "86f80fa2ae598a66c489b827703b248e40bb3bba20ca04ce2d1b134999ae087f",
+      "token": "\\0",
+      "positive": "class C{object x='\\0';}",
+      "negative": "class C{object x='\\0q';}",
+      "spanText": "'\\0'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/5",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "2bac4a55153a7a84761b0ed38b9e4f3d13f4df4de4fea1484261e8a3e0fd226f",
+      "token": "\\a",
+      "positive": "class C{object x='\\a';}",
+      "negative": "class C{object x='\\aq';}",
+      "spanText": "'\\a'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/6",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "8d3a61f2a2c69a3c5721913b84bfc24ab7e92df27868bf4444567968f8bd9f0b",
+      "token": "\\b",
+      "positive": "class C{object x='\\b';}",
+      "negative": "class C{object x='\\bq';}",
+      "spanText": "'\\b'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/7",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "3599d51417a7c6c1252a2abda56acf9b53d4f3f8ff86c6b906316598ac77a3c4",
+      "token": "\\f",
+      "positive": "class C{object x='\\f';}",
+      "negative": "class C{object x='\\fq';}",
+      "spanText": "'\\f'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/8",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "a80e516bfb196e1c48a9acbe39da8fceb6bc82e0d991b8a990b8f3239c7efaed",
+      "token": "\\n",
+      "positive": "class C{object x='\\n';}",
+      "negative": "class C{object x='\\nq';}",
+      "spanText": "'\\n'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/9",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "156de42b059b0f0973813c09f276dc9be573a1e06a1991f7775986df8fdabbe0",
+      "token": "\\r",
+      "positive": "class C{object x='\\r';}",
+      "negative": "class C{object x='\\rq';}",
+      "spanText": "'\\r'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/10",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "9e6ce97799490c6ac1603cbe55d9189123e9f9629592de5df9d3094a646b37a8",
+      "token": "\\t",
+      "positive": "class C{object x='\\t';}",
+      "negative": "class C{object x='\\tq';}",
+      "spanText": "'\\t'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8450:simple-escape-sequence/11",
+      "sourceOccurrence": "B:8450:simple-escape-sequence",
+      "sourceAlternativeSha256": "1b5cec8c46451b5375ea7e61f310fe831ad17f62098beb7a5bfce304821e3f78",
+      "token": "\\v",
+      "positive": "class C{object x='\\v';}",
+      "negative": "class C{object x='\\vq';}",
+      "spanText": "'\\v'",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/1",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "token": "{",
+      "positive": "class C{}",
+      "negative": "class C{",
+      "spanText": "{",
+      "spanStart": 7
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/2",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2",
+      "token": "}",
+      "positive": "class C{}",
+      "negative": "class C{",
+      "spanText": "}",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/3",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "245843abef9e72e7efac30138a994bf6301e7e1d7d7042a33d42e863d2638811",
+      "token": "[",
+      "positive": "class C{object x=a[0];}",
+      "negative": "class C{object x=a[0;}",
+      "spanText": "[",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/4",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "cfae0d4248f7142f7b17f826cd7a519280e312577690e957830d23dcf35a3fff",
+      "token": "]",
+      "positive": "class C{object x=a[0];}",
+      "negative": "class C{object x=a0];}",
+      "spanText": "]",
+      "spanStart": 20
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/5",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "32ebb1abcc1c601ceb9c4e3c4faba0caa5b85bb98c4f1e6612c40faa528a91c9",
+      "token": "(",
+      "positive": "class C{object x=M();}",
+      "negative": "class C{object x=M(;}",
+      "spanText": "(",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/6",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee",
+      "token": ")",
+      "positive": "class C{object x=M();}",
+      "negative": "class C{object x=M);}",
+      "spanText": ")",
+      "spanStart": 19
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/7",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+      "token": ".",
+      "positive": "class C{object x=a.M;}",
+      "negative": "class C{object x=a.;}",
+      "spanText": ".",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/8",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "d03502c43d74a30b936740a9517dc4ea2b2ad7168caa0a774cefe793ce0b33e7",
+      "token": ",",
+      "positive": "class C{object x=M(a,b);}",
+      "negative": "class C{object x=M(a,,b);}",
+      "spanText": ",",
+      "spanStart": 20
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/9",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "e7ac0786668e0ff0f02b62bd04f45ff636fd82db63b1104601c975dc005f3a67",
+      "token": ":",
+      "positive": "class C{object x=a?b:c;}",
+      "negative": "class C{object x=a?b:;}",
+      "spanText": ":",
+      "spanStart": 20
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/10",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "41b805ea7ac014e23556e98bb374702a08344268f92489a02f0880849394a1e4",
+      "token": ";",
+      "positive": "class C{int x;}",
+      "negative": "class C{int x}",
+      "spanText": ";",
+      "spanStart": 13
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/11",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "a318c24216defe206feeb73ef5be00033fa9c4a74d0b967f6532a26ca5906d3b",
+      "token": "+",
+      "positive": "class C{object x=a+b;}",
+      "negative": "class C{object x=a+;}",
+      "spanText": "+",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/12",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "3973e022e93220f9212c18d0d0c543ae7c309e46640da93a4a0314de999f5112",
+      "token": "-",
+      "positive": "class C{object x=a-b;}",
+      "negative": "class C{object x=a-;}",
+      "spanText": "-",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/13",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+      "token": "*",
+      "positive": "class C{object x=a*b;}",
+      "negative": "class C{object x=a*;}",
+      "spanText": "*",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/14",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1",
+      "token": "/",
+      "positive": "class C{object x=a/b;}",
+      "negative": "class C{object x=a/;}",
+      "spanText": "/",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/15",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "bbf3f11cb5b43e700273a78d12de55e4a7eab741ed2abf13787a4d2dc832b8ec",
+      "token": "%",
+      "positive": "class C{object x=a%b;}",
+      "negative": "class C{object x=a%;}",
+      "spanText": "%",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/16",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "951dcee3a7a4f3aac67ec76a2ce4469cc76df650f134bf2572bf60a65c982338",
+      "token": "&",
+      "positive": "class C{object x=a&b;}",
+      "negative": "class C{object x=a&;}",
+      "spanText": "&",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/17",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7",
+      "token": "|",
+      "positive": "class C{object x=a|b;}",
+      "negative": "class C{object x=a|;}",
+      "spanText": "|",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/18",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "74cd9ef9c7e15f57bdad73c511462ca65cb674c46c49639c60f1b44650fa1dcb",
+      "token": "^",
+      "positive": "class C{object x=a^b;}",
+      "negative": "class C{object x=a^;}",
+      "spanText": "^",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/19",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62",
+      "token": "!",
+      "positive": "class C{object x=!a;}",
+      "negative": "class C{object x=!;}",
+      "spanText": "!",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/20",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "7ace431cb61584cb9b8dc7ec08cf38ac0a2d649660be86d349fb43108b542fa4",
+      "token": "~",
+      "positive": "class C{object x=~a;}",
+      "negative": "class C{object x=~;}",
+      "spanText": "~",
+      "spanStart": 17
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/21",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "380918b946a526640a40df5dced6516794f3d97bbd9e6bb553d037c4439f31c3",
+      "token": "=",
+      "positive": "class C{object x=a=b;}",
+      "negative": "class C{object x=a=;}",
+      "spanText": "=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/22",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "dabd3aff769f07eb2965401eb029974ebba3407afd02b26ddb564ea5f8efae72",
+      "token": "<",
+      "positive": "class C{object x=a<b;}",
+      "negative": "class C{object x=a<;}",
+      "spanText": "<",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/23",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "62b67e1f685b7fef51102005dddd27774be3fee38c42965c53aab035d0b6b221",
+      "token": ">",
+      "positive": "class C{object x=a>b;}",
+      "negative": "class C{object x=a>;}",
+      "spanText": ">",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/24",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1",
+      "token": "?",
+      "positive": "class C{object x=a?b:c;}",
+      "negative": "class C{object x=a?b;}",
+      "spanText": "?",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/25",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "e270aeb347f2165574c3a5c5bf11d038bcd3acd5abfdb5ae8a1b52d91cb842f0",
+      "token": "??",
+      "positive": "class C{object x=a??b;}",
+      "negative": "class C{object x=a??;}",
+      "spanText": "??",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/26",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "71546855d6279ef70d20909b292c42c2dcb02cd06bde01485da52d13e304ebf4",
+      "token": "::",
+      "positive": "class C{object x=A::T.M();}",
+      "negative": "class C{object x=A::.M();}",
+      "spanText": "::",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/27",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "cfc0c0607a3380f7975346b30c14af8284f5493d9781b0ed847f499f01b4768e",
+      "token": "++",
+      "positive": "class C{object x=a++;}",
+      "negative": "class C{object x=++;}",
+      "spanText": "++",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/28",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "d8156bae0c4243d3742fc4e9774d8aceabe0410249d720c855f98afc88ff846c",
+      "token": "--",
+      "positive": "class C{object x=a--;}",
+      "negative": "class C{object x=--;}",
+      "spanText": "--",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/29",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "73e7b6f86214bc78ee505fb5f7d4fb97cfa99924a67ca3105113c9a3d52f8fef",
+      "token": "&&",
+      "positive": "class C{object x=a&&b;}",
+      "negative": "class C{object x=a&&;}",
+      "spanText": "&&",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/30",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "565d240f5343e625ae579a4d45a770f1f02c6368b5ed4d06da4fbe6f47c28866",
+      "token": "||",
+      "positive": "class C{object x=a||b;}",
+      "negative": "class C{object x=a||;}",
+      "spanText": "||",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/31",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "71b37b9a8a57b848ece344578aae47e20d4a7adef967e33f39e69aeb231340fd",
+      "token": "->",
+      "positive": "class C{object x=p->M;}",
+      "negative": "class C{object x=p->;}",
+      "spanText": "->",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/32",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "f16474a9900a44186e87098f5fcb153a1fab2e401e1a6db587168b204761b276",
+      "token": "==",
+      "positive": "class C{object x=a==b;}",
+      "negative": "class C{object x=a==;}",
+      "spanText": "==",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/33",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "c10987bd7cf853f6ea92ddac1b6c95fa830e3aee160cc5d4ba2fea3743be1aa2",
+      "token": "!=",
+      "positive": "class C{object x=a!=b;}",
+      "negative": "class C{object x=a!=;}",
+      "spanText": "!=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/34",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "b60080dc8b8982d2a2bff6f8f3715c1939614dc553cd223ef21832b88c815866",
+      "token": "<=",
+      "positive": "class C{object x=a<=b;}",
+      "negative": "class C{object x=a<=;}",
+      "spanText": "<=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/35",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "92a00d7d91da9f0f06c3f218c49c9b98323469962b291365b85d3c16b6b7f95f",
+      "token": ">=",
+      "positive": "class C{object x=a>=b;}",
+      "negative": "class C{object x=a>=;}",
+      "spanText": ">=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/36",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "6254c28f7a6304931425ed7d57780e8b39a9f8ef7d0a63f9853eec9f5dd040d5",
+      "token": "+=",
+      "positive": "class C{object x=a+=b;}",
+      "negative": "class C{object x=a+=;}",
+      "spanText": "+=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/37",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "afd77ca08ae8b37e8145fb4abdf81bb61b9a3e7773f1a75fce334312036f5ccd",
+      "token": "-=",
+      "positive": "class C{object x=a-=b;}",
+      "negative": "class C{object x=a-=;}",
+      "spanText": "-=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/38",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "05f1b874896fea9dd7aa6b682e6b0d8be8e810cdd3706947c7579500af980be3",
+      "token": "*=",
+      "positive": "class C{object x=a*=b;}",
+      "negative": "class C{object x=a*=;}",
+      "spanText": "*=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/39",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "35763df7dbf50d4d26ea2274908a221676cdf59a985eb5eda5d82b659b3e816f",
+      "token": "/=",
+      "positive": "class C{object x=a/=b;}",
+      "negative": "class C{object x=a/=;}",
+      "spanText": "/=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/40",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "8381ad47eec22bb9e452003a231f5e7079784d96c862c350644d6f421919f52b",
+      "token": "%=",
+      "positive": "class C{object x=a%=b;}",
+      "negative": "class C{object x=a%=;}",
+      "spanText": "%=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/41",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "f29edd35351842ce40d2c2076c4981c5de4ec3622a933ecfe5468bdae919c535",
+      "token": "&=",
+      "positive": "class C{object x=a&=b;}",
+      "negative": "class C{object x=a&=;}",
+      "spanText": "&=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/42",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "94a8804762ab692bbd8aef70d46df79fa28258d06385711b0526c6cfa300fea1",
+      "token": "|=",
+      "positive": "class C{object x=a|=b;}",
+      "negative": "class C{object x=a|=;}",
+      "spanText": "|=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/43",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "e50ae35de71a3630c5875b8c063f77ad9bd4e587d558b3a07aa7385a106eefcc",
+      "token": "^=",
+      "positive": "class C{object x=a^=b;}",
+      "negative": "class C{object x=a^=;}",
+      "spanText": "^=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/44",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "4be261c018f23deac37f17f24abb5f42c4f32044fa3116d7b618446fb03ca09e",
+      "token": "<<",
+      "positive": "class C{object x=a<<b;}",
+      "negative": "class C{object x=a<<;}",
+      "spanText": "<<",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/45",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "454012b6fd7e1926e3776f4436a1604ab1ae27a6807136a339344886c04f1daf",
+      "token": "<<=",
+      "positive": "class C{object x=a<<=b;}",
+      "negative": "class C{object x=a<<=;}",
+      "spanText": "<<=",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8464:operator-or-punctuator/46",
+      "sourceOccurrence": "B:8464:operator-or-punctuator",
+      "sourceAlternativeSha256": "b310676102b8f4f9acc55d058768284571823ae5e37c71cce3ff5c592c9e5a81",
+      "token": "=>",
+      "positive": "class C{object x=x=>x;}",
+      "negative": "class C{object x=x=>;}",
+      "spanText": "=>",
+      "spanStart": 18
+    },
+    {
+      "id": "B:8543:predefined-type/1",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+      "token": "bool",
+      "positive": "class C{bool field;}",
+      "negative": "class C{bool ;}",
+      "spanText": "bool",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/2",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "1c31626f568a075d2fd6934828ba678fe64655ef4e78e42c49367cbbfcaf42f5",
+      "token": "byte",
+      "positive": "class C{byte field;}",
+      "negative": "class C{byte ;}",
+      "spanText": "byte",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/3",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "411b0496da5eeced5314a3b5e9532bac97008d09ce9969ab4fa6a52b8c7ef634",
+      "token": "char",
+      "positive": "class C{char field;}",
+      "negative": "class C{char ;}",
+      "spanText": "char",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/4",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "3e6d4b43d473c69d919c7550b0468718a2e66daf934e0428b401e230c5d34d85",
+      "token": "decimal",
+      "positive": "class C{decimal field;}",
+      "negative": "class C{decimal ;}",
+      "spanText": "decimal",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/5",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "2ce06a9e7f8c3e6bf85a6067d0b220fb0ad03de983053942a90c43e73ec76f89",
+      "token": "double",
+      "positive": "class C{double field;}",
+      "negative": "class C{double ;}",
+      "spanText": "double",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/6",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "76a7e234dc54e9c605b2cc9fdf71279526150df48c574bdfa69e436e0b3d5c18",
+      "token": "float",
+      "positive": "class C{float field;}",
+      "negative": "class C{float ;}",
+      "spanText": "float",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/7",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8",
+      "token": "int",
+      "positive": "class C{int field;}",
+      "negative": "class C{int ;}",
+      "spanText": "int",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/8",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "fc66f021c67d064c1490a12b5a4d4d2f5167ca692a16ca12f1f3a4cda29a6fa9",
+      "token": "long",
+      "positive": "class C{long field;}",
+      "negative": "class C{long ;}",
+      "spanText": "long",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/9",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "2958d416d08aa5a472d7b509036cb7eafd542add84527e66a145ea64cb4cdc75",
+      "token": "object",
+      "positive": "class C{object field;}",
+      "negative": "class C{object ;}",
+      "spanText": "object",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/10",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "dce87edbef693781bdf969b784e6a708825c3fa2dacebd6f1623df9379c08d96",
+      "token": "sbyte",
+      "positive": "class C{sbyte field;}",
+      "negative": "class C{sbyte ;}",
+      "spanText": "sbyte",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/11",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "f9b0078b5df596d2ea19010c001bbd009e651de2c57e8fb7e355f31eb9d3f739",
+      "token": "short",
+      "positive": "class C{short field;}",
+      "negative": "class C{short ;}",
+      "spanText": "short",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/12",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8",
+      "token": "string",
+      "positive": "class C{string field;}",
+      "negative": "class C{string ;}",
+      "spanText": "string",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/13",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "c3f2029bb0eab1c09a6f13df3a14edf6359b3c36cf9610941220786f2c751f6b",
+      "token": "uint",
+      "positive": "class C{uint field;}",
+      "negative": "class C{uint ;}",
+      "spanText": "uint",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/14",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "6ccc44e523c092e74b94e78db91f471558b584cac7f60097db8b603b80d2206e",
+      "token": "ulong",
+      "positive": "class C{ulong field;}",
+      "negative": "class C{ulong ;}",
+      "spanText": "ulong",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8543:predefined-type/15",
+      "sourceOccurrence": "B:8543:predefined-type",
+      "sourceAlternativeSha256": "bf73430c738e6602ffea61623ac4cb5ff2104589fa035ea1896f359521b82937",
+      "token": "ushort",
+      "positive": "class C{ushort field;}",
+      "negative": "class C{ushort ;}",
+      "spanText": "ushort",
+      "spanStart": 8
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/1",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "a318c24216defe206feeb73ef5be00033fa9c4a74d0b967f6532a26ca5906d3b",
+      "token": "+",
+      "positive": "class C{public static C operator +(C x){return x;}}",
+      "negative": "class C{public static C operator +(C){return x;}}",
+      "spanText": "+",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/2",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "3973e022e93220f9212c18d0d0c543ae7c309e46640da93a4a0314de999f5112",
+      "token": "-",
+      "positive": "class C{public static C operator -(C x){return x;}}",
+      "negative": "class C{public static C operator -(C){return x;}}",
+      "spanText": "-",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/3",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62",
+      "token": "!",
+      "positive": "class C{public static C operator !(C x){return x;}}",
+      "negative": "class C{public static C operator !(C){return x;}}",
+      "spanText": "!",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/4",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "7ace431cb61584cb9b8dc7ec08cf38ac0a2d649660be86d349fb43108b542fa4",
+      "token": "~",
+      "positive": "class C{public static C operator ~(C x){return x;}}",
+      "negative": "class C{public static C operator ~(C){return x;}}",
+      "spanText": "~",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/5",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "cfc0c0607a3380f7975346b30c14af8284f5493d9781b0ed847f499f01b4768e",
+      "token": "++",
+      "positive": "class C{public static C operator ++(C x){return x;}}",
+      "negative": "class C{public static C operator ++(C){return x;}}",
+      "spanText": "++",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/6",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "d8156bae0c4243d3742fc4e9774d8aceabe0410249d720c855f98afc88ff846c",
+      "token": "--",
+      "positive": "class C{public static C operator --(C x){return x;}}",
+      "negative": "class C{public static C operator --(C){return x;}}",
+      "spanText": "--",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/7",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+      "token": "true",
+      "positive": "class C{public static C operator true(C x){return x;}}",
+      "negative": "class C{public static C operator true(C){return x;}}",
+      "spanText": "true",
+      "spanStart": 33
+    },
+    {
+      "id": "B:8756:overloadable-unary-operator/8",
+      "sourceOccurrence": "B:8756:overloadable-unary-operator",
+      "sourceAlternativeSha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+      "token": "false",
+      "positive": "class C{public static C operator false(C x){return x;}}",
+      "negative": "class C{public static C operator false(C){return x;}}",
+      "spanText": "false",
+      "spanStart": 33
+    }
+  ]
+}
