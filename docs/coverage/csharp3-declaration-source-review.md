@@ -1,5 +1,7 @@
 # CSharp3 compilation, declaration, array and attribute source disposition
 
+Historical source-inspection report: candidate/pending statements below describe its original audit stage. Final reviewed normalized syntax admission is recorded in csharp3-reviewed-admission-evidence.md and the separate pinned coverage gate.
+
 Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all150 syntactic Appendix B occurrences B8677–8833, interpreted with controlling §§9–15,17 and the previously reviewed normalization boundaries. Unsafe extensions have a separate39-occurrence report. All overall crosswalk statuses remain candidate/pending; this source-domain inspection and finite evidence do not admit CSharp3 completeness.
 
 ## Compilation units and namespaces: B8677–8690

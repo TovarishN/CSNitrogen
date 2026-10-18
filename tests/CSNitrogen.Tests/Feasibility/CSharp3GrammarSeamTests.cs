@@ -34,7 +34,7 @@ public class CSharp3GrammarSeamTests
   Assert.Contains(Enumerable.Range(0,parsed.Tree.NodeCount),n=>language.GetKindName(parsed.Tree.Kind(n))==kind);
   var baseline=P.CSharp3BaseProbeComposition.CreateBuilder().Build();using var absent=baseline.Parse(source,P.CSharp3BaseProbeComposition.Start);
   Assert.False(absent.Success&&!absent.HasErrors,expression);
-  Assert.False(CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.True(CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
 
  [Theory]
@@ -87,7 +87,7 @@ public class CSharp3GrammarSeamTests
  {
   var language=P.CSharp3AllProbeComposition.CreateBuilder().Build();using var parsed=language.Parse("class C{object value="+expression+";}",P.CSharp3AllProbeComposition.Start);
   Assert.True(parsed.Success&&!parsed.HasErrors,obligation+" :: "+expression);
-  Assert.False(CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.True(CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  [Fact]public void Lambda_parameters_and_body_have_typed_owners_and_authored_spans()
  {

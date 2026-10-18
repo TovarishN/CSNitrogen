@@ -15,9 +15,9 @@ public static class ProfileResolver
         if(custom.Profile is null)return custom;
         var grammars=Array.AsReadOnly(custom.Profile.Grammars.Select(g=>g=="Grammars/GlobalTargetsCurrent.ngr"?version.Major switch {1=>"Grammars/GlobalTargetsHistorical.ngr",2=>"Grammars/GlobalTargetsSecond.ngr",3=>"Grammars/GlobalTargetsThird.ngr",_=>g}:g).Order(StringComparer.Ordinal).ToArray());
         var policies=Array.AsReadOnly(custom.Profile.Policies.Append(version.Major==1?"unicode-3.0-bmp":UnicodePolicy.UsesUnicode4(version)?"unicode-4.0-scalar":"unicode-current-bmp").Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray());
-        bool factory=version.Major switch {1=>CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules),2=>CSNitrogen.Parsing.CSharpParser.MatchesSecondFactory(FeatureCatalog.SecondModules),_=>true};
+        bool factory=version.Major switch {1=>CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules),2=>CSNitrogen.Parsing.CSharpParser.MatchesSecondFactory(FeatureCatalog.SecondModules),3=>CSNitrogen.Parsing.CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules),_=>true};
         var coverage=CoverageContract.Evaluate(version,FeatureCatalog.Inventory,FeatureCatalog.CoverageMappings,FeatureCatalog.Implemented,
-            custom.Profile.Features,policies,FeatureCatalog.KnownPolicies,grammars,FeatureCatalog.FactoryGrammars(name),version.Major==2?FeatureCatalog.SecondSourceReviewed:FeatureCatalog.SourceReviewed,factory);
+            custom.Profile.Features,policies,FeatureCatalog.KnownPolicies,grammars,FeatureCatalog.FactoryGrammars(name),version.Major switch{2=>FeatureCatalog.SecondSourceReviewed,3=>FeatureCatalog.ThirdSourceReviewed,_=>FeatureCatalog.SourceReviewed},factory);
         if(coverage.Issues.Count>0)return new(null,coverage.Issues);
         return new(custom.Profile with {Version=version,Grammars=grammars,Policies=policies,RequestedFeatures=Array.AsReadOnly(requested),
             MissingFeatures=coverage.Missing,Complete=coverage.Complete},custom.Issues);

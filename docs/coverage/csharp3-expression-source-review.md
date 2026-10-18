@@ -1,5 +1,7 @@
 # CSharp3 names, types and expressions source disposition
 
+Historical source-inspection report: candidate/pending statements below describe its original audit stage. Final reviewed normalized syntax admission is recorded in csharp3-reviewed-admission-evidence.md and the separate pinned coverage gate.
+
 Primary: Microsoft C# Language Specification Version3.0 DOC, SHA256 `ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1`. Scope: all114 syntactic Appendix B occurrences B8506–8622, with controlling §§3.8,4,5.3,7.4–7.17 prose. Unsafe expression additions are retained for the separate unsafe disposition. This report records source inspection and finite selected-CSharp3 execution evidence, not complete alternative-specific admission. All overall crosswalk statuses remain candidate/pending.
 
 The leading space before B8527 dim-separators is a source heading, not a continuation of B8526 rank-specifier. Both repeated dim-separators occurrences are independently indexed; punctuation-list ownership normalizes to ArrayRank.Commas.

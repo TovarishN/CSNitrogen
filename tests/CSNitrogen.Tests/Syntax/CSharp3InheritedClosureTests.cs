@@ -35,7 +35,7 @@ public class CSharp3InheritedClosureTests
  public void Inherited_normative_neighbors_and_ambiguities_use_the_third_factory(string origin,string source,bool accepted,string kind)
  {
   using var parsed=CSharpParser.Parse(new(source,"CSharp3",origin,[]));
-  Assert.True(parsed.Accepted==accepted,source+" :: "+string.Join(";",parsed.Issues));Assert.False(parsed.ProfileComplete);
+  Assert.True(parsed.Accepted==accepted,source+" :: "+string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);
   if(kind.Length>0)Assert.Contains(Enumerable.Range(0,parsed.Tree.NodeCount),n=>parsed.Tree.Language!.GetKindName(parsed.Tree.Kind(n))==kind);
   foreach(int node in Enumerable.Range(0,parsed.Tree.NodeCount))
   {var span=parsed.Tree.Span(node);Assert.InRange(span.Start,0,source.Length);Assert.InRange(span.Length,0,source.Length-span.Start);}

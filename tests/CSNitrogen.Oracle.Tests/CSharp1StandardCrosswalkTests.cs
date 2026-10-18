@@ -135,6 +135,13 @@ public class CSharp1StandardCrosswalkTests
     }
 
     [Theory]
+    [InlineData("csharp3-coverage-gate.json")]
+    [InlineData("csharp3-evidence.lexical-production-cases.json")]
+    [InlineData("csharp3-evidence.expression-production-cases.json")]
+    [InlineData("csharp3-evidence.statement-production-cases.json")]
+    [InlineData("csharp3-evidence.unsafe-production-cases.json")]
+    [InlineData("csharp3-evidence.declaration-production-cases.json")]
+    [InlineData("csharp3-evidence.finite-alternative-cases.json")]
     [InlineData("csharp3-reference-policy.json")]
     [InlineData("csharp3-standard-index.json")]
     [InlineData("csharp3-standard-crosswalk.json")]
@@ -148,8 +155,8 @@ public class CSharp1StandardCrosswalkTests
     public void Coverage_identity_binds_each_standard_input(string suffix)
     {
         var assembly = typeof(FeatureCatalog).Assembly;
-        string[] fixedNames = ["csharp3-standard-crosswalk.json", "csharp3-reference-policy.json", "csharp3-standard-index.json", "csharp2-coverage-gate.json", "csharp2-standard-crosswalk.json", "csharp2-reference-policy.json", "csharp2-standard-index.json", "coverage.json", "dependencies.json", "composition.json", "reference-policy.json", "csharp1-coverage-gate.json", "csharp1-standard-index.json", "csharp1-standard-crosswalk.json"];
-        var inputs = assembly.GetManifestResourceNames().Where(n => fixedNames.Any(s => n == "CSNitrogen." + s) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.review.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.csharp3-review.", StringComparison.Ordinal))
+        string[] fixedNames = ["csharp3-coverage-gate.json", "csharp3-standard-crosswalk.json", "csharp3-reference-policy.json", "csharp3-standard-index.json", "csharp2-coverage-gate.json", "csharp2-standard-crosswalk.json", "csharp2-reference-policy.json", "csharp2-standard-index.json", "coverage.json", "dependencies.json", "composition.json", "reference-policy.json", "csharp1-coverage-gate.json", "csharp1-standard-index.json", "csharp1-standard-crosswalk.json"];
+        var inputs = assembly.GetManifestResourceNames().Where(n => fixedNames.Any(s => n == "CSNitrogen." + s) || n.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.source.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.review.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.csharp3-review.", StringComparison.Ordinal) || n.StartsWith("CSNitrogen.csharp3-evidence.", StringComparison.Ordinal))
             .Select(n => { using var stream = assembly.GetManifestResourceStream(n)!; using var bytes = new MemoryStream(); stream.CopyTo(bytes); return new KeyValuePair<string, byte[]>(n, bytes.ToArray()); }).ToArray();
         Assert.Equal(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs));
         Assert.NotEqual(FeatureCatalog.CoverageIdentity, CoverageHash.Compute(inputs.Where(p => p.Key != "CSNitrogen." + suffix)));

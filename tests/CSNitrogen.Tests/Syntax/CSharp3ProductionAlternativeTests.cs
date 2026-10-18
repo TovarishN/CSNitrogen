@@ -17,7 +17,7 @@ public class CSharp3ProductionAlternativeTests
   using var j=JsonDocument.Parse(json);var c=j.RootElement;const string prefix="/*𐐀*/";
   string source=prefix+c.GetProperty("source").GetString();
   using var parsed=CSharpParser.Parse(new(source,"CSharp3",id,[]));
-  Assert.True(parsed.Accepted,id+" positive :: "+source+" :: "+string.Join(";",parsed.Issues));Assert.False(parsed.ProfileComplete);Assert.Empty(parsed.Issues);
+  Assert.True(parsed.Accepted,id+" positive :: "+source+" :: "+string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);Assert.Empty(parsed.Issues);
   string focus=c.GetProperty("focus").GetString()!;int start=prefix.Length+c.GetProperty("focusStart").GetInt32();
   Assert.Equal(focus,source.Substring(start,focus.Length));
   string anchor=c.GetProperty("anchorText").GetString()!;int anchorStart=prefix.Length+c.GetProperty("anchorStart").GetInt32();

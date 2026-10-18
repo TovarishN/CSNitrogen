@@ -13,7 +13,7 @@ public class CSharp3CrosswalkCandidateTests
  [Theory]
  [InlineData("missing-row")][InlineData("duplicate-row")][InlineData("wrong-body")]
  [InlineData("unknown-owner")][InlineData("duplicate-owner")][InlineData("unknown-policy")]
- [InlineData("unapproved-correction")][InlineData("missing-correction")][InlineData("promoted-status")]
+ [InlineData("unapproved-correction")][InlineData("missing-correction")][InlineData("unreviewed-status")]
  [InlineData("missing-correction-declaration")][InlineData("unapproved-correction-declaration")]
  [InlineData("wrong-main-reference")]
  public void Candidate_drift_is_detected_without_admitting_the_profile(string change)
@@ -29,12 +29,12 @@ public class CSharp3CrosswalkCandidateTests
    case "unknown-policy":row["policies"]!.AsArray().Add("invented-policy");break;
    case "unapproved-correction":row["sourceCorrection"]="approved-generic-member-suffix";break;
    case "missing-correction":rows.Single(r=>Text(r!,"standardId")=="B:8548:base-access")!.AsObject().Remove("sourceCorrection");break;
-   case "promoted-status":row["status"]="verified";break;
+   case "unreviewed-status":row["status"]="candidate";break;
    case "missing-correction-declaration":map["sourceCorrections"]!.AsObject().Remove("approved-generic-member-suffix");break;
    case "unapproved-correction-declaration":map["sourceCorrections"]!["approved-generic-member-suffix"]!["status"]="pending";break;
    case "wrong-main-reference":row["mainTextOccurrences"]=new JsonArray(0);break;
   }
-  Assert.NotEmpty(Evaluate(index,map));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.NotEmpty(Evaluate(index,map));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  private static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  private static string[] Strings(JsonNode? n)=>n?.AsArray().Select(v=>v!.GetValue<string>()).ToArray()??[];
@@ -46,7 +46,7 @@ public class CSharp3CrosswalkCandidateTests
   try
   {
    const string sourceHash="ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1";
-   if(Text(map,"profile")!="CSharp3"||Text(map,"status")!="candidate"||Text(map,"sourceSha256")!=sourceHash||Text(index,"sourceSha256")!=sourceHash)errors.Add("authority");
+   if(Text(map,"profile")!="CSharp3"||Text(map,"status")!="verified"||Text(map,"sourceSha256")!=sourceHash||Text(index,"sourceSha256")!=sourceHash)errors.Add("authority");
    var headings=index["productions"]!.AsArray().ToDictionary(n=>Text(n!,"id"),n=>n!);var rows=map["productions"]!.AsArray();
    if(headings.Count!=455)errors.Add("source count");
    Exact("occurrences",headings.Keys,rows.Select(n=>Text(n!,"standardId")));
@@ -73,7 +73,7 @@ public class CSharp3CrosswalkCandidateTests
     if(Text(row!,"sourceBodySha256")!=Text(heading,"sourceBodySha256"))errors.Add("body "+id);
     var main=row!["mainTextOccurrences"]!.AsArray().Select(n=>n!.GetValue<int>()).ToArray();
     if(main.Length==0||main.Any(n=>n is <1 or >=8391)||!main.SequenceEqual(main.Distinct().Order()))errors.Add("main reference "+id);
-    if(Text(row!,"status")!="candidate"||Text(row!,"reviewStatus")!="pending")errors.Add("review "+id);
+    if(Text(row!,"status")!="verified"||Text(row!,"reviewStatus")!="verified")errors.Add("review "+id);
     var targets=Strings(row!["targets"]);var policies=Strings(row["policies"]);
     if(targets.Length+policies.Length==0||targets.Distinct().Count()!=targets.Length||targets.Any(t=>!owners.Contains(t)))errors.Add("owner "+id);
     if(policies.Distinct().Count()!=policies.Length||policies.Any(p=>!FeatureCatalog.KnownPolicies.Contains(p)))errors.Add("policy "+id);

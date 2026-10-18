@@ -6,7 +6,7 @@ public class CSharp3AlternativeMatrixTests
  static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  static JsonObject Read(string name){using var s=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen."+name)!;return JsonNode.Parse(s)!.AsObject();}
  [Fact]public void Entire_source_alternative_matrix_has_one_correct_evidence_class_per_identity()
- {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  static List<string> Evaluate(JsonObject index,JsonObject map)
  {
   var errors=new List<string>();var identities=new List<string>();

@@ -23,6 +23,6 @@ public class CSharp3UnicodeContractTests
   using var p=CSharpParser.Parse(new(source,"CSharp3","span.cs",[@"\U00010400"]));Assert.True(p.Accepted,string.Join(";",p.Issues));
   Assert.Equal(2,p.Classes[0].Name.Span.Length);Assert.Equal(source.IndexOf("𐐁",StringComparison.Ordinal),p.Classes[0].Name.Span.Start);Assert.Equal(source,p.OriginalText);Assert.Equal(source.Length,p.MaskedText.Length);
  }
- [Fact]public void Metadata_exposes_the_approved_policy_without_promoting_completeness()
- {var p=ProfileResolver.Resolve("CSharp3").Profile!;Assert.Contains("unicode-4.0-scalar",p.Policies);Assert.DoesNotContain("unicode-current-bmp",p.Policies);Assert.False(p.Complete);}
+ [Fact]public void Metadata_exposes_the_approved_policy_under_independent_reviewed_admission()
+ {var p=ProfileResolver.Resolve("CSharp3").Profile!;Assert.Contains("unicode-4.0-scalar",p.Policies);Assert.DoesNotContain("unicode-current-bmp",p.Policies);Assert.True(p.Complete);}
 }

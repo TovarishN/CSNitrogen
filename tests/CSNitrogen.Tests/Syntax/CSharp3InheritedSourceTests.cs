@@ -9,7 +9,7 @@ public class CSharp3InheritedSourceTests
   if(source is "class C {int P {get;private set;}}" or "class C{object M(){return x=>x;}}" or "class C{object M(){return new C { X=1 };}}")expected=true;
   if(source is "[int:A] class C{}" or "[class:A] class C{}" or "class C{[assembly:A]void M(){}}")expected=false;
   using var p=CSharpParser.Parse(new(source,"CSharp3",fixture,[]));
-  Assert.True(expected==p.Accepted,source+" :: "+string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  Assert.True(expected==p.Accepted,source+" :: "+string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
   Assert.Equal(source.Length,p.MaskedText.Length);
   for(int node=0;node<p.Tree.NodeCount;node++)
   {var span=p.Tree.Span(node);Assert.InRange(span.Start,0,source.Length);Assert.InRange(span.Length,0,source.Length-span.Start);}

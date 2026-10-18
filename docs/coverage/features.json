@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
   "sourceSha256": "f6ad487c97b01d47c7906052eb017c0d74998fb732600155597893eb46a58c3f",
-  "note": "CSharp1 syntax coverage is reviewed with explicit canonical capability/policy mappings. Later inventory candidates require feature-spec review; history headings alone do not establish precise syntax boundaries.",
+  "note": "CSharp1\u20133 normalized syntax coverage is reviewed with explicit canonical capability/policy mappings and independent source admission gates. Later inventory candidates require feature-spec review; history headings alone do not establish precise syntax boundaries.",
   "features": [
     {
       "id": "baseline.attributes",
@@ -2460,7 +2460,7 @@
       "title": "Anonymous types",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types",
       "inventoryLine": 188,
       "requires": [],
@@ -2474,7 +2474,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.anonymous-types"
@@ -2489,7 +2489,7 @@
       "title": "Auto-Implemented properties",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties",
       "inventoryLine": 187,
       "requires": [],
@@ -2501,7 +2501,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.auto-properties"
@@ -2531,7 +2531,7 @@
       "title": "Extension methods",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/extension-methods",
       "inventoryLine": 189,
       "requires": [],
@@ -2545,7 +2545,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.extension-receivers"
@@ -2560,22 +2560,33 @@
       "title": "Implicitly typed local variables",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables",
       "inventoryLine": 185,
       "requires": [],
       "conflicts": [],
       "grammars": [],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "baseline.statements"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      },
+      "notes": "Reviewed local-declaration spelling; distinguishing contextual var from a type named var and performing inference requires binding, outside syntax completeness."
     },
     {
       "id": "csharp-3.0.lambda-expression",
       "title": "Lambda expression",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions",
       "inventoryLine": 191,
       "requires": [],
@@ -2589,7 +2600,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.lambdas"
@@ -2604,15 +2615,17 @@
       "title": "Lock statement",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement",
       "inventoryLine": 194,
       "requires": [],
       "conflicts": [],
       "grammars": [],
       "policies": [],
-      "fixtures": [],
-      "status": "implemented",
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs"
+      ],
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "baseline.statements"
@@ -2628,7 +2641,7 @@
       "title": "Object and collection initializers",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers",
       "inventoryLine": 186,
       "requires": [],
@@ -2642,7 +2655,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.object-initializers"
@@ -2657,7 +2670,7 @@
       "title": "Partial methods",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-method",
       "inventoryLine": 193,
       "requires": [],
@@ -2669,7 +2682,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3DeclarationTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.partial-methods"
@@ -2684,7 +2697,7 @@
       "title": "Query expressions, a.k.a LINQ (Language Integrated Query)",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/linq/query-expression-basics",
       "inventoryLine": 190,
       "requires": [],
@@ -2698,7 +2711,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.queries"
@@ -4276,7 +4289,7 @@
       "title": "Implicitly typed array creation",
       "introduced": "3.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc",
       "requires": [],
       "conflicts": [],
@@ -4289,7 +4302,7 @@
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp3ConstructionTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp3.implicit-arrays"

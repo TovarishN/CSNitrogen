@@ -21,7 +21,7 @@ public class CSharp3ProductionEvidenceTests
  {int line=row["line"]!.GetValue<int>();return domain switch{"expression"=>Text(row,"grammar")=="syntactic"&&line<=8622,"statement"=>Text(row,"grammar")=="syntactic"&&line>=8624&&line<=8675,"unsafe"=>Text(row,"grammar")=="unsafe","declaration"=>Text(row,"grammar")=="syntactic"&&line>=8677,_=>false};}
  [Theory][MemberData(nameof(Domains))]
  public void Production_domain_evidence_links_the_exact_source_set_without_admission(string domain,int count,string sha)
- {Assert.Empty(Evaluate(domain,count,sha,Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),Bytes(domain)));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
+ {Assert.Empty(Evaluate(domain,count,sha,Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),Bytes(domain)));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}
  static List<string> Evaluate(string domain,int count,string sha,JsonObject index,JsonObject map,byte[] bytes)
  {
   var errors=new List<string>();
@@ -52,7 +52,7 @@ public class CSharp3ProductionEvidenceTests
    var linked=new List<string>();
    foreach(var row in map["productions"]!.AsArray())
    {
-    if(Text(row!,"status")!="candidate"||Text(row!,"reviewStatus")!="pending")errors.Add("premature admission");
+    if(Text(row!,"status")!="verified"||Text(row!,"reviewStatus")!="verified")errors.Add("review status");
     foreach(var link in row!["productionAlternativeWitnesses"]?.AsArray()??new JsonArray())
     {if(Text(link!,"domain")!=domain)continue;string id=Text(link!,"alternativeId");linked.Add(id);if(!expected.ContainsKey(id)||!id.StartsWith(Text(row,"standardId")+"/",StringComparison.Ordinal)||Text(link!,"caseId")!=id)errors.Add("case link");}
    }
@@ -65,7 +65,7 @@ public class CSharp3ProductionEvidenceTests
  [InlineData("missing-case","case set")][InlineData("duplicate-case","case set")][InlineData("source-hash","alternative identity")][InlineData("occurrence","alternative identity")]
  [InlineData("focus","authored spelling/range")][InlineData("anchor","authored spelling/range")][InlineData("disposition","disposition")][InlineData("normalization","normalization boundary")][InlineData("context","context pair")]
  [InlineData("neighbor","contextual neighbor boundary")][InlineData("missing-link","link set")][InlineData("wrong-case-link","case link")][InlineData("wrong-domain","link set")]
- [InlineData("metadata","evidence metadata")][InlineData("method","witness metadata")][InlineData("admission","premature admission")]
+ [InlineData("metadata","evidence metadata")][InlineData("method","witness metadata")][InlineData("review-regression","review status")]
  public void Production_evidence_mutations_require_specific_invariant_failures(string mutation,string error)
  {
   foreach(var domainRow in Domains())
@@ -83,7 +83,7 @@ public class CSharp3ProductionEvidenceTests
     case "context":first["negative"]=Text(first,"source");break;case "neighbor":first["acceptedNeighbor"]="invented";break;
     case "missing-link":links.Remove(link);break;case "wrong-case-link":link["caseId"]="invented";break;case "wrong-domain":link["domain"]="invented";break;
     case "metadata":map["productionAlternativeEvidence"]![domain]!["sha256"]="wrong";break;
-    case "method":map["productionAlternativeEvidence"]![domain]!["witness"]!["method"]="invented";break;case "admission":row["status"]="verified";break;
+    case "method":map["productionAlternativeEvidence"]![domain]!["witness"]!["method"]="invented";break;case "review-regression":row["status"]="candidate";break;
    }
    if(new[]{"missing-case","duplicate-case","source-hash","occurrence","focus","anchor","disposition","normalization","context","neighbor"}.Contains(mutation))bytes=Encoding.UTF8.GetBytes(fixture.ToJsonString());
    Assert.Contains(error,Evaluate(domain,count,sha,index,map,bytes));

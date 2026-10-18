@@ -18,7 +18,7 @@ public class CSharp3LexicalAlternativeTests
    string source=prefix+p.GetProperty("source").GetString();
    using var parsed=CSharpParser.Parse(new(source,"CSharp3",id,[]));
    Assert.True(parsed.Accepted==p.GetProperty("accepted").GetBoolean(),id+" :: "+source+" :: "+string.Join(";",parsed.Issues));
-   Assert.False(parsed.ProfileComplete);
+   Assert.True(parsed.ProfileComplete);
    Assert.Equal(p.GetProperty("classNames").EnumerateArray().Select(x=>x.GetString()),parsed.Classes.Select(x=>x.Name.ToString()));
    Assert.Equal(p.GetProperty("directiveKinds").EnumerateArray().Select(x=>x.GetString()),parsed.Directives.Select(x=>x.Kind));
    Assert.Equal(p.GetProperty("issueCodes").EnumerateArray().Select(x=>x.GetString()).Order(),parsed.Issues.Select(x=>x.Code).Order());

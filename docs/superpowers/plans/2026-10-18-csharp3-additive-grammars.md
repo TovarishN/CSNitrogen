@@ -42,10 +42,12 @@ No sibling Nitrogen writes, handwritten C# parser, semantic compiler or arbitrar
 
 ## Task4: historical conformance and integration
 
-- [ ] Audit full CSharp3 lexical/Unicode/directive/source grammar contract and historical/modern differences; index exact source occurrences with reviewed owners and licensed external corpus.
-- [ ] Add a separate fail-closed source/factory/policy completeness gate only after all obligations close.
-- [ ] Run full solution, generated source reproduction, dependency/runtime-boundary checks and independent review; publish reviewable PRs.
+- [x] Audit full CSharp3 lexical/Unicode/directive/source grammar contract and historical/modern differences; index exact source occurrences with reviewed owners and licensed external corpus.
+- [x] Add a separate fail-closed source/factory/policy completeness gate only after all obligations close.
+- [x] Run full solution, generated source reproduction, dependency/runtime-boundary checks and independent review; publish reviewable PRs.
 
 Task1 evidence: [source and seam proof](../../coverage/csharp3-seam-proof-evidence.md). Tasks2–3 are implemented; [production evidence](../../coverage/csharp3-production-evidence.md) records tests/review and remaining Task4 admission work. The [Unicode contract decision](../specs/2026-10-18-csharp3-unicode-contract-decision.md) was approved for Unicode4 scalar tables; implementation and source review are continuing before historical admission.
 
 Task4 continuation: Unicode4 and source-specific lexical deltas merged in PR20. [Source-audit evidence](../../coverage/csharp3-source-audit-evidence.md) records named fixed-buffer type syntax and twenty pinned historical external fixtures. Full occurrence crosswalk/admission remains pending; the approved [generic-member source-authority decision](../specs/2026-10-18-csharp3-generic-member-source-decision.md) preserves three generic-member forms as bounded source corrections. The occurrence-complete candidate crosswalk and selected-factory inherited suites are recorded in [candidate evidence](../../coverage/csharp3-crosswalk-candidate-evidence.md); normative review remains pending.
+
+Task4 final admission: [reviewed normalized CSharp3 syntax evidence](../../coverage/csharp3-reviewed-admission-evidence.md) records455 source occurrences,1175 representative alternative identities, the independent pinned source/factory/policy contract and6,866 passing tests. Semantic compilation and later/custom profile completeness remain excluded.
