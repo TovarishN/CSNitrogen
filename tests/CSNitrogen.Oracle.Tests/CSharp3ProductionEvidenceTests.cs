@@ -12,12 +12,13 @@ public class CSharp3ProductionEvidenceTests
  public static IEnumerable<object[]> Domains()=>new object[][]{
  ["expression",241,"ed5ec61b89a1af6db35e771742dc11c4d0ff38a803db790bfa7ef108920d00ef"],
  ["statement",100,"c69be200c5b1dd9c5d97f6c3de05a30716ca8111c6ce00cf9541f34245f8c664"],
- ["unsafe",58,"607c62d06bf9db2f832ab5599c0e1ec7f46dd153391a4c18d1e7863fb7e1427f"]};
+ ["unsafe",58,"607c62d06bf9db2f832ab5599c0e1ec7f46dd153391a4c18d1e7863fb7e1427f"],
+ ["declaration",365,"3d6e84dc39f5d36e5f1b0c2aeefb816a63dda56e262a0065835f4c62ed0c117d"]};
  static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  static JsonObject Read(string name){using var stream=typeof(FeatureCatalog).Assembly.GetManifestResourceStream("CSNitrogen."+name)!;return JsonNode.Parse(stream)!.AsObject();}
  static byte[] Bytes(string domain)=>File.ReadAllBytes(Path.Combine(AppContext.BaseDirectory,$"Corpus/CSharp3/{domain}-production-cases.json"));
  static bool InDomain(JsonNode row,string domain)
- {int line=row["line"]!.GetValue<int>();return domain switch{"expression"=>Text(row,"grammar")=="syntactic"&&line<=8622,"statement"=>Text(row,"grammar")=="syntactic"&&line>=8624&&line<=8675,"unsafe"=>Text(row,"grammar")=="unsafe",_=>false};}
+ {int line=row["line"]!.GetValue<int>();return domain switch{"expression"=>Text(row,"grammar")=="syntactic"&&line<=8622,"statement"=>Text(row,"grammar")=="syntactic"&&line>=8624&&line<=8675,"unsafe"=>Text(row,"grammar")=="unsafe","declaration"=>Text(row,"grammar")=="syntactic"&&line>=8677,_=>false};}
  [Theory][MemberData(nameof(Domains))]
  public void Production_domain_evidence_links_the_exact_source_set_without_admission(string domain,int count,string sha)
  {Assert.Empty(Evaluate(domain,count,sha,Read("csharp3-standard-index.json"),Read("csharp3-standard-crosswalk.json"),Bytes(domain)));Assert.False(ProfileResolver.Resolve("CSharp3").Profile!.Complete);}

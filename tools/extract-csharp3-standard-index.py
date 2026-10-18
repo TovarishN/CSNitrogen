@@ -119,10 +119,16 @@ if args.check_crosswalk:
                 raise SystemExit('Crosswalk lexical production set differs: ' + candidate['standardId'])
             if any(link['caseId'] != link['alternativeId'] for link in lexical_links):
                 raise SystemExit('Crosswalk lexical production case differs: ' + candidate['standardId'])
-        for domain in crosswalk.get('productionAlternativeEvidence', {}):
+        production_domains = crosswalk.get('productionAlternativeEvidence', {})
+        if set(production_domains) - {'expression', 'statement', 'unsafe', 'declaration'}:
+            raise SystemExit('Crosswalk has an unknown production evidence domain')
+        if any(link['domain'] not in production_domains for link in candidate.get('productionAlternativeWitnesses', [])):
+            raise SystemExit('Crosswalk has an unregistered production link domain: ' + candidate['standardId'])
+        for domain in production_domains:
             in_domain = ((domain == 'expression' and heading['grammar'] == 'syntactic' and heading['line'] <= 8622)
                          or (domain == 'statement' and heading['grammar'] == 'syntactic' and 8624 <= heading['line'] <= 8675)
-                         or (domain == 'unsafe' and heading['grammar'] == 'unsafe'))
+                         or (domain == 'unsafe' and heading['grammar'] == 'unsafe')
+                         or (domain == 'declaration' and heading['grammar'] == 'syntactic' and heading['line'] >= 8677))
             expected_production = {a['id'] for a in heading['alternatives'] if in_domain and a['kind'] == 'production'}
             production_links = [link for link in candidate.get('productionAlternativeWitnesses', []) if link['domain'] == domain]
             if sorted(link['alternativeId'] for link in production_links) != sorted(expected_production):

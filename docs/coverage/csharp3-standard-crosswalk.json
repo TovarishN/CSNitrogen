@@ -17817,7 +17817,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8677:compilation-unit/1",
+          "caseId": "B:8677:compilation-unit/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8678:namespace-declaration",
@@ -17868,7 +17875,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8678:namespace-declaration/1",
+          "caseId": "B:8678:namespace-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8679:qualified-identifier",
@@ -17919,7 +17933,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8679:qualified-identifier/1",
+          "caseId": "B:8679:qualified-identifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8679:qualified-identifier/2",
+          "caseId": "B:8679:qualified-identifier/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8680:namespace-body",
@@ -17970,7 +17996,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8680:namespace-body/1",
+          "caseId": "B:8680:namespace-body/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8681:extern-alias-directives",
@@ -18023,7 +18056,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8681:extern-alias-directives/1",
+          "caseId": "B:8681:extern-alias-directives/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8681:extern-alias-directives/2",
+          "caseId": "B:8681:extern-alias-directives/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8682:extern-alias-directive",
@@ -18076,7 +18121,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8682:extern-alias-directive/1",
+          "caseId": "B:8682:extern-alias-directive/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8683:using-directives",
@@ -18127,7 +18179,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8683:using-directives/1",
+          "caseId": "B:8683:using-directives/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8683:using-directives/2",
+          "caseId": "B:8683:using-directives/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8684:using-directive",
@@ -18178,7 +18242,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8684:using-directive/1",
+          "caseId": "B:8684:using-directive/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8684:using-directive/2",
+          "caseId": "B:8684:using-directive/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8685:using-alias-directive",
@@ -18229,7 +18305,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8685:using-alias-directive/1",
+          "caseId": "B:8685:using-alias-directive/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8686:using-namespace-directive",
@@ -18280,7 +18363,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8686:using-namespace-directive/1",
+          "caseId": "B:8686:using-namespace-directive/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8687:namespace-member-declarations",
@@ -18331,7 +18421,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8687:namespace-member-declarations/1",
+          "caseId": "B:8687:namespace-member-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8687:namespace-member-declarations/2",
+          "caseId": "B:8687:namespace-member-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8688:namespace-member-declaration",
@@ -18382,7 +18484,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8688:namespace-member-declaration/1",
+          "caseId": "B:8688:namespace-member-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8688:namespace-member-declaration/2",
+          "caseId": "B:8688:namespace-member-declaration/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8689:type-declaration",
@@ -18433,7 +18547,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8689:type-declaration/1",
+          "caseId": "B:8689:type-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8689:type-declaration/2",
+          "caseId": "B:8689:type-declaration/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8689:type-declaration/3",
+          "caseId": "B:8689:type-declaration/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8689:type-declaration/4",
+          "caseId": "B:8689:type-declaration/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8689:type-declaration/5",
+          "caseId": "B:8689:type-declaration/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8690:qualified-alias-member",
@@ -18488,7 +18629,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8690:qualified-alias-member/1",
+          "caseId": "B:8690:qualified-alias-member/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8692:class-declaration",
@@ -18542,7 +18690,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8692:class-declaration/1",
+          "caseId": "B:8692:class-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8693:class-modifiers",
@@ -18596,7 +18751,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8693:class-modifiers/1",
+          "caseId": "B:8693:class-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8693:class-modifiers/2",
+          "caseId": "B:8693:class-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8694:class-modifier",
@@ -18651,7 +18818,49 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8694:class-modifier/1",
+          "caseId": "B:8694:class-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/2",
+          "caseId": "B:8694:class-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/3",
+          "caseId": "B:8694:class-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/4",
+          "caseId": "B:8694:class-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/5",
+          "caseId": "B:8694:class-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/6",
+          "caseId": "B:8694:class-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/7",
+          "caseId": "B:8694:class-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8694:class-modifier/8",
+          "caseId": "B:8694:class-modifier/8",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8695:type-parameter-list",
@@ -18705,7 +18914,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8695:type-parameter-list/1",
+          "caseId": "B:8695:type-parameter-list/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8696:type-parameters",
@@ -18759,7 +18975,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8696:type-parameters/1",
+          "caseId": "B:8696:type-parameters/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8696:type-parameters/2",
+          "caseId": "B:8696:type-parameters/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8697:type-parameter",
@@ -18814,7 +19042,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8697:type-parameter/1",
+          "caseId": "B:8697:type-parameter/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8698:class-base",
@@ -18865,7 +19100,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8698:class-base/1",
+          "caseId": "B:8698:class-base/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8698:class-base/2",
+          "caseId": "B:8698:class-base/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8698:class-base/3",
+          "caseId": "B:8698:class-base/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8699:interface-type-list",
@@ -18916,7 +19168,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8699:interface-type-list/1",
+          "caseId": "B:8699:interface-type-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8699:interface-type-list/2",
+          "caseId": "B:8699:interface-type-list/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8700:type-parameter-constraints-clauses",
@@ -18969,7 +19233,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8700:type-parameter-constraints-clauses/1",
+          "caseId": "B:8700:type-parameter-constraints-clauses/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8700:type-parameter-constraints-clauses/2",
+          "caseId": "B:8700:type-parameter-constraints-clauses/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8701:type-parameter-constraints-clause",
@@ -19022,7 +19298,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8701:type-parameter-constraints-clause/1",
+          "caseId": "B:8701:type-parameter-constraints-clause/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8702:type-parameter-constraints",
@@ -19075,7 +19358,44 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/1",
+          "caseId": "B:8702:type-parameter-constraints/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/2",
+          "caseId": "B:8702:type-parameter-constraints/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/3",
+          "caseId": "B:8702:type-parameter-constraints/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/4",
+          "caseId": "B:8702:type-parameter-constraints/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/5",
+          "caseId": "B:8702:type-parameter-constraints/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/6",
+          "caseId": "B:8702:type-parameter-constraints/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8702:type-parameter-constraints/7",
+          "caseId": "B:8702:type-parameter-constraints/7",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8703:primary-constraint",
@@ -19128,7 +19448,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8703:primary-constraint/1",
+          "caseId": "B:8703:primary-constraint/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8703:primary-constraint/2",
+          "caseId": "B:8703:primary-constraint/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8703:primary-constraint/3",
+          "caseId": "B:8703:primary-constraint/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8704:secondary-constraints",
@@ -19181,7 +19518,29 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8704:secondary-constraints/1",
+          "caseId": "B:8704:secondary-constraints/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8704:secondary-constraints/2",
+          "caseId": "B:8704:secondary-constraints/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8704:secondary-constraints/3",
+          "caseId": "B:8704:secondary-constraints/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8704:secondary-constraints/4",
+          "caseId": "B:8704:secondary-constraints/4",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8705:constructor-constraint",
@@ -19234,7 +19593,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8705:constructor-constraint/1",
+          "caseId": "B:8705:constructor-constraint/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8706:class-body",
@@ -19285,7 +19651,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8706:class-body/1",
+          "caseId": "B:8706:class-body/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8707:class-member-declarations",
@@ -19337,7 +19710,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8707:class-member-declarations/1",
+          "caseId": "B:8707:class-member-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8707:class-member-declarations/2",
+          "caseId": "B:8707:class-member-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8708:class-member-declaration",
@@ -19389,7 +19774,64 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8708:class-member-declaration/1",
+          "caseId": "B:8708:class-member-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/2",
+          "caseId": "B:8708:class-member-declaration/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/3",
+          "caseId": "B:8708:class-member-declaration/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/4",
+          "caseId": "B:8708:class-member-declaration/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/5",
+          "caseId": "B:8708:class-member-declaration/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/6",
+          "caseId": "B:8708:class-member-declaration/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/7",
+          "caseId": "B:8708:class-member-declaration/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/8",
+          "caseId": "B:8708:class-member-declaration/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/9",
+          "caseId": "B:8708:class-member-declaration/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/10",
+          "caseId": "B:8708:class-member-declaration/10",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8708:class-member-declaration/11",
+          "caseId": "B:8708:class-member-declaration/11",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8709:constant-declaration",
@@ -19440,7 +19882,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8709:constant-declaration/1",
+          "caseId": "B:8709:constant-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8710:constant-modifiers",
@@ -19494,7 +19943,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8710:constant-modifiers/1",
+          "caseId": "B:8710:constant-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8710:constant-modifiers/2",
+          "caseId": "B:8710:constant-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8711:constant-modifier",
@@ -19548,7 +20009,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8711:constant-modifier/1",
+          "caseId": "B:8711:constant-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8711:constant-modifier/2",
+          "caseId": "B:8711:constant-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8711:constant-modifier/3",
+          "caseId": "B:8711:constant-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8711:constant-modifier/4",
+          "caseId": "B:8711:constant-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8711:constant-modifier/5",
+          "caseId": "B:8711:constant-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8712:constant-declarators",
@@ -19601,7 +20089,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8712:constant-declarators/1",
+          "caseId": "B:8712:constant-declarators/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8712:constant-declarators/2",
+          "caseId": "B:8712:constant-declarators/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8713:constant-declarator",
@@ -19653,7 +20153,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8713:constant-declarator/1",
+          "caseId": "B:8713:constant-declarator/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8714:field-declaration",
@@ -19704,7 +20211,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8714:field-declaration/1",
+          "caseId": "B:8714:field-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8715:field-modifiers",
@@ -19758,7 +20272,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8715:field-modifiers/1",
+          "caseId": "B:8715:field-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8715:field-modifiers/2",
+          "caseId": "B:8715:field-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8716:field-modifier",
@@ -19813,7 +20339,49 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8716:field-modifier/1",
+          "caseId": "B:8716:field-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/2",
+          "caseId": "B:8716:field-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/3",
+          "caseId": "B:8716:field-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/4",
+          "caseId": "B:8716:field-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/5",
+          "caseId": "B:8716:field-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/6",
+          "caseId": "B:8716:field-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/7",
+          "caseId": "B:8716:field-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8716:field-modifier/8",
+          "caseId": "B:8716:field-modifier/8",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8717:variable-declarators",
@@ -19865,7 +20433,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8717:variable-declarators/1",
+          "caseId": "B:8717:variable-declarators/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8717:variable-declarators/2",
+          "caseId": "B:8717:variable-declarators/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8718:variable-declarator",
@@ -19916,7 +20496,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8718:variable-declarator/1",
+          "caseId": "B:8718:variable-declarator/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8718:variable-declarator/2",
+          "caseId": "B:8718:variable-declarator/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8719:variable-initializer",
@@ -19968,7 +20560,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8719:variable-initializer/1",
+          "caseId": "B:8719:variable-initializer/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8719:variable-initializer/2",
+          "caseId": "B:8719:variable-initializer/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8720:method-declaration",
@@ -20020,7 +20624,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8720:method-declaration/1",
+          "caseId": "B:8720:method-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8721:method-header",
@@ -20074,7 +20685,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8721:method-header/1",
+          "caseId": "B:8721:method-header/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8722:method-modifiers",
@@ -20128,7 +20746,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8722:method-modifiers/1",
+          "caseId": "B:8722:method-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8722:method-modifiers/2",
+          "caseId": "B:8722:method-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8723:method-modifier",
@@ -20183,7 +20813,64 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8723:method-modifier/1",
+          "caseId": "B:8723:method-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/2",
+          "caseId": "B:8723:method-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/3",
+          "caseId": "B:8723:method-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/4",
+          "caseId": "B:8723:method-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/5",
+          "caseId": "B:8723:method-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/6",
+          "caseId": "B:8723:method-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/7",
+          "caseId": "B:8723:method-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/8",
+          "caseId": "B:8723:method-modifier/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/9",
+          "caseId": "B:8723:method-modifier/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/10",
+          "caseId": "B:8723:method-modifier/10",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8723:method-modifier/11",
+          "caseId": "B:8723:method-modifier/11",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8724:return-type",
@@ -20234,7 +20921,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8724:return-type/1",
+          "caseId": "B:8724:return-type/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8724:return-type/2",
+          "caseId": "B:8724:return-type/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8725:member-name",
@@ -20288,7 +20987,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8725:member-name/1",
+          "caseId": "B:8725:member-name/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8725:member-name/2",
+          "caseId": "B:8725:member-name/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8726:method-body",
@@ -20339,7 +21050,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8726:method-body/1",
+          "caseId": "B:8726:method-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8726:method-body/2",
+          "caseId": "B:8726:method-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8727:formal-parameter-list",
@@ -20391,7 +21114,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8727:formal-parameter-list/1",
+          "caseId": "B:8727:formal-parameter-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8727:formal-parameter-list/2",
+          "caseId": "B:8727:formal-parameter-list/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8727:formal-parameter-list/3",
+          "caseId": "B:8727:formal-parameter-list/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8728:fixed-parameters",
@@ -20443,7 +21183,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8728:fixed-parameters/1",
+          "caseId": "B:8728:fixed-parameters/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8728:fixed-parameters/2",
+          "caseId": "B:8728:fixed-parameters/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8729:fixed-parameter",
@@ -20494,7 +21246,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8729:fixed-parameter/1",
+          "caseId": "B:8729:fixed-parameter/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8730:parameter-modifier",
@@ -20545,7 +21304,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8730:parameter-modifier/1",
+          "caseId": "B:8730:parameter-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8730:parameter-modifier/2",
+          "caseId": "B:8730:parameter-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8730:parameter-modifier/3",
+          "caseId": "B:8730:parameter-modifier/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8731:parameter-array",
@@ -20596,7 +21372,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8731:parameter-array/1",
+          "caseId": "B:8731:parameter-array/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8732:property-declaration",
@@ -20650,7 +21433,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8732:property-declaration/1",
+          "caseId": "B:8732:property-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8733:property-modifiers",
@@ -20704,7 +21494,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8733:property-modifiers/1",
+          "caseId": "B:8733:property-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8733:property-modifiers/2",
+          "caseId": "B:8733:property-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8734:property-modifier",
@@ -20759,7 +21561,64 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8734:property-modifier/1",
+          "caseId": "B:8734:property-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/2",
+          "caseId": "B:8734:property-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/3",
+          "caseId": "B:8734:property-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/4",
+          "caseId": "B:8734:property-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/5",
+          "caseId": "B:8734:property-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/6",
+          "caseId": "B:8734:property-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/7",
+          "caseId": "B:8734:property-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/8",
+          "caseId": "B:8734:property-modifier/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/9",
+          "caseId": "B:8734:property-modifier/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/10",
+          "caseId": "B:8734:property-modifier/10",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8734:property-modifier/11",
+          "caseId": "B:8734:property-modifier/11",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8735:member-name",
@@ -20813,7 +21672,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8735:member-name/1",
+          "caseId": "B:8735:member-name/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8735:member-name/2",
+          "caseId": "B:8735:member-name/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8736:accessor-declarations",
@@ -20867,7 +21738,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8736:accessor-declarations/1",
+          "caseId": "B:8736:accessor-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8736:accessor-declarations/2",
+          "caseId": "B:8736:accessor-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8737:get-accessor-declaration",
@@ -20921,7 +21804,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8737:get-accessor-declaration/1",
+          "caseId": "B:8737:get-accessor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8738:set-accessor-declaration",
@@ -20975,7 +21865,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8738:set-accessor-declaration/1",
+          "caseId": "B:8738:set-accessor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8739:accessor-modifier",
@@ -21028,7 +21925,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8739:accessor-modifier/1",
+          "caseId": "B:8739:accessor-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8739:accessor-modifier/2",
+          "caseId": "B:8739:accessor-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8739:accessor-modifier/3",
+          "caseId": "B:8739:accessor-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8739:accessor-modifier/4",
+          "caseId": "B:8739:accessor-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8739:accessor-modifier/5",
+          "caseId": "B:8739:accessor-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8740:accessor-body",
@@ -21079,7 +22003,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8740:accessor-body/1",
+          "caseId": "B:8740:accessor-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8740:accessor-body/2",
+          "caseId": "B:8740:accessor-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8741:event-declaration",
@@ -21131,7 +22067,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8741:event-declaration/1",
+          "caseId": "B:8741:event-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8741:event-declaration/2",
+          "caseId": "B:8741:event-declaration/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8742:event-modifiers",
@@ -21185,7 +22133,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8742:event-modifiers/1",
+          "caseId": "B:8742:event-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8742:event-modifiers/2",
+          "caseId": "B:8742:event-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8743:event-modifier",
@@ -21240,7 +22200,64 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8743:event-modifier/1",
+          "caseId": "B:8743:event-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/2",
+          "caseId": "B:8743:event-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/3",
+          "caseId": "B:8743:event-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/4",
+          "caseId": "B:8743:event-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/5",
+          "caseId": "B:8743:event-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/6",
+          "caseId": "B:8743:event-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/7",
+          "caseId": "B:8743:event-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/8",
+          "caseId": "B:8743:event-modifier/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/9",
+          "caseId": "B:8743:event-modifier/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/10",
+          "caseId": "B:8743:event-modifier/10",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8743:event-modifier/11",
+          "caseId": "B:8743:event-modifier/11",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8744:event-accessor-declarations",
@@ -21293,7 +22310,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8744:event-accessor-declarations/1",
+          "caseId": "B:8744:event-accessor-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8744:event-accessor-declarations/2",
+          "caseId": "B:8744:event-accessor-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8745:add-accessor-declaration",
@@ -21346,7 +22375,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8745:add-accessor-declaration/1",
+          "caseId": "B:8745:add-accessor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8746:remove-accessor-declaration",
@@ -21399,7 +22435,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8746:remove-accessor-declaration/1",
+          "caseId": "B:8746:remove-accessor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8747:indexer-declaration",
@@ -21451,7 +22494,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8747:indexer-declaration/1",
+          "caseId": "B:8747:indexer-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8748:indexer-modifiers",
@@ -21505,7 +22555,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8748:indexer-modifiers/1",
+          "caseId": "B:8748:indexer-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8748:indexer-modifiers/2",
+          "caseId": "B:8748:indexer-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8749:indexer-modifier",
@@ -21560,7 +22622,59 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8749:indexer-modifier/1",
+          "caseId": "B:8749:indexer-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/2",
+          "caseId": "B:8749:indexer-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/3",
+          "caseId": "B:8749:indexer-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/4",
+          "caseId": "B:8749:indexer-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/5",
+          "caseId": "B:8749:indexer-modifier/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/6",
+          "caseId": "B:8749:indexer-modifier/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/7",
+          "caseId": "B:8749:indexer-modifier/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/8",
+          "caseId": "B:8749:indexer-modifier/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/9",
+          "caseId": "B:8749:indexer-modifier/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8749:indexer-modifier/10",
+          "caseId": "B:8749:indexer-modifier/10",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8750:indexer-declarator",
@@ -21612,7 +22726,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8750:indexer-declarator/1",
+          "caseId": "B:8750:indexer-declarator/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8750:indexer-declarator/2",
+          "caseId": "B:8750:indexer-declarator/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8751:operator-declaration",
@@ -21664,7 +22790,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8751:operator-declaration/1",
+          "caseId": "B:8751:operator-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8752:operator-modifiers",
@@ -21718,7 +22851,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8752:operator-modifiers/1",
+          "caseId": "B:8752:operator-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8752:operator-modifiers/2",
+          "caseId": "B:8752:operator-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8753:operator-modifier",
@@ -21773,7 +22918,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8753:operator-modifier/1",
+          "caseId": "B:8753:operator-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8753:operator-modifier/2",
+          "caseId": "B:8753:operator-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8753:operator-modifier/3",
+          "caseId": "B:8753:operator-modifier/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8754:operator-declarator",
@@ -21825,7 +22987,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8754:operator-declarator/1",
+          "caseId": "B:8754:operator-declarator/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8754:operator-declarator/2",
+          "caseId": "B:8754:operator-declarator/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8754:operator-declarator/3",
+          "caseId": "B:8754:operator-declarator/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8755:unary-operator-declarator",
@@ -21877,7 +23056,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8755:unary-operator-declarator/1",
+          "caseId": "B:8755:unary-operator-declarator/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8756:overloadable-unary-operator",
@@ -22014,7 +23200,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8757:binary-operator-declarator/1",
+          "caseId": "B:8757:binary-operator-declarator/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8758:overloadable-binary-operator",
@@ -22065,7 +23258,89 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/1",
+          "caseId": "B:8758:overloadable-binary-operator/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/2",
+          "caseId": "B:8758:overloadable-binary-operator/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/3",
+          "caseId": "B:8758:overloadable-binary-operator/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/4",
+          "caseId": "B:8758:overloadable-binary-operator/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/5",
+          "caseId": "B:8758:overloadable-binary-operator/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/6",
+          "caseId": "B:8758:overloadable-binary-operator/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/7",
+          "caseId": "B:8758:overloadable-binary-operator/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/8",
+          "caseId": "B:8758:overloadable-binary-operator/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/9",
+          "caseId": "B:8758:overloadable-binary-operator/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/10",
+          "caseId": "B:8758:overloadable-binary-operator/10",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/11",
+          "caseId": "B:8758:overloadable-binary-operator/11",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/12",
+          "caseId": "B:8758:overloadable-binary-operator/12",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/13",
+          "caseId": "B:8758:overloadable-binary-operator/13",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/14",
+          "caseId": "B:8758:overloadable-binary-operator/14",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/15",
+          "caseId": "B:8758:overloadable-binary-operator/15",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8758:overloadable-binary-operator/16",
+          "caseId": "B:8758:overloadable-binary-operator/16",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8759:conversion-operator-declarator",
@@ -22116,7 +23391,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8759:conversion-operator-declarator/1",
+          "caseId": "B:8759:conversion-operator-declarator/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8759:conversion-operator-declarator/2",
+          "caseId": "B:8759:conversion-operator-declarator/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8760:operator-body",
@@ -22167,7 +23454,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8760:operator-body/1",
+          "caseId": "B:8760:operator-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8760:operator-body/2",
+          "caseId": "B:8760:operator-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8761:constructor-declaration",
@@ -22221,7 +23520,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8761:constructor-declaration/1",
+          "caseId": "B:8761:constructor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8762:constructor-modifiers",
@@ -22275,7 +23581,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8762:constructor-modifiers/1",
+          "caseId": "B:8762:constructor-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8762:constructor-modifiers/2",
+          "caseId": "B:8762:constructor-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8763:constructor-modifier",
@@ -22330,7 +23648,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8763:constructor-modifier/1",
+          "caseId": "B:8763:constructor-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8763:constructor-modifier/2",
+          "caseId": "B:8763:constructor-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8763:constructor-modifier/3",
+          "caseId": "B:8763:constructor-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8763:constructor-modifier/4",
+          "caseId": "B:8763:constructor-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8763:constructor-modifier/5",
+          "caseId": "B:8763:constructor-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8764:constructor-declarator",
@@ -22384,7 +23729,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8764:constructor-declarator/1",
+          "caseId": "B:8764:constructor-declarator/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8765:constructor-initializer",
@@ -22438,7 +23790,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8765:constructor-initializer/1",
+          "caseId": "B:8765:constructor-initializer/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8765:constructor-initializer/2",
+          "caseId": "B:8765:constructor-initializer/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8766:constructor-body",
@@ -22489,7 +23853,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8766:constructor-body/1",
+          "caseId": "B:8766:constructor-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8766:constructor-body/2",
+          "caseId": "B:8766:constructor-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8767:static-constructor-declaration",
@@ -22543,7 +23919,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8767:static-constructor-declaration/1",
+          "caseId": "B:8767:static-constructor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8768:static-constructor-modifiers",
@@ -22598,7 +23981,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8768:static-constructor-modifiers/1",
+          "caseId": "B:8768:static-constructor-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8768:static-constructor-modifiers/2",
+          "caseId": "B:8768:static-constructor-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8769:static-constructor-body",
@@ -22649,7 +24044,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8769:static-constructor-body/1",
+          "caseId": "B:8769:static-constructor-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8769:static-constructor-body/2",
+          "caseId": "B:8769:static-constructor-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8770:destructor-declaration",
@@ -22703,7 +24110,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8770:destructor-declaration/1",
+          "caseId": "B:8770:destructor-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8771:destructor-body",
@@ -22756,7 +24170,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8771:destructor-body/1",
+          "caseId": "B:8771:destructor-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8771:destructor-body/2",
+          "caseId": "B:8771:destructor-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8773:struct-declaration",
@@ -22812,7 +24238,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8773:struct-declaration/1",
+          "caseId": "B:8773:struct-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8774:struct-modifiers",
@@ -22866,7 +24299,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8774:struct-modifiers/1",
+          "caseId": "B:8774:struct-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8774:struct-modifiers/2",
+          "caseId": "B:8774:struct-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8775:struct-modifier",
@@ -22921,7 +24366,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8775:struct-modifier/1",
+          "caseId": "B:8775:struct-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8775:struct-modifier/2",
+          "caseId": "B:8775:struct-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8775:struct-modifier/3",
+          "caseId": "B:8775:struct-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8775:struct-modifier/4",
+          "caseId": "B:8775:struct-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8775:struct-modifier/5",
+          "caseId": "B:8775:struct-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8776:struct-interfaces",
@@ -22972,7 +24444,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8776:struct-interfaces/1",
+          "caseId": "B:8776:struct-interfaces/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8777:struct-body",
@@ -23025,7 +24504,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8777:struct-body/1",
+          "caseId": "B:8777:struct-body/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8778:struct-member-declarations",
@@ -23078,7 +24564,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8778:struct-member-declarations/1",
+          "caseId": "B:8778:struct-member-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8778:struct-member-declarations/2",
+          "caseId": "B:8778:struct-member-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8779:struct-member-declaration",
@@ -23132,7 +24630,59 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8779:struct-member-declaration/1",
+          "caseId": "B:8779:struct-member-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/2",
+          "caseId": "B:8779:struct-member-declaration/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/3",
+          "caseId": "B:8779:struct-member-declaration/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/4",
+          "caseId": "B:8779:struct-member-declaration/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/5",
+          "caseId": "B:8779:struct-member-declaration/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/6",
+          "caseId": "B:8779:struct-member-declaration/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/7",
+          "caseId": "B:8779:struct-member-declaration/7",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/8",
+          "caseId": "B:8779:struct-member-declaration/8",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/9",
+          "caseId": "B:8779:struct-member-declaration/9",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8779:struct-member-declaration/10",
+          "caseId": "B:8779:struct-member-declaration/10",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8781:array-type",
@@ -23187,7 +24737,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8781:array-type/1",
+          "caseId": "B:8781:array-type/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8782:non-array-type",
@@ -23241,7 +24798,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8782:non-array-type/1",
+          "caseId": "B:8782:non-array-type/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8783:rank-specifiers",
@@ -23294,7 +24858,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8783:rank-specifiers/1",
+          "caseId": "B:8783:rank-specifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8783:rank-specifiers/2",
+          "caseId": "B:8783:rank-specifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8784:rank-specifier",
@@ -23347,7 +24923,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8784:rank-specifier/1",
+          "caseId": "B:8784:rank-specifier/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8785:dim-separators",
@@ -23400,7 +24983,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8785:dim-separators/1",
+          "caseId": "B:8785:dim-separators/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8785:dim-separators/2",
+          "caseId": "B:8785:dim-separators/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8786:array-initializer",
@@ -23452,7 +25047,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8786:array-initializer/1",
+          "caseId": "B:8786:array-initializer/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8786:array-initializer/2",
+          "caseId": "B:8786:array-initializer/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8787:variable-initializer-list",
@@ -23504,7 +25111,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8787:variable-initializer-list/1",
+          "caseId": "B:8787:variable-initializer-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8787:variable-initializer-list/2",
+          "caseId": "B:8787:variable-initializer-list/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8788:variable-initializer",
@@ -23556,7 +25175,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8788:variable-initializer/1",
+          "caseId": "B:8788:variable-initializer/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8788:variable-initializer/2",
+          "caseId": "B:8788:variable-initializer/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8790:interface-declaration",
@@ -23610,7 +25241,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8790:interface-declaration/1",
+          "caseId": "B:8790:interface-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8791:interface-modifiers",
@@ -23664,7 +25302,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8791:interface-modifiers/1",
+          "caseId": "B:8791:interface-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8791:interface-modifiers/2",
+          "caseId": "B:8791:interface-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8792:interface-modifier",
@@ -23719,7 +25369,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8792:interface-modifier/1",
+          "caseId": "B:8792:interface-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8792:interface-modifier/2",
+          "caseId": "B:8792:interface-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8792:interface-modifier/3",
+          "caseId": "B:8792:interface-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8792:interface-modifier/4",
+          "caseId": "B:8792:interface-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8792:interface-modifier/5",
+          "caseId": "B:8792:interface-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8793:interface-base",
@@ -23770,7 +25447,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8793:interface-base/1",
+          "caseId": "B:8793:interface-base/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8794:interface-body",
@@ -23821,7 +25505,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8794:interface-body/1",
+          "caseId": "B:8794:interface-body/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8795:interface-member-declarations",
@@ -23872,7 +25563,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8795:interface-member-declarations/1",
+          "caseId": "B:8795:interface-member-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8795:interface-member-declarations/2",
+          "caseId": "B:8795:interface-member-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8796:interface-member-declaration",
@@ -23923,7 +25626,29 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8796:interface-member-declaration/1",
+          "caseId": "B:8796:interface-member-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8796:interface-member-declaration/2",
+          "caseId": "B:8796:interface-member-declaration/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8796:interface-member-declaration/3",
+          "caseId": "B:8796:interface-member-declaration/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8796:interface-member-declaration/4",
+          "caseId": "B:8796:interface-member-declaration/4",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8797:interface-method-declaration",
@@ -23977,7 +25702,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8797:interface-method-declaration/1",
+          "caseId": "B:8797:interface-method-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8798:interface-property-declaration",
@@ -24028,7 +25760,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8798:interface-property-declaration/1",
+          "caseId": "B:8798:interface-property-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8799:interface-accessors",
@@ -24081,7 +25820,29 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8799:interface-accessors/1",
+          "caseId": "B:8799:interface-accessors/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8799:interface-accessors/2",
+          "caseId": "B:8799:interface-accessors/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8799:interface-accessors/3",
+          "caseId": "B:8799:interface-accessors/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8799:interface-accessors/4",
+          "caseId": "B:8799:interface-accessors/4",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8800:interface-event-declaration",
@@ -24132,7 +25893,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8800:interface-event-declaration/1",
+          "caseId": "B:8800:interface-event-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8801:interface-indexer-declaration",
@@ -24183,7 +25951,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8801:interface-indexer-declaration/1",
+          "caseId": "B:8801:interface-indexer-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8803:enum-declaration",
@@ -24234,7 +26009,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8803:enum-declaration/1",
+          "caseId": "B:8803:enum-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8804:enum-base",
@@ -24285,7 +26067,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8804:enum-base/1",
+          "caseId": "B:8804:enum-base/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8805:enum-body",
@@ -24336,7 +26125,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8805:enum-body/1",
+          "caseId": "B:8805:enum-body/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8805:enum-body/2",
+          "caseId": "B:8805:enum-body/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8806:enum-modifiers",
@@ -24390,7 +26191,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8806:enum-modifiers/1",
+          "caseId": "B:8806:enum-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8806:enum-modifiers/2",
+          "caseId": "B:8806:enum-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8807:enum-modifier",
@@ -24444,7 +26257,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8807:enum-modifier/1",
+          "caseId": "B:8807:enum-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8807:enum-modifier/2",
+          "caseId": "B:8807:enum-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8807:enum-modifier/3",
+          "caseId": "B:8807:enum-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8807:enum-modifier/4",
+          "caseId": "B:8807:enum-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8807:enum-modifier/5",
+          "caseId": "B:8807:enum-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8808:enum-member-declarations",
@@ -24495,7 +26335,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8808:enum-member-declarations/1",
+          "caseId": "B:8808:enum-member-declarations/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8808:enum-member-declarations/2",
+          "caseId": "B:8808:enum-member-declarations/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8809:enum-member-declaration",
@@ -24546,7 +26398,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8809:enum-member-declaration/1",
+          "caseId": "B:8809:enum-member-declaration/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8809:enum-member-declaration/2",
+          "caseId": "B:8809:enum-member-declaration/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8811:delegate-declaration",
@@ -24599,7 +26463,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8811:delegate-declaration/1",
+          "caseId": "B:8811:delegate-declaration/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8812:delegate-modifiers",
@@ -24653,7 +26524,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8812:delegate-modifiers/1",
+          "caseId": "B:8812:delegate-modifiers/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8812:delegate-modifiers/2",
+          "caseId": "B:8812:delegate-modifiers/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8813:delegate-modifier",
@@ -24708,7 +26591,34 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8813:delegate-modifier/1",
+          "caseId": "B:8813:delegate-modifier/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8813:delegate-modifier/2",
+          "caseId": "B:8813:delegate-modifier/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8813:delegate-modifier/3",
+          "caseId": "B:8813:delegate-modifier/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8813:delegate-modifier/4",
+          "caseId": "B:8813:delegate-modifier/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8813:delegate-modifier/5",
+          "caseId": "B:8813:delegate-modifier/5",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8815:global-attributes",
@@ -24761,7 +26671,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8815:global-attributes/1",
+          "caseId": "B:8815:global-attributes/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8816:global-attribute-sections",
@@ -24814,7 +26731,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8816:global-attribute-sections/1",
+          "caseId": "B:8816:global-attribute-sections/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8816:global-attribute-sections/2",
+          "caseId": "B:8816:global-attribute-sections/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8817:global-attribute-section",
@@ -24867,7 +26796,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8817:global-attribute-section/1",
+          "caseId": "B:8817:global-attribute-section/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8817:global-attribute-section/2",
+          "caseId": "B:8817:global-attribute-section/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8818:global-attribute-target-specifier",
@@ -24920,7 +26861,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8818:global-attribute-target-specifier/1",
+          "caseId": "B:8818:global-attribute-target-specifier/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8819:global-attribute-target",
@@ -24974,7 +26922,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8819:global-attribute-target/1",
+          "caseId": "B:8819:global-attribute-target/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8819:global-attribute-target/2",
+          "caseId": "B:8819:global-attribute-target/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8820:attributes",
@@ -25026,7 +26986,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8820:attributes/1",
+          "caseId": "B:8820:attributes/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8821:attribute-sections",
@@ -25078,7 +27045,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8821:attribute-sections/1",
+          "caseId": "B:8821:attribute-sections/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8821:attribute-sections/2",
+          "caseId": "B:8821:attribute-sections/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8822:attribute-section",
@@ -25130,7 +27109,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8822:attribute-section/1",
+          "caseId": "B:8822:attribute-section/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8822:attribute-section/2",
+          "caseId": "B:8822:attribute-section/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8823:attribute-target-specifier",
@@ -25184,7 +27175,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8823:attribute-target-specifier/1",
+          "caseId": "B:8823:attribute-target-specifier/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8824:attribute-target",
@@ -25237,7 +27235,44 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8824:attribute-target/1",
+          "caseId": "B:8824:attribute-target/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/2",
+          "caseId": "B:8824:attribute-target/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/3",
+          "caseId": "B:8824:attribute-target/3",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/4",
+          "caseId": "B:8824:attribute-target/4",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/5",
+          "caseId": "B:8824:attribute-target/5",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/6",
+          "caseId": "B:8824:attribute-target/6",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8824:attribute-target/7",
+          "caseId": "B:8824:attribute-target/7",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8825:attribute-list",
@@ -25289,7 +27324,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8825:attribute-list/1",
+          "caseId": "B:8825:attribute-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8825:attribute-list/2",
+          "caseId": "B:8825:attribute-list/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8826:attribute",
@@ -25342,7 +27389,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8826:attribute/1",
+          "caseId": "B:8826:attribute/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8827:attribute-name",
@@ -25396,7 +27450,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8827:attribute-name/1",
+          "caseId": "B:8827:attribute-name/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8828:attribute-arguments",
@@ -25449,7 +27510,24 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8828:attribute-arguments/1",
+          "caseId": "B:8828:attribute-arguments/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8828:attribute-arguments/2",
+          "caseId": "B:8828:attribute-arguments/2",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8828:attribute-arguments/3",
+          "caseId": "B:8828:attribute-arguments/3",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8829:positional-argument-list",
@@ -25502,7 +27580,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8829:positional-argument-list/1",
+          "caseId": "B:8829:positional-argument-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8829:positional-argument-list/2",
+          "caseId": "B:8829:positional-argument-list/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8830:positional-argument",
@@ -25555,7 +27645,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8830:positional-argument/1",
+          "caseId": "B:8830:positional-argument/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8831:named-argument-list",
@@ -25608,7 +27705,19 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8831:named-argument-list/1",
+          "caseId": "B:8831:named-argument-list/1",
+          "domain": "declaration"
+        },
+        {
+          "alternativeId": "B:8831:named-argument-list/2",
+          "caseId": "B:8831:named-argument-list/2",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8832:named-argument",
@@ -25661,7 +27770,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8832:named-argument/1",
+          "caseId": "B:8832:named-argument/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8833:attribute-argument-expression",
@@ -25712,7 +27828,14 @@
             "method": "Optional_receiver_preserves_existing_parameter_fields_and_authored_spans"
           }
         ]
-      }
+      },
+      "productionAlternativeWitnesses": [
+        {
+          "alternativeId": "B:8833:attribute-argument-expression/1",
+          "caseId": "B:8833:attribute-argument-expression/1",
+          "domain": "declaration"
+        }
+      ]
     },
     {
       "standardId": "B:8835:class-modifier",
@@ -28397,6 +30520,16 @@
       "sha256": "607c62d06bf9db2f832ab5599c0e1ec7f46dd153391a4c18d1e7863fb7e1427f",
       "status": "representative-witnesses",
       "count": 58,
+      "witness": {
+        "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs",
+        "method": "Production_alternatives_have_owning_context_positive_contrast_and_original_range_observations"
+      }
+    },
+    "declaration": {
+      "path": "tests/Corpus/CSharp3/declaration-production-cases.json",
+      "sha256": "3d6e84dc39f5d36e5f1b0c2aeefb816a63dda56e262a0065835f4c62ed0c117d",
+      "status": "representative-witnesses",
+      "count": 365,
       "witness": {
         "path": "tests/CSNitrogen.Tests/Syntax/CSharp3ProductionAlternativeTests.cs",
         "method": "Production_alternatives_have_owning_context_positive_contrast_and_original_range_observations"

@@ -5,7 +5,7 @@ public class CSharp3ProductionAlternativeTests
 {
  public static IEnumerable<object[]> Cases()
  {
-  foreach(string domain in new[]{"expression","statement","unsafe"})
+  foreach(string domain in new[]{"expression","statement","unsafe","declaration"})
   {
    using var j=JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,$"Corpus/CSharp3/{domain}-production-cases.json")));
    foreach(var c in j.RootElement.GetProperty("cases").EnumerateArray())yield return [c.GetProperty("id").GetString()!,c.GetRawText()];
