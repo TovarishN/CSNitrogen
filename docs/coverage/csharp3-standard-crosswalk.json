@@ -1055,12 +1055,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1169,12 +1177,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1279,12 +1295,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1336,12 +1360,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1450,12 +1482,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1621,12 +1661,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -1672,12 +1720,20 @@
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3DirectiveSourceTests.cs",
             "method": "Source_directive_alternatives_and_structure_are_checked"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Category_changes_do_not_erase_combining_marks_from_contextual_words"
           }
         ],
         "ambiguity-context": [
           {
             "path": "tests/CSNitrogen.Tests/Preprocessing/CSharp3HistoricalDirectiveTests.cs",
             "method": "Escaped_and_formatting_boolean_spellings_are_symbol_names"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Lexing/ContextualUnicodeIdentityTests.cs",
+            "method": "Other_contextual_tokens_use_selected_identifier_identity"
           }
         ],
         "spans-diagnostics": [
@@ -11463,7 +11519,7 @@
     {
       "domain": "lexical",
       "path": "docs/coverage/csharp3-lexical-source-review.md",
-      "sha256": "b5646bd87baf2bf78bd0bab554b365808d80b97548e7d9986678c5dcf6b95c07",
+      "sha256": "5a6ce86e20015e76aa008e463062dbce83a447c021573d30605c22d4a7fa7e27",
       "status": "source-inspected",
       "scope": "Normalized syntax/policy disposition and finite selected-factory evidence; whole-row review remains pending."
     }
