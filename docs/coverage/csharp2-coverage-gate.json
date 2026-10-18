@@ -517,7 +517,7 @@
     "CSNitrogen.grammar.ImplicitArrays.ngr": "7356641a9a152580abc501da8e874b694f71976968385ff0b38e3204353d8cc8",
     "CSNitrogen.grammar.Iterators.ngr": "865a8b068c2273ec5960496b428a04294236e00ba57c465bf5a3a59fd251e91c",
     "CSNitrogen.grammar.Lambdas.ngr": "57a30b107fbd64c97aee7758cb27bdb0d81eb1eea0accfb8052a97cac625fcf5",
-    "CSNitrogen.grammar.Lexical.ngr": "3531642b3a37fb95e37aad64d60e69d3dd61593f69b197b7177b0d76119ae01e",
+    "CSNitrogen.grammar.Lexical.ngr": "ba382ff21a5dbfa1c93793745c837a3d216abf1aa5aebb8e83d953c2d47f5835",
     "CSNitrogen.grammar.NamesTypes.ngr": "50c201a4786fbb7d4c9dec3f1e98376bd0ffc364c301d0011eea85a08e7c9db8",
     "CSNitrogen.grammar.NullableValues.ngr": "d2131a00fbfcfe861e5583c5af7b976f7589ceeeff350729d76d5adaa9116248",
     "CSNitrogen.grammar.ObjectInitializers.ngr": "dde6274e5a85578db960fa21b6c980a3ec1ab961ea9495236dd20270819e6fbc",
