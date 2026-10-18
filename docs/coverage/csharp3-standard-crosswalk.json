@@ -22808,7 +22808,23 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8835:class-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8694:class-modifier/1",
+            "B:8694:class-modifier/2",
+            "B:8694:class-modifier/3",
+            "B:8694:class-modifier/4",
+            "B:8694:class-modifier/5",
+            "B:8694:class-modifier/6",
+            "B:8694:class-modifier/7",
+            "B:8694:class-modifier/8"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8836:struct-modifier",
@@ -22859,7 +22875,20 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8836:struct-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8775:struct-modifier/1",
+            "B:8775:struct-modifier/2",
+            "B:8775:struct-modifier/3",
+            "B:8775:struct-modifier/4",
+            "B:8775:struct-modifier/5"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8837:interface-modifier",
@@ -22910,7 +22939,20 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8837:interface-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8792:interface-modifier/1",
+            "B:8792:interface-modifier/2",
+            "B:8792:interface-modifier/3",
+            "B:8792:interface-modifier/4",
+            "B:8792:interface-modifier/5"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8838:delegate-modifier",
@@ -22961,7 +23003,20 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8838:delegate-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8813:delegate-modifier/1",
+            "B:8813:delegate-modifier/2",
+            "B:8813:delegate-modifier/3",
+            "B:8813:delegate-modifier/4",
+            "B:8813:delegate-modifier/5"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8839:field-modifier",
@@ -23012,7 +23067,23 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8839:field-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8716:field-modifier/1",
+            "B:8716:field-modifier/2",
+            "B:8716:field-modifier/3",
+            "B:8716:field-modifier/4",
+            "B:8716:field-modifier/5",
+            "B:8716:field-modifier/6",
+            "B:8716:field-modifier/7",
+            "B:8716:field-modifier/8"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8840:method-modifier",
@@ -23063,7 +23134,26 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8840:method-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8723:method-modifier/1",
+            "B:8723:method-modifier/2",
+            "B:8723:method-modifier/3",
+            "B:8723:method-modifier/4",
+            "B:8723:method-modifier/5",
+            "B:8723:method-modifier/6",
+            "B:8723:method-modifier/7",
+            "B:8723:method-modifier/8",
+            "B:8723:method-modifier/9",
+            "B:8723:method-modifier/10",
+            "B:8723:method-modifier/11"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8841:property-modifier",
@@ -23114,7 +23204,26 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8841:property-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8734:property-modifier/1",
+            "B:8734:property-modifier/2",
+            "B:8734:property-modifier/3",
+            "B:8734:property-modifier/4",
+            "B:8734:property-modifier/5",
+            "B:8734:property-modifier/6",
+            "B:8734:property-modifier/7",
+            "B:8734:property-modifier/8",
+            "B:8734:property-modifier/9",
+            "B:8734:property-modifier/10",
+            "B:8734:property-modifier/11"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8842:event-modifier",
@@ -23165,7 +23274,26 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8842:event-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8743:event-modifier/1",
+            "B:8743:event-modifier/2",
+            "B:8743:event-modifier/3",
+            "B:8743:event-modifier/4",
+            "B:8743:event-modifier/5",
+            "B:8743:event-modifier/6",
+            "B:8743:event-modifier/7",
+            "B:8743:event-modifier/8",
+            "B:8743:event-modifier/9",
+            "B:8743:event-modifier/10",
+            "B:8743:event-modifier/11"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8843:indexer-modifier",
@@ -23216,7 +23344,25 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8843:indexer-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8749:indexer-modifier/1",
+            "B:8749:indexer-modifier/2",
+            "B:8749:indexer-modifier/3",
+            "B:8749:indexer-modifier/4",
+            "B:8749:indexer-modifier/5",
+            "B:8749:indexer-modifier/6",
+            "B:8749:indexer-modifier/7",
+            "B:8749:indexer-modifier/8",
+            "B:8749:indexer-modifier/9",
+            "B:8749:indexer-modifier/10"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8844:operator-modifier",
@@ -23267,7 +23413,18 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8844:operator-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8753:operator-modifier/1",
+            "B:8753:operator-modifier/2",
+            "B:8753:operator-modifier/3"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8845:constructor-modifier",
@@ -23318,7 +23475,20 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8845:constructor-modifier/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8763:constructor-modifier/1",
+            "B:8763:constructor-modifier/2",
+            "B:8763:constructor-modifier/3",
+            "B:8763:constructor-modifier/4",
+            "B:8763:constructor-modifier/5"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8846:destructor-declaration",
@@ -23469,7 +23639,27 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8848:embedded-statement/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8625:embedded-statement/1",
+            "B:8625:embedded-statement/2",
+            "B:8625:embedded-statement/3",
+            "B:8625:embedded-statement/4",
+            "B:8625:embedded-statement/5",
+            "B:8625:embedded-statement/6",
+            "B:8625:embedded-statement/7",
+            "B:8625:embedded-statement/8",
+            "B:8625:embedded-statement/9",
+            "B:8625:embedded-statement/10",
+            "B:8625:embedded-statement/11",
+            "B:8625:embedded-statement/12"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8849:unsafe-statement",
@@ -23565,7 +23755,18 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8850:type/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8510:type/1",
+            "B:8510:type/2",
+            "B:8510:type/3"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8851:pointer-type",
@@ -23715,7 +23916,33 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8853:primary-no-array-creation-expression/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8539:primary-no-array-creation-expression/1",
+            "B:8539:primary-no-array-creation-expression/2",
+            "B:8539:primary-no-array-creation-expression/3",
+            "B:8539:primary-no-array-creation-expression/4",
+            "B:8539:primary-no-array-creation-expression/5",
+            "B:8539:primary-no-array-creation-expression/6",
+            "B:8539:primary-no-array-creation-expression/7",
+            "B:8539:primary-no-array-creation-expression/8",
+            "B:8539:primary-no-array-creation-expression/9",
+            "B:8539:primary-no-array-creation-expression/10",
+            "B:8539:primary-no-array-creation-expression/11",
+            "B:8539:primary-no-array-creation-expression/12",
+            "B:8539:primary-no-array-creation-expression/13",
+            "B:8539:primary-no-array-creation-expression/14",
+            "B:8539:primary-no-array-creation-expression/15",
+            "B:8539:primary-no-array-creation-expression/16",
+            "B:8539:primary-no-array-creation-expression/17",
+            "B:8539:primary-no-array-creation-expression/18"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8854:unary-expression",
@@ -23769,7 +23996,23 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8854:unary-expression/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8573:unary-expression/1",
+            "B:8573:unary-expression/2",
+            "B:8573:unary-expression/3",
+            "B:8573:unary-expression/4",
+            "B:8573:unary-expression/5",
+            "B:8573:unary-expression/6",
+            "B:8573:unary-expression/7",
+            "B:8573:unary-expression/8"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8855:pointer-indirection-expression",
@@ -24058,7 +24301,28 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8860:embedded-statement/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8625:embedded-statement/1",
+            "B:8625:embedded-statement/2",
+            "B:8625:embedded-statement/3",
+            "B:8625:embedded-statement/4",
+            "B:8625:embedded-statement/5",
+            "B:8625:embedded-statement/6",
+            "B:8625:embedded-statement/7",
+            "B:8625:embedded-statement/8",
+            "B:8625:embedded-statement/9",
+            "B:8625:embedded-statement/10",
+            "B:8625:embedded-statement/11",
+            "B:8625:embedded-statement/12",
+            "B:8848:embedded-statement/2"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8861:fixed-statement",
@@ -24299,7 +24563,25 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8865:struct-member-declaration/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8779:struct-member-declaration/1",
+            "B:8779:struct-member-declaration/2",
+            "B:8779:struct-member-declaration/3",
+            "B:8779:struct-member-declaration/4",
+            "B:8779:struct-member-declaration/5",
+            "B:8779:struct-member-declaration/6",
+            "B:8779:struct-member-declaration/7",
+            "B:8779:struct-member-declaration/8",
+            "B:8779:struct-member-declaration/9",
+            "B:8779:struct-member-declaration/10"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8866:fixed-size-buffer-declaration",
@@ -24639,7 +24921,17 @@
             "method": "Generic_and_alias_sizeof_pointer_operands_keep_type_and_original_ranges"
           }
         ]
-      }
+      },
+      "inheritedSourceAlternatives": [
+        {
+          "alternativeId": "B:8872:local-variable-initializer/1",
+          "status": "source-mapped",
+          "sourceAlternativeIds": [
+            "B:8635:local-variable-initializer/1",
+            "B:8635:local-variable-initializer/2"
+          ]
+        }
+      ]
     },
     {
       "standardId": "B:8873:stackalloc-initializer",
@@ -24738,5 +25030,12 @@
       "method": "Every_finite_one_of_alternative_has_positive_negative_and_original_range_witnesses"
     },
     "scope": "Exact positive/negative/range cases for ten one-of families; other source alternatives, normative admission and all overall review statuses remain pending."
+  },
+  "sourceInheritanceEvidence": {
+    "status": "source-mapped",
+    "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+    "markerCount": 18,
+    "referenceCount": 148,
+    "scope": "Explicit ellipses trace all earlier non-placeholder alternatives of their source production; this source-reference closure does not admit target alternatives or overall completeness."
   }
 }

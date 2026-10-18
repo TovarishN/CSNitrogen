@@ -111,6 +111,16 @@ if args.check_crosswalk:
         for link in links:
             if link['alternativeId'] not in finite or link['caseId'] != link['alternativeId']:
                 raise SystemExit('Crosswalk finite alternative differs: ' + candidate['standardId'])
+        markers = {a['id'] for a in heading['alternatives'] if a['kind'] == 'inherited-placeholder'}
+        inherited = candidate.get('inheritedSourceAlternatives', [])
+        if 'sourceInheritanceEvidence' in crosswalk:
+            if sorted(link['alternativeId'] for link in inherited) != sorted(markers):
+                raise SystemExit('Crosswalk inherited marker set differs: ' + candidate['standardId'])
+            earlier = [a['id'] for row in rows if row['line'] < heading['line'] and row['name'] == heading['name']
+                       for a in row['alternatives'] if a['kind'] != 'inherited-placeholder']
+            for link in inherited:
+                if link['status'] != 'source-mapped' or not earlier or sorted(link['sourceAlternativeIds']) != sorted(earlier):
+                    raise SystemExit('Crosswalk inherited source set differs: ' + candidate['standardId'])
         pattern = re.compile(r'^[ \t]*' + re.escape(heading['name']) + r'(?::|\u2028)')
         main = [n+1 for n, line in enumerate(lines[:start]) if pattern.match(line)]
         if not main or candidate['mainTextOccurrences'] != main:
