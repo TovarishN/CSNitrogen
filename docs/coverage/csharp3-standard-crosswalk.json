@@ -11039,11 +11039,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:13:statement",
       "mainTextOccurrences": [
         4616
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8624:statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8625:embedded-statement",
@@ -11055,13 +11094,52 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:17:embedded-statement",
       "mainTextOccurrences": [
         4617,
         7760,
         7946
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8625:embedded-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8626:block",
@@ -11073,13 +11151,52 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:30:block",
       "mainTextOccurrences": [
         1175,
         1177,
         4647
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8626:block",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8627:statement-list",
@@ -11092,12 +11209,51 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:32:statement-list",
       "mainTextOccurrences": [
         1172,
         4661
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8627:statement-list",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8628:empty-statement",
@@ -11109,11 +11265,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:35:empty-statement",
       "mainTextOccurrences": [
         4670
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8628:empty-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8629:labeled-statement",
@@ -11125,11 +11320,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:37:labeled-statement",
       "mainTextOccurrences": [
         4682
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8629:labeled-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8630:declaration-statement",
@@ -11142,11 +11376,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:39:declaration-statement",
       "mainTextOccurrences": [
         4692
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8630:declaration-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8631:local-variable-declaration",
@@ -11158,11 +11431,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:42:local-variable-declaration",
       "mainTextOccurrences": [
         4695
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8631:local-variable-declaration",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8632:local-variable-type",
@@ -11174,10 +11486,49 @@
       "mapping": "shared-syntax",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "mainTextOccurrences": [
         4696
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8632:local-variable-type",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8633:local-variable-declarators",
@@ -11190,11 +11541,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:44:local-variable-declarators",
       "mainTextOccurrences": [
         4697
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8633:local-variable-declarators",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8634:local-variable-declarator",
@@ -11206,11 +11596,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:478:47:local-variable-declarator",
       "mainTextOccurrences": [
         4698
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8634:local-variable-declarator",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8635:local-variable-initializer",
@@ -11225,12 +11654,51 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:2:local-variable-initializer",
       "mainTextOccurrences": [
         4699,
         8029
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8635:local-variable-initializer",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8636:local-constant-declaration",
@@ -11242,11 +11710,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:5:local-constant-declaration",
       "mainTextOccurrences": [
         4722
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8636:local-constant-declaration",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8637:constant-declarators",
@@ -11259,12 +11766,51 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:7:constant-declarators",
       "mainTextOccurrences": [
         4723,
         5721
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8637:constant-declarators",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8638:constant-declarator",
@@ -11276,12 +11822,51 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:10:constant-declarator",
       "mainTextOccurrences": [
         4724,
         5722
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8638:constant-declarator",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8639:expression-statement",
@@ -11296,11 +11881,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:12:expression-statement",
       "mainTextOccurrences": [
         4732
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8639:expression-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8640:statement-expression",
@@ -11315,11 +11939,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:14:statement-expression",
       "mainTextOccurrences": [
         4733
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8640:statement-expression",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8641:selection-statement",
@@ -11332,11 +11995,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:22:selection-statement",
       "mainTextOccurrences": [
         4738
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8641:selection-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8642:if-statement",
@@ -11348,11 +12050,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:25:if-statement",
       "mainTextOccurrences": [
         4741
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8642:if-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8643:switch-statement",
@@ -11366,11 +12107,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:28:switch-statement",
       "mainTextOccurrences": [
         4756
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8643:switch-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8644:switch-block",
@@ -11384,11 +12164,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:30:switch-block",
       "mainTextOccurrences": [
         4757
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8644:switch-block",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8645:switch-sections",
@@ -11402,11 +12221,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:32:switch-sections",
       "mainTextOccurrences": [
         4758
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8645:switch-sections",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8646:switch-section",
@@ -11418,11 +12276,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:35:switch-section",
       "mainTextOccurrences": [
         4759
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8646:switch-section",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8647:switch-labels",
@@ -11435,11 +12332,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:37:switch-labels",
       "mainTextOccurrences": [
         4760
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8647:switch-labels",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8648:switch-label",
@@ -11451,11 +12387,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:40:switch-label",
       "mainTextOccurrences": [
         4761
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8648:switch-label",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8649:iteration-statement",
@@ -11470,11 +12445,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:43:iteration-statement",
       "mainTextOccurrences": [
         4801
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8649:iteration-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8650:while-statement",
@@ -11486,12 +12500,51 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:479:48:while-statement",
       "mainTextOccurrences": [
         1169,
         4804
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8650:while-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8651:do-statement",
@@ -11503,11 +12556,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:2:do-statement",
       "mainTextOccurrences": [
         4816
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8651:do-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8652:for-statement",
@@ -11519,11 +12611,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:4:for-statement",
       "mainTextOccurrences": [
         4827
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8652:for-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8653:for-initializer",
@@ -11537,11 +12668,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:6:for-initializer",
       "mainTextOccurrences": [
         4828
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8653:for-initializer",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8654:for-condition",
@@ -11554,11 +12724,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:9:for-condition",
       "mainTextOccurrences": [
         4829
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8654:for-condition",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8655:for-iterator",
@@ -11571,11 +12780,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:11:for-iterator",
       "mainTextOccurrences": [
         4830
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8655:for-iterator",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8656:statement-expression-list",
@@ -11590,11 +12838,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:13:statement-expression-list",
       "mainTextOccurrences": [
         4831
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8656:statement-expression-list",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8657:foreach-statement",
@@ -11606,11 +12893,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:17:foreach-statement",
       "mainTextOccurrences": [
         4849
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8657:foreach-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8658:jump-statement",
@@ -11622,11 +12948,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:19:jump-statement",
       "mainTextOccurrences": [
         4894
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8658:jump-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8659:break-statement",
@@ -11638,11 +13003,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:25:break-statement",
       "mainTextOccurrences": [
         4906
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8659:break-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8660:continue-statement",
@@ -11654,11 +13058,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:27:continue-statement",
       "mainTextOccurrences": [
         4916
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8660:continue-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8661:goto-statement",
@@ -11670,11 +13113,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:29:goto-statement",
       "mainTextOccurrences": [
         4926
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8661:goto-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8662:return-statement",
@@ -11686,11 +13168,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:33:return-statement",
       "mainTextOccurrences": [
         4942
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8662:return-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8663:throw-statement",
@@ -11702,11 +13223,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:35:throw-statement",
       "mainTextOccurrences": [
         4953
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8663:throw-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8664:try-statement",
@@ -11718,11 +13278,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:37:try-statement",
       "mainTextOccurrences": [
         4965
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8664:try-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8665:catch-clauses",
@@ -11734,11 +13333,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:40:catch-clauses",
       "mainTextOccurrences": [
         4966
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8665:catch-clauses",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8666:specific-catch-clauses",
@@ -11750,11 +13388,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:44:specific-catch-clauses",
       "mainTextOccurrences": [
         4967
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8666:specific-catch-clauses",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8667:specific-catch-clause",
@@ -11767,11 +13444,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:47:specific-catch-clause",
       "mainTextOccurrences": [
         4968
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8667:specific-catch-clause",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8668:general-catch-clause",
@@ -11784,11 +13500,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:480:49:general-catch-clause",
       "mainTextOccurrences": [
         4969
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8668:general-catch-clause",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8669:finally-clause",
@@ -11800,11 +13555,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:2:finally-clause",
       "mainTextOccurrences": [
         4970
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8669:finally-clause",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8670:checked-statement",
@@ -11816,11 +13610,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:4:checked-statement",
       "mainTextOccurrences": [
         5021
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8670:checked-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8671:unchecked-statement",
@@ -11832,11 +13665,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:6:unchecked-statement",
       "mainTextOccurrences": [
         5022
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8671:unchecked-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8672:lock-statement",
@@ -11848,11 +13720,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:8:lock-statement",
       "mainTextOccurrences": [
         5027
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8672:lock-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8673:using-statement",
@@ -11865,11 +13776,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:10:using-statement",
       "mainTextOccurrences": [
         5041
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8673:using-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8674:resource-acquisition",
@@ -11883,11 +13833,50 @@
       "mapping": "inlined",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:12:resource-acquisition",
       "mainTextOccurrences": [
         5042
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8674:resource-acquisition",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8675:yield-statement",
@@ -11902,11 +13891,50 @@
       "mapping": "shared-syntax",
       "status": "candidate",
       "reviewStatus": "pending",
-      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping.",
+      "notes": "Candidate authored owners; exact source/prose and selected-factory witness review pending. No admission inferred from inherited mapping. Statement/iterator source disposition in csharp3-statement-source-review.md; finite group links are not alternative-specific admission.",
       "candidateOrigin": "A:481:15:yield-statement",
       "mainTextOccurrences": [
         5069
-      ]
+      ],
+      "sourceReview": {
+        "domain": "statement",
+        "report": "docs/coverage/csharp3-statement-source-review.md",
+        "occurrenceId": "B:8675:yield-statement",
+        "sourceSha256": "ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1",
+        "status": "source-inspected"
+      },
+      "witnesses": {
+        "positive-negative": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Source_statement_forms_and_iterator_neighbors_are_accepted"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Malformed_categories_and_iterator_placement_are_rejected"
+          }
+        ],
+        "ambiguity-context": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_declaration_owners_and_modes_are_restricted"
+          }
+        ],
+        "spans-diagnostics": [
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Iterator_diagnostic_retains_the_entire_original_yield_range"
+          },
+          {
+            "path": "tests/CSNitrogen.Tests/Syntax/CSharp3StatementSourceTests.cs",
+            "method": "Dangling_else_attaches_to_the_inner_if_with_original_ranges"
+          }
+        ]
+      }
     },
     {
       "standardId": "B:8677:compilation-unit",
@@ -15308,6 +17336,13 @@
       "sha256": "9947b5f89bfc86ca8e2e8cf0516309bf29040d0248a4f63c009eecd27f5a57d7",
       "status": "source-inspected",
       "scope": "Normalized syntax/policy disposition and finite selected-factory evidence; whole-row and alternative-specific review remains pending."
+    },
+    {
+      "domain": "statement",
+      "path": "docs/coverage/csharp3-statement-source-review.md",
+      "sha256": "9535d4de9bb45a874b25700740c8173a9cfba29b47cc45009855ed2b622acb1c",
+      "status": "source-inspected",
+      "scope": "Normalized statement/iterator syntax and finite selected-factory evidence; whole-row and alternative-specific review remains pending."
     }
   ]
 }
