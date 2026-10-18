@@ -1,0 +1,21 @@
+language CSharp3InitializerProbe { start CSharp.CompilationUnits.CompilationUnit; namespace CSNitrogen.Tests.CSharp3Probes; grammars "Base.ngr"; }
+syntax module Probe.CSharp3Initializers
+{
+ syntax MemberInitializer = Name:CSharp.Lexical.Identifier "=" Value:(Initializer / CSharp.Expressions.Expression);
+ syntax ObjectInitializer = "{" Items:((MemberInitializer; ",")+ ","?)? "}";
+ syntax BracedElement = "{" Items:(CSharp.Expressions.Expression; ",")+ "}";
+ syntax ScalarElement = Value:CSharp.Expressions.Expression;
+ syntax CollectionElement = BracedElement / ScalarElement;
+ syntax CollectionInitializer = "{" Items:(CollectionElement; ",")+ ","? "}";
+ syntax Initializer = ObjectInitializer / CollectionInitializer;
+ syntax NamedMember = Name:CSharp.Lexical.Identifier "=" Value:CSharp.Expressions.Expression;
+ syntax InferredMember = Value:CSharp.Expressions.Expression;
+ syntax AnonymousMember = NamedMember / InferredMember;
+ syntax AnonymousInitializer = "{" Items:((AnonymousMember; ",")+ ","?)? "}";
+ extend syntax CSharp.Expressions.Expression
+ {
+  | InitializedObjectExpression = "new" Type:CSharp.NamesTypes.TypeReference Arguments:CSharp.Expressions.Arguments? Initializer:Initializer
+  | AnonymousObjectExpression = "new" Initializer:AnonymousInitializer
+  | ImplicitArrayExpression = "new" Rank:CSharp.NamesTypes.ArrayRank Initializer:CSharp.Expressions.ArrayInitializer
+ }
+}
