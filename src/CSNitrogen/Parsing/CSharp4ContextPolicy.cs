@@ -53,6 +53,9 @@ internal static class CSharp4ContextPolicy
                 {
                     if(owner>=0)optionalOwners.Add(owner);
                     if(parameter.Mode.HasValue)Error(parameter.Default.Value.Index,"A ref or out parameter cannot have a default argument.");
+                    int declaration=Owner(n,"MethodDeclaration","InterfaceMethod","ConstructorDeclaration","DelegateDeclaration","IndexerDeclaration","OperatorDeclaration","ConversionDeclaration");
+                    if(declaration>=0&&Kind(declaration) is "OperatorDeclaration" or "ConversionDeclaration")
+                        Error(parameter.Default.Value.Index,"Operator and conversion parameters cannot have default arguments.");
                 }
                 else if(owner>=0&&optionalOwners.Contains(owner))
                     Error(n,"A required parameter cannot follow an optional parameter.");

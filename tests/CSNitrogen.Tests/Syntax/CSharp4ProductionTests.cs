@@ -107,4 +107,36 @@ public class CSharp4ProductionTests
   Assert.Equal(fresh.Tree.NodeCount,edited.Tree.NodeCount);
   for(int n=0;n<fresh.Tree.NodeCount;n++){Assert.Equal(fresh.Tree.Kind(n),edited.Tree.Kind(n));Assert.Equal(fresh.Tree.Span(n),edited.Tree.Span(n));}
  }
+ [Theory]
+ [InlineData(@"interface I<out\u0054>{}",@"out\u0054")]
+ [InlineData(@"class C<out\u0054>{}",@"out\u0054")]
+ [InlineData(@"delegate void D<in\u0054>();",@"in\u0054")]
+ [InlineData("interface I<in𐐀>{}","in𐐀")]
+ [InlineData("class C<out𐐀>{}","out𐐀")]
+ public void Review_variance_keyword_prefixes_preserve_ordinary_names(string source,string name)
+ {
+  foreach(string profile in new[]{"CSharp3","CSharp4"})
+  {
+   using var p=CSharpParser.Parse(new(source,profile,"prefix.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));
+   var parameter=SyntaxView.Cast<TypeParameterNode>(p.Tree,Assert.Single(Enumerable.Range(0,p.Tree.NodeCount),n=>TypeParameterNode.Is(p.Tree,n)));
+   Assert.False(parameter.Variance.HasValue);Assert.Equal(name,parameter.Name.ToString());
+   Assert.Equal(source.IndexOf(name,StringComparison.Ordinal),parameter.Name.Span.Start);Assert.Equal(name.Length,parameter.Name.Span.Length);
+  }
+ }
+ [Theory]
+ [InlineData("class C{public static C operator +(C x=null){return x;}}")]
+ [InlineData("class C{public static C operator +(C x,C y=null){return x;}}")]
+ [InlineData("class C{public static implicit operator int(C x=null){return 0;}}")]
+ [InlineData("class C{public static explicit operator int(C x=null){return 0;}}")]
+ public void Review_operator_and_conversion_parameters_do_not_gain_defaults(string source)
+ {
+  using var p=CSharpParser.Parse(new(source,"CSharp4","operator.cs",[]));Assert.False(p.Accepted);
+  var issue=Assert.Single(p.Issues,i=>i.Code=="CSN2040");Assert.Equal("=null",source.Substring(issue.Span.Start,issue.Span.Length));
+ }
+ [Theory]
+ [InlineData("class C{int this[int x=1]{get{return 0;}set{}}}")]
+ [InlineData("class C{public static C operator +(C x){return x;}}")]
+ [InlineData("class C{public static implicit operator int(C x){return 0;}}")]
+ public void Review_default_owner_neighbors_remain_accepted(string source)
+ {using var p=CSharpParser.Parse(new(source,"CSharp4","neighbor.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));}
 }
