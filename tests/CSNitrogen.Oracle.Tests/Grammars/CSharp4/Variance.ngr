@@ -1,0 +1,8 @@
+syntax module Probe.CSharp4Variance
+{
+ extend syntax CSharp.Generics.VarianceAnnotation
+ {
+  | Covariant = "out"
+  | Contravariant = "in"
+ }
+}

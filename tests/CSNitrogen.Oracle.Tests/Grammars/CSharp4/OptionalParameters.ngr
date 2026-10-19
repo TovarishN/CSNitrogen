@@ -1,0 +1,7 @@
+syntax module Probe.CSharp4OptionalParameters
+{
+ extend syntax CSharp.Attributes.ParameterDefault
+ {
+  | DefaultValue = "=" Value:CSharp.Expressions.Expression
+ }
+}

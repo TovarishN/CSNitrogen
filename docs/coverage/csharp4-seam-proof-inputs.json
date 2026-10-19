@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "eb187de5199d9908ca45b925cd5d47b2c624f86b",
+  "scope": "26 real CSharp3 module inputs; only3 bounded copies add empty slots. No production grammar changes.",
+  "inputs": [
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Core.ngr",
+      "sourceSha256": "15bfd71d09d01c62f89e4ee01f38f7b4fd450c20a52321ce6fa8f6ebed846582",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Core.ngr",
+      "probeSha256": "15bfd71d09d01c62f89e4ee01f38f7b4fd450c20a52321ce6fa8f6ebed846582"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Lexical.ngr",
+      "sourceSha256": "a9da2f66268d3fb1110297a9566e9a1d12c4e8bd1dcb471db34ff5e2ba4ab558",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Lexical.ngr",
+      "probeSha256": "a9da2f66268d3fb1110297a9566e9a1d12c4e8bd1dcb471db34ff5e2ba4ab558"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/NamesTypes.ngr",
+      "sourceSha256": "50c201a4786fbb7d4c9dec3f1e98376bd0ffc364c301d0011eea85a08e7c9db8",
+      "probe": "src/CSNitrogen.Syntax/Grammars/NamesTypes.ngr",
+      "probeSha256": "50c201a4786fbb7d4c9dec3f1e98376bd0ffc364c301d0011eea85a08e7c9db8"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Expressions.ngr",
+      "sourceSha256": "1d02f05caad25197de6443552c2fb70991fd09ae0d9bccd12bc64fcf30dccee9",
+      "probe": "tests/CSNitrogen.Oracle.Tests/Grammars/CSharp4/Expressions.ngr",
+      "probeSha256": "a04ca5890e9ac573f2da958d3190d4ac7bf8d5abae4397d28b6bd1150ba46d8c"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Statements.ngr",
+      "sourceSha256": "0c7202d5c1385b71c7cf405f5c82c0501a2eee0937a5cfb3e82455285f1e0fa4",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Statements.ngr",
+      "probeSha256": "0c7202d5c1385b71c7cf405f5c82c0501a2eee0937a5cfb3e82455285f1e0fa4"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Attributes.ngr",
+      "sourceSha256": "6f3de233acb32fc18336eccfa9e212b582c84e21c89c6fd47165222517d15598",
+      "probe": "tests/CSNitrogen.Oracle.Tests/Grammars/CSharp4/Attributes.ngr",
+      "probeSha256": "b96333193ef4126667d8027400759b1184342f5eaa4118d297871bdf2ed3e4df"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Declarations.ngr",
+      "sourceSha256": "689f8b3ec8ae67b88dc0ff40bb4e9223dd8dd22bdd899d4579b3e155b5bbd18f",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Declarations.ngr",
+      "probeSha256": "689f8b3ec8ae67b88dc0ff40bb4e9223dd8dd22bdd899d4579b3e155b5bbd18f"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/CompilationUnits.ngr",
+      "sourceSha256": "23792d84753838b6cba15e611fac11bf37d0c04a2288629c5c6b047b3fe283a6",
+      "probe": "src/CSNitrogen.Syntax/Grammars/CompilationUnits.ngr",
+      "probeSha256": "23792d84753838b6cba15e611fac11bf37d0c04a2288629c5c6b047b3fe283a6"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Unsafe.ngr",
+      "sourceSha256": "5b8eec36842078bb8ab7850830420a7593db52137ff876bdea1f6856aa1da6dd",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Unsafe.ngr",
+      "probeSha256": "5b8eec36842078bb8ab7850830420a7593db52137ff876bdea1f6856aa1da6dd"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/GlobalTargetsThird.ngr",
+      "sourceSha256": "b3eb871626788dfe9853b74ea7fe57173d44048d9d7c6b63e5a3699dea7b95b3",
+      "probe": "src/CSNitrogen.Syntax/Grammars/GlobalTargetsThird.ngr",
+      "probeSha256": "b3eb871626788dfe9853b74ea7fe57173d44048d9d7c6b63e5a3699dea7b95b3"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Generics.ngr",
+      "sourceSha256": "c5f4b1285736219d02893aa2bec3e5ad19ce0954ca39ddfe7ec9d1d3849819c7",
+      "probe": "tests/CSNitrogen.Oracle.Tests/Grammars/CSharp4/Generics.ngr",
+      "probeSha256": "3ce24d0d88ab89e0bc13be10642dfb82ebd779bab160b9b738f682509ddb9cd6"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/NullableValues.ngr",
+      "sourceSha256": "d2131a00fbfcfe861e5583c5af7b976f7589ceeeff350729d76d5adaa9116248",
+      "probe": "src/CSNitrogen.Syntax/Grammars/NullableValues.ngr",
+      "probeSha256": "d2131a00fbfcfe861e5583c5af7b976f7589ceeeff350729d76d5adaa9116248"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/AnonymousMethods.ngr",
+      "sourceSha256": "670ff6fd3489e7b5a6e224ad7ffc3a0ea26afe90b331834883f93869411ce44c",
+      "probe": "src/CSNitrogen.Syntax/Grammars/AnonymousMethods.ngr",
+      "probeSha256": "670ff6fd3489e7b5a6e224ad7ffc3a0ea26afe90b331834883f93869411ce44c"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Iterators.ngr",
+      "sourceSha256": "865a8b068c2273ec5960496b428a04294236e00ba57c465bf5a3a59fd251e91c",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Iterators.ngr",
+      "probeSha256": "865a8b068c2273ec5960496b428a04294236e00ba57c465bf5a3a59fd251e91c"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/DefaultValues.ngr",
+      "sourceSha256": "7340fea025fca72bdefe614c6a3ee03a80458f8fbda95d804f50dc8848f4f5d9",
+      "probe": "src/CSNitrogen.Syntax/Grammars/DefaultValues.ngr",
+      "probeSha256": "7340fea025fca72bdefe614c6a3ee03a80458f8fbda95d804f50dc8848f4f5d9"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/DeclarationForms.ngr",
+      "sourceSha256": "aa6ec389b399a86eddcbfbb9594ec10027cdcbbefdcdc49dc77975d097dbc604",
+      "probe": "src/CSNitrogen.Syntax/Grammars/DeclarationForms.ngr",
+      "probeSha256": "aa6ec389b399a86eddcbfbb9594ec10027cdcbbefdcdc49dc77975d097dbc604"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/AliasQualification.ngr",
+      "sourceSha256": "ac3b25fba989c54870be1def143982d06acfd0682d2261578821459a286685e9",
+      "probe": "src/CSNitrogen.Syntax/Grammars/AliasQualification.ngr",
+      "probeSha256": "ac3b25fba989c54870be1def143982d06acfd0682d2261578821459a286685e9"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/GenericUnsafe.ngr",
+      "sourceSha256": "e50e489e82a6e0b5159aa2129ac389941e0b4aacdcc53efd3bf2caebb57399af",
+      "probe": "src/CSNitrogen.Syntax/Grammars/GenericUnsafe.ngr",
+      "probeSha256": "e50e489e82a6e0b5159aa2129ac389941e0b4aacdcc53efd3bf2caebb57399af"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/FixedBuffers.ngr",
+      "sourceSha256": "fccd0af24edf2c2574a270b8d37a30c0c6a071ec02c1f73b5c4ed643c30f903e",
+      "probe": "src/CSNitrogen.Syntax/Grammars/FixedBuffers.ngr",
+      "probeSha256": "fccd0af24edf2c2574a270b8d37a30c0c6a071ec02c1f73b5c4ed643c30f903e"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Lambdas.ngr",
+      "sourceSha256": "57a30b107fbd64c97aee7758cb27bdb0d81eb1eea0accfb8052a97cac625fcf5",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Lambdas.ngr",
+      "probeSha256": "57a30b107fbd64c97aee7758cb27bdb0d81eb1eea0accfb8052a97cac625fcf5"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/Queries.ngr",
+      "sourceSha256": "7fc1d68096a7fd25a5659e55193be360734e2c21bc590dc1ea87b56e1097bdd4",
+      "probe": "src/CSNitrogen.Syntax/Grammars/Queries.ngr",
+      "probeSha256": "7fc1d68096a7fd25a5659e55193be360734e2c21bc590dc1ea87b56e1097bdd4"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/ObjectInitializers.ngr",
+      "sourceSha256": "dde6274e5a85578db960fa21b6c980a3ec1ab961ea9495236dd20270819e6fbc",
+      "probe": "src/CSNitrogen.Syntax/Grammars/ObjectInitializers.ngr",
+      "probeSha256": "dde6274e5a85578db960fa21b6c980a3ec1ab961ea9495236dd20270819e6fbc"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/AnonymousTypes.ngr",
+      "sourceSha256": "72dc2a8cd082c7ab77a03f63770b173f5738c51fbc45b81148d3f398f58957f3",
+      "probe": "src/CSNitrogen.Syntax/Grammars/AnonymousTypes.ngr",
+      "probeSha256": "72dc2a8cd082c7ab77a03f63770b173f5738c51fbc45b81148d3f398f58957f3"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/ImplicitArrays.ngr",
+      "sourceSha256": "7356641a9a152580abc501da8e874b694f71976968385ff0b38e3204353d8cc8",
+      "probe": "src/CSNitrogen.Syntax/Grammars/ImplicitArrays.ngr",
+      "probeSha256": "7356641a9a152580abc501da8e874b694f71976968385ff0b38e3204353d8cc8"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/ExtensionReceivers.ngr",
+      "sourceSha256": "09e3e96e642b2c5cd063679c2d8e5a16590c32b39ea4c20e18d824a030042a21",
+      "probe": "src/CSNitrogen.Syntax/Grammars/ExtensionReceivers.ngr",
+      "probeSha256": "09e3e96e642b2c5cd063679c2d8e5a16590c32b39ea4c20e18d824a030042a21"
+    },
+    {
+      "source": "src/CSNitrogen.Syntax/Grammars/GenericFollowersThird.ngr",
+      "sourceSha256": "b429ace8eed80ce8ce89a3ff4ecd94dbbf6ae9ff926bf5419ff4735bc8761ffe",
+      "probe": "src/CSNitrogen.Syntax/Grammars/GenericFollowersThird.ngr",
+      "probeSha256": "b429ace8eed80ce8ce89a3ff4ecd94dbbf6ae9ff926bf5419ff4735bc8761ffe"
+    }
+  ]
+}

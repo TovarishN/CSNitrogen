@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp4",
+  "status": "source-and-seam-investigation",
+  "primary": {
+    "title": "C# Language Specification Version4.0",
+    "documentNotice": "Microsoft Corporation,1999\u20132010",
+    "delivery": "CSharp in Depth historical mirror; original Microsoft-hosted bytes not yet compared",
+    "url": "https://csharpindepth.com/Files/CSharp%204%20Specification.doc",
+    "discovery": "https://csharpindepth.com/Articles/Specifications",
+    "sha256": "cd82c06f12b83836f888d127ed59216c3505c4fc23a67c59c0fc3f46a087faf7",
+    "bytes": 2501632
+  },
+  "extraction": {
+    "method": "macOS textutil -convert txt",
+    "textSha256": "9a648424826386bb4031102bdf0ab8c3f2e02f7f82b8732567b120a60d030aed",
+    "scope": "Version header, identifiers reference and bounded CSharp4 addition clauses only; not occurrence-complete review"
+  },
+  "unicode": {
+    "status": "approved",
+    "primaryReference": "Unicode3.0 at extracted line1271 and reference9196",
+    "recommendation": "Retain reviewed Unicode4 scalar continuity from CSharp2/3; literalUnicode3 would reject identifiers those profiles accept",
+    "policy": "unicode-4.0-scalar",
+    "decision": "../superpowers/specs/2026-10-19-csharp4-source-contract-decision.md",
+    "authority": "User explicitly approved Unicode4 scalar continuity on2026-10-19; repeated Version4.0 Unicode3 citation treated as informational.",
+    "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e"
+  },
+  "completion": "CSharp4 stays partial. Test-only seam probes are not production implementation or whole-source admission."
+}
