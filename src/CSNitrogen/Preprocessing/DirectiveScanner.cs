@@ -78,7 +78,7 @@ public sealed class DirectiveScanner
         int start=i;while(i<line.End&&IsDirectiveNamePart(_source[i]))i++;
         string kind=_source[start..i];
         bool separated=i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version);
-        if(_version.Major<=3 || kind=="pragma" && _version>=new Version(2,0))
+        if(_version.Major<=4 || kind=="pragma" && _version>=new Version(2,0))
         {
             bool requires=kind is "if" or "elif" or "define" or "undef" or "line" || kind=="pragma" && i<line.End;
             bool message=kind is "error" or "warning" or "region" or "endregion";
