@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only current named-profile observations before any CSharp4 implementation; syntax acceptance is not compilation validity.",
+  "baseCommit": "eb187de5199d9908ca45b925cd5d47b2c624f86b",
+  "baseTree": "3086e67e7821c3c7d11508da97e08ff0a667807f",
+  "command": "dotnet run --project /tmp/csn-fourth-probe/Probe.csproj -p:NuGetAudit=false",
+  "observations": [
+    {
+      "id": "raw-supplementary",
+      "source": "class \ud801\udc00{}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": true,
+          "ProfileComplete": true,
+          "issues": []
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "CSN2020"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "escaped-supplementary",
+      "source": "class \\U00010400{}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": true,
+          "ProfileComplete": true,
+          "issues": []
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "CSN2020"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unicode4-bmp",
+      "source": "class \u0220{}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": true,
+          "ProfileComplete": true,
+          "issues": []
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": true,
+          "ProfileComplete": false,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "named-argument",
+      "source": "class C{void M(){F(x:1);}}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": false,
+          "ProfileComplete": true,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "optional-parameter",
+      "source": "class C{void M(int x=1){}}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": false,
+          "ProfileComplete": true,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface-variance",
+      "source": "interface I<out T>{}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": false,
+          "ProfileComplete": true,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delegate-variance",
+      "source": "delegate T D<out T>();",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": false,
+          "ProfileComplete": true,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "NG1",
+            "NG6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dynamic-name",
+      "source": "class C{dynamic x;}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": true,
+          "ProfileComplete": true,
+          "issues": []
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": true,
+          "ProfileComplete": false,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "getter-only-auto-property",
+      "source": "class C{int P{get;}}",
+      "profiles": [
+        {
+          "profile": "CSharp3",
+          "Accepted": false,
+          "ProfileComplete": true,
+          "issues": [
+            "CSN2032"
+          ]
+        },
+        {
+          "profile": "CSharp4",
+          "Accepted": false,
+          "ProfileComplete": false,
+          "issues": [
+            "CSN2032"
+          ]
+        }
+      ]
+    }
+  ]
+}
