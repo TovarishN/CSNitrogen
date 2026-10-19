@@ -51,7 +51,8 @@ Consumes reviewed Task1 seam evidence. Produces csharp4.named-arguments, csharp4
 - [x] Independently index all458 source occurrences/1181 alternatives and replay1157 admitted CSharp3 corpus cases against the actual CSharp4 factory.
 - [x] Close15 lexical replay differences plus4 additional source probes using controlling CSharp4 clauses; preserve later profile contracts.
 - [ ] Finish remaining lexical, directive, declaration, expression and unsafe normative context differences; candidate body matches alone do not establish review.
-- [ ] Implement the source-defined named-constructor-argument attribute delta (main/appendix positional-argument name slot) with its ordering/identity/typed/span evidence.
+- [x] Implement the source-defined named-constructor-argument attribute delta (main7855/appendix9152): reuse the optional ArgumentName slot, preserve PositionalAttributeArgument.Value, check constructor label order/identity separately from named members and add typed/span/omission evidence.
+- [x] Review §17 target/expression categories: extend the existing third-version target recognition and expression-normalization boundary only where fourth source7850–7859 agrees; preserve applicability/constantness exclusions and predecessor contracts.
 - [ ] Complete scoped source dispositions, representative alternative-specific cases and mutation checks while retaining every normalization/semantic exclusion.
 - [ ] Resolve any actual source-authority, public API or core mechanism decision with concrete evidence before dependent work.
 - [ ] Only after closure, create an independent fail-closed source/factory/policy/evidence contract, verify actual factory identity and preserve later/custom partial status.

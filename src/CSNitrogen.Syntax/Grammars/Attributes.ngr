@@ -6,7 +6,7 @@ syntax module CSharp.Attributes
  // END GENERATED ATTRIBUTE TARGETS
  syntax AttributeArgument = NamedAttributeArgument / PositionalAttributeArgument;
  syntax NamedAttributeArgument = Name:CSharp.Lexical.Identifier "=" Value:CSharp.Expressions.Expression;
- syntax PositionalAttributeArgument = Value:CSharp.Expressions.Expression;
+ syntax PositionalAttributeArgument = Name:CSharp.Expressions.ArgumentName? Value:CSharp.Expressions.Expression;
  syntax Attribute = Alias:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName Suffix:CSharp.NamesTypes.TypeNameSuffix? Arguments:("(" Items:(AttributeArgument; ",")* ")")?;
  syntax AttributeSection = "[" Target:(AttributeTarget ":" !":")? Items:(Attribute; ",")+ ","? "]";
  syntax GlobalAttributeSection = "[" Target:GlobalAttributeTarget ":" Items:(Attribute; ",")+ ","? "]";

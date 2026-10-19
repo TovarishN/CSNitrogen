@@ -28,13 +28,25 @@ internal static class CSharp4ContextPolicy
         for(int n=0;n<tree.NodeCount;n++)
         {
             string kind=Kind(n);
-            if(kind=="Argument")
+            if(kind is "Argument" or "PositionalAttributeArgument")
             {
-                var argument=SyntaxView.Cast<ArgumentNode>(tree,n);
-                int owner=Owner(n,"Arguments");
-                if(argument.Name.HasValue)
+                int owner;
+                int name=-1;
+                if(kind=="Argument")
                 {
-                    var label=SyntaxView.Cast<NamedArgumentNameArgumentName>(tree,argument.Name.Value.Index).Name;
+                    var argument=SyntaxView.Cast<ArgumentNode>(tree,n);
+                    owner=Owner(n,"Arguments");
+                    if(argument.Name.HasValue)name=argument.Name.Value.Index;
+                }
+                else
+                {
+                    var argument=SyntaxView.Cast<PositionalAttributeArgumentNode>(tree,n);
+                    owner=Owner(n,"Attribute");
+                    if(argument.Name.HasValue)name=argument.Name.Value.Index;
+                }
+                if(name>=0)
+                {
+                    var label=SyntaxView.Cast<NamedArgumentNameArgumentName>(tree,name).Name;
                     Named(owner,label.Index);
                 }
                 else if(owner>=0&&namedOwners.Contains(owner) && version<new Version(7,2))
