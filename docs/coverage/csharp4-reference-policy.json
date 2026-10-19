@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp4",
-  "status": "source-and-seam-investigation",
+  "status": "bounded-production-implemented-unreviewed",
   "primary": {
     "title": "C# Language Specification Version4.0",
     "documentNotice": "Microsoft Corporation,1999\u20132010",
@@ -25,5 +25,5 @@
     "authority": "User explicitly approved Unicode4 scalar continuity on2026-10-19; repeated Version4.0 Unicode3 citation treated as informational.",
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e"
   },
-  "completion": "CSharp4 stays partial. Test-only seam probes are not production implementation or whole-source admission."
+  "completion": "CSharp4 stays partial. Named arguments, optional parameters, variance and approved Unicode4 scalar continuity are implemented; whole-source occurrence review and independent admission remain pending."
 }

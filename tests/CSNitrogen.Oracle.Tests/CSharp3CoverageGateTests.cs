@@ -45,7 +45,7 @@ public class CSharp3CoverageGateTests
    ["attribute-target-recognition"]=["Parsing/CSharpAttributePolicy.cs"],
    ["csharp-trivia"]=["Parsing/CSharpTrivia.cs"],
    ["csharp1-preprocessing"]=["Preprocessing/ConditionalPreprocessor.cs","Preprocessing/DirectiveScanner.cs","Preprocessing/DirectiveEffects.cs"],
-   ["generated-syntax-context-checks"]=["Parsing/CSharpSyntaxPolicy.cs","Parsing/CSharp3ExpressionPolicy.cs","Parsing/CSharp3DeclarationPolicy.cs","Parsing/CSharpAttributePolicy.cs","Parsing/CSharpDeclarationPolicy.cs","Parsing/CSharpCompilationUnitPolicy.cs","Parsing/UnicodePolicy.cs"]};
+   ["generated-syntax-context-checks"]=["Parsing/CSharpSyntaxPolicy.cs","Parsing/CSharp3ExpressionPolicy.cs","Parsing/CSharp3DeclarationPolicy.cs","Parsing/CSharp4ContextPolicy.cs","Parsing/CSharpAttributePolicy.cs","Parsing/CSharpDeclarationPolicy.cs","Parsing/CSharpCompilationUnitPolicy.cs","Parsing/UnicodePolicy.cs"]};
   var groups=Read("csharp3-coverage-gate.json")["policyGroups"]!.AsObject();Assert.Equal(expected.Keys.Order(),groups.Select(g=>g.Key).Order());
   foreach(var group in expected)Assert.Equal(group.Value.Order(),groups[group.Key]!.AsArray().Select(x=>x!.GetValue<string>()).Order());
  }

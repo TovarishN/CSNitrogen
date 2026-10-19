@@ -158,8 +158,8 @@
         "alternative:Expression.RemainderExpression",
         "alternative:Expression.ShiftLeftExpression",
         "alternative:Expression.ShiftRightExpression",
-        "alternative:Expression.SizedArrayExpression",
         "alternative:Expression.SizeOfBuiltinExpression",
+        "alternative:Expression.SizedArrayExpression",
         "alternative:Expression.SubtractExpression",
         "alternative:Expression.ThisExpression",
         "alternative:Expression.TypeOfExpression",
@@ -168,6 +168,7 @@
         "rule:AdditionalCastFollower",
         "rule:AfterNamedCast",
         "rule:Argument",
+        "rule:ArgumentName",
         "rule:Arguments",
         "rule:ArrayElement",
         "rule:ArrayInitializer",
@@ -283,6 +284,7 @@
         "rule:IndexerParameterList",
         "rule:NamedAttributeArgument",
         "rule:ParameterArray",
+        "rule:ParameterDefault",
         "rule:ParameterFragment",
         "rule:ParameterList",
         "rule:ParameterReceiver",
@@ -714,6 +716,26 @@
           "method": "Historical_declaration_context_restrictions_are_enforced"
         }
       ]
+    },
+    {
+      "source": "Parsing/CSharp4ContextPolicy.cs",
+      "codes": [
+        "CSN2040"
+      ],
+      "status": "verified",
+      "reference": "https://csharpindepth.com/Files/CSharp%204%20Specification.doc",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
+          "method": "Fourth_context_policy_is_inactive_for_predecessors"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
+          "method": "Fourth_source_local_restrictions_are_enforced"
+        }
+      ]
     }
   ],
   "policyGroups": {
@@ -738,7 +760,8 @@
       "Parsing/CSharpCompilationUnitPolicy.cs",
       "Parsing/UnicodePolicy.cs",
       "Parsing/CSharp3ExpressionPolicy.cs",
-      "Parsing/CSharp3DeclarationPolicy.cs"
+      "Parsing/CSharp3DeclarationPolicy.cs",
+      "Parsing/CSharp4ContextPolicy.cs"
     ]
   },
   "semanticExclusions": [

@@ -11,7 +11,8 @@ syntax module CSharp.Attributes
  syntax AttributeSection = "[" Target:(AttributeTarget ":" !":")? Items:(Attribute; ",")+ ","? "]";
  syntax GlobalAttributeSection = "[" Target:GlobalAttributeTarget ":" Items:(Attribute; ",")+ ","? "]";
  extensible syntax ParameterReceiver {}
- syntax FixedParameter = Attributes:AttributeSection* Receiver:ParameterReceiver? Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier;
+ extensible syntax ParameterDefault {}
+ syntax FixedParameter = Attributes:AttributeSection* Receiver:ParameterReceiver? Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier Default:ParameterDefault?;
  syntax ParameterArray = Attributes:AttributeSection* "params" Element:CSharp.NamesTypes.TypeBase Ranks:CSharp.NamesTypes.ArrayRank+ Name:CSharp.Lexical.Identifier;
  syntax Parameters = (FixedParameter ",")* ParameterArray / (FixedParameter; ",")*;
  syntax ParameterList = "(" Items:Parameters ")";

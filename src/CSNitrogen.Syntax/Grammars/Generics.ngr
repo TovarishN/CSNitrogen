@@ -3,7 +3,8 @@ syntax module CSharp.Generics
  syntax TypeArgumentList = "<" Items:(CSharp.NamesTypes.TypeReference; ",")+ ">";
  syntax GenericNamePart = Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList?;
  syntax GenericQualifiedName = Prefix:(CSharp.Lexical.Identifier ".")* Name:CSharp.Lexical.Identifier Arguments:TypeArgumentList Suffix:("." GenericNamePart)*;
- syntax TypeParameter = Attributes:CSharp.Attributes.AttributeSection* Name:CSharp.Lexical.Identifier;
+ extensible syntax VarianceAnnotation {}
+ syntax TypeParameter = Attributes:CSharp.Attributes.AttributeSection* Variance:VarianceAnnotation? Name:CSharp.Lexical.Identifier;
  syntax Constraint = ("class" / "struct" / "new" "(" ")") / CSharp.NamesTypes.TypeReference;
  syntax ConstraintClause = CSharp.Lexical.ContextualWhere Name:CSharp.Lexical.Identifier ":" Items:(Constraint; ",")+;
  extensible syntax AdditionalGenericFollower {}

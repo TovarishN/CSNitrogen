@@ -2731,16 +2731,31 @@
       "inventoryLine": 181,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/Variance.ngr"
+      ],
+      "policies": [
+        "csharp4.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp4GeneratedTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp4.variance"
+        ],
+        "policies": [
+          "csharp4.source-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-4.0.dynamic-binding",
       "title": "Dynamic binding",
       "introduced": "4.0",
-      "classification": "syntax-or-policy",
+      "classification": "semantic-or-tooling",
       "reviewed": false,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/types/using-type-dynamic",
       "inventoryLine": 179,
@@ -2748,8 +2763,11 @@
       "conflicts": [],
       "grammars": [],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs"
+      ],
+      "status": "unimplemented",
+      "notes": "Version4.0 dynamic type-name spelling uses the existing identifier/type-name grammar. Dynamic dispatch, conversions and binding are semantic; no reserved keyword or semantic compiler is implemented."
     },
     {
       "id": "csharp-4.0.embedded-interop-types-nopia",
@@ -2776,10 +2794,27 @@
       "inventoryLine": 180,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/NamedArguments.ngr",
+        "Grammars/OptionalParameters.ngr"
+      ],
+      "policies": [
+        "csharp4.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp4GeneratedTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp4.named-arguments",
+          "csharp4.optional-parameters"
+        ],
+        "policies": [
+          "csharp4.source-context-checks"
+        ]
+      }
     },
     {
       "id": "csharp-5.0.asynchronous-methods",

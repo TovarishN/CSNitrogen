@@ -16,7 +16,8 @@ syntax module CSharp.Expressions
  token BitXorOp = "^" !"=";
 
  syntax Literal = CSharp.Lexical.Real / CSharp.Lexical.Integer / CSharp.Lexical.Character / CSharp.Lexical.VerbatimString / CSharp.Lexical.RegularString / "true" / "false" / "null";
- syntax Argument = Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Value:Expression;
+ extensible syntax ArgumentName {}
+ syntax Argument = Name:ArgumentName? Mode:(!CSharp.Lexical.Identifier ("ref" / "out"))? Value:Expression;
  syntax Arguments = "(" Items:(Argument; ",")* ")";
  syntax ArrayElement = ArrayInitializer / Expression;
  syntax ArrayInitializer = "{" Items:((ArrayElement; ",")+ ","?)? "}";
