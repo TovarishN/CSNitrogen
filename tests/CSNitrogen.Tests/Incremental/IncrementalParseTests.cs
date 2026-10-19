@@ -173,8 +173,27 @@ public class IncrementalParseTests
         Assert.Throws<ArgumentException>(() => CSharpParser.Reparse(incremental, Request("class B {}", "CSharp2"), [new(6, 1, 1)]));
     }
 
+    [Theory]
+    [InlineData("class A {}\rclass B {}\n#region R\n#endregion\n", 11, 0, "\n")]   // a lone CR becomes CR LF
+    [InlineData("class A {}\rX\nclass B {}\n#region R\n#endregion\n", 11, 1, "")] // CR and LF become one pair
+    [InlineData("class A {}\r\nclass B {}\n#region R\n#endregion\n", 11, 0, "x")]  // a CR LF pair is split
+    public void Line_breaks_formed_or_split_at_the_edit_keep_directive_lines(string old, int start, int length, string replacement)
+    {
+        var (text, changes) = Edit(old, (start, length, replacement));
+        var previous = ConditionalPreprocessor.Process(new(old, new Version(1, 0), []));
+
+        var spliced = ConditionalPreprocessor.Reprocess(previous, new(text, new Version(1, 0), []), changes);
+
+        var full = ConditionalPreprocessor.Process(new(text, new Version(1, 0), []));
+        Assert.Equal(full.MaskedText, spliced.MaskedText);
+        Assert.Equal(full.Directives, spliced.Directives);
+        Assert.Equal(full.ExactLineMappings, spliced.ExactLineMappings);
+        Assert.Equal(full.InactiveSpans, spliced.InactiveSpans);
+    }
+
     static readonly string[] Fragments =
-        ["x", "1", ";", " ", "\n", "(", ")", "{", "}", "/*", "*/", "//", "\"", "'", "@\"", "\\", "#if X\n", "#endif\n", "#define Y\n", "int", "class", "=", "+"];
+        ["x", "1", ";", " ", "\n", "\r", "\r\n", "(", ")", "{", "}", "/", "/*", "*/", "//", "\"", "'", "@\"", "\\", "#if X\n", "#endif\n",
+         "#define Y\n", "int", "class", "=", "+", "<", ">", ".", "a<b>c", "x/y"];
 
     static IEnumerable<(string Name, string Profile, string Text)> Corpus()
     {

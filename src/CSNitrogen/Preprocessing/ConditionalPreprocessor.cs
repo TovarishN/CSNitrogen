@@ -151,12 +151,14 @@ public static class ConditionalPreprocessor
         return lo<lines.Length&&lines[lo].Start==start?(lines[lo].State,lines[lo].Opened):(0,0);
     }
 
-    /// <summary>The start of the line holding <paramref name="position"/>: just after a line break, never inside a CR LF pair.</summary>
+    /// <summary>The start of the line holding <paramref name="position"/>, or of the line before when that line ends with a CR.</summary>
     static int LineStart(string text,int position,bool historical)
     {
         int i=Math.Min(position,text.Length);
         while(i>0&&!CSharpTrivia.IsNewline(text[i-1],historical))i--;
-        if(i>0&&i<text.Length&&text[i-1]=='\r'&&text[i]=='\n')return LineStart(text,i-1,historical);
+        // After a CR, start a line earlier: an edit here can join that CR with a following LF into one line break
+        // (or split such a pair), and only then do the line breaks counted over the edited lines see it.
+        if(i>0&&text[i-1]=='\r')return LineStart(text,i-1,historical);
         return i;
     }
 
