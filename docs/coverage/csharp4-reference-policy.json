@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp4",
-  "status": "source-index-and-bounded-lexical-review",
+  "status": "source-context-review-in-progress",
   "primary": {
     "title": "C# Language Specification Version4.0",
     "documentNotice": "Microsoft Corporation,1999\u20132010",
@@ -14,7 +14,7 @@
   "extraction": {
     "method": "macOS textutil -convert txt",
     "textSha256": "9a648424826386bb4031102bdf0ab8c3f2e02f7f82b8732567b120a60d030aed",
-    "scope": "All458 appendix grammar occurrences and1181 alternative identities indexed with main-text references; bounded lexical/directive prose reviewed. Neither whole-prose conformance nor source admission."
+    "scope": "All458 appendix grammar occurrences and1181 alternative identities indexed with main-text references; bounded lexical/directive and attribute prose reviewed. Neither whole-prose conformance nor source admission."
   },
   "unicode": {
     "status": "approved",
@@ -25,5 +25,5 @@
     "authority": "User explicitly approved Unicode4 scalar continuity on2026-10-19; repeated Version4.0 Unicode3 citation treated as informational.",
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e"
   },
-  "completion": "CSharp4 stays partial. Named arguments, optional parameters, variance and approved Unicode4 scalar continuity are implemented; whole-source occurrence review and independent admission remain pending."
+  "completion": "CSharp4 stays partial. Named arguments including attribute constructor labels, optional parameters, variance and approved Unicode4 scalar continuity are implemented; remaining source context/alternative closure and independent admission are pending."
 }
