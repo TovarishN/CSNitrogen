@@ -24,13 +24,13 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
             case "error":case "warning":
                 if(d.Active)issues.Add(new(d.Kind=="error"?"CSN1202":"CSN1203",d.Argument.Trim(),d.Span,IssueCategory.Preprocessing,
                     d.Kind=="error"?DiagnosticSeverity.Error:DiagnosticSeverity.Warning));break;
-            case "line":if(d.Active||version.Major<=3)ApplyLine(d,argument);break;
-            case "nullable":if(d.Active||version.Major<=3)Later(d,8);break;
+            case "line":if(d.Active||version.Major<=4)ApplyLine(d,argument);break;
+            case "nullable":if(d.Active||version.Major<=4)Later(d,8);break;
             case "pragma":
-                if(version<new Version(2,0)){if(d.Active||version.Major<=3)Later(d,2);}
+                if(version<new Version(2,0)){if(d.Active||version.Major<=4)Later(d,2);}
                 else if(d.Active)issues.Add(new("CSN1203","Pragma payload preserved as implementation-defined compiler information; compiler effects are not applied.",d.Span,IssueCategory.Preprocessing,DiagnosticSeverity.Warning));
                 break;
-            case "" when d.Argument.StartsWith(':'):if(d.Active||version.Major<=3)Later(d,14);break;
+            case "" when d.Argument.StartsWith(':'):if(d.Active||version.Major<=4)Later(d,14);break;
             default:Error("CSN1204","Unknown preprocessing directive.",d);break;
         }
     }
@@ -42,7 +42,7 @@ internal sealed class DirectiveEffects(Version version,List<ParseIssue> issues)
     private void ApplyLine(DirectiveRecord d,string argument)
     {
         bool fourth=version==new Version(2,0);
-        bool exactStandard=version.Major is 1 or 2 or 3;
+        bool exactStandard=version.Major is 1 or 2 or 3 or 4;
         if(fourth && UnicodePolicy.TryNormalize(argument,version,true,out var indicator))
         {
             if(indicator is "default" or "hidden")argument=indicator;

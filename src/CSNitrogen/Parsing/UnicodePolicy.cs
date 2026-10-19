@@ -43,7 +43,7 @@ internal static class UnicodePolicy
             }
             else if(UsesUnicode4(version) && char.IsHighSurrogate((char)value) && index+1<text.Length && char.IsLowSurrogate(text[index+1]))
             {value=char.ConvertToUtf32((char)value,text[++index]);}
-            if(start && escaped && value=='_' && version.Major<=3)return false;
+            if(start && escaped && value=='_' && version.Major<=4)return false;
             if(UsesUnicode4(version))
             {
                 if(start?!CSharp2UnicodeTables.IsStart(value):!CSharp2UnicodeTables.IsPart(value))return false;

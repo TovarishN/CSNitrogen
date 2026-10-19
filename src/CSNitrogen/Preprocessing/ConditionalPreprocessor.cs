@@ -16,7 +16,7 @@ public static class ConditionalPreprocessor
             if(supplied is null || !ConditionalSymbols.TryNormalize(supplied,request.Version,out var name))issues.Add(new("CSN1101","Invalid supplied conditional symbol.",new(0,0),IssueCategory.Preprocessing));
             else symbols.Add(name);
         }
-        string lexicalSource=request.Version.Major<=3&&request.Source.EndsWith('\u001a')?request.Source[..^1]+" ":request.Source;
+        string lexicalSource=request.Version.Major<=4&&request.Source.EndsWith('\u001a')?request.Source[..^1]+" ":request.Source;
         var scanner=new DirectiveScanner(lexicalSource,request.Version);var branches=new Stack<Branch>();var directives=new List<DirectiveRecord>();
         var inactive=new List<TextSpan>();char[] masked=lexicalSource.ToCharArray();
         var effects=new DirectiveEffects(request.Version,issues);var openLines=new List<OpenLine>();
@@ -102,7 +102,7 @@ public static class ConditionalPreprocessor
         if(changes.Length==0||version!=previous.Version||!request.ConditionalSymbols.SequenceEqual(previous.Symbols))return null;
         // Issues would need re-attributing; and a historical end-of-file marker changes the lexical source.
         if(previous.Issues.Count>0)return null;
-        if(version.Major<=3&&(old.EndsWith('\u001a')||text.EndsWith('\u001a')))return null;
+        if(version.Major<=4&&(old.EndsWith('\u001a')||text.EndsWith('\u001a')))return null;
         int delta=0,end=0;
         foreach(var c in changes)
         {

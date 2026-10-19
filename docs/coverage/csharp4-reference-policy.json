@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp4",
-  "status": "bounded-production-implemented-unreviewed",
+  "status": "source-index-and-bounded-lexical-review",
   "primary": {
     "title": "C# Language Specification Version4.0",
     "documentNotice": "Microsoft Corporation,1999\u20132010",
@@ -14,7 +14,7 @@
   "extraction": {
     "method": "macOS textutil -convert txt",
     "textSha256": "9a648424826386bb4031102bdf0ab8c3f2e02f7f82b8732567b120a60d030aed",
-    "scope": "Version header, identifiers reference and bounded CSharp4 addition clauses only; not occurrence-complete review"
+    "scope": "All458 appendix grammar occurrences and1181 alternative identities indexed with main-text references; bounded lexical/directive prose reviewed. Neither whole-prose conformance nor source admission."
   },
   "unicode": {
     "status": "approved",
