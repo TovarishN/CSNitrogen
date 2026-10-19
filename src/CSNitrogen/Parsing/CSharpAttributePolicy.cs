@@ -29,7 +29,8 @@ internal static class CSharpAttributePolicy
                 if(targetIndex>=0 && tree.ChildCount(targetIndex)>0)
                 {
                     int leaf=tree.Child(targetIndex,0);
-                    while(tree.ChildCount(leaf)>0)leaf=tree.Child(leaf,0);
+                    while(leaf!=SyntaxTree.NoNode && tree.ChildCount(leaf)>0)leaf=tree.Child(leaf,0);
+                    if(leaf==SyntaxTree.NoNode)continue;
                     var targetSpan=tree.Span(leaf);
                     string targetText=tree.Text.Substring(targetSpan.Start,targetSpan.Length);
                     bool recognized=UnicodePolicy.TryNormalize(targetText,version,true,out var name)

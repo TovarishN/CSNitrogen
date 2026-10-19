@@ -62,9 +62,9 @@ public class DeclarationConformanceParityTests
             ParameterShapeAssert.Span(Microsoft.CodeAnalysis.Text.TextSpan.FromBounds(start, name.Span.End), actual.Span);
             Assert.Equal(source[start..name.Span.End], actual.ToString());
         }
-        void Body(BlockSyntax? block, SyntaxToken semicolon, MethodBodyNode body)
+        void Body(BlockSyntax? block, SyntaxToken semicolon, Nitrogen.SyntaxNode body)
         {
-            var child = N(body).Child(0);
+            var child = body; // MethodBody is an alias: the Block or ";" leaf stands in for it
             if (block is not null) StatementShapeAssert.Compare(block, child);
             else Name(semicolon, child);
         }
@@ -108,7 +108,7 @@ public class DeclarationConformanceParityTests
         foreach (var member in root.DescendantNodes().OfType<MemberDeclarationSyntax>().Where(m => m.Parent is TypeDeclarationSyntax && m is not BaseTypeDeclarationSyntax && m is not DelegateDeclarationSyntax))
         {
             if (member.Parent is InterfaceDeclarationSyntax)
-            { var n = Match<InterfaceMemberNode>(member); ParameterShapeAssert.Attributes(member.AttributeLists, n.Attributes); var optional = N(n).Child(1); Assert.Equal(member.Modifiers.Count == 0, optional.Kind == SyntaxKinds.Empty); if (member.Modifiers.Count != 0) Name(Assert.Single(member.Modifiers), optional.Child(0)); }
+            { var n = Match<InterfaceMemberNode>(member); ParameterShapeAssert.Attributes(member.AttributeLists, n.Attributes); var optional = N(n).Child(1); Assert.Equal(member.Modifiers.Count == 0, optional.IsNull); if (member.Modifiers.Count != 0) Name(Assert.Single(member.Modifiers), optional.Child(0)); }
             else { var n = Match<MemberDeclarationNode>(member); Header(member.AttributeLists, member.Modifiers, n.Attributes, n.Modifiers); ParameterShapeAssert.Span(member.Span, n.Span); }
         }
         foreach (var e in root.DescendantNodes().OfType<EnumDeclarationSyntax>())
@@ -123,7 +123,7 @@ public class DeclarationConformanceParityTests
                 for (int i = 0; i < list.Count; i++) ParameterShapeAssert.Span(e.Members[i].Span, list[i].Span);
                 var commas = e.Members.GetSeparators().ToArray(); Assert.Equal(Math.Max(0, e.Members.Count - 1), list.SeparatorCount);
                 for (int i = 0; i < list.SeparatorCount; i++) ParameterShapeAssert.Span(commas[i].Span, list.Separator(i).Span);
-                Assert.Equal(commas.Length == e.Members.Count, group.Child(1).Kind != SyntaxKinds.Empty);
+                Assert.Equal(commas.Length == e.Members.Count, !group.Child(1).IsNull);
                 if (commas.Length == e.Members.Count) Name(commas[^1], group.Child(1));
             }
         }

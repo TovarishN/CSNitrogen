@@ -11,7 +11,9 @@ internal static class CSharpDeclarationPolicy
         var issues = new List<ParseIssue>();
         var accessors = new Dictionary<int, HashSet<string>>();
         string Kind(int node) => tree.Language!.GetKindName(tree.Kind(node));
-        string Text(int node) { var span=tree.Span(node); return tree.Text.Substring(span.Start,span.Length); }
+        string Text(int node) { if(node==SyntaxTree.NoNode)return ""; var span=tree.Span(node); return tree.Text.Substring(span.Start,span.Length); }
+        // Descends first children; stops at an absent first slot (formerly a zero-width Empty node).
+        int FirstLeaf(int node) { while(node!=SyntaxTree.NoNode && tree.ChildCount(node)>0)node=tree.Child(node,0); return node; }
         int Ancestor(int node, params string[] kinds)
         {
             for (int parent=tree.Parent(node);parent>=0;parent=tree.Parent(parent))
@@ -37,7 +39,7 @@ internal static class CSharpDeclarationPolicy
             while(pending.TryPop(out int node))
             {
                 if(Kind(node) is "FixedParameter" or "ParameterArray")return true;
-                for(int child=0;child<tree.ChildCount(node);child++)pending.Push(tree.Child(node,child));
+                for(int child=0;child<tree.ChildCount(node);child++){int c=tree.Child(node,child);if(c!=SyntaxTree.NoNode)pending.Push(c);}
             }
             return false;
         }
@@ -102,7 +104,7 @@ internal static class CSharpDeclarationPolicy
                 {
                     var indexer=SyntaxView.Cast<IndexerDeclarationNode>(tree,node);
                     // A simple indexer-name consists solely of the this token.
-                    int first=indexer.Name.Index;while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    int first=FirstLeaf(indexer.Name.Index);
                     if(Text(first)!="this")Error(node,"Explicit-interface indexers cannot declare accessor accessibility.");
                 }
             }
@@ -135,8 +137,7 @@ internal static class CSharpDeclarationPolicy
                 {
                     string text=Text(items[i].Index).Trim();
                     if((text is "class" or "struct") && i!=0)Error(items[i].Index,"A class or struct constraint must be first.");
-                    int first=items[i].Index;
-                    while(tree.ChildCount(first)>0)first=tree.Child(first,0);
+                    int first=FirstLeaf(items[i].Index);
                     if(Text(first)=="new" && hasStruct)
                         Error(items[i].Index,"A struct constraint cannot be combined with a constructor constraint.");
                     var pending=new Stack<int>();pending.Push(items[i].Index);
@@ -150,7 +151,7 @@ internal static class CSharpDeclarationPolicy
                                 Error(part,"A named constraint requires a class/interface/type-parameter name, not a value, nullable, pointer or array type.");
                             break;
                         }
-                        for(int child=tree.ChildCount(part)-1;child>=0;child--)pending.Push(tree.Child(part,child));
+                        for(int child=tree.ChildCount(part)-1;child>=0;child--){int c=tree.Child(part,child);if(c!=SyntaxTree.NoNode)pending.Push(c);}
                     }
                     if(Text(first)=="new" && i!=items.Count-1)
                         Error(items[i].Index,"A constructor constraint must be last.");

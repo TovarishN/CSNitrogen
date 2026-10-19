@@ -37,7 +37,7 @@ syntax module CSharp.Declarations
  syntax ConstantMember = Value:CSharp.Statements.ConstantDeclaration ";";
  syntax FieldDeclaration = Value:CSharp.Statements.VariableDeclaration ";";
  syntax MemberDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration);
- extensible syntax ClassMember { | StandardClassMember = Value:(TypeDeclaration / MemberDeclaration) }
+ extensible syntax ClassMember { | transparent StandardClassMember = Value:(TypeDeclaration / MemberDeclaration) }
  syntax InterfaceAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:(CSharp.Lexical.ContextualGet / CSharp.Lexical.ContextualSet) ";";
  syntax InterfaceMethod = Return:CSharp.NamesTypes.ReturnType Name:CSharp.Lexical.Identifier TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? ";";
  syntax InterfaceProperty = Type:CSharp.NamesTypes.TypeReference Name:CSharp.Lexical.Identifier "{" Accessors:InterfaceAccessor+ "}";

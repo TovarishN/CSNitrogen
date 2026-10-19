@@ -23,5 +23,5 @@ syntax module CSharp.Unsafe
  syntax FixedDeclarator = Name:CSharp.Lexical.Identifier "=" Value:CSharp.Expressions.Expression;
  syntax FixedStatement = "fixed" "(" Type:PointerNonArrayType Variables:(FixedDeclarator; ",")+ ")" Body:CSharp.Statements.EmbeddedStatement;
  syntax UnsafeBlock = "unsafe" Body:CSharp.Statements.Block;
- extend syntax CSharp.Statements.EmbeddedStatement { | UnsafeEmbeddedStatement = Value:(FixedStatement / UnsafeBlock) }
+ extend syntax CSharp.Statements.EmbeddedStatement { | transparent UnsafeEmbeddedStatement = Value:(FixedStatement / UnsafeBlock) }
 }

@@ -10,7 +10,7 @@ Requires the .NET SDK 10.0.100, the .NET 10.0.0 reference pack (oracle tests), a
 
 ```sh
 git clone https://github.com/TovarishN/Nitrogen.git .dependencies/NitrogenSource
-git -C .dependencies/NitrogenSource checkout --detach 6149713ea5348e3fff61d032c441fc6d6cf733e2
+git -C .dependencies/NitrogenSource checkout --detach a59ab220bb3025ca665c9d8381a01cb02995219d
 python3 eng/prepare-dependencies.py --source .dependencies/NitrogenSource
 dotnet build CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
 dotnet test tests/CSNitrogen.Tests -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s

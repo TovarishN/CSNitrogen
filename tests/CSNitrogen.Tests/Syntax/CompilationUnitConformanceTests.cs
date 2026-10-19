@@ -52,7 +52,7 @@ public class CompilationUnitConformanceTests
         var document = CSharpParser.Parse(new(source, "CSharp1", "lifetime.cs", []));
         Assert.True(document.Accepted);
         var root = document.Root; var rootUsings = root.Usings; var members = root.Members; var attributes = root.Attributes;
-        var ns = SyntaxView.Cast<NamespaceDeclarationNode>(document.Tree, SyntaxView.Cast<NamespaceMemberBodyNamespaceMember>(document.Tree, members[0].Index).Value.Index);
+        var ns = SyntaxView.Cast<NamespaceDeclarationNode>(document.Tree, members[0].Index);
         var namespaceName = ns.Name; var namespaceUsings = ns.Usings; var namespaceMembers = ns.Members;
         var projected = Assert.Single(document.Classes); var name = projected.Name;
         document.Dispose();

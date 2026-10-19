@@ -18,7 +18,7 @@ internal static class ExpressionShapeAssert
         if (!actual.Items.HasValue) return;
         var group = actual.Items.Value;
         Assert.Equal(SyntaxKinds.Group, group.Kind); Assert.Equal(2, group.ChildCount);
-        var list = group.Child(0); Assert.Equal(SyntaxKinds.List, list.Kind);
+        var list = group.Child(0); // a one-item list is its item (ListSlot)
         var values = new SeparatedList<Nitrogen.SyntaxNode>(actual.Tree, list.Index);
         Assert.Equal(expected.Expressions.Count, values.Count);
         var separators = expected.Expressions.GetSeparators().ToArray();
@@ -31,8 +31,8 @@ internal static class ExpressionShapeAssert
             if (i < values.SeparatorCount) SameSpan(separators[i].Span, values.Separator(i).Span);
         }
         var trailing = group.Child(1);
-        Assert.Equal(separators.Length == values.Count, trailing.Kind != SyntaxKinds.Empty);
-        if (trailing.Kind != SyntaxKinds.Empty)
+        Assert.Equal(separators.Length == values.Count, !trailing.IsNull);
+        if (!trailing.IsNull)
         { Assert.Equal(",", trailing.ToString()); SameSpan(separators[^1].Span, trailing.Span); }
     }
 

@@ -112,7 +112,7 @@ public class ParentTypeNormativeTests
         var reference = CSharpSyntaxTree.ParseText(source, new CSharpParseOptions(LanguageVersion.CSharp1));
         Assert.DoesNotContain(reference.GetDiagnostics(), d => d.Severity == Microsoft.CodeAnalysis.DiagnosticSeverity.Error);
         using var ours = CSharpParser.Parse(new(source, "CSharp1", "void-owner.cs", [])); Assert.True(ours.Accepted);
-        int node = Assert.Single(Enumerable.Range(0, ours.Tree.NodeCount), n => ReturnTypeNode.Is(ours.Tree, n) && ours.Tree.Span(n).Start == prefix.Length);
+        int node = Assert.Single(Enumerable.Range(0, ours.Tree.NodeCount), n => ours.Tree.Kind(n) == Nitrogen.SyntaxKinds.Literal && ours.Tree.Span(n).Start == prefix.Length /* ReturnType is an alias: the "void" leaf stands in */);
         Assert.Equal(new Nitrogen.TextSpan(prefix.Length, 4), ours.Tree.Span(node));
         Assert.DoesNotContain(Enumerable.Range(0, ours.Tree.NodeCount), n => TypeSyntaxTypeReference.Is(ours.Tree, n) && ours.Tree.Span(n).Start == prefix.Length);
     }

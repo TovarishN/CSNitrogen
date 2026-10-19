@@ -11,19 +11,22 @@ internal static class CSharpCompilationUnitPolicy
         var issues = new List<ParseIssue>();
         for (int index = 0; index < tree.NodeCount; index++)
         {
-            if (!NamespaceMemberBodyNamespaceMember.Is(tree, index) || tree.ChildCount(index) == 0) continue;
-            var value = SyntaxView.Cast<NamespaceMemberBodyNamespaceMember>(tree, index).Value;
-            // Namespace members wrap either a namespace or a type alternative.
-            // Inspect only type alternatives: nested class members and method/
+            // NamespaceMemberBody is transparent: a namespace member slot holds the
+            // namespace or type alternative directly. Inspect only type alternatives
+            // under a namespace member slot: nested class members and method/
             // parameter/accessor attributes keep their applicability semantics.
-            bool type = ClassTypeDeclarationTypeDeclaration.Is(tree, value.Index)
-                || StructTypeDeclarationTypeDeclaration.Is(tree, value.Index)
-                || InterfaceTypeDeclarationTypeDeclaration.Is(tree, value.Index)
-                || EnumTypeDeclarationTypeDeclaration.Is(tree, value.Index)
-                || DelegateTypeDeclarationTypeDeclaration.Is(tree, value.Index);
-            if (!type || tree.ChildCount(value.Index) == 0) continue;
-            int declaration = tree.Child(value.Index, 0);
-            if (tree.ChildCount(declaration) == 0) continue; // recovered/missing declaration
+            // The kind checks come first: they are cheap, and most nodes fail them.
+            bool type = ClassTypeDeclarationTypeDeclaration.Is(tree, index)
+                || StructTypeDeclarationTypeDeclaration.Is(tree, index)
+                || InterfaceTypeDeclarationTypeDeclaration.Is(tree, index)
+                || EnumTypeDeclarationTypeDeclaration.Is(tree, index)
+                || DelegateTypeDeclarationTypeDeclaration.Is(tree, index);
+            if (!type || tree.ChildCount(index) == 0) continue;
+            int parent = tree.Parent(index);
+            while (parent >= 0 && tree.Kind(parent) is SyntaxKinds.List or SyntaxKinds.Ambiguous) parent = tree.Parent(parent);
+            if (parent < 0 || !(CompilationUnitNode.Is(tree, parent) || NamespaceDeclarationNode.Is(tree, parent))) continue;
+            int declaration = tree.Child(index, 0);
+            if (declaration == SyntaxTree.NoNode || tree.ChildCount(declaration) == 0) continue; // recovered/missing declaration
             if (ClassDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<ClassDeclarationNode>(tree, declaration).Attributes);
             else if (StructDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<StructDeclarationNode>(tree, declaration).Attributes);
             else if (InterfaceDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<InterfaceDeclarationNode>(tree, declaration).Attributes);

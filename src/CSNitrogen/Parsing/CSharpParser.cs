@@ -64,6 +64,50 @@ public static unsafe class CSharpParser
             && ThirdFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
     public static ParseDocument Parse(ParseRequest request)
     {
+        var (profile,composition)=Resolve(request);
+        var preprocessing=ConditionalPreprocessor.Process(new(request.Source,profile.Version!,request.ConditionalSymbols));
+        // Parse the masked buffer; the tree keeps the authored source as its text
+        // (same length), so tree text and trivia read what the user wrote.
+        var parsed = composition.Language.Value.Parse(preprocessing.MaskedText, composition.Start, request.Source);
+        return Document(request,profile,preprocessing,parsed);
+    }
+
+    /// <summary>
+    /// Parses like <see cref="Parse"/> and keeps what <see cref="Reparse"/> needs to reuse this document after an edit.
+    /// An editor parses once with this and then reparses; a one-shot parse should use <see cref="Parse"/>.
+    /// </summary>
+    public static ParseDocument ParseIncremental(ParseRequest request)
+    {
+        var (profile,composition)=Resolve(request);
+        var preprocessing=ConditionalPreprocessor.Process(new(request.Source,profile.Version!,request.ConditionalSymbols));
+        var parsed=composition.Language.Value.ParseIncremental(preprocessing.MaskedText,composition.Start,request.Source);
+        return Document(request,profile,preprocessing,parsed);
+    }
+
+    /// <summary>
+    /// Parses <paramref name="request"/>'s source, an edit of <paramref name="previous"/>'s by <paramref name="changes"/>
+    /// (old-text coordinates, sorted, non-overlapping), reusing what the edit left untouched: preprocessing is spliced
+    /// when the edit cannot change the directive structure, and the tree reuses every subtree whose parse examined no
+    /// changed text. The result equals <see cref="Parse"/>'s, syntax policy issues included (they are recomputed), and
+    /// is independent of <paramref name="previous"/>.
+    /// </summary>
+    /// <exception cref="ArgumentException"><paramref name="previous"/> is not incremental, or the profile differs.</exception>
+    public static ParseDocument Reparse(ParseDocument previous,ParseRequest request,ReadOnlySpan<TextChange> changes)
+    {
+        ArgumentNullException.ThrowIfNull(previous);
+        var (profile,composition)=Resolve(request);
+        if(!previous.IsIncremental)throw new ArgumentException("The previous document is not incremental; parse it with ParseIncremental.",nameof(previous));
+        if(previous.Profile!=request.Profile)throw new ArgumentException("The previous document was parsed with another profile.",nameof(request));
+        var preprocessing=ConditionalPreprocessor.Reprocess(previous.Preprocessing,new(request.Source,profile.Version!,request.ConditionalSymbols),changes,out bool spliced);
+        // A full preprocessing run may change the masked text beyond the edit (a directive's reach): reparse from the
+        // exact difference of the masked texts instead.
+        TextChange[] masked=spliced?changes.ToArray():[TextChange.Between(previous.MaskedText,preprocessing.MaskedText)];
+        var parsed=composition.Language.Value.Reparse(previous.Parsed,preprocessing.MaskedText,masked,request.Source);
+        return Document(request,profile,preprocessing,parsed);
+    }
+
+    static (LanguageProfile Profile,(Lazy<Language> Language,Rule Start) Composition) Resolve(ParseRequest request)
+    {
         ArgumentNullException.ThrowIfNull(request);
         ArgumentNullException.ThrowIfNull(request.Source);
         ArgumentNullException.ThrowIfNull(request.ConditionalSymbols);
@@ -71,8 +115,11 @@ public static unsafe class CSharpParser
         var profile=ProfileResolver.Resolve(request.Profile).Profile;
         if (profile is null || !Compositions.TryGetValue(request.Profile,out var composition))
             throw new ArgumentException("Unknown language profile.", nameof(request));
-        var preprocessing=ConditionalPreprocessor.Process(new(request.Source,profile.Version!,request.ConditionalSymbols));
-        var parsed = composition.Language.Value.Parse(preprocessing.MaskedText, composition.Start);
+        return (profile,composition);
+    }
+
+    static ParseDocument Document(ParseRequest request,LanguageProfile profile,PreprocessResult preprocessing,ParseResult parsed)
+    {
         try
         {
             var issues = new List<ParseIssue>();
