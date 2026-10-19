@@ -12,6 +12,11 @@ public sealed class ParseDocument : IDisposable
         _parsed = parsed; Preprocessing=preprocessing; Issues = Array.AsReadOnly(issues.ToArray());
         Accepted = parsed.Success && !Issues.Any(i => i.Severity == DiagnosticSeverity.Error);
     }
+    internal ParseResult Parsed => _parsed;
+    /// <summary>True for a document from <see cref="CSharpParser.ParseIncremental"/> or <see cref="CSharpParser.Reparse"/>.</summary>
+    public bool IsIncremental => _parsed.IsIncremental;
+    /// <summary>Tree nodes a reparse copied from the previous document's tree.</summary>
+    public int ReusedNodes => _parsed.Stats.ReusedNodes;
     public string OriginalText { get; }
     public PreprocessResult Preprocessing { get; }
     public string MaskedText => Preprocessing.MaskedText;

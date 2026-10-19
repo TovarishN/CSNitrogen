@@ -22,6 +22,12 @@ public sealed class PreprocessResult
     { _version=version;OriginalText=source;MaskedText=masked;Directives=Array.AsReadOnly(directives.ToArray());InactiveSpans=Array.AsReadOnly(inactive.ToArray());
       Issues=Array.AsReadOnly(issues.ToArray());ExactLineMappings=Array.AsReadOnly(mappings.ToArray()); }
     private readonly Version _version;
+    /// <summary>The language version this text was preprocessed for.</summary>
+    public Version Version=>_version;
+    /// <summary>Line starts where the scan carried a block comment or verbatim string in (for incremental reprocessing).</summary>
+    internal OpenLine[] OpenLines {get;init;}=[];
+    /// <summary>The conditional symbols supplied for this text.</summary>
+    internal string[] Symbols {get;init;}=[];
     public string OriginalText {get;}
     public string MaskedText {get;}
     public IReadOnlyList<DirectiveRecord> Directives {get;}
@@ -56,6 +62,8 @@ public sealed class PreprocessResult
     }
 }
 internal sealed record SourceLine(int Start,int End,int After,int Number);
+/// <summary>A line start at which the directive scan carried state <c>State</c> (opened at <c>Opened</c>) in.</summary>
+internal readonly record struct OpenLine(int Start,int State,int Opened);
 internal static class SourceLines
 {
     internal static IEnumerable<SourceLine> Enumerate(string text,Version? version=null)

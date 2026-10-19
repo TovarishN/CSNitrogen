@@ -13,6 +13,11 @@ public sealed class DirectiveScanner
     internal List<ParseIssue> Issues {get;}=[];
     internal List<int> HistoricalWhitespace {get;}=[];
     internal bool SawToken {get;private set;}
+    /// <summary>The lexical state carried into the next line (0 = normal code) and where it opened.</summary>
+    internal int LineState=>(int)_state;
+    internal int Opened=>_opened;
+    /// <summary>Continues a scan from a line start whose carried state an earlier scan recorded.</summary>
+    internal void Resume(int state,int opened){_state=(State)state;_opened=opened;}
     internal DirectiveScanner(string source,Version? version=null){_source=source;_version=version??new(14,0);}
     public static DirectiveScanResult Scan(string source)
     {
