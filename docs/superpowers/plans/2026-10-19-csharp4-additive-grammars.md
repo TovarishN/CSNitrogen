@@ -38,13 +38,13 @@ Consumes the admitted CSharp3 grammar inputs and working Version4.0 source. Prod
 
 Consumes reviewed Task1 seam evidence. Produces csharp4.named-arguments, csharp4.optional-parameters and csharp4.variance with introduction4.0 and explicit baseline requirements.
 
-- [ ] RED production feature/version/omission/typed-field/span tests and source-local policy negatives.
-- [ ] Add empty shared seams and independent production modules; preserve Argument.Mode/Value, FixedParameter original fields, TypeParameter.Attributes/Name and positional index Indices types.
-- [ ] Enforce CSharp4 argument ordering/duplicate logical-name rules, ref/out index prohibition, optional parameter ordering/ref-out restrictions and interface/delegate-only variance contexts. Inspect controlling source before adding further restrictions; record discrepancies.
-- [ ] Add explicit selected CSharp4+ factory/feature membership. Use the approved frozen Unicode4 scalar policy and matching global target spellings for CSharp4 only; later Unicode contracts remain separate.
-- [ ] Map dynamic type-name spelling to existing syntax without inventing dynamic dispatch or making dynamic globally reserved. Review history classification rather than claiming semantic implementation.
-- [ ] Refresh admitted predecessor source hashes in directed order after regression verification; no predecessor gate logic weakening. CSharp4 remains partial.
-- [ ] Full tests/four generators/123dependency pins, fresh review and authorized publish/merge.
+- [x] RED production feature/version/omission/typed-field/span tests and source-local policy negatives.
+- [x] Add empty shared seams and independent production modules; preserve Argument.Mode/Value, FixedParameter original fields, TypeParameter.Attributes/Name and positional index Indices types.
+- [x] Enforce CSharp4 argument ordering/duplicate logical-name rules, ref/out index prohibition, optional parameter ordering/ref-out restrictions and interface/delegate-only variance contexts. Inspect controlling source before adding further restrictions; record discrepancies.
+- [x] Add explicit selected CSharp4+ factory/feature membership. Use the approved frozen Unicode4 scalar policy and matching global target spellings for CSharp4 only; later Unicode contracts remain separate.
+- [x] Map dynamic type-name spelling to existing syntax without inventing dynamic dispatch or making dynamic globally reserved. Review history classification rather than claiming semantic implementation.
+- [x] Refresh admitted predecessor source hashes in directed order after regression verification; no predecessor gate logic weakening. CSharp4 remains partial.
+- [x] Full tests/four generators/125 dependency pins. Fresh review and authorized publish/merge remain the branch integration gate.
 
 ## Task 3: whole historical conformance and source admission
 

@@ -1,0 +1,27 @@
+# CSharp4 bounded production capabilities
+
+Base: 4963dc2f51f5b7600b7060f86f945b4c039bd145, merged PR37 plus concurrent PR35/36 compact-tree/incremental parsing changes. The combined baseline passed 3,271 normal and 3,681 oracle tests after restoring its 125 exact pinned dependency inputs. The first attempt used a stale ignored snapshot and failed grammar generation; no dependency manifest or sibling checkout was changed to repair it.
+
+## Scope and contract
+
+The working Version4.0 source, mirrored delivery/authenticity limits and approved frozen Unicode4 scalar continuity remain recorded in csharp4-reference-policy.json and csharp4-seam-proof-evidence.md. This is bounded production syntax implementation, not whole-source admission. CSharp4 remains partial even when its currently inventoried syntax capabilities are supplied. All four CSharp4 history entries remain unreviewed. Dynamic binding is classified as semantic/tooling: its ordinary identifier/type-name spelling already parses, while source §4.2.3/4.7 resolution, conversions and dispatch require semantics. Interop, parameter lookup, default constantness/conversions and variance safety remain excluded.
+
+Three independent capabilities introduced at4.0 select NamedArguments, OptionalParameters and Variance with explicit baseline requirements. All named4+ factories select them. CSharp4 alone adds frozen Unicode4 scalar/trivia and reuses GlobalTargetsThird, whose frozen spellings agree with that repertoire. Later Unicode contracts are unchanged and unreviewed.
+
+The shared optional Argument.Name, FixedParameter.Default and TypeParameter.Variance slots preserve original fields and their types; predecessor compositions leave them absent. New NamedElementExpression and NamedBaseIndexExpression alternatives require at least one named index argument. Positional Indices lists retain their original owners and expression-list types. Named positional prefixes expose Value expressions and Comma tokens separately. Exact child spans remain UTF16 coordinates after supplementary trivia. No Nitrogen core changes, arbitrary runtime custom factory or handwritten parser were introduced.
+
+CSharp4ContextPolicy implements source-local restrictions from main3163–3167,6123–6137 and7292–7296: positional arguments precede named arguments in4–7.1; repeated logical labels use escaped/verbatim/format-normalized identity within each list; required fixed parameters cannot follow optional parameters; ref/out parameters cannot have defaults; variance is limited to interface/delegate type parameter declarations. Interface methods are separate owners and do not inherit enclosing-interface variance permission. New named index syntax excludes ref/out and positional-after-named forms structurally. New index alternatives participate in existing primary-expression/no-direct-array-creation checks. Default/this warning cases are not promoted to errors beyond the controlling source.
+
+## Observations retained
+
+- Initial production matrix:20 failures/17 passes before implementation. The first integrated53 cases passed after correcting a generated-view type-name compile typo.
+- Additional ownership test found `interface I{void M<out T>();}` accepted. Adding InterfaceMethod as a boundary changed that witness from RED to GREEN.
+- Coverage metadata test failed with three missing4history mappings; syntax mappings were then added and dynamic binding classified semantically. Existing status vocabulary remains implemented/unimplemented with reviewed=false.
+- The first full run exposed wildcard proof registration importing both new production and proof modules. Oracle registration now explicitly lists its23 unchanged inherited inputs; production modules cannot leak into this test composition.
+- Exact predecessor audits exposed new empty-rule and source-helper inventory obligations. Both new CSharp1 slots, all three CSharp2 slots and the version-guarded helper are explicitly inventoried. Exact audit logic is unchanged. The shared generated-context source ownership group includes the helper, and a focused test proves it inactive for1/2/3. The independently selected4 policy remains explicit.
+- `p->M[x:1]` was a mistaken negative: pointer member access is a primary expression. It remains an accepted source-local neighbor; target denotation is a binding concern, distinct from pointer element access. No failed observation was discarded.
+- The original proof's six raw accepted source-invalid forms remain executable and are now also required to produce production CSN2040 issues. The proof's historical pre-production evidence remains historical.
+
+## Verification
+
+Full solution:3,349 normal +3,681 oracle =7,030 passed, zero failures/skips. This includes78 new production cases beyond the combined baseline. Command: `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false`. Fresh whole-branch review pending. The four grammar generators already reproduced identical bytes; all125 dependency input hashes matched. CSharp2/3 gate hashes are refreshed in directed order without weakening their admission logic; the complete predecessor regression corpus must remain green. Incomplete-form and incremental-edit observations exercise production policy through both parsing entry points. Unrelated benchmarks are preserved.

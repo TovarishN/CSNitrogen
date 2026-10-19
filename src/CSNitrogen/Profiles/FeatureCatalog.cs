@@ -6,6 +6,9 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp4.named-arguments", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NamedArguments.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },
+        new FeatureDefinition("csharp4.optional-parameters", Array.AsReadOnly(new[]{"baseline.attributes"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/OptionalParameters.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },
+        new FeatureDefinition("csharp4.variance", Array.AsReadOnly(new[]{"csharp2.generics"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Variance.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },
         new FeatureDefinition("csharp3.object-initializers", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ObjectInitializers.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp3.anonymous-types", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/AnonymousTypes.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp3.implicit-arrays", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ImplicitArrays.ngr"})) { Introduced=new(3,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
@@ -99,7 +102,7 @@ public static class FeatureCatalog
         }).OrderBy(m=>m.InventoryId,StringComparer.Ordinal).ToArray();
         var factories=config.RootElement.GetProperty("languages").EnumerateArray().ToDictionary(l=>l.GetProperty("name").GetString()!,l=>l.GetProperty("grammars").EnumerateArray().Select(g=>g.GetString()!).ToArray(),StringComparer.Ordinal);
         using var secondLedger=JsonDocument.Parse(secondGate);
-        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp"]).Order(StringComparer.Ordinal).ToArray();
+        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
         var sourceInputs=inputs.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
         bool secondReviewed=CSharp2CoverageContract.Reviewed(secondGate,secondIndex,secondCrosswalk,secondReference,composition,sourceInputs);
         using var thirdLedger=JsonDocument.Parse(thirdGate);

@@ -13,7 +13,7 @@ public static class ProfileResolver
         var requested = FeatureCatalog.Inventory.Where(f => f.Classification == "syntax-or-policy" && f.Introduced <= version)
             .Select(f => f.Id).Order(StringComparer.Ordinal).ToArray();
         if(custom.Profile is null)return custom;
-        var grammars=Array.AsReadOnly(custom.Profile.Grammars.Select(g=>g=="Grammars/GlobalTargetsCurrent.ngr"?version.Major switch {1=>"Grammars/GlobalTargetsHistorical.ngr",2=>"Grammars/GlobalTargetsSecond.ngr",3=>"Grammars/GlobalTargetsThird.ngr",_=>g}:g).Order(StringComparer.Ordinal).ToArray());
+        var grammars=Array.AsReadOnly(custom.Profile.Grammars.Select(g=>g=="Grammars/GlobalTargetsCurrent.ngr"?version.Major switch {1=>"Grammars/GlobalTargetsHistorical.ngr",2=>"Grammars/GlobalTargetsSecond.ngr",3 or 4=>"Grammars/GlobalTargetsThird.ngr",_=>g}:g).Order(StringComparer.Ordinal).ToArray());
         var policies=Array.AsReadOnly(custom.Profile.Policies.Append(version.Major==1?"unicode-3.0-bmp":UnicodePolicy.UsesUnicode4(version)?"unicode-4.0-scalar":"unicode-current-bmp").Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray());
         bool factory=version.Major switch {1=>CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules),2=>CSNitrogen.Parsing.CSharpParser.MatchesSecondFactory(FeatureCatalog.SecondModules),3=>CSNitrogen.Parsing.CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules),_=>true};
         var coverage=CoverageContract.Evaluate(version,FeatureCatalog.Inventory,FeatureCatalog.CoverageMappings,FeatureCatalog.Implemented,
