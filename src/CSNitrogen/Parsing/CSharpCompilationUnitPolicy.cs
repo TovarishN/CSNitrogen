@@ -15,15 +15,16 @@ internal static class CSharpCompilationUnitPolicy
             // namespace or type alternative directly. Inspect only type alternatives
             // under a namespace member slot: nested class members and method/
             // parameter/accessor attributes keep their applicability semantics.
-            int parent = tree.Parent(index);
-            while (parent >= 0 && tree.Kind(parent) is SyntaxKinds.List or SyntaxKinds.Ambiguous) parent = tree.Parent(parent);
-            if (parent < 0 || !(CompilationUnitNode.Is(tree, parent) || NamespaceDeclarationNode.Is(tree, parent))) continue;
+            // The kind checks come first: they are cheap, and most nodes fail them.
             bool type = ClassTypeDeclarationTypeDeclaration.Is(tree, index)
                 || StructTypeDeclarationTypeDeclaration.Is(tree, index)
                 || InterfaceTypeDeclarationTypeDeclaration.Is(tree, index)
                 || EnumTypeDeclarationTypeDeclaration.Is(tree, index)
                 || DelegateTypeDeclarationTypeDeclaration.Is(tree, index);
             if (!type || tree.ChildCount(index) == 0) continue;
+            int parent = tree.Parent(index);
+            while (parent >= 0 && tree.Kind(parent) is SyntaxKinds.List or SyntaxKinds.Ambiguous) parent = tree.Parent(parent);
+            if (parent < 0 || !(CompilationUnitNode.Is(tree, parent) || NamespaceDeclarationNode.Is(tree, parent))) continue;
             int declaration = tree.Child(index, 0);
             if (declaration == SyntaxTree.NoNode || tree.ChildCount(declaration) == 0) continue; // recovered/missing declaration
             if (ClassDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<ClassDeclarationNode>(tree, declaration).Attributes);
