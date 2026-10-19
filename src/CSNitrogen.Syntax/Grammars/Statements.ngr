@@ -28,7 +28,7 @@ syntax module CSharp.Statements
  syntax JumpStatement = !CSharp.Lexical.Identifier ("break" ";" / "continue" ";" / "return" CSharp.Expressions.Expression? ";" / "throw" CSharp.Expressions.Expression? ";" / "goto" ("case" CSharp.Expressions.Expression / "default" / CSharp.Lexical.Identifier) ";");
  extensible syntax EmbeddedStatement
  {
-  | StandardEmbeddedStatement = Body:(Block / IfStatement / WhileStatement / DoStatement / ForStatement / ForeachStatement / SwitchStatement / TryStatement / UsingStatement / LockStatement / CheckedStatement / JumpStatement / ExpressionStatement / ";")
+  | transparent StandardEmbeddedStatement = Body:(Block / IfStatement / WhileStatement / DoStatement / ForStatement / ForeachStatement / SwitchStatement / TryStatement / UsingStatement / LockStatement / CheckedStatement / JumpStatement / ExpressionStatement / ";")
  }
  syntax LabeledStatement = Name:CSharp.Lexical.Identifier ":" Body:Statement;
  extensible syntax Statement

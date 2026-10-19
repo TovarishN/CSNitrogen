@@ -38,7 +38,7 @@ internal static class CompilationUnitShapeAssert
             Name(classes[i].Identifier, actual.Classes[i].Name);
             ParameterShapeAssert.Span(classes[i].Span, actual.Classes[i].Span);
             var member = expected.Members.IndexOf(classes[i]);
-            var alias = SyntaxView.Cast<NamespaceMemberBodyNamespaceMember>(actual.Tree, actual.Root.Members[member].Index).Value;
+            var alias = new Node(actual.Tree, actual.Root.Members[member].Index); // NamespaceMemberBody is transparent
             Assert.Equal(SyntaxView.Cast<ClassTypeDeclarationTypeDeclaration>(actual.Tree, alias.Index).Value.Index, actual.Classes[i].Index);
         }
     }
@@ -68,7 +68,7 @@ internal static class CompilationUnitShapeAssert
         for (int i = 0; i < actual.Count; i++)
         {
             ParameterShapeAssert.Span(expected[i].Span, actual[i].Span);
-            var value = SyntaxView.Cast<NamespaceMemberBodyNamespaceMember>(actual[i].Tree, actual[i].Index).Value;
+            var value = new Node(actual[i].Tree, actual[i].Index); // NamespaceMemberBody is transparent
             if (expected[i] is NamespaceDeclarationSyntax ns)
             {
                 var node = SyntaxView.Cast<NamespaceDeclarationNode>(value.Tree, value.Index);
@@ -140,7 +140,7 @@ internal static class CompilationUnitShapeAssert
         for (int i = 0; i < actual.Count; i++)
         {
             ParameterShapeAssert.Span(expected[i].Span, actual[i].Span);
-            var value = SyntaxView.Cast<StandardClassMemberClassMember>(actual[i].Tree, actual[i].Index).Value;
+            var value = new Node(actual[i].Tree, actual[i].Index); // StandardClassMember is transparent
             if (expected[i] is BaseTypeDeclarationSyntax or DelegateDeclarationSyntax) { Type(expected[i], value); continue; }
             var member = SyntaxView.Cast<MemberDeclarationNode>(value.Tree, value.Index);
             ParameterShapeAssert.Attributes(expected[i].AttributeLists, member.Attributes);
@@ -155,7 +155,7 @@ internal static class CompilationUnitShapeAssert
                     Name(method.Identifier, new Token(value.Tree, payload.Name.Index));
                     ParameterShapeAssert.Text(method.ReturnType, N(payload.Return));
                     ParameterShapeAssert.Compare(method.ParameterList, N(payload.Parameters));
-                    StatementShapeAssert.Compare(method.Body!, N(payload.Body).Child(0));
+                    StatementShapeAssert.Compare(method.Body!, N(payload.Body)); // MethodBody is an alias: the Block stands in
                     break;
                 default: Assert.Fail("Unexpected representative member: " + expected[i].GetType().Name); break;
             }

@@ -72,7 +72,9 @@ public static unsafe class CSharpParser
         if (profile is null || !Compositions.TryGetValue(request.Profile,out var composition))
             throw new ArgumentException("Unknown language profile.", nameof(request));
         var preprocessing=ConditionalPreprocessor.Process(new(request.Source,profile.Version!,request.ConditionalSymbols));
-        var parsed = composition.Language.Value.Parse(preprocessing.MaskedText, composition.Start);
+        // Parse the masked buffer; the tree keeps the authored source as its text
+        // (same length), so tree text and trivia read what the user wrote.
+        var parsed = composition.Language.Value.Parse(preprocessing.MaskedText, composition.Start, request.Source);
         try
         {
             var issues = new List<ParseIssue>();

@@ -105,7 +105,7 @@ public class UnsafeConformanceParityTests
         Assert.DoesNotContain(reference.GetDiagnostics(), d => d.Severity == Microsoft.CodeAnalysis.DiagnosticSeverity.Error);
         var expected = Assert.Single(reference.GetRoot().DescendantNodes().OfType<FieldDeclarationSyntax>()).Declaration.Type;
         using var ours = CSharpParser.Parse(new(source, "CSharp1", "types.cs", [])); Assert.True(ours.Accepted, string.Join(";", ours.Issues));
-        var cls = Assert.Single(ours.Classes); Assert.Equal(1, cls.Members.Count); var member = SyntaxView.Cast<StandardClassMemberClassMember>(ours.Tree, cls.Members[0].Index).Value;
+        var cls = Assert.Single(ours.Classes); Assert.Equal(1, cls.Members.Count); var member = cls.Members[0]; // StandardClassMember is transparent
         var field = SyntaxView.Cast<FieldDeclarationNode>(ours.Tree, SyntaxView.Cast<MemberDeclarationNode>(ours.Tree, member.Index).Body.Index);
         var actual = SyntaxView.Cast<TypeSyntaxTypeReference>(ours.Tree, field.Value.Type.Index);
         ParameterShapeAssert.Span(expected.Span, actual.Span);

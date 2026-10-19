@@ -98,7 +98,9 @@ public static class CSharpSyntaxPolicy
                             if(tree.ChildCount(label.Index)>0)
                             {
                                 int payload=tree.Child(label.Index,0);
+                                if(payload==SyntaxTree.NoNode)continue;
                                 int keyword=Kind(payload)=="Group" && tree.ChildCount(payload)>0?tree.Child(payload,0):payload;
+                                if(keyword==SyntaxTree.NoNode)continue;
                                 if(Text(keyword)!="default")continue;
                                 if(sawDefault)issues.Add(new("CSN2006","A switch statement permits only one default label.",tree.Span(keyword),IssueCategory.Syntax));
                                 sawDefault=true;
@@ -185,7 +187,7 @@ public static class CSharpSyntaxPolicy
                     {
                         if(Kind(part) is "SpecificCatchClause" or "GeneralCatchClause"){hasCatch=true;break;}
                         if(Kind(part) is "Block" or "AnonymousMethodExpression")continue;
-                        for(int c=0;c<tree.ChildCount(part);c++)pending.Push(tree.Child(part,c));
+                        for(int c=0;c<tree.ChildCount(part);c++){int child=tree.Child(part,c);if(child!=SyntaxTree.NoNode)pending.Push(child);}
                     }
                     if(hasCatch)Error(node,"A yield return statement cannot occur in a try statement containing catches.");
                 }
@@ -202,8 +204,8 @@ public static class CSharpSyntaxPolicy
             }
             if(kind=="JumpStatement")
             {
-                int first=node;while(tree.ChildCount(first)>0)first=tree.Child(first,0);
-                if(Text(first)=="return")Error(node,"An iterator block cannot contain an ordinary return statement.");
+                int first=node;while(first!=SyntaxTree.NoNode && tree.ChildCount(first)>0)first=tree.Child(first,0);
+                if(first!=SyntaxTree.NoNode && Text(first)=="return")Error(node,"An iterator block cannot contain an ordinary return statement.");
             }
             if(kind=="UnsafeBlock")Error(node,"An iterator block cannot contain an unsafe context.");
         }

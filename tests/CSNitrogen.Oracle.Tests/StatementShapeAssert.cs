@@ -16,12 +16,10 @@ internal static class StatementShapeAssert
     {
         Span(expected.Span, actual.Span);
         var tree = actual.Tree;
-        while (StandardStatementStatement.Is(tree, actual.Index) || StandardEmbeddedStatementEmbeddedStatement.Is(tree, actual.Index) || UnsafeEmbeddedStatementEmbeddedStatement.Is(tree,actual.Index))
-            actual = StandardStatementStatement.Is(tree, actual.Index)
-                ? SyntaxView.Cast<StandardStatementStatement>(tree, actual.Index).Body
-                : UnsafeEmbeddedStatementEmbeddedStatement.Is(tree,actual.Index)
-                    ? SyntaxView.Cast<UnsafeEmbeddedStatementEmbeddedStatement>(tree,actual.Index).Value
-                    : SyntaxView.Cast<StandardEmbeddedStatementEmbeddedStatement>(tree, actual.Index).Body;
+        // StandardEmbeddedStatement and UnsafeEmbeddedStatement are transparent: the
+        // embedded statement slot already holds the statement node.
+        while (StandardStatementStatement.Is(tree, actual.Index))
+            actual = SyntaxView.Cast<StandardStatementStatement>(tree, actual.Index).Body;
         Span(expected.Span, actual.Span);
         int n = actual.Index;
         void Body(StatementSyntax statement, int index) => Compare(statement, new Node(tree, index));
@@ -123,11 +121,12 @@ internal static class StatementShapeAssert
                 var handlers = new List<Node>();
                 void Collect(Node node)
                 {
-                    if (SpecificCatchClauseNode.Is(tree, node.Index)) handlers.Add(new Node(tree, SyntaxView.Cast<SpecificCatchClauseNode>(tree, node.Index).Value.Index));
+                    if (node.IsNull) { } // absent optional
+                    else if (SpecificCatchClauseNode.Is(tree, node.Index)) handlers.Add(new Node(tree, SyntaxView.Cast<SpecificCatchClauseNode>(tree, node.Index).Value.Index));
                     else if (GeneralCatchClauseNode.Is(tree, node.Index)) handlers.Add(new Node(tree, SyntaxView.Cast<GeneralCatchClauseNode>(tree, node.Index).Value.Index));
                     else if (FinallyClauseNode.Is(tree, node.Index)) handlers.Add(node);
                     else if (node.Kind is SyntaxKinds.Group or SyntaxKinds.List) { foreach (var child in node.Children) Collect(child); }
-                    else Assert.Equal(SyntaxKinds.Empty, node.Kind);
+                    else Assert.Fail("unexpected handler child " + node.Kind);
                 }
                 Collect(tr.Handlers); Assert.Equal(guarded.Catches.Count + (guarded.Finally is null ? 0 : 1), handlers.Count);
                 for (int i = 0; i < guarded.Catches.Count; i++)
@@ -139,7 +138,7 @@ internal static class StatementShapeAssert
                         var group = ca.Declaration.Value; Span(reference.Declaration.Span, group.Span);
                         Assert.Equal(4, group.ChildCount); Span(reference.Declaration.Type.Span, group.Child(1).Span);
                         Assert.Equal(reference.Declaration.Type.ToString(), group.Child(1).ToString());
-                        Assert.Equal(reference.Declaration.Identifier.RawKind != 0, group.Child(2).Kind != SyntaxKinds.Empty);
+                        Assert.Equal(reference.Declaration.Identifier.RawKind != 0, !group.Child(2).IsNull);
                         if (reference.Declaration.Identifier.RawKind != 0)
                         { Span(reference.Declaration.Identifier.Span, group.Child(2).Span); Assert.Equal(reference.Declaration.Identifier.Text, group.Child(2).ToString()); }
                     }
@@ -229,7 +228,7 @@ internal static class StatementShapeAssert
     {
         var payload = JumpPayload(actual); Assert.Equal(keyword, payload.Child(0).ToString());
         if (keyword is "break" or "continue") { Assert.Equal(2, payload.ChildCount); return; }
-        Assert.Equal(3, payload.ChildCount); Assert.Equal(value is not null, payload.Child(1).Kind != SyntaxKinds.Empty);
+        Assert.Equal(3, payload.ChildCount); Assert.Equal(value is not null, !payload.Child(1).IsNull);
         if (value is not null) ExpressionShapeAssert.Compare(value, new ExpressionNode(actual.Tree, payload.Child(1).Index));
     }
 }

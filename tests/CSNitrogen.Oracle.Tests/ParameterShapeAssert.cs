@@ -32,7 +32,7 @@ internal static class ParameterShapeAssert
     {
         Assert.Equal(reference.Attributes.Count, items.Count);
         var separators = reference.Attributes.GetSeparators().ToArray();
-        Assert.Equal(separators.Length == reference.Attributes.Count, trailing.Kind != SyntaxKinds.Empty);
+        Assert.Equal(separators.Length == reference.Attributes.Count, !trailing.IsNull);
         if (separators.Length == reference.Attributes.Count) Span(separators[^1].Span, trailing.Span);
         Assert.Equal(reference.Attributes.Count - 1, items.SeparatorCount);
         for (int j = 0; j < items.Count; j++)
@@ -68,10 +68,10 @@ internal static class ParameterShapeAssert
         var parameters = new List<Node>(); var separators = new List<Node>();
         void Collect(Node node)
         {
-            if (FixedParameterNode.Is(node.Tree, node.Index) || ParameterArrayNode.Is(node.Tree, node.Index)) parameters.Add(node);
+            if (node.IsNull) { } // absent optional or empty list
+            else if (FixedParameterNode.Is(node.Tree, node.Index) || ParameterArrayNode.Is(node.Tree, node.Index)) parameters.Add(node);
             else if (node.Kind is SyntaxKinds.Group or SyntaxKinds.List || node.Tree.Language!.GetKindName(node.Kind) == "Parameters")
             { foreach (var child in node.Children) Collect(child); }
-            else if (node.Kind == SyntaxKinds.Empty) { }
             else { Assert.Equal(",", node.ToString()); separators.Add(node); }
         }
         Collect(items); Assert.Equal(expected.Parameters.Count, parameters.Count);
