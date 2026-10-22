@@ -1,0 +1,1644 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp4",
+  "status": "source-inspected",
+  "sourceSha256": "cd82c06f12b83836f888d127ed59216c3505c4fc23a67c59c0fc3f46a087faf7",
+  "differenceIndexSha256": "280d6c4e091ea9dad816fc1efd871e7b54ea0389e704ca5c396ccda8eec47768",
+  "scope": "Reviewed disposition of the268 normalized main-text difference regions, with semantic exclusions retained. This does not establish whole-source admission, publisher-byte authenticity or semantic compilation.",
+  "report": "docs/coverage/csharp4-normative-context-review.md",
+  "dispositions": {
+    "optional-parameters": "Default slot and source-local mode/order/owner restrictions are implemented; constantness, value type identity, conversion and warning effects remain excluded.",
+    "named-arguments": "Colon arguments, index ref/out exclusion, constructor attribute labels and local ordering/duplicate-name checks are implemented. Parameter/member lookup, overloads, array target identity and evaluation remain excluded.",
+    "variance": "Interface/delegate annotation grammar and owner checks are implemented. Variance safety, conversion, inference and interface implementation remain excluded semantic work.",
+    "generic-followers": "The guarded fourth follower module implements single | and ^; predecessor follower tables stay unchanged.",
+    "base-projections": "The fourth expression policy admits selected base members, retaining an inferred member identifier; arbitrary expressions and base indexes remain excluded categories.",
+    "transcription-normalization": "Lexical spelling, optional suffix, relocated expression-list, missing heading colons and fixed-buffer comma/constant-expression names map to existing normalized syntax.",
+    "unicode-continuity": "UAX reference clarification does not replace the explicitly approved frozen Unicode4 scalar contract.",
+    "contextual-name-binding": "Identifier spelling remains syntax; choosing a declared var type versus inference requires binding.",
+    "documentation-trivia": "Documentation-comment XML/tag content remains comment trivia; no documentation compiler is claimed.",
+    "retained-semantic-or-editorial-boundary": "Inspected difference adds no normalized token/owner category: spelling/reference/table/example edits or changes to binding, declaration spaces, type/variable identity, accessibility, conversions, inference, value/control-flow/runtime/compiler behavior remain within the explicit inherited exclusions."
+  },
+  "counts": {
+    "retained-semantic-or-editorial-boundary": 201,
+    "optional-parameters": 5,
+    "unicode-continuity": 1,
+    "contextual-name-binding": 3,
+    "transcription-normalization": 6,
+    "variance": 20,
+    "named-arguments": 21,
+    "generic-followers": 1,
+    "base-projections": 2,
+    "documentation-trivia": 8
+  },
+  "regions": [
+    {
+      "id": "D:001",
+      "thirdNormalizedSha256": "764c05ea20e4821572fca627063395d5076dc2af11f77f584581d7c4063e5f5b",
+      "fourthNormalizedSha256": "f9622cd5aa421b4c9929c53e618d94aa8583de286b2cb4ed3c30b8c169810f98",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:002",
+      "thirdNormalizedSha256": "c9ca04907e6748b851894292e4add5e04bd45338fe854c465829c2187aeece31",
+      "fourthNormalizedSha256": "a2f593b043fff59e9bdf5d2ed0cb1263dbdf66f453d12975c293fb66573dc50e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:003",
+      "thirdNormalizedSha256": "f47be61f3a07fe4a9e98db7554ae7da32efa01b53612c6072274b4dacacc4eb9",
+      "fourthNormalizedSha256": "f7cb2da2ce5e890fb021958fe5bb6e179008ebefdb85907dee9e5403bb85ef43",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:004",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "87c803090097efd0f65fcac62becc68c744fb9ee669e7a4c11fd04330fc8a72f",
+      "disposition": "optional-parameters"
+    },
+    {
+      "id": "D:005",
+      "thirdNormalizedSha256": "dcc9b255f39c9116c156eb37eefbdf87e67d87b893962cb6c9d373a119b3a60d",
+      "fourthNormalizedSha256": "6865a6d535a8a082edd5244132214c3a20765e55c8f829d3baf6f16ee8aef0e3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:006",
+      "thirdNormalizedSha256": "9e0cbc188eada1fd70f1bef0262466aa5079a5b8ca47f26cf4cd4684bf7999ac",
+      "fourthNormalizedSha256": "0be38d3faefafed088c44bab88358881a0b8fe09de6c52c73a27ff041a0c0476",
+      "disposition": "optional-parameters"
+    },
+    {
+      "id": "D:007",
+      "thirdNormalizedSha256": "30ebc557296930eb2efd386cc5a0de15ab2cd0a53aa2dfa0e050147d9c3d4184",
+      "fourthNormalizedSha256": "ce372ea84843f60760e7e52b8cf365755b40b36a7c477d03fc7968e8cd019fcb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:008",
+      "thirdNormalizedSha256": "95217aebb69563b8e896168a1f40abca3e95f095969af04945d5c4e3864c40a9",
+      "fourthNormalizedSha256": "07ce9931fba05c0c2d5b2c7cccb33fdf7b186253e89cc01d70beee922b7e6b0e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:009",
+      "thirdNormalizedSha256": "f65b51ea0df66dda7441d7f6e96c292256a8a98fad10dfaa9e734cae20ee2777",
+      "fourthNormalizedSha256": "b2661cca190b4c6257777d90e563357965c603f16c9fd9b1ecb968bc9568e28c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:010",
+      "thirdNormalizedSha256": "d867110b344b7d0bff3641133c8d47ec42cbcf682e51f67abaea7cdcd46ecd38",
+      "fourthNormalizedSha256": "4e594380a2334a8ff442834fa9538195a9cdfd44e2b691168f90e7985d7c9171",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:011",
+      "thirdNormalizedSha256": "0c42405aa818ba663b8fcd20517280f0827914d6c48eccbd30f99cb560244c60",
+      "fourthNormalizedSha256": "121059a4d86a6686a5ad52baa0841492464ee04b6b2f15c35f9d7520dd8c87bc",
+      "disposition": "unicode-continuity"
+    },
+    {
+      "id": "D:012",
+      "thirdNormalizedSha256": "42d14d5a79cba74caeacbf990b2001688888358ca0b1d7308b38cf980c6e6459",
+      "fourthNormalizedSha256": "bbbc98eb5ff9f240b5f7e6c250ce9260d6a1ef4013b25c8122d26783a017a238",
+      "disposition": "contextual-name-binding"
+    },
+    {
+      "id": "D:013",
+      "thirdNormalizedSha256": "5621ee22624230265bae76cbcb0b2402ef13ca772ead70dbdefd120560fa773b",
+      "fourthNormalizedSha256": "08beb00151d68ff25a9ef8e48ecc80782c13671fc3bdbd1e46dc1b5d15d7bf32",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:014",
+      "thirdNormalizedSha256": "f98a57fe00de1c4edf1d27a3ff894ad126928eca8aef7957b349b88756eed2b5",
+      "fourthNormalizedSha256": "7fdf9f6ec8704a14b2b4af30ff9ebeaa61396d77f08a12e2d0f4dd9068703beb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:015",
+      "thirdNormalizedSha256": "27b98d7d359f5e007352e2bf72515e1336565976ab8dcef09d2e08d40161d683",
+      "fourthNormalizedSha256": "c34ee02f7e01df74e5ad6231665cff507a05d0825275837f524dc072c5bf668e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:016",
+      "thirdNormalizedSha256": "e38d5fdc899c1d240def4452fb1bb1e14221a3c843326ee51b4955663d39b988",
+      "fourthNormalizedSha256": "99dd74b10b116dfcd7e4ae384b79f2ffbd949f6a82b78aaf60419a58d26472ca",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:017",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "cb4aea90c6162715d9c54aa4a95b798ab8524de3b489cd8a6144138ec2b45cb3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:018",
+      "thirdNormalizedSha256": "dbfdf050393b20978b3f7ebc0b4f32981a5c726f2d6aee655a24165cc116f4e9",
+      "fourthNormalizedSha256": "56533b86af3b9395d6f6f861ab528b28bc7edad1a4440c88b38c0f83f9202982",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:019",
+      "thirdNormalizedSha256": "f2ae9bbf12443d683d8710e4ffed57709ff48fdd80de088f23c6d738ab3f46aa",
+      "fourthNormalizedSha256": "965533c21dbabdb8a8957ff5adb95f110a2defa86dde06869cf0175ca8fb019d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:020",
+      "thirdNormalizedSha256": "3a1b0ac36326e28ef39174067a53bdca22090cb1686d5d605264e62265f63842",
+      "fourthNormalizedSha256": "36089af3dde8ee528afc1530eeb65948c732a314a9520a5a9ea586cf9dad4795",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:021",
+      "thirdNormalizedSha256": "7d7841a8070c91008ce32e0a11ee173518157b915961d7bea9a72d2aa2304382",
+      "fourthNormalizedSha256": "bd2e3d921f4fb0361a53e73ba7c08707d3934e97d138c9014b1826786ba21073",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:022",
+      "thirdNormalizedSha256": "19874516b0dad808e41d591385660570d826a02d420aecbffbf7e3a27c06f3ec",
+      "fourthNormalizedSha256": "4f8f2dd60454ab971dacda4baaebfb2a6e2745875833e231fdda14b5f1b7b29c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:023",
+      "thirdNormalizedSha256": "d2ac7ed5168509811f727b60174d7298fc3cfb7dab8404e8d03b5b9c02ed09f5",
+      "fourthNormalizedSha256": "77b006278911b0ad8ccbfdf520c6ceb9b83b0634a8fb22cdb7cc9aafdac06ad2",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:024",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "bf720f68fa6c586ae0564015526f9ebdf007a78472341b9d63350bfdee1541c4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:025",
+      "thirdNormalizedSha256": "ff641c3c332b7c2facfe4b401f8a9b27fbd6fe22b23a714c3d2e39e6498deb2e",
+      "fourthNormalizedSha256": "9e982d81fc7bcd6d2dfcd7f1a757ddaf290d416632673e905a995740e055b88b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:026",
+      "thirdNormalizedSha256": "40edcd1bccfba824e08f32949b2f6e1bb3b061984484b70771bfa73e0fbd3f8b",
+      "fourthNormalizedSha256": "f54311337d3800d1d90a60f960a942bb534a15abd5583328cbb4bf87d3ddbadc",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:027",
+      "thirdNormalizedSha256": "9838ee92608b82591c3e57590fb4f4a3c0dea234568b6431331b089317d8691f",
+      "fourthNormalizedSha256": "215b74738a41fb6d3a8e923c7969b73457557ad858ec2aad94c5db786c7f902f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:028",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "5d37ac84e1fa7c4da67026450b078a494d3036a62e9fd609fa05e17d42701277",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:029",
+      "thirdNormalizedSha256": "b91b11aedec0342f8245434344400578893f0a713813533c9877d69e7d399ec3",
+      "fourthNormalizedSha256": "d6e463ce9925ed5ccdad3c42aa49d30fef248cc7795c9495b340e73962b5a239",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:030",
+      "thirdNormalizedSha256": "165f47c50dec40d65d0514e8fc0b9cf9b4d4a0d910432b2386f5617d76f2c618",
+      "fourthNormalizedSha256": "9481b775488169635d7ec8cc40f12a33cf0c6be1b90ed5c6cf52c23a0811956f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:031",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "40ff5f256722e2c58fcbba94bc8533b0d1e02fe4fbf1e61e00057519e92fe653",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:032",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "a13cbe6285008767c971e8657ee3ba325f4ae2a67a00e80f11a743f4f89e7ecf",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:033",
+      "thirdNormalizedSha256": "85911518be744727fd34994f8a728787917f5d78612b6ab9592da48c2de1a59a",
+      "fourthNormalizedSha256": "a834865d6637606787985d7b033ba2c557c797afca5c23f20164b42e5a9d7a21",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:034",
+      "thirdNormalizedSha256": "c30de7a8a209c643a3353b1911d7fea7fda17d47c45838efc09e781ff9b3a4ff",
+      "fourthNormalizedSha256": "edb85160cc657c93104da94e6033d600334e61ca8d393f0443e91f3a893f6fb3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:035",
+      "thirdNormalizedSha256": "a08c688b696cef16782a2099a31d2e4848b3eeb5cb598fa2b134fca10be9ceeb",
+      "fourthNormalizedSha256": "609a923d2a38f91e15a89708149e5e3fbb83a7a2bb051d41da25db5b39777ef4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:036",
+      "thirdNormalizedSha256": "aad8c75175b850271079ace3309b23bb7a3a5a9305368fec51c7215e1c7218c7",
+      "fourthNormalizedSha256": "761516d01da7cba17bb33f21eedee5611d877a14f0f68119365db819784fbb54",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:037",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "df6db0c52223925cf8a4094e99b4c2c35219a51709e19616c5b8b447ff580af3",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:038",
+      "thirdNormalizedSha256": "aa0724a60d0be6a7d6f0a8bfa4c64215223e11f28bae794d7704668df9cfb248",
+      "fourthNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:039",
+      "thirdNormalizedSha256": "ed9d70ec424bd72a18eb8a6552318a940fc199850647731c2481e450a2f26ad3",
+      "fourthNormalizedSha256": "2bbba9c697da3fbe808c1fe0d1f21d1a76a91b2cc9cf88cfddaa738419b5ba37",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:040",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "308f6f488a10f0c52ce4f6c57ec69928b5399d768dd4faf837fee7b4d089c23c",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:041",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "b6c341d59d344288f46f2a29d1bc6c0b760da1c8ddcf0b7403eff6af33918298",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:042",
+      "thirdNormalizedSha256": "a9e14bbd80bb90fc2b0d4ea4518ac04f4ae4086cbbb63097538cae8db1fefc7b",
+      "fourthNormalizedSha256": "78f0e2ff97d25e4df3659b3e1c5ae025c522d9941f3f37167f379d96cb99bde0",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:043",
+      "thirdNormalizedSha256": "99c644800462629b3a0021edaeda867b95420978115022c5404a23e59b4c1195",
+      "fourthNormalizedSha256": "babb0f8e3829b84f99bcd66b9d20d3fdb72bc8d40d9330daf966c73b1b6ac5c0",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:044",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "c7e1f98b20e6a8eeb0f9483d0d269a49bff5db0c228513a1259f7d96ce4426b8",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:045",
+      "thirdNormalizedSha256": "b57963297d13ca068fcd810e7a524bfd2ab6e927990ceb8aa7b5e12653368a07",
+      "fourthNormalizedSha256": "5ad2eb5b4a99291c667618b78826bf771e6f8d58d72f7363195e6c2b0508c145",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:046",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "2cbc162a98212ba2a393302b9082cb03400be84d70fdb82573e2e9065e1d488f",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:047",
+      "thirdNormalizedSha256": "fdbcd467c3b5ee8d9b68691554ddc3d0fe97238eeb24b36984e6c7ed4fab51ae",
+      "fourthNormalizedSha256": "5bb18997c04a6c7f7b56ae99e4ad23a963e68e418682dcc543a1899b4573181a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:048",
+      "thirdNormalizedSha256": "d2be7fc83f6b4ea6b512c8bbda6d7c1c302c579ed3aa1087ba1e7fb02eccf211",
+      "fourthNormalizedSha256": "6de2570f752132072ce307ad86f02e0db0a326f52e7b43b50a2f91b05cb4f9fc",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:049",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "eed24f884b0b124edd7b7ec46025a611b71ce9a3d7329d8d39967ff8236ebe39",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:050",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "6a27c2aee14c4f481b6635b8ba24e227d2a135a71240f1fc36fedd85fca99d24",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:051",
+      "thirdNormalizedSha256": "2b043406743d0d58404bf84cba2edaa4413fde081d261ba209f0b48daeff0987",
+      "fourthNormalizedSha256": "3c265cd67ab520a952cebedb3ffd870623f8fc80df92c4166a0b316d5cf15072",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:052",
+      "thirdNormalizedSha256": "1c0f4914c021ee1a551895948e8e4014be2aa91c8c5311b38c3450a14c3efede",
+      "fourthNormalizedSha256": "d5c262a3211cb6ea784ae1d2fe4471f42c63dba4a486600245e1632103c1b611",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:053",
+      "thirdNormalizedSha256": "d51ee7e26a2f28357609f3660768a74e28a0a67bd209b13385c9a17baf366ab9",
+      "fourthNormalizedSha256": "4cd144abf2af91303f76c280c70a0071fd271cfd3342ba5a76169e6cfcd228d3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:054",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "ab268866e0aba6be0161e29efcfb845ec61bb73bea56bb3ea1626a46a3fd7568",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:055",
+      "thirdNormalizedSha256": "6081a5f5941d04d3bd401d3d4e62d0884b99d03895133806b7c0b520401017f3",
+      "fourthNormalizedSha256": "5f202daaa3feb60c01075d30e8778b9ae80324899509eb7c3abddbd0cf05daed",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:056",
+      "thirdNormalizedSha256": "b6d5ed4cdd2c9be296a1a83f21a435760d93a2e5c067f77a14a0506e7e45bc9c",
+      "fourthNormalizedSha256": "97fee4edde0cb207f4f8cc2530a60cf89f40ead037b1470fb74e5dbb97fcd93b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:057",
+      "thirdNormalizedSha256": "2d872a6401499084a5ce41374e285f25c70fc7dc8184ce8080eda4c86abde432",
+      "fourthNormalizedSha256": "4b9373766d34c4fb00ed0100d0f99a0479e993c8f329ee8e8f3810882541ec1e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:058",
+      "thirdNormalizedSha256": "f190a87cd3e406f34e57b746fa20babfaf222cec13e037a5ce137af1ff7406d5",
+      "fourthNormalizedSha256": "f3ef90787aa505f07569519983a723576906c663a1f81d9200296acd2dcbf5df",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:059",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "98467bd3671276cb75c0e204ddb6b334d58feb9530fcf6bb605f82349ba74ceb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:060",
+      "thirdNormalizedSha256": "764d2960f38e7bd8cdfffcce76ad8a2001bfdf1d0bb7c73b45293a533873bb32",
+      "fourthNormalizedSha256": "ab644078808ace57d37a22f202e66e7efbe4bdbba614a76e991e602a8cb6198b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:061",
+      "thirdNormalizedSha256": "fb7816aeb6dba03f39c026d5307fb618d0982c2daac33ed8515130269f9a89b3",
+      "fourthNormalizedSha256": "ed576b387170f16859b028b6503cfa7d64a88eced4e2d20e8df42f7508ea6c83",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:062",
+      "thirdNormalizedSha256": "2c8cd2fc29fea1996c6d27179b1e588ad715e76c23ae9f57b0d9b18458bb5bf7",
+      "fourthNormalizedSha256": "874c92b4045be1a96dd54f2e873dee4f486957a456fa103da32feea14f048b6e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:063",
+      "thirdNormalizedSha256": "266cfafc3c3e94b6e8f8d608a4be791ac569fe3b9a54b3797c80dd58a47f1211",
+      "fourthNormalizedSha256": "9fbf39ed8bdbe967402ba14282ca29e5e1593a188a263a3fc5ffd13145a5d4fb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:064",
+      "thirdNormalizedSha256": "def9663ae09a9ae700f5dd13b047a27702ebf7990b913c535cfa777c53c9014b",
+      "fourthNormalizedSha256": "80130556b404e8d8c770a52775bbe0e29f396168b860aca1e1c563f589082756",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:065",
+      "thirdNormalizedSha256": "69a1c44bce0e775f841a7a663de1fedb7a0b5571defed827b07a8212200837ad",
+      "fourthNormalizedSha256": "883bc64f5e1f83dd567398668db0f9fb0527f19030080c2860aaaa6040ae4465",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:066",
+      "thirdNormalizedSha256": "e7dc749d4195594da1538a8ac2d57fb55e3d7f46ff5a5c57fa7f7c6a7b131053",
+      "fourthNormalizedSha256": "86f74fa5f9505e82b5c1b2accd1f4fef693342f108d52f9aacd8461e4d2da01b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:067",
+      "thirdNormalizedSha256": "9680ddaa5a99be20e245c87d0e687ac76945e352dfd19b0c40219f9a102353e8",
+      "fourthNormalizedSha256": "79990260e4ace706e22c0b3c6f6664ffea1b9438d604c9dde489bd525016b5ff",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:068",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "eb804e4dd8465e375e1e2452c62da225946ddcc9d27839b8ea365f899bcafde6",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:069",
+      "thirdNormalizedSha256": "0c7b1846ed5c798409103556d2d38652b00f8936bb1d4cb4015f207a9ae962c1",
+      "fourthNormalizedSha256": "b3c7c77d130287201cea32bcd22b38cbe2136936abc1a1e4d5de353c962f7baa",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:070",
+      "thirdNormalizedSha256": "18361c8ed23aa81e6d4299e0d52756f1994d0600b70e1163a90ff1defd063637",
+      "fourthNormalizedSha256": "6bb2d3406b2bb06f1e0487f0bb0814059ddbc31a6fd4f272de05199eb63d88dc",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:071",
+      "thirdNormalizedSha256": "7835690da95409b170f1015bc942c897f7638f67cb112a40f9d4f2c7968626de",
+      "fourthNormalizedSha256": "10dbde9b51d2183a8b3a59124864c25082930fa21c94d4b7d758d5b583ad2fae",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:072",
+      "thirdNormalizedSha256": "58ec1276bc8e4cc8011a1ad14e0a6780a2df55cb59f3bf0cf9616fa961c8d726",
+      "fourthNormalizedSha256": "65600b3905c314e8b218f2b4d7382d8e0bbbbebb7b6a20f99dc0107c216a3fa8",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:073",
+      "thirdNormalizedSha256": "50921ba2d53942cb0ea36c28e481e0cf39b24736103e106fb39527cb0a485bc4",
+      "fourthNormalizedSha256": "6d8f3db8242d954608be26242fbe6d82bb1b4e673c25f922a0516690dbdc007b",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:074",
+      "thirdNormalizedSha256": "9ede0e33076515c7208c2809dfdb28ef0b141c548ccef56d7b6f9e339cd72367",
+      "fourthNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:075",
+      "thirdNormalizedSha256": "b7321519d6c3ef23320a40d7aa89ce2e41f00581e414f0785296ff4ebe8e60f0",
+      "fourthNormalizedSha256": "de94050b9809c11bcf36e12382d1eaa190b917f77b82746a61a8a14f4a93ee85",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:076",
+      "thirdNormalizedSha256": "fbb2b1adc1ed9ccb244f77edd2f06aea7d830acf093e688d77272fdf5377f167",
+      "fourthNormalizedSha256": "068edb5f471c0d55baa0ea0235ef774358089b3ba5ea4d7ec3d2d0b3cfce2897",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:077",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "f5e41fb23e22c8ccc0f53a7589ed37e342ae8cf9ab13d02334447adcb2afac85",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:078",
+      "thirdNormalizedSha256": "b22f15f64e538aa61fcb12af49acaaa169cf8ec219c17149256f632d7925a73a",
+      "fourthNormalizedSha256": "237bc1b33c844f8162e8c7488cd136fc0a5a50bea2836a190428ec38f9b0eda0",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:079",
+      "thirdNormalizedSha256": "c1d514968c826837391f7fc2901d6f13967a45b580aef5a01437f5c6eeb90b20",
+      "fourthNormalizedSha256": "1c745ac8a1524b1fbd0ffc80bfa1755661260cf69bb631fbdf8837f9bcabefa3",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:080",
+      "thirdNormalizedSha256": "47dd9792fef3b89734d85a8295ce2598108ddcd280cf5bfc9541e7dbb86a155f",
+      "fourthNormalizedSha256": "0100cf13a6ee4b7a1d15cbb3270a13c78f0a6a6fe8d14a9008da9e9752912eb7",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:081",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "c60614fbff5493393ad04edaf059591997379932861a5a1da8eb3505b94f2fdf",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:082",
+      "thirdNormalizedSha256": "6f8963c8f8895d7ee9616913550242f9e238e98f4a17f8fb8fd94001f372614e",
+      "fourthNormalizedSha256": "9aee673bc0255ba5827803593b627b74dc2b32fb19e3d6d713304bc075056888",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:083",
+      "thirdNormalizedSha256": "99c86f8b354222c17ccf59bbcc735b2ee70e12a5c1ff321a530c6ef9b51232fb",
+      "fourthNormalizedSha256": "3d0f84fa718961bace79bb57b3cc814c10025d1c2fb36d9bb68c0a02b9b4a679",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:084",
+      "thirdNormalizedSha256": "ba896dc86bb079a96feb9a0dbd5c8b574949157bb2d79dfe74b34a2c84de120e",
+      "fourthNormalizedSha256": "cb1d33bb7389e3c04854130791375fba068b43a0dd744a1e1eb2ef6d189a764c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:085",
+      "thirdNormalizedSha256": "8c32c66e88f39722f88427455d2f43efeec281fdbfa13be041df9081aa15ea30",
+      "fourthNormalizedSha256": "b190a00a9f6ae04d796bee73d9f9de4ed4dae777fe0b9a96edf12500766892cc",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:086",
+      "thirdNormalizedSha256": "68e387599ed3c103870f9f493fb71e9619f5ddb4a65acdb38201b17a25328dfb",
+      "fourthNormalizedSha256": "0ef4cfb1a14099360987695556d5d665b0f4e42c8bc32e2a2613d1f5c739a920",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:087",
+      "thirdNormalizedSha256": "5aa209f477b8f784dcc9049b1dfb9cf8f1522ecd5c97421d427036b4b9c5b53b",
+      "fourthNormalizedSha256": "7f6c957d8405771587727771e4477f24ad0536d0a4126e5a9bb1987b50f4585d",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:088",
+      "thirdNormalizedSha256": "aa2d48d3ae5babe376f755f75c182f57fa7f626c7b36e5d698014bb3906da45d",
+      "fourthNormalizedSha256": "61ed7cd4bb2f6c7af068e93d046b237cbd62e03b99a74e2635c4419b7b138906",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:089",
+      "thirdNormalizedSha256": "f5144fc6af5fabaa73d479fdab5deab5ba34fed8b9be756b9b9f51d27270efd8",
+      "fourthNormalizedSha256": "18c33cfba6459a22567cd2bd25afe5b5c57e80c0235148be124b4858e6e2108f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:090",
+      "thirdNormalizedSha256": "77b3fad0afa89b8ce97f7c3655dadd7ca823e56b19fe8e088cdc62bcc592dee8",
+      "fourthNormalizedSha256": "581791375ebc21db5070b9832b50ce9dd68dc2fdedc8a9711b5c23cafe427782",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:091",
+      "thirdNormalizedSha256": "e4c30a8ba4090434f7a484594f13ed7af0b1b8880e90f20190798899a3afcf16",
+      "fourthNormalizedSha256": "f223b2ca69f3a7d06805a92fd876747655201b87b7e76c15ddba42229a123148",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:092",
+      "thirdNormalizedSha256": "6c6ddba125ff5d602c0128f20c1f3db56b422ea388b2c31a806132c53ad134ef",
+      "fourthNormalizedSha256": "1f5ff3acc6d87e22cf268e6b746a8cded6336ad3f097f355484e49b803dc56b0",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:093",
+      "thirdNormalizedSha256": "0eb1b98b3a9f310a18f9b00d1dd5925f558f00e7da2ec13338c45eaae39695ba",
+      "fourthNormalizedSha256": "083cf4c6c3dd91daac91e44e3ca41e396e93add593552177e75d22131e2d8329",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:094",
+      "thirdNormalizedSha256": "90ddaecb62a48ac4cb46cafef6e0b5ef8f12a44c186350dc4e81e767e8420ca7",
+      "fourthNormalizedSha256": "7ed28920440864646de128412ceb8697b07e9d3a06fa4da51addbc1e0897edf8",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:095",
+      "thirdNormalizedSha256": "38c79b4889e76f4d9a926e6fdb87c88e1f090d57750e0c2fa6ca9a2d29d03a6c",
+      "fourthNormalizedSha256": "4f54508eafac78c89b09386291ea4d26274f773efe597e33478fc9255d8d4a0a",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:096",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "2e16a15139224cb90ec487f4d6362a37d741b5d2e65900755ba7637b3bb64f31",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:097",
+      "thirdNormalizedSha256": "d1f4a92da43e7a187aa5ec7e7027cac639172cec9674500191bd19afc954faf2",
+      "fourthNormalizedSha256": "7362f2dc06f1af8e646c63bf5c89fd26f2c793e9c951d136727ee25d64cff05c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:098",
+      "thirdNormalizedSha256": "01e2ee35ae4485cb8ef2129d7165b033d1e449030bb9f65511d29a90039dc199",
+      "fourthNormalizedSha256": "e5f0d036b685c3a406f56c794c6609d8e8b64a37189fa8f63e9f5af13a71d8cb",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:099",
+      "thirdNormalizedSha256": "d8459997d570251a07959be3d1f90d98d2deb1248a09af7157dec5f8dc03240d",
+      "fourthNormalizedSha256": "518004da9669440a3a61a9142d1aa0e1571c50086fc2b77f0ca983f546b0d785",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:100",
+      "thirdNormalizedSha256": "4e264415fbad37225049479963b996f6717144f2614da287b4837e04761663bf",
+      "fourthNormalizedSha256": "d984c14338271aaaf7c2201cacc7d230401f3aeedfe32f0729479ee3ae7a83eb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:101",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "52e96f23ce74bdfa66e3fdde0d59e37542772bd2c897205f628730f6ad601b5a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:102",
+      "thirdNormalizedSha256": "4424e7bfc61bcbcf0c8a084227ca780d2329f0378c73e25ef48d1cbcc302aa22",
+      "fourthNormalizedSha256": "27fce6a6e991b7b1a07d3598a40790896e1af50d315fec85008d6190fa826ad7",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:103",
+      "thirdNormalizedSha256": "6047a949307ac0c4797d90f6aa3ef6918d00c645156db189eb332ffb2b2f8787",
+      "fourthNormalizedSha256": "76f1299815191c1d996040ce349728f81e6c625ea4438a3a04b3bd23c75a8d9d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:104",
+      "thirdNormalizedSha256": "b53fbd36406b7acb5f7f732502afd84da6c9c4bcfaf34466c7613df4957f172a",
+      "fourthNormalizedSha256": "e1bba1dda252615cee272b88b385143f6f233ae51c2f6f8dd43f76c0cff8ebba",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:105",
+      "thirdNormalizedSha256": "96b75a61fd8d1a8be08f482eb13f8e06e515c3196cc8d3def176a2b3fe4bebcd",
+      "fourthNormalizedSha256": "0596ba452d3550ec662819bf1bdb1478be861ad7ddee405d938f13a785fd4d5a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:106",
+      "thirdNormalizedSha256": "dc721a8e961930f93a9d121bec786dfbe73b16c0e6f6685bdf56be491517fd44",
+      "fourthNormalizedSha256": "087fa978469793c4562c0f89454ea3f3a1d23c7049fb40a24b7ced00efcdadb5",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:107",
+      "thirdNormalizedSha256": "3aedb1e80167401697d0fddbeebefd8be3f0cac82acc5aeba390e14d2cb04ba4",
+      "fourthNormalizedSha256": "54603b84f6dd6abaff7be4be9f48d7d8c0c55d54789587fbbb1c9727446f91c7",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:108",
+      "thirdNormalizedSha256": "9ed155586c70ff9ee5e0aee666ec08b06455bc9398f987c24383f9218d53feaf",
+      "fourthNormalizedSha256": "10281183b931cc208c4e8da9337fbb18d4877aee4ffe92c75545f123d88496cb",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:109",
+      "thirdNormalizedSha256": "c0490d52b696ea3f7e9407b46bfe194cad638da3a5859e797f8ad6320e77be9f",
+      "fourthNormalizedSha256": "cc63d67eaf43a4b67d4165ed19f103b3ea09ce01ab21ab7a12bfd4c1f532cab1",
+      "disposition": "generic-followers"
+    },
+    {
+      "id": "D:110",
+      "thirdNormalizedSha256": "dd1228e7add56be919b32583d1bdc0a3e402eff78d0acced20caa8ae4e8afebe",
+      "fourthNormalizedSha256": "5d7b81aadb91b1cad8d50e4f1fa07caea0055f0f75592dc813ce19b42e9ffe1d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:111",
+      "thirdNormalizedSha256": "ee2c8a04471921eab97e1b4c160c51a426d51981f46c3441aedc1765562cc242",
+      "fourthNormalizedSha256": "c0879201aef61b4c83473c1df2fb2ca37d6a39562a05b2d781212d6c6c7bae23",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:112",
+      "thirdNormalizedSha256": "595d087db01c646903e4472e1ddac328a81a828e1e851ae37e8f8b7e08da165d",
+      "fourthNormalizedSha256": "a060132b914d1c292da49f8d83317b50f85d940b082d7167be7e6e4c49b7e4b4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:113",
+      "thirdNormalizedSha256": "8e2a36fe5d4703bca82ebe1624db0c90a672622b1f05334354983618976c023f",
+      "fourthNormalizedSha256": "7b083124edaf17f56bedea63d2ee8a9359e5266c8e03c927b992ed25df13b78e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:114",
+      "thirdNormalizedSha256": "4e62da77c7cb073dffde4aec4c708ec343c9ed04c2f090efa0dafdeaa36fd4ed",
+      "fourthNormalizedSha256": "adf67c53d2938dc9c572ebf837783a8a9c9f791a73bd256f279ae60c0ffb4ae5",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:115",
+      "thirdNormalizedSha256": "92b4d0b51d400700f6afcd570f8387fb035dc7b0c3f9b06f547d984795b12272",
+      "fourthNormalizedSha256": "e00ac3f183813aec3aa004a262750d1a85e54d914751094eabbb7b57df469153",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:116",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "28e3073210415db633a35a2afcecb0c51807aea18df8b8a5772f98049c6466a3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:117",
+      "thirdNormalizedSha256": "4c990edfc8295201029abc6023479ac13ee05dba19f66f37d91a9f291d166513",
+      "fourthNormalizedSha256": "a0fb6414c3ef80093779265391f2e0df19113a682d7eb38bbaac3d18b33d39ab",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:118",
+      "thirdNormalizedSha256": "5078145e14b7dd3951cc9355f6bd3d1606d85ff85de5c9374d7d4adc6b061690",
+      "fourthNormalizedSha256": "b50343d89cae3df831f41c0967e5ac6895d79fa6b89eb196847eb57b4b0547dd",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:119",
+      "thirdNormalizedSha256": "1d8e4f881e805be8cc725c9b81a10a477b25b3eeb9027f0f831d83890100ea70",
+      "fourthNormalizedSha256": "c51a9737217b3de910be80c576f45f460477f2c11b747cd883172cd3b87720f5",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:120",
+      "thirdNormalizedSha256": "38ea77fc4f56964b97f243807b8bacd29694644b7c1b1edc0a41b5fbe24897b7",
+      "fourthNormalizedSha256": "ad2f461c479a942eb92559f5ebf8aa150d50b071bbfa597d318d08e23905df6a",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:121",
+      "thirdNormalizedSha256": "b3055973b6129697e013abd0f17286ab5be87d36e957401283f813f1f0f77639",
+      "fourthNormalizedSha256": "6c3dab3efe73329a372f328a36e26ddc97c3195a9fb136aae7d3be50895341e6",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:122",
+      "thirdNormalizedSha256": "c7f37ffcbe81adbfee4331723aeccf45725c3f4632c809d83e3bf0a67b8b6ef8",
+      "fourthNormalizedSha256": "aa4f94c6f875d668483f33ba3e6c380eb6f41cde42a3bfc892c6a48863f4db62",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:123",
+      "thirdNormalizedSha256": "d7a3b4ee6ec65240777297ab69eb1e3f4cb4a214e76aba7527fa46a8dc5d0421",
+      "fourthNormalizedSha256": "67e795a64e9ccd1296a448b44d343fc5f8d247003c7c67745a2cf538c4ad4caa",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:124",
+      "thirdNormalizedSha256": "5dae8a82ca573c55bcb50cc92740aca0af50496cc8832bcc60b10c826d3f8fe5",
+      "fourthNormalizedSha256": "e27a5e172ba025392f279cb889acba618f0905e9ede8fdc21cdc0d0a68db32b8",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:125",
+      "thirdNormalizedSha256": "ac327e09f5e3c1e560d746b81011e71b57759423fc82a80a3fad59030de82ca1",
+      "fourthNormalizedSha256": "fec2d6a5f8dc344dbc327c30b2b35bf349b8de2d060a51e96699a3b5141d6cb4",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:126",
+      "thirdNormalizedSha256": "f18bd945166cbccbda1ae104ec9d3e52fb4292aeaec0475559a3df72e249048a",
+      "fourthNormalizedSha256": "04e1ec810900db95c28982b42a8dbf0a9fcb1a440ffee71b84c6ccd7cd258492",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:127",
+      "thirdNormalizedSha256": "d73662a5c4867a9297762a1027323717a50804fe49d78c925ec645a1751ff025",
+      "fourthNormalizedSha256": "0939859144ac3ac27ea7d9b573dfcab4dc15b7bbc8fd8003ef659f874797e281",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:128",
+      "thirdNormalizedSha256": "7b21a0fe9b75d538966fbf720a80a9ddc409139e856bb99ae642344dd9e0d92e",
+      "fourthNormalizedSha256": "8ef8a3e978cea02e31068c6c9547ba6ee32fb25758620f5b6e69becb4b9c17da",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:129",
+      "thirdNormalizedSha256": "b93d78d4d9ba8291623fea2c21a833bd5eae2d565eea50a41f322a7027c87cd2",
+      "fourthNormalizedSha256": "9ee2159097e9cd054bec57cc0dd3fd03e8bc739bb4db0cbef06c8a665d5e5902",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:130",
+      "thirdNormalizedSha256": "ea53407e2012dd9be5dfe50170cb0a1170c993d696970f2101e30aef7e313431",
+      "fourthNormalizedSha256": "423ffde05ef581a7566e8e5f09a7756ae34e05c8df2c4bf3f757900a53fbf3f5",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:131",
+      "thirdNormalizedSha256": "4a17f728bf226fcdc6d2c66e1aef046f05242b4b3f2b3720e835889106d8ea09",
+      "fourthNormalizedSha256": "2248f046573cd20fa63774f1cb368cffce807c00fbad9261f5ade6df637ea7c3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:132",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "90e03dad598bcaf564af925733d56917d1d2b05e0eb577300c7afb1104f403a9",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:133",
+      "thirdNormalizedSha256": "e6312b0dd795e89043836772a69d81c10c92564f9c73ddf86b85ced34f41d851",
+      "fourthNormalizedSha256": "8cd4d2052ca8ef4d887c4e1c52eff1bfcbcb18d1e37f69454805baef1cdfc1cc",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:134",
+      "thirdNormalizedSha256": "22d394f2915ca4c1a40d1f89642a6c89922b9948dc8b170d89eea2b9e4d0e87b",
+      "fourthNormalizedSha256": "fb77537e4e5e2db312ef1f2601a8339513c3dc48e008625700491ecac6726358",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:135",
+      "thirdNormalizedSha256": "d63a1a9d536a871e0e276efecde73b68ab55e1edc5d1884802c31a4023173c0b",
+      "fourthNormalizedSha256": "05916136bf7aa958974ac86033f5c2a6beaebd20ef060c2b6ced8695afe817ed",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:136",
+      "thirdNormalizedSha256": "9e6dbb521e46f408a0771b66179f2888818a3a2979d75fd3b03f6ee65431eda2",
+      "fourthNormalizedSha256": "9847a361bab27b00e1fa4b13129395c9217ea47403b8551edeff67639693dc55",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:137",
+      "thirdNormalizedSha256": "d95092ede6de1539025f6b3c04f69bc7b5ddfd72cae8fcf119f247b6e332cc4c",
+      "fourthNormalizedSha256": "5e4d9c89e380ecbda3b9f39ba392c5686cba669cb878b2888b4b776b6a2f458f",
+      "disposition": "base-projections"
+    },
+    {
+      "id": "D:138",
+      "thirdNormalizedSha256": "4cb7a5989f49049b558b7473e86839a70cd048d51530ee4eaf36febc719c9268",
+      "fourthNormalizedSha256": "ec850a864f5371205f0b55d258a9b27c3a43cb0cdf40d10e06bd51c099913230",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:139",
+      "thirdNormalizedSha256": "05cd7123ab552f67ded13b8ad45713bd80800748790cc1461b54e06a17c0acec",
+      "fourthNormalizedSha256": "310aacc418e43f226a39c3733774268dd97e31c83669f664518be97510d70e4e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:140",
+      "thirdNormalizedSha256": "ec3a79272eaedd2c72fd88b2c1c00789d7c8f8848e4d392ce8f6e9cb3520b54e",
+      "fourthNormalizedSha256": "16b521d5bb1b5c5cbaf121a744fb2f6212eda5b1ce079656dc7be87eeebd60f6",
+      "disposition": "base-projections"
+    },
+    {
+      "id": "D:141",
+      "thirdNormalizedSha256": "bbb4334f795bd1ddef872dddd1856a54a301d15f5ce7f3a9c376fbbef97bc10c",
+      "fourthNormalizedSha256": "8e47e9d495d1a0e0c056a9341506f71ddcd6eab7d9b906868e542bbf2e6cfbc5",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:142",
+      "thirdNormalizedSha256": "f03fc34605b6918f1271e575e5a27c9559d26b15dc1abb5e28d5e3fa7023cb56",
+      "fourthNormalizedSha256": "15787c8f2bd17e720db0686f9ddde8333e22304232a91b15d83c6a999dfeb3ea",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:143",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "ce581fb6554962192530471d2594cd5b77de107c12f6f5fe5cf626bc70948fc1",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:144",
+      "thirdNormalizedSha256": "71af715d730f7f3a7f190692d2af94ab69587eb8837867475e5ec3008eca511c",
+      "fourthNormalizedSha256": "d0d943dbf5e87fca2c5006f61d63341830ea1d1aaee6ed3e450337b03602f45e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:145",
+      "thirdNormalizedSha256": "6d88de1dbbd6f54ef850a60c68e1aa05df2b9c8487f4393fb87c2dc51565026b",
+      "fourthNormalizedSha256": "c5843d03ecd65665d7cf246dc2b7cc47105c0a30f76e60ca569737926d9c9079",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:146",
+      "thirdNormalizedSha256": "5c468afe3995de67cc30a4d709d6e5463a5fb6ce8f4278a4db55c2102766fd50",
+      "fourthNormalizedSha256": "19d56c8a44b6cdb6baaef03186b5df1a31df166091a47b17ae5a91f3e0a2e007",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:147",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "a35a8bdcb46d6bb104cf2967eafe3671bc55361d7de51d8783120b3c00ff9cf6",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:148",
+      "thirdNormalizedSha256": "6419c159c0ff0fb415d37d03c8341d10b2e7c926720081bc3d3076f7ecb5d0f4",
+      "fourthNormalizedSha256": "8217dbde6f706bda76a8c0673abafed5882925a90771d11312fbd5e202574561",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:149",
+      "thirdNormalizedSha256": "b4a5fedf7119996b050802538f573ff94524b9b526fd523f17b986d42e85b598",
+      "fourthNormalizedSha256": "5cb3e4f71798e2fe54f7c6c0a689965f608b22c2f141ce8da355c7a80e604f43",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:150",
+      "thirdNormalizedSha256": "7da6a2c14dbca9ffc6c6cbc97a1e699ebd1508e6ac03dfeec0111bde14fad595",
+      "fourthNormalizedSha256": "c644739a8705cbca044741d56b0ba0ab1d9ad55da7122a565cda0426a6c8837c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:151",
+      "thirdNormalizedSha256": "0f90284bfc45373ba1c5b7d96f6101c51a27eb936908d1ed8ad42dc7c5679c82",
+      "fourthNormalizedSha256": "4c477f5a9ae01085b3383168f40ba8007f9a3d337f3491e0d968292392ab2ecf",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:152",
+      "thirdNormalizedSha256": "cc0ab0555628363880291f624da8a8cb52d4038be00b2c62d735d8fda70f606d",
+      "fourthNormalizedSha256": "b957cf92d716fc9d2bd1f4dea2f0f1d1469911d293b34d8877dd747c7268d473",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:153",
+      "thirdNormalizedSha256": "991d479252298dcd3dd69ea60d495c1a050806f1a77dc1f50fd245846b20177e",
+      "fourthNormalizedSha256": "933911ddc09167ac03739d7abfdd25d3e51bdf73176ad19493969706193bd30a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:154",
+      "thirdNormalizedSha256": "137ef20af3ad858191050e87df4cda747eb37b60f0e982e54bfaf735ffdf8be5",
+      "fourthNormalizedSha256": "33ce92398e865faad2c24a469d00cd5be598e20428ebff45a0740dcef4dfb1a7",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:155",
+      "thirdNormalizedSha256": "d44713d9cba4c153c597b28c547575598932eb905c8ef7b9cc07978955a31d90",
+      "fourthNormalizedSha256": "0cb455e93ce49495d43627e4123787bf5790c99f1cd7cb559ab7c86c7e1e1f5e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:156",
+      "thirdNormalizedSha256": "4dc2e3bc5f79638742428b60213030a8d13c88ae93231c912a6c2df9aa92117f",
+      "fourthNormalizedSha256": "675f57593a5bc28379b0150c23b0aa326fc81390a594c1a0681f06293f360b3e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:157",
+      "thirdNormalizedSha256": "114941f354fa3e6f3ba6162dd369f0f23b87e68cbb7edd7f38fbbbeb243a0452",
+      "fourthNormalizedSha256": "392c64be859cee7e8ac787b325cad02bfa007747c838b5799ad1d0ba13fad59e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:158",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "ef0e9ffe5cd0c3a650822652496f5f6ea4fe697cd1907eea4735ef5a3e2706bf",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:159",
+      "thirdNormalizedSha256": "f8f7183ce8d67dbe24e4fa224353a725118a96eadb14993fa8626810c6db1a76",
+      "fourthNormalizedSha256": "51676814d6edbdd04339a872c850cdd8599fe5dd56076f0015d877c35aa65017",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:160",
+      "thirdNormalizedSha256": "852c2accb4d6c5ce68e2fd3d7aad7407cee5f7b1f9c05bf112a654eeb770c786",
+      "fourthNormalizedSha256": "9a9c48dc0c6aa0cfb3288fc66982bbdcb4962f19c56bba326b29c447cd1cb916",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:161",
+      "thirdNormalizedSha256": "2d70dba8c3ea9ae0d82708225a2a457c683d8651c62de9ff11e25d6fbb4dbd8a",
+      "fourthNormalizedSha256": "72d65775492b63f65aae57a32b07b0fe8203a062f5dd0cdee9de673ad42bda48",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:162",
+      "thirdNormalizedSha256": "4351e607b7586ff15cad104b5c2dff50361fcb5901304d89c0b8de01450e7898",
+      "fourthNormalizedSha256": "8fb82108b32eda477b4a07a51049d2bb2a0c5aef41d772711558fc96c26d92ad",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:163",
+      "thirdNormalizedSha256": "c97899464c5cdcb670a2901d0b9549f3321917986850f211c8f2e7156b83c975",
+      "fourthNormalizedSha256": "581f7fbdc9984960ed9502b76f97b723dbb99cb48ef175a7fe9b221c33b2b401",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:164",
+      "thirdNormalizedSha256": "1fd6cb1ca07e8a235793ecad4fb4ee73863a7cd8449fbf286fa57fa975dee54f",
+      "fourthNormalizedSha256": "4b6680f6364b11ce8fe8702344428f9636a373ab97171345eb82491b2cd16e3d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:165",
+      "thirdNormalizedSha256": "28bdae7226769ce328a44994699f8cf046df0e087eabd4c8a42f698cd3b8bd26",
+      "fourthNormalizedSha256": "daf5ed17341af4868d87905e1e2c4343d3b023f4289bbe8d47d817e38db7b2e6",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:166",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "9a7916adb7dd05354e3d634a37dfa82c381b0895050191355ecd1f1498d49bb7",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:167",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "7631be85838834427a6598872761b00918bc4d5a6f58679b32397d642e3917c3",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:168",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "404ffabba8bc80e33a99c3a58295f3f6cd7514011e49d67ae27f039be6ab6687",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:169",
+      "thirdNormalizedSha256": "abecc943f090e1ca47d4e74010733966fdaaedd36df7950a3b5ef03741f021a1",
+      "fourthNormalizedSha256": "be3a1ab857d096dc241b674dfd5072b064075121205883efaa595a8e40db809a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:170",
+      "thirdNormalizedSha256": "6a09406ab6b435ca6ff02a8f1ec155f037e5be0ddee3b40dfce25e62621d7899",
+      "fourthNormalizedSha256": "01ed454d053c5c2a586471090242aa6862949b7382f4b1138cf9ce8b0b6a7496",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:171",
+      "thirdNormalizedSha256": "c079758d576d97a3cbe0606ab20e370d278a5e74da1849925d5da9a57c219e63",
+      "fourthNormalizedSha256": "38e5bd2ea3b7e40d46c8dc99e48b97a06546bfd3ca7d40b8995785b267de52af",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:172",
+      "thirdNormalizedSha256": "5a599ff3e469c9374cd9a64cc967358f42b25ce9e8b869b829df22ed82268f6a",
+      "fourthNormalizedSha256": "8ef91fdffde7c91e226b6aa31f995f3755f9ccd8407d064e1f30a62136e3848a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:173",
+      "thirdNormalizedSha256": "e0888e4f99d0c9531a853ad7420d026d55365971cd696ddcdb35fd44813a6bf5",
+      "fourthNormalizedSha256": "7d26362db69189c5a50c0545b989f9ab36e355fe4db4595116e16094d3e2e444",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:174",
+      "thirdNormalizedSha256": "f358354a74bfc89428a9899d6bcdd4a8d92ac8c9af0f3994721a4c9634c810ca",
+      "fourthNormalizedSha256": "271ab29d25b0832724b4305ea7fcc8ed75bd597b8594b06b43640c8fd6f2d900",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:175",
+      "thirdNormalizedSha256": "f16fd99c73efce6b4935c845ff15589d262c610f7f9fd997a62b46c482cac41c",
+      "fourthNormalizedSha256": "a836d7e3ea1e5ae09bcfbe840cd332bedf230e88d5492c3de887d219bd308202",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:176",
+      "thirdNormalizedSha256": "5cd1d1d34f233e2502d78cb2e5584cbf8f009cba86c5ab8df9a885e0700bdb5b",
+      "fourthNormalizedSha256": "1f400e751200068572e294e34ef179197915981770ebafd1924d61620e4b7173",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:177",
+      "thirdNormalizedSha256": "b1708144b7c5ed4999deae0de9c9192d126639147f5f2cfb95f273da345f8f04",
+      "fourthNormalizedSha256": "a39e84cafb1582cc996fd074a078547ee85565c360d42c976914b98e73102cb2",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:178",
+      "thirdNormalizedSha256": "afa26acf10fdac985b0c092259b1d209bf780da7ed6d4ae48fd21c8a0a8befdf",
+      "fourthNormalizedSha256": "a4bea8bda54e9951775cce3bdcb3cf2d9d2f66687178cb01a7b952543a737009",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:179",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "c8ad22191d3e60742dff644012ad4165ba03feddefb04bd3c18859c8e0f373ae",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:180",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "4b1040f6c1a59bc80e768b411efcc1c21b74ca87b48d6193eeaec4e89986771f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:181",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "725346d717f8c65bbcabd739464529ded0e80f9d05cabdc4d382eab2ab3bad8c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:182",
+      "thirdNormalizedSha256": "6ce6d3112fc1118c15d7cf6489f4d37c3de0a6eb065ef4c3de4355f6f34add51",
+      "fourthNormalizedSha256": "565f66b413f01a51b0abf09d227413df7d90fba6d07eea1a44ea8d566cfaee21",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:183",
+      "thirdNormalizedSha256": "493aecfe149656217993eec35fbf486f594d0704a3cac7992dc24cb9a9078f21",
+      "fourthNormalizedSha256": "5b0e3e9a9bbed02ebbb72557eceeb02a456b026185d9a5cf30f91d6499755c93",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:184",
+      "thirdNormalizedSha256": "c1f0aaa3886943683b07b1b798afb99b60ee1bc4a33ae26e5d126b48c26dfa05",
+      "fourthNormalizedSha256": "9c6d936c2fb5241a3fec2ffd31c53190565a7116ccd2a7ad355dca809b3f8d71",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:185",
+      "thirdNormalizedSha256": "066c1c568f4610c5b5ecfc9b18ab47262913378494237b0e522afdd9ce16e51a",
+      "fourthNormalizedSha256": "6702477a9de89394bf54ec59cafdd93a7c1f806e48ca1ab9c51753a05cdc5336",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:186",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "aeb8a24f86aa7fc3b38c8621e218086c048b69d49a306ddbc13a83d15e1719d8",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:187",
+      "thirdNormalizedSha256": "a12c68a41a8b86fa2a4fadc54ec0e9500a6a6e104bba8e2cc23e24dbb6972d1a",
+      "fourthNormalizedSha256": "5a7a7b8738536ad5edb729271c81cee59c691290900d659669e518e40feed080",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:188",
+      "thirdNormalizedSha256": "8fe140470a2600a6dff2ed196f5cd5f9a4add7396de8b1535fb844c673ca3668",
+      "fourthNormalizedSha256": "a4aa54c399618224b00a1a32001b9c9cd144b953e59599376842e129b0cf3bec",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:189",
+      "thirdNormalizedSha256": "aeb8d4677e35125a3c07702960a8eb4937333b6f654cc1f330bbee5f0f0d5533",
+      "fourthNormalizedSha256": "4ef00e98af360c67ea7c2eb9c7a5c5e4d75324e687e234ffb010cdee0ef00234",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:190",
+      "thirdNormalizedSha256": "0bda4175d9c807b06217cca3284f8c2130a7989ce15a5d053ae4db07760e8f5a",
+      "fourthNormalizedSha256": "046dbe15d2a4d3a152300f2b734df6f93468a5b1f0a1966d7ad7030f63169ae8",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:191",
+      "thirdNormalizedSha256": "40f504613364bcc54fb7e87f45a299a90326870d73992d7b7c2ce00505c7722a",
+      "fourthNormalizedSha256": "1c3117bc9b25f3560873a88c80ca20bc5bb28cc68731f56799cd64e86d5e5ee3",
+      "disposition": "contextual-name-binding"
+    },
+    {
+      "id": "D:192",
+      "thirdNormalizedSha256": "610e2e15efcade015dfa5333dd55bb417174f1653cd5330204bd508804654e59",
+      "fourthNormalizedSha256": "c64ee466e8ea002056d4c279b962a12799f7e57bc1ddafa8506088f0b52ece02",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:193",
+      "thirdNormalizedSha256": "6f1e2b04324de414985d50eb62d7287040464fda47f43dcbe55bd9783cb1f8b6",
+      "fourthNormalizedSha256": "8c6ab587703534c0ea329578cd19f4989ddf24adb9387cd72316f3b62f62954d",
+      "disposition": "contextual-name-binding"
+    },
+    {
+      "id": "D:194",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "bb0622c46030ba0629d6e7b10e8b82fd407b9135e3bd240c46096d3efbf6baf4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:195",
+      "thirdNormalizedSha256": "5d6639b904ba43c6835dbb86506a8ac22aa3ce7f2078771f264c01660af112ee",
+      "fourthNormalizedSha256": "4ced9ee49c0c8a450d2cacb2f8774e9156c345bb841ceec33c2b1885b5ce1ed9",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:196",
+      "thirdNormalizedSha256": "df6eae59f489846959b26c86da404ab480253d85f53c43c2ee05dae6859d2ba9",
+      "fourthNormalizedSha256": "290b04be51c0cfcfb8be07f9a4f94d2b2c258f4f80397ac9c88d5c657ad5e9b9",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:197",
+      "thirdNormalizedSha256": "e3f893f83bcec6e2b984372c51d0f8a36ba2aecf20e0cd37ca94ef56e0905ea2",
+      "fourthNormalizedSha256": "6b254d90630d5508662ce314f3027471ba98850796d7d8656fba1cfa2f4b5e1d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:198",
+      "thirdNormalizedSha256": "e54604770f4079a5dc95f69cc189d7bc2062678f2c3be12fb9ff10a06a6a79b2",
+      "fourthNormalizedSha256": "96375b4b1026da0ab7e20a18b03a20404f0ae3efcaa7a2fb230be7be27d165b6",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:199",
+      "thirdNormalizedSha256": "0edb8594fcff2352122a234b94cced1005b28d091299e4b84bd318f5736a6732",
+      "fourthNormalizedSha256": "2c4893cdca665672939eba00c243d14f56e007ed6ef93ed9fb561efa73c272b9",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:200",
+      "thirdNormalizedSha256": "9cccd68e10d5760e844810f5e20fbeec7f5c1b3d60bfe914783eb75d767d3d80",
+      "fourthNormalizedSha256": "1b57b2e52c2536fe69891273a027234371aab9685af0013a358147ffb7e3d525",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:201",
+      "thirdNormalizedSha256": "20ce22c129a309e602367503277cb9490ef93940a81466afb98ded200f8a41b5",
+      "fourthNormalizedSha256": "f9895233764453eb275bfef356b3d3ace7446cba158555fd6041a483856b3906",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:202",
+      "thirdNormalizedSha256": "b3e66ee56ace1a50cae4cd9221b4e4147a63bf337793fd674eafaeab134cb3c0",
+      "fourthNormalizedSha256": "6abc5b695441c2bb5e91e2d1fc7b921a2c06a00bcc81735855f5dd668aaa3067",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:203",
+      "thirdNormalizedSha256": "5175040fed98f6334ec95e977265ecd04eb945a665ffa17daad498c1c22a1dc8",
+      "fourthNormalizedSha256": "63616e1e7c87d6736754767e9d1e5fdf5d92f2cff9c5ae69e1cef6a2e851e7b4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:204",
+      "thirdNormalizedSha256": "4283e636b3aa44734a28e69cae670b55ec8378392cf64a0e535d43440f53aea7",
+      "fourthNormalizedSha256": "76751954a79d603e56e6168eef3f100602acb73481ca6246ebc867f8556ecc02",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:205",
+      "thirdNormalizedSha256": "9a95fbf58023439d8fc34f058da2c3d002e97e009d290613ffa9628553523dc5",
+      "fourthNormalizedSha256": "6ff8e338db805e325d599c88bd5cd3db39ea2d37817e4da532e4a45155488e41",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:206",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "ffc702e9981be4629f07627d138c1bd97591f17fc860fa3c1bee95caf35134d1",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:207",
+      "thirdNormalizedSha256": "6d171fb52c70300bf136ab51aca438cb6fb5c40e70085ff43f9a909df1fe0047",
+      "fourthNormalizedSha256": "b1c4a6814e594771d0e7db6d21291b340b433f0b9451133c087c89ff9577ccd9",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:208",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "a1866661ffdee368fd542a70585291be3ba68cf668a57eb8c8859a01be1c9671",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:209",
+      "thirdNormalizedSha256": "9a971a53a97e4cce09f5854c58b3023272472b45729bbc5010ce2b89e2c9476c",
+      "fourthNormalizedSha256": "eb6433e9b400dc50ddad68b0ad59b47e0cf2d185e63f13682cf8769ac6ff689b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:210",
+      "thirdNormalizedSha256": "ee346cdef97d9e935ed22d00238b8abdfddbac2b905a4a418effbf0a44770837",
+      "fourthNormalizedSha256": "57ee2330790b52dadcba92b3434a641f070e03d72abe48df9c8382399ba502d4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:211",
+      "thirdNormalizedSha256": "face0bd0bb810b30f5458aa3b0be1968fa585b6e2e03cd05241ea4561dd642fc",
+      "fourthNormalizedSha256": "7f745e9a266cae92d77aada7de3f51d4301016337e03389fda5c2f10d9c0a7c9",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:212",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "d69b97f4d58e6c855daa734ae8f8ecd2961eb1013c941f19f715540fb3c7fe48",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:213",
+      "thirdNormalizedSha256": "2a3a0228cc2d11fc5e6730f49990f67d914e7fab4d40760782fa6410ff50390c",
+      "fourthNormalizedSha256": "17744c2ad8d2cce0d43c3b655752cc443474b7bc995137111bf711fb35fc8570",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:214",
+      "thirdNormalizedSha256": "59e75a2ace71c575a191e398af30c445d5985af8dd1cb4042a7a134644546216",
+      "fourthNormalizedSha256": "0bb332102b325d4985648d909d3190933d533b746395354cad4645585e3b5904",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:215",
+      "thirdNormalizedSha256": "8b7e4c7198b2354ea44a05c9ec362bb05ae6d0ab8cd26ef8168e5fb50ead4162",
+      "fourthNormalizedSha256": "40582666284fb5bab1a286de686062b877fb1c44de7c2ac9df5b1030f40ca14c",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:216",
+      "thirdNormalizedSha256": "145cf1afcfd135a5d380fe5db46aab1a5bc016ea36a5ccaad7c9e1b82f282e3b",
+      "fourthNormalizedSha256": "0b0cb758a863e0862faf56a893f5186019e250bbd17714394ec3a341e8966050",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:217",
+      "thirdNormalizedSha256": "05c02c3a70f805f4f315e703add0d9d882a33f9e0c66acf0493db00bffcad0df",
+      "fourthNormalizedSha256": "3b1596d03ef8693379c6b2cad205a4ef0dc35b01bc76cc41a10a74422627e410",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:218",
+      "thirdNormalizedSha256": "acae9d86f46af0c1d80766ea764ddcf1c91bb2ca3a5eb647e9f184713eedd7f8",
+      "fourthNormalizedSha256": "fd54a1bc7ec3cd4b7e4defb973b72a5f1ad3131efdabc137e6fb7c06029a51b6",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:219",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "3432f6d83b0683d666443f4aed9ab722c4926f775a8d0d638e13e77a8ed93cd2",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:220",
+      "thirdNormalizedSha256": "1513237c48de46c87426593d4894c649c4d8ca0b64e964d8ca5624d7e95a2af0",
+      "fourthNormalizedSha256": "fbf57718c4b5e19e1d31ae3692b9d4c2357641df2fb8c12fd5cfb99c42e43d4a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:221",
+      "thirdNormalizedSha256": "989afc6d32a28a237b7fecb3e25fe6a0d653b78f364b83702b8ba0ae55316e24",
+      "fourthNormalizedSha256": "60437b5f3d80b8926cab500ced1777238daadd520b721f2950b42c7ee0410128",
+      "disposition": "optional-parameters"
+    },
+    {
+      "id": "D:222",
+      "thirdNormalizedSha256": "76d495f7af7b01beca851aeca937645e8cd7ad96c65b73b901abd5e999c79d48",
+      "fourthNormalizedSha256": "4eb11362b391f87017a74b3a6a3c7516ab5b2f1e18796bc4f6da03164b257a54",
+      "disposition": "optional-parameters"
+    },
+    {
+      "id": "D:223",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "d4db7501dc6331e5269853e4927c6d57190c57464fa7d5275bf7f2ba4c1eb7d2",
+      "disposition": "optional-parameters"
+    },
+    {
+      "id": "D:224",
+      "thirdNormalizedSha256": "dce543c2bb440bd23580b18c64dfd65214426651763044991a90c09ea84a644f",
+      "fourthNormalizedSha256": "a3a6de0ac3098230278348c3abb492f5cde5a98505ca32165cf56bfc19dbd668",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:225",
+      "thirdNormalizedSha256": "5acd673ec97b3be3b44403c1e99835666ecf78bb94e6cbcbcd2c69b7b991d222",
+      "fourthNormalizedSha256": "006f10173612dcb6a669b34c542dff8c4f8b43db77afe272b412c6cd2825a143",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:226",
+      "thirdNormalizedSha256": "14c0de770b7cf6744bdbbb9f253bc6010c56e465a09caf5503c2ed9a996ca730",
+      "fourthNormalizedSha256": "57d9a801632b55c79cce60a15f0c968a9dc205bedea2dcdac96e51228646ee89",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:227",
+      "thirdNormalizedSha256": "3b47117cfc1e7cfab2627c82260401f0b1eb1e64b02fd94faa688823ab54ee25",
+      "fourthNormalizedSha256": "a444469435545533715d14b006bc24f65d588df18497f8f537678857cb529cd7",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:228",
+      "thirdNormalizedSha256": "ccead93ba4c2832a154f12004e6859ab6ce88741a084f4ecf57c5a650a9e6bce",
+      "fourthNormalizedSha256": "8fc43f5caf37db4422546ecbf4a6ec88a4a9add8df7a43408d45cad3092263bd",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:229",
+      "thirdNormalizedSha256": "ae4d9101e305fa19ef1542dd28c9626d08801121171b92bedad1ce78a14fcdf2",
+      "fourthNormalizedSha256": "e1a2281ee30ca51e025fce843df68a17158e679b3965635e3a13dd0ce4155e0e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:230",
+      "thirdNormalizedSha256": "49a0fdfdb9c56229d4ab149d5de98224911efea3413272ec856a65fbb8e29b7b",
+      "fourthNormalizedSha256": "75b463fe3d7bab458eff4c7cf51219e607b784474cd9772be3890fec3bbf012d",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:231",
+      "thirdNormalizedSha256": "d98860fe5265853625e7d7737e253fd16050a4223ecb14b3a8afc18e6a130e72",
+      "fourthNormalizedSha256": "db69008cbf24a3ccf93b59e82fe308e2735d91f6121da38087a9c432d607698f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:232",
+      "thirdNormalizedSha256": "b415ee44cf74347a412cc8d78848591f39e40b6539329f6b8082f3c7dab115b2",
+      "fourthNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:233",
+      "thirdNormalizedSha256": "169708997464585e438f643dea55b9ec4dc84f57c26a60448fa07367857ad1b2",
+      "fourthNormalizedSha256": "3761b66a5283df95c345dd8a68f0b2660f14014936901b55c4cf071d392a7a67",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:234",
+      "thirdNormalizedSha256": "c9a331f5e033e545180728e70e39850c89d7b24552ac0a5293f2b59bba7fe029",
+      "fourthNormalizedSha256": "5866a04fab68c38198495691c88bcfc62a4bac6a791654d18a6e7fe86d2c619a",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:235",
+      "thirdNormalizedSha256": "9a6d9fa10bcd75b95a5d4a018af3c8f93903e59cf246293a594a1a62881492c1",
+      "fourthNormalizedSha256": "196d830c9f196bf6c8c872f3355d3ee6e7f2a828255a34e33dd94d4ab604e159",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:236",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "41a2fd45a694ce8bc29db399f5f8950a40a8ea924e587860fb506d1e2ed15706",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:237",
+      "thirdNormalizedSha256": "6a58a01b643dfdc6d885763f245634b9429e624070bcb10685f76840d7252506",
+      "fourthNormalizedSha256": "85be0c8bdad7666122235abc297320b730b120ceeb8ed9281481a7470391a246",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:238",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "e3df872076460ba19387acda29380062344df48a9cf7264a037f23aae451a53e",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:239",
+      "thirdNormalizedSha256": "d7a3c0f2cf67070af228ceb87936f25a5291a60d9660d532873678ef25dbcba6",
+      "fourthNormalizedSha256": "c35d07fea3527851651878387f647b7be0221d41a275fa7f8c6e9d73a1195b36",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:240",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "1b962ea152ff705596e1c3fb36d5d4a1374015f2618d5af0ff01c2569f190d34",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:241",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "12d7e5cc80838c1570cf43862cd2004ce13bd08f3ae6420903deb29b00e0169b",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:242",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "2f67a82c7cc8f724c65092b75c9c91259cf4457271592ce1ddd9869e18987a70",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:243",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "8bca6623e1b6ce9059de00601784f9536429541bf09911749b28c731ca32569b",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:244",
+      "thirdNormalizedSha256": "5d215d2cdf851fc4dffb36de20c6f3ae7287ef5988780b7f65fb859ddd413385",
+      "fourthNormalizedSha256": "ad93134a8ff45d0149deaae5100c7abd943d3197e206f43e6776b5bb5d40418b",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:245",
+      "thirdNormalizedSha256": "8297b4600cd39d5113c153fcda0c992cf1d4a0cce4d056e11f6db888104e4163",
+      "fourthNormalizedSha256": "71fb5a72bba0a6f13c0063a98c3edbc1d0eeb743fdbd33fb2e1c895d9cc66d14",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:246",
+      "thirdNormalizedSha256": "72df470c970bee18c8866ebd4c081b79201f479e36240218880055bb8bbbd987",
+      "fourthNormalizedSha256": "b8298ea317f7078b731bc82d2525b000c988682d089bbe06f4d0ad6adb489b85",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:247",
+      "thirdNormalizedSha256": "4231be8d1abdf25999610db9324ac5bfe89ecfe552a0b00ad0867da063d5cad1",
+      "fourthNormalizedSha256": "1ea4ad1461359f888150361bc732b4771c8c39dea89381a2c82ce65dd9b62503",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:248",
+      "thirdNormalizedSha256": "71cc064485a4b034f2253c94bbe9896f83b231780d722bb6cfbdd82e41304bfc",
+      "fourthNormalizedSha256": "44c18fc305e55858b19627393dc366588f99b3fa44ef4e963a0831712bd0980b",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:249",
+      "thirdNormalizedSha256": "e8df7f0e499f8134584c7a08f902d06ecc2d007fe97c98580fb91b2fdc7a1056",
+      "fourthNormalizedSha256": "279f20ac28c4ba82d6050f3d4231fc496b12206c6fe242aa16b20a3e94c61225",
+      "disposition": "variance"
+    },
+    {
+      "id": "D:250",
+      "thirdNormalizedSha256": "ddcc804841d5bc6ea41aee067d62cff32d28887a88ec7726a9ee982ef85316f9",
+      "fourthNormalizedSha256": "b9e55a6e49620ec29aeda8e62938064d42c835f03a43c4fdc1e53bbb2b538e0d",
+      "disposition": "named-arguments"
+    },
+    {
+      "id": "D:251",
+      "thirdNormalizedSha256": "611d8dd6ce6b89a00d3857a5dfdc8a3682186cc7b3a097690f5457238cae3dac",
+      "fourthNormalizedSha256": "53ca7ca15152bce983e0b18901b90103e2e1bb5947a55fb399985ccbe73c9a0b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:252",
+      "thirdNormalizedSha256": "5c38c5165f3b40c95591fef3b3443949ba1456cc55295c466e809cec7ce50aaf",
+      "fourthNormalizedSha256": "23ba02b988d0257f5ec68f77a9d23dfcfccf23e7977f04caa8d6b5a76faa1e78",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:253",
+      "thirdNormalizedSha256": "faf6cf3200e36adfe691cda28f1954d6b6316b44a3d21d2d170ae54a2b719da5",
+      "fourthNormalizedSha256": "296ba1910ea454d78e88562bffc10ba5f6d4f10af622ade270088b424066b5a5",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:254",
+      "thirdNormalizedSha256": "ddd5d371bd0f3038f65db3062251d4a07528737a97913dc26e9c52a1fa17787e",
+      "fourthNormalizedSha256": "a555ace88336f373415ba58b48fb24c7b257018612fe2f97fb2271b2b784087f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:255",
+      "thirdNormalizedSha256": "045c7c83245e2c088233429661bd10512b51555367ac496f81f5a0e6ddd4f461",
+      "fourthNormalizedSha256": "2ab929394d9f8200124d609f9282e290c61b346935a6df7a42be0a08d552b151",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:256",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "94a8a505a2b31f149f0a30e4642cf0962b1bc8794fd182f7c5d0c25e4eaa1e7e",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:257",
+      "thirdNormalizedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fourthNormalizedSha256": "ab85137907606cdee36a9c612da08cb34a101c342b2bbb01513096511c52a03f",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:258",
+      "thirdNormalizedSha256": "68b194a337c2faab613b5eee0cf4b58a5f78002c170b285a4eaeadca5ca081a6",
+      "fourthNormalizedSha256": "a83268da983fb2931571ecfd14dc97ac00b289db705687dfe5101af76121d2a4",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:259",
+      "thirdNormalizedSha256": "755c4c178ceac0dbad070e7d4b30cea5ef5a31d0e8b3b9e98b43a0e81f24e6ee",
+      "fourthNormalizedSha256": "9806295fcdf9efc13d11282c19f7744dbe0659e68ba16ab69324751d2c27ff7b",
+      "disposition": "retained-semantic-or-editorial-boundary"
+    },
+    {
+      "id": "D:260",
+      "thirdNormalizedSha256": "486f8d9528321c7380ab8db5ab6fd998209a5648ebc0f9c71d9babf86b22b73b",
+      "fourthNormalizedSha256": "7a7fa6c1a87379f1778ab990e017bf1a640f065e9ff938422fc74f073b1da8dc",
+      "disposition": "transcription-normalization"
+    },
+    {
+      "id": "D:261",
+      "thirdNormalizedSha256": "d5e9388945737b5fb844f533209a1e32a9d9333a52b30d79d5cef0874022ff1e",
+      "fourthNormalizedSha256": "937a64557c87bf57c1134aa342cf4f1502b9652601a8cbfec55b10dfae37a54b",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:262",
+      "thirdNormalizedSha256": "92421372dfbd99f83040aff910bb29882e624ce7f76e4844e7ad90ae9a37b786",
+      "fourthNormalizedSha256": "eac2f06f8e6eece2f1e4850b1d6f187447ed86c8bb36fdc1ca7f78a79c8663de",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:263",
+      "thirdNormalizedSha256": "7793cd192b5949508e26e846543d246fd493049a21b680e6088dff147818d181",
+      "fourthNormalizedSha256": "ae49d31f8712a2fda9039da54352a2894095bb6629fd6efda0316b1299a31d99",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:264",
+      "thirdNormalizedSha256": "b7465c7c881370f1953ba02fc45f0f93ffda6859f62ec026f1cb5e87f6ac57b2",
+      "fourthNormalizedSha256": "ef6c1bdfd3ad2423107c1b7bef8aaf6dd5348fcfb13ffb53ee953d83d8a3dce4",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:265",
+      "thirdNormalizedSha256": "b7b4dc120241d66df2730828d050deb496a0eb3a1857b4c1a7916718ca4968e9",
+      "fourthNormalizedSha256": "728882cdd92e3cb95b48ecfa6f70efb3d3aab63ce9d50513b23b2459c4ad228d",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:266",
+      "thirdNormalizedSha256": "9f706943a0a10c31a3da2370056a969c2baf5ed5f07f1ab59b1d14c107c9fd00",
+      "fourthNormalizedSha256": "3b538d5bc1d1831834bb07267ba389c9abe7b323e9d9805d1eb213f20636382d",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:267",
+      "thirdNormalizedSha256": "d2b646f96c042b92022f2f9b98480bacd15e423352a9f48b8ff914f389a68a2c",
+      "fourthNormalizedSha256": "619da5fd6bb8813d39e3eb879be1ad9da5c54e97ee002eeed398c75d173a6eaa",
+      "disposition": "documentation-trivia"
+    },
+    {
+      "id": "D:268",
+      "thirdNormalizedSha256": "213eeff8db07e040240d46d6847e94c263386c8c86137a363f862ba7b6187f9f",
+      "fourthNormalizedSha256": "de2d08e805d656dcecfb8239375c18c6138f62879c6c933772bf14dcd711264f",
+      "disposition": "documentation-trivia"
+    }
+  ],
+  "reportSha256": "4ac69a2697f695d4922e492ebfb5a8fa19b8a3b5c587b63c457c78873ba44afc"
+}
