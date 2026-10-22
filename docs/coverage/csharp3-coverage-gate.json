@@ -389,7 +389,7 @@
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "20ffba36e19378dbd4ed6a8a8325458ee9d66c5826b27c777580d25f228c6fc6",
     "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "e0ae597f7b87a4719655baf1fb14be7a44b8e46d21e17769d0fbdd7ed961e9fc",
     "CSNitrogen.source.Parsing/CSharpParser.cs": "bb11b3b7c7ff821e82b6446e55313827d2f239e1c175748ee496d58517835ea0",
-    "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "ff87e9e611607d8c796441e334c22bdba8eea533849c9d484ddf3b463d9a8331",
+    "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "766129f9e1dd17b4a8dae027111f6c4511ef145cdd907d46059e0afe3fbb6f78",
     "CSNitrogen.source.Parsing/CSharpTrivia.cs": "13c99794aebf55f540edf908a0b75b585fe2795d1ecb0605a004865a9f83fd5b",
     "CSNitrogen.source.Parsing/HistoricalUnicodeTables.g.cs": "8d5796736ed15c03e8eb7949123b88771af58c39b4ee70bf0ff77f03c043165f",
     "CSNitrogen.source.Parsing/ParseDocument.cs": "428eca2563c6d4584ef21acf7e78846ccad2dc71f18554f461c7d326dd604c28",
