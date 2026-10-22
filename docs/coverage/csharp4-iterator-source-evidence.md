@@ -1,0 +1,11 @@
+# CSharp4 iterator context evidence
+
+Base: merged PR41 d9454fb5d982512f761d5f40a3b38e80c6c3f963. CSharp4 remains partial; this bounded context correction does not admit the whole source profile.
+
+The pinned Version4 working text defines iterator blocks at main4867, disallows ordinary return at4868 and explicit unsafe contexts within them at4869. An iterator defines a safe context even when its declaration is enclosed in an unsafe declaration. Main5293–5296 constrain yield to methods/operators/accessors, exclude anonymous functions and finally, and exclude yield return from catches and try blocks with catches. Main6862–6863 repeats the owner boundary and excludes ref/out formal parameters. The source delivery, hashes and publisher-byte uncertainty remain as recorded in csharp4-reference-policy.json.
+
+CSharp4 previously skipped the existing historical generated-syntax iterator check selected by CSharp2/3. This change selects that same check for4. It does not change its ownership traversal, diagnostics or predecessor dispatch. Return/interface/element identity, conversions, iterator execution and implicit pointer/type safety remain semantic exclusions. Later profiles retain their prior unreviewed contracts.
+
+Thirty tests first produced20 failures and10 passes. The correction makes all30 pass:13 invalid shapes,10 valid shapes,5 exact authored UTF16 diagnostic pieces after supplementary trivia and2 incremental edits compared with full policy recomputation. Cases cover constructors/destructors/event accessors, nested anonymous functions/lambdas, finally/try/catch, ref/out, explicit unsafe blocks, ordinary returns, method/getter/operator owners, enclosing unsafe declarations and optional parameters. Nested function returns and inner catches remain isolated from their enclosing iterator.
+
+Full solution:5,766 normal plus3,725 oracle =9,491 passed, zero failures/skips. Command: `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false`. Predecessor admission source pins are refreshed in directed third-then-second order without changing their gate logic. Normative-context dispositions, the complete generated-owner crosswalk and independent CSharp4 admission remain pending. Unrelated benchmarks are preserved.
