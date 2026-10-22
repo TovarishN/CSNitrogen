@@ -361,6 +361,7 @@
     "CSNitrogen.grammar.Expressions.ngr": "a04ca5890e9ac573f2da958d3190d4ac7bf8d5abae4397d28b6bd1150ba46d8c",
     "CSNitrogen.grammar.ExtensionReceivers.ngr": "09e3e96e642b2c5cd063679c2d8e5a16590c32b39ea4c20e18d824a030042a21",
     "CSNitrogen.grammar.FixedBuffers.ngr": "fccd0af24edf2c2574a270b8d37a30c0c6a071ec02c1f73b5c4ed643c30f903e",
+    "CSNitrogen.grammar.GenericFollowersFourth.ngr": "74cab733e02b04ff50342ae275b75ec00af9e8d37df4810863d4186b128e333f",
     "CSNitrogen.grammar.GenericFollowersThird.ngr": "b429ace8eed80ce8ce89a3ff4ecd94dbbf6ae9ff926bf5419ff4735bc8761ffe",
     "CSNitrogen.grammar.GenericUnsafe.ngr": "e50e489e82a6e0b5159aa2129ac389941e0b4aacdcc53efd3bf2caebb57399af",
     "CSNitrogen.grammar.Generics.ngr": "3ce24d0d88ab89e0bc13be10642dfb82ebd779bab160b9b738f682509ddb9cd6",
@@ -383,7 +384,7 @@
     "CSNitrogen.grammar.Variance.ngr": "4719a73c8c438ce006e1a7a68c6356ae6e7cafa5635f593fd17f824b3a220797",
     "CSNitrogen.source.Parsing/CSharp2UnicodeTables.g.cs": "67e517372ebf2fcd8c761b6212d59399e1ba59a35ccddd6b659b739eee25fbbf",
     "CSNitrogen.source.Parsing/CSharp3DeclarationPolicy.cs": "c24ffbb2c27789a6708b16586c78519e22c5f9d317fa81af4f08aa162ac40b22",
-    "CSNitrogen.source.Parsing/CSharp3ExpressionPolicy.cs": "e3581a51332f814d5b5e600d0a5dd28ab597f3881aade8894bf31ee14e5d351a",
+    "CSNitrogen.source.Parsing/CSharp3ExpressionPolicy.cs": "50c6447fe7e2ec634debdbd7f2c0fea384348f8a21d530fe3dc1aa748a738d09",
     "CSNitrogen.source.Parsing/CSharp4ContextPolicy.cs": "11207210947fdd9a61a4903abf0fdf15202ab28db01bf521b5694c870ad06446",
     "CSNitrogen.source.Parsing/CSharpAttributePolicy.cs": "63966a9aa8c937ffb623918a187052f54341d2918ab574b16b5acbfda6e4c0dc",
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "20ffba36e19378dbd4ed6a8a8325458ee9d66c5826b27c777580d25f228c6fc6",
@@ -405,7 +406,7 @@
     "CSNitrogen.source.Profiles/CoverageContract.cs": "45f7c8f04f8a43b031c28b6f12153fda3504115435d88008c8d45957260c5c7d",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
     "CSNitrogen.source.Profiles/CoverageMapping.cs": "892a0a337331bf30c2e288a4aaa27edf3668fabc79fdd0a4af10640ad569ae17",
-    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "91a53d46864aa8c4897a6fcff60dd502e66d4fcf349f8cb20b7bc92f103cd41b",
+    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "30ea0c6206cda6971001fbcb49c339f44bebcf8beaa30d04a9e8946464f4411c",
     "CSNitrogen.source.Profiles/LanguageProfile.cs": "83d4fc689ee2d24ed6a6e3bf918c030d9b1973f098523b6dedad4eb62ddc3bac",
     "CSNitrogen.source.Profiles/ProfileResolver.cs": "39845a60d68834aef063074628bb7162bcba22d992c29c7bf6e8fef863f6ea1f"
   }
