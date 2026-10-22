@@ -28,7 +28,8 @@ internal static class CSharp3ExpressionPolicy
    if(kind=="InferredMember")
    {
     var member=SyntaxView.Cast<InferredMemberNode>(tree,n);
-    if(Kind(member.Value.Index) is not ("NameExpression" or "MemberExpression" or "GenericNameExpression" or "GenericMemberExpression" or "GenericPredefinedMemberExpression" or "PredefinedMemberExpression"))
+    bool fourthBaseMember=version.Major>=4 && Kind(member.Value.Index) is ("BaseMemberExpression" or "GenericBaseMemberExpression");
+    if(!fourthBaseMember && Kind(member.Value.Index) is not ("NameExpression" or "MemberExpression" or "GenericNameExpression" or "GenericMemberExpression" or "GenericPredefinedMemberExpression" or "PredefinedMemberExpression"))
      Error(n,"An inferred anonymous member must be a simple name or member access.");
    }
    if(kind=="ScalarElement" && Kind(SyntaxView.Cast<ScalarElementNode>(tree,n).Value.Index)=="AssignmentExpression")

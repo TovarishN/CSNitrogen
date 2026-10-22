@@ -6,6 +6,7 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp4.generic-disambiguation", Array.AsReadOnly(new[]{"csharp2.generics"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/GenericFollowersFourth.ngr"})) { Introduced=new(4,0) },
         new FeatureDefinition("csharp4.named-arguments", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NamedArguments.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },
         new FeatureDefinition("csharp4.optional-parameters", Array.AsReadOnly(new[]{"baseline.attributes"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/OptionalParameters.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },
         new FeatureDefinition("csharp4.variance", Array.AsReadOnly(new[]{"csharp2.generics"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/Variance.ngr"})) { Introduced=new(4,0), Policies=Array.AsReadOnly(new[]{"csharp4.source-context-checks"}) },

@@ -1,0 +1,17 @@
+# CSharp4 expression source differences
+
+Base: merged PR42 987ffb39ca8d6eb84010d766f6030e5763f041a9, tree80677f8f98dddddc58f6bcb78ea1e2b42d4f50df. This bounded source correction leaves whole CSharp4 admission pending.
+
+## Controlling clauses and implementation
+
+Version4 main3557–3559 (§7.6.4.2) retains expression type arguments before `|` and `^`, in addition to the third-version followers. This prose difference is absent from the appendix alternative comparison. A new GenericFollowersFourth module extends the existing AdditionalGenericFollower seam with two alternatives. Single-token guards exclude `||`, `|=` and `^=`. The canonical csharp4.generic-disambiguation capability explicitly requires csharp2.generics; it does not silently select dependencies. Named4 and later factories select it; predecessor factories and their follower modules remain unchanged. The extension can be omitted independently without removing named arguments, defaults, variance, third-version generic followers or ordinary generic invocation.
+
+Version4 main3872/3887 (§7.6.10.6) adds base-access to anonymous member declarators and names base access as a projection initializer. The displayed inferred-name forms require a selected member identifier. The existing versioned expression policy therefore permits BaseMemberExpression and GenericBaseMemberExpression from4 onward. Base index, invocation and bare base remain excluded as inferred-name categories; explicitly named assignments keep their existing expression grammar. The approved generic-member source correction carries the type suffix in base.F<T>. No grammar accessor type, core mechanism or predecessor policy result changes. Anonymous property identity/type legality, generic-member binding and binary operand/operator legality remain semantic exclusions.
+
+The controlling external DOC hashes and mirrored-delivery limitation remain in csharp4-reference-policy.json. Neither modern reference syntax observations nor matching appendix bodies establish whole historical conformance.
+
+## Evidence
+
+Nineteen focused tests first produced13 failures and6 passes. After correction all19 pass:10 generic follower/owner/span cases,3 base-member projections and6 malformed/token/category neighbors. Four further tests prove independent omission, explicit feature dependency and selected later factories while retaining partial status. Eight Roslyn5.0.0 LanguageVersion.CSharp4 syntax observations agree on binary expressions, type-argument ranges and anonymous projection ranges after supplementary trivia. These are syntax observations, not semantic compilation or historical compiler equivalence.
+
+Full solution:5,789 normal plus3,733 oracle =9,522 passed, zero failures/skips. Command: `dotnet test CSNitrogen.slnx --no-restore -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false`. The initial reference-test build needed a RawKind comparison rather than an unavailable extension import; no product failure is inferred from that build correction. Four grammar generators reproduce existing bytes, all125 dependency input pins match, and independent source extraction and alternative matrix checks reproduce458/1181 and1164 respectively. Source pins were refreshed third-then-second without admission logic changes. Whole normative context/owner closure, CSharp4 admission, later-profile completeness and arbitrary runtime factories remain pending. Unrelated benchmarks are preserved.
