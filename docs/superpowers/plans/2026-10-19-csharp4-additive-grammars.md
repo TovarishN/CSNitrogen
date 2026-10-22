@@ -53,6 +53,7 @@ Consumes reviewed Task1 seam evidence. Produces csharp4.named-arguments, csharp4
 - [ ] Finish remaining lexical, directive, declaration, expression and unsafe normative context differences; candidate body matches alone do not establish review.
 - [x] Implement the source-defined named-constructor-argument attribute delta (main7855/appendix9152): reuse the optional ArgumentName slot, preserve PositionalAttributeArgument.Value, check constructor label order/identity separately from named members and add typed/span/omission evidence.
 - [x] Review §17 target/expression categories: extend the existing third-version target recognition and expression-normalization boundary only where fourth source7850–7859 agrees; preserve applicability/constantness exclusions and predecessor contracts.
-- [ ] Complete scoped source dispositions, representative alternative-specific cases and mutation checks while retaining every normalization/semantic exclusion.
+- [x] Link and execute all1164 non-placeholder alternatives (955production+209finite), with1142 exact inherited references and22 source-specific cases; validate17 inheritance markers/135refs and fixture mutations.
+- [ ] Complete remaining normative-context dispositions and the actual source-to-generated-owner crosswalk while retaining every normalization/semantic exclusion. Passing matrix cases alone are not admission.
 - [ ] Resolve any actual source-authority, public API or core mechanism decision with concrete evidence before dependent work.
 - [ ] Only after closure, create an independent fail-closed source/factory/policy/evidence contract, verify actual factory identity and preserve later/custom partial status.
