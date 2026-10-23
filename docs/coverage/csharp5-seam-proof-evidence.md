@@ -38,3 +38,28 @@ The isolated proof passes38 tests, zero failures/skips. Full solution: 10,026 pa
 ## Required decision
 
 See ../superpowers/specs/2026-10-23-csharp5-await-context-decision.md. Production Task2 and source-admission Task3 remain blocked on a scoped mechanism/API direction and subsequent implementation evidence.
+
+## Review and execution rulings
+
+Fresh whole-branch review (gpt-6-astra/high, a158cc5..91d9ace) found no Critical/Important issues and approved this bounded proof for integration. It did not approve production CSharp5. The reviewer inspected code and generated contracts read-only; verification execution above was performed by the implementer.
+
+Deferred minors: paired await(M()) cases do not directly assert Operand (M()) (the separate unary test uses await M(x)); independent omission checks do not directly reassert surviving typed fields. Both must be considered in the production context acceptance work.
+
+Rulings made during execution, with costs if wrong:
+
+1. Use an isolated test assembly because input-path registration prevents a second namespace in the existing oracle assembly; cost: an extra build/test assembly.
+2. Retain passing observations after the genuine context RED rather than ship wrong typed owners; cost: production is delayed for the decision.
+3. Correct the nested non-async delegate lexical expectation from invocation to await based on source/reference evidence; cost: revisiting the nested context boundary if later evidence differs.
+4. Retain escaped/verbatim mismatches explicitly without claiming the helper is suitable; cost: spelling-specific work remains before production.
+
+Reviewer set-aside rulings:
+
+- Production context correctness remains unresolved because no production factory changes; cost: delayed production support.
+- Complete spelling/suffix/nesting coverage remains a future acceptance gate because this proof is bounded; cost: more production cases.
+- Catch/finally/lock/unsafe/ref-out/query enforcement remains future source-local validation; cost: source closure delayed.
+- Memoization/recovery/incremental/core APIs require design and proof because no core implementation ships; cost: additional core work.
+- Unicode selector/source inventory/admission remain Tasks2/3 because contract approval alone does not implement them; cost: CSharp5 stays partial.
+- Awaitability/task identity/caller substitution/state machines remain semantic exclusions; cost: separate semantic implementation.
+- Reviewer verification was code-only by assignment; implementer ran10026 tests and input checks in-session; cost: no second independent execution.
+
+The active plan workspace remains while Tasks2/3 await a mechanism decision. No broader task completion is claimed.

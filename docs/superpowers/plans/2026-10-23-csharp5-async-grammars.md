@@ -33,7 +33,7 @@ Preserve CSharp1–4 admission and unrelated benchmarks. No sibling Nitrogen wri
 - [x] Add optional marker seams in the two test copies and independent function/await modules; assert typed children, absent fields, original spans and independent omission. Expected: grammar construction passes without a core/API change, or exact blocking diagnostic is retained.
 - [x] Test paired `await(M())` invocation versus await expression in ordinary/async methods, including mixed files and nested functions. Expected: each authored context yields the right typed owner; a uniform wrong tree is a failed contract, not acceptance evidence. Result: desired contract RED in three ordinary contexts; observation harness and decision proposal retained as the explicit fallback below.
 - [x] If existing composition cannot express that distinction, retain a passing observation harness plus the desired-contract RED evidence and write a concrete API/core/source decision proposal before dependent production work.
-- [ ] Run focused proof, independent syntax observations and full solution; verify predecessor admission and generator/dependency stability. Commit and obtain one fresh whole-branch review before publishing/merging the bounded slice.
+- [x] Run focused proof, independent syntax observations and full solution; verify predecessor admission and generator/dependency stability. Commit and obtain one fresh whole-branch review before publishing/merging the bounded slice.
 
 ## Task 2: production async capabilities and approved Unicode5 selector
 
