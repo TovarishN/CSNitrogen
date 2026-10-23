@@ -17,7 +17,7 @@ public class CSharp4AttributeSourceTests
  [InlineData("[A(x:1=y)]class C{}")]
  public void Fourth_attribute_constructor_labels_follow_the_source_name_slot(string source)
  {
-  using var fourth=CSharpParser.Parse(new(source,"CSharp4","attribute.cs",[]));Assert.True(fourth.Accepted,string.Join(";",fourth.Issues));Assert.False(fourth.ProfileComplete);
+  using var fourth=CSharpParser.Parse(new(source,"CSharp4","attribute.cs",[]));Assert.True(fourth.Accepted,string.Join(";",fourth.Issues));Assert.True(fourth.ProfileComplete);
   using var third=CSharpParser.Parse(new(source,"CSharp3","third.cs",[]));Assert.False(third.Accepted);Assert.True(third.ProfileComplete);
  }
  [Theory]

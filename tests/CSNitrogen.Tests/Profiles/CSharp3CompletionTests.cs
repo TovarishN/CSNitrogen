@@ -13,7 +13,7 @@ public class CSharp3CompletionTests
  [Fact]public void Third_admission_preserves_predecessors_and_does_not_admit_later_or_custom_profiles()
  {
   foreach(string name in new[]{"CSharp1","CSharp2"})Assert.True(ProfileResolver.Resolve(name).Profile!.Complete);
-  foreach(string name in Enumerable.Range(4,11).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
+  foreach(string name in Enumerable.Range(5,10).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
   Assert.False(ProfileResolver.ResolveCustom("CSharp3",FeatureCatalog.Implemented.Where(f=>f.Introduced<=new Version(3,0)).Select(f=>f.Id)).Profile!.Complete);
  }
 }

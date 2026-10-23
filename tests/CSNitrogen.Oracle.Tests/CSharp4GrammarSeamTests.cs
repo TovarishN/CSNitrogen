@@ -33,7 +33,7 @@ public class CSharp4GrammarSeamTests
   Assert.True(p.Success&&!p.HasErrors,source+" :: "+string.Join(";",p.Diagnostics.ToArray().Select(d=>p.FormatMessage(d))));
   Assert.Contains(Enumerable.Range(0,p.Tree.NodeCount),n=>all.GetKindName(p.Tree.Kind(n))==kind);
   var baseline=P.CSharp4NoneProbeComposition.CreateBuilder().Build();using var absent=baseline.Parse(source,P.CSharp4NoneProbeComposition.Start);Assert.False(absent.Success&&!absent.HasErrors);
-  using var production=CSharpParser.Parse(new(source,"CSharp4","pending.cs",[]));Assert.True(production.Accepted,string.Join(";",production.Issues));Assert.False(production.ProfileComplete);Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  using var production=CSharpParser.Parse(new(source,"CSharp4","pending.cs",[]));Assert.True(production.Accepted,string.Join(";",production.Issues));Assert.True(production.ProfileComplete);Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  [Theory]
  [InlineData("class C{void M(){F(A::T);}}")][InlineData("class C{void M(){F(x:);}}")][InlineData("class C{void M(){F(:1);}}")][InlineData("class C{void M(){F(x::1);}}")]
@@ -80,7 +80,7 @@ public class CSharp4GrammarSeamTests
  [InlineData("class C<out T>{}","variance on class, main7293")]
  [InlineData("class C{void M<out T>(){}}","variance on method, main7293")]
  public void Raw_proof_overacceptance_is_rejected_by_production_context_checks(string source,string obligation)
- {var language=P.CSharp4AllProbeComposition.CreateBuilder().Build();using var p=language.Parse(source,P.CSharp4AllProbeComposition.Start);Assert.True(p.Success&&!p.HasErrors,obligation);using var production=CSharpParser.Parse(new(source,"CSharp4","context.cs",[]));Assert.False(production.Accepted);Assert.Contains(production.Issues,i=>i.Code=="CSN2040");Assert.False(production.ProfileComplete);}
+ {var language=P.CSharp4AllProbeComposition.CreateBuilder().Build();using var p=language.Parse(source,P.CSharp4AllProbeComposition.Start);Assert.True(p.Success&&!p.HasErrors,obligation);using var production=CSharpParser.Parse(new(source,"CSharp4","context.cs",[]));Assert.False(production.Accepted);Assert.Contains(production.Issues,i=>i.Code=="CSN2040");Assert.True(production.ProfileComplete);}
  [Fact]public void Positional_index_owners_and_alias_or_conditional_colons_remain_unchanged()
  {
   const string source="class C{object M(){F(A::T.M,p?x:y);return a[x,y]+base[x,y];}}";var language=P.CSharp4AllProbeComposition.CreateBuilder().Build();using var p=language.Parse(source,P.CSharp4AllProbeComposition.Start);Assert.True(p.Success&&!p.HasErrors);

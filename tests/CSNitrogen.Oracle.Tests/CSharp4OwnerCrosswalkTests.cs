@@ -12,8 +12,8 @@ public class CSharp4OwnerCrosswalkTests
  static string Text(JsonNode n,string key)=>n[key]?.GetValue<string>()??"";
  static string[] Strings(JsonNode? n)=>n?.AsArray().Select(v=>v!.GetValue<string>()).ToArray()??[];
  static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
- [Fact]public void Every_source_occurrence_maps_to_owners_in_the_actual_fourth_factory_without_admission()
- {Assert.Empty(Evaluate(Read("csharp4-standard-crosswalk.json")));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
+ [Fact]public void Every_source_occurrence_maps_to_owners_with_separate_snapshot_admission()
+ {Assert.Empty(Evaluate(Read("csharp4-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
  [Theory]
  [InlineData("missing","OccurrenceSet")][InlineData("duplicate","OccurrenceSet")][InlineData("invented","OccurrenceSet")]
  [InlineData("mapping","Normalization")][InlineData("body","SourceBody")][InlineData("main","MainReference")][InlineData("domain","SourceDomain")]
@@ -52,7 +52,7 @@ public class CSharp4OwnerCrosswalkTests
    case "unapproved-correction":map["sourceCorrections"]!["approved-generic-member-suffix"]!["status"]="approved";break;
    case "missing-name-seam":rows.Single(r=>Text(r!,"standardId")=="B:8854:argument-name")!["targets"]=new JsonArray("CSharp.Expressions/rule:Argument");break;
   }
-  Assert.Contains(Evaluate(map),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
+  Assert.Contains(Evaluate(map),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
  }
  internal static IReadOnlyList<string> Evaluate(JsonObject map)
  {

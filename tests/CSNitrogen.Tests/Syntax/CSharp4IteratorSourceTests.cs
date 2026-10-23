@@ -19,7 +19,7 @@ public class CSharp4IteratorSourceTests
  [InlineData("class C{object M(){yield break;return null;}}")]
  public void Fourth_source_iterator_restrictions_are_enforced_without_binding(string source)
  {
-  using var p=CSharpParser.Parse(new(source,"CSharp4","iterator.cs",[]));Assert.False(p.Accepted);Assert.Contains(p.Issues,i=>i.Code=="CSN2022");Assert.False(p.ProfileComplete);
+  using var p=CSharpParser.Parse(new(source,"CSharp4","iterator.cs",[]));Assert.False(p.Accepted);Assert.Contains(p.Issues,i=>i.Code=="CSN2022");Assert.True(p.ProfileComplete);
  }
  [Theory]
  [InlineData("class C{object M(){yield return 1;yield break;}}")]
