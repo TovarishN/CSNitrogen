@@ -2726,7 +2726,7 @@
       "title": "Co- and Contra-variance for generic delegates and interfaces",
       "introduced": "4.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/standard/generics/covariance-and-contravariance",
       "inventoryLine": 181,
       "requires": [],
@@ -2741,7 +2741,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
         "tests/CSNitrogen.Tests/Syntax/CSharp4GeneratedTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp4.variance"
@@ -2789,7 +2789,7 @@
       "title": "Named and optional arguments",
       "introduced": "4.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments",
       "inventoryLine": 180,
       "requires": [],
@@ -2805,7 +2805,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp4ProductionTests.cs",
         "tests/CSNitrogen.Tests/Syntax/CSharp4GeneratedTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp4.named-arguments",

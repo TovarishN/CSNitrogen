@@ -13,7 +13,7 @@ public class CSharp4InheritedFiniteTests
  public void Every_finite_one_of_alternative_has_positive_negative_and_original_range_witnesses(string id,string positive,string negative,string spanText,int spanStart)
  {
   const string prefix="/*𐐀*/";string source=prefix+positive;
-  using var good=CSharpParser.Parse(new(source,"CSharp4",id,[]));Assert.True(good.Accepted,id+" :: "+positive+" :: "+string.Join(";",good.Issues));Assert.False(good.ProfileComplete);
+  using var good=CSharpParser.Parse(new(source,"CSharp4",id,[]));Assert.True(good.Accepted,id+" :: "+positive+" :: "+string.Join(";",good.Issues));Assert.True(good.ProfileComplete);
   int start=prefix.Length+spanStart;Assert.Equal(spanText,source.Substring(start,spanText.Length));
   Assert.Contains(Enumerable.Range(0,good.Tree.NodeCount),n=>good.Tree.Span(n).Start==start&&good.Tree.Span(n).Length==spanText.Length);
   using var bad=CSharpParser.Parse(new(prefix+negative,"CSharp4",id,[]));Assert.False(bad.Accepted,id+" :: "+negative);

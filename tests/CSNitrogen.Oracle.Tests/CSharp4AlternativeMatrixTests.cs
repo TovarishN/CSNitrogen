@@ -13,7 +13,7 @@ public class CSharp4AlternativeMatrixTests
  static readonly string[] Domains=["lexical","expression","statement","unsafe","declaration","finite"];
  static string Corpus(string d)=>d=="finite"?"Corpus/CSharp3/finite-alternative-cases.json":$"Corpus/CSharp3/{d}-production-cases.json";
  [Fact]public void Every_fourth_nonplaceholder_alternative_has_exact_source_and_fixture_provenance()
- {Assert.Empty(Evaluate(Read("Corpus/CSharp4/alternative-witness-matrix.json")));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("Corpus/CSharp4/alternative-witness-matrix.json")));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
  [Theory]
  [InlineData("missing","CaseSet")][InlineData("duplicate","CaseSet")][InlineData("invented","CaseSet")]
  [InlineData("source","SourceIdentity")][InlineData("alternative","AlternativeHash")][InlineData("parent","OccurrenceLink")]
@@ -46,7 +46,7 @@ public class CSharp4AlternativeMatrixTests
     else rows[0]!["source"]="class Changed{}";
     specific=Encoding.UTF8.GetBytes(payload.ToJsonString());break;
   }
-  Assert.Contains(Evaluate(matrix,specific),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
+  Assert.Contains(Evaluate(matrix,specific),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
  }
  internal static IReadOnlyList<string> Evaluate(JsonObject matrix,byte[]? specificBytes=null)
  {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp4",
-  "status": "source-context-review-in-progress",
+  "status": "verified",
   "primary": {
     "title": "C# Language Specification Version4.0",
     "documentNotice": "Microsoft Corporation,1999\u20132010",
@@ -14,7 +14,7 @@
   "extraction": {
     "method": "macOS textutil -convert txt",
     "textSha256": "9a648424826386bb4031102bdf0ab8c3f2e02f7f82b8732567b120a60d030aed",
-    "scope": "All458 appendix grammar occurrences and1181 alternative identities indexed with main-text references; bounded lexical/directive and attribute prose reviewed. Neither whole-prose conformance nor source admission."
+    "scope": "All458 appendix occurrences/1181 alternatives and268 normalized main-text difference dispositions reviewed for the declared normalized syntax contract; independent pinned admission required."
   },
   "unicode": {
     "status": "approved",
@@ -25,5 +25,14 @@
     "authority": "User explicitly approved Unicode4 scalar continuity on2026-10-19; repeated Version4.0 Unicode3 citation treated as informational.",
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e"
   },
-  "completion": "CSharp4 stays partial. Named arguments including attribute constructor labels, optional parameters, variance and approved Unicode4 scalar continuity are implemented; remaining source context/alternative closure and independent admission are pending."
+  "completion": "Reviewed normalized Version4 syntax admission requires the independent exact source/factory/policy/evidence ledger and admitted CSharp3. Binding, general modifier/type legality, inferred types, control flow and runtime behavior remain excluded; later/custom profiles remain partial. Publisher-hosted byte equivalence remains unverified.",
+  "normalizedExclusions": [
+    "semantic-binding-and-inference",
+    "general-modifier-compatibility-and-production-finite-sets",
+    "accessibility-applicability-and-ordering",
+    "explicit-pointer-type-argument-legality",
+    "variance-safety-and-conversions",
+    "constantness-and-default-value-type-legality",
+    "control-flow-analysis-and-runtime-execution"
+  ]
 }

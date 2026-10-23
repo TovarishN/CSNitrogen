@@ -16,7 +16,7 @@ public class CSharp4ExpressionDeltaTests
  public void Fourth_generic_followers_retain_type_arguments_and_original_expression_spans(string expression,string rootKind,string genericKind,string genericText)
  {
   string source="/*𐐀*/unsafe class C{object M(){return "+expression+";}}";
-  using var p=CSharpParser.Parse(new(source,"CSharp4","follower.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  using var p=CSharpParser.Parse(new(source,"CSharp4","follower.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
   int start=source.IndexOf(expression,StringComparison.Ordinal);
   int root=Assert.Single(Enumerable.Range(0,p.Tree.NodeCount),n=>Kind(n)==rootKind&&p.Tree.Span(n).Start==start&&p.Tree.Span(n).Length==expression.Length);
   int generic=Assert.Single(Enumerable.Range(0,p.Tree.NodeCount),n=>Kind(n)==genericKind&&source.Substring(p.Tree.Span(n).Start,p.Tree.Span(n).Length)==genericText);

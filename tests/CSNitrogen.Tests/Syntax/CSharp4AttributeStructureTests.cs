@@ -58,8 +58,8 @@ public class CSharp4AttributeStructureTests
   using var p=language.Parse("[A(x:1)]class C{}",CSharp4Composition.Start);Assert.True(p.Success&&!p.HasErrors);
  }
  [Theory][InlineData("CSharp4")][InlineData("CSharp5")][InlineData("CSharp7_3")][InlineData("CSharp14")]
- public void Later_factories_select_the_named_argument_attribute_extension_without_claiming_admission(string profile)
- {using var p=CSharpParser.Parse(new("[A(x:1,Field=2)]class C{}",profile,"later.cs",[]));Assert.True(p.Accepted);Assert.False(p.ProfileComplete);}
+ public void Factories_select_the_attribute_extension_with_only_fourth_snapshot_admitted(string profile)
+ {using var p=CSharpParser.Parse(new("[A(x:1,Field=2)]class C{}",profile,"later.cs",[]));Assert.True(p.Accepted);Assert.Equal(profile=="CSharp4",p.ProfileComplete);}
  [Theory][InlineData("[A(x:")][InlineData("[A(x:1,")][InlineData("[A(x:1,Field=")]
  public void Incomplete_attribute_labels_report_errors_without_policy_exceptions(string source)
  {using var p=CSharpParser.Parse(new(source,"CSharp4","incomplete.cs",[]));Assert.False(p.Accepted);Assert.NotEmpty(p.Issues);}

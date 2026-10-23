@@ -39,11 +39,11 @@ public class CanonicalCoverageTests
     [Fact]
     public void Later_and_custom_profiles_do_not_inherit_historical_completeness()
     {
-        foreach(string name in Enumerable.Range(4,11).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
+        foreach(string name in Enumerable.Range(5,10).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var profile=ProfileResolver.Resolve(name).Profile!;
             Assert.False(profile.Complete);
-            if(name!="CSharp4")Assert.NotEmpty(profile.MissingFeatures);
+            Assert.NotEmpty(profile.MissingFeatures);
         }
         var custom=ProfileResolver.ResolveCustom("CSharp1",FeatureCatalog.Implemented.Select(f=>f.Id));
         Assert.Empty(custom.Issues);Assert.False(custom.Profile!.Complete);Assert.Null(custom.Profile.Version);

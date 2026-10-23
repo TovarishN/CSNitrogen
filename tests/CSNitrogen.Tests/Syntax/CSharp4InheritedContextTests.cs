@@ -44,7 +44,7 @@ public class CSharp4InheritedContextTests
  [Theory][MemberData(nameof(Cases))]
  public void Predecessor_context_witnesses_execute_with_explicit_fourth_differences(string group,string source,bool expected)
  {
-  using var p=CSharpParser.Parse(new(source,"CSharp4",group+".cs",[]));Assert.True(p.Accepted==expected,source+" :: "+string.Join(";",p.Issues));Assert.False(p.ProfileComplete);Assert.Equal(source.Length,p.MaskedText.Length);
+  using var p=CSharpParser.Parse(new(source,"CSharp4",group+".cs",[]));Assert.True(p.Accepted==expected,source+" :: "+string.Join(";",p.Issues));Assert.True(p.ProfileComplete);Assert.Equal(source.Length,p.MaskedText.Length);
   foreach(int n in Enumerable.Range(0,p.Tree.NodeCount)){var span=p.Tree.Span(n);Assert.InRange(span.Start,0,source.Length);Assert.InRange(span.Length,0,source.Length-span.Start);}
   foreach(var issue in p.Issues){Assert.InRange(issue.Span.Start,0,source.Length);Assert.InRange(issue.Span.Length,0,source.Length-issue.Span.Start);}
  }

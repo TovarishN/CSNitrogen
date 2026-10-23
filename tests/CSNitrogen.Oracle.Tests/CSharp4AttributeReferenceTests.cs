@@ -14,7 +14,7 @@ public class CSharp4AttributeReferenceTests
  public void Pinned_fourth_syntax_observations_agree_on_attribute_label_and_value_children(string source)
  {
   var reference=CSharpSyntaxTree.ParseText(source,new CSharpParseOptions(LanguageVersion.CSharp4));Assert.DoesNotContain(reference.GetDiagnostics(),d=>d.Severity==Microsoft.CodeAnalysis.DiagnosticSeverity.Error);
-  using var parsed=CSharpParser.Parse(new(source,"CSharp4","reference.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.False(parsed.ProfileComplete);
+  using var parsed=CSharpParser.Parse(new(source,"CSharp4","reference.cs",[]));Assert.True(parsed.Accepted,string.Join(";",parsed.Issues));Assert.True(parsed.ProfileComplete);
   var expected=reference.GetRoot().DescendantNodes().OfType<AttributeArgumentSyntax>().ToArray();
   var actual=Enumerable.Range(0,parsed.Tree.NodeCount).Where(n=>PositionalAttributeArgumentNode.Is(parsed.Tree,n)||NamedAttributeArgumentNode.Is(parsed.Tree,n)).ToArray();Assert.Equal(expected.Length,actual.Length);
   for(int i=0;i<expected.Length;i++)

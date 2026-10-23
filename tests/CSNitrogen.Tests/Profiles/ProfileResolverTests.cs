@@ -8,7 +8,7 @@ public class ProfileResolverTests
         foreach(var name in Enumerable.Range(1,14).Select(i=>$"CSharp{i}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var resolution=ProfileResolver.Resolve(name); Assert.Empty(resolution.Issues); Assert.NotNull(resolution.Profile);
-            Assert.Equal(name is "CSharp1" or "CSharp2" or "CSharp3",resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
+            Assert.Equal(name is "CSharp1" or "CSharp2" or "CSharp3" or "CSharp4",resolution.Profile.Complete); Assert.Contains("foundation.empty-classes",resolution.Profile.Features);
             Assert.Contains("baseline.conditional-compilation",resolution.Profile.Features);
             Assert.Contains("Grammars/Lexical.ngr",resolution.Profile.Grammars);
             Assert.Contains("Grammars/CompilationUnits.ngr",resolution.Profile.Grammars);

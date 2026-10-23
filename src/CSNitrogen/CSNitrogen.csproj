@@ -1,4 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup><ItemGroup>
+<EmbeddedResource Include="../../docs/coverage/csharp4-reference-policy.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-reference-policy.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-standard-index.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-standard-index.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-standard-crosswalk.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-standard-crosswalk.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-source-delta-inventory.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-source-delta-inventory.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-main-text-differences.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-main-text-differences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-main-text-dispositions.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-main-text-dispositions.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-reviewed-occurrences.json" LogicalName="CSNitrogen.csharp4-artifact.csharp4-reviewed-occurrences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-normative-context-review.md" LogicalName="CSNitrogen.csharp4-review.csharp4-normative-context-review.md"/>
+<EmbeddedResource Include="../../docs/coverage/csharp4-coverage-gate.json" LogicalName="CSNitrogen.csharp4-coverage-gate.json"/>
+<EmbeddedResource Include="../../tests/Corpus/CSharp4/*.json"><LogicalName>CSNitrogen.csharp4-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-coverage-gate.json" LogicalName="CSNitrogen.csharp3-coverage-gate.json"/>
 <EmbeddedResource Include="../../tests/Corpus/CSharp3/*-production-cases.json;../../tests/Corpus/CSharp3/finite-alternative-cases.json"><LogicalName>CSNitrogen.csharp3-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-reference-policy.json" LogicalName="CSNitrogen.csharp3-reference-policy.json"/>

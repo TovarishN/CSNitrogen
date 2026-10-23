@@ -13,8 +13,8 @@ public class CSharp4MainTextReviewTests
   ["optional-parameters"]=5,["named-arguments"]=21,["variance"]=20,["generic-followers"]=1,["base-projections"]=2,
   ["transcription-normalization"]=6,["unicode-continuity"]=1,["contextual-name-binding"]=3,["documentation-trivia"]=8,["retained-semantic-or-editorial-boundary"]=201
  };
- [Fact]public void Every_main_text_difference_has_a_pinned_explicit_disposition_without_source_admission()
- {Assert.Empty(Evaluate(Read("csharp4-main-text-dispositions.json")));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
+ [Fact]public void Every_main_text_difference_has_a_pinned_disposition_and_separate_snapshot_admission()
+ {Assert.Empty(Evaluate(Read("csharp4-main-text-dispositions.json")));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);}
  [Theory]
  [InlineData("missing","RegionSet")][InlineData("duplicate","RegionSet")][InlineData("invented","RegionSet")]
  [InlineData("source","SourceIdentity")][InlineData("index","SourceIdentity")]
@@ -45,7 +45,7 @@ public class CSharp4MainTextReviewTests
    case "report-bytes":report=[];break;
    case "promoted":map["status"]="admitted";break;
   }
-  Assert.Contains(Evaluate(map,report),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.False(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
+  Assert.Contains(Evaluate(map,report),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.True(ProfileResolver.Resolve("CSharp4").Profile!.Complete);
  }
  internal static IReadOnlyList<string> Evaluate(JsonObject map,byte[]? reportBytes=null)
  {

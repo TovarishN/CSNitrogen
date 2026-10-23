@@ -22,7 +22,7 @@ public class CSharp4ProductionTests
  public void Fourth_additions_are_available_from_four_onward_but_not_three(string source)
  {
   foreach(string profile in new[]{"CSharp4","CSharp7_3","CSharp14"})
-  {using var p=CSharpParser.Parse(new(source,profile,"four.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.False(p.ProfileComplete);}
+  {using var p=CSharpParser.Parse(new(source,profile,"four.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.Equal(profile=="CSharp4",p.ProfileComplete);}
   using var third=CSharpParser.Parse(new(source,"CSharp3","third.cs",[]));Assert.False(third.Accepted);Assert.True(third.ProfileComplete);
  }
  [Theory]

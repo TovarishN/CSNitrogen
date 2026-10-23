@@ -41,7 +41,7 @@ internal static class CoverageContract
         var requested=syntax.Values.Where(f=>f.Introduced<=version).OrderBy(f=>f.Id,StringComparer.Ordinal).ToArray();
         var missing=requested.Where(f=>!map.TryGetValue(f.Id,out var m) || !m.Capabilities.All(selectedSet.Contains) || !m.Policies.All(policySet.Contains))
             .Select(f=>f.Id).ToArray();
-        bool complete=version.Major is 1 or 2 or 3 && version.Minor==0 && sourceReviewed && issues.Count==0 && missing.Length==0
+        bool complete=version.Major is 1 or 2 or 3 or 4 && version.Minor==0 && sourceReviewed && issues.Count==0 && missing.Length==0
             && requested.All(f=>f.Reviewed && f.Status=="verified") && policySet.Contains(version.Major==1?"unicode-3.0-bmp":"unicode-4.0-scalar") && !policySet.Contains("unicode-current-bmp");
         return new(Array.AsReadOnly(missing),Array.AsReadOnly(issues.OrderBy(i=>i.Code,StringComparer.Ordinal).ThenBy(i=>i.Message,StringComparer.Ordinal).ToArray()),complete);
     }
