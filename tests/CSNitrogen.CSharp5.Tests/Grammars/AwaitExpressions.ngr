@@ -1,0 +1,8 @@
+syntax module Probe.CSharp5AwaitExpressions
+{
+ token AwaitKeyword = CSharp.Lexical.Contextual("await");
+ extend syntax CSharp.Expressions.Expression
+ {
+  | AwaitExpression = Keyword:AwaitKeyword Operand:Expression precedence 170
+ }
+}

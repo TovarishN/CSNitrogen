@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp5",
-  "status": "source-contract-decision-pending",
+  "status": "source-contract-approved-context-decision-pending",
   "primary": {
     "title": "Microsoft C# Language Specification Version5.0",
     "url": "https://download.microsoft.com/download/0/b/d/0bda894f-2ccd-4c2c-b5a7-4eb1171962e5/CSharp%20Language%20Specification.docx",
@@ -18,10 +18,13 @@
     "scope": "Source-contract preflight only; no whole-source index or admission"
   },
   "unicode": {
-    "status": "pending",
+    "status": "approved",
     "primaryReference": "Unicode3.0 at main1501 and reference10131",
     "recommendation": "Retain frozen Unicode4 scalar continuity from admitted CSharp2/3/4; literalUnicode3 would reject existing identifiers",
-    "decision": "../superpowers/specs/2026-10-23-csharp5-source-contract-decision.md"
+    "decision": "../superpowers/specs/2026-10-23-csharp5-source-contract-decision.md",
+    "policy": "unicode-4.0-scalar",
+    "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
+    "authority": "User explicitly approved Unicode4 scalar continuity for CSharp5 on2026-10-23; repeated Unicode3 reference treated as informational."
   },
-  "completion": "CSharp5 remains partial. No fifth-version production grammar, Unicode policy or source admission change in this preflight."
+  "completion": "CSharp5 remains partial. No fifth-version production grammar, Unicode policy or source admission change in this bounded test-only proof."
 }
