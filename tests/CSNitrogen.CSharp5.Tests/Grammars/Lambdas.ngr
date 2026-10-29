@@ -8,6 +8,6 @@ syntax module CSharp.Lambdas
  syntax LambdaBody = CSharp.Statements.Block / CSharp.Expressions.Expression;
  extend syntax CSharp.Expressions.Expression
  {
-  | LambdaExpression = Async:CSharp.AnonymousMethods.AsyncMarker? Parameters:LambdaSignature "=>" Body:LambdaBody precedence 10 right
+  | LambdaExpression = (&CSharp.AnonymousMethods.AsyncMarker with(CSharp.Core.Await = true) (Async:CSharp.AnonymousMethods.AsyncMarker? Parameters:LambdaSignature "=>" Body:LambdaBody)) / (!CSharp.AnonymousMethods.AsyncMarker (Async:CSharp.AnonymousMethods.AsyncMarker? Parameters:LambdaSignature "=>" Body:LambdaBody)) precedence 10 right
  }
 }

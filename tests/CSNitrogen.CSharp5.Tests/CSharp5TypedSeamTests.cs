@@ -38,7 +38,7 @@ public class CSharp5TypedSeamTests
   var full=P.CSharp5AllProbeComposition.CreateBuilder().Build();Assert.Equal(32,full.Modules.Count);var builder=new LanguageBuilder();foreach(var m in full.Modules)if(m.Name!=omitted)builder.Add(m);var language=builder.Build();
   using var ordinary=language.Parse("interface I<out T>{void M(int x=1);}class C{void N(){F(x:1);}}",P.CSharp5AllProbeComposition.Start);Assert.True(ordinary.Success&&!ordinary.HasErrors);
   string source=omitted=="Probe.CSharp5AwaitExpressions"?"class C{async void M(){await M();}}":"class C{object f=async x=>x;}";using var absent=language.Parse(source,P.CSharp5AllProbeComposition.Start);Assert.False(absent.Success&&!absent.HasErrors);
-  string survivor=omitted=="Probe.CSharp5AwaitExpressions"?"class C{object f=async x=>x;}":"class C{void M(){await M();}}";using var retained=language.Parse(survivor,P.CSharp5AllProbeComposition.Start);Assert.True(retained.Success&&!retained.HasErrors);
+  string survivor=omitted=="Probe.CSharp5AwaitExpressions"?"class C{object f=async x=>x;}":"class C{void M(){await(M());}}";using var retained=language.Parse(survivor,P.CSharp5AllProbeComposition.Start);Assert.True(retained.Success&&!retained.HasErrors);
  }
  [Theory]
  [InlineData("class C{async M(){return null;}}")][InlineData("class C{async async(){return null;}}")]
@@ -47,4 +47,19 @@ public class CSharp5TypedSeamTests
  [InlineData("class C{async𐐀 M(){return null;}}")]
  public void Function_marker_lookahead_does_not_steal_ordinary_identifier_categories(string source)
  {var language=P.CSharp5AllProbeComposition.CreateBuilder().Build();using var p=language.Parse(source,P.CSharp5AllProbeComposition.Start);Assert.True(p.Success&&!p.HasErrors,source);Assert.DoesNotContain(Enumerable.Range(0,p.Tree.NodeCount),n=>language.GetKindName(p.Tree.Kind(n)) is "AsyncModifier" or "AsyncFunction");}
+ [Theory][InlineData("Probe.CSharp5AsyncFunctions")][InlineData("Probe.CSharp5AwaitExpressions")]
+ public void Independent_omission_preserves_original_function_field_types_and_parent_links(string omitted)
+ {
+  var builder=new LanguageBuilder();foreach(var module in P.CSharp5AllProbeComposition.CreateBuilder().Build().Modules)if(module.Name!=omitted)builder.Add(module);var language=builder.Build();
+  const string source="/*𐐀*/class C{void M(int x){F(x);}object f=(int y)=>y;object g=delegate(int z){return z;};}";
+  using var p=language.Parse(source,P.CSharp5AllProbeComposition.Start);Assert.True(p.Success&&!p.HasErrors);
+  int Find(string kind)=>Assert.Single(Enumerable.Range(0,p.Tree.NodeCount),n=>language.GetKindName(p.Tree.Kind(n))==kind);
+  var method=SyntaxView.Cast<P.MethodDeclarationNode>(p.Tree,Find("MethodDeclaration"));P.ParameterListNode args=method.Parameters;SyntaxNode methodBody=method.Body;
+  Assert.Equal("(int x)",Text(args.Span));Assert.Equal("{F(x);}",Text(methodBody.Span));Assert.Equal(method.Index,p.Tree.Parent(methodBody.Index));
+  var lambda=SyntaxView.Cast<P.LambdaExpressionExpression>(p.Tree,Find("LambdaExpression"));SyntaxNode signature=lambda.Parameters;SyntaxNode body=lambda.Body;
+  Assert.Equal("(int y)",Text(signature.Span));Assert.Equal("y",Text(body.Span));Assert.Equal(lambda.Index,p.Tree.Parent(body.Index));
+  var anonymous=SyntaxView.Cast<P.AnonymousMethodExpressionExpression>(p.Tree,Find("AnonymousMethodExpression"));Optional<P.AnonymousParametersNode> parameters=anonymous.Parameters;P.BlockNode block=anonymous.Body;
+  Assert.True(parameters.HasValue);Assert.Equal("(int z)",Text(parameters.Value.Span));Assert.Equal("{return z;}",Text(block.Span));Assert.Equal(anonymous.Index,p.Tree.Parent(block.Index));
+  string Text(TextSpan span)=>source.Substring(span.Start,span.Length);
+ }
 }

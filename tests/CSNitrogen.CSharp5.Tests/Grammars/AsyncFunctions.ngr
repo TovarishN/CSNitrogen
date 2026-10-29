@@ -1,9 +1,13 @@
 syntax module Probe.CSharp5AsyncFunctions
 {
- token AsyncKeyword = CSharp.Lexical.Contextual("async");
+ token AsyncKeyword = "async" !(CSharp.Lexical.IdPart / CSharp.Lexical.ScalarPart / CSharp.Lexical.UnicodePart);
+ extend syntax CSharp.Declarations.AsyncMemberStart
+ {
+  | AsyncHeader = CSharp.Attributes.AttributeSection* (!AsyncKeyword CSharp.Declarations.Modifier)* AsyncKeyword &(with(CSharp.Core.Await = true) (CSharp.Declarations.Modifier* CSharp.Declarations.MethodDeclaration))
+ }
  extend syntax CSharp.Declarations.Modifier
  {
-  | AsyncModifier = Keyword:AsyncKeyword &(CSharp.Declarations.Modifier* CSharp.Declarations.MethodDeclaration)
+  | AsyncModifier = Keyword:AsyncKeyword &(with(CSharp.Core.Await = true) (CSharp.Declarations.Modifier* CSharp.Declarations.MethodDeclaration))
  }
  extend syntax CSharp.AnonymousMethods.AsyncMarker
  {
