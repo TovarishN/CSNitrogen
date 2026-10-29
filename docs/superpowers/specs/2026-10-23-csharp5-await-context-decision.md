@@ -1,6 +1,6 @@
 # CSharp5 await context mechanism decision
 
-Status: proposed; user decision required before sibling-core work or a different public tree contract. Unicode4 scalar continuity is already approved and is not reopened.
+Status: user approved scoped Nitrogen context design/prototype on 2026-10-29. Concrete production design is 2026-10-29-scoped-parse-context-design.md; breaking core API or different public tree contracts remain unapproved. Unicode4 scalar continuity is already approved and is not reopened.
 
 ## Concrete contract failure
 
