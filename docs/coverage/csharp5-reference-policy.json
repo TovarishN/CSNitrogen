@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp5",
-  "status": "source-contract-approved-context-decision-pending",
+  "status": "source-contract-approved-scoped-core-reviewed-integration-pending",
   "primary": {
     "title": "Microsoft C# Language Specification Version5.0",
     "url": "https://download.microsoft.com/download/0/b/d/0bda894f-2ccd-4c2c-b5a7-4eb1171962e5/CSharp%20Language%20Specification.docx",
@@ -26,5 +26,5 @@
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
     "authority": "User explicitly approved Unicode4 scalar continuity for CSharp5 on2026-10-23; repeated Unicode3 reference treated as informational."
   },
-  "completion": "CSharp5 remains partial. No fifth-version production grammar, Unicode policy or source admission change in this bounded test-only proof."
+  "completion": "Scoped core design explicitly approved2026-10-29; production Nitrogen support reviewed and verified in PR94. The isolated actual-grammar proof passes55 checks, including header/body context, raw and escaped spellings, typed fields, module omission and incremental edits. Fifth production grammar registration, Unicode selector, source-local policy and independent source admission remain pending; CSharp5 remains partial."
 }
