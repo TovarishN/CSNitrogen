@@ -1,0 +1,42 @@
+{
+  "outputs": {
+    "docs/coverage/historical-unicode-data.json": "9a207ff799f8a1d16d134482b6b0ed3be3f567ad63d7c8f517c755878fd724da",
+    "docs/coverage/csharp2-unicode-data.json": "cd53d8bb41a9022cb0d716989e50e2595cf72ed55a0c39fc6384c502627afc97",
+    "docs/coverage/unicode-data.json": "c3f296f3c3fbf237520c15f801fa3f7755b3daff94b7a81f9971191a267653de",
+    "docs/coverage/reserved-keywords.txt": "6473596d40946888d11f8979acee185fee9f64cd63e326fd27ed05bbcb43c3e7",
+    "src/CSNitrogen/Parsing/HistoricalUnicodeTables.g.cs": "8d5796736ed15c03e8eb7949123b88771af58c39b4ee70bf0ff77f03c043165f",
+    "src/CSNitrogen/Parsing/CSharp2UnicodeTables.g.cs": "67e517372ebf2fcd8c761b6212d59399e1ba59a35ccddd6b659b739eee25fbbf",
+    "src/CSNitrogen.Syntax/Grammars/Lexical.ngr": "a9da2f66268d3fb1110297a9566e9a1d12c4e8bd1dcb471db34ff5e2ba4ab558",
+    "src/CSNitrogen.Syntax/Grammars/Attributes.ngr": "fb4eef485934703ad3da340b29161e553be07e07ed4f199799542045ec8d7279",
+    "src/CSNitrogen.Syntax/Grammars/GlobalTargetsCurrent.ngr": "b80e4ebdf9bd9cd1a1dc6746fbf96767c8c1e6e4b9adfeca6db256e077a3bc38",
+    "src/CSNitrogen.Syntax/Grammars/GlobalTargetsHistorical.ngr": "a8a96e70359b6568ac80d5a7822e0f1562e1c63b4ccbeeee411d67dc570f5e20",
+    "src/CSNitrogen.Syntax/Grammars/GlobalTargetsSecond.ngr": "c419c13c19267e396473daa907e637adbb208850321f786d576ea943c2cdf7fd",
+    "src/CSNitrogen.Syntax/Grammars/GlobalTargetsThird.ngr": "b3eb871626788dfe9853b74ea7fe57173d44048d9d7c6b63e5a3699dea7b95b3"
+  },
+  "commands": [
+    [
+      "eng/generate-historical-unicode.py"
+    ],
+    [
+      "eng/generate-csharp2-unicode.py"
+    ],
+    [
+      "eng/generate-lexical-grammar.py",
+      "docs/coverage/unicode-data.json"
+    ],
+    [
+      "eng/generate-attribute-targets.py"
+    ],
+    [
+      "eng/generate-csharp2-global-targets.py"
+    ],
+    [
+      "eng/generate-csharp2-global-targets.py",
+      "--profile",
+      "CSharp3"
+    ],
+    [
+      "eng/generate-contextual-identifiers.py"
+    ]
+  ]
+}
