@@ -3,6 +3,27 @@ namespace CSNitrogen.Tests.Syntax;
 public class CSharp5ProductionTests
 {
  [Theory]
+ [InlineData("x=>x")]
+ [InlineData("async ()=>1")]
+ [InlineData("from x in xs select x")]
+ public void Await_requires_parentheses_around_lambda_and_query_operands(string operand)
+ {
+  string source="/*𐐀*/class C{async void M(){await "+operand+";}}";
+  using var direct=CSharpParser.Parse(new(source,"CSharp5","operand5.cs",[]));
+  Assert.False(direct.Accepted);
+  Assert.Contains(direct.Issues,i=>i.Code=="CSN2030"&&i.Span.Start==source.IndexOf(operand,StringComparison.Ordinal)&&i.Span.Length==operand.Length);
+ }
+ [Theory]
+ [InlineData("x=>x")]
+ [InlineData("async ()=>1")]
+ [InlineData("from x in xs select x")]
+ public void Await_accepts_parenthesized_lambda_and_query_operands_without_type_claims(string operand)
+ {
+  string source="class C{async void M(){await ("+operand+");}}";
+  using var p=CSharpParser.Parse(new(source,"CSharp5","parenthesized5.cs",[]));
+  Assert.True(p.Accepted,string.Join(";",p.Issues));
+ }
+ [Theory]
  [InlineData("class C{void M(){await(M());}}","InvocationExpression")]
  [InlineData("class C{async void M(){await(M());}}","AwaitExpression")]
  [InlineData("class C{object f=()=>await(M());}","InvocationExpression")]

@@ -26,7 +26,7 @@
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
     "authority": "User explicitly approved Unicode4 scalar continuity for CSharp5 on2026-10-23; repeated Unicode3 reference treated as informational."
   },
-  "completion": "Core PR94 merged b3494870dfb5f187bae9065227d4ef7f742aa048; all141 source hashes verified. Production async-function/await capabilities and frozen Unicode4 scalar selection are implemented with source-local checks and passing predecessor guards. Current full suite:6248 main,3788 oracle,55 scoped proof tests; CSharp5 remains partial pending independent historical source/factory/policy/evidence admission. Task identity, awaitability, caller substitution, state machines and execution remain semantic exclusions.",
+  "completion": "Core PR94 merged b3494870dfb5f187bae9065227d4ef7f742aa048; all141 source hashes verified. Production async-function/await capabilities and frozen Unicode4 scalar selection are implemented with source-local checks and passing predecessor guards. Current full suite:6254 main,3788 oracle,55 scoped proof tests; CSharp5 remains partial pending independent historical source/factory/policy/evidence admission. Task identity, awaitability, caller substitution, state machines and execution remain semantic exclusions.",
   "productionSourcePolicies": {
     "csharp5.source-context-checks": [
       "Parsing/CSharp5ContextPolicy.cs"
