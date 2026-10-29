@@ -78,7 +78,7 @@ public class CSharp3InheritedAlternativeTests
      string marker=Text(link!,"alternativeId");actual.Add(marker);
      if(Text(link!,"status")!="source-mapped")errors.Add("link status");
      var expected=rows.Where(r=>r!["line"]!.GetValue<int>()<heading["line"]!.GetValue<int>()&&Text(r,"name")==Text(heading,"name")).SelectMany(r=>r!["alternatives"]!.AsArray()).Where(a=>Text(a!,"kind")!="inherited-placeholder").Select(a=>Text(a!,"id")).Order().ToArray();
-     var source=link["sourceAlternativeIds"]!.AsArray().Select(n=>n!.GetValue<string>()).Order().ToArray();references+=source.Length;
+     var source=link!["sourceAlternativeIds"]!.AsArray().Select(n=>n!.GetValue<string>()).Order().ToArray();references+=source.Length;
      if(!marker.StartsWith(id+"/",StringComparison.Ordinal)||!markers.Contains(marker)||expected.Length==0||!expected.SequenceEqual(source)||source.Distinct().Count()!=source.Length)errors.Add("inherited source set");
     }
    }

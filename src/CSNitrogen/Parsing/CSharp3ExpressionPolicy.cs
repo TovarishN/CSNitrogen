@@ -19,7 +19,7 @@ internal static class CSharp3ExpressionPolicy
     // Anonymous functions and queries are non-assignment expressions, not
     // unary/binary operands. Parentheses introduce a primary expression.
     int parent=tree.Parent(n);
-    if(parent>=0 && Kind(parent) is "UnaryExpression" or "CastExpression" or "MultiplyExpression" or "DivideExpression" or "RemainderExpression" or
+    if(parent>=0 && Kind(parent) is "UnaryExpression" or "AwaitExpression" or "CastExpression" or "MultiplyExpression" or "DivideExpression" or "RemainderExpression" or
       "AddExpression" or "SubtractExpression" or "ShiftLeftExpression" or "ShiftRightExpression" or "LessExpression" or "GreaterExpression" or
       "LessEqualExpression" or "GreaterEqualExpression" or "IsExpression" or "AsExpression" or "EqualExpression" or "NotEqualExpression" or
       "NullCoalescingExpression" or "BitAndExpression" or "BitXorExpression" or "BitOrExpression" or "AndExpression" or "OrExpression" or "PointerIndirectionExpression" or "AddressExpression")

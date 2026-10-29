@@ -43,7 +43,12 @@ public class CanonicalCoverageTests
         {
             var profile=ProfileResolver.Resolve(name).Profile!;
             Assert.False(profile.Complete);
-            Assert.NotEmpty(profile.MissingFeatures);
+            if(name=="CSharp5")
+            {
+                Assert.Empty(profile.MissingFeatures); // Candidate release capabilities do not establish historical source admission.
+                var fifth=Assert.Single(FeatureCatalog.Inventory,f=>f.Id=="csharp-5.0.asynchronous-methods");Assert.False(fifth.Reviewed);Assert.Equal("implemented",fifth.Status);
+            }
+            else Assert.NotEmpty(profile.MissingFeatures);
         }
         var custom=ProfileResolver.ResolveCustom("CSharp1",FeatureCatalog.Implemented.Select(f=>f.Id));
         Assert.Empty(custom.Issues);Assert.False(custom.Profile!.Complete);Assert.Null(custom.Profile.Version);

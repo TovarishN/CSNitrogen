@@ -39,11 +39,11 @@ Preserve CSharp1–4 admission and unrelated benchmarks. No sibling Nitrogen wri
 
 Consumes the reviewed Task1 mechanism. Produces independently selected fifth capabilities and source-local policy. This task cannot start while a Task1 core/API decision is unresolved.
 
-- [ ] Write production RED cases for methods/anonymous functions/await, contextual identities, mixed files, nested function boundaries and restriction/span/incremental behavior.
-- [ ] Apply only the proved seams/mechanism; register real grammar files in production nitrogen.json and canonical capabilities with explicit dependencies. Preserve predecessor fields and CSharp1–4 admission.
-- [ ] Extend the frozen Unicode4 selector to5 under the approved contract, with scalar/format/escaped/contextual boundary witnesses and historical lexical/directive replay.
-- [ ] Classify caller-info compiler substitution as semantic where source-supported; syntax recognition alone must not claim implementation.
-- [ ] Refresh fourth/third/second input pins in directed order, verify full gates/generators/dependency inputs and obtain fresh branch review before authorized integration. CSharp5 remains partial.
+- [x] Write production RED cases for methods/anonymous functions/await, contextual identities, mixed files, nested function boundaries and restriction/span/incremental behavior.
+- [x] Apply only the proved seams/mechanism; register real grammar files in production nitrogen.json and canonical capabilities with explicit dependencies. Preserve predecessor fields and CSharp1–4 admission.
+- [x] Extend the frozen Unicode4 selector to5 under the approved contract, with scalar/format/escaped/contextual boundary witnesses and historical lexical/directive replay.
+- [x] Classify caller-info compiler substitution as semantic where source-supported; syntax recognition alone must not claim implementation.
+- [x] Refresh fourth/third/second input pins in directed order, verify full gates/generators/dependency inputs and obtain fresh branch review before authorized integration. CSharp5 remains partial.
 
 ## Task 3: fifth historical conformance and separate source admission
 

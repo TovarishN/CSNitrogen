@@ -12,10 +12,11 @@ public static class CSharpSyntaxPolicy
         issues.AddRange(CSharp3ExpressionPolicy.Check(tree,version));
         issues.AddRange(CSharp3DeclarationPolicy.Check(tree,version));
         issues.AddRange(CSharp4ContextPolicy.Check(tree,version));
+        issues.AddRange(CSharp5ContextPolicy.Check(tree,version));
         issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
-        if(version.Major is 2 or 3 or 4)CheckIterators(tree,issues);
+        if(version.Major is 2 or 3 or 4 or 5)CheckIterators(tree,issues);
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
         string Text(int n){var span=tree.Span(n);return tree.Text.Substring(span.Start,span.Length);}
         void Later(int n,int minimum,string feature)=>issues.Add(new("CSN2003",
@@ -47,6 +48,7 @@ public static class CSharpSyntaxPolicy
                     "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or
                     "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
                     "PointerIndirectionExpression" or "AddressExpression" or "PointerMemberExpression" or "SizeOfExtendedExpression";
+                unary |= version.Major>=5&&Kind(target.Index)=="AwaitExpression";
                 if(!unary)issues.Add(new("CSN2013","An assignment target must be a unary expression; writability is a separate semantic check.",tree.Span(target.Index),IssueCategory.Syntax));
             }
             if(tree.ChildCount(n)>0 && kind is "MultiplyExpression" or "DivideExpression" or "RemainderExpression" or
@@ -151,6 +153,7 @@ public static class CSharpSyntaxPolicy
             if(kind!="StatementExpression"||tree.ChildCount(n)==0)continue;
             int value=tree.Child(n,0);string expression=Kind(value);
             bool allowed=expression is "InvocationExpression" or "InitializedObjectExpression" or "ObjectCreationExpression" or "AssignmentExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression";
+            allowed |= version.Major>=5&&expression=="AwaitExpression";
             if(expression=="UnaryExpression")
             {string text=Text(value).TrimStart();allowed=text.StartsWith("++",StringComparison.Ordinal)||text.StartsWith("--",StringComparison.Ordinal);}
             if(!allowed)issues.Add(new("CSN2001","Only invocation, object creation, assignment or increment/decrement is a statement expression.",tree.Span(value),IssueCategory.Syntax));

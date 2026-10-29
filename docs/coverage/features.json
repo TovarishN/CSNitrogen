@@ -2826,10 +2826,28 @@
       "inventoryLine": 174,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
+      ],
+      "policies": [
+        "csharp5.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
+        "tests/CSNitrogen.Tests/Lexing/CSharp5UnicodeContractTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp5.async-functions",
+          "csharp5.await-expressions"
+        ],
+        "policies": [
+          "csharp5.source-context-checks"
+        ]
+      },
+      "notes": "Scoped grammar and source-local restrictions; historical source closure and independent fifth admission remain pending. Task identity, awaitability, state machines and execution are semantic exclusions."
     },
     {
       "id": "csharp-5.0.caller-info-attributes",
@@ -2844,7 +2862,8 @@
       "grammars": [],
       "policies": [],
       "fixtures": [],
-      "status": "unimplemented"
+      "status": "unimplemented",
+      "notes": "Microsoft Version5 main8767/8856-8876 uses existing attribute/default-parameter syntax. Compiler-supplied caller information is semantic behavior and remains unimplemented; recognizing these attributes is not caller substitution."
     },
     {
       "id": "csharp-5.0.foreach-loop-was-changed-to-generates-a-new-loop-variable-rather-than-closing-over-the-same-variable-every-time",

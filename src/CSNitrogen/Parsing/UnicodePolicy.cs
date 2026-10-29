@@ -7,7 +7,7 @@ namespace CSNitrogen.Parsing;
 
 internal static class UnicodePolicy
 {
-    internal static bool UsesUnicode4(Version version)=>version.Major is 2 or 3 or 4;
+    internal static bool UsesUnicode4(Version version)=>version.Major is 2 or 3 or 4 or 5;
     internal static bool IsHistorical(Version version)=>version.Major==1;
     internal static bool IsStart(char c,Version version)=>IsHistorical(version)?HistoricalUnicodeTables.IsStart(c):UsesUnicode4(version)?CSharp2UnicodeTables.IsStart(c):
         c=='_'||char.GetUnicodeCategory(c) is UnicodeCategory.UppercaseLetter or UnicodeCategory.LowercaseLetter or

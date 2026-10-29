@@ -320,6 +320,7 @@
         "alternative:TypeDeclaration.StructTypeDeclaration",
         "rule:Accessor",
         "rule:AccessorModifiers",
+        "rule:AsyncMemberStart",
         "rule:Bases",
         "rule:ClassDeclaration",
         "rule:ClassMember",
@@ -371,7 +372,7 @@
           "method": "Malformed_later_and_class_only_forms_are_excluded"
         }
       ],
-      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates. Additional empty type/name, accessor and alias seams are unpopulated in CSharp1; historical typed/source gates remain required."
+      "scope": "Historical source alternatives and normalized owners reviewed in csharp1-pending-normative-review.md; finite typed/context/span evidence and declared semantic exclusions. Public CSharp1 runtime profile contract is verified through explicit canonical mappings and factory/policy checks. Empty optional extension seams remain unpopulated in CSharp1; ordinary typed fields and generic omission are covered by CSharp2GenericsTests and existing CSharp1 source/view gates. Additional empty type/name, accessor and alias seams are unpopulated in CSharp1; historical typed/source gates remain required. The version5 AsyncMemberStart seam is empty in this factory and retains ordinary method bodies/fields."
     },
     {
       "grammar": "Grammars/CompilationUnits.ngr",
@@ -736,6 +737,36 @@
           "method": "Fourth_source_local_restrictions_are_enforced"
         }
       ]
+    },
+    {
+      "source": "Parsing/CSharp5ContextPolicy.cs",
+      "codes": [
+        "CSN2050",
+        "CSN2051",
+        "CSN2052"
+      ],
+      "status": "verified",
+      "reference": "https://download.microsoft.com/download/0/b/d/0bda894f-2ccd-4c2c-b5a7-4eb1171962e5/CSharp%20Language%20Specification.docx",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
+          "method": "Fifth_context_policy_is_inactive_for_predecessors"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
+          "method": "Fifth_await_source_restrictions_report_the_authored_operator"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
+          "method": "Async_formals_reject_ref_and_out_at_the_modifier"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
+          "method": "Raw_await_cannot_be_an_identifier_in_the_async_function"
+        }
+      ]
     }
   ],
   "policyGroups": {
@@ -761,7 +792,8 @@
       "Parsing/UnicodePolicy.cs",
       "Parsing/CSharp3ExpressionPolicy.cs",
       "Parsing/CSharp3DeclarationPolicy.cs",
-      "Parsing/CSharp4ContextPolicy.cs"
+      "Parsing/CSharp4ContextPolicy.cs",
+      "Parsing/CSharp5ContextPolicy.cs"
     ]
   },
   "semanticExclusions": [

@@ -1,0 +1,16 @@
+syntax module CSharp.AsyncFunctions
+{
+ token AsyncKeyword = "async" !(CSharp.Lexical.IdPart / CSharp.Lexical.ScalarPart / CSharp.Lexical.UnicodePart);
+ extend syntax CSharp.Declarations.AsyncMemberStart
+ {
+  | AsyncHeader = CSharp.Attributes.AttributeSection* (!AsyncKeyword CSharp.Declarations.Modifier)* AsyncKeyword &(with(CSharp.Core.AsyncMethod = true) (CSharp.Declarations.Modifier* CSharp.Declarations.MethodDeclaration))
+ }
+ extend syntax CSharp.Declarations.Modifier
+ {
+  | AsyncModifier = Keyword:AsyncKeyword &(with(CSharp.Core.AsyncMethod = true) (CSharp.Declarations.Modifier* CSharp.Declarations.MethodDeclaration))
+ }
+ extend syntax CSharp.AnonymousMethods.AsyncMarker
+ {
+  | AsyncFunction = Keyword:AsyncKeyword &("delegate" / (CSharp.Lambdas.LambdaSignature "=>"))
+ }
+}

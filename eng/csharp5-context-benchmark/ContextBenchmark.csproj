@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><CSNitrogenBenchmarkRoot Condition="'$(CSNitrogenBenchmarkRoot)' == ''">$(MSBuildThisFileDirectory)../../</CSNitrogenBenchmarkRoot></PropertyGroup>
+<ItemGroup><ProjectReference Include="$(CSNitrogenBenchmarkRoot)/src/CSNitrogen/CSNitrogen.csproj"/></ItemGroup>
+</Project>
