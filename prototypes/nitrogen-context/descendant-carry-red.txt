@@ -1,0 +1,19 @@
+/usr/local/share/dotnet/sdk/11.0.100-preview.2.26159.112/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets(383,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [/private/tmp/csn-nitrogen-context-prototype-20261029/probes/ContextSpike/ContextSpike.csproj]
+  Nitrogen.Runtime -> /private/tmp/csn-nitrogen-context-prototype-20261029/Nitrogen.Runtime/bin/Debug/net10.0/Nitrogen.Runtime.dll
+  ContextSpike -> /private/tmp/csn-nitrogen-context-prototype-20261029/probes/ContextSpike/bin/Debug/net10.0/Nitrogen.Tests.dll
+Test run for /private/tmp/csn-nitrogen-context-prototype-20261029/probes/ContextSpike/bin/Debug/net10.0/Nitrogen.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.07]     Nitrogen.Tests.ContextTests.Moved_graft_carries_descendant_context_across_multiple_reparses [FAIL]
+  Failed Nitrogen.Tests.ContextTests.Moved_graft_carries_descendant_context_across_multiple_reparses [7 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+                                  ↓ (pos 105)
+Expected: ···"4):5|3:[4..5):5|65538:[5..6):5|3:[5..6):8"···
+Actual:   ···"4):5|3:[4..5):5|65539:[5..6):5|3:[5..6):8"···
+                                  ↑ (pos 105)
+  Stack Trace:
+     at Nitrogen.Tests.ContextTests.Moved_graft_carries_descendant_context_across_multiple_reparses() in /private/tmp/csn-nitrogen-context-prototype-20261029/probes/ContextSpike/ContextTests.cs:line 68
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     1, Passed:     7, Skipped:     0, Total:     8, Duration: 31 ms - Nitrogen.Tests.dll (net10.0)

@@ -10,3 +10,6 @@
 /tests/Corpus/Mono2006/LICENSE.GPL whitespace=-blank-at-eol
 /docs/coverage/sources/Unicode4/UnicodeData-4.0.0.txt -text
 /docs/coverage/sources/Unicode4/LICENSE.txt -text
+
+# Unified-diff artifacts contain intentional single-space context lines.
+/prototypes/nitrogen-context/*.patch -text -whitespace

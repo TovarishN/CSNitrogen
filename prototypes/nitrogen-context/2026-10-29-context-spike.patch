@@ -1,0 +1,335 @@
+diff --git a/Nitrogen.Runtime/ExtensibleRules.cs b/Nitrogen.Runtime/ExtensibleRules.cs
+index 17363918..4dc31b35 100644
+--- a/Nitrogen.Runtime/ExtensibleRules.cs
++++ b/Nitrogen.Runtime/ExtensibleRules.cs
+@@ -31,7 +31,7 @@ public static unsafe class ExtensibleRules
+         int ruleKey = (decl.GlobalId << 10) | ((callFlags & arena.CallFlagMask) << 8) | minPrecedence;
+         int start = s.Position;
+ 
+-        if (s.Memo.TryGet(ruleKey, start, out int memoNode, out int memoEnd, out int memoExamined))
++        if (s.Memo.TryGet(ruleKey, start, out int memoNode, out int memoEnd, out int memoExamined, s.GrammarContext))
+         {
+             arena.MemoHits++;
+             // The result depends on what its computation read; a tracked caller must count that too.
+@@ -44,7 +44,7 @@ public static unsafe class ExtensibleRules
+         arena.MemoMisses++;
+         if (s.Reuse is not null && s.TryReuse(ReuseRecord.ExtensibleTag | (uint)ruleKey, out int reusedExamined))
+         {
+-            s.Memo.Set(ruleKey, start, arena.ChildStack[arena.ChildStackCount - 1], s.Position, reusedExamined);
++            s.Memo.Set(ruleKey, start, arena.ChildStack[arena.ChildStackCount - 1], s.Position, reusedExamined, s.GrammarContext);
+             arena.MemoWrites++;
+             return true;
+         }
+@@ -67,16 +67,16 @@ public static unsafe class ExtensibleRules
+             // A failure that ran no candidate is as cheap to rediscover as to look up.
+             if (triedCandidate)
+             {
+-                s.Memo.Set(ruleKey, start, -1, -1, examined);
++                s.Memo.Set(ruleKey, start, -1, -1, examined, s.GrammarContext);
+                 arena.MemoWrites++;
+             }
+             return false;
+         }
+         int node = arena.ChildStack[arena.ChildStackCount - 1];
+-        s.Memo.Set(ruleKey, start, node, s.Position, examined);
++        s.Memo.Set(ruleKey, start, node, s.Position, examined, s.GrammarContext);
+         arena.MemoWrites++;
+         if (arena.Tracking)
+-            arena.AddRecord(new ReuseRecord(ReuseRecord.ExtensibleTag | (uint)ruleKey, start, s.Position, examined, node));
++            arena.AddRecord(new ReuseRecord(ReuseRecord.ExtensibleTag | (uint)ruleKey, start, s.Position, examined, node, s.GrammarContext));
+         return true;
+     }
+ 
+diff --git a/Nitrogen.Runtime/MemoTable.cs b/Nitrogen.Runtime/MemoTable.cs
+index 5787530b..7e2241d3 100644
+--- a/Nitrogen.Runtime/MemoTable.cs
++++ b/Nitrogen.Runtime/MemoTable.cs
+@@ -16,6 +16,7 @@ internal sealed class MemoTable
+     struct Entry
+     {
+         public long Key;
++        public ulong Context;
+         public int Node;
+         public int End;
+         public int Stamp;
+@@ -50,12 +51,12 @@ internal sealed class MemoTable
+ 
+     public bool TryGet(int ruleKey, int position, out int node, out int end) => TryGet(ruleKey, position, out node, out end, out _);
+ 
+-    public bool TryGet(int ruleKey, int position, out int node, out int end, out int examined)
++    public bool TryGet(int ruleKey, int position, out int node, out int end, out int examined, ulong context = 0)
+     {
+         long key = Key(ruleKey, position);
+         var entries = _entries;
+         int mask = entries.Length - 1;
+-        for (int i = Hash(key) & mask; ; i = (i + 1) & mask)
++        for (int i = Hash(key, context) & mask; ; i = (i + 1) & mask)
+         {
+             ref Entry e = ref entries[i];
+             if (e.Stamp != _generation)
+@@ -63,7 +64,7 @@ internal sealed class MemoTable
+                 node = end = examined = 0;
+                 return false;
+             }
+-            if (e.Key == key)
++            if (e.Key == key && e.Context == context)
+             {
+                 node = e.Node;
+                 end = e.End;
+@@ -75,19 +76,19 @@ internal sealed class MemoTable
+ 
+     internal bool Contains(int ruleKey, int position) => TryGet(ruleKey, position, out _, out _);
+ 
+-    public void Set(int ruleKey, int position, int node, int end, int examined = 0)
++    public void Set(int ruleKey, int position, int node, int end, int examined = 0, ulong context = 0)
+     {
+         if (_count + 1 > _limit) Grow();
+-        Insert(_entries, Key(ruleKey, position), node, end, examined);
++        Insert(_entries, Key(ruleKey, position), node, end, examined, context);
+     }
+ 
+-    void Insert(Entry[] entries, long key, int node, int end, int examined)
++    void Insert(Entry[] entries, long key, int node, int end, int examined, ulong context)
+     {
+         int mask = entries.Length - 1;
+-        int i = Hash(key) & mask;
+-        while (entries[i].Stamp == _generation && entries[i].Key != key) i = (i + 1) & mask;
++        int i = Hash(key, context) & mask;
++        while (entries[i].Stamp == _generation && (entries[i].Key != key || entries[i].Context != context)) i = (i + 1) & mask;
+         if (entries[i].Stamp != _generation) _count++;
+-        entries[i] = new Entry { Key = key, Node = node, End = end, Stamp = _generation, Examined = examined };
++        entries[i] = new Entry { Key = key, Context = context, Node = node, End = end, Stamp = _generation, Examined = examined };
+     }
+ 
+     void Grow()
+@@ -98,7 +99,7 @@ internal sealed class MemoTable
+         _generation = 1;
+         _count = 0;
+         foreach (var e in old)
+-            if (e.Stamp == generation) Insert(entries, e.Key, e.Node, e.End, e.Examined);
++            if (e.Stamp == generation) Insert(entries, e.Key, e.Node, e.End, e.Examined, e.Context);
+         _entries = entries;
+         _limit = Limit(entries.Length);
+     }
+@@ -107,5 +108,5 @@ internal sealed class MemoTable
+ 
+     static long Key(int ruleKey, int position) => ((long)ruleKey << 32) | (uint)position;
+ 
+-    static int Hash(long key) => (int)(((ulong)key * 0x9E3779B97F4A7C15UL) >> 32);
++    static int Hash(long key, ulong context) => (int)((((ulong)key ^ (context * 0xD6E8FEB86659FD93UL)) * 0x9E3779B97F4A7C15UL) >> 32);
+ }
+diff --git a/Nitrogen.Runtime/ParserState.ContextSpike.cs b/Nitrogen.Runtime/ParserState.ContextSpike.cs
+new file mode 100644
+index 00000000..1b02d547
+--- /dev/null
++++ b/Nitrogen.Runtime/ParserState.ContextSpike.cs
+@@ -0,0 +1,13 @@
++// THROWAWAY internal experiment. Not a supported API or generated grammar feature.
++namespace Nitrogen;
++public unsafe ref partial struct ParserState
++{
++    internal bool InGrammarContext(ulong mask, ulong values, delegate*<ref ParserState, bool> parse)
++    {
++        if ((values & ~mask) != 0) throw new ArgumentOutOfRangeException(nameof(values));
++        ulong previous = GrammarContext;
++        GrammarContext = (previous & ~mask) | values;
++        try { return parse(ref this); }
++        finally { GrammarContext = previous; }
++    }
++}
+diff --git a/Nitrogen.Runtime/ParserState.cs b/Nitrogen.Runtime/ParserState.cs
+index 6e054b59..80993c00 100644
+--- a/Nitrogen.Runtime/ParserState.cs
++++ b/Nitrogen.Runtime/ParserState.cs
+@@ -68,6 +68,9 @@ public unsafe ref partial struct ParserState
+     /// <summary>Current input position. Generated code may read it; it should move it only through the Match/Push methods.</summary>
+     public int Position;
+ 
++    // Internal throwaway spike: no supported API.
++    internal ulong GrammarContext { get; private set; }
++
+     internal ParserState(ReadOnlySpan<char> text, BuildArena arena, MemoTable memo,
+         delegate*<ReadOnlySpan<char>, int, int> trivia, AsciiSet triviaStart = default)
+     {
+@@ -145,7 +148,7 @@ public unsafe ref partial struct ParserState
+         var reuse = Reuse!;
+         int position = Position;
+         if (!reuse.TryMapToOld(position, out int old)) return false;
+-        int i = reuse.Table.Find(rule, old);
++        int i = reuse.Table.Find(rule, old, GrammarContext);
+         if (i < 0) return false;
+         var entry = reuse.Table[i];
+         if (reuse.Touches(entry.Start, entry.ExaminedEnd)) return false;
+@@ -156,7 +159,7 @@ public unsafe ref partial struct ParserState
+         Position = entry.End + delta;
+         examined = entry.ExaminedEnd + delta;
+         Reads.Read(examined - 1);
+-        a.AddRecord(new ReuseRecord(rule, position, Position, examined, graft));
++        a.AddRecord(new ReuseRecord(rule, position, Position, examined, graft, GrammarContext));
+         return true;
+     }
+ 
+@@ -164,7 +167,7 @@ public unsafe ref partial struct ParserState
+     public void EndRule(long rule, int start, int outer, bool parsed)
+     {
+         int examined = EndExamined(outer);
+-        if (parsed) Arena.AddRecord(new ReuseRecord(rule, start, Position, examined, Arena.ChildStack[Arena.ChildStackCount - 1]));
++        if (parsed) Arena.AddRecord(new ReuseRecord(rule, start, Position, examined, Arena.ChildStack[Arena.ChildStackCount - 1], GrammarContext));
+     }
+ 
+     public bool AtEnd
+diff --git a/Nitrogen.Runtime/ReuseRecord.cs b/Nitrogen.Runtime/ReuseRecord.cs
+index a7628229..9105697b 100644
+--- a/Nitrogen.Runtime/ReuseRecord.cs
++++ b/Nitrogen.Runtime/ReuseRecord.cs
+@@ -5,7 +5,7 @@ namespace Nitrogen;
+ /// key tagged with <see cref="ExtensibleTag"/>), where it was called, where it ended, one past the
+ /// furthest index it examined, and its node (an arena index until the freeze maps it).
+ /// </summary>
+-internal readonly record struct ReuseRecord(long Key, int Start, int End, int ExaminedEnd, int Node)
++internal readonly record struct ReuseRecord(long Key, int Start, int End, int ExaminedEnd, int Node, ulong Context = 0)
+ {
+     /// <summary>Set on extensible calls' keys so they never collide with a syntax rule's kind.</summary>
+     public const long ExtensibleTag = 1L << 40;
+diff --git a/Nitrogen.Runtime/ReuseTable.cs b/Nitrogen.Runtime/ReuseTable.cs
+index 7b82bfa9..b0d1ab39 100644
+--- a/Nitrogen.Runtime/ReuseTable.cs
++++ b/Nitrogen.Runtime/ReuseTable.cs
+@@ -93,7 +93,7 @@ internal sealed class ReuseTable
+                 while (next < recordedCount && recorded[next].Start <= start) entries[count++] = recorded[next++];
+                 sorted &= start >= lastStart;
+                 lastStart = start;
+-                entries[count++] = new ReuseRecord(e.Key, start, e.End + posDelta, e.ExaminedEnd + posDelta, e.Node + indexDelta);
++                entries[count++] = new ReuseRecord(e.Key, start, e.End + posDelta, e.ExaminedEnd + posDelta, e.Node + indexDelta, e.Context);
+             }
+         }
+         while (next < recordedCount) entries[count++] = recorded[next++];
+@@ -124,11 +124,11 @@ internal sealed class ReuseTable
+     }
+ 
+     /// <summary>The index of the entry for <paramref name="key"/> at <paramref name="start"/>, or -1.</summary>
+-    public int Find(long key, int start)
++    public int Find(long key, int start, ulong context = 0)
+     {
+         int found = -1;
+         for (int i = FirstAtOrAfter(start); i < _count && _entries[i].Start == start; i++)
+-            if (_entries[i].Key == key) found = i;
++            if (_entries[i].Key == key && _entries[i].Context == context) found = i;
+         return found;
+     }
+ }
+diff --git a/probes/ContextSpike/ContextSpike.csproj b/probes/ContextSpike/ContextSpike.csproj
+new file mode 100644
+index 00000000..3fa913b1
+--- /dev/null
++++ b/probes/ContextSpike/ContextSpike.csproj
+@@ -0,0 +1,4 @@
++<Project Sdk="Microsoft.NET.Sdk">
++<PropertyGroup><AssemblyName>Nitrogen.Tests</AssemblyName><IsTestProject>true</IsTestProject><AllowUnsafeBlocks>true</AllowUnsafeBlocks></PropertyGroup>
++<ItemGroup><ProjectReference Include="../../Nitrogen.Runtime/Nitrogen.Runtime.csproj"/><PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/><PackageReference Include="xunit" Version="2.9.3"/><PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" PrivateAssets="all"/><Compile Include="../../Nitrogen.Tests/ParserStateTests.cs" Link="ParserStateTests.cs"/></ItemGroup>
++</Project>
+diff --git a/probes/ContextSpike/ContextTests.cs b/probes/ContextSpike/ContextTests.cs
+new file mode 100644
+index 00000000..b7c396c3
+--- /dev/null
++++ b/probes/ContextSpike/ContextTests.cs
+@@ -0,0 +1,99 @@
++using Xunit;
++namespace Nitrogen.Tests;
++// Generic synthetic grammar, NOT a C# parser. Marker a/n controls the same payload x.
++public unsafe class ContextTests
++{
++    sealed class ProbeModule : SyntaxModule
++    {
++        internal static readonly ProbeModule Instance = new();
++        internal readonly ExtensionPointDecl Expr;
++        internal readonly ExtensionPointDecl EnabledOnly;
++        ProbeModule() : base("ContextSpike") { Expr = new(this,"Expr"); EnabledOnly = new(this,"EnabledOnly"); }
++        public override string GetKindName(int kind) => kind switch {1=>"File",2=>"Disabled",3=>"Enabled",4=>"Group",_=>"Other"};
++        public override void Register(ExtensionRegistry r)
++        {
++            r.Declare(Expr);r.Declare(EnabledOnly);
++            r.AddPrefix(Expr,new("Disabled",KindBase|2,0,&Disabled));
++            r.AddPrefix(Expr,new("Enabled",KindBase|3,0,&Enabled));
++            r.AddPrefix(Expr,new("Group",KindBase|4,0,&Group));
++            r.AddPrefix(EnabledOnly,new("Enabled",KindBase|3,0,&Enabled));
++        }
++    }
++    static readonly Language L = new LanguageBuilder().Add(ProbeModule.Instance).Build();
++    static readonly Rule Start = new("ContextSpike.File", &File);
++    static bool Expr(ref ParserState s) => s.ParseExtensible(ProbeModule.Instance.Expr,0);
++    static bool Only(ref ParserState s) => s.ParseExtensible(ProbeModule.Instance.EnabledOnly,0);
++    static bool Disabled(ref ParserState s) => s.GrammarContext==0 && s.MatchLiteral("x");
++    static bool Enabled(ref ParserState s) => s.GrammarContext==1 && s.MatchLiteral("x");
++    static bool Group(ref ParserState s)
++    {
++        if(!s.MatchLiteral("["))return false;bool enabled=s.Current=='a';
++        return s.MatchLiteral(enabled?"a":"n") && s.InGrammarContext(1,enabled?1UL:0,&Expr) && s.MatchLiteral("]");
++    }
++    static bool File(ref ParserState s)
++    {
++        var mark=s.Mark();s.Open(ProbeModule.Instance.KindBase|1);
++        while(!s.AtEnd)
++        {
++            bool enabled=s.Current=='a';
++            if(!s.MatchLiteral(enabled?"a":"n") || !s.InGrammarContext(1,enabled?1UL:0,&Expr)){s.Reset(mark);return false;}
++        }
++        s.Close();return true;
++    }
++    static ParserState State(string text,BuildArena arena) => new(text,arena,new MemoTable(),&StandardTrivia.WhitespaceAndComments){Language=L};
++    [Fact] public void Memo_separates_success_at_same_position()
++    {
++        var a=new BuildArena();var s=State("x",a);var mark=s.Mark();
++        Assert.True(s.InGrammarContext(1,0,&Expr));Assert.Equal(ProbeModule.Instance.KindBase|2,a.Kind[a.ChildStack[0]]);
++        s.Reset(mark);Assert.True(s.InGrammarContext(1,1,&Expr));Assert.Equal(ProbeModule.Instance.KindBase|3,a.Kind[a.ChildStack[0]]);
++        Assert.Equal(0UL,s.GrammarContext);
++    }
++    [Fact] public void Memo_separates_failure_at_same_position()
++    {
++        var a=new BuildArena();var s=State("x",a);var mark=s.Mark();
++        Assert.False(s.InGrammarContext(1,0,&Only));s.Reset(mark);Assert.True(s.InGrammarContext(1,1,&Only));
++    }
++    [Theory][InlineData("nxax","axax")][InlineData("axnx","nxnx")]
++    public void Header_only_edit_matches_full_parse_and_reuses_unaffected_context(string old,string next)
++    {
++        using var first=L.ParseIncremental(old,Start);Assert.True(first.Success&&!first.HasErrors);
++        using var second=L.Reparse(first,next,[new(0,1,1)]);using var full=L.Parse(next,Start);
++        Assert.Equal(Shape(full),Shape(second));Assert.True(second.Stats.ReusedNodes>0);
++        using var third=L.Reparse(second,old,[new(0,1,1)]);using var restored=L.Parse(old,Start);Assert.Equal(Shape(restored),Shape(third));
++    }
++    [Fact] public void Moved_graft_carries_descendant_context_across_multiple_reparses()
++    {
++        using var first=L.ParseIncremental("n[ax]nx",Start);
++        using var moved=L.Reparse(first,"nxn[ax]nx",[new(0,0,2)]);using var full=L.Parse("nxn[ax]nx",Start);Assert.Equal(Shape(full),Shape(moved));Assert.True(moved.Stats.ReusedNodes>0);
++        using var changed=L.Reparse(moved,"nxn[nx]nx",[new(4,1,1)]);using var expected=L.Parse("nxn[nx]nx",Start);Assert.Equal(Shape(expected),Shape(changed));
++    }
++    [Fact] public void Memo_growth_retains_all_context_bits_and_default_entries()
++    {
++        var memo=new MemoTable();
++        for(int i=0;i<1200;i++){memo.Set(7,i,10,20,0,0);memo.Set(7,i,30,40,0,1UL<<63);}
++        for(int i=0;i<1200;i++)
++        {
++            Assert.True(memo.TryGet(7,i,out int a,out _,out _,0));Assert.Equal(10,a);
++            Assert.True(memo.TryGet(7,i,out int b,out _,out _,1UL<<63));Assert.Equal(30,b);
++            Assert.False(memo.TryGet(7,i,out _,out _,out _,1));
++        }
++    }
++    static string Shape(ParseResult p) => string.Join("|",Enumerable.Range(0,p.Tree.NodeCount).Select(i=>$"{p.Tree.Kind(i)}:{p.Tree.Span(i)}:{p.Tree.Parent(i)}"));
++    [Fact] public void Nested_override_restores_caller_after_success_failure_and_exception()
++    {
++        var s=State("x",new());Assert.True(s.InGrammarContext(1,1,&Nested));Assert.Equal(0UL,s.GrammarContext);
++        try{s.InGrammarContext(1,1,&Throw);Assert.Fail("expected exception");}catch(InvalidOperationException){}Assert.Equal(0UL,s.GrammarContext);
++    }
++    static bool Nested(ref ParserState s)
++    {
++        Assert.Equal(1UL,s.GrammarContext);Assert.False(s.InGrammarContext(1,0,&False));Assert.Equal(1UL,s.GrammarContext);
++        Assert.True(s.InGrammarContext(2,2,&Both));Assert.Equal(1UL,s.GrammarContext);return true;
++    }
++    static bool Both(ref ParserState s){Assert.Equal(3UL,s.GrammarContext);return true;}
++    static bool False(ref ParserState s){Assert.Equal(0UL,s.GrammarContext);return false;}
++    static bool Throw(ref ParserState s)=>throw new InvalidOperationException();
++    [Fact] public void Separate_and_parallel_parses_start_with_false_context()
++    {
++        Parallel.For(0,24,i=>{using var p=L.Parse(i%2==0?"axnx":"nxax",Start);Assert.True(p.Success&&!p.HasErrors);});
++    }
++}
