@@ -12,7 +12,7 @@ public static unsafe class CSharpParser
             ["CSharp2"] = (new(() => CSharp2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp2Composition.Start),
             ["CSharp3"] = (new(() => CSharp3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp3Composition.Start),
             ["CSharp4"] = (new(() => CSharp4Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp4Composition.Start),
-            ["CSharp5"] = (new(() => CSharp5Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp5Composition.Start),
+            ["CSharp5"] = (new(() => CSharp5Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp5Composition.Start),
             ["CSharp6"] = (new(() => CSharp6Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp6Composition.Start),
             ["CSharp7"] = (new(() => CSharp7Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7Composition.Start),
             ["CSharp8"] = (new(() => CSharp8Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp8Composition.Start),

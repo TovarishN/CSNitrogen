@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "profile": "CSharp5",
-  "status": "source-contract-approved-scoped-core-reviewed-integration-pending",
+  "status": "production-context-implemented-source-admission-pending",
   "primary": {
     "title": "Microsoft C# Language Specification Version5.0",
     "url": "https://download.microsoft.com/download/0/b/d/0bda894f-2ccd-4c2c-b5a7-4eb1171962e5/CSharp%20Language%20Specification.docx",
@@ -26,5 +26,35 @@
     "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e",
     "authority": "User explicitly approved Unicode4 scalar continuity for CSharp5 on2026-10-23; repeated Unicode3 reference treated as informational."
   },
-  "completion": "Scoped core design explicitly approved2026-10-29; production Nitrogen support reviewed and verified in PR94. The isolated actual-grammar proof passes55 checks, including header/body context, raw and escaped spellings, typed fields, module omission and incremental edits. Fifth production grammar registration, Unicode selector, source-local policy and independent source admission remain pending; CSharp5 remains partial."
+  "completion": "Core PR94 merged b3494870dfb5f187bae9065227d4ef7f742aa048; all141 source hashes verified. Production async-function/await capabilities and frozen Unicode4 scalar selection are implemented with source-local checks and passing predecessor guards. Current full suite:6248 main,3788 oracle,55 scoped proof tests; CSharp5 remains partial pending independent historical source/factory/policy/evidence admission. Task identity, awaitability, caller substitution, state machines and execution remain semantic exclusions.",
+  "productionSourcePolicies": {
+    "csharp5.source-context-checks": [
+      "Parsing/CSharp5ContextPolicy.cs"
+    ]
+  },
+  "production": {
+    "corePullRequest": "https://github.com/TovarishN/Nitrogen/pull/94",
+    "nitrogenRevision": "b3494870dfb5f187bae9065227d4ef7f742aa048",
+    "capabilities": [
+      "csharp5.async-functions",
+      "csharp5.await-expressions"
+    ],
+    "contextFlags": [
+      "CSharp.Core.AsyncMethod",
+      "CSharp.Core.Await"
+    ],
+    "sourceClauses": [
+      4431,
+      4432,
+      4433,
+      4434,
+      4435,
+      4436,
+      4437,
+      5174,
+      5175,
+      7801
+    ],
+    "admission": "pending"
+  }
 }

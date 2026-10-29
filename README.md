@@ -2,22 +2,23 @@
 
 C# syntax experiments and versioned grammar foundations built with Nitrogen.
 
-**CSharp1–4 have reviewed normalized syntax coverage; CSharp5–14 and custom profiles remain partial.** Production Nitrogen modules implement names/types, expressions, statements, attributes, declarations, namespaces, unsafe syntax and the C# 2 additions, with source-preserving preprocessing and historical Unicode policies. This is a parser, not a C# semantic compiler.
+**CSharp1–4 have reviewed normalized syntax coverage; CSharp5–14 and custom profiles remain partial.** Production Nitrogen modules implement names/types, expressions, statements, attributes, declarations, namespaces, unsafe syntax additions through C# 4 and scoped C# 5 async/await, with source-preserving preprocessing and historical Unicode policies. This is a parser, not a C# semantic compiler.
 
 ## Build and test
 
 Requires the .NET SDK 10.0.100, the .NET 10.0.0 reference pack (oracle tests), and the pinned [Nitrogen dependency](https://github.com/TovarishN/Nitrogen). For a fresh clone, obtain the recorded revision in an ignored directory:
 
 ```sh
-git clone https://github.com/TovarishN/Nitrogen.git .dependencies/NitrogenSource
-git -C .dependencies/NitrogenSource checkout --detach a59ab220bb3025ca665c9d8381a01cb02995219d
-python3 eng/prepare-dependencies.py --source .dependencies/NitrogenSource
+git -c core.autocrlf=false -c core.eol=lf clone https://github.com/TovarishN/Nitrogen.git .dependencies/NitrogenSource
+git -C .dependencies/NitrogenSource checkout --detach b3494870dfb5f187bae9065227d4ef7f742aa048
+python3 eng/prepare-dependencies.py --restore-pinned --source .dependencies/NitrogenSource
+python3 eng/prepare-dependencies.py --verify
 dotnet build CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
 dotnet test tests/CSNitrogen.Tests -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false --blame-hang-timeout 30s
 dotnet test tests/CSNitrogen.Oracle.Tests -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
 ```
 
-For an existing Nitrogen checkout, pass its path to `--source` instead. Preparation copies build sources and records their hashes without modifying that checkout.
+For an existing checkout of the exact pinned Nitrogen revision, pass its path to `--source` with `--restore-pinned`. Restoration validates all141 source hashes and preserves the reviewed manifest bytes across checkout locations. Default preparation without `--restore-pinned` records a new authoring snapshot and requires an explicit admission-pin refresh and validation. Neither mode modifies the source checkout.
 
 `NuGetAudit=false` makes the commands independent of the remote vulnerability-metadata endpoint; it does not disable dependency restore. The local snapshot identity and source hashes are recorded in `docs/coverage/dependencies.json`. An explicit `-p:NitrogenRoot=/path/to/buildable/snapshot` overrides the snapshot location; use an isolated copy if that path must remain unchanged.
 
@@ -35,7 +36,7 @@ Console.WriteLine(document.Classes[0].Name); // Example
 
 The result owns the pooled Nitrogen tree. Borrowed nodes and typed views expire when it is disposed. Access `Root` when the parse is accepted; an error tree may not have a compilation-unit root. The generated views are syntax types; the API does not bind or type-check C# programs.
 
-Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. CSharp2 selects the baseline plus the implemented C# 2 modules; CSharp3 and later also select the bounded C# 3 additions in `src/CSNitrogen.Syntax/nitrogen.json`; CSharp3 has a separately reviewed normalized syntax contract, while differing later names do not imply complete C#5–14 syntax coverage. CSharp4 and later additionally select independent named-argument, optional-parameter, variance and generic-follower capabilities. CSharp4 uses approved frozen Unicode4 scalar continuity and a separate pinned source/factory/policy/evidence admission guard. See the [CSharp4 admission boundary](docs/coverage/csharp4-reviewed-admission-evidence.md). Dynamic binding and variance safety are semantic exclusions. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
+Named profiles are `CSharp1` through `CSharp14`, plus `CSharp7_1`, `CSharp7_2`, and `CSharp7_3`. `CSharp7` means 7.0. CSharp2 selects the baseline plus the implemented C# 2 modules; CSharp3 and later also select the bounded C# 3 additions in `src/CSNitrogen.Syntax/nitrogen.json`; CSharp3 has a separately reviewed normalized syntax contract, while differing later names do not imply complete C#5–14 syntax coverage. CSharp4 and later additionally select independent named-argument, optional-parameter, variance and generic-follower capabilities. CSharp4 uses approved frozen Unicode4 scalar continuity and a separate pinned source/factory/policy/evidence admission guard. See the [CSharp4 admission boundary](docs/coverage/csharp4-reviewed-admission-evidence.md). CSharp5 and later additionally select independently removable async-function and await-expression modules; CSharp5 uses the approved frozen Unicode4 scalar policy. Scoped body recognition and source-local await/ref/out/query restrictions are implemented, while CSharp5 source admission remains pending. See the [scoped proof](docs/coverage/csharp5-scoped-proof-evidence.md). Dynamic binding, awaitability, task identity, caller-information substitution, state machines and variance safety are semantic exclusions. `CSharp1SafeComposition` is a generated test composition omitting `Unsafe.ngr`.
 
 `ProfileResolver.ResolveCustom` validates feature requirements/conflicts and gives deterministic module selections. It does not build arbitrary runtime grammars or execute a custom profile through `CSharpParser`. Implemented metadata separates source grammar families, lexical categories, trivia, preprocessing and unsafe syntax. Custom resolutions describe canonical capability bundles and do not advertise independently removable inventory entries.
 

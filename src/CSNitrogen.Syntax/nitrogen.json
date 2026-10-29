@@ -127,7 +127,7 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/GlobalTargetsThird.ngr",
         "Grammars/Generics.ngr",
         "Grammars/NullableValues.ngr",
         "Grammars/AnonymousMethods.ngr",
@@ -147,7 +147,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -184,7 +186,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -221,7 +225,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -258,7 +264,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -295,7 +303,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -332,7 +342,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -369,7 +381,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -406,7 +420,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -443,7 +459,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -480,7 +498,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -517,7 +537,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -554,7 +576,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {
@@ -591,7 +615,9 @@
         "Grammars/NamedArguments.ngr",
         "Grammars/OptionalParameters.ngr",
         "Grammars/Variance.ngr",
-        "Grammars/GenericFollowersFourth.ngr"
+        "Grammars/GenericFollowersFourth.ngr",
+        "Grammars/AsyncFunctions.ngr",
+        "Grammars/AwaitExpressions.ngr"
       ]
     },
     {

@@ -1,6 +1,6 @@
 # CSharp5 scoped grammar proof
 
-The global-await evidence in csharp5-seam-proof-evidence.md is historical and remains an explicit rejected candidate. The user approved the concrete scoped parsing-context design2026-10-29. Nitrogen PR94 implements that design, with a fresh whole-branch review and a verified fix pass; the latest core full gate is2398 tests and a clean solution build. The core PR is still completing its required CI before merge.
+The global-await evidence in csharp5-seam-proof-evidence.md is historical and remains an explicit rejected candidate. The user approved the concrete scoped parsing-context design2026-10-29. Nitrogen PR94 implements that design, with a fresh whole-branch review and a verified fix pass; the latest core full gate is2398 tests and a clean solution build. The core PR merged as b3494870dfb5f187bae9065227d4ef7f742aa048 after all CI gates passed.
 
 The isolated actual-grammar assembly uses26 real baseline modules plus test copies of Core, Declarations, AnonymousMethods and Lambdas. The async-functions and await-expressions modules remain independently removable. It is not a standalone handwritten parser or a production CSharp5 admission guard.
 
@@ -16,4 +16,4 @@ Commands:
 dotnet test tests/CSNitrogen.CSharp5.Tests/CSNitrogen.CSharp5.Tests.csproj -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false -p:NitrogenRoot=/path/to/reviewed/Nitrogen
 ```
 
-Public dependency repinning, predecessor admission/generator guards and production capability/policy work follow the core merge. CSharp5 and later/custom profiles remain partial until independent source/factory/policy/evidence closure.
+The production stage pins141 clean sources from that merge, registers the two independent capabilities, applies the approved Unicode4 scalar selector to5, and enforces source-local await/ref/out/query/identifier boundaries. The full restored-snapshot gate passes6248 main tests,3788 oracle tests and55 scoped proofs. The inherited raw-await identifier reservation is checked separately from nearest-function await legality. Exact predecessor helper/policy inventories include the explicitly inactive fifth policy; no predecessor source alternatives or admission checks were removed. Pinned restoration preserves manifest bytes across source locations. Deterministic generator and measurement evidence is recorded with the production stage. CSharp5 and later/custom profiles remain partial until independent source/factory/policy/evidence closure.

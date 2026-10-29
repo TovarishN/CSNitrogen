@@ -1,0 +1,8 @@
+syntax module CSharp.AwaitExpressions
+{
+ token AwaitKeyword = "await" !(CSharp.Lexical.IdPart / CSharp.Lexical.ScalarPart / CSharp.Lexical.UnicodePart);
+ extend syntax CSharp.Expressions.Expression
+ {
+  | AwaitExpression = context(CSharp.Core.Await) Keyword:AwaitKeyword Operand:Expression precedence 170
+ }
+}
