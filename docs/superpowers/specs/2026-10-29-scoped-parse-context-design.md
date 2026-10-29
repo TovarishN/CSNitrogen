@@ -1,6 +1,6 @@
 # Scoped grammar parsing context for CSharp5
 
-Status: approved direction (user 2026-10-29); concrete production design proposed. Independent builder check found no important unanswered planning questions. Internal throwaway runtime experiment authorized. No public core API or production grammar change is approved by this document alone.
+Status: approved direction (user 2026-10-29); concrete production design proposed. Independent builder check found no important unanswered planning questions. Separate code review found no blocking issues for draft publication; experiment evidence and deferred minor are recorded in prototypes/nitrogen-context/README.md. Internal throwaway runtime experiment authorized. No public core API or production grammar change is approved by this document alone.
 
 ## Purpose and boundaries
 

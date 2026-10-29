@@ -35,3 +35,11 @@ Existing parser APIs and ParseMark's public shape are preserved. Memo/reuse entr
 The designer selected an initial64-Boolean environment with collision-free per-Language identities and fail-closed capacity, rather than arbitrary mutable state. Internal scoped calls restore in finally; generated wrappers must be transparent and must not add tree nodes/captures. Full incoming context keys both caches, including negative memo entries; descendant context survives graft carry-over. Standalone parses/quotes start false and non-default categories need explicit scoped start rules. These are proposed additive contracts, not previously chosen syntax by the user.
 
 The app's managed worktree tool rejected the sibling sourceRoot because it is outside this chat's registered folders. Experiments used temporary local clones instead; the original Nitrogen checkout and its four untracked design drafts were preserved. Unrelated CSNitrogen benchmarks were also untouched. No sandbox auto-approval review rejection occurred.
+
+## Independent review
+
+The concrete design builder check found no important unanswered planning questions. A separate fresh-context code reviewer inspected the complete CSNitrogen branch through43d6dbc and the patched runtime/test sources, checksum and RED/GREEN logs. No Critical/Important findings within this bounded scope; approved for draft publication pending concrete production-design approval. Review execution was read-only and did not independently rerun tests.
+
+Deferred minor: MemoTable's XML summary still describes a context-free24-byte cache and ReuseTable's summary omits context in the identity. The implementation and this report include context correctly; update those internal comments when preparing production work.
+
+Reviewer set-aside boundaries remain gates, not inferred successes: public declarations/binding/capacity/generated wrappers; actual CSharp5 owners/fields/spelling/quotations/admission; lookahead/recovery/full compatibility; performance/allocation; unrelated benchmark/draft preservation; and revalidation of historical reference observations. The implementer checked the original sibling's unchanged status in-session, but the reviewer did not independently inspect it or the historical witnesses. No production-readiness claim follows from this review.
