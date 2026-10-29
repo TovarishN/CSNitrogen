@@ -1,2 +1,2 @@
 // Legacy module identity retained while the real root lives in CompilationUnits.
-syntax module CSharp.Core { context Await; syntax LegacyCompilationUnit = CSharp.CompilationUnits.CompilationUnit; }
+syntax module CSharp.Core { context Await; context AsyncMethod; syntax LegacyCompilationUnit = CSharp.CompilationUnits.CompilationUnit; }
