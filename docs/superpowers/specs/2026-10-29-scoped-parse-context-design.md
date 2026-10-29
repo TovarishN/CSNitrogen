@@ -1,6 +1,6 @@
 # Scoped grammar parsing context for CSharp5
 
-Status: approved direction (user 2026-10-29); concrete production design proposed. Independent builder check found no important unanswered planning questions. Separate code review found no blocking issues for draft publication; experiment evidence and deferred minor are recorded in prototypes/nitrogen-context/README.md. Internal throwaway runtime experiment authorized. No public core API or production grammar change is approved by this document alone.
+Status: user approved the concrete production design and instructed implementation on2026-10-29. Independent builder check found no important unanswered planning questions. Separate code review found no blocking issues for draft publication; experiment evidence and deferred minor are recorded in prototypes/nitrogen-context/README.md. Internal throwaway runtime experiment authorized. The additive contracts below are approved for implementation; breaking API or tree-owner changes remain subject to a separate concrete decision.
 
 ## Purpose and boundaries
 
@@ -54,4 +54,4 @@ Retain a reproducible patch and results with the CSNitrogen design. The experime
 
 ## Remaining production approval
 
-Approve this concrete additive design after the experiment and builder check, then create a production implementation plan. Any public property-type change, altered tree owner contract or breaking core API returns separately for approval. There is no approval request for the already authorized internal throwaway experiment.
+The user approved this concrete additive design after the experiment and builder check. Execute the production implementation plan. Any public property-type change, altered tree owner contract or breaking core API returns separately for approval. There is no approval request for the already authorized internal throwaway experiment.
