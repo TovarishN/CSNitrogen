@@ -6,7 +6,7 @@ Test-only evidence for the sixth-edition additions (decision: [2026-11-04-csharp
 
 `tests/CSNitrogen.CSharp6.Tests` composes the real 32-module CSharp5 factory under the separate generated namespace `CSNitrogen.CSharp6Probes`. Four grammars are test copies with empty seams only. Every other input is the unchanged production file:
 
-- `Statements.ngr`: `CatchClause.Filter:CatchFilter?`; the general-clause lookahead becomes `&("catch" !"(")` so `catch when(...)` is general.
+- `Statements.ngr`: `CatchClause.Filter:CatchFilter?`; the specific-clause lookahead becomes `&("catch" ("(" / CatchFilter))`, so a filter-only `catch when(...)` is a specific clause (grammar.md:1566–1569) and may precede other clauses; the general clause stays `&("catch" "{")`.
 - `Declarations.ngr`: `MethodBody` gains `/ MethodBodyExtension`; `PropertyDeclaration` gains `Initializer:PropertyInitializerSeam?`; both `MemberDeclaration` body choices gain `/ MemberDeclarationExtension`.
 - `CompilationUnits.ngr`: `UsingDirective` gains `Static:UsingKind?` after `using`.
 - `ObjectInitializers.ngr`: `Initializer` gains `/ InitializerExtension`.
@@ -23,25 +23,27 @@ Existing fields keep their names and generated types (for example `MemberInitial
 ## Source-local obligations for Task 2
 
 These are accepted by the grammar here and must become source-local checks:
-- An unparenthesized conditional in a hole, for example `$"{a?b:c}"`. The standard's unnested colon starts a format and leaves `a?b` incomplete; Roslyn also rejects it.
+- An unparenthesized conditional in a hole expression or width, for example `$"{a?b:c}"` and `$"{x,-a?b:c}"`. The standard's unnested colon starts a format and leaves the condition incomplete; Roslyn also rejects both (CS8361).
+- A `nameof` statement such as `void M(){nameof(x);}` now yields `Ambiguous` in statement position. The statement-expression check CSN2001 (`src/CSNitrogen/Parsing/CSharpSyntaxPolicy.cs:154`) admits only `InvocationExpression`, so it must also admit the sanctioned nameof Ambiguous node, or a statement valid under CSharp5 becomes an error under CSharp6.
 - Property initializers on non-automatic, abstract, extern or interface properties.
 - Expression bodies on constructors, finalizers and accessors, which reach `MethodBody` through the shared seam.
 - The anonymous-object projection check must admit `a?.b` (null_conditional_projection_initializer).
 
 ## Roslyn observations (Microsoft.CodeAnalysis.CSharp 5.0.0, LanguageVersion.CSharp6)
 
-24 spellings are accepted by both, 6 are rejected by both, and 5 disagree. In each disagreement the standard governs:
+Roslyn's verdict is its parse diagnostics plus the compilation errors that are syntax-shaped or depend on the language version (CS8026, CS8059, CS8086, CS8089, CS8361, CS8967); binding errors are ignored. 23 spellings are accepted by both, 7 are rejected by both, and 6 disagree. In each disagreement the standard governs:
 
 | Spelling | Standard | Roslyn | Reason |
 | --- | --- | --- | --- |
-| `$"{x:N⏎}"` | accept | reject | hole contents are tokens, so the new-line is whitespace |
+| `$"{x:N⏎}"` | accept | reject (CS1010) | format text ends at the new-line, which is then hole whitespace; Roslyn reads format text up to `}` |
+| `$"{⏎x⏎}"` | accept | reject (CS8967) | hole contents are tokens, so a new-line is whitespace; Roslyn needs C# 11 for this |
+| `$"{x:a}}b}"` | accept | reject (CS8086) | format elements include `}}` |
 | `nameof(int)` | accept | reject | `named_entity_target` includes `predefined_type` |
 | `@$"{x}"` | reject | accept | only `$@` exists in the sixth edition; Roslyn defers the version check |
 | `using static A=B;` | reject | accept | `using_static_directive` has no alias; Roslyn reports it at binding |
-| `$"{x:}"` | reject | accept | a format needs at least one element |
 
-`$"{⏎x⏎}"` is accepted by both.
+`$"{x:}"` is rejected by both: a format needs at least one element (Roslyn CS8089).
 
 ## Verification
 
-`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,570 tests: 7,502 main, 3,884 oracle, 55 CSharp5 proof and 129 CSharp6 proof, with zero failures or skips. Production sources under `src/` are unchanged, so CSharp1–5 admission pins are untouched. These are finite witnesses, not exhaustive inputs or arbitrary-depth guarantees.
+`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,575 tests: 7,502 main, 3,884 oracle, 55 CSharp5 proof and 134 CSharp6 proof, with zero failures or skips. Production sources under `src/` are unchanged, so CSharp1–5 admission pins are untouched. These are finite witnesses, not exhaustive inputs or arbitrary-depth guarantees.

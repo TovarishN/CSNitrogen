@@ -61,8 +61,14 @@ public class CSharp6GrammarSeamTests
  [InlineData("class C{void M(){try{}catch(E)when(f){}catch(F e)when(e.X){}finally{}}}")]
  [InlineData("class C{async void M(){try{}catch(E)when(f){await x;}finally{await y;}}}")]
  public void Exception_filters_attach_to_specific_and_general_clauses(string source)=>Assert.NotEmpty(Probe.Spans("All",source,"ExceptionFilter"));
+ /// <summary>ECMA-334 6 grammar.md:1566–1569: a filter-only catch is a specific clause, so it may precede other clauses.</summary>
  [Theory]
- [InlineData("class C{void M(){try{}catch when(f){}catch(E){}}}")]
+ [InlineData("class C{void M(){try{}catch when(true){}catch{}}}")]
+ [InlineData("class C{void M(){try{}catch when(true){}catch(System.Exception){}}}")]
+ [InlineData("class C{void M(){try{}catch(Exception)when(true){}catch when(true){}catch{}}}")]
+ public void A_filter_only_catch_is_a_specific_clause(string source)=>Assert.True(Probe.Accepts("All",source),source);
+ [Fact] public void A_filter_only_catch_needs_the_filter_module()=>Assert.False(Probe.Accepts("ExceptionFilters","class C{void M(){try{}catch when(true){}catch{}}}"));
+ [Theory]
  [InlineData("class C{void M(){try{}catch(E)when{}}}")]
  [InlineData("using static A=B;")]
  [InlineData("using static;")]
