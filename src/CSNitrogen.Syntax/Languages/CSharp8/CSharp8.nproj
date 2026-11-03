@@ -34,6 +34,14 @@ language CSharp8
   grammar ../../Grammars/GenericFollowersFourth.ngr;
   grammar ../../Grammars/AsyncFunctions.ngr;
   grammar ../../Grammars/AwaitExpressions.ngr;
+  grammar ../../Grammars/InterpolatedStrings.ngr;
+  grammar ../../Grammars/NullConditional.ngr;
+  grammar ../../Grammars/NameofExpressions.ngr;
+  grammar ../../Grammars/ExceptionFilters.ngr;
+  grammar ../../Grammars/UsingStatic.ngr;
+  grammar ../../Grammars/PropertyInitializers.ngr;
+  grammar ../../Grammars/ExpressionBodies.ngr;
+  grammar ../../Grammars/IndexInitializers.ngr;
   start CSharp.CompilationUnits.CompilationUnit;
 
   nitrogen

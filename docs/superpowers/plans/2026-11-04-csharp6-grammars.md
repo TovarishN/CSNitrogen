@@ -65,12 +65,14 @@ Consumes the reviewed Task 1 mechanism and node names. If Task 1 left a core dec
 
 **Files:** `src/CSNitrogen.Syntax/Grammars/` one module per addition (Task 1 names); `src/CSNitrogen.Syntax/nitrogen.json` (`CSharp6` entry and later entries gain the modules; `CSharp6`+ keep `GlobalTargetsCurrent.ngr`); `docs/coverage/features.json` (ten 6.0 entries: grammars, policies, fixtures, status `implemented`; semantic entries classified per the spec); `src/CSNitrogen/Parsing/UnicodePolicy.cs:10`; new `src/CSNitrogen/Parsing/CSharp6ContextPolicy.cs`; `tests/CSNitrogen.Tests/Syntax/CSharp6*Tests.cs`; predecessor contracts and gate JSON for pin refresh.
 
-- [ ] Write production RED cases: every Task 1 witness through `CSharpParser` with profile `CSharp6`, the same sources rejected or read as baseline under `CSharp5` with an unavailable-feature diagnostic naming the 6.0 feature, and await inside catch/finally accepted under `CSharp6` and still rejected under `CSharp5`.
-- [ ] Write the Unicode RED case: U+0220 and raw/escaped U+10400 identifiers accepted under `CSharp6`, resolved policy `unicode-4.0-scalar`.
-- [ ] Add the modules and nitrogen.json entries; change `UsesUnicode4` to `version.Major is 2 or 3 or 4 or 5 or 6`.
-- [ ] Add `CSharp6ContextPolicy` source-local checks with new `CSN` codes: property initializer only on an automatic property (all accessor bodies `;`, not abstract/extern, not in an interface); expression-bodied members not on constructors, finalizers or accessors; every policy that meets an `Ambiguous` nameof handles both readings.
-- [ ] Run focused tests, then refresh fifth/fourth/third/second pins in 5->4->3->2 order and run the full verification command. Expected: all pass; CSharp6 reports partial.
-- [ ] Commit; fresh branch review before integration.
+- [x] Write production RED cases: every Task 1 witness through `CSharpParser` with profile `CSharp6`, the same sources rejected or read as baseline under `CSharp5` with an unavailable-feature diagnostic naming the 6.0 feature, and await inside catch/finally accepted under `CSharp6` and still rejected under `CSharp5`.
+- [x] Write the Unicode RED case: U+0220 and raw/escaped U+10400 identifiers accepted under `CSharp6`, resolved policy `unicode-4.0-scalar`.
+- [x] Add the modules and nitrogen.json entries; change `UsesUnicode4` to `version.Major is 2 or 3 or 4 or 5 or 6`.
+- [x] Add `CSharp6ContextPolicy` source-local checks with new `CSN` codes: property initializer only on an automatic property (all accessor bodies `;`, not abstract/extern, not in an interface); expression-bodied members not on constructors, finalizers or accessors; every policy that meets an `Ambiguous` nameof handles both readings.
+- [x] Run focused tests, then refresh fifth/fourth/third/second pins in 5->4->3->2 order and run the full verification command. Expected: all pass; CSharp6 reports partial.
+- [x] Commit; fresh branch review before integration.
+
+Result (Task 2): production capabilities, Unicode4 for major 6, the sanctioned-nameof wrapper filter and CSN2060–CSN2062 are in place; full solution 11,631 passes; CSharp6 partial. Unavailable-feature diagnostics were not added (rejection under CSharp5 is an honest syntax failure, as for earlier versions). Evidence: docs/coverage/csharp6-production-evidence.md.
 
 ## Task 3: Sixth-edition conformance review
 

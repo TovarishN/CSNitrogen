@@ -39,11 +39,13 @@ public class CanonicalCoverageTests
     [Fact]
     public void Later_and_custom_profiles_do_not_inherit_historical_completeness()
     {
-        foreach(string name in Enumerable.Range(6,9).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
+        foreach(string name in Enumerable.Range(7,8).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var profile=ProfileResolver.Resolve(name).Profile!;
             Assert.False(profile.Complete);Assert.NotEmpty(profile.MissingFeatures);
         }
+        // Every sixth-version syntax entry is implemented, but without an independent admission guard the profile stays partial.
+        var sixth=ProfileResolver.Resolve("CSharp6").Profile!;Assert.False(sixth.Complete);Assert.Empty(sixth.MissingFeatures);
         // The admitted fifth snapshot does not make later profiles complete.
         var fifth=ProfileResolver.Resolve("CSharp5").Profile!;Assert.True(fifth.Complete);Assert.Empty(fifth.MissingFeatures);
         var custom=ProfileResolver.ResolveCustom("CSharp1",FeatureCatalog.Implemented.Select(f=>f.Id));

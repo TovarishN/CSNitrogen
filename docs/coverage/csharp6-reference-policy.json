@@ -41,5 +41,25 @@
     "languageVersion": "CSharp6",
     "role": "observation; the sixth-edition text wins and disagreements are recorded divergences"
   },
-  "completion": "Partial. Bounded test-only seam proof only (csharp6-seam-proof-evidence.md); no production capability, factory or admission change."
+  "completion": "Partial. Production capabilities csharp6.* and csharp6.source-context-checks (CSN2060-CSN2062) are implemented in the CSharp6 factory and later factories, with frozen Unicode4 scalars; no independent admission guard exists, so CSharp6 is not Complete.",
+  "production": {
+    "nitrogenRevision": "b3494870dfb5f187bae9065227d4ef7f742aa048",
+    "corePullRequest": null,
+    "capabilities": [
+      "csharp6.interpolated-strings",
+      "csharp6.null-conditional",
+      "csharp6.nameof",
+      "csharp6.exception-filters",
+      "csharp6.using-static",
+      "csharp6.property-initializers",
+      "csharp6.expression-bodies",
+      "csharp6.index-initializers",
+      "csharp6.await-in-catch-finally",
+      "csharp6.read-only-auto-properties"
+    ],
+    "contextFlags": [
+      "CSharp.InterpolatedStrings.Verbatim"
+    ],
+    "policySource": "Parsing/CSharp6ContextPolicy.cs"
+  }
 }

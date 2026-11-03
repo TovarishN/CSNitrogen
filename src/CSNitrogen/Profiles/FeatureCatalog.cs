@@ -6,6 +6,16 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp6.interpolated-strings", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/InterpolatedStrings.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.null-conditional", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NullConditional.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.nameof", Array.AsReadOnly(new[]{"baseline.expressions","csharp2.generics","csharp2.alias-qualification"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NameofExpressions.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.exception-filters", Array.AsReadOnly(new[]{"baseline.statements"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ExceptionFilters.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.using-static", Array.AsReadOnly(new[]{"baseline.namespace-declarations"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/UsingStatic.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.property-initializers", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/PropertyInitializers.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.expression-bodies", Array.AsReadOnly(new[]{"baseline.members"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ExpressionBodies.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.index-initializers", Array.AsReadOnly(new[]{"csharp3.object-initializers"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/IndexInitializers.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
+        new FeatureDefinition("csharp6.await-in-catch-finally", Array.AsReadOnly(new[]{"csharp5.await-expressions"}), Array.Empty<string>(), Array.Empty<string>()) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp5.source-context-checks"}) },
+        new FeatureDefinition("csharp6.read-only-auto-properties", Array.AsReadOnly(new[]{"csharp3.auto-properties"}), Array.Empty<string>(), Array.Empty<string>()) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp5.async-functions", Array.AsReadOnly(new[]{"baseline.members","csharp2.anonymous-methods","csharp3.lambdas"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/AsyncFunctions.ngr"})) { Introduced=new(5,0), Policies=Array.AsReadOnly(new[]{"csharp5.source-context-checks"}) },
         new FeatureDefinition("csharp5.await-expressions", Array.AsReadOnly(new[]{"baseline.expressions","foundation.empty-classes"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/AwaitExpressions.ngr"})) { Introduced=new(5,0), Policies=Array.AsReadOnly(new[]{"csharp5.source-context-checks"}) },
         new FeatureDefinition("csharp4.generic-disambiguation", Array.AsReadOnly(new[]{"csharp2.generics"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/GenericFollowersFourth.ngr"})) { Introduced=new(4,0) },
@@ -113,7 +123,7 @@ public static class FeatureCatalog
                 :parsed.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!);
             return Array.AsReadOnly(names.ToArray());
         }
-        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
+        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks","csharp6.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
         var sourceInputs=inputs.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
         // Each guard requires its actually admitted predecessor; later guards run only when their major is resolved.
         bool first=CoverageContract.Reviewed(ledger.RootElement,map.RootElement,source.RootElement,primary.RootElement,config.RootElement);

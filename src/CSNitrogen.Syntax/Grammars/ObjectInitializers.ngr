@@ -7,7 +7,8 @@ syntax module CSharp.ObjectInitializers
  syntax ScalarElement = Value:CSharp.Expressions.Expression;
  syntax CollectionElement = BracedElement / ScalarElement;
  syntax CollectionInitializer = "{" Items:(CollectionElement; ",")+ Trailing:","? "}";
- syntax Initializer = ObjectInitializer / CollectionInitializer;
+ extensible syntax InitializerExtension { }
+ syntax Initializer = ObjectInitializer / CollectionInitializer / InitializerExtension;
  extend syntax CSharp.Expressions.Expression
  {
   | InitializedObjectExpression = "new" Type:CSharp.NamesTypes.TypeBase Arguments:CSharp.Expressions.Arguments? Initializer:Initializer

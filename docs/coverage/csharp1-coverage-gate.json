@@ -224,6 +224,7 @@
         "alternative:Statement.StandardStatement",
         "rule:Block",
         "rule:CatchClause",
+        "rule:CatchFilter",
         "rule:CheckedStatement",
         "rule:ConstantDeclaration",
         "rule:ConstantDeclarator",
@@ -346,13 +347,16 @@
         "rule:InterfaceMethod",
         "rule:InterfaceProperty",
         "rule:MemberDeclaration",
+        "rule:MemberDeclarationExtension",
         "rule:MemberNameSuffix",
         "rule:MethodBody",
+        "rule:MethodBodyExtension",
         "rule:MethodDeclaration",
         "rule:Modifier",
         "rule:OperatorDeclaration",
         "rule:OperatorToken",
         "rule:PropertyDeclaration",
+        "rule:PropertyInitializerSeam",
         "rule:StructDeclaration",
         "rule:TypeConstraints",
         "rule:TypeDeclaration",
@@ -383,7 +387,8 @@
         "rule:ExternalAliasDirectives",
         "rule:NamespaceDeclaration",
         "rule:NamespaceMember",
-        "rule:UsingDirective"
+        "rule:UsingDirective",
+        "rule:UsingKind"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_1st_edition_december_2001.pdf",
@@ -776,6 +781,32 @@
           "method": "Async_methods_need_a_block_body_and_report_the_modifier"
         }
       ]
+    },
+    {
+      "source": "Parsing/CSharp6ContextPolicy.cs",
+      "codes": [
+        "CSN2060",
+        "CSN2061",
+        "CSN2062"
+      ],
+      "status": "verified",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_6th_edition_june_2022.pdf",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Sixth_context_policy_is_inactive_for_predecessors"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Sixth_forms_pass_existing_policies"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Sixth_source_local_checks"
+        }
+      ]
     }
   ],
   "policyGroups": {
@@ -802,7 +833,8 @@
       "Parsing/CSharp3ExpressionPolicy.cs",
       "Parsing/CSharp3DeclarationPolicy.cs",
       "Parsing/CSharp4ContextPolicy.cs",
-      "Parsing/CSharp5ContextPolicy.cs"
+      "Parsing/CSharp5ContextPolicy.cs",
+      "Parsing/CSharp6ContextPolicy.cs"
     ]
   },
   "semanticExclusions": [

@@ -1,0 +1,7 @@
+syntax module CSharp.PropertyInitializers
+{
+ extend syntax CSharp.Declarations.PropertyInitializerSeam
+ {
+  | PropertyInitializer = "=" Value:CSharp.Statements.VariableInitializer ";"
+ }
+}

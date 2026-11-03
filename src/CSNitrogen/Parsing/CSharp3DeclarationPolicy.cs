@@ -63,7 +63,9 @@ internal static class CSharp3DeclarationPolicy
     if(member<0)continue;var modifiers=SyntaxView.Cast<MemberDeclarationNode>(tree,member).Modifiers;
     if(Has(modifiers,"abstract")||Has(modifiers,"extern"))continue;
     int semicolons=0;foreach(var accessor in property.Accessors)if(Text(accessor.Body.Index)==";")semicolons++;
-    if(semicolons>0&&(semicolons!=2||property.Accessors.Count!=2))Error(n,"A historical automatic property requires both get and set accessors, each with a semicolon body.");
+    // ECMA-334 6 §14.7.4 adds read-only automatic properties: a lone get accessor with a semicolon body.
+    bool readOnly=version.Major>=6&&semicolons==1&&property.Accessors.Count==1&&Text(property.Accessors[0].Keyword.Index)=="get";
+    if(semicolons>0&&!readOnly&&(semicolons!=2||property.Accessors.Count!=2))Error(n,version.Major>=6?"An automatic property requires a get accessor alone or get and set accessors, each with a semicolon body.":"A historical automatic property requires both get and set accessors, each with a semicolon body.");
    }
   }
   return issues;
