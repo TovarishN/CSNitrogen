@@ -11,6 +11,16 @@
 <EmbeddedResource Include="../../tests/Corpus/CSharp4/*.json"><LogicalName>CSNitrogen.csharp4-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-coverage-gate.json" LogicalName="CSNitrogen.csharp3-coverage-gate.json"/>
 <EmbeddedResource Include="../../tests/Corpus/CSharp3/*-production-cases.json;../../tests/Corpus/CSharp3/finite-alternative-cases.json"><LogicalName>CSNitrogen.csharp3-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
+<EmbeddedResource Include="../../docs/coverage/csharp5-reference-policy.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-reference-policy.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-standard-index.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-standard-index.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-standard-crosswalk.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-source-delta-inventory.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-source-delta-inventory.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-main-text-differences.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-main-text-differences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-main-text-dispositions.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-main-text-dispositions.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-reviewed-occurrences.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-reviewed-occurrences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-normative-context-review.md" LogicalName="CSNitrogen.csharp5-review.csharp5-normative-context-review.md"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-coverage-gate.json" LogicalName="CSNitrogen.csharp5-coverage-gate.json"/>
+<EmbeddedResource Include="../../tests/Corpus/CSharp5/*.json"><LogicalName>CSNitrogen.csharp5-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-reference-policy.json" LogicalName="CSNitrogen.csharp3-reference-policy.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp3-standard-index.json" LogicalName="CSNitrogen.csharp3-standard-index.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp3-standard-crosswalk.json" LogicalName="CSNitrogen.csharp3-standard-crosswalk.json"/>

@@ -14,7 +14,7 @@ public class CSharp5AlternativeMatrixTests
  static readonly string[] Domains=["lexical","expression","statement","unsafe","declaration","finite","fourth-source-specific"];
  static string Corpus(string d)=>d switch{"finite"=>"Corpus/CSharp3/finite-alternative-cases.json","fourth-source-specific"=>"Corpus/CSharp4/source-specific-cases.json",_=>$"Corpus/CSharp3/{d}-production-cases.json"};
  [Fact]public void Every_fifth_nonplaceholder_alternative_has_exact_source_and_fixture_provenance()
- {Assert.Empty(Evaluate(Read("Corpus/CSharp5/alternative-witness-matrix.json")));Assert.False(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("Corpus/CSharp5/alternative-witness-matrix.json")));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
  [Theory]
  [InlineData("missing","CaseSet")][InlineData("duplicate","CaseSet")][InlineData("invented","CaseSet")]
  [InlineData("source","SourceIdentity")][InlineData("alternative","AlternativeHash")][InlineData("parent","OccurrenceLink")]

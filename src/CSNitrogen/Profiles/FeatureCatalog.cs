@@ -53,12 +53,14 @@ public static class FeatureCatalog
     });
     private sealed record Snapshot(IReadOnlyList<CoverageFeature> Inventory, string Identity,
         IReadOnlyList<CoverageMapping> Mappings,IReadOnlyList<string> KnownPolicies,
-        IReadOnlyDictionary<string,string[]> Factories,bool Reviewed,IReadOnlyList<string> HistoricalModules,bool SecondReviewed,IReadOnlyList<string> SecondModules,bool ThirdReviewed,IReadOnlyList<string> ThirdModules,bool FourthReviewed,IReadOnlyList<string> FourthModules);
+        IReadOnlyDictionary<string,string[]> Factories,bool Reviewed,IReadOnlyList<string> HistoricalModules,bool SecondReviewed,IReadOnlyList<string> SecondModules,bool ThirdReviewed,IReadOnlyList<string> ThirdModules,bool FourthReviewed,IReadOnlyList<string> FourthModules,bool FifthReviewed,IReadOnlyList<string> FifthModules);
     public static IReadOnlyList<CoverageMapping> CoverageMappings => Coverage.Value.Mappings;
     internal static IReadOnlyList<string> KnownPolicies => Coverage.Value.KnownPolicies;
     internal static IReadOnlyList<string> FactoryGrammars(string name) => Coverage.Value.Factories.TryGetValue(name,out var g)?g:Array.Empty<string>();
     internal static bool SourceReviewed => Coverage.Value.Reviewed;
     internal static bool FourthSourceReviewed => Coverage.Value.FourthReviewed;
+    internal static bool FifthSourceReviewed => Coverage.Value.FifthReviewed;
+    internal static IReadOnlyList<string> FifthModules => Coverage.Value.FifthModules;
     internal static IReadOnlyList<string> FourthModules => Coverage.Value.FourthModules;
     internal static bool ThirdSourceReviewed => Coverage.Value.ThirdReviewed;
     internal static IReadOnlyList<string> ThirdModules => Coverage.Value.ThirdModules;
@@ -84,6 +86,7 @@ public static class FeatureCatalog
         var composition=Read("CSNitrogen.composition.json");
         var reference=Read("CSNitrogen.reference-policy.json");
         var fourthGate=Read("CSNitrogen.csharp4-coverage-gate.json");
+        var fifthGate=Read("CSNitrogen.csharp5-coverage-gate.json");
         var thirdReference=Read("CSNitrogen.csharp3-reference-policy.json");var thirdIndex=Read("CSNitrogen.csharp3-standard-index.json");
         var thirdCrosswalk=Read("CSNitrogen.csharp3-standard-crosswalk.json");var thirdGate=Read("CSNitrogen.csharp3-coverage-gate.json");
         var secondReference=Read("CSNitrogen.csharp2-reference-policy.json");var secondIndex=Read("CSNitrogen.csharp2-standard-index.json");
@@ -91,7 +94,7 @@ public static class FeatureCatalog
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");
         var index=Read("CSNitrogen.csharp1-standard-index.json");
         var crosswalk=Read("CSNitrogen.csharp1-standard-crosswalk.json");
-        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)))Read(name);
+        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-evidence.",StringComparison.Ordinal)))Read(name);
         using var document = JsonDocument.Parse(inventory);
         var entries = document.RootElement.GetProperty("features").EnumerateArray().Select(f => new CoverageFeature(
             f.GetProperty("id").GetString()!, Version.Parse(f.GetProperty("introduced").GetString()!),
@@ -111,8 +114,9 @@ public static class FeatureCatalog
         var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
         var sourceInputs=inputs.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
         bool secondReviewed=CSharp2CoverageContract.Reviewed(secondGate,secondIndex,secondCrosswalk,secondReference,composition,sourceInputs);
-        using var thirdLedger=JsonDocument.Parse(thirdGate);using var fourthLedger=JsonDocument.Parse(fourthGate);
+        using var thirdLedger=JsonDocument.Parse(thirdGate);using var fourthLedger=JsonDocument.Parse(fourthGate);using var fifthLedger=JsonDocument.Parse(fifthGate);
         bool thirdReviewed=CSharp3CoverageContract.Reviewed(thirdGate,thirdIndex,thirdCrosswalk,thirdReference,composition,sourceInputs,secondReviewed);
+        bool fourthReviewed=CSharp4CoverageContract.Reviewed(fourthGate,composition,sourceInputs,thirdReviewed);
         return new(Array.AsReadOnly(entries),CoverageHash.Compute(inputs),Array.AsReadOnly(mappings),Array.AsReadOnly(known),factories,
             CoverageContract.Reviewed(ledger.RootElement,map.RootElement,source.RootElement,primary.RootElement,config.RootElement),
             Array.AsReadOnly(ledger.RootElement.GetProperty("modules").EnumerateArray().Select(m=>m.GetProperty("module").GetString()!).ToArray()),
@@ -120,7 +124,9 @@ public static class FeatureCatalog
             Array.AsReadOnly(secondLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
             thirdReviewed,
             Array.AsReadOnly(thirdLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
-            CSharp4CoverageContract.Reviewed(fourthGate,composition,sourceInputs,thirdReviewed),
-            Array.AsReadOnly(fourthLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()));
+            fourthReviewed,
+            Array.AsReadOnly(fourthLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
+            CSharp5CoverageContract.Reviewed(fifthGate,composition,sourceInputs,fourthReviewed),
+            Array.AsReadOnly(fifthLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()));
     }
 }

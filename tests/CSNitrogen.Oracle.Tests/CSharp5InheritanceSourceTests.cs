@@ -13,7 +13,7 @@ public class CSharp5InheritanceSourceTests
  {
   var index=Read();var row=index["productions"]!.AsArray().Single(r=>r!["alternatives"]!.AsArray().Any(a=>Text(a!,"id")==id))!;
   var marker=row["alternatives"]!.AsArray().Single(a=>Text(a!,"id")==id)!;
-  Assert.Equal(Expected(index,row).Order(),marker["earlierSourceAlternativeIds"]!.AsArray().Select(n=>n!.GetValue<string>()).Order());Assert.False(ProfileResolver.Resolve("CSharp5").Profile!.Complete);
+  Assert.Equal(Expected(index,row).Order(),marker["earlierSourceAlternativeIds"]!.AsArray().Select(n=>n!.GetValue<string>()).Order());Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);
  }
  [Fact]public void Source_inheritance_has_seventeen_markers_and_one_hundred_thirty_five_exact_references()
  {Assert.Empty(Evaluate(Read()));}
@@ -34,7 +34,7 @@ public class CSharp5InheritanceSourceTests
    case "other-family-parent":parents[0]="B:9646:input/1";break;
    case "placeholder-parent":parents[0]=Text(marker,"id");break;
   }
-  Assert.Contains(Evaluate(index),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.False(ProfileResolver.Resolve("CSharp5").Profile!.Complete);
+  Assert.Contains(Evaluate(index),e=>e.StartsWith(expected,StringComparison.Ordinal));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);
  }
  static IEnumerable<string> Expected(JsonObject index,JsonNode row)=>index["productions"]!.AsArray().Where(r=>r!["line"]!.GetValue<int>()<row["line"]!.GetValue<int>()&&Text(r,"name")==Text(row,"name")).SelectMany(r=>r!["alternatives"]!.AsArray()).Where(a=>Text(a!,"kind")!="inherited-placeholder").Select(a=>Text(a!,"id"));
  static IReadOnlyList<string> Evaluate(JsonObject index)

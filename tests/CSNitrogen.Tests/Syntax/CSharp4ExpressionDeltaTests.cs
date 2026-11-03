@@ -51,9 +51,9 @@ public class CSharp4ExpressionDeltaTests
   var custom=CSNitrogen.Profiles.ProfileResolver.ResolveCustom("missing-generics",["csharp4.generic-disambiguation"]);Assert.Null(custom.Profile);Assert.Contains(custom.Issues,i=>i.Code=="missing-requirement");
  }
  [Theory][InlineData("CSharp5")][InlineData("CSharp7_3")][InlineData("CSharp14")]
- public void Selected_later_factories_retain_fourth_expression_additions_without_admission(string profile)
+ public void Selected_later_factories_retain_fourth_expression_additions_with_separate_admission(string profile)
  {
-  using var p=CSharpParser.Parse(new("class C{object M(){return new {X=F<T>|x,base.P};}}",profile,"later.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  using var p=CSharpParser.Parse(new("class C{object M(){return new {X=F<T>|x,base.P};}}",profile,"later.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.Equal(profile=="CSharp5",p.ProfileComplete);
  }
 
 }

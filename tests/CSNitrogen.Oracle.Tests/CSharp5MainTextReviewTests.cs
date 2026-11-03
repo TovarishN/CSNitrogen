@@ -16,8 +16,8 @@ public class CSharp5MainTextReviewTests
   ["async-functions"]=6,["await-expressions"]=5,["generic-member-transcription"]=2,["preprocessing-trailing-comment"]=1,
   ["modifier-compatibility"]=1,["caller-info-attributes"]=3,["field-and-layout-normalization"]=589,["retained-semantic-or-editorial-boundary"]=100
  };
- [Fact]public void Every_main_text_difference_has_a_pinned_disposition_and_the_fifth_profile_stays_partial()
- {Assert.Empty(Evaluate(Read("csharp5-main-text-dispositions.json")));Assert.False(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ [Fact]public void Every_main_text_difference_has_a_pinned_disposition_and_separate_snapshot_admission()
+ {Assert.Empty(Evaluate(Read("csharp5-main-text-dispositions.json")));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
  [Fact]public void The_appendix_index_matches_the_admitted_fourth_except_three_reviewed_bodies()
  {
   var index=Read("csharp5-standard-index.json");var delta=Read("csharp5-source-delta-inventory.json");

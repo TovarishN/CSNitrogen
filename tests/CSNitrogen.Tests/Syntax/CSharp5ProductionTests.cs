@@ -31,7 +31,7 @@ public class CSharp5ProductionTests
  [InlineData("class C{object f=async delegate{await(M());};}","AwaitExpression")]
  public void Actual_fifth_factory_selects_contextual_owners_and_preserves_UTF16_ranges(string body,string expected)
  {
-  string source="/*𐐀*/"+body;using var p=CSharpParser.Parse(new(source,"CSharp5","context5.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.False(p.ProfileComplete);
+  string source="/*𐐀*/"+body;using var p=CSharpParser.Parse(new(source,"CSharp5","context5.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.True(p.ProfileComplete);
   int start=source.IndexOf("await(M())",StringComparison.Ordinal);
   int owner=Assert.Single(Enumerable.Range(0,p.Tree.NodeCount),n=>p.Tree.Span(n).Start==start&&p.Tree.Span(n).Length==10&&Kind(n) is "InvocationExpression" or "AwaitExpression");Assert.Equal(expected,Kind(owner));
   string Kind(int n)=>p.Tree.Language!.GetKindName(p.Tree.Kind(n));
@@ -127,7 +127,7 @@ public class CSharp5ProductionTests
  [InlineData("class C{async void M(){@await(M());}}")]
  [InlineData(@"class C{async void M(){\u0061wait(M());}}")]
  public void Source_local_checks_preserve_allowed_boundaries_and_identifier_escapes(string source)
- {using var p=CSharpParser.Parse(new(source,"CSharp5","allowed5.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.False(p.ProfileComplete);}
+ {using var p=CSharpParser.Parse(new(source,"CSharp5","allowed5.cs",[]));Assert.True(p.Accepted,string.Join(";",p.Issues));Assert.True(p.ProfileComplete);}
  [Theory][InlineData("await(M());",true)][InlineData("int await;",false)]
  public void Incremental_async_header_edits_match_full_trees_and_source_issues(string statement,bool acceptedWhenAsync)
  {

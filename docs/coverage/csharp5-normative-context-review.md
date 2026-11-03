@@ -53,6 +53,12 @@ Executing the inherited witnesses on CSharp5 found 15 lexical/preprocessing diff
 
 `tools/build-csharp5-owner-crosswalk.py` carries every appendix occurrence's admitted CSharp4 owners, policies and mapping forward unchanged. The changed `pointer-member-access` body was already owned by the generic pointer-member alternative. Six main-text productions that the appendix omits are recorded separately: `unary-expression` and `statement-expression` (await), `await-expression`, `lambda-expression` and `anonymous-method-expression` (async marker) and `method-modifier` (async). Each record holds its source line hash and the appendix occurrence that omits it, and every one carries the fifth source-context policy. `CSharp5OwnerCrosswalkTests` parses the 32 grammar resources of the actual CSharp5 factory and requires every owner to exist there and every appendix row to equal its admitted predecessor exactly.
 
-## Remaining Task3 work
+## Reviewed overlay and admission
 
-The reviewed-occurrence overlay and the independent fail-closed CSharp5 admission guard remain. The index, delta inventory, difference index and dispositions are mechanical or inspected inputs; none of them awards admission.
+`tools/build-csharp5-reviewed-occurrences.py` records all 458 appendix occurrences and the 6 main-text additions as reviewed on four dimensions: normative prose, positive/negative, ambiguity/context and spans/diagnostics. 455 body-identical occurrences carry the admitted CSharp4 review (basis `predecessor-review-carried`). The 3 changed bodies and the 6 additions cite this report (`version5-source-review`, `version5-main-text-review`). The overlay binds the crosswalk, dispositions, witness matrix, predecessor overlay and this report by hash.
+
+`CSharp5CoverageContract` admits the CSharp5 snapshot only with an admitted CSharp4, the approved ledger digest and exact input pins. It also requires the 32-module factory and compilation-unit root, all occurrence/owner/review records, every carried owner equal to its predecessor, the six additions, 1164 linked witnesses, 17 markers/135 references and 707 dispositions. Pin refresh is directed 5→4→3→2: the fifth ledger excludes CSharp2–5 contract code, and each predecessor ledger pins its successors' contracts. CSharp6 and later, 7.x minors and custom selections remain partial.
+
+## Remaining work
+
+A fresh whole-branch review precedes authorized integration, as for CSharp4. The index, delta inventory, difference index, crosswalk and witness matrix remain mechanical or candidate inputs. Only the reviewed overlay together with the exact ledger admits the snapshot.
