@@ -6,7 +6,7 @@ namespace CSNitrogen.Profiles;
 internal static class CSharp3CoverageContract
 {
  internal const string PrimarySha256="ec96847c92a357626c7bd868cd3782b975c309eb82cd70c0509e8873231912d1";
- internal const string ApprovedLedgerSha256="db5c3bc4f2dc7d9ab79c337765c3b38ac8efaab51b14e8070ba8a2998ab5c377";
+ internal const string ApprovedLedgerSha256="30ec17405103083fad7f5cb2d353c5e46c0a7967d017ce72174ef81209fa44ee";
  static string Hash(byte[] b)=>Convert.ToHexStringLower(SHA256.HashData(b));
  static string Text(JsonElement e,string key)=>e.GetProperty(key).GetString()!;
  static string[] Strings(JsonElement e)=>e.EnumerateArray().Select(x=>x.GetString()!).ToArray();

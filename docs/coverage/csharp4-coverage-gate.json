@@ -433,7 +433,7 @@
     "CSNitrogen.source.Preprocessing/DirectiveScanner.cs": "93faae00255fdba33d5a4d9f89c454b37ce26efe413607c7d81b10c59bacee09",
     "CSNitrogen.source.Preprocessing/PreprocessRequest.cs": "c08dd55af7403cd37d269b6000489137878630db6fcaf9e26e827131763e9862",
     "CSNitrogen.source.Preprocessing/PreprocessResult.cs": "1c6c2734f410774aa26226747df928135d65b259a689ca46badb8a15bb61836a",
-    "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs": "d463b991c65c9236b74d512fbe6dda3063a79d3db0f2fc82d20b6be916bd2780",
+    "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs": "0138c086c6f7bcd5a6531fa31e98da161a05bc9622da89ee06979ce95fed5af2",
     "CSNitrogen.source.Profiles/ContractJson.cs": "45f174833c6a0354a328df29d600cfdce97cbd9f870d1f7cf43143b35dfd22cd",
     "CSNitrogen.source.Profiles/CoverageContract.cs": "44e075b0e0a5ddbead896b1c1de4d24d0f1073f6b7e6e4790499f0a3063a0b87",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
