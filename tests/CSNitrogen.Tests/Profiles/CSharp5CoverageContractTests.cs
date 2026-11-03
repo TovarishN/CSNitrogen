@@ -91,7 +91,7 @@ public class CSharp5CoverageContractTests
  }
  static string Hash(byte[] b)=>Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(b));
  /// <summary>Applies a mutation, rebinds every cross-artifact hash and re-pins the ledger, so only structural checks can reject it.</summary>
- static bool Repinned(Action<Func<string,JsonNode>,JsonNode>? mutate=null)
+ static bool Repinned(Action<Func<string,JsonNode>,JsonNode>? mutate=null,Action<Func<string,JsonNode>>? afterApproval=null)
  {
   var inputs=Inputs();var nodes=new Dictionary<string,JsonNode>(StringComparer.Ordinal);
   string A(string name)=>"CSNitrogen.csharp5-artifact.csharp5-"+name+".json";
@@ -103,12 +103,38 @@ public class CSharp5CoverageContractTests
   var map=Node(A("standard-crosswalk"));map["indexSha256"]=Hash(Bytes(A("standard-index")));map["deltaSha256"]=Hash(Bytes(A("source-delta-inventory")));
   var disp=Node(A("main-text-dispositions"));disp["differenceIndexSha256"]=Hash(Bytes(A("main-text-differences")));disp["reportSha256"]=Hash(Bytes(Report));
   var matrix=Node(Matrix);matrix["indexSha256"]=Hash(Bytes(A("standard-index")));matrix["deltaSha256"]=Hash(Bytes(A("source-delta-inventory")));matrix["sourceSpecific"]!["sha256"]=Hash(Bytes(Specific));
-  var review=Node(A("reviewed-occurrences"));review["ownerCrosswalkSha256"]=Hash(Bytes(A("standard-crosswalk")));review["contextReportSha256"]=Hash(Bytes(Report));
+  // The approval pins the reviewed inputs by source path; rebind it like a reviewer re-approving, unless the test changes inputs afterwards.
+  var approval=Node(A("review-approval"));var approved=approval["inputs"]!.AsObject();
+  foreach(var (path,resource) in ApprovalResources)if(approved.ContainsKey(path))approved[path]=Hash(Bytes(resource));
+  afterApproval?.Invoke(Node);
+  var review=Node(A("reviewed-occurrences"));review["approvalSha256"]=Hash(Bytes(A("review-approval")));review["ownerCrosswalkSha256"]=Hash(Bytes(A("standard-crosswalk")));review["contextReportSha256"]=Hash(Bytes(Report));
   review["mainTextDispositionsSha256"]=Hash(Bytes(A("main-text-dispositions")));review["alternativeMatrixSha256"]=Hash(Bytes(Matrix));
   foreach(var key in nodes.Keys.ToArray())Bytes(key);
   var pins=new JsonObject();foreach(var key in inputs.Keys.Where(CSharp5CoverageContract.Eligible).Order(StringComparer.Ordinal))pins[key]=Hash(inputs[key]);
   gate["reviewInputs"]=pins;byte[] ledger=Encoding.UTF8.GetBytes(gate.ToJsonString());
   return CSharp5CoverageContract.Reviewed(ledger,Read("composition.json"),inputs,true,Hash(ledger));
+ }
+ static readonly (string Path,string Resource)[] ApprovalResources=
+ [
+  ("docs/coverage/csharp5-reference-policy.json","CSNitrogen.csharp5-artifact.csharp5-reference-policy.json"),("docs/coverage/csharp5-standard-index.json","CSNitrogen.csharp5-artifact.csharp5-standard-index.json"),
+  ("docs/coverage/csharp5-source-delta-inventory.json","CSNitrogen.csharp5-artifact.csharp5-source-delta-inventory.json"),("docs/coverage/csharp5-standard-crosswalk.json","CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json"),
+  ("docs/coverage/csharp5-main-text-differences.json","CSNitrogen.csharp5-artifact.csharp5-main-text-differences.json"),("docs/coverage/csharp5-main-text-dispositions.json","CSNitrogen.csharp5-artifact.csharp5-main-text-dispositions.json"),
+  ("docs/coverage/csharp5-normative-context-review.md","CSNitrogen.csharp5-review.csharp5-normative-context-review.md"),("docs/coverage/csharp4-reviewed-occurrences.json","CSNitrogen.csharp4-artifact.csharp4-reviewed-occurrences.json"),
+  ("tests/Corpus/CSharp5/alternative-witness-matrix.json","CSNitrogen.csharp5-evidence.alternative-witness-matrix.json"),("tests/Corpus/CSharp5/source-specific-cases.json","CSNitrogen.csharp5-evidence.source-specific-cases.json"),
+ ];
+ [Theory]
+ [InlineData("blank-reviewer")][InlineData("unapproved")][InlineData("missing-input")][InlineData("changed-after-approval")]
+ public void Admission_requires_a_named_reviewer_approving_exactly_the_current_inputs(string change)
+ {
+  Assert.False(change switch
+  {
+   "changed-after-approval"=>Repinned(afterApproval:node=>node("CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json")["scope"]="changed after review"),
+   _=>Repinned((node,_)=>
+   {
+    var approval=node("CSNitrogen.csharp5-artifact.csharp5-review-approval.json");
+    if(change=="blank-reviewer")approval["reviewer"]=" ";else if(change=="unapproved")approval["status"]="pending";else approval["inputs"]!.AsObject().Remove("docs/coverage/csharp5-standard-index.json");
+   }),
+  });
  }
  static JsonNode Row(JsonNode map,string id)=>map["productions"]!.AsArray().Single(r=>r!["standardId"]!.GetValue<string>()==id)!;
  static JsonNode Added(JsonNode map,string name)=>map["mainTextAdditions"]!.AsArray().Single(a=>a!["id"]!.GetValue<string>().EndsWith(":"+name,StringComparison.Ordinal))!;
