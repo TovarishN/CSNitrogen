@@ -14,6 +14,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import sys
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--check', action='store_true')
@@ -29,6 +30,7 @@ fourth = read('docs/coverage/csharp4-reviewed-occurrences.json')
 if fourth['status'] != 'verified':
     raise SystemExit('Predecessor overlay is not verified')
 previous = {r['standardId']: r for r in fourth['productions']}
+sys.dont_write_bytecode = True  # importing the approval tool must not leave tools/__pycache__
 spec = importlib.util.spec_from_file_location('approve', ROOT / 'tools/approve-csharp5-review.py')
 approve = importlib.util.module_from_spec(spec); spec.loader.exec_module(approve)
 approval_path = ROOT / 'docs/coverage/csharp5-review-approval.json'
