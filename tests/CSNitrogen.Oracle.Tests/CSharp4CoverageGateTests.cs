@@ -17,7 +17,7 @@ public class CSharp4CoverageGateTests
   var rows=reviewed["productions"]!.AsArray();Assert.Equal(458,rows.Count);Assert.Equal(index["productions"]!.AsArray().Select(r=>Text(r!,"id")).Order(),rows.Select(r=>Text(r!,"standardId")).Order());
   foreach(var (domain,count) in new[]{("lexical",100),("expression",114),("statement",52),("declaration",154),("unsafe",38)})Assert.Equal(count,rows.Count(r=>Text(r!["sourceReview"]!,"domain")==domain));
   Assert.All(rows,r=>{Assert.Equal("verified",Text(r!,"status"));Assert.All(r!["reviews"]!.AsObject(),d=>Assert.Equal("verified",d.Value!.GetValue<string>()));Assert.Equal(Text(r,"standardId"),Text(r["sourceReview"]!,"occurrenceId"));});
-  Assert.Empty(CSharp4OwnerCrosswalkTests.Evaluate(map.AsObject()));Assert.True(FeatureCatalog.FourthSourceReviewed);
+  Assert.Empty(CSharp4OwnerCrosswalkTests.Evaluate(map.AsObject()));Assert.True(FeatureCatalog.SourceReviewedFor(4));
  }
  [Fact]public void Fourth_review_inputs_are_exact_and_contract_hash_dependencies_are_directed()
  {

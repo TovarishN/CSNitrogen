@@ -26,66 +26,22 @@ public static unsafe class CSharpParser
             ["CSharp7_2"] = (new(() => CSharp7_2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7_2Composition.Start),
             ["CSharp7_3"] = (new(() => CSharp7_3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7_3Composition.Start),
         };
-    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> HistoricalFactoryContract=new(()=>
+    /// <summary>Actual module names and compilation-unit root provenance of each admitted factory.</summary>
+    private static readonly IReadOnlyDictionary<string,Lazy<(IReadOnlyList<string> Modules,bool Root)>> FactoryContracts=
+        new[]{"CSharp1","CSharp2","CSharp3","CSharp4","CSharp5"}.ToDictionary(name=>name,name=>new Lazy<(IReadOnlyList<string>,bool)>(()=>FactoryContract(name)),StringComparer.Ordinal);
+    private static (IReadOnlyList<string> Modules,bool Root) FactoryContract(string name)
     {
-        var factory=Compositions["CSharp1"];var language=factory.Language.Value;
+        var factory=Compositions[name];var language=factory.Language.Value;
         using var parsed=language.Parse("",factory.Start);
         bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
             && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
             && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
         return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
-    });
-    internal static bool MatchesHistoricalFactory(IReadOnlyList<string> modules)
-        =>HistoricalFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
-            && HistoricalFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
-    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> SecondFactoryContract=new(()=>
-    {
-        var factory=Compositions["CSharp2"];var language=factory.Language.Value;
-        using var parsed=language.Parse("",factory.Start);
-        bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
-            && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
-            && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
-        return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
-    });
-    internal static bool MatchesSecondFactory(IReadOnlyList<string> modules)
-        =>SecondFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
-            && SecondFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
-    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> ThirdFactoryContract=new(()=>
-    {
-        var factory=Compositions["CSharp3"];var language=factory.Language.Value;
-        using var parsed=language.Parse("",factory.Start);
-        bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
-            && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
-            && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
-        return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
-    });
-    internal static bool MatchesThirdFactory(IReadOnlyList<string> modules)
-        =>ThirdFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
-            && ThirdFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
-    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> FourthFactoryContract=new(()=>
-    {
-        var factory=Compositions["CSharp4"];var language=factory.Language.Value;
-        using var parsed=language.Parse("",factory.Start);
-        bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
-            && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
-            && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
-        return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
-    });
-    internal static bool MatchesFourthFactory(IReadOnlyList<string> modules)
-        =>FourthFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
-            && FourthFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
-    private static readonly Lazy<(IReadOnlyList<string> Modules,bool Root)> FifthFactoryContract=new(()=>
-    {
-        var factory=Compositions["CSharp5"];var language=factory.Language.Value;
-        using var parsed=language.Parse("",factory.Start);
-        bool root=parsed.Success && !parsed.HasErrors && factory.Start.Name=="CompilationUnit"
-            && language.GetKindName(parsed.Tree.Kind(parsed.Tree.Root))=="CompilationUnit"
-            && language.Modules.Any(m=>m.Id==SyntaxKinds.ModuleOf(parsed.Tree.Kind(parsed.Tree.Root)) && m.Name=="CSharp.CompilationUnits");
-        return (Array.AsReadOnly(language.Modules.Select(m=>m.Name).Order(StringComparer.Ordinal).ToArray()),root);
-    });
-    internal static bool MatchesFifthFactory(IReadOnlyList<string> modules)
-        =>FifthFactoryContract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
-            && FifthFactoryContract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
+    }
+    /// <summary>Whether the named admitted factory has exactly these modules and the compilation-unit root.</summary>
+    internal static bool MatchesFactory(string name,IReadOnlyList<string> modules)
+        =>FactoryContracts.TryGetValue(name,out var contract) && contract.Value.Root && modules.Distinct(StringComparer.Ordinal).Count()==modules.Count
+            && contract.Value.Modules.SequenceEqual(modules.Order(StringComparer.Ordinal));
     public static ParseDocument Parse(ParseRequest request)
     {
         var (profile,composition)=Resolve(request);

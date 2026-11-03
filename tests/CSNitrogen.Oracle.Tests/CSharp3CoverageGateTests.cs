@@ -26,7 +26,7 @@ public class CSharp3CoverageGateTests
   }
   Assert.All(gate["owners"]!.AsArray(),o=>Assert.Contains(o!.GetValue<string>(),owners));
   Assert.Equal("CSharp.CompilationUnits",Text(gate["factory"]!,"rootModule"));Assert.Equal("CompilationUnit",Text(gate["factory"]!,"start"));
-  Assert.True(FeatureCatalog.ThirdSourceReviewed);Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
+  Assert.True(FeatureCatalog.SourceReviewedFor(3));Assert.True(ProfileResolver.Resolve("CSharp3").Profile!.Complete);
  }
  [Fact]public void Admission_hash_dependencies_are_directed_and_representative_evidence_is_embedded()
  {

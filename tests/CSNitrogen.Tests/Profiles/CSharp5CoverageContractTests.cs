@@ -10,13 +10,13 @@ public class CSharp5CoverageContractTests
  static bool Evaluate(byte[]? gate=null,byte[]? composition=null,Dictionary<string,byte[]>? inputs=null,bool predecessor=true)
   =>CSharp5CoverageContract.Reviewed(gate??Read("csharp5-coverage-gate.json"),composition??Read("composition.json"),inputs??Inputs(),predecessor);
  [Fact]public void Only_the_reviewed_fifth_snapshot_with_admitted_fourth_predecessor_is_accepted()
- {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.FifthSourceReviewed);Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.SourceReviewedFor(5));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
  [Fact]public void Actual_fifth_factory_requires_exact_modules_and_compilation_unit_root()
  {
-  Assert.Equal(32,FeatureCatalog.FifthModules.Count);Assert.True(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules));
-  Assert.Contains("CSharp.AsyncFunctions",FeatureCatalog.FifthModules);Assert.Contains("CSharp.AwaitExpressions",FeatureCatalog.FifthModules);
-  Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FourthModules));
-  Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Append(FeatureCatalog.FifthModules[0]).ToArray()));Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Skip(1).Append("Invented.Module").ToArray()));
+  Assert.Equal(32,FeatureCatalog.ModulesFor(5).Count);Assert.True(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5)));
+  Assert.Contains("CSharp.AsyncFunctions",FeatureCatalog.ModulesFor(5));Assert.Contains("CSharp.AwaitExpressions",FeatureCatalog.ModulesFor(5));
+  Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(4)));
+  Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Append(FeatureCatalog.ModulesFor(5)[0]).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Skip(1).Append("Invented.Module").ToArray()));
  }
  [Fact]public void Later_minor_and_custom_selections_remain_partial()
  {
