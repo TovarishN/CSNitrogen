@@ -65,6 +65,38 @@ public class CSharp5ProductionTests
   Assert.Contains(p.Issues,i=>i.Code=="CSN2052"&&i.Span.Start==source.IndexOf(modifier,StringComparison.Ordinal)&&i.Span.Length==modifier.Length);
  }
  [Theory]
+ [InlineData("CSharp4")]
+ [InlineData("CSharp5")]
+ public void Endregion_may_end_with_a_single_line_comment(string profile)
+ {
+  // Version5 main1656 lists #endregion among directives that may end with a single-line comment.
+  using var p=CSharpParser.Parse(new("#region R\nclass C{}\n#endregion // done\n",profile,"region5.cs",[]));
+  Assert.True(p.Accepted,string.Join(";",p.Issues));
+ }
+ [Theory]
+ [InlineData("abstract class C{public abstract async System.Threading.Tasks.Task M();}")]
+ [InlineData("class C{extern async void M();}")]
+ [InlineData("partial class C{async partial void M();}")]
+ [InlineData("class C{async void M();}")]
+ [InlineData("class C{static async void M();}")]
+ public void Async_methods_need_a_block_body_and_report_the_modifier(string source)
+ {
+  // Version5 main6913: a method whose method-body is a semicolon may not include async.
+  using var p=CSharpParser.Parse(new(source,"CSharp5","bodyless5.cs",[]));Assert.False(p.Accepted);
+  int at=source.IndexOf("async",StringComparison.Ordinal);
+  Assert.Contains(p.Issues,i=>i.Code=="CSN2053"&&i.Span.Start==at&&i.Span.Length==5);
+ }
+ [Theory]
+ [InlineData("abstract class C{public abstract System.Threading.Tasks.Task M();public async System.Threading.Tasks.Task N(){}}")]
+ [InlineData("partial class C{async partial void M(){}}")]
+ [InlineData("class C{async void M(){}}")]
+ [InlineData("class C{object f=async ()=>1;}")]
+ public void Async_methods_with_bodies_and_bodyless_ordinary_methods_remain_accepted(string source)
+ {
+  using var p=CSharpParser.Parse(new(source,"CSharp5","bodied5.cs",[]));
+  Assert.True(p.Accepted,string.Join(";",p.Issues));
+ }
+ [Theory]
  [InlineData("class C{async void M(){int await;}}")]
  [InlineData("class C{object f=async (int await)=>1;}")]
  [InlineData("class C{async void M(){object f=delegate{int await;};}}")]

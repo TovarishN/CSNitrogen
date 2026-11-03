@@ -47,7 +47,7 @@ Consumes the reviewed Task1 mechanism. Produces independently selected fifth cap
 
 ## Task 3: fifth historical conformance and separate source admission
 
-- [ ] Independently index appendix occurrences and explicit controlling main-text additions omitted by the summary; retain source provenance and every normalization/exclusion.
-- [ ] Review all fourth-to-fifth main-text/context differences; link and execute every source alternative and inheritance marker with positive/negative/span/context evidence.
+- [x] Independently index appendix occurrences and explicit controlling main-text additions omitted by the summary; retain source provenance and every normalization/exclusion. Result: 458 occurrences (3 bodies differ from admitted CSharp4, none added); 707 main-text regions, each with a pinned disposition (docs/coverage/csharp5-normative-context-review.md).
+- [ ] Review all fourth-to-fifth main-text/context differences; link and execute every source alternative and inheritance marker with positive/negative/span/context evidence. Progress: differences reviewed; semicolon-bodied async methods (CSN2053) and async partial methods implemented; the alternative witness matrix remains.
 - [ ] Audit actual selected-factory owners, policies, omissions and ordinary contextual identifiers; resolve real source/API/core decisions with concrete witnesses.
 - [ ] Only after closure implement an independent fail-closed CSharp5 admission guard requiring admitted4, exact source/factory/policy/evidence inputs and later/custom partial status. Full verification and fresh review precede authorized merge.

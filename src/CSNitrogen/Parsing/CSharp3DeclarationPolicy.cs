@@ -43,7 +43,9 @@ internal static class CSharp3DeclarationPolicy
     if(Kind(member.Body.Index)!="MethodDeclaration")continue; // Shared declaration policy rejects other owners.
     var method=SyntaxView.Cast<MethodDeclarationNode>(tree,member.Body.Index);
     bool valid=Text(method.Return.Index)=="void"&&member.Modifiers.Count>0&&ModifierName(member.Modifiers[member.Modifiers.Count-1].Index)=="partial";
-    foreach(var m in member.Modifiers)if(ModifierName(m.Index) is not ("partial" or "static" or "unsafe"))valid=false;
+    // Version5 main6891 adds async to method-modifier; partial methods do not exclude it (main6521).
+    foreach(var m in member.Modifiers)
+     if(ModifierName(m.Index) is not ("partial" or "static" or "unsafe")&&!(version.Major>=5&&Kind(m.Index)=="AsyncModifier"))valid=false;
     int partialCount=0;foreach(var m in member.Modifiers)if(ModifierName(m.Index)=="partial")partialCount++;if(partialCount!=1)valid=false;
     int owner=Ancestor(n,"ClassDeclaration","StructDeclaration","InterfaceDeclaration");
     valid &= owner>=0 && Kind(owner) is "ClassDeclaration" or "StructDeclaration";
