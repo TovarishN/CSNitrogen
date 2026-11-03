@@ -50,15 +50,16 @@
    "Grammars/UsingStatic.ngr",
    "Grammars/PropertyInitializers.ngr",
    "Grammars/ExpressionBodies.ngr",
-   "Grammars/IndexInitializers.ngr"
+   "Grammars/IndexInitializers.ngr",
+   "Grammars/EnumBaseTypeNames.ngr"
   ]
  },
  "counts": {
   "extended": 4,
-  "name-carried": 364,
-  "name-carried-extended": 9,
-  "renamed": 27,
-  "sixth-addition": 31
+  "name-carried": 363,
+  "name-carried-extended": 10,
+  "renamed": 26,
+  "sixth-addition": 32
  },
  "fifthNamesNotInSixth": [
   "asterisks",
@@ -7035,14 +7036,18 @@
    "name": "enum_base",
    "grammar": "syntactic",
    "sourceBodySha256": "b3ca83c0130b0fca6aac41410b195ba1351ec5af114de8fa4d8a8e65ad6db7d2",
-   "relation": "name-carried",
+   "relation": "name-carried-extended",
    "predecessors": [
     "B:10060:enum-base"
    ],
    "targets": [
-    "CSharp.Declarations/rule:EnumDeclaration"
+    "CSharp.Declarations/rule:EnumDeclaration",
+    "CSharp.EnumBaseTypeNames/extension:CSharp.Declarations.TypeDeclaration.NamedBaseEnumTypeDeclaration",
+    "CSharp.EnumBaseTypeNames/rule:NamedEnumBase"
    ],
-   "policies": [],
+   "policies": [
+    "csharp6.source-context-checks"
+   ],
    "note": "",
    "reviewStatus": "owner-candidate"
   },
@@ -7051,15 +7056,13 @@
    "name": "integral_type_name",
    "grammar": "syntactic",
    "sourceBodySha256": "2501a7dde4567415d3ec8af681fa3b4f6564236298e6acdb46df009df7bbf34f",
-   "relation": "renamed",
-   "predecessors": [
-    "B:10060:enum-base"
-   ],
+   "relation": "sixth-addition",
+   "predecessors": [],
    "targets": [
-    "CSharp.Declarations/rule:EnumDeclaration"
+    "CSharp.EnumBaseTypeNames/rule:NamedEnumBase"
    ],
    "policies": [],
-   "note": "ECMA allows an integral type name in enum-base",
+   "note": "sixth addition: a type_name enum base (integral resolution is semantic)",
    "reviewStatus": "owner-candidate"
   },
   {

@@ -40,6 +40,19 @@ These are the Version4/5 readings that CSharp5 kept and that CSharp6 had left at
 
 CSharp7 and later are not reviewed and keep current-compiler behaviour. The CSharp5 test's later-profile probe now uses CSharp7.
 
+## Executed alternative matrix
+
+`tools/build-csharp6-alternative-matrix.py` links each of the 1,114 sixth alternatives to an explicit witness ([alternative-witness-matrix.json](../../tests/Corpus/CSharp6/alternative-witness-matrix.json)). `CSharp6AlternativeMatrixTests` executes every witness on the CSharp6 factory.
+
+- **710 positional links.** These rules are carried by name and have the same number of alternatives as their single CSharp5 occurrence, so each alternative reuses the exact CSharp5 matrix case in order. They run through the same inherited lexical, finite and production checks.
+- **404 sixth-specific witnesses** ([source-specific-cases.json](../../tests/Corpus/CSharp6/source-specific-cases.json), authored in `tools/csharp6_witnesses.py`). They cover every new, renamed or restructured rule. Each is a compilation unit, prefixed with a supplementary-character comment and a new line, that must be accepted. A node or directive record must cover its focus text at the recorded offset.
+
+The matrix found two problems:
+- **enum_base.** It is `':' integral_type | ':' integral_type_name` (§19.2), and no release-history entry covers it. The CSharp6 factory rejected type-name bases. The new module `EnumBaseTypeNames.ngr` (capability `csharp6.enum-base-type-names`, in CSharp6 and later factories) adds a separate `NamedBaseEnumDeclaration` owner, so keyword bases keep the baseline `EnumDeclaration`. Whether the name resolves to an integral type is semantic. Roslyn at version 6 parses the same spellings without diagnostics.
+- **Identifier_Start_Character.** The inherited CSharp5 case asserted that `\u005f` is rejected; the sixth edition allows it, so this rule uses sixth-specific witnesses.
+
+Positional links rely on the CSharp5 alternative order of a same-named rule. That is a link, not a normative equivalence review.
+
 ## Remaining
 
-The plan's remaining Task 3 work is the executed alternative matrix: link every one of the 1,114 sixth alternatives to a positive witness run on the CSharp6 factory, with negative and span evidence where the alternative is context-sensitive. It is not started. CSharp6 admission (Task 4) depends on it.
+Task 4: the independent CSharp6 admission guard and its recorded approval.

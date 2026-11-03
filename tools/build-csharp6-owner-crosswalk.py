@@ -51,7 +51,7 @@ EXPLICIT = {
  'parameter-mode-modifier': (['parameter-modifier'], [], [], 'ref/out factored out of parameter-modifier'),
  'finalizer-declaration': (['destructor-declaration'], [], [], 'renamed destructor-declaration'),
  'finalizer-body': (['destructor-body'], [], [], 'renamed destructor-body'),
- 'integral-type-name': (['enum-base'], [], [], 'ECMA allows an integral type name in enum-base'),
+ 'integral-type-name': ([], ['CSharp.EnumBaseTypeNames/rule:NamedEnumBase'], [], 'sixth addition: a type_name enum base (integral resolution is semantic)'),
  'unsafe-modifier': (['class-modifier'], [], [], 'unsafe factored out of each modifier list'),
  'exception-specifier': (['specific-catch-clause'], [], [], 'factored out of specific-catch-clause'),
  'await-expression': ([], ['CSharp.AwaitExpressions/extension:' + E + 'AwaitExpression'], ['csharp5.source-context-checks'], 'appendix-omitted in Version5, present in the sixth annex'),
@@ -99,6 +99,7 @@ CHANGED = {  # carried names whose sixth body adds alternatives owned by sixth m
  'using-directive': ['CSharp.UsingStatic/extension:CSharp.CompilationUnits.UsingKind.UsingStaticMarker'],
  'member-initializer': ['CSharp.IndexInitializers/rule:IndexInitializer'],
  'member-declarator': [NC + 'NullConditionalAccess'],
+ 'enum-base': ['CSharp.EnumBaseTypeNames/rule:NamedEnumBase', 'CSharp.EnumBaseTypeNames/extension:CSharp.Declarations.TypeDeclaration.NamedBaseEnumTypeDeclaration'],
  'statement-expression': [NC + 'NullConditionalAccess', NC + 'NullConditionalElementAccess'],
 }
 names5 = {}
