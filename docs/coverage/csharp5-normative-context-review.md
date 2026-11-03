@@ -49,6 +49,10 @@ Version4 is a DOC with unresolved cross-reference fields; Version5 is a DOCX wit
 
 Executing the inherited witnesses on CSharp5 found 15 lexical/preprocessing differences. Those policies gated exact historical readings on versions 1–4, so CSharp5 had inherited current-compiler compatibility. The witnesses exposed terminal Control-Z, whitespace before directive arguments, `#line` and later-directive effects and escaped underscore identifier starts. The two remaining gated historical readings, boolean spellings in conditional symbols and the attribute-argument category, were aligned on the same grounds. The Version5 lexical, preprocessing and attribute bodies equal Version4's (apart from the NEL misprint), so these gates now include version5. CSharp6 and later keep current compatibility (`Fifth_profile_keeps_the_historical_lexical_and_directive_readings`). Admission pins were refreshed in directed order.
 
+## Owner crosswalk
+
+`tools/build-csharp5-owner-crosswalk.py` carries every appendix occurrence's admitted CSharp4 owners, policies and mapping forward unchanged. The changed `pointer-member-access` body was already owned by the generic pointer-member alternative. Six main-text productions that the appendix omits are recorded separately: `unary-expression` and `statement-expression` (await), `await-expression`, `lambda-expression` and `anonymous-method-expression` (async marker) and `method-modifier` (async). Each record holds its source line hash and the appendix occurrence that omits it, and every one carries the fifth source-context policy. `CSharp5OwnerCrosswalkTests` parses the 32 grammar resources of the actual CSharp5 factory and requires every owner to exist there and every appendix row to equal its admitted predecessor exactly.
+
 ## Remaining Task3 work
 
-The owner crosswalk against the actual 32-module CSharp5 factory, the reviewed-occurrence overlay and the independent fail-closed CSharp5 admission guard remain. The index, delta inventory, difference index and dispositions are mechanical or inspected inputs; none of them awards admission.
+The reviewed-occurrence overlay and the independent fail-closed CSharp5 admission guard remain. The index, delta inventory, difference index and dispositions are mechanical or inspected inputs; none of them awards admission.
