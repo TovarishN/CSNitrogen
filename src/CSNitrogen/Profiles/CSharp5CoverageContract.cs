@@ -7,8 +7,22 @@ namespace CSNitrogen.Profiles;
 internal static class CSharp5CoverageContract
 {
  internal const string PrimarySha256="6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519";
- internal const string ApprovedLedgerSha256="4d91725b068bafdc29983ad02692223f83d4d463ecd54922dbdf653ce23e803b";
+ internal const string ApprovedLedgerSha256="f2522cde334e1d5188355e5455f35ae92bef02f19e163957618d466c7a515496";
  static readonly string[] Additions=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
+ /// <summary>Reviewed source paths (as tools/approve-csharp5-review.py records them) and their embedded resources.</summary>
+ static readonly IReadOnlyDictionary<string,string> ApprovedInputs=new Dictionary<string,string>(StringComparer.Ordinal)
+ {
+  ["docs/coverage/csharp5-reference-policy.json"]="csharp5-artifact.csharp5-reference-policy.json",
+  ["docs/coverage/csharp5-standard-index.json"]="csharp5-artifact.csharp5-standard-index.json",
+  ["docs/coverage/csharp5-source-delta-inventory.json"]="csharp5-artifact.csharp5-source-delta-inventory.json",
+  ["docs/coverage/csharp5-standard-crosswalk.json"]="csharp5-artifact.csharp5-standard-crosswalk.json",
+  ["docs/coverage/csharp5-main-text-differences.json"]="csharp5-artifact.csharp5-main-text-differences.json",
+  ["docs/coverage/csharp5-main-text-dispositions.json"]="csharp5-artifact.csharp5-main-text-dispositions.json",
+  ["docs/coverage/csharp5-normative-context-review.md"]="csharp5-review.csharp5-normative-context-review.md",
+  ["docs/coverage/csharp4-reviewed-occurrences.json"]="csharp4-artifact.csharp4-reviewed-occurrences.json",
+  ["tests/Corpus/CSharp5/alternative-witness-matrix.json"]="csharp5-evidence.alternative-witness-matrix.json",
+  ["tests/Corpus/CSharp5/source-specific-cases.json"]="csharp5-evidence.source-specific-cases.json",
+ };
  static readonly string[] Dimensions=["normative-prose","positive-negative","ambiguity-context","spans-diagnostics"];
  // Predecessor/self contract literals are excluded so the pin graph stays directed:5 ->4 ->3 ->2 refresh order.
  internal static bool Eligible(string name)=>name is "CSNitrogen.coverage.json" or "CSNitrogen.dependencies.json"
@@ -44,6 +58,11 @@ internal static class CSharp5CoverageContract
    string report=Hash(Input("csharp5-review.csharp5-normative-context-review.md"));
    if(Text(review,"ownerCrosswalkSha256")!=Hash(Input("csharp5-artifact.csharp5-standard-crosswalk.json"))||Text(review,"contextReportSha256")!=report||Text(review,"mainTextDispositionsSha256")!=Hash(Input("csharp5-artifact.csharp5-main-text-dispositions.json"))
     ||Text(review,"alternativeMatrixSha256")!=Hash(Input("csharp5-evidence.alternative-witness-matrix.json"))||Text(review,"predecessorOverlaySha256")!=Hash(Input("csharp4-artifact.csharp4-reviewed-occurrences.json")))return false;
+   // A named reviewer must have approved exactly the current reviewed inputs; the overlay binds that record.
+   var approvalBytes=Input("csharp5-artifact.csharp5-review-approval.json");using var approvalDoc=JsonDocument.Parse(approvalBytes);var approval=approvalDoc.RootElement;
+   if(Text(approval,"profile")!="CSharp5"||Text(approval,"status")!="approved"||string.IsNullOrWhiteSpace(Text(approval,"reviewer"))||Text(review,"approvalSha256")!=Hash(approvalBytes))return false;
+   var approved=approval.GetProperty("inputs").EnumerateObject().ToDictionary(p=>p.Name,p=>p.Value.GetString()!);
+   if(!Exact(approved.Keys,ApprovedInputs.Keys)||ApprovedInputs.Any(p=>approved[p.Key]!=Hash(Input(p.Value))))return false;
    if(Text(map,"predecessorCrosswalkSha256")!=Hash(Input("csharp4-artifact.csharp4-standard-crosswalk.json"))||Text(map,"indexSha256")!=Hash(Input("csharp5-artifact.csharp5-standard-index.json"))||Text(map,"deltaSha256")!=Hash(Input("csharp5-artifact.csharp5-source-delta-inventory.json")))return false;
    var configured=configDoc.RootElement.GetProperty("languages").EnumerateArray().Single(l=>Text(l,"name")=="CSharp5");var factory=gate.GetProperty("factory");
    if(Text(configured,"start")!="CSharp.CompilationUnits.CompilationUnit"||Text(configured,"namespace")!="CSNitrogen.Syntax"||Text(factory,"name")!="CSharp5"||Text(factory,"start")!="CompilationUnit"||Text(factory,"rootModule")!="CSharp.CompilationUnits"

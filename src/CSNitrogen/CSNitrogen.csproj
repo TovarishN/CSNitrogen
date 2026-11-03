@@ -18,6 +18,7 @@
 <EmbeddedResource Include="../../docs/coverage/csharp5-main-text-differences.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-main-text-differences.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-main-text-dispositions.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-main-text-dispositions.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-reviewed-occurrences.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-reviewed-occurrences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp5-review-approval.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-review-approval.json" Condition="Exists('../../docs/coverage/csharp5-review-approval.json')"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-normative-context-review.md" LogicalName="CSNitrogen.csharp5-review.csharp5-normative-context-review.md"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-coverage-gate.json" LogicalName="CSNitrogen.csharp5-coverage-gate.json"/>
 <EmbeddedResource Include="../../tests/Corpus/CSharp5/*.json"><LogicalName>CSNitrogen.csharp5-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
