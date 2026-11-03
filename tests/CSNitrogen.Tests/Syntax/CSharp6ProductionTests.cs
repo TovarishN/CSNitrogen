@@ -134,6 +134,18 @@ public class CSharp6ProductionTests
   using var p=Parse(source);Assert.True(p.Accepted,Issues(p));
   Assert.Contains("unicode-4.0-scalar",CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp6").Profile!.Policies);
  }
+ /// <summary>U+0604 and U+061C are format characters only after Unicode 4; the frozen Unicode4 contract keeps the fifth global-target reading.</summary>
+ [Theory]
+ [InlineData("[as\u0604sembly:A]class C{}")]
+ [InlineData("[as\u061Csembly:A]class C{}")]
+ [InlineData("[as\u00ADsembly:A]class C{}")]
+ public void Global_attribute_targets_follow_the_frozen_Unicode4_reading(string source)
+ {
+  using var six=Parse(source);using var five=Parse(source,"CSharp5");
+  Assert.Equal(five.Accepted,six.Accepted);
+  Assert.Equal(five.Issues.Select(i=>i.Code),six.Issues.Select(i=>i.Code));
+  Assert.Contains("Grammars/GlobalTargetsThird.ngr",CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp6").Profile!.Grammars);
+ }
  [Fact]
  public void Sixth_profile_remains_partial()
  {

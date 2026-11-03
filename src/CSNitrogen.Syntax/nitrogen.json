@@ -166,7 +166,7 @@
         "Grammars/Declarations.ngr",
         "Grammars/CompilationUnits.ngr",
         "Grammars/Unsafe.ngr",
-        "Grammars/GlobalTargetsCurrent.ngr",
+        "Grammars/GlobalTargetsThird.ngr",
         "Grammars/Generics.ngr",
         "Grammars/NullableValues.ngr",
         "Grammars/AnonymousMethods.ngr",

@@ -17,7 +17,7 @@ internal static class CSharpAttributePolicy
         for (int node = 0; node < tree.NodeCount; node++)
         {
             string kind = Kind(node);
-            if (version.Major<=5 && (kind == "AttributeSection" || version.Major is 2 or 3 or 4 or 5 && kind=="GlobalAttributeSection") && tree.ChildCount(node) >= 5)
+            if (version.Major<=6 && (kind == "AttributeSection" || version.Major is 2 or 3 or 4 or 5 or 6 && kind=="GlobalAttributeSection") && tree.ChildCount(node) >= 5)
             {
                 int targetIndex;
                 if(kind=="GlobalAttributeSection")targetIndex=SyntaxView.Cast<GlobalAttributeSectionNode>(tree,node).Target.Index;
@@ -34,7 +34,7 @@ internal static class CSharpAttributePolicy
                     var targetSpan=tree.Span(leaf);
                     string targetText=tree.Text.Substring(targetSpan.Start,targetSpan.Length);
                     bool recognized=UnicodePolicy.TryNormalize(targetText,version,true,out var name)
-                        && name is "field" or "event" or "method" or "param" or "property" or "return" or "type" || version.Major==2 && name=="typevar";
+                        && name is "field" or "event" or "method" or "param" or "property" or "return" or "type" || version.Major is 2 or 6 && name=="typevar";
                     if(kind=="GlobalAttributeSection")recognized=name is "assembly" or "module";
                     if(version.Major is 3 or 4 && name is "event" or "return" && targetText!=name)recognized=false;
                     if(!recognized)issues.Add(new("CSN2014","Unrecognized attribute target; applicability is deferred to the semantic consumer.",
@@ -58,7 +58,7 @@ internal static class CSharpAttributePolicy
             int value = named
                 ? SyntaxView.Cast<NamedAttributeArgumentNode>(tree, node).Value.Index
                 : SyntaxView.Cast<PositionalAttributeArgumentNode>(tree, node).Value.Index;
-            if (version.Major>5 && Kind(value) == "AssignmentExpression")
+            if (version.Major>6 && Kind(value) == "AssignmentExpression")
                 issues.Add(new("CSN2006", "An attribute argument requires a non-assignment expression.",
                     tree.Span(value), IssueCategory.Syntax));
         }

@@ -11,7 +11,7 @@ language CSharp6
   grammar ../../Grammars/Declarations.ngr;
   grammar ../../Grammars/CompilationUnits.ngr;
   grammar ../../Grammars/Unsafe.ngr;
-  grammar ../../Grammars/GlobalTargetsCurrent.ngr;
+  grammar ../../Grammars/GlobalTargetsThird.ngr;
   grammar ../../Grammars/Generics.ngr;
   grammar ../../Grammars/NullableValues.ngr;
   grammar ../../Grammars/AnonymousMethods.ngr;
