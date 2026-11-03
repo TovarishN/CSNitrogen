@@ -76,11 +76,13 @@ Result (Task 2): production capabilities, Unicode4 for major 6, the sanctioned-n
 
 ## Task 3: Sixth-edition conformance review
 
-- [ ] Add `tools/extract-csharp6-standard-index.py` producing `docs/coverage/csharp6-standard-index.json` from the V6-standard grammar.md with `--check`; record productions, alternatives and provenance.
-- [ ] Add `tools/compare-csharp6-pdf.py`: compare every grammar block and normative paragraph of the markdown with the PDFKit extraction; record each difference in `docs/coverage/csharp6-pdf-differences.json` with a disposition (PDF wins).
-- [ ] Build the delta inventory, crosswalk, main-text differences and dispositions against admitted CSharp5 (`build-csharp6-*.py`, each with `--check`), and review every historical lexical/preprocessing/attribute reading listed in the spec, recording whether CSharp6 shares the Version5 reading or current compiler behavior.
-- [ ] Link and execute every alternative on the sixth factory (`build-csharp6-alternative-matrix.py`), audit owners on the actual factory (`build-csharp6-owner-crosswalk.py`), and write `csharp6-normative-context-review.md` and `csharp6-production-review.md`.
-- [ ] Full verification; commit; fresh review.
+- [x] Add `tools/extract-csharp6-standard-index.py` producing `docs/coverage/csharp6-standard-index.json` from the V6-standard grammar.md with `--check`; record productions, alternatives and provenance.
+- [x] Add `tools/compare-csharp6-pdf.py`: compare every grammar block and normative paragraph of the markdown with the PDFKit extraction; record each difference in `docs/coverage/csharp6-pdf-differences.json` with a disposition (PDF wins).
+- [x] Build the delta inventory, crosswalk, main-text differences and dispositions against admitted CSharp5 (`build-csharp6-*.py`, each with `--check`), and review every historical lexical/preprocessing/attribute reading listed in the spec, recording whether CSharp6 shares the Version5 reading or current compiler behavior.
+- [x] Link and execute every alternative on the sixth factory (`build-csharp6-alternative-matrix.py`), audit owners on the actual factory (`build-csharp6-owner-crosswalk.py`), and write `csharp6-normative-context-review.md` and `csharp6-production-review.md`.
+- [x] Full verification; commit; fresh review.
+
+Result (Task 3): 435 rules / 1,114 alternatives indexed; PDF annex agrees fully; owner crosswalk resolved on the actual factory; historical readings decided from the sixth text; every alternative executed (710 positional, 404 sixth-specific). Found and fixed: CSharp6 global targets on current Unicode, enum_base integral_type_name. Evidence: docs/coverage/csharp6-historical-reading-review.md.
 
 ## Task 4: Independent CSharp6 admission
 
