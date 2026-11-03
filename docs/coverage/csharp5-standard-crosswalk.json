@@ -50,9 +50,9 @@
       "status": "approved-predecessor-continuity",
       "decision": "docs/superpowers/specs/2026-10-18-csharp3-generic-member-source-decision.md",
       "occurrences": [
-        "B:8860:member-access",
-        "B:8865:base-access",
-        "B:9178:pointer-member-access"
+        "B:9794:member-access",
+        "B:9799:base-access",
+        "B:10112:pointer-member-access"
       ]
     }
   },

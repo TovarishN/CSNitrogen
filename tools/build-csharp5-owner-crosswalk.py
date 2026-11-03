@@ -69,7 +69,7 @@ result = dict(schemaVersion=1, profile='CSharp5', status='owner-indexed-unreview
  scope='Every Version5 appendix occurrence carries its admitted CSharp4 owners; main-text-only async/await productions list their selected-factory owners. Owner existence is not normative equivalence, whole context closure or source admission.',
  indexSha256=sha(index_path), deltaSha256=sha(delta_path), predecessorCrosswalkSha256=sha(old_path),
  factory=dict(name='CSharp5', start=factory['start'], grammars=factory['grammars']),
- sourceCorrections=old['sourceCorrections'],
+ sourceCorrections={name: dict(correction, occurrences=[r['standardId'] for r in rows if r.get('sourceCorrection') == name]) for name, correction in old['sourceCorrections'].items()},
  productions=rows, mainTextAdditions=additions)
 output = json.dumps(result, indent=2) + '\n'
 path = ROOT / 'docs/coverage/csharp5-standard-crosswalk.json'

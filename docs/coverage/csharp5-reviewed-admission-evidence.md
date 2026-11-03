@@ -19,7 +19,7 @@ The primary is the Microsoft-hosted Version5.0 DOCX `6f12b6a3…`. Unicode4 scal
 - 17 inheritance markers/135 references;
 - 707 main-text dispositions and the pinned context report.
 
-`CSharpParser.MatchesFifthFactory` separately checks the actual generated module identities and compilation-unit root provenance. The oracle audit derives owners from the parsed grammar resources of the actual factory.
+The guard also derives the owners declared by the selected factory's own grammar sources and rejects any owner they do not declare. An oracle test proves this scanner equals Nitrogen's grammar parser for all 32 modules. It requires each approved predecessor source correction to carry forward to exactly the corresponding fifth occurrences. `CSharpParser.MatchesFifthFactory` separately checks the actual generated module identities and compilation-unit root provenance. The oracle audit derives owners from the parsed grammar resources of the actual factory.
 
 The index (`indexed-unreviewed`), owner crosswalk (`owner-indexed-unreviewed`) and witness matrix (`source-witnesses-unreviewed`) never award their own approval. The reviewed overlay records each occurrence's basis: 455 carry the admitted CSharp4 review, the 3 changed bodies and the 6 additions cite `csharp5-normative-context-review.md`. The overlay binds the crosswalk, dispositions, matrix, predecessor overlay and report by hash.
 
@@ -34,6 +34,19 @@ The `csharp-5.0.asynchronous-methods` release-history row becomes reviewed/verif
 
 ## Verification
 
-`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,419 tests: 7,481 main, 3,883 oracle and 55 scoped proof, with zero failures or skips. Of the focused contract tests, 48 cover the fifth guard: acceptance, predecessor dependency, actual factory identity, later/custom partial status, 44 drift/mutation families and directed contract pins. Completion assertions and both independent coverage-identity input enumerations were updated to include CSharp5. All extraction, comparison, disposition, matrix, crosswalk and overlay tools reproduce their artifacts with `--check`; the admission pins are current. These are finite source/structural/integrity observations, not exhaustive inputs, arbitrary-depth guarantees or a historical semantic compiler.
+`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,437 tests: 7,498 main, 3,884 oracle and 55 scoped proof, with zero failures or skips. Of the focused contract tests, 65 cover the fifth guard: acceptance, predecessor dependency, actual factory identity, later/custom partial status, 44 pinned-input drift families and directed contract pins. A further 16 structural drift families rebind every cross-artifact hash and re-pin the ledger before evaluation, so only the structural checks can reject them. A re-pinned unmutated control is admitted. Completion assertions and both independent coverage-identity input enumerations were updated to include CSharp5. All extraction, comparison, disposition, matrix, crosswalk and overlay tools reproduce their artifacts with `--check`; the admission pins are current. These are finite source/structural/integrity observations, not exhaustive inputs, arbitrary-depth guarantees or a historical semantic compiler.
 
-A fresh whole-branch review precedes authorized integration, as for CSharp4.
+## Recorded review approval
+
+The reviewed overlay is not self-approving. `tools/build-csharp5-reviewed-occurrences.py` writes `verified` rows only while `docs/coverage/csharp5-review-approval.json` names a reviewer and pins the exact current hashes of the ten reviewed inputs. Those inputs are the reference policy, index, delta inventory, crosswalk, difference index, dispositions, context report, CSharp4 overlay, witness matrix and source-specific cases. Otherwise the overlay is `pending-approval`. `CSharp5CoverageContract` also requires the record: approved status, a non-blank reviewer, exactly those inputs at their current hashes, and an overlay bound to the record's hash. Any later change to a reviewed input withdraws admission until a reviewer approves again. Four tests cover a blank reviewer, an unapproved record, a missing input and an input changed after approval.
+
+Until the record exists, CSharp5 is not admitted and the CSharp5-admission tests fail by design. After independently reviewing the inputs, the reviewer runs:
+
+```sh
+python3 tools/approve-csharp5-review.py --reviewer "Name" --notes "optional"
+dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false
+```
+
+The tool records the approval, regenerates the overlay and refreshes the admission pins; commit the results together. The full flow was verified with a throwaway reviewer, which was then removed: 11,441 tests passed with the record in place, and the overlay fell back to `pending-approval` when a reviewed input changed.
+
+A fresh whole-branch review precedes authorized integration, as for CSharp4. The approval record is where that review is recorded.

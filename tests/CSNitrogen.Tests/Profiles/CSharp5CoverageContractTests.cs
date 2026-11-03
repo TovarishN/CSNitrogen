@@ -10,13 +10,13 @@ public class CSharp5CoverageContractTests
  static bool Evaluate(byte[]? gate=null,byte[]? composition=null,Dictionary<string,byte[]>? inputs=null,bool predecessor=true)
   =>CSharp5CoverageContract.Reviewed(gate??Read("csharp5-coverage-gate.json"),composition??Read("composition.json"),inputs??Inputs(),predecessor);
  [Fact]public void Only_the_reviewed_fifth_snapshot_with_admitted_fourth_predecessor_is_accepted()
- {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.FifthSourceReviewed);Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.SourceReviewedFor(5));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
  [Fact]public void Actual_fifth_factory_requires_exact_modules_and_compilation_unit_root()
  {
-  Assert.Equal(32,FeatureCatalog.FifthModules.Count);Assert.True(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules));
-  Assert.Contains("CSharp.AsyncFunctions",FeatureCatalog.FifthModules);Assert.Contains("CSharp.AwaitExpressions",FeatureCatalog.FifthModules);
-  Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FourthModules));
-  Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Append(FeatureCatalog.FifthModules[0]).ToArray()));Assert.False(CSharpParser.MatchesFifthFactory(FeatureCatalog.FifthModules.Skip(1).Append("Invented.Module").ToArray()));
+  Assert.Equal(32,FeatureCatalog.ModulesFor(5).Count);Assert.True(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5)));
+  Assert.Contains("CSharp.AsyncFunctions",FeatureCatalog.ModulesFor(5));Assert.Contains("CSharp.AwaitExpressions",FeatureCatalog.ModulesFor(5));
+  Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(4)));
+  Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Append(FeatureCatalog.ModulesFor(5)[0]).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp5",FeatureCatalog.ModulesFor(5).Skip(1).Append("Invented.Module").ToArray()));
  }
  [Fact]public void Later_minor_and_custom_selections_remain_partial()
  {
@@ -88,6 +88,94 @@ public class CSharp5CoverageContractTests
     inputs[fixture]=Edit(inputs[fixture],n=>{if(change=="witness-link")n["cases"]![0]!["witnessId"]="invented";else if(change=="witness-source")n["sourceSha256"]="changed";else if(change=="fourth-matrix")n["cases"]![0]!["witnessId"]="invented";else n["cases"]![0]!["source"]="class Changed{}";});break;
   }
   Assert.False(Evaluate(gate,composition,inputs));
+ }
+ static string Hash(byte[] b)=>Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(b));
+ /// <summary>Applies a mutation, rebinds every cross-artifact hash and re-pins the ledger, so only structural checks can reject it.</summary>
+ static bool Repinned(Action<Func<string,JsonNode>,JsonNode>? mutate=null,Action<Func<string,JsonNode>>? afterApproval=null)
+ {
+  var inputs=Inputs();var nodes=new Dictionary<string,JsonNode>(StringComparer.Ordinal);
+  string A(string name)=>"CSNitrogen.csharp5-artifact.csharp5-"+name+".json";
+  const string Matrix="CSNitrogen.csharp5-evidence.alternative-witness-matrix.json",Specific="CSNitrogen.csharp5-evidence.source-specific-cases.json",Report="CSNitrogen.csharp5-review.csharp5-normative-context-review.md";
+  JsonNode Node(string key)=>nodes.TryGetValue(key,out var n)?n:nodes[key]=JsonNode.Parse(inputs[key])!;
+  byte[] Bytes(string key)=>nodes.TryGetValue(key,out var n)?inputs[key]=Encoding.UTF8.GetBytes(n.ToJsonString()):inputs[key];
+  var gate=JsonNode.Parse(Read("csharp5-coverage-gate.json"))!;
+  mutate?.Invoke(Node,gate);
+  var map=Node(A("standard-crosswalk"));map["indexSha256"]=Hash(Bytes(A("standard-index")));map["deltaSha256"]=Hash(Bytes(A("source-delta-inventory")));
+  var disp=Node(A("main-text-dispositions"));disp["differenceIndexSha256"]=Hash(Bytes(A("main-text-differences")));disp["reportSha256"]=Hash(Bytes(Report));
+  var matrix=Node(Matrix);matrix["indexSha256"]=Hash(Bytes(A("standard-index")));matrix["deltaSha256"]=Hash(Bytes(A("source-delta-inventory")));matrix["sourceSpecific"]!["sha256"]=Hash(Bytes(Specific));
+  // The approval pins the reviewed inputs by source path; rebind it like a reviewer re-approving, unless the test changes inputs afterwards.
+  var approval=Node(A("review-approval"));var approved=approval["inputs"]!.AsObject();
+  foreach(var (path,resource) in ApprovalResources)if(approved.ContainsKey(path))approved[path]=Hash(Bytes(resource));
+  afterApproval?.Invoke(Node);
+  var review=Node(A("reviewed-occurrences"));review["approvalSha256"]=Hash(Bytes(A("review-approval")));review["ownerCrosswalkSha256"]=Hash(Bytes(A("standard-crosswalk")));review["contextReportSha256"]=Hash(Bytes(Report));
+  review["mainTextDispositionsSha256"]=Hash(Bytes(A("main-text-dispositions")));review["alternativeMatrixSha256"]=Hash(Bytes(Matrix));
+  foreach(var key in nodes.Keys.ToArray())Bytes(key);
+  var pins=new JsonObject();foreach(var key in inputs.Keys.Where(CSharp5CoverageContract.Eligible).Order(StringComparer.Ordinal))pins[key]=Hash(inputs[key]);
+  gate["reviewInputs"]=pins;byte[] ledger=Encoding.UTF8.GetBytes(gate.ToJsonString());
+  return CSharp5CoverageContract.Reviewed(ledger,Read("composition.json"),inputs,true,Hash(ledger));
+ }
+ static readonly (string Path,string Resource)[] ApprovalResources=
+ [
+  ("docs/coverage/csharp5-reference-policy.json","CSNitrogen.csharp5-artifact.csharp5-reference-policy.json"),("docs/coverage/csharp5-standard-index.json","CSNitrogen.csharp5-artifact.csharp5-standard-index.json"),
+  ("docs/coverage/csharp5-source-delta-inventory.json","CSNitrogen.csharp5-artifact.csharp5-source-delta-inventory.json"),("docs/coverage/csharp5-standard-crosswalk.json","CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json"),
+  ("docs/coverage/csharp5-main-text-differences.json","CSNitrogen.csharp5-artifact.csharp5-main-text-differences.json"),("docs/coverage/csharp5-main-text-dispositions.json","CSNitrogen.csharp5-artifact.csharp5-main-text-dispositions.json"),
+  ("docs/coverage/csharp5-normative-context-review.md","CSNitrogen.csharp5-review.csharp5-normative-context-review.md"),("docs/coverage/csharp4-reviewed-occurrences.json","CSNitrogen.csharp4-artifact.csharp4-reviewed-occurrences.json"),
+  ("tests/Corpus/CSharp5/alternative-witness-matrix.json","CSNitrogen.csharp5-evidence.alternative-witness-matrix.json"),("tests/Corpus/CSharp5/source-specific-cases.json","CSNitrogen.csharp5-evidence.source-specific-cases.json"),
+ ];
+ [Theory]
+ [InlineData("blank-reviewer")][InlineData("unapproved")][InlineData("missing-input")][InlineData("changed-after-approval")]
+ public void Admission_requires_a_named_reviewer_approving_exactly_the_current_inputs(string change)
+ {
+  Assert.False(change switch
+  {
+   "changed-after-approval"=>Repinned(afterApproval:node=>node("CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json")["scope"]="changed after review"),
+   _=>Repinned((node,_)=>
+   {
+    var approval=node("CSNitrogen.csharp5-artifact.csharp5-review-approval.json");
+    if(change=="blank-reviewer")approval["reviewer"]=" ";else if(change=="unapproved")approval["status"]="pending";else approval["inputs"]!.AsObject().Remove("docs/coverage/csharp5-standard-index.json");
+   }),
+  });
+ }
+ static JsonNode Row(JsonNode map,string id)=>map["productions"]!.AsArray().Single(r=>r!["standardId"]!.GetValue<string>()==id)!;
+ static JsonNode Added(JsonNode map,string name)=>map["mainTextAdditions"]!.AsArray().Single(a=>a!["id"]!.GetValue<string>().EndsWith(":"+name,StringComparison.Ordinal))!;
+ [Fact]public void Repinned_unmutated_inputs_are_admitted_so_structural_mutations_are_meaningful()
+ {Assert.True(Repinned());}
+ [Theory]
+ [InlineData("carried-owner")][InlineData("carried-policy")][InlineData("duplicate-target")][InlineData("correction-dropped")][InlineData("correction-occurrences")]
+ [InlineData("undeclared-owner")][InlineData("gate-owner")][InlineData("occurrence-basis")][InlineData("overlay-status")][InlineData("addition-dimension")]
+ [InlineData("addition-appendix")][InlineData("addition-name")][InlineData("witness-link")][InlineData("witness-kind")][InlineData("disposition-category")][InlineData("marker-reference")]
+ public void Structural_drift_fails_closed_even_when_every_hash_is_rebound(string change)
+ {
+  Assert.False(Repinned((node,gate)=>
+  {
+   var map=node("CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json");var review=node("CSNitrogen.csharp5-artifact.csharp5-reviewed-occurrences.json");
+   var row=map["productions"]![0]!;
+   switch(change)
+   {
+    case "carried-owner":
+     var targets=row["targets"]!.AsArray();var other=gate["owners"]!.AsArray().Select(o=>o!.GetValue<string>()).First(o=>targets.All(t=>t!.GetValue<string>()!=o));targets.Add(other);break;
+    case "carried-policy":row["policies"]!.AsArray().Add("csharp5.source-context-checks");break;
+    case "duplicate-target":var first=map["productions"]!.AsArray().First(r=>r!["targets"]!.AsArray().Count>0)!;first["targets"]!.AsArray().Add(first["targets"]![0]!.DeepClone());break;
+    case "correction-dropped":Row(map,"B:9794:member-access").AsObject().Remove("sourceCorrection");break;
+    case "correction-occurrences":map["sourceCorrections"]!["approved-generic-member-suffix"]!["occurrences"]=new JsonArray("B:8860:member-access","B:8865:base-access","B:9178:pointer-member-access");break;
+    case "undeclared-owner":
+     const string real="CSharp.AwaitExpressions/extension:CSharp.Expressions.Expression.AwaitExpression",fake="CSharp.AwaitExpressions/extension:CSharp.Expressions.Expression.Invented";
+     foreach(var a in map["mainTextAdditions"]!.AsArray()){var t=a!["targets"]!.AsArray();var i=t.Select(x=>x!.GetValue<string>()).ToList().IndexOf(real);if(i>=0)t[i]=fake;}
+     var owners=gate["owners"]!.AsArray();owners[owners.Select(x=>x!.GetValue<string>()).ToList().IndexOf(real)]=fake;break;
+    case "gate-owner":gate["owners"]!.AsArray().Add("CSharp.Expressions/rule:Expression#extra");break;
+    case "occurrence-basis":review["productions"]![0]!["basis"]="version5-source-review";break;
+    case "overlay-status":review["status"]="pending";break;
+    case "addition-dimension":Added(review,"method-modifier")["reviews"]!["ambiguity-context"]="pending";break;
+    case "addition-appendix":Added(map,"unary-expression")["appendixOccurrence"]="B:9841:lambda-expression";break;
+    case "addition-name":Added(map,"await-expression")["name"]="awaited-expression";break;
+    case "witness-link":node("CSNitrogen.csharp5-evidence.alternative-witness-matrix.json")["cases"]![0]!["witnessId"]="invented";break;
+    case "witness-kind":node("CSNitrogen.csharp5-evidence.alternative-witness-matrix.json")["cases"]![0]!["sourceKind"]="source-specific";break;
+    case "disposition-category":node("CSNitrogen.csharp5-artifact.csharp5-main-text-dispositions.json")["regions"]![0]!["disposition"]="invented";break;
+    case "marker-reference":
+     var marker=node("CSNitrogen.csharp5-artifact.csharp5-standard-index.json")["productions"]!.AsArray().SelectMany(p=>p!["alternatives"]!.AsArray()).First(a=>a!["kind"]!.GetValue<string>()=="inherited-placeholder")!;
+     marker["earlierSourceAlternativeIds"]!.AsArray().RemoveAt(0);break;
+   }
+  }));
  }
  [Fact]public void Directed_contract_pins_require_real_predecessor_admission_when_fifth_contract_code_changes()
  {

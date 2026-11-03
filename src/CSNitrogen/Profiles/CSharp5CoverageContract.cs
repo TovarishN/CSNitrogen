@@ -1,18 +1,29 @@
-using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+using static CSNitrogen.Profiles.ContractJson;
 namespace CSNitrogen.Profiles;
 /// <summary>Admission of one reviewed normalized C#5 syntax snapshot, independently of source acceptance.</summary>
 internal static class CSharp5CoverageContract
 {
  internal const string PrimarySha256="6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519";
- internal const string ApprovedLedgerSha256="1f44f85689d40b295877cd95aa9fe27c499ecfab2aa63a731ae3fd88c8a09883";
+ internal const string ApprovedLedgerSha256="3e22a4e0b373c8f1dc0b8800c2e968eb8ed3c22db6fcae7be95c0624eb760f25";
  static readonly string[] Additions=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
+ /// <summary>Reviewed source paths (as tools/approve-csharp5-review.py records them) and their embedded resources.</summary>
+ static readonly IReadOnlyDictionary<string,string> ApprovedInputs=new Dictionary<string,string>(StringComparer.Ordinal)
+ {
+  ["docs/coverage/csharp5-reference-policy.json"]="csharp5-artifact.csharp5-reference-policy.json",
+  ["docs/coverage/csharp5-standard-index.json"]="csharp5-artifact.csharp5-standard-index.json",
+  ["docs/coverage/csharp5-source-delta-inventory.json"]="csharp5-artifact.csharp5-source-delta-inventory.json",
+  ["docs/coverage/csharp5-standard-crosswalk.json"]="csharp5-artifact.csharp5-standard-crosswalk.json",
+  ["docs/coverage/csharp5-main-text-differences.json"]="csharp5-artifact.csharp5-main-text-differences.json",
+  ["docs/coverage/csharp5-main-text-dispositions.json"]="csharp5-artifact.csharp5-main-text-dispositions.json",
+  ["docs/coverage/csharp5-normative-context-review.md"]="csharp5-review.csharp5-normative-context-review.md",
+  ["docs/coverage/csharp4-reviewed-occurrences.json"]="csharp4-artifact.csharp4-reviewed-occurrences.json",
+  ["tests/Corpus/CSharp5/alternative-witness-matrix.json"]="csharp5-evidence.alternative-witness-matrix.json",
+  ["tests/Corpus/CSharp5/source-specific-cases.json"]="csharp5-evidence.source-specific-cases.json",
+ };
  static readonly string[] Dimensions=["normative-prose","positive-negative","ambiguity-context","spans-diagnostics"];
- static string Hash(byte[] b)=>Convert.ToHexStringLower(SHA256.HashData(b));
- static string Text(JsonElement e,string key)=>e.GetProperty(key).GetString()!;
- static string[] Strings(JsonElement e)=>e.EnumerateArray().Select(x=>x.GetString()!).ToArray();
- static bool Exact(IEnumerable<string> a,IEnumerable<string> b)
- {var x=a.Order(StringComparer.Ordinal).ToArray();var y=b.Order(StringComparer.Ordinal).ToArray();return x.Distinct().Count()==x.Length&&y.Distinct().Count()==y.Length&&x.SequenceEqual(y);}
  // Predecessor/self contract literals are excluded so the pin graph stays directed:5 ->4 ->3 ->2 refresh order.
  internal static bool Eligible(string name)=>name is "CSNitrogen.coverage.json" or "CSNitrogen.dependencies.json"
   ||name.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)
@@ -21,10 +32,13 @@ internal static class CSharp5CoverageContract
   ||name.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)||name.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)
   ||name.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)&&name is not ("CSNitrogen.source.Profiles/CSharp2CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp3CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp4CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs");
  internal static bool Reviewed(byte[] ledger,byte[] composition,IReadOnlyDictionary<string,byte[]> inputs,bool fourthReviewed)
+  =>Reviewed(ledger,composition,inputs,fourthReviewed,ApprovedLedgerSha256);
+ /// <summary>The guard against an explicit ledger digest; tests re-pin mutated inputs to reach the structural checks.</summary>
+ internal static bool Reviewed(byte[] ledger,byte[] composition,IReadOnlyDictionary<string,byte[]> inputs,bool fourthReviewed,string approvedLedgerSha256)
  {
   try
   {
-   if(!fourthReviewed||Hash(ledger)!=ApprovedLedgerSha256)return false;
+   if(!fourthReviewed||Hash(ledger)!=approvedLedgerSha256)return false;
    using var gateDoc=JsonDocument.Parse(ledger);using var configDoc=JsonDocument.Parse(composition);var gate=gateDoc.RootElement;
    if(Text(gate,"profile")!="CSharp5"||Text(gate,"status")!="verified"||Text(gate,"primarySha256")!=PrimarySha256)return false;
    var pins=gate.GetProperty("reviewInputs").EnumerateObject().ToArray();
@@ -44,6 +58,11 @@ internal static class CSharp5CoverageContract
    string report=Hash(Input("csharp5-review.csharp5-normative-context-review.md"));
    if(Text(review,"ownerCrosswalkSha256")!=Hash(Input("csharp5-artifact.csharp5-standard-crosswalk.json"))||Text(review,"contextReportSha256")!=report||Text(review,"mainTextDispositionsSha256")!=Hash(Input("csharp5-artifact.csharp5-main-text-dispositions.json"))
     ||Text(review,"alternativeMatrixSha256")!=Hash(Input("csharp5-evidence.alternative-witness-matrix.json"))||Text(review,"predecessorOverlaySha256")!=Hash(Input("csharp4-artifact.csharp4-reviewed-occurrences.json")))return false;
+   // A named reviewer must have approved exactly the current reviewed inputs; the overlay binds that record.
+   var approvalBytes=Input("csharp5-artifact.csharp5-review-approval.json");using var approvalDoc=JsonDocument.Parse(approvalBytes);var approval=approvalDoc.RootElement;
+   if(Text(approval,"profile")!="CSharp5"||Text(approval,"status")!="approved"||string.IsNullOrWhiteSpace(Text(approval,"reviewer"))||Text(review,"approvalSha256")!=Hash(approvalBytes))return false;
+   var approved=approval.GetProperty("inputs").EnumerateObject().ToDictionary(p=>p.Name,p=>p.Value.GetString()!);
+   if(!Exact(approved.Keys,ApprovedInputs.Keys)||ApprovedInputs.Any(p=>approved[p.Key]!=Hash(Input(p.Value))))return false;
    if(Text(map,"predecessorCrosswalkSha256")!=Hash(Input("csharp4-artifact.csharp4-standard-crosswalk.json"))||Text(map,"indexSha256")!=Hash(Input("csharp5-artifact.csharp5-standard-index.json"))||Text(map,"deltaSha256")!=Hash(Input("csharp5-artifact.csharp5-source-delta-inventory.json")))return false;
    var configured=configDoc.RootElement.GetProperty("languages").EnumerateArray().Single(l=>Text(l,"name")=="CSharp5");var factory=gate.GetProperty("factory");
    if(Text(configured,"start")!="CSharp.CompilationUnits.CompilationUnit"||Text(configured,"namespace")!="CSNitrogen.Syntax"||Text(factory,"name")!="CSharp5"||Text(factory,"start")!="CompilationUnit"||Text(factory,"rootModule")!="CSharp.CompilationUnits"
@@ -56,6 +75,9 @@ internal static class CSharp5CoverageContract
    if(!Exact(Additions,additions.Select(a=>Text(a,"name")))||!Exact(additions.Select(a=>Text(a,"id")),reviewedAdditions.Keys))return false;
    var owners=Strings(gate.GetProperty("owners"));var groups=gate.GetProperty("policyGroups").EnumerateObject().ToDictionary(p=>p.Name,p=>Strings(p.Value));
    if(!Exact(owners,rows.SelectMany(r=>Strings(r.GetProperty("targets"))).Concat(additions.SelectMany(a=>Strings(a.GetProperty("targets")))).Distinct()))return false;
+   // Every owner must be declared by the selected factory's own grammar sources.
+   var declared=DeclaredOwners(Strings(factory.GetProperty("grammars")).Select(g=>Encoding.UTF8.GetString(Input("grammar."+g["Grammars/".Length..]))));
+   if(owners.Any(o=>!declared.Contains(o)))return false;
    if(!Exact(groups.Keys,new[]{"attribute-argument-order","attribute-target-recognition","csharp-trivia","csharp1-preprocessing","generated-syntax-context-checks","csharp4.source-context-checks","csharp5.source-context-checks"})||!Exact(groups["csharp5.source-context-checks"],["Parsing/CSharp5ContextPolicy.cs"]))return false;
    bool Verified(JsonElement r,string id,string basis,string domain)
    {
@@ -75,7 +97,19 @@ internal static class CSharp5CoverageContract
     string basis=Text(link,"bodyRelation")=="body-identical"?"predecessor-review-carried":"version5-source-review";
     if(!Verified(r,id,basis,Text(priorReview.GetProperty("sourceReview"),"domain")))return false;
     var ts=Strings(row.GetProperty("targets"));var ps=Strings(row.GetProperty("policies"));
-    if(ts.Length+ps.Length==0||ps.Any(p=>!groups.ContainsKey(p)))return false;
+    if(ts.Length+ps.Length==0||ts.Distinct().Count()!=ts.Length||ps.Distinct().Count()!=ps.Length||ps.Any(p=>!groups.ContainsKey(p)))return false;
+    string correction=row.TryGetProperty("sourceCorrection",out var c)?c.GetString()!:"",priorCorrection=prior.TryGetProperty("sourceCorrection",out var pc)?pc.GetString()!:"";
+    if(correction!=priorCorrection)return false;
+   }
+   // The approved predecessor corrections carry forward to exactly the corresponding fifth occurrences.
+   var corrections=map.GetProperty("sourceCorrections");var oldCorrections=oldMapDoc.RootElement.GetProperty("sourceCorrections");
+   if(!Exact(corrections.EnumerateObject().Select(p=>p.Name),oldCorrections.EnumerateObject().Select(p=>p.Name)))return false;
+   foreach(var p in corrections.EnumerateObject())
+   {
+    var old=oldCorrections.GetProperty(p.Name);
+    if(Text(p.Value,"status")!=Text(old,"status")||Text(p.Value,"decision")!=Text(old,"decision")||Text(p.Value,"status")!="approved-predecessor-continuity")return false;
+    var corrected=rows.Where(r=>r.TryGetProperty("sourceCorrection",out var c)&&c.GetString()==p.Name).Select(r=>Text(r,"standardId")).ToArray();
+    if(corrected.Length!=Strings(old.GetProperty("occurrences")).Length||!Exact(corrected,Strings(p.Value.GetProperty("occurrences"))))return false;
    }
    foreach(var a in additions)
    {
@@ -87,14 +121,7 @@ internal static class CSharp5CoverageContract
     string domain=name=="statement-expression"?"statement":name=="method-modifier"?"declaration":"expression";
     if(!Verified(r,id,"version5-main-text-review",domain))return false;
    }
-   var all=heads.Values.SelectMany(h=>h.GetProperty("alternatives").EnumerateArray()).ToArray();if(all.Length!=1181)return false;
-   var real=all.Where(a=>Text(a,"kind")!="inherited-placeholder").ToDictionary(a=>Text(a,"id"));int markers=0,refs=0;
-   foreach(var h in heads.Values)foreach(var a in h.GetProperty("alternatives").EnumerateArray().Where(a=>Text(a,"kind")=="inherited-placeholder"))
-   {
-    var earlier=heads.Values.Where(p=>p.GetProperty("line").GetInt32()<h.GetProperty("line").GetInt32()&&Text(p,"name")==Text(h,"name")).SelectMany(p=>p.GetProperty("alternatives").EnumerateArray()).Where(p=>Text(p,"kind")!="inherited-placeholder").Select(p=>Text(p,"id")).ToArray();
-    if(earlier.Length==0||!Exact(earlier,Strings(a.GetProperty("earlierSourceAlternativeIds"))))return false;markers++;refs+=earlier.Length;
-   }
-   if(real.Count!=1164||markers!=17||refs!=135)return false;
+   var real=Alternatives(heads.Values,1181,1164,17,135);if(real is null)return false;
    using var matrixDoc=JsonDocument.Parse(Input("csharp5-evidence.alternative-witness-matrix.json"));using var specificDoc=JsonDocument.Parse(Input("csharp5-evidence.source-specific-cases.json"));using var fourthMatrixDoc=JsonDocument.Parse(Input("csharp4-evidence.alternative-witness-matrix.json"));
    var matrix=matrixDoc.RootElement;var specific=specificDoc.RootElement;
    if(Text(matrix,"profile")!="CSharp5"||Text(matrix,"sourceSha256")!=PrimarySha256||Text(matrix,"status")!="source-witnesses-unreviewed"||Text(specific,"sourceSha256")!=PrimarySha256||Text(specific,"profile")!="CSharp5")return false;
@@ -122,11 +149,44 @@ internal static class CSharp5CoverageContract
    if(inherited!=1161||novel!=3)return false;
    var diff=differencesDoc.RootElement;var disp=dispositionsDoc.RootElement;
    if(Text(diff,"sourceSha256")!=PrimarySha256||Text(diff,"fourthSourceSha256")!=CSharp4CoverageContract.PrimarySha256||Text(diff,"status")!="difference-index-unreviewed"||Text(disp,"status")!="source-inspected"||Text(disp,"sourceSha256")!=PrimarySha256||Text(disp,"differenceIndexSha256")!=Hash(Input("csharp5-artifact.csharp5-main-text-differences.json"))||Text(disp,"reportSha256")!=report)return false;
-   var regions=diff.GetProperty("regions").EnumerateArray().ToDictionary(r=>Text(r,"id"));var dispositions=disp.GetProperty("regions").EnumerateArray().ToArray();
-   if(regions.Count!=707||!Exact(regions.Keys,dispositions.Select(d=>Text(d,"id"))))return false;
-   foreach(var d in dispositions){var r=regions[Text(d,"id")];if(Text(d,"fourthNormalizedSha256")!=Text(r.GetProperty("fourth"),"normalizedSha256")||Text(d,"fifthNormalizedSha256")!=Text(r.GetProperty("fifth"),"normalizedSha256")||!disp.GetProperty("dispositions").TryGetProperty(Text(d,"disposition"),out _))return false;}
+   if(!Dispositions(diff,disp,"fourth","fifth",707))return false;
    return true;
   }
   catch(Exception e) when(e is JsonException or InvalidOperationException or KeyNotFoundException or ArgumentException or FormatException or OverflowException){return false;}
+ }
+
+ static readonly Regex Module=new(@"\Gsyntax\s+module\s+([\w.]+)\s*\{",RegexOptions.CultureInvariant);
+ static readonly Regex RuleHead=new(@"\G(?:token|syntax)\s+(\w+)\s*=",RegexOptions.CultureInvariant);
+ static readonly Regex Block=new(@"\G(extensible|extend)\s+syntax\s+([\w.]+)\s*\{",RegexOptions.CultureInvariant);
+ static readonly Regex Alternative=new(@"\G\|\s*(?:transparent\s+)?(\w+)\s*=",RegexOptions.CultureInvariant);
+ /// <summary>Owner identities declared by grammar sources: module rules, extensible alternatives and extensions.</summary>
+ internal static HashSet<string> DeclaredOwners(IEnumerable<string> grammars)
+ {
+  var owners=new HashSet<string>(StringComparer.Ordinal);
+  foreach(string source in grammars)
+  {
+   // Blank comments and string/character literals so braces inside them do not count.
+   var text=source.ToCharArray();
+   for(int i=0;i<text.Length;i++)
+   {
+    if(text[i]=='/'&&i+1<text.Length&&text[i+1]=='/'){while(i<text.Length&&text[i]!='\n')text[i++]=' ';continue;}
+    if(text[i] is '"' or '\'')
+    {char quote=text[i];text[i++]=' ';while(i<text.Length&&text[i]!=quote){if(text[i]=='\\'&&i+1<text.Length)text[i++]=' ';text[i++]=' ';}if(i<text.Length)text[i]=' ';}
+   }
+   string plain=new(text);string module="";int depth=0;string? block=null,target=null;
+   for(int i=0;i<plain.Length;i++)
+   {
+    bool start=i==0||!(char.IsLetterOrDigit(plain[i-1])||plain[i-1]=='_');
+    if(depth==0&&start&&Module.Match(plain,i) is {Success:true} m){module=m.Groups[1].Value;i+=m.Length-1;depth=1;continue;}
+    if(depth==1&&start&&Block.Match(plain,i) is {Success:true} b)
+    {block=b.Groups[1].Value;target=b.Groups[2].Value;if(block=="extensible")owners.Add(module+"/rule:"+target);i+=b.Length-1;depth=2;continue;}
+    if(depth==1&&start&&RuleHead.Match(plain,i) is {Success:true} r){owners.Add(module+"/rule:"+r.Groups[1].Value);i+=r.Length-1;continue;}
+    if(depth==2&&block is not null&&Alternative.Match(plain,i) is {Success:true} a)
+    {owners.Add(module+(block=="extensible"?"/alternative:":"/extension:")+target+"."+a.Groups[1].Value);i+=a.Length-1;continue;}
+    if(plain[i]=='{')depth++;
+    else if(plain[i]=='}'){depth--;if(depth==1)block=null;if(depth==0)module="";}
+   }
+  }
+  return owners;
  }
 }

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp5",
+  "status": "approved",
+  "reviewer": "Dmitri Kamenetski",
+  "approvedOn": "2026-11-03",
+  "notes": "",
+  "scope": "Independent review of the listed CSharp5 admission inputs. Any change to one of them invalidates this approval.",
+  "inputs": {
+    "docs/coverage/csharp5-reference-policy.json": "3efec7ba7b84ff2e9a522749387094bbc93e651ff5dfc46fe76a8e29f97bb3d2",
+    "docs/coverage/csharp5-standard-index.json": "41a72d8a84b187708fcd402de8bb61a4cc79c8e77c922924c602b3739882f992",
+    "docs/coverage/csharp5-source-delta-inventory.json": "5fc564bb9a526e29c11fe61663b117b7d8a95b5bd52dbd77e728355704f6c875",
+    "docs/coverage/csharp5-standard-crosswalk.json": "2bcec295a3dad8600f75456ca195674d6d48e59b672e78c617153bd59bd836be",
+    "docs/coverage/csharp5-main-text-differences.json": "00eb3d88a8310cdb69ac524bcb1b5ccfb5eeeb76eb045fdf2702a5e0ae6e3c7e",
+    "docs/coverage/csharp5-main-text-dispositions.json": "deb742c6761704e2813407e1c61cf6b67eb228b5cdec29711a9872ef39ad29da",
+    "docs/coverage/csharp5-normative-context-review.md": "8b1b6a2ad5a04e17c3128703c0ee0aa2e8f5a6b0818afef6e889138d80ff87fe",
+    "docs/coverage/csharp4-reviewed-occurrences.json": "6188d093725fd2d9604ec19e5a5429369e5fc2ef9d3a2e24ff957119b696c296",
+    "tests/Corpus/CSharp5/alternative-witness-matrix.json": "f9e308148bfcf05d5d48a1f3131f6b506d691d773cf3575ba418836cf8371a1e",
+    "tests/Corpus/CSharp5/source-specific-cases.json": "966f48f7253767dcd59f4c6a5d7b74ba7d959ac0ec3bcec84af369b8231973cb"
+  }
+}

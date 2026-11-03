@@ -15,6 +15,22 @@ public class CSharp5OwnerCrosswalkTests
  static readonly string[] AdditionNames=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
  [Fact]public void Every_fifth_occurrence_and_main_text_addition_maps_to_actual_owners()
  {Assert.Empty(Evaluate(Read("csharp5-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ [Fact]public void Runtime_owner_scanner_matches_the_grammar_parser_for_the_fifth_factory()
+ {
+  var assembly=typeof(FeatureCatalog).Assembly;
+  string Resource(string name){using var s=assembly.GetManifestResourceStream("CSNitrogen."+name)!;using var reader=new StreamReader(s);return reader.ReadToEnd();}
+  var grammars=Strings(JsonNode.Parse(Resource("composition.json"))!["languages"]!.AsArray().Single(l=>Text(l!,"name")=="CSharp5")!["grammars"]).Select(g=>Resource("grammar."+g["Grammars/".Length..])).ToArray();
+  var expected=new HashSet<string>(StringComparer.Ordinal);
+  foreach(var text in grammars)
+  {
+   var m=GrammarParser.Parse(text).File!.Modules.Single();
+   foreach(var r in m.Rules)expected.Add(m.Name+"/rule:"+r.Name);
+   foreach(var r in m.Rules.OfType<ExtensibleRule>())foreach(var a in r.Alternatives)expected.Add(m.Name+"/alternative:"+r.Name+"."+a.Name);
+   foreach(var e in m.Extends)foreach(var a in e.Alternatives)expected.Add(m.Name+"/extension:"+e.Target+"."+a.Name);
+  }
+  var scanned=CSharp5CoverageContract.DeclaredOwners(grammars);
+  Assert.Equal(expected.Order(StringComparer.Ordinal),scanned.Order(StringComparer.Ordinal));
+ }
  [Theory]
  [InlineData("missing","OccurrenceSet")][InlineData("duplicate","OccurrenceSet")][InlineData("invented","OccurrenceSet")]
  [InlineData("body","SourceBody")][InlineData("main","MainReference")][InlineData("domain","SourceDomain")]
