@@ -15,13 +15,14 @@ CSharp6 uses frozen Unicode4 scalars (`UnicodePolicy.UsesUnicode4` now includes 
 ## Parse wrapper and policies
 
 - `CSharpParser` drops Nitrogen's Ambiguous diagnostic only when the node is the sanctioned tie of `NameofExpression` and `NameofInvocation` and the profile is major 6 or later. Any other tie still reports `NG3`.
-- `CSharp6ContextPolicy` (ECMA-334 6th edition) adds three checks:
+- `CSharp6ContextPolicy` (ECMA-334 6th edition) adds four checks:
   - **CSN2060:** a property initializer needs an automatically implemented property that is neither abstract nor extern (§14.7.4).
-  - **CSN2061:** constructors, finalizers and accessors have no expression bodies in C# 6.
-  - **CSN2062:** an unparenthesized conditional in an interpolation expression or width is rejected, because its colon would begin the format (§11.7.3).
+  - **CSN2061:** constructors, finalizers and accessors have no expression bodies in C# 6. The check applies to major 6 only, because C# 7.0 adds these forms.
+  - **CSN2062:** an unparenthesized conditional in an interpolation expression or width is rejected, because its colon would begin the format (§11.7.3). One in-order walk per interpolation tracks bracket depth, so the cost is linear in the size of the holes.
+  - **CSN2063:** a struct instance property initializer requires C# 10 and is reported as an unavailable feature, matching the struct field-initializer rule. §14.7.4 applies the initializer to the backing field, and §15.4.8 forbids instance field initializers in structs. Static ones are accepted.
 - Existing checks updated for sixth syntax:
   - The primary and unary kind lists (CSN2013, CSN2015) include the null-conditional, nameof and interpolated kinds and the sanctioned nameof node.
-  - The statement-expression check (CSN2001) accepts the sanctioned nameof node.
+  - The statement-expression check (CSN2001) accepts the sanctioned nameof node. Such a statement is valid only under the invocation reading, and choosing between the readings needs binding. `nameof(int);` is still rejected.
   - The inferred anonymous-member check accepts `a?.b` (the null-conditional projection initializer).
   - From version 6, the automatic-property rule (CSN2032) also accepts a lone `get;`.
   - CSN2053 no longer treats an expression body as a semicolon body.
@@ -33,4 +34,4 @@ In an async body, the existing factory reads `await x;` as a declaration of `x` 
 
 ## Verification
 
-`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,631 tests (7,558 main, 3,884 oracle, 55 CSharp5 proof, 134 CSharp6 proof) with zero failures or skips. `CSharp6ProductionTests` adds 56. CSharp1–5 remain admitted with pins refreshed 5→4→3→2. `eng/refresh-admission-pins.py --check` and `eng/generate-nitride-projects.py --check` reproduce.
+`dotnet test CSNitrogen.slnx -m:1 -p:UseSharedCompilation=false -p:NuGetAudit=false` passes 11,635 tests (7,562 main, 3,884 oracle, 55 CSharp5 proof, 134 CSharp6 proof) with zero failures or skips. `CSharp6ProductionTests` adds 60. CSharp1–5 remain admitted with pins refreshed 5→4→3→2. `eng/refresh-admission-pins.py --check` and `eng/generate-nitride-projects.py --check` reproduce.

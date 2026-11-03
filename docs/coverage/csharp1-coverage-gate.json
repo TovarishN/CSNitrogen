@@ -787,7 +787,8 @@
       "codes": [
         "CSN2060",
         "CSN2061",
-        "CSN2062"
+        "CSN2062",
+        "CSN2063"
       ],
       "status": "verified",
       "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_6th_edition_june_2022.pdf",
@@ -799,12 +800,24 @@
         {
           "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
           "method": "Sixth_forms_pass_existing_policies"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Expression_body_restriction_is_sixth_only"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Interpolation_colon_check_scales_with_the_number_of_holes"
         }
       ],
       "negative": [
         {
           "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
           "method": "Sixth_source_local_checks"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+          "method": "Struct_instance_property_initializer_requires_a_later_version"
         }
       ]
     }

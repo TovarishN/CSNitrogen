@@ -93,6 +93,33 @@ public class CSharp6ProductionTests
   Assert.Contains(p.Issues,i=>i.Code is "CSN2060" or "CSN2061" or "CSN2062");
   Assert.DoesNotContain(CSharpSyntaxPolicy.Check(p.Tree,new(5,0)),i=>i.Code is "CSN2060" or "CSN2061" or "CSN2062");
  }
+ [Theory]
+ [InlineData("class C{C()=>M();}")]
+ [InlineData("class C{int P{get=>1;}}")]
+ public void Expression_body_restriction_is_sixth_only(string source)
+ {
+  using var p=Parse(source,"CSharp7");Assert.DoesNotContain(p.Issues,i=>i.Code=="CSN2061");
+ }
+ [Fact]
+ public void Struct_instance_property_initializer_requires_a_later_version()
+ {
+  const string s="struct S{int P{get;}=1;static int Q{get;}=2;}";
+  using var p=Parse(s);Assert.False(p.Accepted);
+  var issue=Assert.Single(p.Issues);Assert.Equal("CSN2063",issue.Code);Assert.Equal(IssueCategory.UnavailableFeature,issue.Category);
+  Assert.Equal((s.IndexOf("=1;",StringComparison.Ordinal),3),(issue.Span.Start,issue.Span.Length));
+ }
+ /// <summary>CSN2062 walks each interpolation once; thousands of legal holes must not cost a tree walk each.</summary>
+ [Fact]
+ public void Interpolation_colon_check_scales_with_the_number_of_holes()
+ {
+  string body=string.Concat(Enumerable.Repeat("s=$\"{(a?b:c)}\";",4000));
+  string source="class C{void M(){"+body+"}}";
+  using(Parse(source)){}
+  var clock=System.Diagnostics.Stopwatch.StartNew();
+  using var p=Parse(source);clock.Stop();
+  Assert.True(p.Accepted,Issues(p));
+  Assert.True(clock.ElapsedMilliseconds<2500,$"{clock.ElapsedMilliseconds} ms");
+ }
  [Fact]
  public void Fifth_profile_keeps_its_automatic_property_rule()
  {
