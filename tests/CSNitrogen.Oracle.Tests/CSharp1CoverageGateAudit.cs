@@ -149,7 +149,7 @@ internal static class CSharp1CoverageGateAudit
             var coverageMappings=features.Where(f=>f!["coverage"] is not null).Select(f=>new CoverageMapping(f!["id"]!.GetValue<string>(),
                 f["coverage"]!["capabilities"]!.AsArray().Select(c=>c!.GetValue<string>()).ToArray(),f["coverage"]!["policies"]!.AsArray().Select(c=>c!.GetValue<string>()).ToArray())).ToArray();
             var coverage=CoverageContract.Evaluate(new(1,0),coverageInventory,coverageMappings,FeatureCatalog.Implemented,runtime.Features,runtime.Policies,
-                FeatureCatalog.KnownPolicies,runtime.Grammars,FeatureCatalog.FactoryGrammars("CSharp1"),true,CSNitrogen.Parsing.CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules));
+                FeatureCatalog.KnownPolicies,runtime.Grammars,FeatureCatalog.FactoryGrammars("CSharp1"),true,CSNitrogen.Parsing.CSharpParser.MatchesFactory("CSharp1",FeatureCatalog.ModulesFor(1)));
             foreach(var issue in coverage.Issues)errors.Add("CoverageMappings: "+issue.Code+": "+issue.Message);
             if(coverage.Missing.Count>0)blockers.Add("RuntimeCoverage: "+coverage.Missing.Count+" inventory requirements are not supplied.");
             Exact("PolicyGroups", policyGroups, ledger.PolicyGroups.Keys);

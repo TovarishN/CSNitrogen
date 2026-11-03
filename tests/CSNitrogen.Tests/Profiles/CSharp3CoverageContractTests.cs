@@ -10,9 +10,9 @@ public class CSharp3CoverageContractTests
  static bool Evaluate(byte[]? gate=null,byte[]? index=null,byte[]? map=null,byte[]? reference=null,byte[]? composition=null,Dictionary<string,byte[]>? inputs=null,bool predecessor=true)
   =>CSharp3CoverageContract.Reviewed(gate??Read("csharp3-coverage-gate.json"),index??Read("csharp3-standard-index.json"),map??Read("csharp3-standard-crosswalk.json"),reference??Read("csharp3-reference-policy.json"),composition??Read("composition.json"),inputs??Inputs(),predecessor);
  [Fact]public void Only_the_reviewed_third_snapshot_with_admitted_predecessor_is_accepted()
- {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.ThirdSourceReviewed);}
+ {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.SourceReviewedFor(3));}
  [Fact]public void Actual_third_factory_has_exact_reviewed_modules_and_compilation_unit_root()
- {Assert.True(CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules));Assert.False(CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules.Skip(1).ToArray()));Assert.False(CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules.Append(FeatureCatalog.ThirdModules[0]).ToArray()));Assert.False(CSharpParser.MatchesThirdFactory(FeatureCatalog.ThirdModules.Skip(1).Append("Invented.Module").ToArray()));}
+ {Assert.True(CSharpParser.MatchesFactory("CSharp3",FeatureCatalog.ModulesFor(3)));Assert.False(CSharpParser.MatchesFactory("CSharp3",FeatureCatalog.ModulesFor(3).Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp3",FeatureCatalog.ModulesFor(3).Append(FeatureCatalog.ModulesFor(3)[0]).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp3",FeatureCatalog.ModulesFor(3).Skip(1).Append("Invented.Module").ToArray()));}
  [Theory]
  [InlineData("ledger")][InlineData("index")][InlineData("map")][InlineData("authority")][InlineData("unicode")][InlineData("composition-start")][InlineData("composition-namespace")][InlineData("composition-modules")]
  [InlineData("source-added")][InlineData("source-removed")][InlineData("grammar-added")][InlineData("report-added")][InlineData("evidence-added")]

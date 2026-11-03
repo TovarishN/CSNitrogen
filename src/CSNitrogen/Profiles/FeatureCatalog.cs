@@ -53,20 +53,16 @@ public static class FeatureCatalog
     });
     private sealed record Snapshot(IReadOnlyList<CoverageFeature> Inventory, string Identity,
         IReadOnlyList<CoverageMapping> Mappings,IReadOnlyList<string> KnownPolicies,
-        IReadOnlyDictionary<string,string[]> Factories,bool Reviewed,IReadOnlyList<string> HistoricalModules,bool SecondReviewed,IReadOnlyList<string> SecondModules,bool ThirdReviewed,IReadOnlyList<string> ThirdModules,bool FourthReviewed,IReadOnlyList<string> FourthModules,bool FifthReviewed,IReadOnlyList<string> FifthModules);
+        IReadOnlyDictionary<string,string[]> Factories,IReadOnlyDictionary<int,Lazy<bool>> Reviewed,IReadOnlyDictionary<int,IReadOnlyList<string>> Modules);
     public static IReadOnlyList<CoverageMapping> CoverageMappings => Coverage.Value.Mappings;
     internal static IReadOnlyList<string> KnownPolicies => Coverage.Value.KnownPolicies;
     internal static IReadOnlyList<string> FactoryGrammars(string name) => Coverage.Value.Factories.TryGetValue(name,out var g)?g:Array.Empty<string>();
-    internal static bool SourceReviewed => Coverage.Value.Reviewed;
-    internal static bool FourthSourceReviewed => Coverage.Value.FourthReviewed;
-    internal static bool FifthSourceReviewed => Coverage.Value.FifthReviewed;
-    internal static IReadOnlyList<string> FifthModules => Coverage.Value.FifthModules;
-    internal static IReadOnlyList<string> FourthModules => Coverage.Value.FourthModules;
-    internal static bool ThirdSourceReviewed => Coverage.Value.ThirdReviewed;
-    internal static IReadOnlyList<string> ThirdModules => Coverage.Value.ThirdModules;
-    internal static bool SecondSourceReviewed => Coverage.Value.SecondReviewed;
-    internal static IReadOnlyList<string> SecondModules => Coverage.Value.SecondModules;
-    internal static IReadOnlyList<string> HistoricalModules => Coverage.Value.HistoricalModules;
+    /// <summary>Major versions with an independent admission guard, in directed predecessor order.</summary>
+    internal static readonly IReadOnlyList<int> AdmittedMajors=Array.AsReadOnly(new[]{1,2,3,4,5});
+    /// <summary>Whether the major's guard admits its snapshot; evaluated only when that major is resolved.</summary>
+    internal static bool SourceReviewedFor(int major) => Coverage.Value.Reviewed.TryGetValue(major,out var reviewed)&&reviewed.Value;
+    /// <summary>The module names the major's approved ledger records for its factory.</summary>
+    internal static IReadOnlyList<string> ModulesFor(int major) => Coverage.Value.Modules.TryGetValue(major,out var modules)?modules:Array.Empty<string>();
     private static readonly Lazy<Snapshot> Coverage = new(LoadCoverage);
     public static IReadOnlyList<CoverageFeature> Inventory => Coverage.Value.Inventory;
     public static string CoverageIdentity => Coverage.Value.Identity;
@@ -110,23 +106,23 @@ public static class FeatureCatalog
                 Array.AsReadOnly(coverage.GetProperty("policies").EnumerateArray().Select(c=>c.GetString()!).ToArray()));
         }).OrderBy(m=>m.InventoryId,StringComparer.Ordinal).ToArray();
         var factories=config.RootElement.GetProperty("languages").EnumerateArray().ToDictionary(l=>l.GetProperty("name").GetString()!,l=>l.GetProperty("grammars").EnumerateArray().Select(g=>g.GetString()!).ToArray(),StringComparer.Ordinal);
-        using var secondLedger=JsonDocument.Parse(secondGate);
+        IReadOnlyList<string> FactoryModules(byte[] ledgerBytes,bool historical)
+        {
+            using var parsed=JsonDocument.Parse(ledgerBytes);
+            var names=historical?parsed.RootElement.GetProperty("modules").EnumerateArray().Select(m=>m.GetProperty("module").GetString()!)
+                :parsed.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!);
+            return Array.AsReadOnly(names.ToArray());
+        }
         var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
         var sourceInputs=inputs.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
-        bool secondReviewed=CSharp2CoverageContract.Reviewed(secondGate,secondIndex,secondCrosswalk,secondReference,composition,sourceInputs);
-        using var thirdLedger=JsonDocument.Parse(thirdGate);using var fourthLedger=JsonDocument.Parse(fourthGate);using var fifthLedger=JsonDocument.Parse(fifthGate);
-        bool thirdReviewed=CSharp3CoverageContract.Reviewed(thirdGate,thirdIndex,thirdCrosswalk,thirdReference,composition,sourceInputs,secondReviewed);
-        bool fourthReviewed=CSharp4CoverageContract.Reviewed(fourthGate,composition,sourceInputs,thirdReviewed);
-        return new(Array.AsReadOnly(entries),CoverageHash.Compute(inputs),Array.AsReadOnly(mappings),Array.AsReadOnly(known),factories,
-            CoverageContract.Reviewed(ledger.RootElement,map.RootElement,source.RootElement,primary.RootElement,config.RootElement),
-            Array.AsReadOnly(ledger.RootElement.GetProperty("modules").EnumerateArray().Select(m=>m.GetProperty("module").GetString()!).ToArray()),
-            secondReviewed,
-            Array.AsReadOnly(secondLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
-            thirdReviewed,
-            Array.AsReadOnly(thirdLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
-            fourthReviewed,
-            Array.AsReadOnly(fourthLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()),
-            CSharp5CoverageContract.Reviewed(fifthGate,composition,sourceInputs,fourthReviewed),
-            Array.AsReadOnly(fifthLedger.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!).ToArray()));
+        // Each guard requires its actually admitted predecessor; later guards run only when their major is resolved.
+        bool first=CoverageContract.Reviewed(ledger.RootElement,map.RootElement,source.RootElement,primary.RootElement,config.RootElement);
+        var second=new Lazy<bool>(()=>CSharp2CoverageContract.Reviewed(secondGate,secondIndex,secondCrosswalk,secondReference,composition,sourceInputs));
+        var third=new Lazy<bool>(()=>CSharp3CoverageContract.Reviewed(thirdGate,thirdIndex,thirdCrosswalk,thirdReference,composition,sourceInputs,second.Value));
+        var fourth=new Lazy<bool>(()=>CSharp4CoverageContract.Reviewed(fourthGate,composition,sourceInputs,third.Value));
+        var fifth=new Lazy<bool>(()=>CSharp5CoverageContract.Reviewed(fifthGate,composition,sourceInputs,fourth.Value));
+        var reviewed=new Dictionary<int,Lazy<bool>>{[1]=new(()=>first),[2]=second,[3]=third,[4]=fourth,[5]=fifth};
+        var modules=new Dictionary<int,IReadOnlyList<string>>{[1]=FactoryModules(gate,true),[2]=FactoryModules(secondGate,false),[3]=FactoryModules(thirdGate,false),[4]=FactoryModules(fourthGate,false),[5]=FactoryModules(fifthGate,false)};
+        return new(Array.AsReadOnly(entries),CoverageHash.Compute(inputs),Array.AsReadOnly(mappings),Array.AsReadOnly(known),factories,reviewed,modules);
     }
 }

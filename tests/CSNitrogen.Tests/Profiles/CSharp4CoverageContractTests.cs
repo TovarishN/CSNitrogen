@@ -10,11 +10,11 @@ public class CSharp4CoverageContractTests
  static bool Evaluate(byte[]? gate=null,byte[]? composition=null,Dictionary<string,byte[]>? inputs=null,bool predecessor=true)
   =>CSharp4CoverageContract.Reviewed(gate??Read("csharp4-coverage-gate.json"),composition??Read("composition.json"),inputs??Inputs(),predecessor);
  [Fact]public void Only_the_reviewed_fourth_snapshot_with_admitted_third_predecessor_is_accepted()
- {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.FourthSourceReviewed);}
+ {Assert.True(Evaluate());Assert.False(Evaluate(predecessor:false));Assert.True(FeatureCatalog.SourceReviewedFor(4));}
  [Fact]public void Actual_fourth_factory_requires_exact_modules_and_compilation_unit_root()
  {
-  Assert.Equal(30,FeatureCatalog.FourthModules.Count);Assert.True(CSharpParser.MatchesFourthFactory(FeatureCatalog.FourthModules));
-  Assert.False(CSharpParser.MatchesFourthFactory(FeatureCatalog.FourthModules.Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFourthFactory(FeatureCatalog.FourthModules.Append(FeatureCatalog.FourthModules[0]).ToArray()));Assert.False(CSharpParser.MatchesFourthFactory(FeatureCatalog.FourthModules.Skip(1).Append("Invented.Module").ToArray()));
+  Assert.Equal(30,FeatureCatalog.ModulesFor(4).Count);Assert.True(CSharpParser.MatchesFactory("CSharp4",FeatureCatalog.ModulesFor(4)));
+  Assert.False(CSharpParser.MatchesFactory("CSharp4",FeatureCatalog.ModulesFor(4).Skip(1).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp4",FeatureCatalog.ModulesFor(4).Append(FeatureCatalog.ModulesFor(4)[0]).ToArray()));Assert.False(CSharpParser.MatchesFactory("CSharp4",FeatureCatalog.ModulesFor(4).Skip(1).Append("Invented.Module").ToArray()));
  }
  [Theory]
  [InlineData("ledger")][InlineData("composition-start")][InlineData("composition-namespace")][InlineData("composition-modules")]

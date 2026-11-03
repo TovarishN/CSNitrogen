@@ -14,8 +14,8 @@ public class CoverageContractTests
     [Fact] public void Embedded_contract_agrees_with_the_actual_named_factory_and_immutable_mapping_catalog()
     {
         Assert.True(Reviewed());Assert.Equal(40,FeatureCatalog.CoverageMappings.Count(m=>FeatureCatalog.Inventory.Any(f=>f.Id==m.InventoryId && f.Introduced==new Version(1,0))));
-        Assert.True(CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules));
-        Assert.False(CSharpParser.MatchesHistoricalFactory(FeatureCatalog.HistoricalModules.Skip(1).ToArray()));
+        Assert.True(CSharpParser.MatchesFactory("CSharp1",FeatureCatalog.ModulesFor(1)));
+        Assert.False(CSharpParser.MatchesFactory("CSharp1",FeatureCatalog.ModulesFor(1).Skip(1).ToArray()));
         var list=Assert.IsAssignableFrom<IList<CoverageMapping>>(FeatureCatalog.CoverageMappings);
         Assert.Throws<NotSupportedException>(()=>list.Clear());
         var caps=Assert.IsAssignableFrom<IList<string>>(FeatureCatalog.CoverageMappings[0].Capabilities);
