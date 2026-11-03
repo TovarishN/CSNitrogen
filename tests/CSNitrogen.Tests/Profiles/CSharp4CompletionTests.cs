@@ -13,7 +13,7 @@ public class CSharp4CompletionTests
  [Fact]public void Fourth_admission_keeps_predecessors_admitted_and_later_and_custom_profiles_partial()
  {
   foreach(string name in new[]{"CSharp1","CSharp2","CSharp3","CSharp4"})Assert.True(ProfileResolver.Resolve(name).Profile!.Complete);
-  foreach(string name in Enumerable.Range(5,10).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
+  foreach(string name in Enumerable.Range(6,9).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
   Assert.False(ProfileResolver.ResolveCustom("CSharp4",FeatureCatalog.Implemented.Where(f=>f.Introduced<=new Version(4,0)).Select(f=>f.Id)).Profile!.Complete);
  }
 }

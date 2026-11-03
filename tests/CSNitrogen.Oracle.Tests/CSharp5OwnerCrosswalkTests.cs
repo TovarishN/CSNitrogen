@@ -14,7 +14,7 @@ public class CSharp5OwnerCrosswalkTests
  static string Hash(byte[] bytes)=>Convert.ToHexStringLower(SHA256.HashData(bytes));
  static readonly string[] AdditionNames=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
  [Fact]public void Every_fifth_occurrence_and_main_text_addition_maps_to_actual_owners()
- {Assert.Empty(Evaluate(Read("csharp5-standard-crosswalk.json")));Assert.False(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
+ {Assert.Empty(Evaluate(Read("csharp5-standard-crosswalk.json")));Assert.True(ProfileResolver.Resolve("CSharp5").Profile!.Complete);}
  [Theory]
  [InlineData("missing","OccurrenceSet")][InlineData("duplicate","OccurrenceSet")][InlineData("invented","OccurrenceSet")]
  [InlineData("body","SourceBody")][InlineData("main","MainReference")][InlineData("domain","SourceDomain")]

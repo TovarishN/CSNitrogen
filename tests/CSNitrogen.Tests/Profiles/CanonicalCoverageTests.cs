@@ -39,17 +39,13 @@ public class CanonicalCoverageTests
     [Fact]
     public void Later_and_custom_profiles_do_not_inherit_historical_completeness()
     {
-        foreach(string name in Enumerable.Range(5,10).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
+        foreach(string name in Enumerable.Range(6,9).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))
         {
             var profile=ProfileResolver.Resolve(name).Profile!;
-            Assert.False(profile.Complete);
-            if(name=="CSharp5")
-            {
-                Assert.Empty(profile.MissingFeatures); // Candidate release capabilities do not establish historical source admission.
-                var fifth=Assert.Single(FeatureCatalog.Inventory,f=>f.Id=="csharp-5.0.asynchronous-methods");Assert.False(fifth.Reviewed);Assert.Equal("implemented",fifth.Status);
-            }
-            else Assert.NotEmpty(profile.MissingFeatures);
+            Assert.False(profile.Complete);Assert.NotEmpty(profile.MissingFeatures);
         }
+        // The admitted fifth snapshot does not make later profiles complete.
+        var fifth=ProfileResolver.Resolve("CSharp5").Profile!;Assert.True(fifth.Complete);Assert.Empty(fifth.MissingFeatures);
         var custom=ProfileResolver.ResolveCustom("CSharp1",FeatureCatalog.Implemented.Select(f=>f.Id));
         Assert.Empty(custom.Issues);Assert.False(custom.Profile!.Complete);Assert.Null(custom.Profile.Version);
     }

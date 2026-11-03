@@ -2821,7 +2821,7 @@
       "title": "Asynchronous methods",
       "introduced": "5.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/",
       "inventoryLine": 174,
       "requires": [],
@@ -2835,9 +2835,10 @@
       ],
       "fixtures": [
         "tests/CSNitrogen.Tests/Syntax/CSharp5ProductionTests.cs",
-        "tests/CSNitrogen.Tests/Lexing/CSharp5UnicodeContractTests.cs"
+        "tests/CSNitrogen.Tests/Lexing/CSharp5UnicodeContractTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp5AlternativeMatrixTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp5.async-functions",
@@ -2847,7 +2848,7 @@
           "csharp5.source-context-checks"
         ]
       },
-      "notes": "Scoped grammar and source-local restrictions; historical source closure and independent fifth admission remain pending. Task identity, awaitability, state machines and execution are semantic exclusions."
+      "notes": "Scoped grammar and source-local restrictions within the independently admitted CSharp5 snapshot. Task identity, awaitability, async return types, state machines and execution are semantic exclusions."
     },
     {
       "id": "csharp-5.0.caller-info-attributes",
