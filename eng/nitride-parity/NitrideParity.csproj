@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><CSNitrogenParityRoot Condition="'$(CSNitrogenParityRoot)' == ''">$(MSBuildThisFileDirectory)../../</CSNitrogenParityRoot></PropertyGroup>
+<ItemGroup><ProjectReference Include="$(CSNitrogenParityRoot)/src/CSNitrogen.Syntax/CSNitrogen.Syntax.csproj"/></ItemGroup>
+</Project>
