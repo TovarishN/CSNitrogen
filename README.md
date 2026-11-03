@@ -22,6 +22,12 @@ For an existing checkout of the exact pinned Nitrogen revision, pass its path to
 
 `NuGetAudit=false` makes the commands independent of the remote vulnerability-metadata endpoint; it does not disable dependency restore. The local snapshot identity and source hashes are recorded in `docs/coverage/dependencies.json`. An explicit `-p:NitrogenRoot=/path/to/buildable/snapshot` overrides the snapshot location; use an isolated copy if that path must remain unchanged.
 
+## Nitride
+
+`nitride.nproj` lists one [Nitride](https://github.com/TovarishN/Nitride) project per named profile under `src/CSNitrogen.Syntax/Languages`, so Nitride's CLI, language server and VS Code extension can prepare and parse every profile natively. `nitrogen.json` remains the source; regenerate the projects with `python3 eng/generate-nitride-projects.py` (`--check` verifies them). Extensions are `.csharp1` through `.csharp14`, `.csharp7_1`–`.csharp7_3` and `.csharp1safe`, so ordinary `.cs` files are not claimed.
+
+Nitride requires scoped parse context support for the C# 5 `await` and async contexts, which the shared `Core.ngr` declares for every profile. `nitride parse src/CSNitrogen.Syntax/Languages/CSharp5/CSharp5.nproj file.cs` prints its syntax tree. [Nitride parse parity](eng/nitride-parity/README.md) compares raw-grammar trees with Nitrogen's generated parser.
+
 ## Owning parse API
 
 ```csharp
