@@ -1,11 +1,13 @@
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 namespace CSNitrogen.Profiles;
 /// <summary>Admission of one reviewed normalized C#5 syntax snapshot, independently of source acceptance.</summary>
 internal static class CSharp5CoverageContract
 {
  internal const string PrimarySha256="6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519";
- internal const string ApprovedLedgerSha256="1f44f85689d40b295877cd95aa9fe27c499ecfab2aa63a731ae3fd88c8a09883";
+ internal const string ApprovedLedgerSha256="92a1c31c3d94058e77c3937d29198c681be4e4f4138ed50090c6691b7b481c40";
  static readonly string[] Additions=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
  static readonly string[] Dimensions=["normative-prose","positive-negative","ambiguity-context","spans-diagnostics"];
  static string Hash(byte[] b)=>Convert.ToHexStringLower(SHA256.HashData(b));
@@ -21,10 +23,13 @@ internal static class CSharp5CoverageContract
   ||name.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)||name.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)
   ||name.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)&&name is not ("CSNitrogen.source.Profiles/CSharp2CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp3CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp4CoverageContract.cs" or "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs");
  internal static bool Reviewed(byte[] ledger,byte[] composition,IReadOnlyDictionary<string,byte[]> inputs,bool fourthReviewed)
+  =>Reviewed(ledger,composition,inputs,fourthReviewed,ApprovedLedgerSha256);
+ /// <summary>The guard against an explicit ledger digest; tests re-pin mutated inputs to reach the structural checks.</summary>
+ internal static bool Reviewed(byte[] ledger,byte[] composition,IReadOnlyDictionary<string,byte[]> inputs,bool fourthReviewed,string approvedLedgerSha256)
  {
   try
   {
-   if(!fourthReviewed||Hash(ledger)!=ApprovedLedgerSha256)return false;
+   if(!fourthReviewed||Hash(ledger)!=approvedLedgerSha256)return false;
    using var gateDoc=JsonDocument.Parse(ledger);using var configDoc=JsonDocument.Parse(composition);var gate=gateDoc.RootElement;
    if(Text(gate,"profile")!="CSharp5"||Text(gate,"status")!="verified"||Text(gate,"primarySha256")!=PrimarySha256)return false;
    var pins=gate.GetProperty("reviewInputs").EnumerateObject().ToArray();
@@ -56,6 +61,9 @@ internal static class CSharp5CoverageContract
    if(!Exact(Additions,additions.Select(a=>Text(a,"name")))||!Exact(additions.Select(a=>Text(a,"id")),reviewedAdditions.Keys))return false;
    var owners=Strings(gate.GetProperty("owners"));var groups=gate.GetProperty("policyGroups").EnumerateObject().ToDictionary(p=>p.Name,p=>Strings(p.Value));
    if(!Exact(owners,rows.SelectMany(r=>Strings(r.GetProperty("targets"))).Concat(additions.SelectMany(a=>Strings(a.GetProperty("targets")))).Distinct()))return false;
+   // Every owner must be declared by the selected factory's own grammar sources.
+   var declared=DeclaredOwners(Strings(factory.GetProperty("grammars")).Select(g=>Encoding.UTF8.GetString(Input("grammar."+g["Grammars/".Length..]))));
+   if(owners.Any(o=>!declared.Contains(o)))return false;
    if(!Exact(groups.Keys,new[]{"attribute-argument-order","attribute-target-recognition","csharp-trivia","csharp1-preprocessing","generated-syntax-context-checks","csharp4.source-context-checks","csharp5.source-context-checks"})||!Exact(groups["csharp5.source-context-checks"],["Parsing/CSharp5ContextPolicy.cs"]))return false;
    bool Verified(JsonElement r,string id,string basis,string domain)
    {
@@ -75,7 +83,19 @@ internal static class CSharp5CoverageContract
     string basis=Text(link,"bodyRelation")=="body-identical"?"predecessor-review-carried":"version5-source-review";
     if(!Verified(r,id,basis,Text(priorReview.GetProperty("sourceReview"),"domain")))return false;
     var ts=Strings(row.GetProperty("targets"));var ps=Strings(row.GetProperty("policies"));
-    if(ts.Length+ps.Length==0||ps.Any(p=>!groups.ContainsKey(p)))return false;
+    if(ts.Length+ps.Length==0||ts.Distinct().Count()!=ts.Length||ps.Distinct().Count()!=ps.Length||ps.Any(p=>!groups.ContainsKey(p)))return false;
+    string correction=row.TryGetProperty("sourceCorrection",out var c)?c.GetString()!:"",priorCorrection=prior.TryGetProperty("sourceCorrection",out var pc)?pc.GetString()!:"";
+    if(correction!=priorCorrection)return false;
+   }
+   // The approved predecessor corrections carry forward to exactly the corresponding fifth occurrences.
+   var corrections=map.GetProperty("sourceCorrections");var oldCorrections=oldMapDoc.RootElement.GetProperty("sourceCorrections");
+   if(!Exact(corrections.EnumerateObject().Select(p=>p.Name),oldCorrections.EnumerateObject().Select(p=>p.Name)))return false;
+   foreach(var p in corrections.EnumerateObject())
+   {
+    var old=oldCorrections.GetProperty(p.Name);
+    if(Text(p.Value,"status")!=Text(old,"status")||Text(p.Value,"decision")!=Text(old,"decision")||Text(p.Value,"status")!="approved-predecessor-continuity")return false;
+    var corrected=rows.Where(r=>r.TryGetProperty("sourceCorrection",out var c)&&c.GetString()==p.Name).Select(r=>Text(r,"standardId")).ToArray();
+    if(corrected.Length!=Strings(old.GetProperty("occurrences")).Length||!Exact(corrected,Strings(p.Value.GetProperty("occurrences"))))return false;
    }
    foreach(var a in additions)
    {
@@ -128,5 +148,40 @@ internal static class CSharp5CoverageContract
    return true;
   }
   catch(Exception e) when(e is JsonException or InvalidOperationException or KeyNotFoundException or ArgumentException or FormatException or OverflowException){return false;}
+ }
+
+ static readonly Regex Module=new(@"\Gsyntax\s+module\s+([\w.]+)\s*\{",RegexOptions.CultureInvariant);
+ static readonly Regex RuleHead=new(@"\G(?:token|syntax)\s+(\w+)\s*=",RegexOptions.CultureInvariant);
+ static readonly Regex Block=new(@"\G(extensible|extend)\s+syntax\s+([\w.]+)\s*\{",RegexOptions.CultureInvariant);
+ static readonly Regex Alternative=new(@"\G\|\s*(?:transparent\s+)?(\w+)\s*=",RegexOptions.CultureInvariant);
+ /// <summary>Owner identities declared by grammar sources: module rules, extensible alternatives and extensions.</summary>
+ internal static HashSet<string> DeclaredOwners(IEnumerable<string> grammars)
+ {
+  var owners=new HashSet<string>(StringComparer.Ordinal);
+  foreach(string source in grammars)
+  {
+   // Blank comments and string/character literals so braces inside them do not count.
+   var text=source.ToCharArray();
+   for(int i=0;i<text.Length;i++)
+   {
+    if(text[i]=='/'&&i+1<text.Length&&text[i+1]=='/'){while(i<text.Length&&text[i]!='\n')text[i++]=' ';continue;}
+    if(text[i] is '"' or '\'')
+    {char quote=text[i];text[i++]=' ';while(i<text.Length&&text[i]!=quote){if(text[i]=='\\'&&i+1<text.Length)text[i++]=' ';text[i++]=' ';}if(i<text.Length)text[i]=' ';}
+   }
+   string plain=new(text);string module="";int depth=0;string? block=null,target=null;
+   for(int i=0;i<plain.Length;i++)
+   {
+    bool start=i==0||!(char.IsLetterOrDigit(plain[i-1])||plain[i-1]=='_');
+    if(depth==0&&start&&Module.Match(plain,i) is {Success:true} m){module=m.Groups[1].Value;i+=m.Length-1;depth=1;continue;}
+    if(depth==1&&start&&Block.Match(plain,i) is {Success:true} b)
+    {block=b.Groups[1].Value;target=b.Groups[2].Value;if(block=="extensible")owners.Add(module+"/rule:"+target);i+=b.Length-1;depth=2;continue;}
+    if(depth==1&&start&&RuleHead.Match(plain,i) is {Success:true} r){owners.Add(module+"/rule:"+r.Groups[1].Value);i+=r.Length-1;continue;}
+    if(depth==2&&block is not null&&Alternative.Match(plain,i) is {Success:true} a)
+    {owners.Add(module+(block=="extensible"?"/alternative:":"/extension:")+target+"."+a.Groups[1].Value);i+=a.Length-1;continue;}
+    if(plain[i]=='{')depth++;
+    else if(plain[i]=='}'){depth--;if(depth==1)block=null;if(depth==0)module="";}
+   }
+  }
+  return owners;
  }
 }
