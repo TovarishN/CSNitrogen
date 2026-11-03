@@ -9,13 +9,13 @@
     "sha256": "6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519",
     "bytes": 791626,
     "format": "Word DOCX",
-    "documentNotice": "Microsoft Corporation,1999\u20132012"
+    "documentNotice": "Microsoft Corporation,1999–2012"
   },
   "extraction": {
     "method": "macOS textutil -convert txt -stdout",
     "textSha256": "9e1d368ec4216701c3eec65d599e0ced499841df0eff778febd520cb52fa051e",
     "lineSplit": "LF only",
-    "scope": "Source-contract preflight only; no whole-source index or admission"
+    "scope": "Whole Appendix B occurrence index (csharp5-standard-index.json) and Version4-to-5 main-text difference dispositions (csharp5-main-text-dispositions.json); inspection inputs only, no admission"
   },
   "unicode": {
     "status": "approved",

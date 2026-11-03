@@ -98,6 +98,12 @@ internal static class CSharp5ContextPolicy
     if(AsyncLexicalContext(n))
      Error("CSN2051",n,"Raw await cannot be used as an identifier in an async function; escaped identifier spellings remain distinct lexical forms.");
    }
+   else if(kind=="MethodDeclaration"&&Async(n)&&Kind(Body(n))!="Block")
+   {
+    // Version5 main6913: a method whose method-body is a semicolon may not include async.
+    foreach(var modifier in SyntaxView.Cast<MemberDeclarationNode>(tree,Member(n)).Modifiers)
+     if(Kind(modifier.Index)=="AsyncModifier")Error("CSN2053",modifier.Index,"A method with a semicolon body cannot have the async modifier.");
+   }
    else if(kind is "FixedParameter" or "AnonymousParameter")
    {
     owner=Function(n);if(!Async(owner))continue;
