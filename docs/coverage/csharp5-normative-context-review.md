@@ -41,6 +41,14 @@ Version4 is a DOC with unresolved cross-reference fields; Version5 is a DOCX wit
 - Async return types (void/Task/Task<T>), async iterators and task-returning evaluation depend on type identity, so they remain semantic. Cost if wrong: syntax acceptance can be mistaken for a valid async signature.
 - Caller info attributes change only compiler substitution; attribute syntax is unchanged.
 
+## Alternative witnesses and inheritance
+
+`tools/build-csharp5-alternative-matrix.py` links all 1164 non-placeholder alternatives (955 production, 209 finite). 1161 alternatives have one exact CSharp4 candidate and reuse that alternative's witness from the admitted CSharp4 matrix: inherited CSharp3 corpora or the 22 CSharp4 source-specific cases. The 3 changed alternatives have Version5 source-specific cases (`tests/Corpus/CSharp5/source-specific-cases.json`). `CSharp5AlternativeMatrixTests` executes every witness on the actual CSharp5 factory through the same positive, contrast and authored-range runners used for CSharp4. The 17 inheritance markers name exactly their 135 earlier family alternatives.
+
+## Historical policy alignment
+
+Executing the inherited witnesses on CSharp5 found 15 lexical/preprocessing differences. Those policies gated exact historical readings on versions 1–4, so CSharp5 had inherited current-compiler compatibility. The witnesses exposed terminal Control-Z, whitespace before directive arguments, `#line` and later-directive effects and escaped underscore identifier starts. The two remaining gated historical readings, boolean spellings in conditional symbols and the attribute-argument category, were aligned on the same grounds. The Version5 lexical, preprocessing and attribute bodies equal Version4's (apart from the NEL misprint), so these gates now include version5. CSharp6 and later keep current compatibility (`Fifth_profile_keeps_the_historical_lexical_and_directive_readings`). Admission pins were refreshed in directed order.
+
 ## Remaining Task3 work
 
-The source-alternative witness matrix, the owner crosswalk against the actual 32-module CSharp5 factory, the reviewed-occurrence overlay and the independent fail-closed CSharp5 admission guard remain. The index, delta inventory, difference index and dispositions are mechanical or inspected inputs; none of them awards admission.
+The owner crosswalk against the actual 32-module CSharp5 factory, the reviewed-occurrence overlay and the independent fail-closed CSharp5 admission guard remain. The index, delta inventory, difference index and dispositions are mechanical or inspected inputs; none of them awards admission.

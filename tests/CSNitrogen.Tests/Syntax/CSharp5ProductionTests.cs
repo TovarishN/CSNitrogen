@@ -65,6 +65,16 @@ public class CSharp5ProductionTests
   Assert.Contains(p.Issues,i=>i.Code=="CSN2052"&&i.Span.Start==source.IndexOf(modifier,StringComparison.Ordinal)&&i.Span.Length==modifier.Length);
  }
  [Theory]
+ [InlineData("class C{}\u001a",true,false)]
+ [InlineData("class \\u005f{}",false,true)]
+ [InlineData("#region!x\n#endregion\nclass C{}",false,true)]
+ public void Fifth_profile_keeps_the_historical_lexical_and_directive_readings(string source,bool fifth,bool sixth)
+ {
+  // Version5 lexical/preprocessing bodies equal Version4's (except the NEL misprint); later profiles keep current compatibility.
+  using var five=CSharpParser.Parse(new(source,"CSharp5","historical5.cs",[]));Assert.True(five.Accepted==fifth,string.Join(";",five.Issues));
+  using var six=CSharpParser.Parse(new(source,"CSharp6","current6.cs",[]));Assert.True(six.Accepted==sixth,string.Join(";",six.Issues));
+ }
+ [Theory]
  [InlineData("CSharp4")]
  [InlineData("CSharp5")]
  public void Endregion_may_end_with_a_single_line_comment(string profile)

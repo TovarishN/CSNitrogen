@@ -17,7 +17,7 @@ internal static class CSharpAttributePolicy
         for (int node = 0; node < tree.NodeCount; node++)
         {
             string kind = Kind(node);
-            if (version.Major<=4 && (kind == "AttributeSection" || version.Major is 2 or 3 or 4 && kind=="GlobalAttributeSection") && tree.ChildCount(node) >= 5)
+            if (version.Major<=5 && (kind == "AttributeSection" || version.Major is 2 or 3 or 4 or 5 && kind=="GlobalAttributeSection") && tree.ChildCount(node) >= 5)
             {
                 int targetIndex;
                 if(kind=="GlobalAttributeSection")targetIndex=SyntaxView.Cast<GlobalAttributeSectionNode>(tree,node).Target.Index;
@@ -58,7 +58,7 @@ internal static class CSharpAttributePolicy
             int value = named
                 ? SyntaxView.Cast<NamedAttributeArgumentNode>(tree, node).Value.Index
                 : SyntaxView.Cast<PositionalAttributeArgumentNode>(tree, node).Value.Index;
-            if (version.Major>4 && Kind(value) == "AssignmentExpression")
+            if (version.Major>5 && Kind(value) == "AssignmentExpression")
                 issues.Add(new("CSN2006", "An attribute argument requires a non-assignment expression.",
                     tree.Span(value), IssueCategory.Syntax));
         }

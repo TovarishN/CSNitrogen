@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "profile": "CSharp5",
+ "sourceSha256": "6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519",
+ "scope": "3 source-specific representative positives/contrasts for Version5 alternatives without a direct admitted CSharp4 candidate; not exhaustive inputs or semantic compilation.",
+ "cases": [
+  {
+   "id": "B:9652:new-line/4",
+   "sourceAlternativeSha256": "a3558e200ae74917faf03093303e4f5de419351666d27048fe4a222815dc1754",
+   "source": "class C{//x}",
+   "negative": "class C{//x₅}",
+   "focus": "",
+   "focusStart": 11,
+   "kind": "ClassDeclaration",
+   "anchorText": "C",
+   "anchorStart": 6,
+   "notes": "Version5 prints NEL as U+0085, correcting the Version4 U+2085 misprint; CSNitrogen has terminated lines at U+0085 since CSharp2. U+2085 does not end the comment."
+  },
+  {
+   "id": "B:9658:new-line-character/3",
+   "sourceAlternativeSha256": "a3558e200ae74917faf03093303e4f5de419351666d27048fe4a222815dc1754",
+   "source": "class C{int f;//y}",
+   "negative": "class C{int f;//y₅}",
+   "focus": "",
+   "focusStart": 17,
+   "kind": "ClassDeclaration",
+   "anchorText": "C",
+   "anchorStart": 6,
+   "notes": "Same NEL correction for the comment-excluded line terminator set."
+  },
+  {
+   "id": "B:10112:pointer-member-access/1",
+   "sourceAlternativeSha256": "31a7daeb6098106cbfbd38a5d3426d2d665653dfc5bc24fbfdaaa6edae829807",
+   "source": "unsafe class C{void M(S* p){p->F<int>();}}",
+   "negative": "unsafe class C{void M(S* p){p->F<int();}}",
+   "focus": "p->F<int>",
+   "focusStart": 28,
+   "kind": "GenericPointerMemberExpression",
+   "anchorText": "C",
+   "anchorStart": 13,
+   "notes": "Version5 adds type-argument-listopt; the CSharp2 generic pointer-member alternative already owns it. Binding remains excluded."
+  }
+ ]
+}
