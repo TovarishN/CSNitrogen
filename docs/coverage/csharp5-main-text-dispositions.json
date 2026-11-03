@@ -6,7 +6,7 @@
   "differenceIndexSha256": "00eb3d88a8310cdb69ac524bcb1b5ccfb5eeeb76eb045fdf2702a5e0ae6e3c7e",
   "scope": "Disposition of every normalized main-text difference region, with semantic exclusions retained. This does not establish whole-source admission, publisher-byte authenticity or semantic compilation.",
   "report": "docs/coverage/csharp5-normative-context-review.md",
-  "reportSha256": "612c4d2b7b734ed2ad3e8eaa675c9ada1ed109df49ede7eb33824ff991d48990",
+  "reportSha256": "9901e0ce1b372cdef5849388f369da86acb5fe60804aa0e1a1006597959da49a",
   "dispositions": {
     "async-functions": "The async method modifier and anonymous-function asyncopt markers are implemented through independently selected capabilities. Source-local ref/out formals (CSN2052), semicolon-bodied async methods (CSN2053) and async partial methods are checked. Task types, return-type validity, evaluation and cross-part partial-method modifier matching remain excluded semantics.",
     "await-expressions": "await-expression is a unary-expression and statement-expression in async function bodies only. Placement restrictions (CSN2050), raw await identifiers (CSN2051) and direct lambda/query operands (CSN2030) are checked; awaitability, task identity and suspension remain excluded semantics.",
