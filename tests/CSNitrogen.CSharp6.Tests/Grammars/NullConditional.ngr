@@ -1,0 +1,10 @@
+// `?.` and `?[` are two tokens each, as in the sixth-edition grammar; dependent accesses after them
+// are ordinary postfix member, element and invocation expressions over the null-conditional node.
+syntax module CSharp.NullConditional
+{
+ extend syntax CSharp.Expressions.Expression
+ {
+  | NullConditionalAccess = Target:CSharp.Expressions.Expression "?" "." Name:CSharp.Lexical.Identifier Arguments:CSharp.NamesTypes.ExpressionTypeArguments? precedence 180 left
+  | NullConditionalElementAccess = Target:CSharp.Expressions.Expression "?" "[" Arguments:(CSharp.Expressions.Argument; ",")+ "]" precedence 180 left
+ }
+}

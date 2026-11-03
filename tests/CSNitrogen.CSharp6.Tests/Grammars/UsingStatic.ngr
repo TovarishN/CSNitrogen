@@ -1,0 +1,7 @@
+syntax module CSharp.UsingStatic
+{
+ extend syntax CSharp.CompilationUnits.UsingKind
+ {
+  | UsingStaticMarker = "static" !(CSharp.Lexical.Identifier "=")
+ }
+}

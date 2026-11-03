@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp6",
+  "status": "partial",
+  "primary": {
+    "title": "ECMA-334 6th edition, June 2022: C# Language Specification",
+    "url": "https://ecma-international.org/wp-content/uploads/ECMA-334_6th_edition_june_2022.pdf",
+    "sha256": "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f",
+    "bytes": 6025981,
+    "pages": 639,
+    "format": "PDF 1.7 (Microsoft Word 2019, created 2022-05-12)",
+    "downloaded": "2026-11-04"
+  },
+  "workingText": {
+    "repository": "https://github.com/dotnet/csharpstandard",
+    "tag": "V6-standard",
+    "commit": "721ef2964efeb5b4b803e856a00094dc4fe21bb7",
+    "commitDate": "2022-08-11",
+    "grammarSha256": "909c7c563d0034df3ed74395f7777933df776301551d7e7b38f3966d81f35d83",
+    "note": "Extraction input only; the tag post-dates the PDF and every normative difference is dispositioned against the PDF before admission."
+  },
+  "extraction": {
+    "method": "macOS PDFKit PDFDocument.string",
+    "textSha256": "b74337ad3d4151f370a1e591b09731044ae39981af163520afd7c8dfc160b70c",
+    "scope": "Review aid only, pinned separately from the PDF"
+  },
+  "unicode": {
+    "status": "approved",
+    "primaryReference": "Undated 'The Unicode Standard' at normative-references.md:13; NFC implementation-defined at lexical-structure.md:484",
+    "policy": "unicode-4.0-scalar",
+    "decision": "../superpowers/specs/2026-11-04-csharp6-source-contract-decision.md",
+    "authority": "User explicitly approved frozen Unicode4 scalar continuity for CSharp6 on 2026-11-04; the undated reference is informational and NFC is not checked."
+  },
+  "nameof": {
+    "status": "approved",
+    "decision": "../superpowers/specs/2026-11-04-csharp6-source-contract-decision.md",
+    "authority": "User chose the Ambiguous node on 2026-11-04: spellings with both readings keep NameofExpression and an invocation reading under one Ambiguous node, accepted without an issue."
+  },
+  "oracle": {
+    "package": "Microsoft.CodeAnalysis.CSharp 5.0.0",
+    "languageVersion": "CSharp6",
+    "role": "observation; the sixth-edition text wins and disagreements are recorded divergences"
+  },
+  "completion": "Partial. Bounded test-only seam proof only (csharp6-seam-proof-evidence.md); no production capability, factory or admission change."
+}

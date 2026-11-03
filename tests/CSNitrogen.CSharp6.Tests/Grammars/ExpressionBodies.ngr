@@ -1,0 +1,15 @@
+// Method, operator and conversion bodies reuse MethodBody; properties and indexers are separate
+// members because their accessor-list shape is unchanged.
+syntax module CSharp.ExpressionBodies
+{
+ syntax ExpressionClause = "=>" Value:CSharp.Expressions.Expression ";";
+ extend syntax CSharp.Declarations.MethodBodyExtension
+ {
+  | ExpressionBody = Value:ExpressionClause
+ }
+ extend syntax CSharp.Declarations.MemberDeclarationExtension
+ {
+  | ExpressionBodiedProperty = Type:CSharp.NamesTypes.TypeReference NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:CSharp.Declarations.MemberNameSuffix? Body:ExpressionClause
+  | ExpressionBodiedIndexer = Type:CSharp.NamesTypes.TypeReference Name:CSharp.Declarations.IndexerName Parameters:CSharp.Attributes.IndexerParameterList Body:ExpressionClause
+ }
+}
