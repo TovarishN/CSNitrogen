@@ -55,7 +55,8 @@
       "csharp6.expression-bodies",
       "csharp6.index-initializers",
       "csharp6.await-in-catch-finally",
-      "csharp6.read-only-auto-properties"
+      "csharp6.read-only-auto-properties",
+      "csharp6.enum-base-type-names"
     ],
     "contextFlags": [
       "CSharp.InterpolatedStrings.Verbatim"

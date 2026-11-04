@@ -70,9 +70,10 @@ public class CSharp5ProductionTests
  [InlineData("#region!x\n#endregion\nclass C{}",false,true)]
  public void Fifth_profile_keeps_the_historical_lexical_and_directive_readings(string source,bool fifth,bool sixth)
  {
-  // Version5 lexical/preprocessing bodies equal Version4's (except the NEL misprint); later profiles keep current compatibility.
+  // Version5 lexical/preprocessing bodies equal Version4's (except the NEL misprint); the reviewed sixth edition repeats
+  // them (CSharp6HistoricalReadingTests), and unreviewed later profiles keep current compatibility.
   using var five=CSharpParser.Parse(new(source,"CSharp5","historical5.cs",[]));Assert.True(five.Accepted==fifth,string.Join(";",five.Issues));
-  using var six=CSharpParser.Parse(new(source,"CSharp6","current6.cs",[]));Assert.True(six.Accepted==sixth,string.Join(";",six.Issues));
+  using var later=CSharpParser.Parse(new(source,"CSharp7","current7.cs",[]));Assert.True(later.Accepted==sixth,string.Join(";",later.Issues));
  }
  [Theory]
  [InlineData("CSharp4")]

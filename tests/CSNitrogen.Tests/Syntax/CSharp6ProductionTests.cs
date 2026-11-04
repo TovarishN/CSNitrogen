@@ -134,6 +134,49 @@ public class CSharp6ProductionTests
   using var p=Parse(source);Assert.True(p.Accepted,Issues(p));
   Assert.Contains("unicode-4.0-scalar",CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp6").Profile!.Policies);
  }
+ /// <summary>U+0604 and U+061C are format characters only after Unicode 4; the frozen Unicode4 contract keeps the fifth global-target reading.</summary>
+ [Theory]
+ [InlineData("[as\u0604sembly:A]class C{}")]
+ [InlineData("[as\u061Csembly:A]class C{}")]
+ [InlineData("[as\u00ADsembly:A]class C{}")]
+ public void Global_attribute_targets_follow_the_frozen_Unicode4_reading(string source)
+ {
+  using var six=Parse(source);using var five=Parse(source,"CSharp5");
+  Assert.Equal(five.Accepted,six.Accepted);
+  Assert.Equal(five.Issues.Select(i=>i.Code),six.Issues.Select(i=>i.Code));
+  Assert.Contains("Grammars/GlobalTargetsThird.ngr",CSNitrogen.Profiles.ProfileResolver.Resolve("CSharp6").Profile!.Grammars);
+ }
+ /// <summary>ECMA-334 6 §19.2: enum_base is ':' integral_type or ':' integral_type_name (a type_name; resolving it to an integral type is semantic).</summary>
+ [Theory]
+ [InlineData("enum E:System.Byte{A}","System.Byte")]
+ [InlineData("enum E:Byte{A,B=1,}","Byte")]
+ [InlineData("class C{enum E:global::System.Int32{}}","global::System.Int32")]
+ public void Enum_base_may_be_a_type_name(string source,string type)
+ {
+  string shifted="/*\U00010400*/"+source;
+  using var six=Parse(shifted);Assert.True(six.Accepted,Issues(six));
+  int start=shifted.IndexOf(type,StringComparison.Ordinal);
+  Assert.Contains(Enumerable.Range(0,six.Tree.NodeCount),n=>Kind(six,n)=="NamedBaseEnumDeclaration");
+  Assert.Contains(Enumerable.Range(0,six.Tree.NodeCount),n=>Kind(six,n)=="NamedEnumBase"&&six.Tree.Span(n).Start==start-1&&six.Tree.Span(n).Length==type.Length+1);
+  using var five=Parse(source,"CSharp5");Assert.False(five.Accepted);
+ }
+ [Theory]
+ [InlineData("namespace N{[assembly:A]enum E:#{}}")]
+ [InlineData("partial enum E:#{}")]
+ [InlineData("class C{partial enum E:#{}}")]
+ public void Type_name_enum_bases_get_the_keyword_base_policies(string template)
+ {
+  using var keyword=Parse(template.Replace("#","byte"));using var named=Parse(template.Replace("#","Byte"));
+  Assert.NotEmpty(keyword.Issues);
+  Assert.Equal(keyword.Issues.Select(i=>i.Code).Order(),named.Issues.Select(i=>i.Code).Order());
+ }
+ [Fact]
+ public void Keyword_enum_bases_keep_the_baseline_owner()
+ {
+  using var p=Parse("enum E:byte{A}");Assert.True(p.Accepted);
+  Assert.Contains(Enumerable.Range(0,p.Tree.NodeCount),n=>Kind(p,n)=="EnumDeclaration");
+  Assert.DoesNotContain(Enumerable.Range(0,p.Tree.NodeCount),n=>Kind(p,n)=="NamedBaseEnumDeclaration");
+ }
  [Fact]
  public void Sixth_profile_remains_partial()
  {
