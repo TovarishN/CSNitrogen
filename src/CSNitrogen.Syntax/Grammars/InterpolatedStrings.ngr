@@ -1,0 +1,29 @@
+// Interpolated string text lives inside its delimiter tokens, so trivia skipping never reaches it;
+// only the hole contents between `{` and `}` are ordinary syntax. The Verbatim flag selects the
+// format-text rules of the innermost enclosing string.
+syntax module CSharp.InterpolatedStrings
+{
+ context Verbatim;
+ token RegularElement = [^ '"' '\\' '{' '}' '\r' '\n' '\u0085' ' ' ' '] / "\\" (CSharp.Lexical.SimpleEscape / CSharp.Lexical.Escape16 / CSharp.Lexical.Escape32) / "{{" / "}}";
+ token VerbatimElement = [^ '"' '{' '}'] / "\"\"" / "{{" / "}}";
+ token RegularWhole = "$\"" RegularElement* "\"";
+ token RegularOpen = "$\"" RegularElement* "{";
+ token RegularMid = "}" RegularElement* "{";
+ token RegularClose = "}" RegularElement* "\"";
+ token RegularFormatText = ":" RegularElement+;
+ token VerbatimWhole = "$@\"" VerbatimElement* "\"";
+ token VerbatimOpen = "$@\"" VerbatimElement* "{";
+ token VerbatimMid = "}" VerbatimElement* "{";
+ token VerbatimClose = "}" VerbatimElement* "\"";
+ token VerbatimFormatText = ":" VerbatimElement+;
+ syntax InterpolationWidth = "," Value:CSharp.Expressions.Expression;
+ syntax InterpolationFormat = (context(Verbatim) Value:VerbatimFormatText) / (!context(Verbatim) Value:RegularFormatText);
+ syntax Interpolation = Expression:CSharp.Expressions.Expression Width:InterpolationWidth? Format:InterpolationFormat?;
+ extend syntax CSharp.Expressions.Expression
+ {
+  | InterpolatedRegularText = Value:RegularWhole
+  | InterpolatedRegularString = Open:RegularOpen Holes:with(Verbatim = false) (Interpolation; RegularMid)+ Close:RegularClose
+  | InterpolatedVerbatimText = Value:VerbatimWhole
+  | InterpolatedVerbatimString = Open:VerbatimOpen Holes:with(Verbatim = true) (Interpolation; VerbatimMid)+ Close:VerbatimClose
+ }
+}

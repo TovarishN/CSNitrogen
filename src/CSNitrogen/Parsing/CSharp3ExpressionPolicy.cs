@@ -29,6 +29,8 @@ internal static class CSharp3ExpressionPolicy
    {
     var member=SyntaxView.Cast<InferredMemberNode>(tree,n);
     bool fourthBaseMember=version.Major>=4 && Kind(member.Value.Index) is ("BaseMemberExpression" or "GenericBaseMemberExpression");
+    // ECMA-334 6 §11.7.15.7: null_conditional_projection_initializer is primary ?. identifier type-arguments?.
+    fourthBaseMember |= version.Major>=6 && Kind(member.Value.Index)=="NullConditionalAccess";
     if(!fourthBaseMember && Kind(member.Value.Index) is not ("NameExpression" or "MemberExpression" or "GenericNameExpression" or "GenericMemberExpression" or "GenericPredefinedMemberExpression" or "PredefinedMemberExpression"))
      Error(n,"An inferred anonymous member must be a simple name or member access.");
    }

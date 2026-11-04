@@ -1,0 +1,11 @@
+// An object initializer with at least one `[arguments] = value` member. Lists without one keep the
+// baseline ObjectInitializer owner and its MemberInitializer.Name token.
+syntax module CSharp.IndexInitializers
+{
+ syntax IndexInitializer = "[" Arguments:(CSharp.Expressions.Argument; ",")+ "]" "=" Value:(CSharp.ObjectInitializers.Initializer / CSharp.Expressions.Expression);
+ syntax IndexedMember = IndexInitializer / CSharp.ObjectInitializers.MemberInitializer;
+ extend syntax CSharp.ObjectInitializers.InitializerExtension
+ {
+  | IndexedObjectInitializer = "{" &((CSharp.ObjectInitializers.MemberInitializer ",")* "[") Items:(IndexedMember; ",")+ Trailing:","? "}"
+ }
+}

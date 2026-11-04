@@ -1,0 +1,8 @@
+syntax module CSharp.ExceptionFilters
+{
+ token WhenKeyword = "when" !(CSharp.Lexical.IdPart / CSharp.Lexical.ScalarPart / CSharp.Lexical.UnicodePart);
+ extend syntax CSharp.Statements.CatchFilter
+ {
+  | ExceptionFilter = Keyword:WhenKeyword "(" Condition:CSharp.Expressions.Expression ")"
+ }
+}

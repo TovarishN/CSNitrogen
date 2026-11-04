@@ -20,12 +20,15 @@ syntax module CSharp.Declarations
   | EnumTypeDeclaration = Value:EnumDeclaration
   | DelegateTypeDeclaration = Value:DelegateDeclaration
  }
- syntax MethodBody = CSharp.Statements.Block / ";";
+ extensible syntax MethodBodyExtension { }
+ extensible syntax PropertyInitializerSeam { }
+ extensible syntax MemberDeclarationExtension { }
+ syntax MethodBody = CSharp.Statements.Block / ";" / MethodBodyExtension;
  syntax ConstructorDeclaration = Name:CSharp.Lexical.Identifier Parameters:CSharp.Attributes.ParameterList Initializer:(":" ("base" / "this") CSharp.Expressions.Arguments)? Body:MethodBody;
  syntax DestructorDeclaration = "~" Name:CSharp.Lexical.Identifier "(" ")" Body:MethodBody;
  syntax MethodDeclaration = (context(CSharp.Core.AsyncMethod) Return:CSharp.NamesTypes.ReturnType NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? Body:with(CSharp.Core.Await = true) MethodBody) / (!context(CSharp.Core.AsyncMethod) Return:CSharp.NamesTypes.ReturnType NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? Body:MethodBody);
  syntax Accessor = Attributes:CSharp.Attributes.AttributeSection* Modifiers:AccessorModifiers? Keyword:(CSharp.Lexical.ContextualGet / CSharp.Lexical.ContextualSet) Body:MethodBody;
- syntax PropertyDeclaration = Type:CSharp.NamesTypes.TypeReference NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? "{" Accessors:Accessor+ "}";
+ syntax PropertyDeclaration = Type:CSharp.NamesTypes.TypeReference NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:MemberNameSuffix? "{" Accessors:Accessor+ "}" Initializer:PropertyInitializerSeam?;
  syntax IndexerName = (CSharp.NamesTypes.TypeNamePrefix? CSharp.NamesTypes.QualifiedName CSharp.NamesTypes.TypeNameSuffix? ".")? "this";
  syntax IndexerDeclaration = Type:CSharp.NamesTypes.TypeReference Name:IndexerName Parameters:CSharp.Attributes.IndexerParameterList "{" Accessors:Accessor+ "}";
  syntax EventAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:(CSharp.Lexical.ContextualAdd / CSharp.Lexical.ContextualRemove) Body:CSharp.Statements.Block;
@@ -37,7 +40,7 @@ syntax module CSharp.Declarations
  syntax ConstantMember = Value:CSharp.Statements.ConstantDeclaration ";";
  syntax FieldDeclaration = Value:CSharp.Statements.VariableDeclaration ";";
  extensible syntax AsyncMemberStart {}
- syntax MemberDeclaration = (&AsyncMemberStart with(CSharp.Core.AsyncMethod = true) (Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration))) / (!AsyncMemberStart (Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration)));
+ syntax MemberDeclaration = (&AsyncMemberStart with(CSharp.Core.AsyncMethod = true) (Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration / MemberDeclarationExtension))) / (!AsyncMemberStart (Attributes:CSharp.Attributes.AttributeSection* Modifiers:Modifier* Body:(ConversionDeclaration / DestructorDeclaration / ConstructorDeclaration / OperatorDeclaration / MethodDeclaration / IndexerDeclaration / PropertyDeclaration / EventPropertyDeclaration / EventFieldDeclaration / ConstantMember / FieldDeclaration / MemberDeclarationExtension)));
  extensible syntax ClassMember { | transparent StandardClassMember = Value:(TypeDeclaration / MemberDeclaration) }
  syntax InterfaceAccessor = Attributes:CSharp.Attributes.AttributeSection* Keyword:(CSharp.Lexical.ContextualGet / CSharp.Lexical.ContextualSet) ";";
  syntax InterfaceMethod = Return:CSharp.NamesTypes.ReturnType Name:CSharp.Lexical.Identifier TypeParameters:TypeParameters? Parameters:CSharp.Attributes.ParameterList Constraints:TypeConstraints? ";";

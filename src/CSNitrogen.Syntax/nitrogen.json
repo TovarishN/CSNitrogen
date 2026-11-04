@@ -188,7 +188,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -227,7 +235,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -266,7 +282,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -305,7 +329,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -344,7 +376,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -383,7 +423,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -422,7 +470,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -461,7 +517,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -500,7 +564,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -539,7 +611,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -578,7 +658,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {
@@ -617,7 +705,15 @@
         "Grammars/Variance.ngr",
         "Grammars/GenericFollowersFourth.ngr",
         "Grammars/AsyncFunctions.ngr",
-        "Grammars/AwaitExpressions.ngr"
+        "Grammars/AwaitExpressions.ngr",
+        "Grammars/InterpolatedStrings.ngr",
+        "Grammars/NullConditional.ngr",
+        "Grammars/NameofExpressions.ngr",
+        "Grammars/ExceptionFilters.ngr",
+        "Grammars/UsingStatic.ngr",
+        "Grammars/PropertyInitializers.ngr",
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/IndexInitializers.ngr"
       ]
     },
     {

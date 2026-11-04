@@ -1,0 +1,14 @@
+// `nameof` is contextual. Where the invocation reading also parses, the two alternatives tie and the
+// parser keeps both under an Ambiguous node; choosing between them needs name lookup.
+syntax module CSharp.NameofExpressions
+{
+ token NameofKeyword = "nameof" !(CSharp.Lexical.IdPart / CSharp.Lexical.ScalarPart / CSharp.Lexical.UnicodePart);
+ syntax NamedEntityTarget = Alias:CSharp.NamesTypes.TypeNamePrefix Name:CSharp.Lexical.Identifier Arguments:CSharp.Generics.TypeArgumentList? / Name:CSharp.Lexical.Identifier Arguments:CSharp.Generics.TypeArgumentList? / "this" / "base" / CSharp.NamesTypes.BuiltinType;
+ syntax NamedEntityPart = "." Name:CSharp.Lexical.Identifier Arguments:CSharp.Generics.TypeArgumentList?;
+ syntax NamedEntity = Target:NamedEntityTarget Parts:NamedEntityPart*;
+ extend syntax CSharp.Expressions.Expression
+ {
+  | NameofExpression = Keyword:NameofKeyword "(" Entity:NamedEntity ")"
+  | NameofInvocation = &(NameofKeyword "(" NamedEntity ")") Target:CSharp.Lexical.Identifier Args:CSharp.Expressions.Arguments
+ }
+}

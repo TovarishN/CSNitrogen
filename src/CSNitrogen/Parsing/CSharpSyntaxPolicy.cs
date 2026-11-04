@@ -13,6 +13,7 @@ public static class CSharpSyntaxPolicy
         issues.AddRange(CSharp3DeclarationPolicy.Check(tree,version));
         issues.AddRange(CSharp4ContextPolicy.Check(tree,version));
         issues.AddRange(CSharp5ContextPolicy.Check(tree,version));
+        issues.AddRange(CSharp6ContextPolicy.Check(tree,version));
         issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
@@ -47,8 +48,10 @@ public static class CSharpSyntaxPolicy
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
                     "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or
                     "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
+                    "NullConditionalAccess" or "NullConditionalElementAccess" or "NameofExpression" or "NameofInvocation" or "InterpolatedRegularText" or "InterpolatedRegularString" or "InterpolatedVerbatimText" or "InterpolatedVerbatimString" or 
                     "PointerIndirectionExpression" or "AddressExpression" or "PointerMemberExpression" or "SizeOfExtendedExpression";
                 unary |= version.Major>=5&&Kind(target.Index)=="AwaitExpression";
+                unary |= CSharp6ContextPolicy.SanctionedAmbiguity(tree,target.Index);
                 if(!unary)issues.Add(new("CSN2013","An assignment target must be a unary expression; writability is a separate semantic check.",tree.Span(target.Index),IssueCategory.Syntax));
             }
             if(tree.ChildCount(n)>0 && kind is "MultiplyExpression" or "DivideExpression" or "RemainderExpression" or
@@ -85,7 +88,7 @@ public static class CSharpSyntaxPolicy
                     "GenericPointerMemberExpression" => SyntaxView.Cast<GenericPointerMemberExpressionExpression>(tree,n).Target,
                     _ => SyntaxView.Cast<PointerMemberExpressionExpression>(tree,n).Target
                 };
-                if(!IsPrimaryKind(Kind(target.Index)))issues.Add(new("CSN2015","A primary suffix requires a primary expression target; parenthesize a type-operator result.",tree.Span(n),IssueCategory.Syntax));
+                if(!IsPrimaryKind(Kind(target.Index))&&!CSharp6ContextPolicy.SanctionedAmbiguity(tree,target.Index))issues.Add(new("CSN2015","A primary suffix requires a primary expression target; parenthesize a type-operator result.",tree.Span(n),IssueCategory.Syntax));
             }
             if(kind is "ElementExpression" or "NamedElementExpression" && tree.ChildCount(n)>0)
             {
@@ -154,6 +157,7 @@ public static class CSharpSyntaxPolicy
             int value=tree.Child(n,0);string expression=Kind(value);
             bool allowed=expression is "InvocationExpression" or "InitializedObjectExpression" or "ObjectCreationExpression" or "AssignmentExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression";
             allowed |= version.Major>=5&&expression=="AwaitExpression";
+            allowed |= CSharp6ContextPolicy.SanctionedAmbiguity(tree,value);
             if(expression=="UnaryExpression")
             {string text=Text(value).TrimStart();allowed=text.StartsWith("++",StringComparison.Ordinal)||text.StartsWith("--",StringComparison.Ordinal);}
             if(!allowed)issues.Add(new("CSN2001","Only invocation, object creation, assignment or increment/decrement is a statement expression.",tree.Span(value),IssueCategory.Syntax));
@@ -221,6 +225,7 @@ public static class CSharpSyntaxPolicy
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
         "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or
+        "NullConditionalAccess" or "NullConditionalElementAccess" or "NameofExpression" or "NameofInvocation" or "InterpolatedRegularText" or "InterpolatedRegularString" or "InterpolatedVerbatimText" or "InterpolatedVerbatimString" or 
         "PointerMemberExpression" or "SizeOfExtendedExpression";
     private static bool IsIdentifierPartAt(string text,int index,Version version)
     {

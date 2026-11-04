@@ -17,8 +17,9 @@ syntax module CSharp.Statements
  syntax SwitchLabel = "case" Value:CSharp.Expressions.Expression ":" / "default" ":";
  syntax SwitchSection = Labels:SwitchLabel+ Statements:Statement+;
  syntax SwitchStatement = "switch" "(" Value:CSharp.Expressions.Expression ")" "{" Sections:SwitchSection* "}";
- syntax CatchClause = "catch" Declaration:("(" CSharp.NamesTypes.TypeReference CSharp.Lexical.Identifier? ")")? Body:Block;
- syntax SpecificCatchClause = &("catch" "(") Value:CatchClause;
+ extensible syntax CatchFilter { }
+ syntax CatchClause = "catch" Declaration:("(" CSharp.NamesTypes.TypeReference CSharp.Lexical.Identifier? ")")? Filter:CatchFilter? Body:Block;
+ syntax SpecificCatchClause = &("catch" ("(" / CatchFilter)) Value:CatchClause;
  syntax GeneralCatchClause = &("catch" "{") Value:CatchClause;
  syntax FinallyClause = "finally" Body:Block;
  syntax TryStatement = "try" Body:Block Handlers:(SpecificCatchClause+ GeneralCatchClause? FinallyClause? / GeneralCatchClause FinallyClause? / FinallyClause);

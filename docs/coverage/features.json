@@ -2891,10 +2891,26 @@
       "inventoryLine": 165,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/PropertyInitializers.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.property-initializers"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.await-in-catch-finally-blocks",
@@ -2907,9 +2923,23 @@
       "requires": [],
       "conflicts": [],
       "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "policies": [
+        "csharp5.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.await-in-catch-finally"
+        ],
+        "policies": [
+          "csharp5.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.compiler-as-a-service-roslyn",
@@ -2937,9 +2967,26 @@
       "requires": [],
       "conflicts": [],
       "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "policies": [
+        "generated-syntax-context-checks",
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.read-only-auto-properties",
+          "csharp6.property-initializers"
+        ],
+        "policies": [
+          "generated-syntax-context-checks",
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.dictionary-initializer",
@@ -2951,10 +2998,26 @@
       "inventoryLine": 171,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/IndexInitializers.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.index-initializers"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.draft-specification-online",
@@ -2981,10 +3044,26 @@
       "inventoryLine": 163,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ExceptionFilters.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.exception-filters"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.expression-bodied-members",
@@ -2996,10 +3075,26 @@
       "inventoryLine": 167,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ExpressionBodies.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.expression-bodies"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.import-of-static-type-members-into-namespace",
@@ -3011,10 +3106,26 @@
       "inventoryLine": 162,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/UsingStatic.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.using-static"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.nameof-operator",
@@ -3026,10 +3137,26 @@
       "inventoryLine": 170,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/NameofExpressions.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.nameof"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.null-propagator-null-conditional-operator-succinct-null-checking",
@@ -3041,10 +3168,26 @@
       "inventoryLine": 168,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/NullConditional.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.null-conditional"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-6.0.string-interpolation",
@@ -3056,10 +3199,26 @@
       "inventoryLine": 169,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/InterpolatedStrings.ngr"
+      ],
+      "policies": [
+        "csharp6.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
+        "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
+      ],
+      "status": "implemented",
+      "coverage": {
+        "capabilities": [
+          "csharp6.interpolated-strings"
+        ],
+        "policies": [
+          "csharp6.source-context-checks"
+        ]
+      },
+      "notes": "Sixth-edition production capability from the reviewed seam proof (docs/coverage/csharp6-seam-proof-evidence.md); CSharp6 remains partial until independent admission."
     },
     {
       "id": "csharp-7.0.binary-literals",

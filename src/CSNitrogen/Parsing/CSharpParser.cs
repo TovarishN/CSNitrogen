@@ -13,7 +13,7 @@ public static unsafe class CSharpParser
             ["CSharp3"] = (new(() => CSharp3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp3Composition.Start),
             ["CSharp4"] = (new(() => CSharp4Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp4Composition.Start),
             ["CSharp5"] = (new(() => CSharp5Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp5Composition.Start),
-            ["CSharp6"] = (new(() => CSharp6Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp6Composition.Start),
+            ["CSharp6"] = (new(() => CSharp6Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp6Composition.Start),
             ["CSharp7"] = (new(() => CSharp7Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7Composition.Start),
             ["CSharp8"] = (new(() => CSharp8Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp8Composition.Start),
             ["CSharp9"] = (new(() => CSharp9Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp9Composition.Start),
@@ -104,6 +104,7 @@ public static unsafe class CSharpParser
         {
             var issues = new List<ParseIssue>();
             foreach (var d in parsed.Diagnostics)
+                if(!(d.Code==DiagnosticCode.Ambiguous && profile.Version!.Major>=6 && CSharp6ContextPolicy.SanctionedAmbiguity(parsed.Tree,d.Arg0)))
                 issues.Add(new("NG" + (ushort)d.Code, parsed.FormatMessage(d), d.Span, IssueCategory.Syntax, d.Severity));
             issues.AddRange(preprocessing.Issues);
             issues.AddRange(CSharpSyntaxPolicy.Check(parsed.Tree,profile.Version));
