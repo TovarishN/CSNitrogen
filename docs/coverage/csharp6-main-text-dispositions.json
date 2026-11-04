@@ -1,149 +1,712 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "profile": "CSharp6",
- "differencesSha256": "45671cb42e1812f428a4b3e4492c8f78cf911eda0c8db8656dbb6c4b214a1cbd",
+ "differencesSha256": "eb29f8496836110166ac487542ffc4d90b079bb57dce6727f7430408a44ee6bf",
+ "categories": {
+  "grammar-comment-layout": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py",
+  "code-comment-layout": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it",
+  "code-output-digits": "program output lines made only of digits, removed together with PDF page numbers; informative",
+  "table-layout": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules",
+  "informative-edit": "informative example text edited after the PDF (a variable name or an explanatory phrase); the PDF governs",
+  "pdf-layout": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+ },
  "counts": {
-  "paragraphs": 6379,
-  "matched": 6362,
-  "dispositioned": 17,
-  "syntaxBearing": 0
+  "blocks": 7624,
+  "aligned": 7588,
+  "workingTextOnly": 36,
+  "pdfOnly": 33,
+  "syntaxBearing": 14
  },
  "dispositions": [
   {
-   "file": "bibliography.md",
-   "line": 1,
-   "sha256": "1bf93d3a8730dc7f36b76c113d266f74dc00cafb54c2ac20ac8d83de055dd9a9",
-   "disposition": "annex-heading-layout",
-   "syntaxBearing": false,
-   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+   "direction": "working-text-only",
+   "at": "lexical-structure.md:387",
+   "kind": "grammar",
+   "sha256": "75d174ce11938ee232242fd10fae89353d5d4cb380e086b0b5c2f1acddf82b44",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
   },
   {
-   "file": "documentation-comments.md",
-   "line": 1,
-   "sha256": "eaefa35fed19950c27bb82b1f7bda3c71fb5cea34390d4ad28108deed19eb905",
-   "disposition": "annex-heading-layout",
-   "syntaxBearing": false,
-   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+   "direction": "working-text-only",
+   "at": "lexical-structure.md:713",
+   "kind": "grammar",
+   "sha256": "4e98d495a5533c05eecb99921bd8b03bc22135377ac7eb12a57d6ede86d897d4",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
   },
   {
-   "file": "documentation-comments.md",
-   "line": 69,
+   "direction": "working-text-only",
+   "at": "lexical-structure.md:789",
+   "kind": "grammar",
+   "sha256": "a176ae322bcbba1b699a70668f08d0ae13fbaf6e34c93563168837917e4e90aa",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "lexical-structure.md:932",
+   "kind": "grammar",
+   "sha256": "2d50ce06dc873f59d6c559cc4345000bb9efe95e593cdc9c0742d90173f53bbc",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "lexical-structure.md:1025",
+   "kind": "grammar",
+   "sha256": "8596dfa11a451bb08f5b431ac583557052106313cb421ee710a8ce4c99a1fa89",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "conversions.md:23",
+   "kind": "code",
+   "sha256": "b20f049ca61902dc366aaa3bab1f0cc3bc960ae593e34de065dd950e10d24c10",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:1517",
+   "kind": "code",
+   "sha256": "bc4c0c73e08295d18551b68df4b68b40907562d91e5c3002aa1cc17f15ca56bb",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:1542",
+   "kind": "prose",
+   "sha256": "6d5949499b2e4b3eba0c018d2d981e1e8ae0917fa50c71a40f7483d4055dcbcc",
+   "disposition": "informative-edit",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative example text edited after the PDF (a variable name or an explanatory phrase); the PDF governs"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:2870",
+   "kind": "code",
+   "sha256": "432ba68ba5e4d12c5f18c843a07c749e072926147ba1de17d99383ee625ed3ce",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3362",
+   "kind": "prose",
+   "sha256": "157e40c1b9554f8bd80ed52616aa4219e3c569465af0cfaa8fcb981ed3f03767",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3482",
+   "kind": "prose",
+   "sha256": "37e4c3ad3b78ca9ef66d67fcfecf85ae1e3a79f98042e13aee486575b85906b1",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3612",
+   "kind": "prose",
+   "sha256": "bde9c26049cbdced9c928eb37594c80499f8084c28f4dbc50a056783f27e544d",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3632",
+   "kind": "prose",
+   "sha256": "8c0196876e7c6090b3f5c0d792572b3041692a6f32c55f4257bf8e1168260bc9",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3778",
+   "kind": "prose",
+   "sha256": "bde9c26049cbdced9c928eb37594c80499f8084c28f4dbc50a056783f27e544d",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3788",
+   "kind": "prose",
+   "sha256": "f8ce516417d0b470bd9adbda18278f4877cea1d41cbd75094cad234e9d726fcc",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3798",
+   "kind": "prose",
+   "sha256": "c8dd06d19e273007f905f3a5144eb820ff8413eab2351c8eb93e4df8d66400f4",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3808",
+   "kind": "prose",
+   "sha256": "edd1a74cbfe271d7011a4c678aa15278128f85d234004dca1a887174d939cbf5",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:3892",
+   "kind": "code",
+   "sha256": "ce73efdf050123aab02e11afcbb752be85b29c3b6d3ac9d9ee3e8a9b9a46357c",
+   "disposition": "informative-edit",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative example text edited after the PDF (a variable name or an explanatory phrase); the PDF governs"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:4888",
+   "kind": "code",
+   "sha256": "ad53e8806d17c82d38902738d1d47d96bddaade27513466322efa0f793149dd0",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:4965",
+   "kind": "code",
+   "sha256": "610318a78d7a41ad3bb0dcf4e28b6484eede71cb9f06ecf7200c7b111f2c88cd",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:4989",
+   "kind": "code",
+   "sha256": "52aab3d2c2d109a158de090b132b702ca85e6d2cc4d2b64e11706cd95e51e3aa",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:5017",
+   "kind": "code",
+   "sha256": "5fe87153b05a2f3188d7c53ffb1e84ee78271e829c1b8c213f0371e1c19879e8",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "expressions.md:5080",
+   "kind": "code",
+   "sha256": "7a93c3da4831337d7230c790653255fa429ebe6bffc3f68a11dcb412115da6ae",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "classes.md:215",
+   "kind": "code",
+   "sha256": "6e209ac20af671c4b6e319739b111433da0c84af4706bf4f57036c0b3fa60e0b",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "classes.md:1315",
+   "kind": "code",
+   "sha256": "2c6be8d342aab3e401c72fbbf57c148d586fc868d837d05277ef147374ebd49a",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "classes.md:1608",
+   "kind": "code",
+   "sha256": "746472e1cc902928b71c757f14952636200df8c3f3a86a3a620976c326fc7399",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "structs.md:288",
+   "kind": "code",
+   "sha256": "ad53e8806d17c82d38902738d1d47d96bddaade27513466322efa0f793149dd0",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "structs.md:337",
+   "kind": "code",
+   "sha256": "699197984bc5f58b11402250cf7904f6ddf60729923169f11508f6c16399fcc3",
+   "disposition": "code-output-digits",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "program output lines made only of digits, removed together with PDF page numbers; informative"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "attributes.md:105",
+   "kind": "code",
+   "sha256": "a827a364727abe752fcef17223d2ec62c56596f6ad5aa211ec14da70d02747d6",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "grammar.md:11",
+   "kind": "grammar",
+   "sha256": "99c23d44bdaf3eba99c509ba86ed15858398d1f05f72dc0fb0c71584279a45c8",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "grammar.md:522",
+   "kind": "prose",
+   "sha256": "abcec5130139d83fc89cbec42bfe17a14c79e82c410f5ce0dcb129df56e0aed5",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "standard-library.md:475",
+   "kind": "prose",
+   "sha256": "940171912a104b83f911716dadf41b6a6c1ac34087e4ba190f80b4567bdbd9d3",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "standard-library.md:664",
+   "kind": "prose",
+   "sha256": "7aaa3f0828cec31b07388797f23186a6a4fd9ae5f4f85e16fe142026732e74ac",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "documentation-comments.md:69",
+   "kind": "prose",
    "sha256": "13633edd29ce0b3677c367936b9f6c8a8f05332ecadeafcaef186935389305f2",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 419,
-   "sha256": "36b8e40e9e9a81515cf778a2abfd5cdb9db50396a3657038c99e9e709499a63a",
+   "direction": "working-text-only",
+   "at": "documentation-comments.md:214",
+   "kind": "code",
+   "sha256": "4e3b754c9d7d11dd356b6ae9623ee77bf52fe404322d0214643c9a39dd7e74b0",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "working-text-only",
+   "at": "documentation-comments.md:575",
+   "kind": "code",
+   "sha256": "0b73ece5f17698d540fc2a9fce2abf3509b1ec095ca7fb325750b8b171bd5c34",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "foreword.md:3",
+   "kind": "pdf",
+   "sha256": "da0b792a2fdbf446a268b6a3b938b60040e064b6ccefe48d201b2e20b0856253",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "scope.md:1",
+   "kind": "pdf",
+   "sha256": "60352fd476d610fc0dc058dda1262a2897998311c093d9c010f86cea09b23e03",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:467",
+   "kind": "pdf",
+   "sha256": "822fc040b6a7d9771e120490a11dd110bf5265a55a98a4ef5ccba106af839a93",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:469",
+   "kind": "pdf",
+   "sha256": "03d43b8871f9fd5de82f63d487a5bb37db9b50cf6dd88218649e1666088ec237",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:740",
+   "kind": "pdf",
+   "sha256": "9cd4c7d3253d8ace7ef7e4f1c7654ee6cb1830200874f891ab042eeb4be97ae6",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:829",
+   "kind": "pdf",
+   "sha256": "cc483d6185651dab7fbc69e41094481d431722f7f61c08a78feb1610bfe7f5de",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:965",
+   "kind": "pdf",
+   "sha256": "862f8dc0ce03fbfd893ac715fb92eef2930750272aa0422e26cf619f0d34b8a1",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:967",
+   "kind": "pdf",
+   "sha256": "7a866a7789da07b86cc0c0ae621035eb3f9227fd21d19a731cd23c8810591dc6",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "lexical-structure.md:1032",
+   "kind": "pdf",
+   "sha256": "c26e3733881db559d50749c02e03d7ec6c1e36855f9eb9e8880b1f31406b3be3",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "conversions.md:39",
+   "kind": "pdf",
+   "sha256": "2f30d726cc8bc2893e26c6588a8abb9de044c27a18e40dc95755896cf859ae9d",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:793",
+   "kind": "pdf",
+   "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:813",
+   "kind": "pdf",
+   "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:1544",
+   "kind": "pdf",
+   "sha256": "4cadcac8cab50da611aeef14637296745a2dba21acb9022df9accb29a628659f",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:2915",
+   "kind": "pdf",
+   "sha256": "12768df3ca1649dff6f0375a87c5393ed1dca3e0267effed817fd636379328dc",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:3373",
+   "kind": "pdf",
+   "sha256": "754be052baf83d743d48f5e76bb9bccf199ca5b20cc9b28eae718b2d0ef97b38",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 1541,
-   "sha256": "dc7ce9eb40fe9f68a3804eb14b8159dd9a30023ae0a606163ddb76f4da9fc6c8",
-   "disposition": "working-text-only-informative",
-   "syntaxBearing": false,
-   "reason": "An explanatory sentence inside an informative example (§11.7.6.2) added after the PDF; the PDF governs and does not contain it. No syntax rule depends on it"
-  },
-  {
-   "file": "expressions.md",
-   "line": 3215,
-   "sha256": "9a5b773590023ad96e971e8288ca241a7f1219ae09731867f33634d551bda275",
+   "direction": "pdf-only",
+   "at": "expressions.md:3493",
+   "kind": "pdf",
+   "sha256": "2f8b384e98a8a3c0d3e7024604ba2cc7c7060f782fc59c0b0892bca19ff52db9",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 3348,
-   "sha256": "05ea48bfce86ebec8ae673337fa238e16fe0dbbd0e41d5e7f291a74e89250b5e",
+   "direction": "pdf-only",
+   "at": "expressions.md:3622",
+   "kind": "pdf",
+   "sha256": "2c9925dbc57ee58ada3c9450c6ecbe4e846c3c226ff8ffcd2e7ed3f4d4563170",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 3479,
-   "sha256": "e9d12b86128fd8908d9634343ac905d8995c899cb03aae5c32867ef972933816",
+   "direction": "pdf-only",
+   "at": "expressions.md:3642",
+   "kind": "pdf",
+   "sha256": "da6f33962e3442bcc6ba4c6e9ccbb3715cfee6c46e6e3b9ba38bc21e626fc45a",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 3609,
-   "sha256": "54f2175c1da44999610f889099b369b52852c484e7aec62345e262166072daeb",
+   "direction": "pdf-only",
+   "at": "expressions.md:3818",
+   "kind": "pdf",
+   "sha256": "3fde5aa1016d0b0d3d22a777e25455f842d651a74b40feb58c7fe8f577a7b6ae",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "expressions.md",
-   "line": 3775,
-   "sha256": "047177cef05e113b407e6a4cf8b1bb1775cc3a50fa16084a620c95e26cb6c776",
+   "direction": "pdf-only",
+   "at": "expressions.md:3828",
+   "kind": "pdf",
+   "sha256": "3973e022e93220f9212c18d0d0c543ae7c309e46640da93a4a0314de999f5112",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "expressions.md:3922",
+   "kind": "pdf",
+   "sha256": "8be0e5464cd6106b53386c68d515d4fd4b4bd9b0efbe0a39c7fccd62cd4ad7a7",
+   "disposition": "informative-edit",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative example text edited after the PDF (a variable name or an explanatory phrase); the PDF governs"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "classes.md:228",
+   "kind": "pdf",
+   "sha256": "cdb87a34dd2bd8e9f802be8b04fd51992cc29cc5088086fee22fe28ae9f2f62f",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "classes.md:1645",
+   "kind": "pdf",
+   "sha256": "97d6f8d72f52083bcc4e8ff0d901e5a099515f884715d089604f50edbf43fa87",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "attributes.md:111",
+   "kind": "pdf",
+   "sha256": "ceb7757995698ea4199bdfb0ca309fe1a4790ce252f4769b283597aa9aaac11c",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "grammar.md:524",
+   "kind": "pdf",
+   "sha256": "39daf4e1a8d52751bba066325f7f510f55ed6fcdcc8dd0c2bba2385dcf9959e9",
+   "disposition": "grammar-comment-layout",
+   "syntaxBearing": true,
+   "verifiedBy": "tools/compare-csharp6-pdf.py",
+   "reason": "ANTLR block whose trailing comments and negated character sets the PDF prints in another position; every rule body is verified against Annex A by compare-csharp6-pdf.py"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "standard-library.md:647",
+   "kind": "pdf",
+   "sha256": "4c268e1432ba92314fd9bbb9d9b158ed77d337ed59fd56127f95bafcb19ea615",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "introduction.md",
-   "line": 23,
-   "sha256": "f7b3b7f84a0a4d69695d4a6c1c2a2404bdf12e845b97d444643a4d26ba7c1902",
-   "disposition": "markdown-comment",
-   "syntaxBearing": false,
-   "reason": "Inside an HTML comment of the working text (an unpublished copyright notice); not part of the published standard"
-  },
-  {
-   "file": "introduction.md",
-   "line": 27,
-   "sha256": "834c83a04adab378db31d6ec2c2e4f395c358ce7f2de8cd0724778754b704c10",
-   "disposition": "markdown-comment",
-   "syntaxBearing": false,
-   "reason": "Inside an HTML comment of the working text (an unpublished copyright notice); not part of the published standard"
-  },
-  {
-   "file": "portability-issues.md",
-   "line": 1,
-   "sha256": "a8b0557c2d10f25bdc39e0c2525afed4660e327f65f40f577d015ada630e6258",
-   "disposition": "annex-heading-layout",
-   "syntaxBearing": false,
-   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
-  },
-  {
-   "file": "standard-library.md",
-   "line": 1,
-   "sha256": "932e91ef4fb0fd0259b2389e5fcc7f0b65a85dc0b07ca33738903b7dc6390ce4",
-   "disposition": "annex-heading-layout",
-   "syntaxBearing": false,
-   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
-  },
-  {
-   "file": "standard-library.md",
-   "line": 474,
-   "sha256": "4f619282975c6cc72aaa2f99407fab59549506f183609ffda6629e34bac738ef",
+   "direction": "pdf-only",
+   "at": "standard-library.md:789",
+   "kind": "pdf",
+   "sha256": "557089bb15b46045bbf0f632f7c9ab0a85fa769322167876e4fc288d34afa8d6",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "standard-library.md",
-   "line": 647,
-   "sha256": "b0f81d7ee4d2271304ac45bb0dcf9559756db071de3eae26534479eb07a60a71",
+   "direction": "pdf-only",
+   "at": "documentation-comments.md:90",
+   "kind": "pdf",
+   "sha256": "c399c3782464c35d0a6a05741e99547a94bb9dd0ac86f1c86d8389aeb5ee3048",
    "disposition": "table-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "converted table whose cells, repeated headers or minus glyphs the PDF lays out differently; operator results, member forms, format strings or documentation tags, not syntax rules"
   },
   {
-   "file": "standard-library.md",
-   "line": 663,
-   "sha256": "cd202f19c61f3cc17c1fbd7d80312b82099efa698fc4b0e434516be6f750e229",
-   "disposition": "table-layout",
+   "direction": "pdf-only",
+   "at": "documentation-comments.md:112",
+   "kind": "pdf",
+   "sha256": "7569d70102884580d9ecb11f132b20cf3205cbc4109c64aff57f635437d43207",
+   "disposition": "pdf-layout",
    "syntaxBearing": false,
-   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "documentation-comments.md:230",
+   "kind": "pdf",
+   "sha256": "1b76813d966a3accd687206f28f9473634d527d7757a5d82251026ac61aa5eba",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "documentation-comments.md:232",
+   "kind": "pdf",
+   "sha256": "8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "documentation-comments.md:587",
+   "kind": "pdf",
+   "sha256": "5c0a894cbca3063cbc26867d89fbc6089ebb5a208caae80970091eefc2baeb22",
+   "disposition": "code-comment-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "informative C# or XML example whose comments, quote marks or line order the PDF prints differently; no syntax rule depends on it"
+  },
+  {
+   "direction": "pdf-only",
+   "at": "bibliography.md:1",
+   "kind": "pdf",
+   "sha256": "3c0c1098d30fcf881ab7c6eaa208f7aab151ab7695a43dcbbe8ffddf5bb0070a",
+   "disposition": "pdf-layout",
+   "syntaxBearing": false,
+   "verifiedBy": null,
+   "reason": "PDF-only layout text: a repeated heading, a list bullet, the adoption notice or a page fragment; no working-text counterpart is expected"
   }
  ]
 }

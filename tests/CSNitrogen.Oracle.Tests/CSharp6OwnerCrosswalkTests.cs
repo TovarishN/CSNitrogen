@@ -44,16 +44,23 @@ public class CSharp6OwnerCrosswalkTests
   foreach(var name in new[]{"interpolated_string_expression","null_conditional_member_access","null_conditional_element_access","nameof_expression","exception_filter","using_static_directive","property_initializer","indexer_body","method_body","initializer_target"})
   {var row=rows.Single(r=>Text(r,"name")==name);Assert.Contains(Strings(row["targets"]),t=>sixth.Any(t.StartsWith));}
  }
- [Fact]public void Every_main_text_difference_has_a_non_syntax_disposition()
+ [Fact]public void Every_main_text_difference_in_both_directions_is_dispositioned()
  {
   var diff=Read("csharp6-main-text-differences.json");var disp=Read("csharp6-main-text-dispositions.json");
   Assert.Equal(Convert.ToHexStringLower(SHA256.HashData(Bytes("csharp6-main-text-differences.json"))),Text(disp,"differencesSha256"));
-  var unmatched=diff["unmatched"]!.AsArray().Select(r=>Text(r!,"file")+":"+r!["line"]!.GetValue<int>()+":"+Text(r!,"sha256")).ToArray();
+  var expected=diff["workingTextOnly"]!.AsArray().Select(r=>"working-text-only|"+Text(r!,"file")+":"+r!["line"]!.GetValue<int>()+"|"+Text(r!,"sha256"))
+   .Concat(diff["pdfOnly"]!.AsArray().Select(r=>"pdf-only|"+Text(r!,"before")+"|"+Text(r!,"sha256"))).ToArray();
   var rows=disp["dispositions"]!.AsArray().Select(r=>r!).ToArray();
-  Assert.Equal(unmatched,rows.Select(r=>Text(r,"file")+":"+r["line"]!.GetValue<int>()+":"+Text(r,"sha256")));
-  Assert.All(rows,r=>{Assert.False(r["syntaxBearing"]!.GetValue<bool>());Assert.False(string.IsNullOrWhiteSpace(Text(r,"reason")));});
-  var counts=diff["counts"]!;Assert.True(counts["paragraphs"]!.GetValue<int>()>6000);
-  Assert.Equal(counts["paragraphs"]!.GetValue<int>(),counts["matched"]!.GetValue<int>()+rows.Length);
+  Assert.Equal(expected,rows.Select(r=>Text(r,"direction")+"|"+Text(r,"at")+"|"+Text(r,"sha256")));
+  var categories=disp["categories"]!.AsObject().Select(c=>c.Key).ToHashSet(StringComparer.Ordinal);
+  Assert.All(rows,r=>Assert.Contains(Text(r,"disposition"),categories));
+  // Syntax-bearing differences are grammar layout only, verified rule by rule against Annex A.
+  foreach(var r in rows.Where(r=>r["syntaxBearing"]!.GetValue<bool>()))
+  {Assert.Equal("grammar-comment-layout",Text(r,"disposition"));Assert.Equal("tools/compare-csharp6-pdf.py",Text(r,"verifiedBy"));}
+  Assert.All(rows.Where(r=>Text(r,"kind")=="grammar"),r=>Assert.True(r["syntaxBearing"]!.GetValue<bool>()));
+  var counts=diff["counts"]!;Assert.True(counts["blocks"]!.GetValue<int>()>7000);
+  Assert.Equal(counts["blocks"]!.GetValue<int>(),counts["aligned"]!.GetValue<int>()+counts["workingTextOnly"]!.GetValue<int>());
+  Assert.Empty(Read("csharp6-pdf-differences.json")["differences"]!.AsArray());
  }
  [Fact]public void The_PDF_annex_agrees_with_the_working_text()
  {
