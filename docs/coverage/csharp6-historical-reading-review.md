@@ -55,5 +55,5 @@ Positional links rely on the CSharp5 alternative order of a same-named rule. Tha
 
 ## Remaining
 
-- Comparing main-text normative prose with the PDF, and the normative context review (`csharp6-normative-context-review.md`, `csharp6-production-review.md`), are not done. They must come before admission.
+- The main-text prose comparison and the context review are now done: [csharp6-normative-context-review.md](csharp6-normative-context-review.md), [csharp6-production-review.md](csharp6-production-review.md).
 - Task 4: the independent CSharp6 admission guard and its recorded approval.

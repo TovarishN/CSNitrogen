@@ -1,0 +1,149 @@
+{
+ "schemaVersion": 1,
+ "profile": "CSharp6",
+ "differencesSha256": "45671cb42e1812f428a4b3e4492c8f78cf911eda0c8db8656dbb6c4b214a1cbd",
+ "counts": {
+  "paragraphs": 6379,
+  "matched": 6362,
+  "dispositioned": 17,
+  "syntaxBearing": 0
+ },
+ "dispositions": [
+  {
+   "file": "bibliography.md",
+   "line": 1,
+   "sha256": "1bf93d3a8730dc7f36b76c113d266f74dc00cafb54c2ac20ac8d83de055dd9a9",
+   "disposition": "annex-heading-layout",
+   "syntaxBearing": false,
+   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+  },
+  {
+   "file": "documentation-comments.md",
+   "line": 1,
+   "sha256": "eaefa35fed19950c27bb82b1f7bda3c71fb5cea34390d4ad28108deed19eb905",
+   "disposition": "annex-heading-layout",
+   "syntaxBearing": false,
+   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+  },
+  {
+   "file": "documentation-comments.md",
+   "line": 69,
+   "sha256": "13633edd29ce0b3677c367936b9f6c8a8f05332ecadeafcaef186935389305f2",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 419,
+   "sha256": "36b8e40e9e9a81515cf778a2abfd5cdb9db50396a3657038c99e9e709499a63a",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 1541,
+   "sha256": "dc7ce9eb40fe9f68a3804eb14b8159dd9a30023ae0a606163ddb76f4da9fc6c8",
+   "disposition": "working-text-only-informative",
+   "syntaxBearing": false,
+   "reason": "An explanatory sentence inside an informative example (§11.7.6.2) added after the PDF; the PDF governs and does not contain it. No syntax rule depends on it"
+  },
+  {
+   "file": "expressions.md",
+   "line": 3215,
+   "sha256": "9a5b773590023ad96e971e8288ca241a7f1219ae09731867f33634d551bda275",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 3348,
+   "sha256": "05ea48bfce86ebec8ae673337fa238e16fe0dbbd0e41d5e7f291a74e89250b5e",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 3479,
+   "sha256": "e9d12b86128fd8908d9634343ac905d8995c899cb03aae5c32867ef972933816",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 3609,
+   "sha256": "54f2175c1da44999610f889099b369b52852c484e7aec62345e262166072daeb",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "expressions.md",
+   "line": 3775,
+   "sha256": "047177cef05e113b407e6a4cf8b1bb1775cc3a50fa16084a620c95e26cb6c776",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "introduction.md",
+   "line": 23,
+   "sha256": "f7b3b7f84a0a4d69695d4a6c1c2a2404bdf12e845b97d444643a4d26ba7c1902",
+   "disposition": "markdown-comment",
+   "syntaxBearing": false,
+   "reason": "Inside an HTML comment of the working text (an unpublished copyright notice); not part of the published standard"
+  },
+  {
+   "file": "introduction.md",
+   "line": 27,
+   "sha256": "834c83a04adab378db31d6ec2c2e4f395c358ce7f2de8cd0724778754b704c10",
+   "disposition": "markdown-comment",
+   "syntaxBearing": false,
+   "reason": "Inside an HTML comment of the working text (an unpublished copyright notice); not part of the published standard"
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 1,
+   "sha256": "a8b0557c2d10f25bdc39e0c2525afed4660e327f65f40f577d015ada630e6258",
+   "disposition": "annex-heading-layout",
+   "syntaxBearing": false,
+   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+  },
+  {
+   "file": "standard-library.md",
+   "line": 1,
+   "sha256": "932e91ef4fb0fd0259b2389e5fcc7f0b65a85dc0b07ca33738903b7dc6390ce4",
+   "disposition": "annex-heading-layout",
+   "syntaxBearing": false,
+   "reason": "PDF lays this out differently (heading split across lines, or table cells read in another order); content reviewed as equivalent and not syntax-bearing"
+  },
+  {
+   "file": "standard-library.md",
+   "line": 474,
+   "sha256": "4f619282975c6cc72aaa2f99407fab59549506f183609ffda6629e34bac738ef",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "standard-library.md",
+   "line": 647,
+   "sha256": "b0f81d7ee4d2271304ac45bb0dcf9559756db071de3eae26534479eb07a60a71",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  },
+  {
+   "file": "standard-library.md",
+   "line": 663,
+   "sha256": "cd202f19c61f3cc17c1fbd7d80312b82099efa698fc4b0e434516be6f750e229",
+   "disposition": "table-layout",
+   "syntaxBearing": false,
+   "reason": "HTML table converted from Word; the PDF reads its cells in another order. Semantic or library content (operator results, member forms, format strings, documentation tags), not syntax-bearing"
+  }
+ ]
+}
