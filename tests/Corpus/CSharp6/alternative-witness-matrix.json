@@ -4,20 +4,20 @@
  "status": "source-witnesses-unreviewed",
  "primarySha256": "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f",
  "scope": "Every sixth-edition alternative linked to an explicit witness executed on the CSharp6 factory; positional CSharp5 links reuse exact cases. Context review is separate.",
- "indexSha256": "56c6985ff39c57ef6aa8a7354c6ff3341c6d62080ee2a844347da6b62f5ddcab",
- "crosswalkSha256": "72cfb3b72882f7d8f94c657dfd0f246705974789aff95c58fdc921da73b00307",
+ "indexSha256": "251e29019e5562182ad74e1c9df97e2761f060f32c428e2498f760714caa439a",
+ "crosswalkSha256": "5fceea68847c520279feb29fd0358306a641b37943be6e688ddc05bd8611e2dc",
  "predecessorMatrix": {
   "path": "tests/Corpus/CSharp5/alternative-witness-matrix.json",
   "sha256": "f9e308148bfcf05d5d48a1f3131f6b506d691d773cf3575ba418836cf8371a1e"
  },
  "sourceSpecific": {
   "path": "tests/Corpus/CSharp6/source-specific-cases.json",
-  "sha256": "1f3ead5d6135030be861c9f62e811fe518ca84ae6684cb0a6a9a0d3e085c4b71"
+  "sha256": "8dea8ec7ec237010f6c054462aa08a6bd0df1ba0ae3ba8c0a997d02c1c36cbc8"
  },
  "counts": {
-  "predecessor-positional": 710,
-  "sixth-specific": 404,
-  "total": 1114
+  "predecessor-positional": 697,
+  "sixth-specific": 418,
+  "total": 1115
  },
  "cases": [
   {
@@ -214,18 +214,16 @@
   {
    "id": "A:74:Delimited_Comment_Section/1",
    "sourceAlternativeSha256": "2f4f10058af817252c4a9bc174d7b729538079f84f02a74160b3a42162d53e02",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9661:delimited-comment-section/1",
-   "domain": "lexical",
-   "witnessId": "B:8409:delimited-comment-section/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:74:Delimited_Comment_Section/1"
   },
   {
    "id": "A:74:Delimited_Comment_Section/2",
    "sourceAlternativeSha256": "0d2a37e3186372fc7ee77c28c2e7bda342fcc2611be41b6f4089d96697def0d3",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9661:delimited-comment-section/2",
-   "domain": "lexical",
-   "witnessId": "B:8409:delimited-comment-section/2"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:74:Delimited_Comment_Section/2"
   },
   {
    "id": "A:79:Not_Slash_Or_Asterisk/1",
@@ -342,18 +340,16 @@
   {
    "id": "A:110:identifier/1",
    "sourceAlternativeSha256": "3deaeb000b57e7d7e1a838e2e6e1b6d9a8fe820ca877d7cc37c9ec79f3d91ab9",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9671:identifier/1",
-   "domain": "lexical",
-   "witnessId": "B:8419:identifier/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:110:identifier/1"
   },
   {
    "id": "A:110:identifier/2",
    "sourceAlternativeSha256": "592766c28e86c6e809d4f4c47359f642d3799d9eb5b3ff08b67bc37b3f0365d4",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9671:identifier/2",
-   "domain": "lexical",
-   "witnessId": "B:8419:identifier/2"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:110:identifier/2"
   },
   {
    "id": "A:115:Simple_Identifier/1",
@@ -372,10 +368,9 @@
   {
    "id": "A:120:Available_Identifier/1",
    "sourceAlternativeSha256": "6100a76fc32bd615d1f56ed4a436ea2a6ee779484c1005489d614df582f8cba1",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9672:available-identifier/1",
-   "domain": "lexical",
-   "witnessId": "B:8420:available-identifier/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:120:Available_Identifier/1"
   },
   {
    "id": "A:125:Escaped_Identifier/1",
@@ -1402,18 +1397,16 @@
   {
    "id": "A:229:boolean_literal/1",
    "sourceAlternativeSha256": "dfe88090c5ed7ac2f32571f0fc822fda4d8cd281fc7138c7cd6db656f6e2d081",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9686:boolean-literal/1",
-   "domain": "lexical",
-   "witnessId": "B:8434:boolean-literal/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:229:boolean_literal/1"
   },
   {
    "id": "A:229:boolean_literal/2",
    "sourceAlternativeSha256": "4e523a5ae5b4636c75901b79fafbd3912e41dc7987414e688b09d4b436ff22b3",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9686:boolean-literal/2",
-   "domain": "lexical",
-   "witnessId": "B:8434:boolean-literal/2"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:229:boolean_literal/2"
   },
   {
    "id": "A:235:Integer_Literal/1",
@@ -1924,10 +1917,9 @@
   {
    "id": "A:347:null_literal/1",
    "sourceAlternativeSha256": "fb329000228cc5a24c264c57139de8bf854fc86fc18bf1c04ab61a2b5cb4b921",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9714:null-literal/1",
-   "domain": "lexical",
-   "witnessId": "B:8462:null-literal/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:347:null_literal/1"
   },
   {
    "id": "A:352:operator_or_punctuator/1",
@@ -2439,34 +2431,30 @@
   {
    "id": "A:430:PP_Primary_Expression/1",
    "sourceAlternativeSha256": "dfe88090c5ed7ac2f32571f0fc822fda4d8cd281fc7138c7cd6db656f6e2d081",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9727:pp-primary-expression/1",
-   "domain": "lexical",
-   "witnessId": "B:8475:pp-primary-expression/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:430:PP_Primary_Expression/1"
   },
   {
    "id": "A:430:PP_Primary_Expression/2",
    "sourceAlternativeSha256": "4e523a5ae5b4636c75901b79fafbd3912e41dc7987414e688b09d4b436ff22b3",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9727:pp-primary-expression/2",
-   "domain": "lexical",
-   "witnessId": "B:8475:pp-primary-expression/2"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:430:PP_Primary_Expression/2"
   },
   {
    "id": "A:430:PP_Primary_Expression/3",
    "sourceAlternativeSha256": "00dc6e3e095e7cecdfa1140c31436983d57c11819f6d79100170be5af649d4f2",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9727:pp-primary-expression/3",
-   "domain": "lexical",
-   "witnessId": "B:8475:pp-primary-expression/3"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:430:PP_Primary_Expression/3"
   },
   {
    "id": "A:430:PP_Primary_Expression/4",
    "sourceAlternativeSha256": "c48c72c893ce56732f742ff18880d3df4a3f334c0d5ee58ebdfd045900de004b",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9727:pp-primary-expression/4",
-   "domain": "lexical",
-   "witnessId": "B:8475:pp-primary-expression/4"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:430:PP_Primary_Expression/4"
   },
   {
    "id": "A:438:PP_Declaration/1",
@@ -2869,18 +2857,16 @@
   {
    "id": "A:591:value_type/1",
    "sourceAlternativeSha256": "44e4360f47a14daaef08b38fe2321d3dffe3105bcc48b8c57f6eed963781a012",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9763:value-type/1",
-   "domain": "expression",
-   "witnessId": "B:8511:value-type/1"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:591:value_type/1"
   },
   {
    "id": "A:591:value_type/2",
    "sourceAlternativeSha256": "646cff9a3a9b7e32e42fc06ceccde216101f13ef3d44121a2d44e8eea29960a5",
-   "sourceKind": "predecessor-positional",
-   "predecessorAlternative": "B:9763:value-type/2",
-   "domain": "expression",
-   "witnessId": "B:8511:value-type/2"
+   "sourceKind": "sixth-specific",
+   "domain": "sixth-specific",
+   "witnessId": "A:591:value_type/2"
   },
   {
    "id": "A:596:non_nullable_value_type/1",
@@ -8026,6 +8012,14 @@
    "predecessorAlternative": "B:10056:interface-event-declaration/1",
    "domain": "declaration",
    "witnessId": "B:8800:interface-event-declaration/1"
+  },
+  {
+   "id": "A:2263:interface_indexer_declaration/1",
+   "sourceAlternativeSha256": "f79d8891b3e3b4c107a9639b3def6eacdb21d855ba2103777e3a4fed1e5d36b7",
+   "sourceKind": "predecessor-positional",
+   "predecessorAlternative": "B:10057:interface-indexer-declaration/1",
+   "domain": "declaration",
+   "witnessId": "B:8801:interface-indexer-declaration/1"
   },
   {
    "id": "A:2269:enum_declaration/1",

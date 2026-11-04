@@ -85,6 +85,18 @@ def rules_in(lines, first_line=1):
             if one:
                 yield one.group(2), bool(one.group(1)), i + first_line, one.group(3).strip(), section
                 i += 1; continue
+            colon = re.match(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*:\s*$', strip_comment(raw))
+            if colon:
+                # name and ':' on one line, body on the following lines
+                start, body = i, []
+                i += 1
+                while i < len(lines):
+                    text = strip_comment(lines[i]).strip()
+                    if text == ';' or text.endswith(';') and not text.endswith("';'"):
+                        body.append(text[:-1]); break
+                    body.append(text); i += 1
+                yield colon.group(2), bool(colon.group(1)), start + first_line, ' '.join(body).strip(), section
+                i += 1; continue
             m = RULE.match(strip_comment(raw))
             nxt = i + 1
             while m and nxt < len(lines) and strip_comment(lines[nxt]).strip() == '' and lines[nxt].strip().startswith('//'):
@@ -103,6 +115,14 @@ def rules_in(lines, first_line=1):
         i += 1
 
 grammar_lines = grammar_bytes.decode('utf-8').split('\n')
+def headings(lines):
+    fenced, found = False, []
+    for n, raw in enumerate(lines, 1):
+        if raw.startswith('```'):
+            fenced = raw.strip() == '```ANTLR' if not fenced else False; continue
+        if fenced and re.match(r'^(fragment\s+)?[A-Za-z_][A-Za-z0-9_]*\s*(:.*)?$', strip_comment(raw)) and strip_comment(raw).strip():
+            found.append((n, re.match(r'^(?:fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)', raw).group(1)))
+    return found
 main = {}
 for chapter in sorted(p for p in args.standard.glob('*.md') if p.name != 'grammar.md'):
     for name, _, line, body, _ in rules_in(chapter.read_text(encoding='utf-8').split('\n')):
@@ -126,6 +146,10 @@ for name, fragment, line, body, section in rules_in(grammar_lines):
         'mainTextOccurrences': occurrences,
         'mainTextAgrees': bool(occurrences) and all(o['bodySha256'] == sha(normalized) for o in occurrences),
     })
+indexed = {p['name'] for p in productions}
+unindexed = sorted({name for _, name in headings(grammar_lines)} - indexed)
+if unindexed:
+    raise SystemExit('Fenced rule headings not indexed: ' + ', '.join(unindexed))
 index = {
     'schemaVersion': 1, 'profile': 'CSharp6', 'status': 'indexed-unreviewed',
     'source': {'repository': work['repository'], 'tag': work['tag'], 'commit': work['commit'], 'grammarSha256': work['grammarSha256']},

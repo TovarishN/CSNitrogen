@@ -4,7 +4,7 @@
  "status": "owner-indexed-unreviewed",
  "primarySha256": "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f",
  "scope": "Every sixth-edition grammar rule with its owners in the actual CSharp6 factory; owner existence is not normative equivalence or admission.",
- "indexSha256": "56c6985ff39c57ef6aa8a7354c6ff3341c6d62080ee2a844347da6b62f5ddcab",
+ "indexSha256": "251e29019e5562182ad74e1c9df97e2761f060f32c428e2498f760714caa439a",
  "predecessorIndexSha256": "41a72d8a84b187708fcd402de8bb61a4cc79c8e77c922924c602b3739882f992",
  "predecessorCrosswalkSha256": "2bcec295a3dad8600f75456ca195674d6d48e59b672e78c617153bd59bd836be",
  "factory": {
@@ -56,7 +56,7 @@
  },
  "counts": {
   "extended": 4,
-  "name-carried": 363,
+  "name-carried": 364,
   "name-carried-extended": 10,
   "renamed": 26,
   "sixth-addition": 32
@@ -86,7 +86,6 @@
   "indexer-modifiers",
   "input-characters",
   "input-elements",
-  "interface-indexer-declaration",
   "interface-member-declarations",
   "interface-modifiers",
   "method-modifiers",
@@ -7010,6 +7009,22 @@
    ],
    "targets": [
     "CSharp.Declarations/rule:InterfaceEvent"
+   ],
+   "policies": [],
+   "note": "",
+   "reviewStatus": "owner-candidate"
+  },
+  {
+   "standardId": "A:2263:interface_indexer_declaration",
+   "name": "interface_indexer_declaration",
+   "grammar": "syntactic",
+   "sourceBodySha256": "f79d8891b3e3b4c107a9639b3def6eacdb21d855ba2103777e3a4fed1e5d36b7",
+   "relation": "name-carried",
+   "predecessors": [
+    "B:10057:interface-indexer-declaration"
+   ],
+   "targets": [
+    "CSharp.Declarations/rule:InterfaceIndexer"
    ],
    "policies": [],
    "note": "",

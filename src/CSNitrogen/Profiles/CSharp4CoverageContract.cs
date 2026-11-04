@@ -6,7 +6,7 @@ namespace CSNitrogen.Profiles;
 internal static class CSharp4CoverageContract
 {
  internal const string PrimarySha256="cd82c06f12b83836f888d127ed59216c3505c4fc23a67c59c0fc3f46a087faf7";
- internal const string ApprovedLedgerSha256="be55385ea0f9d345c32401144fed5ed699c51e1c4d4af2410efe012ab0c86071";
+ internal const string ApprovedLedgerSha256="8bb041f178a60a659ba553c6331ded4295df8e33b414a6cf43c193809f3ed9cb";
  // Predecessor/self contract literals are excluded so the pin graph stays directed:4 ->3 ->2 refresh order.
  internal static bool Eligible(string name)=>name is "CSNitrogen.coverage.json" or "CSNitrogen.dependencies.json"
   ||name.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)

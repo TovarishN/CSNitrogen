@@ -30,7 +30,7 @@ public class CSharp6OwnerCrosswalkTests
   Assert.Equal(Convert.ToHexStringLower(SHA256.HashData(Bytes("csharp6-standard-index.json"))),Text(crosswalk,"indexSha256"));
   var ids=index["productions"]!.AsArray().Select(p=>Text(p!,"id")).ToArray();
   var rows=crosswalk["productions"]!.AsArray().Select(r=>r!).ToArray();
-  Assert.Equal(435,ids.Length);Assert.Equal(ids,rows.Select(r=>Text(r,"standardId")));
+  Assert.Equal(436,ids.Length);Assert.Equal(ids,rows.Select(r=>Text(r,"standardId")));
   var owners=FactoryOwners();
   var missing=rows.SelectMany(r=>Strings(r["targets"]).Where(t=>!owners.Contains(t)).Select(t=>Text(r,"name")+" -> "+t)).ToArray();
   Assert.Empty(missing);
@@ -47,7 +47,7 @@ public class CSharp6OwnerCrosswalkTests
  [Fact]public void The_PDF_annex_agrees_with_the_working_text()
  {
   var d=Read("csharp6-pdf-differences.json");var counts=d["counts"]!;
-  Assert.Equal(435,counts["indexed"]!.GetValue<int>());Assert.Equal(435,counts["agreed"]!.GetValue<int>());
+  Assert.Equal(436,counts["indexed"]!.GetValue<int>());Assert.Equal(436,counts["agreed"]!.GetValue<int>());
   Assert.Empty(d["differences"]!.AsArray());Assert.Empty(d["pdfOnly"]!.AsArray());
   Assert.Equal(Convert.ToHexStringLower(SHA256.HashData(Bytes("csharp6-standard-index.json"))),Text(d,"indexSha256"));
  }

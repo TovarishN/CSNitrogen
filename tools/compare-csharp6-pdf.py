@@ -65,6 +65,15 @@ while i < len(annex):
     text = strip_comment(annex[i]).strip()
     one = re.match(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*:(.*);$', text)
     head = re.match(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)$', text)
+    colon = re.match(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*:$', text)
+    if colon:
+        body = []; i += 1
+        while i < len(annex):
+            t = strip_comment(annex[i]).strip()
+            if t == ';' or (t.endswith(';') and not t.endswith("';'")):
+                body.append(t[:-1]); break
+            body.append(t); i += 1
+        pdf.setdefault(colon.group(2), []).append(' '.join(body).strip()); i += 1; continue
     if one:
         pdf.setdefault(one.group(2), []).append(one.group(3)); i += 1; continue
     nxt = i + 1

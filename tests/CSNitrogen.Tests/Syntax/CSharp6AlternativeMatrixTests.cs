@@ -24,6 +24,31 @@ public class CSharp6AlternativeMatrixTests
   }
   return result;
  });
+ static readonly HashSet<string> Containers=new(StringComparer.Ordinal){"CompilationUnit","NamespaceDeclaration","ClassTypeDeclaration","ClassDeclaration","StructTypeDeclaration","StructDeclaration","InterfaceTypeDeclaration","InterfaceDeclaration","Group","List"};
+ /// <summary>The smallest node covering the focus is specific (not a file/type container unless it is exactly the focus), or a directive record covers it.</summary>
+ internal static bool Covered(ParseDocument p,string source,int start,string text)
+ {
+  // Directive text is masked from the tree, so a directive record (with its leading line whitespace) covers it instead.
+  if(p.Directives.Any(d=>d.Span.Start+d.Span.Length>=start+text.Length&&(d.Span.Start<=start||string.IsNullOrWhiteSpace(source[start..d.Span.Start]))))return true;
+  // Comments are trivia and own no node; a focus inside a delimited comment is covered by that comment.
+  foreach(System.Text.RegularExpressions.Match m in System.Text.RegularExpressions.Regex.Matches(source,@"/\*.*?\*/",System.Text.RegularExpressions.RegexOptions.Singleline))
+   if(m.Index<start&&m.Index+m.Length>start+text.Length)return true;
+  int best=-1;
+  for(int n=0;n<p.Tree.NodeCount;n++)
+  {var s=p.Tree.Span(n);if(s.Start<=start&&s.End>=start+text.Length&&(best<0||s.Length<p.Tree.Span(best).Length))best=n;}
+  if(best<0)return false;
+  var span=p.Tree.Span(best);
+  return !Containers.Contains(p.Tree.Language!.GetKindName(p.Tree.Kind(best)))||span.Start==start&&span.Length==text.Length;
+ }
+ [Theory]
+ [InlineData("class C{int a;int b;}","a;int b;",false)]
+ [InlineData("class C{int a;int b;}","int a;",true)]
+ [InlineData("class C{}","class C{}",true)]
+ public void Focus_coverage_rejects_container_only_cover(string source,string focus,bool expected)
+ {
+  using var p=CSharpParser.Parse(new(source,Profile,"cover.cs",[]));
+  Assert.Equal(expected,Covered(p,source,source.IndexOf(focus,StringComparison.Ordinal),focus));
+ }
  public static IEnumerable<object[]> Cases()
  {foreach(var c in Read("Corpus/CSharp6/alternative-witness-matrix.json").GetProperty("cases").EnumerateArray())yield return [c.GetProperty("id").GetString()!,c.GetProperty("domain").GetString()!,c.GetProperty("witnessId").GetString()!];}
  [Fact]
@@ -31,7 +56,7 @@ public class CSharp6AlternativeMatrixTests
  {
   var matrix=Read("Corpus/CSharp6/alternative-witness-matrix.json");
   var ids=matrix.GetProperty("cases").EnumerateArray().Select(c=>c.GetProperty("id").GetString()!).ToArray();
-  Assert.Equal(1114,ids.Length);Assert.Equal(ids.Length,ids.Distinct(StringComparer.Ordinal).Count());
+  Assert.Equal(1115,ids.Length);Assert.Equal(ids.Length,ids.Distinct(StringComparer.Ordinal).Count());
  }
  [Theory][MemberData(nameof(Cases))]
  public void Every_sixth_alternative_executes_its_explicit_witness(string id,string domain,string witness)
@@ -46,10 +71,7 @@ public class CSharp6AlternativeMatrixTests
    Assert.Equal(focus,source.Substring(start,focus.Length));
    // A node covers the authored focus; trailing trivia (line terminators) belongs to no node.
    string text=focus.TrimEnd();
-   // Directive text is masked from the tree, so a directive record (with its leading line whitespace) covers it instead.
-   bool node=Enumerable.Range(0,p.Tree.NodeCount).Any(n=>p.Tree.Span(n).Start<=start&&p.Tree.Span(n).End>=start+text.Length);
-   bool directive=p.Directives.Any(d=>d.Span.Start+d.Span.Length>=start+text.Length&&(d.Span.Start<=start||string.IsNullOrWhiteSpace(source[start..d.Span.Start])));
-   if(text.Length>0)Assert.True(node||directive,id+": focus not covered");
+   if(text.Length>0)Assert.True(Covered(p,source,start,text),id+": focus not covered by a specific node or directive");
   }
   else if(domain=="lexical")CSharp4InheritedLexicalTests.Run(id,c.GetRawText(),Profile);
   else if(domain=="finite")CSharp4InheritedFiniteTests.Run(id,c.GetProperty("positive").GetString()!,c.GetProperty("negative").GetString()!,c.GetProperty("spanText").GetString()!,c.GetProperty("spanStart").GetInt32(),Profile);

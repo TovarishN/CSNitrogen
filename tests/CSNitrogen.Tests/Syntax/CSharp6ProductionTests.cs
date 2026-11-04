@@ -160,6 +160,16 @@ public class CSharp6ProductionTests
   Assert.Contains(Enumerable.Range(0,six.Tree.NodeCount),n=>Kind(six,n)=="NamedEnumBase"&&six.Tree.Span(n).Start==start-1&&six.Tree.Span(n).Length==type.Length+1);
   using var five=Parse(source,"CSharp5");Assert.False(five.Accepted);
  }
+ [Theory]
+ [InlineData("namespace N{[assembly:A]enum E:#{}}")]
+ [InlineData("partial enum E:#{}")]
+ [InlineData("class C{partial enum E:#{}}")]
+ public void Type_name_enum_bases_get_the_keyword_base_policies(string template)
+ {
+  using var keyword=Parse(template.Replace("#","byte"));using var named=Parse(template.Replace("#","Byte"));
+  Assert.NotEmpty(keyword.Issues);
+  Assert.Equal(keyword.Issues.Select(i=>i.Code).Order(),named.Issues.Select(i=>i.Code).Order());
+ }
  [Fact]
  public void Keyword_enum_bases_keep_the_baseline_owner()
  {

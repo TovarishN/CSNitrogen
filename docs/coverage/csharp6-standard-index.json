@@ -15,12 +15,12 @@
  },
  "counts": {
   "lexical": 94,
-  "syntactic": 325,
+  "syntactic": 326,
   "unsafe": 16
  },
  "alternativeCounts": {
   "lexical": 184,
-  "syntactic": 907,
+  "syntactic": 908,
   "unsafe": 23
  },
  "mainTextDisagreements": [],
@@ -13783,6 +13783,31 @@
      "file": "interfaces.md",
      "line": 333,
      "bodySha256": "ebf494a0fd09d4dae5f66907654bb180646a2a973f18e14a9218baa59475a907"
+    }
+   ],
+   "mainTextAgrees": true
+  },
+  {
+   "id": "A:2263:interface_indexer_declaration",
+   "name": "interface_indexer_declaration",
+   "line": 2263,
+   "grammar": "syntactic",
+   "fragment": false,
+   "section": "§17.4.5",
+   "sourceBodySha256": "f79d8891b3e3b4c107a9639b3def6eacdb21d855ba2103777e3a4fed1e5d36b7",
+   "alternatives": [
+    {
+     "id": "A:2263:interface_indexer_declaration/1",
+     "ordinal": 1,
+     "text": "attributes? 'new'? type 'this' '[' formal_parameter_list ']' '{' interface_accessors '}'",
+     "sourceAlternativeSha256": "f79d8891b3e3b4c107a9639b3def6eacdb21d855ba2103777e3a4fed1e5d36b7"
+    }
+   ],
+   "mainTextOccurrences": [
+    {
+     "file": "interfaces.md",
+     "line": 347,
+     "bodySha256": "f79d8891b3e3b4c107a9639b3def6eacdb21d855ba2103777e3a4fed1e5d36b7"
     }
    ],
    "mainTextAgrees": true
