@@ -20,7 +20,7 @@ public class CSharp5CoverageContractTests
  }
  [Fact]public void Later_minor_and_custom_selections_remain_partial()
  {
-  foreach(string name in Enumerable.Range(6,9).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
+  foreach(string name in Enumerable.Range(7,8).Select(n=>$"CSharp{n}").Concat(["CSharp7_1","CSharp7_2","CSharp7_3"]))Assert.False(ProfileResolver.Resolve(name).Profile!.Complete);
   Assert.False(ProfileResolver.ResolveCustom("CSharp5",FeatureCatalog.Implemented.Where(f=>f.Introduced<=new Version(5,0)).Select(f=>f.Id)).Profile!.Complete);
   using var good=CSharpParser.Parse(new("class C{async void M(){await(M());}}","CSharp5","good5.cs",[]));using var bad=CSharpParser.Parse(new("class C{void M(){await M();}}","CSharp5","bad5.cs",[]));
   Assert.True(good.Accepted);Assert.False(bad.Accepted);Assert.True(good.ProfileComplete);Assert.True(bad.ProfileComplete);Assert.Equal(good.CoverageIdentity,bad.CoverageIdentity);

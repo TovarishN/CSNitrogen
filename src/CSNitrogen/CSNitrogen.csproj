@@ -11,6 +11,18 @@
 <EmbeddedResource Include="../../tests/Corpus/CSharp4/*.json"><LogicalName>CSNitrogen.csharp4-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
 <EmbeddedResource Include="../../docs/coverage/csharp3-coverage-gate.json" LogicalName="CSNitrogen.csharp3-coverage-gate.json"/>
 <EmbeddedResource Include="../../tests/Corpus/CSharp3/*-production-cases.json;../../tests/Corpus/CSharp3/finite-alternative-cases.json"><LogicalName>CSNitrogen.csharp3-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
+<EmbeddedResource Include="../../docs/coverage/csharp6-reference-policy.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-reference-policy.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-standard-index.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-standard-index.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-standard-crosswalk.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-standard-crosswalk.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-pdf-differences.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-pdf-differences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-main-text-differences.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-main-text-differences.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-main-text-dispositions.json" LogicalName="CSNitrogen.csharp6-artifact.csharp6-main-text-dispositions.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-normative-context-review.md" LogicalName="CSNitrogen.csharp6-review.csharp6-normative-context-review.md"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-historical-reading-review.md" LogicalName="CSNitrogen.csharp6-review.csharp6-historical-reading-review.md"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-production-review.md" LogicalName="CSNitrogen.csharp6-review.csharp6-production-review.md"/>
+<EmbeddedResource Include="../../tests/Corpus/CSharp6/*.json"><LogicalName>CSNitrogen.csharp6-evidence.%(Filename)%(Extension)</LogicalName></EmbeddedResource>
+<EmbeddedResource Include="../../docs/coverage/csharp6-coverage-gate.json" LogicalName="CSNitrogen.csharp6-coverage-gate.json"/>
+<EmbeddedResource Include="../../docs/coverage/csharp6-review-approval.json" LogicalName="CSNitrogen.csharp6-approval.json" Condition="Exists('../../docs/coverage/csharp6-review-approval.json')"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-reference-policy.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-reference-policy.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-standard-index.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-standard-index.json"/>
 <EmbeddedResource Include="../../docs/coverage/csharp5-standard-crosswalk.json" LogicalName="CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json"/>

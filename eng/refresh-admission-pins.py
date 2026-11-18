@@ -1,4 +1,4 @@
-"""Refresh existing CSharp5 -> 4 -> 3 -> 2 input hashes, preserving source-review data.
+"""Refresh existing CSharp6 -> 5 -> 4 -> 3 -> 2 input hashes, preserving source-review data.
 
 Uses evaluated MSBuild resource identities and current source bytes. This records inputs;
 it does not review their behavior or promote admission status. Run the predecessor guards
@@ -39,12 +39,18 @@ def eligible(name, version):
         return name.startswith('CSNitrogen.review.')
     if name in {'CSNitrogen.coverage.json', 'CSNitrogen.dependencies.json'}:
         return True
+    if version == 6:
+        if name in {'CSNitrogen.composition.json', 'CSNitrogen.csharp5-artifact.csharp5-standard-index.json',
+                    'CSNitrogen.csharp5-artifact.csharp5-standard-crosswalk.json',
+                    'CSNitrogen.csharp5-evidence.alternative-witness-matrix.json'}:
+            return True
+        return name.startswith(('CSNitrogen.csharp6-artifact.', 'CSNitrogen.csharp6-review.', 'CSNitrogen.csharp6-evidence.'))
     prefixes = {3: ['csharp3-review.', 'csharp3-evidence.'],
                 4: ['csharp4-artifact.', 'csharp4-review.', 'csharp4-evidence.', 'csharp3-evidence.'],
                 5: ['csharp5-artifact.', 'csharp5-review.', 'csharp5-evidence.', 'csharp4-artifact.', 'csharp4-evidence.', 'csharp3-evidence.']}[version]
     return any(name.startswith('CSNitrogen.'+prefix) for prefix in prefixes)
 
-for version in (5, 4, 3, 2):
+for version in (6, 5, 4, 3, 2):
     gate_path = root/f'docs/coverage/csharp{version}-coverage-gate.json'
     gate = json.loads(read(gate_path))
     if gate['profile'] != f'CSharp{version}':

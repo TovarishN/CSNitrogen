@@ -69,7 +69,7 @@ public static class FeatureCatalog
     internal static IReadOnlyList<string> KnownPolicies => Coverage.Value.KnownPolicies;
     internal static IReadOnlyList<string> FactoryGrammars(string name) => Coverage.Value.Factories.TryGetValue(name,out var g)?g:Array.Empty<string>();
     /// <summary>Major versions with an independent admission guard, in directed predecessor order.</summary>
-    internal static readonly IReadOnlyList<int> AdmittedMajors=Array.AsReadOnly(new[]{1,2,3,4,5});
+    internal static readonly IReadOnlyList<int> AdmittedMajors=Array.AsReadOnly(new[]{1,2,3,4,5,6});
     /// <summary>Whether the major's guard admits its snapshot; evaluated only when that major is resolved.</summary>
     internal static bool SourceReviewedFor(int major) => Coverage.Value.Reviewed.TryGetValue(major,out var reviewed)&&reviewed.Value;
     /// <summary>The module names the major's approved ledger records for its factory.</summary>
@@ -94,6 +94,9 @@ public static class FeatureCatalog
         var reference=Read("CSNitrogen.reference-policy.json");
         var fourthGate=Read("CSNitrogen.csharp4-coverage-gate.json");
         var fifthGate=Read("CSNitrogen.csharp5-coverage-gate.json");
+        var sixthGate=Read("CSNitrogen.csharp6-coverage-gate.json");
+        if (assembly.GetManifestResourceInfo(CSharp6CoverageContract.ApprovalResource) is not null)
+            Read(CSharp6CoverageContract.ApprovalResource);
         var thirdReference=Read("CSNitrogen.csharp3-reference-policy.json");var thirdIndex=Read("CSNitrogen.csharp3-standard-index.json");
         var thirdCrosswalk=Read("CSNitrogen.csharp3-standard-crosswalk.json");var thirdGate=Read("CSNitrogen.csharp3-coverage-gate.json");
         var secondReference=Read("CSNitrogen.csharp2-reference-policy.json");var secondIndex=Read("CSNitrogen.csharp2-standard-index.json");
@@ -101,7 +104,7 @@ public static class FeatureCatalog
         var gate=Read("CSNitrogen.csharp1-coverage-gate.json");
         var index=Read("CSNitrogen.csharp1-standard-index.json");
         var crosswalk=Read("CSNitrogen.csharp1-standard-crosswalk.json");
-        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-evidence.",StringComparison.Ordinal)))Read(name);
+        foreach(var name in assembly.GetManifestResourceNames().Where(n=>n.StartsWith("CSNitrogen.grammar.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.source.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp3-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp4-evidence.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-artifact.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-review.",StringComparison.Ordinal)||n.StartsWith("CSNitrogen.csharp5-evidence.",StringComparison.Ordinal)||CSharp6CoverageContract.IsEvidenceResource(n)))Read(name);
         using var document = JsonDocument.Parse(inventory);
         var entries = document.RootElement.GetProperty("features").EnumerateArray().Select(f => new CoverageFeature(
             f.GetProperty("id").GetString()!, Version.Parse(f.GetProperty("introduced").GetString()!),
@@ -132,8 +135,9 @@ public static class FeatureCatalog
         var third=new Lazy<bool>(()=>CSharp3CoverageContract.Reviewed(thirdGate,thirdIndex,thirdCrosswalk,thirdReference,composition,sourceInputs,second.Value));
         var fourth=new Lazy<bool>(()=>CSharp4CoverageContract.Reviewed(fourthGate,composition,sourceInputs,third.Value));
         var fifth=new Lazy<bool>(()=>CSharp5CoverageContract.Reviewed(fifthGate,composition,sourceInputs,fourth.Value));
-        var reviewed=new Dictionary<int,Lazy<bool>>{[1]=new(()=>first),[2]=second,[3]=third,[4]=fourth,[5]=fifth};
-        var modules=new Dictionary<int,IReadOnlyList<string>>{[1]=FactoryModules(gate,true),[2]=FactoryModules(secondGate,false),[3]=FactoryModules(thirdGate,false),[4]=FactoryModules(fourthGate,false),[5]=FactoryModules(fifthGate,false)};
+        var sixth=new Lazy<bool>(()=>CSharp6CoverageContract.Reviewed(sixthGate,sourceInputs,fifth.Value));
+        var reviewed=new Dictionary<int,Lazy<bool>>{[1]=new(()=>first),[2]=second,[3]=third,[4]=fourth,[5]=fifth,[6]=sixth};
+        var modules=new Dictionary<int,IReadOnlyList<string>>{[1]=FactoryModules(gate,true),[2]=FactoryModules(secondGate,false),[3]=FactoryModules(thirdGate,false),[4]=FactoryModules(fourthGate,false),[5]=FactoryModules(fifthGate,false),[6]=CSharp6CoverageContract.ReadFactoryModules(sixthGate)};
         return new(Array.AsReadOnly(entries),CoverageHash.Compute(inputs),Array.AsReadOnly(mappings),Array.AsReadOnly(known),factories,reviewed,modules);
     }
 }

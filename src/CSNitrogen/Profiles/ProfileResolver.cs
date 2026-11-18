@@ -16,7 +16,10 @@ public static class ProfileResolver
         var grammars=Array.AsReadOnly(custom.Profile.Grammars.Select(g=>g=="Grammars/GlobalTargetsCurrent.ngr"?version.Major switch {1=>"Grammars/GlobalTargetsHistorical.ngr",2=>"Grammars/GlobalTargetsSecond.ngr",3 or 4 or 5 or 6=>"Grammars/GlobalTargetsThird.ngr",_=>g}:g).Order(StringComparer.Ordinal).ToArray());
         var policies=Array.AsReadOnly(custom.Profile.Policies.Append(version.Major==1?"unicode-3.0-bmp":UnicodePolicy.UsesUnicode4(version)?"unicode-4.0-scalar":"unicode-current-bmp").Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray());
         bool admitted=FeatureCatalog.AdmittedMajors.Contains(version.Major);
-        bool factory=!admitted||CSNitrogen.Parsing.CSharpParser.MatchesFactory($"CSharp{version.Major}",FeatureCatalog.ModulesFor(version.Major));
+        var recordedModules=FeatureCatalog.ModulesFor(version.Major);
+        // A malformed sixth ledger can never admit the profile. Preserve access to its partial factory.
+        bool factory=!admitted||version.Major==6&&recordedModules.Count==0||
+            CSharpParser.MatchesFactory($"CSharp{version.Major}",recordedModules);
         var coverage=CoverageContract.Evaluate(version,FeatureCatalog.Inventory,FeatureCatalog.CoverageMappings,FeatureCatalog.Implemented,
             custom.Profile.Features,policies,FeatureCatalog.KnownPolicies,grammars,FeatureCatalog.FactoryGrammars(name),admitted&&FeatureCatalog.SourceReviewedFor(version.Major),factory);
         if(coverage.Issues.Count>0)return new(null,coverage.Issues);
