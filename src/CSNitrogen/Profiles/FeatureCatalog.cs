@@ -6,6 +6,7 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp6.enum-base-type-names", Array.AsReadOnly(new[]{"baseline.members","baseline.names-and-types"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/EnumBaseTypeNames.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
         new FeatureDefinition("csharp6.interpolated-strings", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/InterpolatedStrings.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
         new FeatureDefinition("csharp6.null-conditional", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NullConditional.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
         new FeatureDefinition("csharp6.nameof", Array.AsReadOnly(new[]{"baseline.expressions","csharp2.generics","csharp2.alias-qualification"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NameofExpressions.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },

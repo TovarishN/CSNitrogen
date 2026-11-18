@@ -5,3 +5,4 @@
 .DS_Store
 TestResults/
 **/TestResults/
+__pycache__/

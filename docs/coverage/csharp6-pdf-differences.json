@@ -1,0 +1,17 @@
+{
+ "schemaVersion": 1,
+ "profile": "CSharp6",
+ "primarySha256": "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f",
+ "extractionSha256": "b74337ad3d4151f370a1e591b09731044ae39981af163520afd7c8dfc160b70c",
+ "indexSha256": "251e29019e5562182ad74e1c9df97e2761f060f32c428e2498f760714caa439a",
+ "scope": "Annex A rule bodies, whitespace/comment/typographic-quote normalized; main-text prose is reviewed separately",
+ "counts": {
+  "indexed": 436,
+  "pdfRules": 436,
+  "agreed": 436,
+  "differences": 0,
+  "pdfOnly": 0
+ },
+ "pdfOnly": [],
+ "differences": []
+}

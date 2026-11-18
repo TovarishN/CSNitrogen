@@ -20,7 +20,8 @@ internal static class CSharpCompilationUnitPolicy
                 || StructTypeDeclarationTypeDeclaration.Is(tree, index)
                 || InterfaceTypeDeclarationTypeDeclaration.Is(tree, index)
                 || EnumTypeDeclarationTypeDeclaration.Is(tree, index)
-                || DelegateTypeDeclarationTypeDeclaration.Is(tree, index);
+                || DelegateTypeDeclarationTypeDeclaration.Is(tree, index)
+                || NamedBaseEnumTypeDeclarationTypeDeclaration.Is(tree, index);
             if (!type || tree.ChildCount(index) == 0) continue;
             int parent = tree.Parent(index);
             while (parent >= 0 && tree.Kind(parent) is SyntaxKinds.List or SyntaxKinds.Ambiguous) parent = tree.Parent(parent);
@@ -32,6 +33,7 @@ internal static class CSharpCompilationUnitPolicy
             else if (InterfaceDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<InterfaceDeclarationNode>(tree, declaration).Attributes);
             else if (EnumDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<EnumDeclarationNode>(tree, declaration).Attributes);
             else if (DelegateDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<DelegateDeclarationNode>(tree, declaration).Attributes);
+            else if (NamedBaseEnumDeclarationNode.Is(tree, declaration)) CheckSections(SyntaxView.Cast<NamedBaseEnumDeclarationNode>(tree, declaration).Attributes);
         }
         return issues.AsReadOnly();
 

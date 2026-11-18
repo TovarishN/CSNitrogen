@@ -1,0 +1,11 @@
+// ECMA-334 6 §19.2: enum_base may name its integral type through a type_name. Keyword bases keep the
+// baseline EnumDeclaration owner; whether the name resolves to an integral type is semantic.
+syntax module CSharp.EnumBaseTypeNames
+{
+ syntax NamedEnumBase = ":" NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName NameExtension:CSharp.NamesTypes.TypeNameSuffix?;
+ syntax NamedBaseEnumDeclaration = Attributes:CSharp.Attributes.AttributeSection* Modifiers:CSharp.Declarations.Modifier* "enum" Name:CSharp.Lexical.Identifier Base:NamedEnumBase "{" Members:((CSharp.Declarations.EnumMember; ",")+ ","?)? "}" ";"?;
+ extend syntax CSharp.Declarations.TypeDeclaration
+ {
+  | NamedBaseEnumTypeDeclaration = Value:NamedBaseEnumDeclaration
+ }
+}

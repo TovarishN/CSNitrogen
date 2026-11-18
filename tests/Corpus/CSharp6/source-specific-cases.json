@@ -1,0 +1,3352 @@
+{
+ "schemaVersion": 1,
+ "profile": "CSharp6",
+ "primarySha256": "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f",
+ "scope": "Sixth-specific representative positives, one per alternative without a positional CSharp5 witness; not exhaustive inputs or semantic compilation.",
+ "cases": [
+  {
+   "id": "A:14:DEFAULT/1",
+   "sourceAlternativeSha256": "4332f2ead9dfcb351eb954d36ad88e65589bb92b7efab40c14a39a4097be4ed6",
+   "alternative": "'default'",
+   "source": "class C{object o=default(int);}",
+   "focus": "default",
+   "focusStart": 17
+  },
+  {
+   "id": "A:15:NULL/1",
+   "sourceAlternativeSha256": "70e2c20cc983d3820acbecfbb8b6dfd0f91c017a5ceda2156ca06fed1f87d654",
+   "alternative": "'null'",
+   "source": "class C{object o=null;}",
+   "focus": "null",
+   "focusStart": 17
+  },
+  {
+   "id": "A:16:TRUE/1",
+   "sourceAlternativeSha256": "dff89555928c7dd5e551972091b6cface9a01b7cf832c74814311c1b23571eb7",
+   "alternative": "'true'",
+   "source": "class C{object o=true;}",
+   "focus": "true",
+   "focusStart": 17
+  },
+  {
+   "id": "A:17:FALSE/1",
+   "sourceAlternativeSha256": "d719559746e559891cbd713ecbff383a5ab0ad7498bf36ca182ad487334d229b",
+   "alternative": "'false'",
+   "source": "class C{object o=false;}",
+   "focus": "false",
+   "focusStart": 17
+  },
+  {
+   "id": "A:18:ASTERISK/1",
+   "sourceAlternativeSha256": "15a7e30e1ab6bd46aec3f40f770cc790c558795e1ff928a303d214cc646da346",
+   "alternative": "'*'",
+   "source": "class C{object o=a*b;}",
+   "focus": "*",
+   "focusStart": 18
+  },
+  {
+   "id": "A:19:SLASH/1",
+   "sourceAlternativeSha256": "08251127937aa1fa7310bc79b2d755fefdf7e2947d62833ed319ecba7ac63604",
+   "alternative": "'/'",
+   "source": "class C{object o=a/b;}",
+   "focus": "/",
+   "focusStart": 18
+  },
+  {
+   "id": "A:26:input_section/1",
+   "sourceAlternativeSha256": "6b70b1ddc766286aa017b41b2eff7210c41090da2d0ffd4e138fc6585627875d",
+   "alternative": "input_section_part+",
+   "source": "using A;\nclass C{}\n",
+   "focus": "using A;\nclass C{}\n",
+   "focusStart": 0
+  },
+  {
+   "id": "A:42:New_Line/1",
+   "sourceAlternativeSha256": "e6fb1274b93d471c72885f25d323536f509f80d91fd7fb46da83aca6897654ff",
+   "alternative": "New_Line_Character",
+   "source": "class C{}\n",
+   "focus": "\n",
+   "focusStart": 9
+  },
+  {
+   "id": "A:42:New_Line/2",
+   "sourceAlternativeSha256": "8a8ae109b720066660c603a2364135c7f85883ccd63877ef6b3606e5b73d1b3e",
+   "alternative": "'\\u000D\\u000A'",
+   "source": "class C{}\r\n",
+   "focus": "\r\n",
+   "focusStart": 9
+  },
+  {
+   "id": "A:74:Delimited_Comment_Section/1",
+   "sourceAlternativeSha256": "2f4f10058af817252c4a9bc174d7b729538079f84f02a74160b3a42162d53e02",
+   "alternative": "SLASH",
+   "source": "class C{/*a/b*/}",
+   "focus": "a/b",
+   "focusStart": 10
+  },
+  {
+   "id": "A:74:Delimited_Comment_Section/2",
+   "sourceAlternativeSha256": "0d2a37e3186372fc7ee77c28c2e7bda342fcc2611be41b6f4089d96697def0d3",
+   "alternative": "ASTERISK* Not_Slash_Or_Asterisk",
+   "source": "class C{/**a*/}",
+   "focus": "**a",
+   "focusStart": 9
+  },
+  {
+   "id": "A:110:identifier/1",
+   "sourceAlternativeSha256": "3deaeb000b57e7d7e1a838e2e6e1b6d9a8fe820ca877d7cc37c9ec79f3d91ab9",
+   "alternative": "Simple_Identifier",
+   "source": "class C{}",
+   "focus": "C",
+   "focusStart": 6
+  },
+  {
+   "id": "A:110:identifier/2",
+   "sourceAlternativeSha256": "592766c28e86c6e809d4f4c47359f642d3799d9eb5b3ff08b67bc37b3f0365d4",
+   "alternative": "contextual_keyword",
+   "source": "class C{int await;}",
+   "focus": "await",
+   "focusStart": 12
+  },
+  {
+   "id": "A:115:Simple_Identifier/1",
+   "sourceAlternativeSha256": "731e87f02da28e1c96caf4ad1fdef12e71314e2ff9e424bc7288c19e8c2979ca",
+   "alternative": "Available_Identifier",
+   "source": "class C{}",
+   "focus": "C",
+   "focusStart": 6
+  },
+  {
+   "id": "A:115:Simple_Identifier/2",
+   "sourceAlternativeSha256": "e088f42d6a0fff4ccdcf7a640a1f0b166a00aeeebf9c558b33e0a38bf97627e7",
+   "alternative": "Escaped_Identifier",
+   "source": "class @class{}",
+   "focus": "@class",
+   "focusStart": 6
+  },
+  {
+   "id": "A:120:Available_Identifier/1",
+   "sourceAlternativeSha256": "6100a76fc32bd615d1f56ed4a436ea2a6ee779484c1005489d614df582f8cba1",
+   "alternative": "Basic_Identifier",
+   "source": "class Ab1{}",
+   "focus": "Ab1",
+   "focusStart": 6
+  },
+  {
+   "id": "A:125:Escaped_Identifier/1",
+   "sourceAlternativeSha256": "8837254fb5878d5d07f3a266a7c8a7aff4e40d973963a6277370532b72764b65",
+   "alternative": "'@' Basic_Identifier",
+   "source": "class @class{}",
+   "focus": "@class",
+   "focusStart": 6
+  },
+  {
+   "id": "A:131:Basic_Identifier/1",
+   "sourceAlternativeSha256": "70c5b4de7fe8873625c841161ab95103cde7174f5546c0f422da7870f27218e0",
+   "alternative": "Identifier_Start_Character Identifier_Part_Character*",
+   "source": "class _a1{}",
+   "focus": "_a1",
+   "focusStart": 6
+  },
+  {
+   "id": "A:135:Identifier_Start_Character/1",
+   "sourceAlternativeSha256": "043b0307280dc68e9967573a1e6d4b6fc67a544e28210104f05d79e40d79704f",
+   "alternative": "Letter_Character",
+   "source": "class a{}",
+   "focus": "a",
+   "focusStart": 2
+  },
+  {
+   "id": "A:135:Identifier_Start_Character/2",
+   "sourceAlternativeSha256": "03f7007aaabe78b7df87a902d9b667ff82c114944fae3c409beaa0e217ca110f",
+   "alternative": "Underscore_Character",
+   "source": "class \\u005Fa{}",
+   "focus": "\\u005F",
+   "focusStart": 6
+  },
+  {
+   "id": "A:140:Underscore_Character/1",
+   "sourceAlternativeSha256": "bdc4e106fa8ebf0e98da507d47fb4708e9144a68d01a460a1b533cb5a2e82536",
+   "alternative": "'_'",
+   "source": "class _a{}",
+   "focus": "_",
+   "focusStart": 6
+  },
+  {
+   "id": "A:140:Underscore_Character/2",
+   "sourceAlternativeSha256": "4606a5c09b3c37e2767651acb1101760df7196c6e93e326432d1d54e6dfe638b",
+   "alternative": "'\\\\u005' [fF]",
+   "source": "class \\u005Fa{}",
+   "focus": "\\u005F",
+   "focusStart": 6
+  },
+  {
+   "id": "A:209:contextual_keyword/1",
+   "sourceAlternativeSha256": "7411e114798551023965827526a0b2e6a85b599e978fddc5a7d17edca29c53c2",
+   "alternative": "'add'",
+   "source": "class C{int add;}",
+   "focus": "add",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/2",
+   "sourceAlternativeSha256": "c00ccc3a97b5ecbeb6fb7e1667854f26c9c84b25fc12c2445873c5e528fb252b",
+   "alternative": "'alias'",
+   "source": "class C{int alias;}",
+   "focus": "alias",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/3",
+   "sourceAlternativeSha256": "ae105deb1793821ffdd5718fb027591298609fe491ae9017a8f927d4b84bcafa",
+   "alternative": "'ascending'",
+   "source": "class C{int ascending;}",
+   "focus": "ascending",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/4",
+   "sourceAlternativeSha256": "b94c980f906538869ae8497d8ed75659154e25f48fa7eb2c395089c21fc740ba",
+   "alternative": "'async'",
+   "source": "class C{int async;}",
+   "focus": "async",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/5",
+   "sourceAlternativeSha256": "5fe1a4f2baefb57f57182af14ef34c2604bf79f9decbd01a32e0c3c8bbe0279f",
+   "alternative": "'await'",
+   "source": "class C{int await;}",
+   "focus": "await",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/6",
+   "sourceAlternativeSha256": "975e5b5fcfcc724b4d272c85980bc0e971a4c7f10446003af9a55c39efee8f74",
+   "alternative": "'by'",
+   "source": "class C{int by;}",
+   "focus": "by",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/7",
+   "sourceAlternativeSha256": "73afa36156b20d7fdd2be6cccb5f44fe4bcfd0769bfa963d309554aa0f1ed360",
+   "alternative": "'descending'",
+   "source": "class C{int descending;}",
+   "focus": "descending",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/8",
+   "sourceAlternativeSha256": "b71fa7c574cc1a90f84ed816d23f0472dc4de745cca3d4af6bfaf7f3e88b8ac4",
+   "alternative": "'dynamic'",
+   "source": "class C{int dynamic;}",
+   "focus": "dynamic",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/9",
+   "sourceAlternativeSha256": "a073755f96ab3e62493498772ad0fe7f94f26c4c38100d02e8ce271d009eb6aa",
+   "alternative": "'equals'",
+   "source": "class C{int equals;}",
+   "focus": "equals",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/10",
+   "sourceAlternativeSha256": "8ecb478c3dc0d3ae401794312f441b1ae4b1f84553639f74fe7e309757fd704b",
+   "alternative": "'from'",
+   "source": "class C{int from;}",
+   "focus": "from",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/11",
+   "sourceAlternativeSha256": "d65f191db5baa3d50f77c487d302803590f808282eedfc04a7aec11e4847cadc",
+   "alternative": "'get'",
+   "source": "class C{int get;}",
+   "focus": "get",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/12",
+   "sourceAlternativeSha256": "53fe06f74f6e5e7825a115c1eadcf96cc24f0bdc0e685ecc17c5b2addd72e1f9",
+   "alternative": "'global'",
+   "source": "class C{int global;}",
+   "focus": "global",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/13",
+   "sourceAlternativeSha256": "98edcf4bfe57bb589a462043e04aa4f162ffe2376576ea2396ae5bd3b8f8ac1a",
+   "alternative": "'group'",
+   "source": "class C{int group;}",
+   "focus": "group",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/14",
+   "sourceAlternativeSha256": "695f4ca53b0845c5667aa4ab61f90ccb43cd7a409cd3bad9270fb95937ee344b",
+   "alternative": "'into'",
+   "source": "class C{int into;}",
+   "focus": "into",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/15",
+   "sourceAlternativeSha256": "0986c52e4d081eff532119ffe67843b2d9808cc7fd65530fddb19697853441e6",
+   "alternative": "'join'",
+   "source": "class C{int join;}",
+   "focus": "join",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/16",
+   "sourceAlternativeSha256": "774c5442b5d296a8d416871ae2866e4476b7112ca6915ecc7b91ce212044102b",
+   "alternative": "'let'",
+   "source": "class C{int let;}",
+   "focus": "let",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/17",
+   "sourceAlternativeSha256": "eae305250b283c36f621b31ab557991d7493f4aaaffd56d15a74d66890ae44ed",
+   "alternative": "'nameof'",
+   "source": "class C{int nameof;}",
+   "focus": "nameof",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/18",
+   "sourceAlternativeSha256": "03dd009bddebd9b6efd0bd031812ddb9ea0c38e3ecaea6def90ad6cd53e5e160",
+   "alternative": "'on'",
+   "source": "class C{int on;}",
+   "focus": "on",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/19",
+   "sourceAlternativeSha256": "176525ffccf007495ad29873cb769cd415b817f450c288e976a1042479f8d4ca",
+   "alternative": "'orderby'",
+   "source": "class C{int orderby;}",
+   "focus": "orderby",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/20",
+   "sourceAlternativeSha256": "27b532768d913398a1288c8afd2ebe177c8f53460ba6c476f1b51b5be7eb683f",
+   "alternative": "'partial'",
+   "source": "class C{int partial;}",
+   "focus": "partial",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/21",
+   "sourceAlternativeSha256": "e8c2c1465f1680818dcabc9b73e09a2a63078c6924ce83adeceea368bed15290",
+   "alternative": "'remove'",
+   "source": "class C{int remove;}",
+   "focus": "remove",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/22",
+   "sourceAlternativeSha256": "362dc5a1d2b389b99448a3a29f820375faa5cf102ceb08894b40346977c056bc",
+   "alternative": "'select'",
+   "source": "class C{int select;}",
+   "focus": "select",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/23",
+   "sourceAlternativeSha256": "dba93ed96340a41e458d56ba8f8afca399912a9cb98f433243f610b631d64a7c",
+   "alternative": "'set'",
+   "source": "class C{int set;}",
+   "focus": "set",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/24",
+   "sourceAlternativeSha256": "fe53f3d01262360a537861881a6afbd6e45e28e59241459424d3f82df886cfd3",
+   "alternative": "'value'",
+   "source": "class C{int value;}",
+   "focus": "value",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/25",
+   "sourceAlternativeSha256": "77c651ada32ac5e16181292f600281006979a020f844dcd23a0b8aae5917b18a",
+   "alternative": "'var'",
+   "source": "class C{int var;}",
+   "focus": "var",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/26",
+   "sourceAlternativeSha256": "90e6eb5614e8ad341ec352a5b5ff48c9e69a52bf9377f9eba238fcc772949855",
+   "alternative": "'when'",
+   "source": "class C{int when;}",
+   "focus": "when",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/27",
+   "sourceAlternativeSha256": "a263ff0b4e30ac2f5d4de598d2fd7363d9b583b9764292361b03c274a7a0a595",
+   "alternative": "'where'",
+   "source": "class C{int where;}",
+   "focus": "where",
+   "focusStart": 12
+  },
+  {
+   "id": "A:209:contextual_keyword/28",
+   "sourceAlternativeSha256": "46ad337d722dfe0d693c2da54976eaa074a143296cbd3d21427d9e6dda580f13",
+   "alternative": "'yield'",
+   "source": "class C{int yield;}",
+   "focus": "yield",
+   "focusStart": 12
+  },
+  {
+   "id": "A:229:boolean_literal/1",
+   "sourceAlternativeSha256": "dfe88090c5ed7ac2f32571f0fc822fda4d8cd281fc7138c7cd6db656f6e2d081",
+   "alternative": "TRUE",
+   "source": "class C{object o=true;}",
+   "focus": "true",
+   "focusStart": 17
+  },
+  {
+   "id": "A:229:boolean_literal/2",
+   "sourceAlternativeSha256": "4e523a5ae5b4636c75901b79fafbd3912e41dc7987414e688b09d4b436ff22b3",
+   "alternative": "FALSE",
+   "source": "class C{object o=false;}",
+   "focus": "false",
+   "focusStart": 17
+  },
+  {
+   "id": "A:244:Decimal_Digit/1",
+   "sourceAlternativeSha256": "0011b51bc485a55a578d91e23b5433d8789021109f5d62a2878ce230da4f3b83",
+   "alternative": "'0'..'9'",
+   "source": "class C{object o=7;}",
+   "focus": "7",
+   "focusStart": 17
+  },
+  {
+   "id": "A:253:Hexadecimal_Integer_Literal/1",
+   "sourceAlternativeSha256": "b2888f32ca735a23864e12842de18facf595472ca668040ae0832f39d6a44ac0",
+   "alternative": "('0x' | '0X') Hex_Digit+ Integer_Type_Suffix?",
+   "source": "class C{object o=0xFFul;}",
+   "focus": "0xFFul",
+   "focusStart": 17
+  },
+  {
+   "id": "A:257:Hex_Digit/1",
+   "sourceAlternativeSha256": "0011b51bc485a55a578d91e23b5433d8789021109f5d62a2878ce230da4f3b83",
+   "alternative": "'0'..'9'",
+   "source": "class C{object o=0x9;}",
+   "focus": "9",
+   "focusStart": 19
+  },
+  {
+   "id": "A:257:Hex_Digit/2",
+   "sourceAlternativeSha256": "052a18947e6174ac80bf31215fcfdb20a6712982b9a7d4f5df9209a1b2ccdd05",
+   "alternative": "'A'..'F'",
+   "source": "class C{object o=0xA;}",
+   "focus": "A",
+   "focusStart": 19
+  },
+  {
+   "id": "A:257:Hex_Digit/3",
+   "sourceAlternativeSha256": "ff770cad5ae9a684d248480b330c1267c34e3775c4d765e4248a7c2ebc8133fd",
+   "alternative": "'a'..'f'",
+   "source": "class C{object o=0xa;}",
+   "focus": "a",
+   "focusStart": 2
+  },
+  {
+   "id": "A:269:Exponent_Part/1",
+   "sourceAlternativeSha256": "abd3ee928439b1bd4e969153deba7b43b97df782f2c8ff4c3742fca343fa2fc7",
+   "alternative": "('e' | 'E') Sign? Decimal_Digit+",
+   "source": "class C{object o=1e-3;}",
+   "focus": "e-3",
+   "focusStart": 18
+  },
+  {
+   "id": "A:347:null_literal/1",
+   "sourceAlternativeSha256": "fb329000228cc5a24c264c57139de8bf854fc86fc18bf1c04ab61a2b5cb4b921",
+   "alternative": "NULL",
+   "source": "class C{object o=null;}",
+   "focus": "null",
+   "focusStart": 17
+  },
+  {
+   "id": "A:369:PP_Directive/1",
+   "sourceAlternativeSha256": "6f9c101a62b47076c6189d251877c1174c3c0e5b83ee8f7dedd9f9a4a80e68d4",
+   "alternative": "PP_Start PP_Kind PP_New_Line",
+   "source": "#define X\nclass C{}",
+   "focus": "#define X\n",
+   "focusStart": 0
+  },
+  {
+   "id": "A:373:PP_Kind/1",
+   "sourceAlternativeSha256": "6439c81453377653b78b91ad3ebd322d2ff887b05e9fb1f46de05bce0547cda1",
+   "alternative": "PP_Declaration",
+   "source": "#define X\nclass C{}",
+   "focus": "define X",
+   "focusStart": 1
+  },
+  {
+   "id": "A:373:PP_Kind/2",
+   "sourceAlternativeSha256": "6bf0491fc9808a7a2d6eb8eaa78475a508bfc490026c0c49e3d7d1f4a8233cda",
+   "alternative": "PP_Conditional",
+   "source": "#if X\n#endif\nclass C{}",
+   "focus": "if X",
+   "focusStart": 1
+  },
+  {
+   "id": "A:373:PP_Kind/3",
+   "sourceAlternativeSha256": "0c610e967fd67c899a24f71fc780b1fe973a24c6044b256cbd32c50bbfa432c2",
+   "alternative": "PP_Line",
+   "source": "#line 3\nclass C{}",
+   "focus": "line 3",
+   "focusStart": 1
+  },
+  {
+   "id": "A:373:PP_Kind/4",
+   "sourceAlternativeSha256": "076416bd7b2cda29e1a099308f32ef810b64af073f52667f40dc57a44f33e7aa",
+   "alternative": "PP_Diagnostic",
+   "source": "#warning w\nclass C{}",
+   "focus": "warning w",
+   "focusStart": 1
+  },
+  {
+   "id": "A:373:PP_Kind/5",
+   "sourceAlternativeSha256": "f0ac6198b4f7fc27b0993fd8f9d194e0fb199ee57343de1744c27eff8b2cf404",
+   "alternative": "PP_Region",
+   "source": "#region r\n#endregion\nclass C{}",
+   "focus": "region r",
+   "focusStart": 1
+  },
+  {
+   "id": "A:373:PP_Kind/6",
+   "sourceAlternativeSha256": "780db784f81dc3643607dfa6c416267d2d6ae73481bea0537a9bafef6f6dede6",
+   "alternative": "PP_Pragma",
+   "source": "#pragma warning disable\nclass C{}",
+   "focus": "pragma warning disable",
+   "focusStart": 1
+  },
+  {
+   "id": "A:383:PP_Start/1",
+   "sourceAlternativeSha256": "7885d092bb64cc6a5caa0e0fe1431fad23f217b8b2dedd97190e7bd5c3e51a4f",
+   "alternative": "{ getCharPositionInLine() == 0 }? PP_Whitespace? '#' PP_Whitespace?",
+   "source": "  #  define X\nclass C{}",
+   "focus": "  #  ",
+   "focusStart": 0
+  },
+  {
+   "id": "A:388:PP_Whitespace/1",
+   "sourceAlternativeSha256": "b5801498011d8063fb662051f0127097d2f43ad1c31acaf8fdd0778bcf4f5678",
+   "alternative": "( [\\p{Zs}] | '\\u0009' | '\\u000B' | '\\u000C' )+",
+   "source": "#define\t X\nclass C{}",
+   "focus": "\t ",
+   "focusStart": 7
+  },
+  {
+   "id": "A:401:PP_Conditional_Symbol/1",
+   "sourceAlternativeSha256": "6100a76fc32bd615d1f56ed4a436ea2a6ee779484c1005489d614df582f8cba1",
+   "alternative": "Basic_Identifier",
+   "source": "#define X1\nclass C{}",
+   "focus": "X1",
+   "focusStart": 8
+  },
+  {
+   "id": "A:411:PP_Or_Expression/1",
+   "sourceAlternativeSha256": "1573d3778fcdb7ce32fbe3a05c348ec59e17dfe068a70426b2146effe2bd2268",
+   "alternative": "PP_And_Expression (PP_Whitespace? '||' PP_Whitespace? PP_And_Expression)*",
+   "source": "#if A || B\n#endif\nclass C{}",
+   "focus": "A || B",
+   "focusStart": 4
+  },
+  {
+   "id": "A:415:PP_And_Expression/1",
+   "sourceAlternativeSha256": "5c5545562952b6d38075d9975b6e2f2b13152f05f63327fb86d04a858daccfb9",
+   "alternative": "PP_Equality_Expression (PP_Whitespace? '&&' PP_Whitespace? PP_Equality_Expression)*",
+   "source": "#if A && B\n#endif\nclass C{}",
+   "focus": "A && B",
+   "focusStart": 4
+  },
+  {
+   "id": "A:420:PP_Equality_Expression/1",
+   "sourceAlternativeSha256": "a50dd2d6f0f17bf0d0baa6f204b08ceb5e5223ea4aee6649a3a6c29caa8e7341",
+   "alternative": "PP_Unary_Expression (PP_Whitespace? ('==' | '!=') PP_Whitespace? PP_Unary_Expression)*",
+   "source": "#if A == true\n#endif\nclass C{}",
+   "focus": "A == true",
+   "focusStart": 4
+  },
+  {
+   "id": "A:430:PP_Primary_Expression/1",
+   "sourceAlternativeSha256": "dfe88090c5ed7ac2f32571f0fc822fda4d8cd281fc7138c7cd6db656f6e2d081",
+   "alternative": "TRUE",
+   "source": "#if true\n#endif\nclass C{}",
+   "focus": "true",
+   "focusStart": 4
+  },
+  {
+   "id": "A:430:PP_Primary_Expression/2",
+   "sourceAlternativeSha256": "4e523a5ae5b4636c75901b79fafbd3912e41dc7987414e688b09d4b436ff22b3",
+   "alternative": "FALSE",
+   "source": "#if false\n#endif\nclass C{}",
+   "focus": "false",
+   "focusStart": 4
+  },
+  {
+   "id": "A:430:PP_Primary_Expression/3",
+   "sourceAlternativeSha256": "00dc6e3e095e7cecdfa1140c31436983d57c11819f6d79100170be5af649d4f2",
+   "alternative": "PP_Conditional_Symbol",
+   "source": "#if X\n#endif\nclass C{}",
+   "focus": "X",
+   "focusStart": 4
+  },
+  {
+   "id": "A:430:PP_Primary_Expression/4",
+   "sourceAlternativeSha256": "c48c72c893ce56732f742ff18880d3df4a3f334c0d5ee58ebdfd045900de004b",
+   "alternative": "'(' PP_Whitespace? PP_Expression PP_Whitespace? ')'",
+   "source": "#if (X)\n#endif\nclass C{}",
+   "focus": "(X)",
+   "focusStart": 4
+  },
+  {
+   "id": "A:444:PP_Conditional/1",
+   "sourceAlternativeSha256": "069354d94460592280cba9ad69c840a9633dbf1436ab82298bdc65bc1309f7da",
+   "alternative": "PP_If_Section",
+   "source": "#if A\n#endif\nclass C{}",
+   "focus": "#if A",
+   "focusStart": 0
+  },
+  {
+   "id": "A:444:PP_Conditional/2",
+   "sourceAlternativeSha256": "16aa566f0d5f59dd1d90505265abb3478cb7a97e9ed4ead44cd1835cda0fbd30",
+   "alternative": "PP_Elif_Section",
+   "source": "#if A\n#elif B\n#endif\nclass C{}",
+   "focus": "#elif B",
+   "focusStart": 6
+  },
+  {
+   "id": "A:444:PP_Conditional/3",
+   "sourceAlternativeSha256": "73cfb1b61af626989cb647f8d1c790f114f5a186f1499c5aede4933e01733324",
+   "alternative": "PP_Else_Section",
+   "source": "#if A\n#else\n#endif\nclass C{}",
+   "focus": "#else",
+   "focusStart": 6
+  },
+  {
+   "id": "A:444:PP_Conditional/4",
+   "sourceAlternativeSha256": "277111cd5efdd2d26370964694a0b3cbe688ee294a562e250696253425acc12f",
+   "alternative": "PP_Endif",
+   "source": "#if A\n#endif\nclass C{}",
+   "focus": "#endif",
+   "focusStart": 6
+  },
+  {
+   "id": "A:473:PP_Message/1",
+   "sourceAlternativeSha256": "f93fee11cd4e79c99f9d05fe8df0b628959f6898260e1c96ece3fd91f590a25f",
+   "alternative": "PP_Whitespace Input_Character*",
+   "source": "#warning check this\nclass C{}",
+   "focus": " check this",
+   "focusStart": 8
+  },
+  {
+   "id": "A:478:PP_Region/1",
+   "sourceAlternativeSha256": "3b4de6563b292a11bdca15d847d4b29dbd2c1ab418acb40ad7b33eeeb1906719",
+   "alternative": "PP_Start_Region",
+   "source": "#region r\nclass C{}\n#endregion\n",
+   "focus": "#region r",
+   "focusStart": 0
+  },
+  {
+   "id": "A:478:PP_Region/2",
+   "sourceAlternativeSha256": "b1c81358d5a77006947567e326d8d7c145d2d74ca16513ca4806f9428f121c40",
+   "alternative": "PP_End_Region",
+   "source": "#region r\nclass C{}\n#endregion\n",
+   "focus": "#endregion",
+   "focusStart": 20
+  },
+  {
+   "id": "A:496:PP_Line_Indicator/1",
+   "sourceAlternativeSha256": "53c9f5345464eea9b29aab04275ab2ed2adc41e46171b5cab1d280d24845710d",
+   "alternative": "Decimal_Digit+ PP_Whitespace PP_Compilation_Unit_Name",
+   "source": "#line 7 \"a.cs\"\nclass C{}",
+   "focus": "7 \"a.cs\"",
+   "focusStart": 6
+  },
+  {
+   "id": "A:496:PP_Line_Indicator/2",
+   "sourceAlternativeSha256": "5536c8bcd3bbd87d2b92dad0b7da789b1acaa6aeb3a01367fc0502a83b6dd4a1",
+   "alternative": "Decimal_Digit+",
+   "source": "#line 7\nclass C{}",
+   "focus": "7",
+   "focusStart": 6
+  },
+  {
+   "id": "A:496:PP_Line_Indicator/3",
+   "sourceAlternativeSha256": "89dbf71048801678ca4abfbaa3ea8f7c651aae193357a3e23d68e21512cd07f5",
+   "alternative": "DEFAULT",
+   "source": "#line default\nclass C{}",
+   "focus": "default",
+   "focusStart": 6
+  },
+  {
+   "id": "A:496:PP_Line_Indicator/4",
+   "sourceAlternativeSha256": "694e921d5346603771b3d3c8001090234f84200e4b4256d432aec3fad7ff64a3",
+   "alternative": "'hidden'",
+   "source": "#line hidden\nclass C{}",
+   "focus": "hidden",
+   "focusStart": 6
+  },
+  {
+   "id": "A:503:PP_Compilation_Unit_Name/1",
+   "sourceAlternativeSha256": "198fed3eaffed23c4f07f1c137e848a0340464dd179d6b4eaa32f01db26f6714",
+   "alternative": "'\"' PP_Compilation_Unit_Name_Character+ '\"'",
+   "source": "#line 7 \"a.cs\"\nclass C{}",
+   "focus": "\"a.cs\"",
+   "focusStart": 8
+  },
+  {
+   "id": "A:507:PP_Compilation_Unit_Name_Character/1",
+   "sourceAlternativeSha256": "209bb87332b49b64ff9d9c572d7e369035a679ea09063093dc999dafcf816d5c",
+   "alternative": "~('\\u000D' | '\\u000A' | '\\u0085' | '\\u2028' | '\\u2029' | '#')",
+   "source": "#line 7 \"a.cs\"\nclass C{}",
+   "focus": "a.cs",
+   "focusStart": 9
+  },
+  {
+   "id": "A:517:PP_Pragma_Text/1",
+   "sourceAlternativeSha256": "f93fee11cd4e79c99f9d05fe8df0b628959f6898260e1c96ece3fd91f590a25f",
+   "alternative": "PP_Whitespace Input_Character*",
+   "source": "#pragma warning disable 1\nclass C{}",
+   "focus": " warning disable 1",
+   "focusStart": 7
+  },
+  {
+   "id": "A:542:type/1",
+   "sourceAlternativeSha256": "04853f540b9154c7313ba2584f40b0773220bbf0adb8a4d891908af0fbfeabed",
+   "alternative": "reference_type",
+   "source": "class C{string f;}",
+   "focus": "string",
+   "focusStart": 8
+  },
+  {
+   "id": "A:542:type/2",
+   "sourceAlternativeSha256": "21f50267a8adf26ae399f851601cfe5dea548d62fb7f07e89f8a5b81d76ddce1",
+   "alternative": "value_type",
+   "source": "class C{int f;}",
+   "focus": "int",
+   "focusStart": 8
+  },
+  {
+   "id": "A:542:type/3",
+   "sourceAlternativeSha256": "496247ba670a68ff01b37d5d41b67663f4b7ffeb035a9b955aec04532fad61f7",
+   "alternative": "type_parameter",
+   "source": "class C<T>{T f;}",
+   "focus": "T f",
+   "focusStart": 11
+  },
+  {
+   "id": "A:542:type/4",
+   "sourceAlternativeSha256": "ff19a405c4aa977197251fd7915c9094a55217f7bd5c6f9df444373546686fc8",
+   "alternative": "pointer_type",
+   "source": "unsafe class C{int* f;}",
+   "focus": "int*",
+   "focusStart": 15
+  },
+  {
+   "id": "A:550:reference_type/1",
+   "sourceAlternativeSha256": "5176dd9cbbadda645564506ed40953314b34673bb05d60f855bffa716dfd07fe",
+   "alternative": "class_type",
+   "source": "class C{C f;}",
+   "focus": "C f",
+   "focusStart": 8
+  },
+  {
+   "id": "A:550:reference_type/2",
+   "sourceAlternativeSha256": "2fa7e538107d06c7afdfc95af2a2d7a7ebd6bc360b970aa3bb0e0aeb30baf1e3",
+   "alternative": "interface_type",
+   "source": "class C{I f;}",
+   "focus": "I f",
+   "focusStart": 8
+  },
+  {
+   "id": "A:550:reference_type/3",
+   "sourceAlternativeSha256": "5f7a8ab9b823dfae60d51414442f202a77953cb3b436127a8fc7f4937942709a",
+   "alternative": "array_type",
+   "source": "class C{int[] f;}",
+   "focus": "int[]",
+   "focusStart": 8
+  },
+  {
+   "id": "A:550:reference_type/4",
+   "sourceAlternativeSha256": "75d655d2197a36c22fd14c8bcb6d7d0c48ac422c684d896e6db4c9be17ba81b0",
+   "alternative": "delegate_type",
+   "source": "class C{D f;}",
+   "focus": "D f",
+   "focusStart": 8
+  },
+  {
+   "id": "A:550:reference_type/5",
+   "sourceAlternativeSha256": "b71fa7c574cc1a90f84ed816d23f0472dc4de745cca3d4af6bfaf7f3e88b8ac4",
+   "alternative": "'dynamic'",
+   "source": "class C{dynamic f;}",
+   "focus": "dynamic",
+   "focusStart": 8
+  },
+  {
+   "id": "A:558:class_type/1",
+   "sourceAlternativeSha256": "2501a7dde4567415d3ec8af681fa3b4f6564236298e6acdb46df009df7bbf34f",
+   "alternative": "type_name",
+   "source": "class C{C f;}",
+   "focus": "C f",
+   "focusStart": 8
+  },
+  {
+   "id": "A:558:class_type/2",
+   "sourceAlternativeSha256": "f9732e17c091f06d9ad07c47253b1964470832c783746b694dc118d046b0f352",
+   "alternative": "'object'",
+   "source": "class C{object f;}",
+   "focus": "object",
+   "focusStart": 8
+  },
+  {
+   "id": "A:558:class_type/3",
+   "sourceAlternativeSha256": "7fda3139315ef36c97138859ab308e419d774aa7d1711c212890963cd6a21706",
+   "alternative": "'string'",
+   "source": "class C{string f;}",
+   "focus": "string",
+   "focusStart": 8
+  },
+  {
+   "id": "A:572:non_array_type/1",
+   "sourceAlternativeSha256": "21f50267a8adf26ae399f851601cfe5dea548d62fb7f07e89f8a5b81d76ddce1",
+   "alternative": "value_type",
+   "source": "class C{int[] f;}",
+   "focus": "int",
+   "focusStart": 8
+  },
+  {
+   "id": "A:572:non_array_type/2",
+   "sourceAlternativeSha256": "5176dd9cbbadda645564506ed40953314b34673bb05d60f855bffa716dfd07fe",
+   "alternative": "class_type",
+   "source": "class C{C[] f;}",
+   "focus": "C",
+   "focusStart": 6
+  },
+  {
+   "id": "A:572:non_array_type/3",
+   "sourceAlternativeSha256": "2fa7e538107d06c7afdfc95af2a2d7a7ebd6bc360b970aa3bb0e0aeb30baf1e3",
+   "alternative": "interface_type",
+   "source": "class C{I[] f;}",
+   "focus": "I",
+   "focusStart": 8
+  },
+  {
+   "id": "A:572:non_array_type/4",
+   "sourceAlternativeSha256": "75d655d2197a36c22fd14c8bcb6d7d0c48ac422c684d896e6db4c9be17ba81b0",
+   "alternative": "delegate_type",
+   "source": "class C{D[] f;}",
+   "focus": "D",
+   "focusStart": 8
+  },
+  {
+   "id": "A:572:non_array_type/5",
+   "sourceAlternativeSha256": "b71fa7c574cc1a90f84ed816d23f0472dc4de745cca3d4af6bfaf7f3e88b8ac4",
+   "alternative": "'dynamic'",
+   "source": "class C{dynamic[] f;}",
+   "focus": "dynamic",
+   "focusStart": 8
+  },
+  {
+   "id": "A:572:non_array_type/6",
+   "sourceAlternativeSha256": "496247ba670a68ff01b37d5d41b67663f4b7ffeb035a9b955aec04532fad61f7",
+   "alternative": "type_parameter",
+   "source": "class C<T>{T[] f;}",
+   "focus": "T[]",
+   "focusStart": 11
+  },
+  {
+   "id": "A:572:non_array_type/7",
+   "sourceAlternativeSha256": "ff19a405c4aa977197251fd7915c9094a55217f7bd5c6f9df444373546686fc8",
+   "alternative": "pointer_type",
+   "source": "unsafe class C{int*[] f;}",
+   "focus": "int*",
+   "focusStart": 15
+  },
+  {
+   "id": "A:582:rank_specifier/1",
+   "sourceAlternativeSha256": "661b7403944815e645561fc101f253905166071f2a2b5a8fc2442afe00c7afca",
+   "alternative": "'[' ','* ']'",
+   "source": "class C{int[,] f;}",
+   "focus": "[,]",
+   "focusStart": 11
+  },
+  {
+   "id": "A:591:value_type/1",
+   "sourceAlternativeSha256": "44e4360f47a14daaef08b38fe2321d3dffe3105bcc48b8c57f6eed963781a012",
+   "alternative": "non_nullable_value_type",
+   "source": "class C{int f;}",
+   "focus": "int",
+   "focusStart": 8
+  },
+  {
+   "id": "A:591:value_type/2",
+   "sourceAlternativeSha256": "646cff9a3a9b7e32e42fc06ceccde216101f13ef3d44121a2d44e8eea29960a5",
+   "alternative": "nullable_value_type",
+   "source": "class C{int? f;}",
+   "focus": "int?",
+   "focusStart": 8
+  },
+  {
+   "id": "A:596:non_nullable_value_type/1",
+   "sourceAlternativeSha256": "1e7f75b14be0f0d880f2c7c5516bbc79d23a3ae1dc3f94a47f361b77b31efcc5",
+   "alternative": "struct_type",
+   "source": "class C{int? f;}",
+   "focus": "int",
+   "focusStart": 8
+  },
+  {
+   "id": "A:596:non_nullable_value_type/2",
+   "sourceAlternativeSha256": "8d9cb5aa6a36997a41d44385c33ff76992ec6d5895507c96de0f39603ee0137b",
+   "alternative": "enum_type",
+   "source": "class C{E? f;}",
+   "focus": "E",
+   "focusStart": 8
+  },
+  {
+   "id": "A:601:struct_type/1",
+   "sourceAlternativeSha256": "2501a7dde4567415d3ec8af681fa3b4f6564236298e6acdb46df009df7bbf34f",
+   "alternative": "type_name",
+   "source": "class C{S f;}",
+   "focus": "S f",
+   "focusStart": 8
+  },
+  {
+   "id": "A:601:struct_type/2",
+   "sourceAlternativeSha256": "f1e7e7f781ac5d1f32c1bbe1d283fa67f4432c4898854b8e960c902b98b49769",
+   "alternative": "simple_type",
+   "source": "class C{int f;}",
+   "focus": "int",
+   "focusStart": 8
+  },
+  {
+   "id": "A:638:nullable_value_type/1",
+   "sourceAlternativeSha256": "acc081e184c51090e009a4a77050f36e7f32371d82461e63042cfa7b614b0315",
+   "alternative": "non_nullable_value_type '?'",
+   "source": "class C{int? f;}",
+   "focus": "int?",
+   "focusStart": 8
+  },
+  {
+   "id": "A:647:type_arguments/1",
+   "sourceAlternativeSha256": "a55832be25b413faac417473408f373f49228a4d07ef202d7d1a10b6668b765e",
+   "alternative": "type_argument (',' type_argument)*",
+   "source": "class C{L<int,string> f;}",
+   "focus": "int,string",
+   "focusStart": 10
+  },
+  {
+   "id": "A:656:type_parameter/1",
+   "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+   "alternative": "identifier",
+   "source": "class C<T>{}",
+   "focus": "T",
+   "focusStart": 8
+  },
+  {
+   "id": "A:661:unmanaged_type/1",
+   "sourceAlternativeSha256": "21f50267a8adf26ae399f851601cfe5dea548d62fb7f07e89f8a5b81d76ddce1",
+   "alternative": "value_type",
+   "source": "unsafe class C{void M(){int* p=stackalloc int[1];}}",
+   "focus": "int[1]",
+   "focusStart": 42
+  },
+  {
+   "id": "A:661:unmanaged_type/2",
+   "sourceAlternativeSha256": "ff19a405c4aa977197251fd7915c9094a55217f7bd5c6f9df444373546686fc8",
+   "alternative": "pointer_type",
+   "source": "unsafe class C{void M(){int** p=stackalloc int*[1];}}",
+   "focus": "int*[1]",
+   "focusStart": 43
+  },
+  {
+   "id": "A:672:argument_list/1",
+   "sourceAlternativeSha256": "cd08e139ba72e540fcf5c5d29192ad6b9b9d1f3c95d7516f700f71c15d04112a",
+   "alternative": "argument (',' argument)*",
+   "source": "class C{object o=F(a,b);}",
+   "focus": "a,b",
+   "focusStart": 19
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/1",
+   "sourceAlternativeSha256": "829f8d848b44fa3098194754af5b60e2fb1517b0195956841beb6cac9bc68067",
+   "alternative": "literal",
+   "source": "class C{object o=1;}",
+   "focus": "1",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/2",
+   "sourceAlternativeSha256": "7ec3fe5f1742a3c30054e2494cf36736247afdb9eeab338b87270945dc35a9b9",
+   "alternative": "interpolated_string_expression",
+   "source": "class C{object o=$\"a{x}\";}",
+   "focus": "$\"a{x}\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/3",
+   "sourceAlternativeSha256": "b22e19041710b01333e19569555413e368446b0a832cdef4ede627f37433b3a7",
+   "alternative": "simple_name",
+   "source": "class C{object o=x;}",
+   "focus": "x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/4",
+   "sourceAlternativeSha256": "9a24572e54fbcc59f850b1c8ffbdba7f86a33153895cb5b5918798a75074f397",
+   "alternative": "parenthesized_expression",
+   "source": "class C{object o=(x);}",
+   "focus": "(x)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/5",
+   "sourceAlternativeSha256": "8e0e3675d7f57ef46eebd6d6bccb52ed5652f676c84c394cdf9279313f0d4420",
+   "alternative": "member_access",
+   "source": "class C{object o=a.b;}",
+   "focus": "a.b",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/6",
+   "sourceAlternativeSha256": "6db4841608175b51ba35591036bd648db9cbeee02d96aec316f39eee0c6bba69",
+   "alternative": "null_conditional_member_access",
+   "source": "class C{object o=a?.b;}",
+   "focus": "a?.b",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/7",
+   "sourceAlternativeSha256": "926460f70e9af797acc35e28e28d9e2e1332fe18f42f346a14ff0c30acd9cace",
+   "alternative": "invocation_expression",
+   "source": "class C{object o=F();}",
+   "focus": "F()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/8",
+   "sourceAlternativeSha256": "8463492f4ce97e9ea3995dbd5bf659fcec7824d239beaf2df65ce9977d5074e6",
+   "alternative": "element_access",
+   "source": "class C{object o=a[0];}",
+   "focus": "a[0]",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/9",
+   "sourceAlternativeSha256": "75514a8b7470d5c87c178c586f27d573728e4590661836dd5674cdff68d2e734",
+   "alternative": "null_conditional_element_access",
+   "source": "class C{object o=a?[0];}",
+   "focus": "a?[0]",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/10",
+   "sourceAlternativeSha256": "afdba1ae12c26748a9ba10602debe78f3d084cb3c09cd838de6aea4336a765cf",
+   "alternative": "this_access",
+   "source": "class C{object o=this;}",
+   "focus": "this",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/11",
+   "sourceAlternativeSha256": "255badce152cc24a3f366fb70468a0e51b8ae48e8285df2d661331f7dd2a4fa6",
+   "alternative": "base_access",
+   "source": "class C{object o=base.x;}",
+   "focus": "base.x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/12",
+   "sourceAlternativeSha256": "42567d247453fc1bfee268b1d8d91903f4250326d6f0baeb8f11d824d9193324",
+   "alternative": "post_increment_expression",
+   "source": "class C{void M(){x++;}}",
+   "focus": "x++",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/13",
+   "sourceAlternativeSha256": "0c308f94408853795917b96ba4357b25b9168afec4c496f94bfbde58053d5f7f",
+   "alternative": "post_decrement_expression",
+   "source": "class C{void M(){x--;}}",
+   "focus": "x--",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/14",
+   "sourceAlternativeSha256": "43a9b454947fd75b20afc5fb39dba62990affb450178fe0f5b7df7ead5772763",
+   "alternative": "object_creation_expression",
+   "source": "class C{object o=new C();}",
+   "focus": "new C()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/15",
+   "sourceAlternativeSha256": "a48155a45a1e1c5f050504876c7491ba2835182c0da9ab106bef681a183a807f",
+   "alternative": "delegate_creation_expression",
+   "source": "class C{object o=new D(F);}",
+   "focus": "new D(F)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/16",
+   "sourceAlternativeSha256": "292c90a212931f1e4d269a3142942c8bc32c87e08b5e17a31070176e46655d12",
+   "alternative": "anonymous_object_creation_expression",
+   "source": "class C{object o=new {a=1};}",
+   "focus": "new {a=1}",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/17",
+   "sourceAlternativeSha256": "fa01af5ed2ca9d92292150c3be547a27b0b1134634cc904a84bcc44455fce99f",
+   "alternative": "typeof_expression",
+   "source": "class C{object o=typeof(int);}",
+   "focus": "typeof(int)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/18",
+   "sourceAlternativeSha256": "fde80e28bf82cbca591f071d6038187a09ed1d0175517fd7973c75e780c84b78",
+   "alternative": "sizeof_expression",
+   "source": "class C{object o=sizeof(int);}",
+   "focus": "sizeof(int)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/19",
+   "sourceAlternativeSha256": "30eba914f662fd788e3329048eac0f54a72067ee021cca7f585764c1db243bf9",
+   "alternative": "checked_expression",
+   "source": "class C{object o=checked(x);}",
+   "focus": "checked(x)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/20",
+   "sourceAlternativeSha256": "7f8d8e66f85868efc442e66fed1dcd986f458015a80c26205436a6c93bc8645c",
+   "alternative": "unchecked_expression",
+   "source": "class C{object o=unchecked(x);}",
+   "focus": "unchecked(x)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/21",
+   "sourceAlternativeSha256": "d0c5c96bccbbb05fd3933be6fa13b3187b97bf4f158ad7f8687bbe21cb834a15",
+   "alternative": "default_value_expression",
+   "source": "class C{object o=default(int);}",
+   "focus": "default(int)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/22",
+   "sourceAlternativeSha256": "11d5aad743f4fa1b947fd7cb1eb9b4e246ecf67416e9204edfdaf352585172be",
+   "alternative": "nameof_expression",
+   "source": "class C{object o=nameof(int);}",
+   "focus": "nameof(int)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/23",
+   "sourceAlternativeSha256": "a4dc227d18772b1996225f53d9c5cd180bae25536cef6504881eba006b044a06",
+   "alternative": "anonymous_method_expression",
+   "source": "class C{object o=delegate{};}",
+   "focus": "delegate{}",
+   "focusStart": 17
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/24",
+   "sourceAlternativeSha256": "c31e4810465292db47a99e726e47be0a02a95d413a9f62df6db0509025d7c1d1",
+   "alternative": "pointer_member_access",
+   "source": "unsafe class C{void M(){object o=p->x;}}",
+   "focus": "p->x",
+   "focusStart": 33
+  },
+  {
+   "id": "A:696:primary_no_array_creation_expression/25",
+   "sourceAlternativeSha256": "42f1c8d8b936c896a712d0335c41dc48218c3729375474a8091460bd2dd3d10c",
+   "alternative": "pointer_element_access",
+   "source": "unsafe class C{void M(){object o=p[0];}}",
+   "focus": "p[0]",
+   "focusStart": 33
+  },
+  {
+   "id": "A:725:interpolated_string_expression/1",
+   "sourceAlternativeSha256": "911887abbe48c8e0c9fc901899b5a5c6c0907db57e88e9dcfa94b4f4e2bfdafb",
+   "alternative": "interpolated_regular_string_expression",
+   "source": "class C{object o=$\"a{x}\";}",
+   "focus": "$\"a{x}\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:725:interpolated_string_expression/2",
+   "sourceAlternativeSha256": "1f0f6e113d6b7ed4ee43057f4c23d8bd8898385571cf8cfb5c023dce7416c884",
+   "alternative": "interpolated_verbatim_string_expression",
+   "source": "class C{object o=$@\"a{x}\";}",
+   "focus": "$@\"a{x}\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:732:interpolated_regular_string_expression/1",
+   "sourceAlternativeSha256": "aa0ba78dbdbfd3efff958b0ce12cd3b50a98d583b5978f425bbe02aacab259cd",
+   "alternative": "Interpolated_Regular_String_Start Interpolated_Regular_String_Mid? ('{' regular_interpolation '}' Interpolated_Regular_String_Mid?)* Interpolated_Regular_String_End",
+   "source": "class C{object o=$\"a{x}b{y}c\";}",
+   "focus": "$\"a{x}b{y}c\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:738:regular_interpolation/1",
+   "sourceAlternativeSha256": "cb06f048311fab36b9133b64be055926032fcfd0da28c3a4dd8a2553438b7259",
+   "alternative": "expression (',' interpolation_minimum_width)? Regular_Interpolation_Format?",
+   "source": "class C{object o=$\"{x,5:N2}\";}",
+   "focus": "x,5:N2",
+   "focusStart": 20
+  },
+  {
+   "id": "A:743:interpolation_minimum_width/1",
+   "sourceAlternativeSha256": "17624ffbe9df21d0c143e805fc8c2da397c2d38d3ea5cb98499f5c06daff3f51",
+   "alternative": "constant_expression",
+   "source": "class C{object o=$\"{x,-5}\";}",
+   "focus": "-5",
+   "focusStart": 22
+  },
+  {
+   "id": "A:747:Interpolated_Regular_String_Start/1",
+   "sourceAlternativeSha256": "9260ed716cab6ffc787666122a032a2bc10c38835755784ad385a63faee19233",
+   "alternative": "'$\"'",
+   "source": "class C{object o=$\"{x}\";}",
+   "focus": "$\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:753:Interpolated_Regular_String_Mid/1",
+   "sourceAlternativeSha256": "c7b60dd12693c4e43a7a5ac41bd3542e9888541e699bd2c8135fc7b3cd0aa7b9",
+   "alternative": "Interpolated_Regular_String_Element+",
+   "source": "class C{object o=$\"ab{x}cd\";}",
+   "focus": "cd",
+   "focusStart": 24
+  },
+  {
+   "id": "A:757:Regular_Interpolation_Format/1",
+   "sourceAlternativeSha256": "6f63f9d18621233e17577a9dbf30754d90fe66e9f6d199913df6059d73679108",
+   "alternative": "':' Interpolated_Regular_String_Element+",
+   "source": "class C{object o=$\"{x:N2}\";}",
+   "focus": ":N2",
+   "focusStart": 21
+  },
+  {
+   "id": "A:761:Interpolated_Regular_String_End/1",
+   "sourceAlternativeSha256": "3251eb06ac2e28485811ec002d60efc592bb58047e3e4c9c842f51fd0da7fcd0",
+   "alternative": "'\"'",
+   "source": "class C{object o=$\"{x}e\";}",
+   "focus": "e\"",
+   "focusStart": 22
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/1",
+   "sourceAlternativeSha256": "61d6a756b84545300e6c73a96d1c9e48f0ea7b048bb7763a7914ee235709f6d7",
+   "alternative": "Interpolated_Regular_String_Character",
+   "source": "class C{object o=$\"a{x}\";}",
+   "focus": "a",
+   "focusStart": 2
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/2",
+   "sourceAlternativeSha256": "67cd9d2e20ab169b5c825cff8e6e73a710b4dd4ba0108dcd45d225b10d9a7487",
+   "alternative": "Simple_Escape_Sequence",
+   "source": "class C{object o=$\"\\n{x}\";}",
+   "focus": "\\n",
+   "focusStart": 19
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/3",
+   "sourceAlternativeSha256": "0321f009c91d8f20cfb4fffba85d656cfa3bfa90cb21cd56607eed4991f337f2",
+   "alternative": "Hexadecimal_Escape_Sequence",
+   "source": "class C{object o=$\"\\x41{x}\";}",
+   "focus": "\\x41",
+   "focusStart": 19
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/4",
+   "sourceAlternativeSha256": "1cd4d5f9105fb5dc1abe6e49792d7bdd97e02418729a83460e3dd7c8be67a4cc",
+   "alternative": "Unicode_Escape_Sequence",
+   "source": "class C{object o=$\"\\u0041{x}\";}",
+   "focus": "\\u0041",
+   "focusStart": 19
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/5",
+   "sourceAlternativeSha256": "8af771e288967f43815a24a8fdd6276f4f2a0939efc4d99d5e85288dc346e085",
+   "alternative": "Open_Brace_Escape_Sequence",
+   "source": "class C{object o=$\"{{{x}\";}",
+   "focus": "{{",
+   "focusStart": 19
+  },
+  {
+   "id": "A:765:Interpolated_Regular_String_Element/6",
+   "sourceAlternativeSha256": "ed7119e68e757f0aabbb2910a83e963c66c044af16f51073edae133565c0d670",
+   "alternative": "Close_Brace_Escape_Sequence",
+   "source": "class C{object o=$\"}}{x}\";}",
+   "focus": "}}",
+   "focusStart": 19
+  },
+  {
+   "id": "A:774:Interpolated_Regular_String_Character/1",
+   "sourceAlternativeSha256": "7f4536548d5c4e4b3deb049590f6139baa3412b5fd9e8a5983e9e6680755302d",
+   "alternative": "~[\"\\\\{}\\u000D\\u000A\\u0085\\u2028\\u2029]",
+   "source": "class C{object o=$\"q{x}\";}",
+   "focus": "q",
+   "focusStart": 19
+  },
+  {
+   "id": "A:782:interpolated_verbatim_string_expression/1",
+   "sourceAlternativeSha256": "cdcbb37db3186aa0f34939242b934686ff95349a35a9767870c8b8e6950bea12",
+   "alternative": "Interpolated_Verbatim_String_Start Interpolated_Verbatim_String_Mid? ('{' verbatim_interpolation '}' Interpolated_Verbatim_String_Mid?)* Interpolated_Verbatim_String_End",
+   "source": "class C{object o=$@\"a{x}b\";}",
+   "focus": "$@\"a{x}b\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:788:verbatim_interpolation/1",
+   "sourceAlternativeSha256": "9c23f9ddcea0ea9767879efeb2c7c73a1ac4fe0f37b29294c2996735db95c2b8",
+   "alternative": "expression (',' interpolation_minimum_width)? Verbatim_Interpolation_Format?",
+   "source": "class C{object o=$@\"{x,5:N2}\";}",
+   "focus": "x,5:N2",
+   "focusStart": 21
+  },
+  {
+   "id": "A:793:Interpolated_Verbatim_String_Start/1",
+   "sourceAlternativeSha256": "5c837b4005ecd525c35e393884a95fcbdd6b4b4e9f2aa2b564307d507777f2a9",
+   "alternative": "'$@\"'",
+   "source": "class C{object o=$@\"{x}\";}",
+   "focus": "$@\"",
+   "focusStart": 17
+  },
+  {
+   "id": "A:799:Interpolated_Verbatim_String_Mid/1",
+   "sourceAlternativeSha256": "e8dd2fc5c21be5c2b50ec852b965bc44b8168ff58a0a62ed8c182e0e5e2db569",
+   "alternative": "Interpolated_Verbatim_String_Element+",
+   "source": "class C{object o=$@\"a\nb{x}\";}",
+   "focus": "a\nb",
+   "focusStart": 20
+  },
+  {
+   "id": "A:803:Verbatim_Interpolation_Format/1",
+   "sourceAlternativeSha256": "55c67f9d6620f5a84a022afaf277c74fda1afc39530d6eb4ec2a95ecc6e1fad3",
+   "alternative": "':' Interpolated_Verbatim_String_Element+",
+   "source": "class C{object o=$@\"{x:N2}\";}",
+   "focus": ":N2",
+   "focusStart": 22
+  },
+  {
+   "id": "A:807:Interpolated_Verbatim_String_End/1",
+   "sourceAlternativeSha256": "3251eb06ac2e28485811ec002d60efc592bb58047e3e4c9c842f51fd0da7fcd0",
+   "alternative": "'\"'",
+   "source": "class C{object o=$@\"{x}e\";}",
+   "focus": "e\"",
+   "focusStart": 23
+  },
+  {
+   "id": "A:811:Interpolated_Verbatim_String_Element/1",
+   "sourceAlternativeSha256": "8d4f22114566cfd116192799046fb80e7056a71c451ae2875a5205e9a7ea8479",
+   "alternative": "Interpolated_Verbatim_String_Character",
+   "source": "class C{object o=$@\"a{x}\";}",
+   "focus": "a",
+   "focusStart": 2
+  },
+  {
+   "id": "A:811:Interpolated_Verbatim_String_Element/2",
+   "sourceAlternativeSha256": "f262b56f39ab8a245230044acebc350cf711445e281295a58979ee0dce8986f7",
+   "alternative": "Quote_Escape_Sequence",
+   "source": "class C{object o=$@\"\"\"{x}\";}",
+   "focus": "\"\"",
+   "focusStart": 19
+  },
+  {
+   "id": "A:811:Interpolated_Verbatim_String_Element/3",
+   "sourceAlternativeSha256": "8af771e288967f43815a24a8fdd6276f4f2a0939efc4d99d5e85288dc346e085",
+   "alternative": "Open_Brace_Escape_Sequence",
+   "source": "class C{object o=$@\"{{{x}\";}",
+   "focus": "{{",
+   "focusStart": 20
+  },
+  {
+   "id": "A:811:Interpolated_Verbatim_String_Element/4",
+   "sourceAlternativeSha256": "ed7119e68e757f0aabbb2910a83e963c66c044af16f51073edae133565c0d670",
+   "alternative": "Close_Brace_Escape_Sequence",
+   "source": "class C{object o=$@\"}}{x}\";}",
+   "focus": "}}",
+   "focusStart": 20
+  },
+  {
+   "id": "A:818:Interpolated_Verbatim_String_Character/1",
+   "sourceAlternativeSha256": "8ebb30970cf1b47fb0f5b8442febbf926e495153265204471d8628fb2fac557b",
+   "alternative": "~[\"{}]",
+   "source": "class C{object o=$@\"\\{x}\";}",
+   "focus": "\\",
+   "focusStart": 20
+  },
+  {
+   "id": "A:824:Open_Brace_Escape_Sequence/1",
+   "sourceAlternativeSha256": "52c07a2b2b841a2619095eea24a2dab2c5fbd16576638d2e5e6815ea473e9229",
+   "alternative": "'{{'",
+   "source": "class C{object o=$\"{{\";}",
+   "focus": "{{",
+   "focusStart": 19
+  },
+  {
+   "id": "A:828:Close_Brace_Escape_Sequence/1",
+   "sourceAlternativeSha256": "9955fe2725fb48ae7284966d8711037055dd2569e019caa328eac592b1b9e22b",
+   "alternative": "'}}'",
+   "source": "class C{object o=$\"}}\";}",
+   "focus": "}}",
+   "focusStart": 19
+  },
+  {
+   "id": "A:856:null_conditional_member_access/1",
+   "sourceAlternativeSha256": "09cbfe46e033a5039dd9dee2ff015a47d6b875bdff5c36f05e1da0690808dc7f",
+   "alternative": "primary_expression '?' '.' identifier type_argument_list? dependent_access*",
+   "source": "class C{object o=a?.b<int>.c[0](1);}",
+   "focus": "a?.b<int>",
+   "focusStart": 17
+  },
+  {
+   "id": "A:861:dependent_access/1",
+   "sourceAlternativeSha256": "d592739d02b4c9b4f0b7fdba0c570ee9cfb10ce0d9544bf6b3db25fec41d2b2f",
+   "alternative": "'.' identifier type_argument_list?",
+   "source": "class C{object o=a?.b.c;}",
+   "focus": ".c",
+   "focusStart": 21
+  },
+  {
+   "id": "A:861:dependent_access/2",
+   "sourceAlternativeSha256": "33fa7616193d357755747e593a122af8fe9e921513f47e653355a125d22025d7",
+   "alternative": "'[' argument_list ']'",
+   "source": "class C{object o=a?.b[1];}",
+   "focus": "[1]",
+   "focusStart": 21
+  },
+  {
+   "id": "A:861:dependent_access/3",
+   "sourceAlternativeSha256": "53455ca7cc2b5e6285b9d12689be1e4c3f62ad19769edee60381d2e2020c2691",
+   "alternative": "'(' argument_list? ')'",
+   "source": "class C{object o=a?.b(1);}",
+   "focus": "(1)",
+   "focusStart": 21
+  },
+  {
+   "id": "A:867:null_conditional_projection_initializer/1",
+   "sourceAlternativeSha256": "57445a78bf90e787731ec2032a72952fc5e25c5fbe4e8ec251ac3ed1eb9547dc",
+   "alternative": "primary_expression '?' '.' identifier type_argument_list?",
+   "source": "class C{object o=new{a?.b};}",
+   "focus": "a?.b",
+   "focusStart": 21
+  },
+  {
+   "id": "A:877:null_conditional_invocation_expression/1",
+   "sourceAlternativeSha256": "29bf887b2fe9b16f5781cb1ca4697b46e829ffb7e34b90f24fa99c7d8f6ec210",
+   "alternative": "null_conditional_member_access '(' argument_list? ')'",
+   "source": "class C{void M(){a?.b();}}",
+   "focus": "a?.b()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:877:null_conditional_invocation_expression/2",
+   "sourceAlternativeSha256": "aece593fa927a08503fd2b47340eaa25ac70232742d54cb37ebe08b0564f3851",
+   "alternative": "null_conditional_element_access '(' argument_list? ')'",
+   "source": "class C{void M(){a?[0]();}}",
+   "focus": "a?[0]()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:888:null_conditional_element_access/1",
+   "sourceAlternativeSha256": "7be3197ecd401d8a0ff43e3e61123bc75aedfd34441f837bb5190ce8a386b1c8",
+   "alternative": "primary_no_array_creation_expression '?' '[' argument_list ']' dependent_access*",
+   "source": "class C{object o=a?[0].b;}",
+   "focus": "a?[0]",
+   "focusStart": 17
+  },
+  {
+   "id": "A:930:member_initializer_list/1",
+   "sourceAlternativeSha256": "602aa2b34242f418fef0939f7f39290f2b03c718be873e157249f73424b1f14d",
+   "alternative": "member_initializer (',' member_initializer)*",
+   "source": "class C{object o=new D{A=1,B=2};}",
+   "focus": "A=1,B=2",
+   "focusStart": 23
+  },
+  {
+   "id": "A:934:member_initializer/1",
+   "sourceAlternativeSha256": "02907d0a5bac88eedb31a04d20d8f63205f4aee9a888e0ae822ba941072a84ee",
+   "alternative": "initializer_target '=' initializer_value",
+   "source": "class C{object o=new D{A=1};}",
+   "focus": "A=1",
+   "focusStart": 23
+  },
+  {
+   "id": "A:938:initializer_target/1",
+   "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+   "alternative": "identifier",
+   "source": "class C{object o=new D{A=1};}",
+   "focus": "A",
+   "focusStart": 23
+  },
+  {
+   "id": "A:938:initializer_target/2",
+   "sourceAlternativeSha256": "33fa7616193d357755747e593a122af8fe9e921513f47e653355a125d22025d7",
+   "alternative": "'[' argument_list ']'",
+   "source": "class C{object o=new D{[0]=1};}",
+   "focus": "[0]",
+   "focusStart": 23
+  },
+  {
+   "id": "A:954:element_initializer_list/1",
+   "sourceAlternativeSha256": "2ed1c9c340568ec75727b8cd6c9b7a065c332ce76a39a46525f2d79ffbc874ba",
+   "alternative": "element_initializer (',' element_initializer)*",
+   "source": "class C{object o=new L{1,2};}",
+   "focus": "1,2",
+   "focusStart": 23
+  },
+  {
+   "id": "A:991:member_declarator_list/1",
+   "sourceAlternativeSha256": "c71fd8c4bc5bf968ce281c3a67d95745aed12f51448cf603370c5086c41e75df",
+   "alternative": "member_declarator (',' member_declarator)*",
+   "source": "class C{object o=new{a,b};}",
+   "focus": "a,b",
+   "focusStart": 21
+  },
+  {
+   "id": "A:995:member_declarator/1",
+   "sourceAlternativeSha256": "b22e19041710b01333e19569555413e368446b0a832cdef4ede627f37433b3a7",
+   "alternative": "simple_name",
+   "source": "class C{object o=new{a};}",
+   "focus": "a",
+   "focusStart": 2
+  },
+  {
+   "id": "A:995:member_declarator/2",
+   "sourceAlternativeSha256": "8e0e3675d7f57ef46eebd6d6bccb52ed5652f676c84c394cdf9279313f0d4420",
+   "alternative": "member_access",
+   "source": "class C{object o=new{a.b};}",
+   "focus": "a.b",
+   "focusStart": 21
+  },
+  {
+   "id": "A:995:member_declarator/3",
+   "sourceAlternativeSha256": "667df6ca9bff7ac757aab7b6c8d89b71966d149ec9dc93ff2fb3c8094e4e35a2",
+   "alternative": "null_conditional_projection_initializer",
+   "source": "class C{object o=new{a?.b};}",
+   "focus": "a?.b",
+   "focusStart": 21
+  },
+  {
+   "id": "A:995:member_declarator/4",
+   "sourceAlternativeSha256": "255badce152cc24a3f366fb70468a0e51b8ae48e8285df2d661331f7dd2a4fa6",
+   "alternative": "base_access",
+   "source": "class C{void M(){object o=new{base.x};}}",
+   "focus": "base.x",
+   "focusStart": 30
+  },
+  {
+   "id": "A:995:member_declarator/5",
+   "sourceAlternativeSha256": "5111f6b1568cc3c38c7cb17db64e0f3ea6aa36df73f8522ae07996177a47d0c2",
+   "alternative": "identifier '=' expression",
+   "source": "class C{object o=new{a=1};}",
+   "focus": "a=1",
+   "focusStart": 21
+  },
+  {
+   "id": "A:1020:comma/1",
+   "sourceAlternativeSha256": "ee1bf10803fab3db749102debee45c50b168cb979bedc0ac2203a840cbd1f412",
+   "alternative": "','",
+   "source": "class C{int[,] f;}",
+   "focus": ",",
+   "focusStart": 12
+  },
+  {
+   "id": "A:1045:nameof_expression/1",
+   "sourceAlternativeSha256": "9a197150db9fad769977d9dfba6381f3b862f723cf750c700b6d3a7540f48497",
+   "alternative": "'nameof' '(' named_entity ')'",
+   "source": "class C{object o=nameof(int);}",
+   "focus": "nameof(int)",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1049:named_entity/1",
+   "sourceAlternativeSha256": "6afb85c72a244edf34f53a58655d1a32f9b3d36ced5be4254fbdad0de86278a0",
+   "alternative": "named_entity_target ('.' identifier type_argument_list?)*",
+   "source": "class C{object o=nameof(List<int>.Count);}",
+   "focus": "List<int>.Count",
+   "focusStart": 24
+  },
+  {
+   "id": "A:1053:named_entity_target/1",
+   "sourceAlternativeSha256": "b22e19041710b01333e19569555413e368446b0a832cdef4ede627f37433b3a7",
+   "alternative": "simple_name",
+   "source": "class C{object o=nameof(x);}",
+   "focus": "x",
+   "focusStart": 24
+  },
+  {
+   "id": "A:1053:named_entity_target/2",
+   "sourceAlternativeSha256": "ad00600cf02ad63a00fefaf395bcaba569211a42c7baab0068a6a17d33788823",
+   "alternative": "'this'",
+   "source": "class C{void M(){object o=nameof(this);}}",
+   "focus": "this",
+   "focusStart": 33
+  },
+  {
+   "id": "A:1053:named_entity_target/3",
+   "sourceAlternativeSha256": "dbaa0ae6d3a677cfe95d60fb9795432fde9415696e601e152f0cc1806733a86e",
+   "alternative": "'base'",
+   "source": "class C{void M(){object o=nameof(base);}}",
+   "focus": "base",
+   "focusStart": 33
+  },
+  {
+   "id": "A:1053:named_entity_target/4",
+   "sourceAlternativeSha256": "2de61b6d5d1ff766ee674da12efb9a10a672688a664b01642d597d0c801ed6ca",
+   "alternative": "predefined_type",
+   "source": "class C{object o=nameof(int);}",
+   "focus": "int",
+   "focusStart": 24
+  },
+  {
+   "id": "A:1053:named_entity_target/5",
+   "sourceAlternativeSha256": "75626d0b74b465aed1cb56d45119139c7178b1ff5b65e8285c473cb2405f6912",
+   "alternative": "qualified_alias_member",
+   "source": "class C{object o=nameof(global::A);}",
+   "focus": "global::A",
+   "focusStart": 24
+  },
+  {
+   "id": "A:1062:unary_expression/1",
+   "sourceAlternativeSha256": "4d3c04fa04fa352d51094a1ad01c324e5111a1fd83d05aae94931669d1ed2f57",
+   "alternative": "primary_expression",
+   "source": "class C{object o=x;}",
+   "focus": "x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/2",
+   "sourceAlternativeSha256": "bc7b806949aeaf6e70bdeba2185bf0921e42d64b41cf8e2059f7ab101714bca3",
+   "alternative": "'+' unary_expression",
+   "source": "class C{object o=+x;}",
+   "focus": "+x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/3",
+   "sourceAlternativeSha256": "03a15117c4dc574d3046353272bc1e516a100efb5bf9b08802cae83c7166fa9d",
+   "alternative": "'-' unary_expression",
+   "source": "class C{object o=-x;}",
+   "focus": "-x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/4",
+   "sourceAlternativeSha256": "de3810d7ba7fcee45b2ff5787a940db44b085bb6867f8277c102a35a76092a22",
+   "alternative": "'!' unary_expression",
+   "source": "class C{object o=!x;}",
+   "focus": "!x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/5",
+   "sourceAlternativeSha256": "6467d4e55fd9f114985fc71a81bcf259efae3ae253cda3f75e7acea9335f28bd",
+   "alternative": "'~' unary_expression",
+   "source": "class C{object o=~x;}",
+   "focus": "~x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/6",
+   "sourceAlternativeSha256": "539bb5d16b6b60ff25cc110580465f0d1a303a9b285f9a1f668511a118fd08de",
+   "alternative": "pre_increment_expression",
+   "source": "class C{void M(){++x;}}",
+   "focus": "++x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/7",
+   "sourceAlternativeSha256": "e85f4fdf41892b7346847302226b3b2505cb952ae5a9aa96456bbd0d6b7c57e1",
+   "alternative": "pre_decrement_expression",
+   "source": "class C{void M(){--x;}}",
+   "focus": "--x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/8",
+   "sourceAlternativeSha256": "41391da4f00803d00d3f836957170e9cb819fd7d0843622713cbc909db07d0bd",
+   "alternative": "cast_expression",
+   "source": "class C{object o=(int)x;}",
+   "focus": "(int)x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1062:unary_expression/9",
+   "sourceAlternativeSha256": "2872d573963f7070e7a1bcf672af7fe05cd6008c053d1ee6ca85cad2c7863f96",
+   "alternative": "await_expression",
+   "source": "class C{async void M(){object o=await x;}}",
+   "focus": "await x",
+   "focusStart": 32
+  },
+  {
+   "id": "A:1062:unary_expression/10",
+   "sourceAlternativeSha256": "8c4e0f1728a3743f8d991e0e16900cc7e298592d1757110e3a547b2be5532811",
+   "alternative": "pointer_indirection_expression",
+   "source": "unsafe class C{void M(){object o=*p;}}",
+   "focus": "*p",
+   "focusStart": 33
+  },
+  {
+   "id": "A:1062:unary_expression/11",
+   "sourceAlternativeSha256": "9bda90fd0bf83baa58ffc5ede3e0aecb2f886e9d3c701ebea2e57bb8aee59dc9",
+   "alternative": "addressof_expression",
+   "source": "unsafe class C{void M(){object o=&x;}}",
+   "focus": "&x",
+   "focusStart": 33
+  },
+  {
+   "id": "A:1091:await_expression/1",
+   "sourceAlternativeSha256": "b7c588a2ed6f2d285d7a9a5270e69da198b5184288835955bc8cf2c867e5a640",
+   "alternative": "'await' unary_expression",
+   "source": "class C{async void M(){object o=await x;}}",
+   "focus": "await x",
+   "focusStart": 32
+  },
+  {
+   "id": "A:1190:explicit_anonymous_function_parameter_list/1",
+   "sourceAlternativeSha256": "5351af54ddb6c83737e37cb3707c55c4b6a8ffd94fe9f73c1aa63483e3c41928",
+   "alternative": "explicit_anonymous_function_parameter (',' explicit_anonymous_function_parameter)*",
+   "source": "class C{object o=(int a,int b)=>a;}",
+   "focus": "int a,int b",
+   "focusStart": 18
+  },
+  {
+   "id": "A:1209:implicit_anonymous_function_parameter_list/1",
+   "sourceAlternativeSha256": "0f8fb6750fe5b60ac5b7727aff709ec80439c25f420b16c3d17ecdba26054357",
+   "alternative": "implicit_anonymous_function_parameter (',' implicit_anonymous_function_parameter)*",
+   "source": "class C{object o=(a,b)=>a;}",
+   "focus": "a,b",
+   "focusStart": 18
+  },
+  {
+   "id": "A:1218:anonymous_function_body/1",
+   "sourceAlternativeSha256": "a65290ecafeea1b8e75c70fb763e08a18d6ada882e207ed0d6533cb040e35f2f",
+   "alternative": "null_conditional_invocation_expression",
+   "source": "class C{object o=()=>a?.F();}",
+   "focus": "a?.F()",
+   "focusStart": 21
+  },
+  {
+   "id": "A:1218:anonymous_function_body/2",
+   "sourceAlternativeSha256": "b8bc0e4f01a0ebdbfe99180d4ea3cb49092d268fecd0789d2e9372fa616e9542",
+   "alternative": "expression",
+   "source": "class C{object o=()=>1;}",
+   "focus": "1",
+   "focusStart": 21
+  },
+  {
+   "id": "A:1218:anonymous_function_body/3",
+   "sourceAlternativeSha256": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "alternative": "block",
+   "source": "class C{object o=()=>{};}",
+   "focus": "{}",
+   "focusStart": 21
+  },
+  {
+   "id": "A:1273:orderings/1",
+   "sourceAlternativeSha256": "9a8e8938b46eae3252c27ed4afcfd9de6fd1ad5c6b8c578fed606780455068c3",
+   "alternative": "ordering (',' ordering)*",
+   "source": "class C{object o=from x in xs orderby x.A, x.B select x;}",
+   "focus": "x.A, x.B",
+   "focusStart": 38
+  },
+  {
+   "id": "A:1342:embedded_statement/1",
+   "sourceAlternativeSha256": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "alternative": "block",
+   "source": "class C{void M(){if(a){}}}",
+   "focus": "{}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/2",
+   "sourceAlternativeSha256": "0c8ced236b4888483359a396e40727d901b7b5cf85bbd27b4e50e7d57b030f0e",
+   "alternative": "empty_statement",
+   "source": "class C{void M(){if(a);}}",
+   "focus": ";",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/3",
+   "sourceAlternativeSha256": "a62209383fc91c554df09259ff20642b70427fdb0bd4feb816b6e872c790e713",
+   "alternative": "expression_statement",
+   "source": "class C{void M(){if(a)F();}}",
+   "focus": "F();",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/4",
+   "sourceAlternativeSha256": "0b49c0e878a443d902144d62ac8d3c7a90b55528b55ee38f853bdcb26a60de97",
+   "alternative": "selection_statement",
+   "source": "class C{void M(){if(a)if(b){}}}",
+   "focus": "if(b){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/5",
+   "sourceAlternativeSha256": "a84d54380eba70907836400ebee9fc5483bf007a9b5d8b386a880d368e51b1b2",
+   "alternative": "iteration_statement",
+   "source": "class C{void M(){if(a)while(b){}}}",
+   "focus": "while(b){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/6",
+   "sourceAlternativeSha256": "de09e388e30e8ae1d7dd819758df5caf685a5e252c1491adf382bf32af4b6923",
+   "alternative": "jump_statement",
+   "source": "class C{void M(){if(a)return;}}",
+   "focus": "return;",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/7",
+   "sourceAlternativeSha256": "43a942ca7ed871bdaa42aaa7f3f805b15084ef21334d6e48b1bc10e8c837de07",
+   "alternative": "try_statement",
+   "source": "class C{void M(){if(a)try{}finally{}}}",
+   "focus": "try{}finally{}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/8",
+   "sourceAlternativeSha256": "bdb3a62efcd93dd9ce541bcc64c409ceda35587612051a88eb53443130544a96",
+   "alternative": "checked_statement",
+   "source": "class C{void M(){if(a)checked{}}}",
+   "focus": "checked{}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/9",
+   "sourceAlternativeSha256": "cf2c2c2203d238693d02857e7839cd6fcf5f10628e7d44d2060f984258c3e9af",
+   "alternative": "unchecked_statement",
+   "source": "class C{void M(){if(a)unchecked{}}}",
+   "focus": "unchecked{}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/10",
+   "sourceAlternativeSha256": "e16dbebf2571a23c9a2ffa20308e308c8913d788a4e7ef2fe63f376ba9e3af68",
+   "alternative": "lock_statement",
+   "source": "class C{void M(){if(a)lock(x){}}}",
+   "focus": "lock(x){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/11",
+   "sourceAlternativeSha256": "eef0067d2aca455bd4e3ce1e7bd5f303ceea4aa5d504d656845dd32e5a762db4",
+   "alternative": "using_statement",
+   "source": "class C{void M(){if(a)using(x){}}}",
+   "focus": "using(x){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1342:embedded_statement/12",
+   "sourceAlternativeSha256": "0e09126d1998ed084923b12ff900de23777c994824e774e7175e1730594bbaa0",
+   "alternative": "yield_statement",
+   "source": "class C{System.Collections.IEnumerable M(){if(a)yield break;}}",
+   "focus": "yield break;",
+   "focusStart": 48
+  },
+  {
+   "id": "A:1342:embedded_statement/13",
+   "sourceAlternativeSha256": "be0ca5f44748e802b346de5cc769dab234adb10f949cdaa88e83eb5b509e7686",
+   "alternative": "unsafe_statement",
+   "source": "unsafe class C{void M(){if(a)unsafe{}}}",
+   "focus": "unsafe{}",
+   "focusStart": 29
+  },
+  {
+   "id": "A:1342:embedded_statement/14",
+   "sourceAlternativeSha256": "0b6fc4b8594c48fc4c4a686f795462a420ff4ab65d79ae0815291f8fa84748ba",
+   "alternative": "fixed_statement",
+   "source": "unsafe class C{void M(){if(a)fixed(int* p=&x){}}}",
+   "focus": "fixed(int* p=&x){}",
+   "focusStart": 29
+  },
+  {
+   "id": "A:1365:statement_list/1",
+   "sourceAlternativeSha256": "7e12e5a0bcd44ac3d71082ae66a1c0b357fef184a0eb5a3ff64323929a1a8986",
+   "alternative": "statement+",
+   "source": "class C{void M(){F();G();}}",
+   "focus": "F();G();",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1405:local_variable_initializer/1",
+   "sourceAlternativeSha256": "b8bc0e4f01a0ebdbfe99180d4ea3cb49092d268fecd0789d2e9372fa616e9542",
+   "alternative": "expression",
+   "source": "class C{void M(){int x=1;}}",
+   "focus": "1",
+   "focusStart": 23
+  },
+  {
+   "id": "A:1405:local_variable_initializer/2",
+   "sourceAlternativeSha256": "71b27f493307a5ba644bb9b0aaed768c298a602118afd4cc1627a3b3003e2515",
+   "alternative": "array_initializer",
+   "source": "class C{void M(){int[] x={1};}}",
+   "focus": "{1}",
+   "focusStart": 25
+  },
+  {
+   "id": "A:1405:local_variable_initializer/3",
+   "sourceAlternativeSha256": "5e5edb45941144902dbf26b1830d7ba44c8e83dd54f1c9c2fecc2a49a9cdbc3d",
+   "alternative": "stackalloc_initializer",
+   "source": "unsafe class C{void M(){int* p=stackalloc int[1];}}",
+   "focus": "stackalloc int[1]",
+   "focusStart": 31
+  },
+  {
+   "id": "A:1416:constant_declarators/1",
+   "sourceAlternativeSha256": "11b5a77c02c43cd40cbaa0c2d6155e9c80f2e38ce56937f77c2b02131bbc2d28",
+   "alternative": "constant_declarator (',' constant_declarator)*",
+   "source": "class C{void M(){const int a=1,b=2;}}",
+   "focus": "a=1,b=2",
+   "focusStart": 27
+  },
+  {
+   "id": "A:1420:constant_declarator/1",
+   "sourceAlternativeSha256": "1ae9a2435f2814f7d24f02b49d66aed1bcf6b037fa4238acd6d13187cf914150",
+   "alternative": "identifier '=' constant_expression",
+   "source": "class C{void M(){const int a=1;}}",
+   "focus": "a=1",
+   "focusStart": 27
+  },
+  {
+   "id": "A:1429:statement_expression/1",
+   "sourceAlternativeSha256": "a65290ecafeea1b8e75c70fb763e08a18d6ada882e207ed0d6533cb040e35f2f",
+   "alternative": "null_conditional_invocation_expression",
+   "source": "class C{void M(){a?.F();}}",
+   "focus": "a?.F()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/2",
+   "sourceAlternativeSha256": "926460f70e9af797acc35e28e28d9e2e1332fe18f42f346a14ff0c30acd9cace",
+   "alternative": "invocation_expression",
+   "source": "class C{void M(){F();}}",
+   "focus": "F()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/3",
+   "sourceAlternativeSha256": "43a9b454947fd75b20afc5fb39dba62990affb450178fe0f5b7df7ead5772763",
+   "alternative": "object_creation_expression",
+   "source": "class C{void M(){new C();}}",
+   "focus": "new C()",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/4",
+   "sourceAlternativeSha256": "ce7a7c10b0dfd96808cca64c88cf5c5e13b7775283bdc924767887bfa32c8fa1",
+   "alternative": "assignment",
+   "source": "class C{void M(){x=1;}}",
+   "focus": "x=1",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/5",
+   "sourceAlternativeSha256": "42567d247453fc1bfee268b1d8d91903f4250326d6f0baeb8f11d824d9193324",
+   "alternative": "post_increment_expression",
+   "source": "class C{void M(){x++;}}",
+   "focus": "x++",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/6",
+   "sourceAlternativeSha256": "0c308f94408853795917b96ba4357b25b9168afec4c496f94bfbde58053d5f7f",
+   "alternative": "post_decrement_expression",
+   "source": "class C{void M(){x--;}}",
+   "focus": "x--",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/7",
+   "sourceAlternativeSha256": "539bb5d16b6b60ff25cc110580465f0d1a303a9b285f9a1f668511a118fd08de",
+   "alternative": "pre_increment_expression",
+   "source": "class C{void M(){++x;}}",
+   "focus": "++x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/8",
+   "sourceAlternativeSha256": "e85f4fdf41892b7346847302226b3b2505cb952ae5a9aa96456bbd0d6b7c57e1",
+   "alternative": "pre_decrement_expression",
+   "source": "class C{void M(){--x;}}",
+   "focus": "--x",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1429:statement_expression/9",
+   "sourceAlternativeSha256": "2872d573963f7070e7a1bcf672af7fe05cd6008c053d1ee6ca85cad2c7863f96",
+   "alternative": "await_expression",
+   "source": "class C{async void M(){await(M());}}",
+   "focus": "await(M())",
+   "focusStart": 23
+  },
+  {
+   "id": "A:1509:statement_expression_list/1",
+   "sourceAlternativeSha256": "f5667826c12f0403ca0d66a5501549aeacab5d57ff98a2b976685b2de8df71f0",
+   "alternative": "statement_expression (',' statement_expression)*",
+   "source": "class C{void M(){for(;;i++,j++){}}}",
+   "focus": "i++,j++",
+   "focusStart": 23
+  },
+  {
+   "id": "A:1556:try_statement/1",
+   "sourceAlternativeSha256": "0d35d6905d2644d5a6a27ed751c235a08e3ddef4023529e0995b6457d0d723e9",
+   "alternative": "'try' block catch_clauses",
+   "source": "class C{void M(){try{}catch{}}}",
+   "focus": "try{}catch{}",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1556:try_statement/2",
+   "sourceAlternativeSha256": "35950859b6ac6c82e9fae0da276401f835693e66055f01a552105f58a381708b",
+   "alternative": "'try' block catch_clauses* finally_clause",
+   "source": "class C{void M(){try{}finally{}}}",
+   "focus": "try{}finally{}",
+   "focusStart": 17
+  },
+  {
+   "id": "A:1566:specific_catch_clause/1",
+   "sourceAlternativeSha256": "46cbb39a96d97a2001db439c27ba0b77d47291e1a9337aeee523c4442e83bdf5",
+   "alternative": "'catch' exception_specifier exception_filter? block",
+   "source": "class C{void M(){try{}catch(E e)when(f){}}}",
+   "focus": "catch(E e)when(f){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1566:specific_catch_clause/2",
+   "sourceAlternativeSha256": "ccef07706fae433743cf1210b9a01aeeaf6c094c01043d2bf1e02f56d5306903",
+   "alternative": "'catch' exception_filter block",
+   "source": "class C{void M(){try{}catch when(f){}}}",
+   "focus": "catch when(f){}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1571:exception_specifier/1",
+   "sourceAlternativeSha256": "066b90b23e77ac11b2d8336b83e42cf4787cfa3f63e655bdfcbebf084331fbd3",
+   "alternative": "'(' type identifier? ')'",
+   "source": "class C{void M(){try{}catch(E e){}}}",
+   "focus": "(E e)",
+   "focusStart": 27
+  },
+  {
+   "id": "A:1575:exception_filter/1",
+   "sourceAlternativeSha256": "8460b14c03e05fb22b3530185e09296d6b76296b57c42ce469f46900a16bf39e",
+   "alternative": "'when' '(' boolean_expression ')'",
+   "source": "class C{void M(){try{}catch(E)when(f){}}}",
+   "focus": "when(f)",
+   "focusStart": 30
+  },
+  {
+   "id": "A:1579:general_catch_clause/1",
+   "sourceAlternativeSha256": "003ceb3a82e9dd562b15eec47327b813ca5a9ff88136b4986bda59430886a3b0",
+   "alternative": "'catch' block",
+   "source": "class C{void M(){try{}catch{}}}",
+   "focus": "catch{}",
+   "focusStart": 22
+  },
+  {
+   "id": "A:1628:qualified_identifier/1",
+   "sourceAlternativeSha256": "9c592ace789410fbfa6c7106f9dfb6a5eb89a48820d0035962cdcbcb18edee28",
+   "alternative": "identifier ('.' identifier)*",
+   "source": "namespace A.B{}",
+   "focus": "A.B",
+   "focusStart": 10
+  },
+  {
+   "id": "A:1643:using_directive/1",
+   "sourceAlternativeSha256": "ed6f01f09c7e9a3ba24bc8dd8b80a83a3da07945ad0b288f30659066412d037c",
+   "alternative": "using_alias_directive",
+   "source": "using A=B;",
+   "focus": "using A=B;",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1643:using_directive/2",
+   "sourceAlternativeSha256": "e19e6aa4577b2ff740f90cc7bb2a74d28b790eae0cbc081dfc262b2e33214a51",
+   "alternative": "using_namespace_directive",
+   "source": "using A;",
+   "focus": "using A;",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1643:using_directive/3",
+   "sourceAlternativeSha256": "199a3f96e09679948266461d2e1a93cefa1039d58c4b006f912a888c7d37e5ff",
+   "alternative": "using_static_directive",
+   "source": "using static A;",
+   "focus": "using static A;",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1660:using_static_directive/1",
+   "sourceAlternativeSha256": "04547c4efc08e825b11939d212b51fa3e2b741ad442fdd528b01775afba4e43e",
+   "alternative": "'using' 'static' type_name ';'",
+   "source": "using static System.Math;",
+   "focus": "using static System.Math;",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "new class C{}",
+   "focus": "new",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "public class C{}",
+   "focus": "public",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "protected class C{}",
+   "focus": "protected",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "internal class C{}",
+   "focus": "internal",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "private class C{}",
+   "focus": "private",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/6",
+   "sourceAlternativeSha256": "c03e73a35dfe414e68de2527cdd32d0a73e974ba31d71f6be9ef13ee1359bc51",
+   "alternative": "'abstract'",
+   "source": "abstract class C{}",
+   "focus": "abstract",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/7",
+   "sourceAlternativeSha256": "08a1ab04d4f60cab581ec40f7721695c3b96273f53c97875e8a1bb4840401515",
+   "alternative": "'sealed'",
+   "source": "sealed class C{}",
+   "focus": "sealed",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/8",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "static class C{}",
+   "focus": "static",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1692:class_modifier/9",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "unsafe class C{}",
+   "focus": "unsafe",
+   "focusStart": 0
+  },
+  {
+   "id": "A:1721:interface_type_list/1",
+   "sourceAlternativeSha256": "bd3ed605bc5136fa7aa71ba75719b09f28115ccdb6317c6c004bf15bb0744498",
+   "alternative": "interface_type (',' interface_type)*",
+   "source": "class C:I,J{}",
+   "focus": "I,J",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "class C{new int f;}",
+   "focus": "new",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public int f;}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected int f;}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal int f;}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private int f;}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/6",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{static int f;}",
+   "focus": "static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/7",
+   "sourceAlternativeSha256": "86492c1da142931667232f3b9d51b6e02b41576f48297c349c4419676ec9ae83",
+   "alternative": "'readonly'",
+   "source": "class C{readonly int f;}",
+   "focus": "readonly",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/8",
+   "sourceAlternativeSha256": "32327ba88d641e43cf5cae8471165db5ae0ce2e121f60def5b425f46feba7443",
+   "alternative": "'volatile'",
+   "source": "class C{volatile int f;}",
+   "focus": "volatile",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1800:field_modifier/9",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe int f;}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1812:variable_declarators/1",
+   "sourceAlternativeSha256": "f4fc94446cd0edbba51b99f8d3507fab56ebc804f4c37f2ee15be9b04a65d9aa",
+   "alternative": "variable_declarator (',' variable_declarator)*",
+   "source": "class C{int a,b;}",
+   "focus": "a,b",
+   "focusStart": 12
+  },
+  {
+   "id": "A:1816:variable_declarator/1",
+   "sourceAlternativeSha256": "a13bd390ee392f2b4c026a743ed3b0cefc7b5fc656c61d365872b8ca6da5f3c6",
+   "alternative": "identifier ('=' variable_initializer)?",
+   "source": "class C{int a=1;}",
+   "focus": "a=1",
+   "focusStart": 12
+  },
+  {
+   "id": "A:1831:method_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "class C{new void M(){}}",
+   "focus": "new",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public void M(){}}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected void M(){}}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal void M(){}}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private void M(){}}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/6",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{static void M(){}}",
+   "focus": "static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/7",
+   "sourceAlternativeSha256": "5a16fff9b2cf60c8b20709bc2d0f37249dc6fbe2ba0bec3a3879d27771064b5b",
+   "alternative": "'virtual'",
+   "source": "class C{virtual void M(){}}",
+   "focus": "virtual",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/8",
+   "sourceAlternativeSha256": "08a1ab04d4f60cab581ec40f7721695c3b96273f53c97875e8a1bb4840401515",
+   "alternative": "'sealed'",
+   "source": "class C{sealed void M(){}}",
+   "focus": "sealed",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/9",
+   "sourceAlternativeSha256": "c6c75b5e50b192e21a747a0d9a40f9fce3b988fffd77c6f9a191a715e9abef11",
+   "alternative": "'override'",
+   "source": "class C{override void M(){}}",
+   "focus": "override",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/10",
+   "sourceAlternativeSha256": "c03e73a35dfe414e68de2527cdd32d0a73e974ba31d71f6be9ef13ee1359bc51",
+   "alternative": "'abstract'",
+   "source": "class C{abstract void M();}",
+   "focus": "abstract",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/11",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{extern void M();}",
+   "focus": "extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/12",
+   "sourceAlternativeSha256": "b94c980f906538869ae8497d8ed75659154e25f48fa7eb2c395089c21fc740ba",
+   "alternative": "'async'",
+   "source": "class C{async void M(){}}",
+   "focus": "async",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1831:method_modifier/13",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe void M(){}}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1852:member_name/1",
+   "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+   "alternative": "identifier",
+   "source": "class C{void M(){}}",
+   "focus": "M",
+   "focusStart": 13
+  },
+  {
+   "id": "A:1852:member_name/2",
+   "sourceAlternativeSha256": "b15bec51764e9f3d31ec59d671007447adfb66d31c75d032ce9f1a73db3cc81f",
+   "alternative": "interface_type '.' identifier",
+   "source": "class C{void I.M(){}}",
+   "focus": "I.M",
+   "focusStart": 13
+  },
+  {
+   "id": "A:1857:method_body/1",
+   "sourceAlternativeSha256": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "alternative": "block",
+   "source": "class C{void M(){}}",
+   "focus": "{}",
+   "focusStart": 16
+  },
+  {
+   "id": "A:1857:method_body/2",
+   "sourceAlternativeSha256": "05339d31ee50aedb0077abb4e554ed72e1294a030f9a0d4c3aea53f6aed137c4",
+   "alternative": "'=>' null_conditional_invocation_expression ';'",
+   "source": "class C{void M()=>a?.F();}",
+   "focus": "=>a?.F();",
+   "focusStart": 16
+  },
+  {
+   "id": "A:1857:method_body/3",
+   "sourceAlternativeSha256": "dc90bd1299959abc3117db8651a33ce59c4ec88861c34c00218821b38798d034",
+   "alternative": "'=>' expression ';'",
+   "source": "class C{int M()=>1;}",
+   "focus": "=>1;",
+   "focusStart": 15
+  },
+  {
+   "id": "A:1857:method_body/4",
+   "sourceAlternativeSha256": "cf570839c10a83769518f67958fb34ecc8ec5f16f8b99c8deffc4ad5cf0f1559",
+   "alternative": "';'",
+   "source": "abstract class C{abstract void M();}",
+   "focus": ";",
+   "focusStart": 34
+  },
+  {
+   "id": "A:1871:fixed_parameters/1",
+   "sourceAlternativeSha256": "96689aebe2bc059e8cc3b8b6bb8cd3c1fd63ba5bee28b5b6dc98ac065eb95b0c",
+   "alternative": "fixed_parameter (',' fixed_parameter)*",
+   "source": "class C{void M(int a,int b){}}",
+   "focus": "int a,int b",
+   "focusStart": 15
+  },
+  {
+   "id": "A:1883:parameter_modifier/1",
+   "sourceAlternativeSha256": "1e0db200bafe42647db0481b20ddd3af4023469a81747c7817da188a626b2964",
+   "alternative": "parameter_mode_modifier",
+   "source": "class C{void M(ref int a){}}",
+   "focus": "ref",
+   "focusStart": 15
+  },
+  {
+   "id": "A:1883:parameter_modifier/2",
+   "sourceAlternativeSha256": "ad00600cf02ad63a00fefaf395bcaba569211a42c7baab0068a6a17d33788823",
+   "alternative": "'this'",
+   "source": "static class C{static void M(this int a){}}",
+   "focus": "this",
+   "focusStart": 29
+  },
+  {
+   "id": "A:1888:parameter_mode_modifier/1",
+   "sourceAlternativeSha256": "07aef7fee22d4856461d6d8631b87b6ca5db3cd1df62b35ccb27923e554996ef",
+   "alternative": "'ref'",
+   "source": "class C{void M(ref int a){}}",
+   "focus": "ref",
+   "focusStart": 15
+  },
+  {
+   "id": "A:1888:parameter_mode_modifier/2",
+   "sourceAlternativeSha256": "fb65fa2d60b709d3cbb8852fef28145a980565bca6890928622058216cc6d342",
+   "alternative": "'out'",
+   "source": "class C{void M(out int a){a=0;}}",
+   "focus": "out",
+   "focusStart": 15
+  },
+  {
+   "id": "A:1902:property_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "class C{new int P{get{return 1;}}}",
+   "focus": "new",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public int P{get{return 1;}}}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected int P{get{return 1;}}}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal int P{get{return 1;}}}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private int P{get{return 1;}}}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/6",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{static int P{get{return 1;}}}",
+   "focus": "static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/7",
+   "sourceAlternativeSha256": "5a16fff9b2cf60c8b20709bc2d0f37249dc6fbe2ba0bec3a3879d27771064b5b",
+   "alternative": "'virtual'",
+   "source": "class C{virtual int P{get{return 1;}}}",
+   "focus": "virtual",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/8",
+   "sourceAlternativeSha256": "08a1ab04d4f60cab581ec40f7721695c3b96273f53c97875e8a1bb4840401515",
+   "alternative": "'sealed'",
+   "source": "class C{sealed int P{get{return 1;}}}",
+   "focus": "sealed",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/9",
+   "sourceAlternativeSha256": "c6c75b5e50b192e21a747a0d9a40f9fce3b988fffd77c6f9a191a715e9abef11",
+   "alternative": "'override'",
+   "source": "class C{override int P{get{return 1;}}}",
+   "focus": "override",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/10",
+   "sourceAlternativeSha256": "c03e73a35dfe414e68de2527cdd32d0a73e974ba31d71f6be9ef13ee1359bc51",
+   "alternative": "'abstract'",
+   "source": "class C{abstract int P{get;}}",
+   "focus": "abstract",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/11",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{extern int P{get;}}",
+   "focus": "extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1902:property_modifier/12",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe int P{get{return 1;}}}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1917:property_body/1",
+   "sourceAlternativeSha256": "95d73bacfbe49069b2fca427c51783b5be16128aa31ed8b38e0639b57595e928",
+   "alternative": "'{' accessor_declarations '}' property_initializer?",
+   "source": "class C{int P{get;}=1;}",
+   "focus": "{get;}=1;",
+   "focusStart": 13
+  },
+  {
+   "id": "A:1917:property_body/2",
+   "sourceAlternativeSha256": "dc90bd1299959abc3117db8651a33ce59c4ec88861c34c00218821b38798d034",
+   "alternative": "'=>' expression ';'",
+   "source": "class C{int P=>1;}",
+   "focus": "=>1;",
+   "focusStart": 13
+  },
+  {
+   "id": "A:1922:property_initializer/1",
+   "sourceAlternativeSha256": "c2682d77272021017d0f72ccf8e615db778fb2d603f6c7bd6a07f3755e12a89c",
+   "alternative": "'=' variable_initializer ';'",
+   "source": "class C{int P{get;}=1;}",
+   "focus": "=1;",
+   "focusStart": 19
+  },
+  {
+   "id": "A:1960:event_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "class C{new event D E;}",
+   "focus": "new",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public event D E;}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected event D E;}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal event D E;}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private event D E;}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/6",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{static event D E;}",
+   "focus": "static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/7",
+   "sourceAlternativeSha256": "5a16fff9b2cf60c8b20709bc2d0f37249dc6fbe2ba0bec3a3879d27771064b5b",
+   "alternative": "'virtual'",
+   "source": "class C{virtual event D E;}",
+   "focus": "virtual",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/8",
+   "sourceAlternativeSha256": "08a1ab04d4f60cab581ec40f7721695c3b96273f53c97875e8a1bb4840401515",
+   "alternative": "'sealed'",
+   "source": "class C{sealed event D E;}",
+   "focus": "sealed",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/9",
+   "sourceAlternativeSha256": "c6c75b5e50b192e21a747a0d9a40f9fce3b988fffd77c6f9a191a715e9abef11",
+   "alternative": "'override'",
+   "source": "class C{override event D E;}",
+   "focus": "override",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/10",
+   "sourceAlternativeSha256": "c03e73a35dfe414e68de2527cdd32d0a73e974ba31d71f6be9ef13ee1359bc51",
+   "alternative": "'abstract'",
+   "source": "class C{abstract event D E;}",
+   "focus": "abstract",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/11",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{extern event D E;}",
+   "focus": "extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1960:event_modifier/12",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe event D E;}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "class C{new int this[int i]{get{return i;}}}",
+   "focus": "new",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public int this[int i]{get{return i;}}}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected int this[int i]{get{return i;}}}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal int this[int i]{get{return i;}}}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private int this[int i]{get{return i;}}}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/6",
+   "sourceAlternativeSha256": "5a16fff9b2cf60c8b20709bc2d0f37249dc6fbe2ba0bec3a3879d27771064b5b",
+   "alternative": "'virtual'",
+   "source": "class C{virtual int this[int i]{get{return i;}}}",
+   "focus": "virtual",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/7",
+   "sourceAlternativeSha256": "08a1ab04d4f60cab581ec40f7721695c3b96273f53c97875e8a1bb4840401515",
+   "alternative": "'sealed'",
+   "source": "class C{sealed int this[int i]{get{return i;}}}",
+   "focus": "sealed",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/8",
+   "sourceAlternativeSha256": "c6c75b5e50b192e21a747a0d9a40f9fce3b988fffd77c6f9a191a715e9abef11",
+   "alternative": "'override'",
+   "source": "class C{override int this[int i]{get{return i;}}}",
+   "focus": "override",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/9",
+   "sourceAlternativeSha256": "c03e73a35dfe414e68de2527cdd32d0a73e974ba31d71f6be9ef13ee1359bc51",
+   "alternative": "'abstract'",
+   "source": "class C{abstract int this[int i]{get;}}",
+   "focus": "abstract",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/10",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{extern int this[int i]{get;}}",
+   "focus": "extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:1993:indexer_modifier/11",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe int this[int i]{get{return i;}}}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2012:indexer_body/1",
+   "sourceAlternativeSha256": "2c715c97a5d6f3f47281af9429e7d8cbc73e87bee1baf79eeedbb82c6ab1722f",
+   "alternative": "'{' accessor_declarations '}'",
+   "source": "class C{int this[int i]{get{return i;}}}",
+   "focus": "{get{return i;}}",
+   "focusStart": 23
+  },
+  {
+   "id": "A:2012:indexer_body/2",
+   "sourceAlternativeSha256": "dc90bd1299959abc3117db8651a33ce59c4ec88861c34c00218821b38798d034",
+   "alternative": "'=>' expression ';'",
+   "source": "class C{int this[int i]=>i;}",
+   "focus": "=>i;",
+   "focusStart": 23
+  },
+  {
+   "id": "A:2022:operator_modifier/1",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public static C operator+(C a){return a;}}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2022:operator_modifier/2",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{public static C operator+(C a){return a;}}",
+   "focus": "static",
+   "focusStart": 15
+  },
+  {
+   "id": "A:2022:operator_modifier/3",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{public static extern C operator+(C a);}",
+   "focus": "extern",
+   "focusStart": 22
+  },
+  {
+   "id": "A:2022:operator_modifier/4",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{public static unsafe C operator+(C a){return a;}}",
+   "focus": "unsafe",
+   "focusStart": 22
+  },
+  {
+   "id": "A:2058:operator_body/1",
+   "sourceAlternativeSha256": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "alternative": "block",
+   "source": "class C{public static C operator+(C a){return a;}}",
+   "focus": "{return a;}",
+   "focusStart": 38
+  },
+  {
+   "id": "A:2058:operator_body/2",
+   "sourceAlternativeSha256": "dc90bd1299959abc3117db8651a33ce59c4ec88861c34c00218821b38798d034",
+   "alternative": "'=>' expression ';'",
+   "source": "class C{public static C operator+(C a)=>a;}",
+   "focus": "=>a;",
+   "focusStart": 38
+  },
+  {
+   "id": "A:2058:operator_body/3",
+   "sourceAlternativeSha256": "cf570839c10a83769518f67958fb34ecc8ec5f16f8b99c8deffc4ad5cf0f1559",
+   "alternative": "';'",
+   "source": "class C{public static extern C operator+(C a);}",
+   "focus": ";",
+   "focusStart": 45
+  },
+  {
+   "id": "A:2070:constructor_modifier/1",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "class C{public C(){}}",
+   "focus": "public",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2070:constructor_modifier/2",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "class C{protected C(){}}",
+   "focus": "protected",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2070:constructor_modifier/3",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "class C{internal C(){}}",
+   "focus": "internal",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2070:constructor_modifier/4",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "class C{private C(){}}",
+   "focus": "private",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2070:constructor_modifier/5",
+   "sourceAlternativeSha256": "58e4a059d2f914ad760292754fb5e48c32abae1d3431ce0e84280198b7b04fb9",
+   "alternative": "'extern'",
+   "source": "class C{extern C();}",
+   "focus": "extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2070:constructor_modifier/6",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "class C{unsafe C(){}}",
+   "focus": "unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/1",
+   "sourceAlternativeSha256": "c3ffced15bf61afefa5fec36469cc355681fc45d3b19ae7a993c067b530bcdf7",
+   "alternative": "'static'",
+   "source": "class C{static C(){}}",
+   "focus": "static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/2",
+   "sourceAlternativeSha256": "c969781a3ebe2c2b111097cb14f59f577fae111d1e8928eae4828716906813a8",
+   "alternative": "'static' 'extern' unsafe_modifier?",
+   "source": "class C{static extern unsafe C();}",
+   "focus": "static extern unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/3",
+   "sourceAlternativeSha256": "7b501ad7febc1258eadc3b8662ba0cfe34a3bb81644e074699d7a7f477a51187",
+   "alternative": "'static' unsafe_modifier 'extern'?",
+   "source": "class C{static unsafe extern C();}",
+   "focus": "static unsafe extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/4",
+   "sourceAlternativeSha256": "5bbaa1f9acacbe481802b1eae40379fa60bc8c2003ce0774276b993be5861392",
+   "alternative": "'extern' 'static' unsafe_modifier?",
+   "source": "class C{extern static unsafe C();}",
+   "focus": "extern static unsafe",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/5",
+   "sourceAlternativeSha256": "bf4b560a34f13cece0245b86a692d34b4dddc0c195da64864fc5367edb17298a",
+   "alternative": "'extern' unsafe_modifier 'static'",
+   "source": "class C{extern unsafe static C();}",
+   "focus": "extern unsafe static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/6",
+   "sourceAlternativeSha256": "def955bc66ec000f23691bea5f743420e4daecfecbbfaaad69dceb75bf9b5e41",
+   "alternative": "unsafe_modifier 'static' 'extern'?",
+   "source": "class C{unsafe static extern C();}",
+   "focus": "unsafe static extern",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2099:static_constructor_modifiers/7",
+   "sourceAlternativeSha256": "54315500a2a392b035ec7f92f765ea026bff509651de851cb905f944a011ea1e",
+   "alternative": "unsafe_modifier 'extern' 'static'",
+   "source": "class C{unsafe extern static C();}",
+   "focus": "unsafe extern static",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2115:finalizer_declaration/1",
+   "sourceAlternativeSha256": "ea07bc9e8b07eaca67503f7fdcea2b73645e2912a19819d5587362b72e0b4c92",
+   "alternative": "attributes? '~' identifier '(' ')' finalizer_body",
+   "source": "class C{~C(){}}",
+   "focus": "~C(){}",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2115:finalizer_declaration/2",
+   "sourceAlternativeSha256": "39fbffc9552f6cd1fa81ad2d699c990c17a262499ed0573ba2ce1f56aba7fdfc",
+   "alternative": "attributes? 'extern' unsafe_modifier? '~' identifier '(' ')' finalizer_body",
+   "source": "class C{extern unsafe ~C();}",
+   "focus": "extern unsafe ~C();",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2115:finalizer_declaration/3",
+   "sourceAlternativeSha256": "d3a0f2ea675c4a61ecc99978b03609c264df90dd673c2587d297bcbf9bd16dd3",
+   "alternative": "attributes? unsafe_modifier 'extern'? '~' identifier '(' ')' finalizer_body",
+   "source": "class C{unsafe extern ~C();}",
+   "focus": "unsafe extern ~C();",
+   "focusStart": 8
+  },
+  {
+   "id": "A:2123:finalizer_body/1",
+   "sourceAlternativeSha256": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "alternative": "block",
+   "source": "class C{~C(){}}",
+   "focus": "{}",
+   "focusStart": 12
+  },
+  {
+   "id": "A:2123:finalizer_body/2",
+   "sourceAlternativeSha256": "cf570839c10a83769518f67958fb34ecc8ec5f16f8b99c8deffc4ad5cf0f1559",
+   "alternative": "';'",
+   "source": "class C{extern ~C();}",
+   "focus": ";",
+   "focusStart": 19
+  },
+  {
+   "id": "A:2136:struct_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "new struct S{}",
+   "focus": "new",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2136:struct_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "public struct S{}",
+   "focus": "public",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2136:struct_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "protected struct S{}",
+   "focus": "protected",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2136:struct_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "internal struct S{}",
+   "focus": "internal",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2136:struct_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "private struct S{}",
+   "focus": "private",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2136:struct_modifier/6",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "unsafe struct S{}",
+   "focus": "unsafe",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2156:struct_member_declaration/1",
+   "sourceAlternativeSha256": "67e99abf1216e2c8283da5643d4b7227879746d3acbeff058c5f847250078a92",
+   "alternative": "constant_declaration",
+   "source": "struct S{const int a=1;}",
+   "focus": "const int a=1;",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/2",
+   "sourceAlternativeSha256": "8b89fc7d661d9608300a3fe2b6bdc8e2f9a9022a469b272328a0c74306db99aa",
+   "alternative": "field_declaration",
+   "source": "struct S{int f;}",
+   "focus": "int f;",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/3",
+   "sourceAlternativeSha256": "d5505175bb2f0abb9f2fe922952ccd6e092c3f7f54984eedfe207de16dfd2e57",
+   "alternative": "method_declaration",
+   "source": "struct S{void M(){}}",
+   "focus": "void M(){}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/4",
+   "sourceAlternativeSha256": "ab6cd22af5c1bc01a6bb8b89dd2d8e1aa18a58f3759e9b73ebe56f0600267609",
+   "alternative": "property_declaration",
+   "source": "struct S{int P{get{return 1;}}}",
+   "focus": "int P{get{return 1;}}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/5",
+   "sourceAlternativeSha256": "12fe578fb56d4b2c7c8294b1603d6dbb85ce1d5f31e7549e29af303adaf43b32",
+   "alternative": "event_declaration",
+   "source": "struct S{event D E;}",
+   "focus": "event D E;",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/6",
+   "sourceAlternativeSha256": "1e2aa47e4cae9a40e675e590d21f714163912e5636547b436970c534ed8425e8",
+   "alternative": "indexer_declaration",
+   "source": "struct S{int this[int i]{get{return i;}}}",
+   "focus": "int this[int i]{get{return i;}}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/7",
+   "sourceAlternativeSha256": "905d60f9d093806ed9f1587d7d1da45e4d2b3cabeba4c20d35941c1c34b4e0ed",
+   "alternative": "operator_declaration",
+   "source": "struct S{public static S operator+(S a){return a;}}",
+   "focus": "public static S operator+(S a){return a;}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/8",
+   "sourceAlternativeSha256": "4133cc83a91b9fc9c6f497acfc5a5ba2f504c3172c2e23b7843027f49fbe585d",
+   "alternative": "constructor_declaration",
+   "source": "struct S{S(int a){}}",
+   "focus": "S(int a){}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/9",
+   "sourceAlternativeSha256": "78ceba10c10bf39426dcbb84ed76d6b29cc4d1ae69fdab2c21d649c4918f5f29",
+   "alternative": "static_constructor_declaration",
+   "source": "struct S{static S(){}}",
+   "focus": "static S(){}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/10",
+   "sourceAlternativeSha256": "1e67ffd08c670aaaf70827d0f1f60c2df2adfb79325f1cc7fc2e12642ead4370",
+   "alternative": "type_declaration",
+   "source": "struct S{class N{}}",
+   "focus": "class N{}",
+   "focusStart": 9
+  },
+  {
+   "id": "A:2156:struct_member_declaration/11",
+   "sourceAlternativeSha256": "4fa6b3e84a58342218b7ee558d7cafc75e5d8138961c995091dd83dc1b815026",
+   "alternative": "fixed_size_buffer_declaration",
+   "source": "unsafe struct S{fixed int b[2];}",
+   "focus": "fixed int b[2];",
+   "focusStart": 16
+  },
+  {
+   "id": "A:2176:variable_initializer_list/1",
+   "sourceAlternativeSha256": "24b558aef1c5ac2a3cf0482e41ee10485adce6bf230ddff09c4590d309adca0a",
+   "alternative": "variable_initializer (',' variable_initializer)*",
+   "source": "class C{int[] f={1,2};}",
+   "focus": "1,2",
+   "focusStart": 17
+  },
+  {
+   "id": "A:2180:variable_initializer/1",
+   "sourceAlternativeSha256": "b8bc0e4f01a0ebdbfe99180d4ea3cb49092d268fecd0789d2e9372fa616e9542",
+   "alternative": "expression",
+   "source": "class C{int f=1;}",
+   "focus": "1",
+   "focusStart": 14
+  },
+  {
+   "id": "A:2180:variable_initializer/2",
+   "sourceAlternativeSha256": "71b27f493307a5ba644bb9b0aaed768c298a602118afd4cc1627a3b3003e2515",
+   "alternative": "array_initializer",
+   "source": "class C{int[] f={1};}",
+   "focus": "{1}",
+   "focusStart": 16
+  },
+  {
+   "id": "A:2193:interface_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "new interface I{}",
+   "focus": "new",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2193:interface_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "public interface I{}",
+   "focus": "public",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2193:interface_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "protected interface I{}",
+   "focus": "protected",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2193:interface_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "internal interface I{}",
+   "focus": "internal",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2193:interface_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "private interface I{}",
+   "focus": "private",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2193:interface_modifier/6",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "unsafe interface I{}",
+   "focus": "unsafe",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2273:enum_base/1",
+   "sourceAlternativeSha256": "050676b939538e25973707572b1a5befc51688ec1eef30d92ab3a2880d455602",
+   "alternative": "':' integral_type",
+   "source": "enum E:byte{}",
+   "focus": ":byte",
+   "focusStart": 6
+  },
+  {
+   "id": "A:2273:enum_base/2",
+   "sourceAlternativeSha256": "0f8372ba543a1adbab9e992fe79ad046b176194f56aabad8b9d586fe2c434046",
+   "alternative": "':' integral_type_name",
+   "source": "enum E:System.Byte{}",
+   "focus": ":System.Byte",
+   "focusStart": 6
+  },
+  {
+   "id": "A:2278:integral_type_name/1",
+   "sourceAlternativeSha256": "2501a7dde4567415d3ec8af681fa3b4f6564236298e6acdb46df009df7bbf34f",
+   "alternative": "type_name",
+   "source": "enum E:System.Byte{}",
+   "focus": "System.Byte",
+   "focusStart": 7
+  },
+  {
+   "id": "A:2297:enum_member_declarations/1",
+   "sourceAlternativeSha256": "857c295ce263091d8838a7114934ff6bee3b672dfcb34a7e54b487b04eb781ae",
+   "alternative": "enum_member_declaration (',' enum_member_declaration)*",
+   "source": "enum E{A,B}",
+   "focus": "A,B",
+   "focusStart": 7
+  },
+  {
+   "id": "A:2302:enum_member_declaration/1",
+   "sourceAlternativeSha256": "f48186e00401a339d8efade57ca0569e0e2522a0006e6e32dc79b7dd431654cf",
+   "alternative": "attributes? identifier ('=' constant_expression)?",
+   "source": "enum E{[X]A=1}",
+   "focus": "[X]A=1",
+   "focusStart": 7
+  },
+  {
+   "id": "A:2313:delegate_modifier/1",
+   "sourceAlternativeSha256": "2060f650ed13d6055aef404cb2ed53c2db683be870db20e1540efcc7d1f4ac55",
+   "alternative": "'new'",
+   "source": "new delegate void D();",
+   "focus": "new",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2313:delegate_modifier/2",
+   "sourceAlternativeSha256": "94d12d9ab5b04672c1c03cfc87fd92a6bcc80c470fec694ebec5daff2ff8d8e9",
+   "alternative": "'public'",
+   "source": "public delegate void D();",
+   "focus": "public",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2313:delegate_modifier/3",
+   "sourceAlternativeSha256": "c61471fb2221d5f49a3dbfa1ee20afaf0171382147fda43273916c88983fdc31",
+   "alternative": "'protected'",
+   "source": "protected delegate void D();",
+   "focus": "protected",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2313:delegate_modifier/4",
+   "sourceAlternativeSha256": "11d21ba925a2ffd4fd2ef186ffd5cde8a2b7881ca6f3d3d4ee7c88a47741f236",
+   "alternative": "'internal'",
+   "source": "internal delegate void D();",
+   "focus": "internal",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2313:delegate_modifier/5",
+   "sourceAlternativeSha256": "b89a28745539f96ff1cf2e9f57570e372892f6f9d2997d4c053e89e30720c085",
+   "alternative": "'private'",
+   "source": "private delegate void D();",
+   "focus": "private",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2313:delegate_modifier/6",
+   "sourceAlternativeSha256": "6a53eb24268b9a4451ed6e1e505afbe92d198faee1c606860aa7c60263ac4907",
+   "alternative": "unsafe_modifier",
+   "source": "unsafe delegate void D();",
+   "focus": "unsafe",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2336:global_attribute_target/1",
+   "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+   "alternative": "identifier",
+   "source": "[assembly:A]",
+   "focus": "assembly",
+   "focusStart": 1
+  },
+  {
+   "id": "A:2353:attribute_target/1",
+   "sourceAlternativeSha256": "285437db8c5e1541aa49708b4abd51642a065b66e4bac0901e75b44ce2d0cebe",
+   "alternative": "identifier",
+   "source": "[type:A]class C{}",
+   "focus": "type",
+   "focusStart": 1
+  },
+  {
+   "id": "A:2353:attribute_target/2",
+   "sourceAlternativeSha256": "d6d198dd68bbff3e3fef3ae8aa7c4d9608c0b13cc99e15077b82dfa3233be364",
+   "alternative": "keyword",
+   "source": "[return:A]class C{}",
+   "focus": "return",
+   "focusStart": 1
+  },
+  {
+   "id": "A:2358:attribute_list/1",
+   "sourceAlternativeSha256": "5783510ec56000c9f49a62df6c6303fed02186e5a7a2df763dbee5f729ad2883",
+   "alternative": "attribute (',' attribute)*",
+   "source": "[A,B]class C{}",
+   "focus": "A,B",
+   "focusStart": 1
+  },
+  {
+   "id": "A:2376:positional_argument_list/1",
+   "sourceAlternativeSha256": "38740f28432577756a647f9a3821e71e3e4f3fcb6f42436b8464eb336fa0d6d4",
+   "alternative": "positional_argument (',' positional_argument)*",
+   "source": "[A(1,2)]class C{}",
+   "focus": "1,2",
+   "focusStart": 3
+  },
+  {
+   "id": "A:2384:named_argument_list/1",
+   "sourceAlternativeSha256": "4ce6cd92f88fe76b664ebde88f10157b8e1fcb2b74b4a3f8e8bbe87e8f7a908f",
+   "alternative": "named_argument (',' named_argument)*",
+   "source": "[A(X=1,Y=2)]class C{}",
+   "focus": "X=1,Y=2",
+   "focusStart": 3
+  },
+  {
+   "id": "A:2402:unsafe_modifier/1",
+   "sourceAlternativeSha256": "07b0397ab7b314fa08a7413a0a6c83488888be93bef49a7fc4fffbbf9fd52a35",
+   "alternative": "'unsafe'",
+   "source": "unsafe class C{}",
+   "focus": "unsafe",
+   "focusStart": 0
+  },
+  {
+   "id": "A:2441:fixed_pointer_declarators/1",
+   "sourceAlternativeSha256": "3cc29a3adf324d9e9b7ed890c973d6e5634d4d3751a54f247c40853974f6b2a8",
+   "alternative": "fixed_pointer_declarator (',' fixed_pointer_declarator)*",
+   "source": "unsafe class C{void M(){fixed(int* p=&x,q=&y){}}}",
+   "focus": "p=&x,q=&y",
+   "focusStart": 35
+  }
+ ]
+}

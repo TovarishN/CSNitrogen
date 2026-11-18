@@ -17,7 +17,7 @@ public static class CSharpSyntaxPolicy
         issues.AddRange(CSharpAttributePolicy.Check(tree,version));
         issues.AddRange(CSharpCompilationUnitPolicy.Check(tree,version));
         issues.AddRange(CSharpDeclarationPolicy.Check(tree,version));
-        if(version.Major is 2 or 3 or 4 or 5)CheckIterators(tree,issues);
+        if(version.Major is 2 or 3 or 4 or 5 or 6)CheckIterators(tree,issues);
         string Kind(int n)=>tree.Language!.GetKindName(tree.Kind(n));
         string Text(int n){var span=tree.Span(n);return tree.Text.Substring(span.Start,span.Length);}
         void Later(int n,int minimum,string feature)=>issues.Add(new("CSN2003",
