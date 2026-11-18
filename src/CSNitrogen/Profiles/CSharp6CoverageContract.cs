@@ -7,7 +7,7 @@ namespace CSNitrogen.Profiles;
 /// <summary>Admission of the reviewed ECMA-334 sixth-edition normalized syntax snapshot.</summary>
 internal static class CSharp6CoverageContract
 {
-    internal const string ApprovedLedgerSha256 = "67beeca90ebe00f83c08479f2168172da0b24d533b4c92dd683be5b2707a5885";
+    internal const string ApprovedLedgerSha256 = "71c1d2f4064097f245afe24da753e36ff7fcda61729daa84a09aa54fe661a55e";
     internal const string ApprovalResource = "CSNitrogen.csharp6-approval.json";
     private const string Profile = "CSharp6";
     private const string PrimarySha256 = "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f";
@@ -33,6 +33,20 @@ internal static class CSharp6CoverageContract
         name.StartsWith("CSNitrogen.grammar.", StringComparison.Ordinal) ||
         name.StartsWith("CSNitrogen.source.", StringComparison.Ordinal) &&
             !Enumerable.Range(2, 5).Any(v => name == $"CSNitrogen.source.Profiles/CSharp{v}CoverageContract.cs");
+
+    internal static IReadOnlyList<string> ReadFactoryModules(byte[] ledger)
+    {
+        try
+        {
+            using var document = JsonDocument.Parse(ledger);
+            var modules = Strings(document.RootElement.GetProperty("factory").GetProperty("modules"));
+            return modules.All(m => !string.IsNullOrWhiteSpace(m)) ? Array.AsReadOnly(modules) : [];
+        }
+        catch (Exception e) when (e is JsonException or InvalidOperationException or KeyNotFoundException)
+        {
+            return [];
+        }
+    }
 
     internal static bool Reviewed(byte[] ledger, IReadOnlyDictionary<string, byte[]> inputs, bool fifthReviewed,
         string expectedDigest = ApprovedLedgerSha256)
@@ -74,6 +88,7 @@ internal static class CSharp6CoverageContract
             using var dispositionsDocument = JsonDocument.Parse(Artifact("main-text-dispositions"));
             using var matrixDocument = JsonDocument.Parse(Evidence("alternative-witness-matrix"));
             using var casesDocument = JsonDocument.Parse(Evidence("source-specific-cases"));
+            using var predecessorIndexDocument = JsonDocument.Parse(inputs["CSNitrogen.csharp5-artifact.csharp5-standard-index.json"]);
             using var predecessorMatrixDocument = JsonDocument.Parse(inputs["CSNitrogen.csharp5-evidence.alternative-witness-matrix.json"]);
             using var compositionDocument = JsonDocument.Parse(inputs["CSNitrogen.composition.json"]);
 
@@ -103,7 +118,7 @@ internal static class CSharp6CoverageContract
             if (rules.Count != 436 || !FactoryAndOwnersMatch(gate, compositionDocument.RootElement, crosswalk, rules, inputs))
                 return false;
             return DispositionsMatch(differences, dispositionsDocument.RootElement, Hash(Artifact("main-text-differences"))) &&
-                WitnessesMatch(rules.Values, matrix, cases, predecessorMatrixDocument.RootElement);
+                WitnessesMatch(rules.Values, crosswalk, matrix, cases, predecessorIndexDocument.RootElement, predecessorMatrixDocument.RootElement);
         }
         catch (Exception e) when (e is JsonException or InvalidOperationException or KeyNotFoundException or ArgumentException or FormatException or OverflowException)
         {
@@ -118,7 +133,8 @@ internal static class CSharp6CoverageContract
         string[] requiredExclusions = ["binding-types-inference-and-accessibility", "general-modifier-compatibility-and-finite-sets",
             "constantness-variance-and-pointer-legality", "control-flow-and-runtime", "awaitability-task-types-and-caller-substitution",
             "interpolation-conversion-and-evaluation", "nameof-value-and-static-import-lookup", "filter-order-and-read-only-assignment",
-            "inherited-non-abstract-indexer-semicolon-accessors"];
+            "inherited-non-abstract-indexer-semicolon-accessors", "inherited-standalone-await-identifier-statement",
+            "long-unicode-escape-for-initial-underscore"];
         var counts = annex.GetProperty("counts");
         return Text(reference, "profile") == Profile && Text(reference.GetProperty("primary"), "sha256") == PrimarySha256 &&
             Text(unicode, "status") == "approved" && Text(unicode, "policy") == "unicode-4.0-scalar" &&
@@ -212,19 +228,24 @@ internal static class CSharp6CoverageContract
         return pending.Count == 0;
     }
 
-    private static bool WitnessesMatch(IEnumerable<JsonElement> rules, JsonElement matrix, JsonElement specific, JsonElement predecessor)
+    private static bool WitnessesMatch(IEnumerable<JsonElement> rules, JsonElement crosswalk, JsonElement matrix,
+        JsonElement specific, JsonElement predecessorIndex, JsonElement predecessorMatrix)
     {
-        var alternatives = rules.SelectMany(r => r.GetProperty("alternatives").EnumerateArray())
-            .ToDictionary(a => Text(a, "id"), StringComparer.Ordinal);
+        var alternatives = rules.SelectMany(rule => rule.GetProperty("alternatives").EnumerateArray()
+                .Select((alternative, position) => (Rule: rule, Alternative: alternative, Position: position)))
+            .ToDictionary(entry => Text(entry.Alternative, "id"), StringComparer.Ordinal);
+        var crosswalkRows = Rows(crosswalk, "productions", "standardId");
+        var predecessorRules = Rows(predecessorIndex, "productions", "id");
         var links = Rows(matrix, "cases", "id");
         var cases = Rows(specific, "cases", "id");
-        var inherited = Rows(predecessor, "cases", "id");
+        var inherited = Rows(predecessorMatrix, "cases", "id");
         if (alternatives.Count != 1115 || cases.Count != 418 || !Exact(alternatives.Keys, links.Keys)) return false;
 
         int count = 0;
         foreach (var (id, link) in links)
         {
-            string hash = Text(alternatives[id], "sourceAlternativeSha256");
+            var (rule, alternative, position) = alternatives[id];
+            string hash = Text(alternative, "sourceAlternativeSha256");
             string witness = Text(link, "witnessId");
             string domain = Text(link, "domain");
             if (Text(link, "sourceAlternativeSha256") != hash) return false;
@@ -240,9 +261,21 @@ internal static class CSharp6CoverageContract
             }
             else
             {
+                string predecessorId = Text(link, "predecessorAlternative");
                 if (Text(link, "sourceKind") != "predecessor-positional" ||
-                    !inherited.TryGetValue(Text(link, "predecessorAlternative"), out var entry) ||
+                    !inherited.TryGetValue(predecessorId, out var entry) ||
                     Text(entry, "witnessId") != witness || Text(entry, "domain") != domain) return false;
+
+                var sourceRow = crosswalkRows[Text(rule, "id")];
+                var sources = Strings(sourceRow.GetProperty("predecessors"));
+                if (Text(sourceRow, "relation") != "name-carried" || sources.Length != 1 ||
+                    !predecessorRules.TryGetValue(sources[0], out var predecessorRule) ||
+                    Text(predecessorRule, "name") != Text(rule, "name").Replace('_', '-').ToLowerInvariant())
+                    return false;
+                var predecessorAlternatives = predecessorRule.GetProperty("alternatives");
+                if (predecessorAlternatives.GetArrayLength() != rule.GetProperty("alternatives").GetArrayLength() ||
+                    Text(predecessorAlternatives[position], "id") != predecessorId)
+                    return false;
                 count++;
             }
         }

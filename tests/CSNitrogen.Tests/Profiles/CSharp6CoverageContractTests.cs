@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using CSNitrogen.Parsing;
@@ -72,6 +73,16 @@ public class CSharp6CoverageContractTests
         Assert.True(CSharp6CoverageContract.Reviewed(ledger, inputs, true));
     }
 
+    [Theory]
+    [InlineData("{")]
+    [InlineData("{}")]
+    [InlineData("{\"factory\":{\"modules\":17}}")]
+    [InlineData("{\"factory\":{\"modules\":[null]}}")]
+    public void A_malformed_sixth_ledger_yields_no_factory_modules(string ledger)
+    {
+        Assert.Empty(CSharp6CoverageContract.ReadFactoryModules(Encoding.UTF8.GetBytes(ledger)));
+    }
+
     [Fact]
     public void Every_pinned_input_rejects_byte_drift_or_omission()
     {
@@ -96,8 +107,11 @@ public class CSharp6CoverageContractTests
     [InlineData("composition")]
     [InlineData("unicode")]
     [InlineData("exclusion")]
+    [InlineData("standalone-await-exclusion")]
+    [InlineData("long-underscore-exclusion")]
     [InlineData("disposition")]
     [InlineData("witness")]
+    [InlineData("wrong-predecessor-witness")]
     [InlineData("focus")]
     public void Structural_drift_fails_even_with_recomputed_digests(string change)
     {
@@ -127,11 +141,30 @@ public class CSharp6CoverageContractTests
             case "exclusion":
                 Mutate(ReferenceResource, d => d["normalizedExclusions"]!.AsArray().RemoveAt(0));
                 break;
+            case "standalone-await-exclusion":
+            case "long-underscore-exclusion":
+                var omitted = change == "standalone-await-exclusion"
+                    ? "inherited-standalone-await-identifier-statement" : "long-unicode-escape-for-initial-underscore";
+                Mutate(ReferenceResource, d =>
+                {
+                    var exclusions = d["normalizedExclusions"]!.AsArray();
+                    Assert.True(exclusions.Remove(exclusions.Single(e => (string?)e == omitted)));
+                });
+                break;
             case "disposition":
                 Mutate(DispositionsResource, d => d["dispositions"]!.AsArray().RemoveAt(0));
                 break;
             case "witness":
                 Mutate(MatrixResource, d => d["cases"]![0]!["witnessId"] = "missing");
+                break;
+            case "wrong-predecessor-witness":
+                Mutate(MatrixResource, d =>
+                {
+                    var links = d["cases"]!.AsArray();
+                    var input = links.Single(row => (string?)row!["id"] == "A:22:input/1")!;
+                    input["predecessorAlternative"] = "B:9648:input-section-part/1";
+                    input["witnessId"] = "B:8396:input-section-part/1";
+                });
                 break;
             case "focus":
                 Mutate(SourceCasesResource, d => d["cases"]![0]!["focusStart"] = -1);

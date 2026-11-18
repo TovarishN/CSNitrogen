@@ -72,6 +72,8 @@
     "interpolation-conversion-and-evaluation",
     "nameof-value-and-static-import-lookup",
     "filter-order-and-read-only-assignment",
-    "inherited-non-abstract-indexer-semicolon-accessors"
+    "inherited-non-abstract-indexer-semicolon-accessors",
+    "inherited-standalone-await-identifier-statement",
+    "long-unicode-escape-for-initial-underscore"
   ]
 }

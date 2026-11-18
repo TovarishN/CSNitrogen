@@ -439,7 +439,7 @@
     "CSNitrogen.csharp6-artifact.csharp6-main-text-differences.json": "eb29f8496836110166ac487542ffc4d90b079bb57dce6727f7430408a44ee6bf",
     "CSNitrogen.csharp6-artifact.csharp6-main-text-dispositions.json": "12c8c672a0c8b0378819ef21316f99f264f2b42be66e11fc241a359f4b94f7cd",
     "CSNitrogen.csharp6-artifact.csharp6-pdf-differences.json": "1ca0a76a82b13902c09656274673218203190b38e5c48f42b929edd61013c954",
-    "CSNitrogen.csharp6-artifact.csharp6-reference-policy.json": "065add6ac781f8a46cbfd8bd55c6cd3c07d6b1ae1be8328cf3edcecbb0473d68",
+    "CSNitrogen.csharp6-artifact.csharp6-reference-policy.json": "ac0e2c5cb51dd13285a072f38eeb0c43e7f1053529989d98dea6b4c4916c8796",
     "CSNitrogen.csharp6-artifact.csharp6-standard-crosswalk.json": "5fceea68847c520279feb29fd0358306a641b37943be6e688ddc05bd8611e2dc",
     "CSNitrogen.csharp6-artifact.csharp6-standard-index.json": "251e29019e5562182ad74e1c9df97e2761f060f32c428e2498f760714caa439a",
     "CSNitrogen.csharp6-evidence.alternative-witness-matrix.json": "1962220b5c0fb8a3a508b8559c689333906a46a6d38e6a1817c80d18ded33fd7",
@@ -519,8 +519,8 @@
     "CSNitrogen.source.Profiles/CoverageContract.cs": "84ae4ce93f06545111ddc10e648aaaa869d154dce4811163cbf7cb568357fbf3",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
     "CSNitrogen.source.Profiles/CoverageMapping.cs": "892a0a337331bf30c2e288a4aaa27edf3668fabc79fdd0a4af10640ad569ae17",
-    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "6a49dc8b6cf1abaa77de508659d84e5e088aacf7c4b991086a9cb7ccecb7828c",
+    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "0c4ec7ec1f2977c36f948835ca2c20e9d8da1d364ea0104ceffdf1585fd50f5b",
     "CSNitrogen.source.Profiles/LanguageProfile.cs": "83d4fc689ee2d24ed6a6e3bf918c030d9b1973f098523b6dedad4eb62ddc3bac",
-    "CSNitrogen.source.Profiles/ProfileResolver.cs": "f45e4da94898391362ebbfd770912a68244ba473a5dc6bcf7a17f9368f2ba299"
+    "CSNitrogen.source.Profiles/ProfileResolver.cs": "e55afdd8cf1ee9e835e818a0769078597435b07d2a1c76ee443d2ee8a57d5e1a"
   }
 }

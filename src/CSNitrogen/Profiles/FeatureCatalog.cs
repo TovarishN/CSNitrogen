@@ -137,7 +137,7 @@ public static class FeatureCatalog
         var fifth=new Lazy<bool>(()=>CSharp5CoverageContract.Reviewed(fifthGate,composition,sourceInputs,fourth.Value));
         var sixth=new Lazy<bool>(()=>CSharp6CoverageContract.Reviewed(sixthGate,sourceInputs,fifth.Value));
         var reviewed=new Dictionary<int,Lazy<bool>>{[1]=new(()=>first),[2]=second,[3]=third,[4]=fourth,[5]=fifth,[6]=sixth};
-        var modules=new Dictionary<int,IReadOnlyList<string>>{[1]=FactoryModules(gate,true),[2]=FactoryModules(secondGate,false),[3]=FactoryModules(thirdGate,false),[4]=FactoryModules(fourthGate,false),[5]=FactoryModules(fifthGate,false),[6]=FactoryModules(sixthGate,false)};
+        var modules=new Dictionary<int,IReadOnlyList<string>>{[1]=FactoryModules(gate,true),[2]=FactoryModules(secondGate,false),[3]=FactoryModules(thirdGate,false),[4]=FactoryModules(fourthGate,false),[5]=FactoryModules(fifthGate,false),[6]=CSharp6CoverageContract.ReadFactoryModules(sixthGate)};
         return new(Array.AsReadOnly(entries),CoverageHash.Compute(inputs),Array.AsReadOnly(mappings),Array.AsReadOnly(known),factories,reviewed,modules);
     }
 }
