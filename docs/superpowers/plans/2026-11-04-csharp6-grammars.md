@@ -87,7 +87,7 @@ Result (Task 3): 436 rules / 1,115 alternatives indexed; PDF annex agrees fully;
 
 ## Task 4: Independent CSharp6 admission
 
-- [ ] Add `src/CSNitrogen/Profiles/CSharp6CoverageContract.cs` mirroring `CSharp5CoverageContract`: requires admitted CSharp5, exact ledger digest, source/Unicode identity with exclusions, pinned eligible inputs, the selected sixth factory, all reviewed records and `docs/coverage/csharp6-review-approval.json` (written by `tools/approve-csharp6-review.py`, reviewer named by the user, never by the agent).
-- [ ] Tests: acceptance, predecessor dependency, factory identity, later/custom partial status, a drift family per pinned input, structural drift families, blank reviewer, unapproved record, missing input, input changed after approval.
-- [ ] Add `CSharp6` to the catalog's admitted majors and both coverage-identity enumerations; refresh pins 6->5->4->3->2; update README status line and `docs/coverage/csharp6-reviewed-admission-evidence.md`.
+- [x] Add `src/CSNitrogen/Profiles/CSharp6CoverageContract.cs` mirroring `CSharp5CoverageContract`: requires admitted CSharp5, exact ledger digest, source/Unicode identity with exclusions, pinned eligible inputs, the selected sixth factory, all reviewed records and `docs/coverage/csharp6-review-approval.json` (written by `tools/approve-csharp6-review.py`, reviewer named by the user, never by the agent).
+- [x] Tests: acceptance, predecessor dependency, factory identity, later/custom partial status, a drift family per pinned input, structural drift families, blank reviewer, unapproved record, missing input, input changed after approval.
+- [x] Add `CSharp6` to the catalog's admitted majors and both coverage-identity enumerations; refresh pins 6->5->4->3->2; update README status line and `docs/coverage/csharp6-reviewed-admission-evidence.md`.
 - [ ] Full verification; commit; fresh review; the user records the approval before CSharp6 reports Complete.

@@ -2,7 +2,7 @@
 
 C# syntax experiments and versioned grammar foundations built with Nitrogen.
 
-**CSharp1–5 have reviewed normalized syntax coverage; CSharp6–14 and custom profiles remain partial.** Production Nitrogen modules implement names/types, expressions, statements, attributes, declarations, namespaces, unsafe syntax additions through C# 4 and scoped C# 5 async/await, with source-preserving preprocessing and historical Unicode policies. This is a parser, not a C# semantic compiler.
+**CSharp1–5 have reviewed normalized syntax coverage. CSharp6 has an [admission guard](docs/coverage/csharp6-reviewed-admission-evidence.md) awaiting named reviewer approval. CSharp7–14 and custom profiles remain partial.** Production Nitrogen modules implement names/types, expressions, statements, attributes, declarations, namespaces, unsafe syntax additions through C# 4 and scoped C# 5 async/await, with source-preserving preprocessing and historical Unicode policies. This is a parser, not a C# semantic compiler.
 
 ## Build and test
 

@@ -44,8 +44,9 @@ public class CanonicalCoverageTests
             var profile=ProfileResolver.Resolve(name).Profile!;
             Assert.False(profile.Complete);Assert.NotEmpty(profile.MissingFeatures);
         }
-        // Every sixth-version syntax entry is implemented, but without an independent admission guard the profile stays partial.
-        var sixth=ProfileResolver.Resolve("CSharp6").Profile!;Assert.False(sixth.Complete);Assert.Empty(sixth.MissingFeatures);
+        var sixth=ProfileResolver.Resolve("CSharp6").Profile!;
+        Assert.Equal(FeatureCatalog.SourceReviewedFor(6), sixth.Complete);
+        Assert.Empty(sixth.MissingFeatures);
         // The admitted fifth snapshot does not make later profiles complete.
         var fifth=ProfileResolver.Resolve("CSharp5").Profile!;Assert.True(fifth.Complete);Assert.Empty(fifth.MissingFeatures);
         var custom=ProfileResolver.ResolveCustom("CSharp1",FeatureCatalog.Implemented.Select(f=>f.Id));

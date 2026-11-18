@@ -337,7 +337,7 @@
     ]
   },
   "reviewInputs": {
-    "CSNitrogen.coverage.json": "ea93d5a853b14cb85b8b1097a5b4e8f0e63d03fe50f591db6af02495d08524b7",
+    "CSNitrogen.coverage.json": "38461dc26691ef89ac3aebb7a80d6af8f87bfdcf781a1fa0531b7246629e785d",
     "CSNitrogen.csharp3-evidence.declaration-production-cases.json": "3d6e84dc39f5d36e5f1b0c2aeefb816a63dda56e262a0065835f4c62ed0c117d",
     "CSNitrogen.csharp3-evidence.expression-production-cases.json": "ed5ec61b89a1af6db35e771742dc11c4d0ff38a803db790bfa7ef108920d00ef",
     "CSNitrogen.csharp3-evidence.finite-alternative-cases.json": "1f57a55da4a3e8e6deb9d879137c5f169eb180a23b9bb65930d7fda44615425c",
@@ -403,7 +403,7 @@
     "CSNitrogen.source.Parsing/CSharpAttributePolicy.cs": "bda47dd0645031151f7189bd6198013c396996fe8c1dfa1fb6078295521becd0",
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "9faf08849f37f95c2c57aa59fd142739701219d0fcd67c63021fdec99291f7ab",
     "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "1f8242b3b91886e5c243602e2b6a516e33394a9dc78661465f1de380bfc11b22",
-    "CSNitrogen.source.Parsing/CSharpParser.cs": "803791c36a00b2403a3e995c5b7e6199794922498ea00c0cec0a3c9ab51696d9",
+    "CSNitrogen.source.Parsing/CSharpParser.cs": "ee932a4444c9c664379a2a3471bedb413ecc55d93f1b66dc4469e9c4eb02467c",
     "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "640f793311919777ba42c2e7815ef6a28546fee82bcd1170d0b643d32ed1efbd",
     "CSNitrogen.source.Parsing/CSharpTrivia.cs": "13c99794aebf55f540edf908a0b75b585fe2795d1ecb0605a004865a9f83fd5b",
     "CSNitrogen.source.Parsing/HistoricalUnicodeTables.g.cs": "8d5796736ed15c03e8eb7949123b88771af58c39b4ee70bf0ff77f03c043165f",
@@ -417,13 +417,14 @@
     "CSNitrogen.source.Preprocessing/DirectiveScanner.cs": "94f1e1157cfd1a55efe690936fb69150c45cde102b8a936d24431b93889b86f6",
     "CSNitrogen.source.Preprocessing/PreprocessRequest.cs": "c08dd55af7403cd37d269b6000489137878630db6fcaf9e26e827131763e9862",
     "CSNitrogen.source.Preprocessing/PreprocessResult.cs": "1c6c2734f410774aa26226747df928135d65b259a689ca46badb8a15bb61836a",
-    "CSNitrogen.source.Profiles/CSharp4CoverageContract.cs": "897324e8e575bbd5768a90ad15d9a8770cb5ea707b69f893808aaffcbe0b1719",
-    "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs": "38aabe9eda542433cdd33962ae02188147046bc53d5e7563fa98ccaf7965f269",
+    "CSNitrogen.source.Profiles/CSharp4CoverageContract.cs": "1268a510db5a95ebc00e31212276879a6f6bb11f83548b63b47d6f1d38f4e93a",
+    "CSNitrogen.source.Profiles/CSharp5CoverageContract.cs": "af88a62dab9105422b06707ea872e1fd91eba45ebaac799d5f9412f64c70353d",
+    "CSNitrogen.source.Profiles/CSharp6CoverageContract.cs": "b28e269ae9b0ee4d2c63bf5d6a891532b68d9bfd1597878e2d337737b6cbc8c5",
     "CSNitrogen.source.Profiles/ContractJson.cs": "45f174833c6a0354a328df29d600cfdce97cbd9f870d1f7cf43143b35dfd22cd",
     "CSNitrogen.source.Profiles/CoverageContract.cs": "84ae4ce93f06545111ddc10e648aaaa869d154dce4811163cbf7cb568357fbf3",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
     "CSNitrogen.source.Profiles/CoverageMapping.cs": "892a0a337331bf30c2e288a4aaa27edf3668fabc79fdd0a4af10640ad569ae17",
-    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "23947b7261e008fe47256ba742f5487406d53f52f9926dd2623e57c9d702afd0",
+    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "6a49dc8b6cf1abaa77de508659d84e5e088aacf7c4b991086a9cb7ccecb7828c",
     "CSNitrogen.source.Profiles/LanguageProfile.cs": "83d4fc689ee2d24ed6a6e3bf918c030d9b1973f098523b6dedad4eb62ddc3bac",
     "CSNitrogen.source.Profiles/ProfileResolver.cs": "f45e4da94898391362ebbfd770912a68244ba473a5dc6bcf7a17f9368f2ba299"
   }

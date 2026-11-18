@@ -2886,7 +2886,7 @@
       "title": "Auto property initializers",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 165,
       "requires": [],
@@ -2901,7 +2901,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.property-initializers"
@@ -2917,7 +2917,7 @@
       "title": "Await in catch/finally blocks",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 164,
       "requires": [],
@@ -2930,7 +2930,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.await-in-catch-finally"
@@ -2961,7 +2961,7 @@
       "title": "Default values for getter-only properties",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 166,
       "requires": [],
@@ -2975,7 +2975,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.read-only-auto-properties",
@@ -2993,7 +2993,7 @@
       "title": "Dictionary initializer",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 171,
       "requires": [],
@@ -3008,7 +3008,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.index-initializers"
@@ -3039,7 +3039,7 @@
       "title": "Exception filters",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/when",
       "inventoryLine": 163,
       "requires": [],
@@ -3054,7 +3054,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.exception-filters"
@@ -3070,7 +3070,7 @@
       "title": "Expression-bodied members",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members",
       "inventoryLine": 167,
       "requires": [],
@@ -3085,7 +3085,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.expression-bodies"
@@ -3101,7 +3101,7 @@
       "title": "Import of static type members into namespace",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-static",
       "inventoryLine": 162,
       "requires": [],
@@ -3116,7 +3116,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.using-static"
@@ -3132,7 +3132,7 @@
       "title": "nameof operator",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/operators/nameof",
       "inventoryLine": 170,
       "requires": [],
@@ -3147,7 +3147,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.nameof"
@@ -3163,7 +3163,7 @@
       "title": "Null propagator (null-conditional operator, succinct null checking)",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/Language-Version-History.md",
       "inventoryLine": 168,
       "requires": [],
@@ -3178,7 +3178,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.null-conditional"
@@ -3194,7 +3194,7 @@
       "title": "String interpolation",
       "introduced": "6.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/language-reference/tokens/interpolated",
       "inventoryLine": 169,
       "requires": [],
@@ -3209,7 +3209,7 @@
         "tests/CSNitrogen.Tests/Syntax/CSharp6ProductionTests.cs",
         "tests/CSNitrogen.CSharp6.Tests/CSharp6GrammarSeamTests.cs"
       ],
-      "status": "implemented",
+      "status": "verified",
       "coverage": {
         "capabilities": [
           "csharp6.interpolated-strings"

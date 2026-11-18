@@ -41,7 +41,7 @@
     "languageVersion": "CSharp6",
     "role": "observation; the sixth-edition text wins and disagreements are recorded divergences"
   },
-  "completion": "Partial. Production capabilities csharp6.* and csharp6.source-context-checks (CSN2060-CSN2062) are implemented in the CSharp6 factory and later factories, with frozen Unicode4 scalars; no independent admission guard exists, so CSharp6 is not Complete.",
+  "completion": "The reviewed source and witness records are eligible for the independent CSharp6 admission guard. A named reviewer must approve its exact ledger before CSharp6 reports Complete.",
   "production": {
     "nitrogenRevision": "b3494870dfb5f187bae9065227d4ef7f742aa048",
     "corePullRequest": null,
@@ -62,5 +62,16 @@
       "CSharp.InterpolatedStrings.Verbatim"
     ],
     "policySource": "Parsing/CSharp6ContextPolicy.cs"
-  }
+  },
+  "normalizedExclusions": [
+    "binding-types-inference-and-accessibility",
+    "general-modifier-compatibility-and-finite-sets",
+    "constantness-variance-and-pointer-legality",
+    "control-flow-and-runtime",
+    "awaitability-task-types-and-caller-substitution",
+    "interpolation-conversion-and-evaluation",
+    "nameof-value-and-static-import-lookup",
+    "filter-order-and-read-only-assignment",
+    "inherited-non-abstract-indexer-semicolon-accessors"
+  ]
 }

@@ -28,7 +28,7 @@ public static unsafe class CSharpParser
         };
     /// <summary>Actual module names and compilation-unit root provenance of each admitted factory.</summary>
     private static readonly IReadOnlyDictionary<string,Lazy<(IReadOnlyList<string> Modules,bool Root)>> FactoryContracts=
-        new[]{"CSharp1","CSharp2","CSharp3","CSharp4","CSharp5"}.ToDictionary(name=>name,name=>new Lazy<(IReadOnlyList<string>,bool)>(()=>FactoryContract(name)),StringComparer.Ordinal);
+        new[]{"CSharp1","CSharp2","CSharp3","CSharp4","CSharp5","CSharp6"}.ToDictionary(name=>name,name=>new Lazy<(IReadOnlyList<string>,bool)>(()=>FactoryContract(name)),StringComparer.Ordinal);
     private static (IReadOnlyList<string> Modules,bool Root) FactoryContract(string name)
     {
         var factory=Compositions[name];var language=factory.Language.Value;
