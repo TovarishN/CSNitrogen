@@ -2,7 +2,7 @@ using System.Text.Json;
 using CSNitrogen.Parsing;
 using CSNitrogen.Tests.Lexing;
 namespace CSNitrogen.Tests.Syntax;
-/// <summary>Executes every sixth-edition alternative's witness on the actual CSharp6 factory, which stays partial.</summary>
+/// <summary>Executes every sixth-edition alternative's witness on the actual CSharp6 factory.</summary>
 public class CSharp6AlternativeMatrixTests
 {
  const string Profile="CSharp6";

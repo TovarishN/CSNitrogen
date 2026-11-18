@@ -178,8 +178,8 @@ public class CSharp6ProductionTests
   Assert.DoesNotContain(Enumerable.Range(0,p.Tree.NodeCount),n=>Kind(p,n)=="NamedBaseEnumDeclaration");
  }
  [Fact]
- public void Sixth_profile_remains_partial()
+ public void Sixth_profile_reports_reviewed_syntax_coverage()
  {
-  using var p=Parse("class C{int M()=>1;}");Assert.True(p.Accepted);Assert.False(p.ProfileComplete);
+  using var p=Parse("class C{int M()=>1;}");Assert.True(p.Accepted);Assert.True(p.ProfileComplete);
  }
 }
