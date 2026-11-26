@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from ecma_source_hashes import chapter_digest
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -27,6 +28,8 @@ work = policy['workingText']
 grammar_bytes = (args.standard / 'grammar.md').read_bytes()
 if hashlib.sha256(grammar_bytes).hexdigest() != work['grammarSha256']:
     raise SystemExit('grammar.md does not match the pinned working text')
+if args.edition == 7 and chapter_digest(args.standard) != work['chaptersSha256']:
+    raise SystemExit('Chapter bytes do not match the pinned working text')
 
 def sha(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -134,13 +137,14 @@ for chapter in sorted(p for p in args.standard.glob('*.md') if p.name != 'gramma
         main.setdefault(name, []).append({'file': chapter.name, 'line': line, 'bodySha256': sha(' '.join(body.split()))})
 productions, counts = [], {'lexical': 0, 'syntactic': 0, 'unsafe': 0}
 seen = set()
+unsafe_chapter = f'§{22 if args.edition == 6 else 23}'
 for name, fragment, line, body, section in rules_in(grammar_lines):
     if name in seen:
         raise SystemExit('Duplicate grammar rule: ' + name)
     seen.add(name)
     lexical = fragment or name[0].isupper()
     alts = alternatives(body)
-    kind = 'unsafe' if section and section.startswith('§22') else 'lexical' if lexical else 'syntactic'
+    kind = 'unsafe' if section and section.split('.')[0] == unsafe_chapter else 'lexical' if lexical else 'syntactic'
     counts[kind] += 1
     normalized = ' '.join(body.split())
     occurrences = main.get(name, [])
@@ -166,6 +170,8 @@ index = {
     'withoutMainText': sorted(p['name'] for p in productions if not p['mainTextOccurrences']),
     'productions': productions,
 }
+if args.edition == 7:
+    index['source']['chaptersSha256'] = work['chaptersSha256']
 text = json.dumps(index, indent=1, ensure_ascii=False) + '\n'
 if args.check:
     if OUT.read_text(encoding='utf-8') != text:

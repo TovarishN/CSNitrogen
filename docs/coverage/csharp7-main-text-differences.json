@@ -5,14 +5,15 @@
  "extractionSha256": "88c79bd3259c6e2b23db0e0d367b60f875e502641f4ee7504f4c11c9b96f2f1f",
  "workingText": {
   "branch": "standard-v7",
-  "commit": "02d1a90122ece425cff575f47f197fb396be73d4"
+  "commit": "02d1a90122ece425cff575f47f197fb396be73d4",
+  "chaptersSha256": "e2dc1184dd8a08791bafd9ceb33ebab7667dc92e0905b61aed339a7a1222c7cf"
  },
- "scope": "Every working-text block (prose, notes, list items, tables, headings, code and grammar) reduced to letters, digits and operator characters and aligned in document order with the reduced PDF body; text on either side without a counterpart is reported.",
+ "scope": "Blocks and PDF spans unmatched by the ordered normalization and search, pending source inspection.",
  "counts": {
-  "blocks": 8273,
-  "aligned": 8234,
-  "workingTextOnly": 39,
-  "pdfOnly": 18
+  "blocks": 8342,
+  "aligned": 8316,
+  "workingTextOnly": 26,
+  "pdfOnly": 9
  },
  "workingTextOnly": [
   {
@@ -73,108 +74,17 @@
   },
   {
    "file": "structs.md",
-   "line": 197,
+   "line": 330,
    "kind": "code",
-   "sha256": "8a5dfe3893fc0b169addbcc18cc70bb91963b7e4ff5a7f6a18ad716a94ef0410",
-   "sourceCharacters": 2731
+   "sha256": "ad53e8806d17c82d38902738d1d47d96bddaade27513466322efa0f793149dd0",
+   "sourceCharacters": 5
   },
   {
    "file": "structs.md",
-   "line": 252,
+   "line": 378,
    "kind": "code",
-   "sha256": "9fd9193893548f21b365ff684bfef607cfa7c08019a1c94106a24cb3667be256",
-   "sourceCharacters": 643
-  },
-  {
-   "file": "structs.md",
-   "line": 280,
-   "kind": "code",
-   "sha256": "0401f9ff5c6f5788a333a82d4ae4ad66bc1a1bd7c09a7aaf2597510fba9f65e7",
-   "sourceCharacters": 2191
-  },
-  {
-   "file": "structs.md",
-   "line": 331,
-   "kind": "prose",
-   "sha256": "dbf900b2a2870aa326d45ff881a945924bc5579e3fe61bd7bef66e8d5eee8d88",
-   "sourceCharacters": 11
-  },
-  {
-   "file": "structs.md",
-   "line": 334,
-   "kind": "code",
-   "sha256": "58306d885b222fd29b63e2a26605c1f4aa84c83132d473eb6d6312295eb6d549",
-   "sourceCharacters": 630
-  },
-  {
-   "file": "structs.md",
-   "line": 379,
-   "kind": "prose",
-   "sha256": "f1aaff94d3fded496770d584445f5c4b8abfa255cf3be38ded562720b4a1d8b2",
-   "sourceCharacters": 11
-  },
-  {
-   "file": "structs.md",
-   "line": 382,
-   "kind": "code",
-   "sha256": "90e582bf0e0b47f0ea5be93f22751c8b30a98a9089cd641ef8f401fa043b70e2",
-   "sourceCharacters": 525
-  },
-  {
-   "file": "structs.md",
-   "line": 399,
-   "kind": "code",
-   "sha256": "d64daa2afaf82cfd0da9615eeee4db166ee92e863d82edf87fc2bd5ed1fc4250",
-   "sourceCharacters": 575
-  },
-  {
-   "file": "structs.md",
-   "line": 432,
-   "kind": "code",
-   "sha256": "cecada2b1833e30e334534cbf9d71743e0c41c611b852cc29a70723b528ece07",
-   "sourceCharacters": 920
-  },
-  {
-   "file": "structs.md",
-   "line": 468,
-   "kind": "code",
-   "sha256": "0ad6992ade1664eb9f51778eca1c4c6fa8f9ab6e135bbccd4d8e6de74316cb6c",
-   "sourceCharacters": 804
-  },
-  {
-   "file": "structs.md",
-   "line": 486,
-   "kind": "code",
-   "sha256": "87653d2ab1c1f628737c4d880559091e151782abe2a864cc96b11f8229307d8d",
-   "sourceCharacters": 5380
-  },
-  {
-   "file": "structs.md",
-   "line": 572,
-   "kind": "prose",
-   "sha256": "1a4d5aea58f6921eed338830a1cc80b554ad57f4a5bd4b53329082e1b312d1aa",
-   "sourceCharacters": 25
-  },
-  {
-   "file": "structs.md",
-   "line": 573,
-   "kind": "code",
-   "sha256": "07c592c9b565cabbdbaa8c9cf4611d24e5d96a6e710e38213d3ab2057262fedc",
-   "sourceCharacters": 223
-  },
-  {
-   "file": "arrays.md",
-   "line": 1,
-   "kind": "prose",
-   "sha256": "aa9c3a23b9662955862453307595ca5989754fa6cf5464c97fe99fd081baa5ce",
-   "sourceCharacters": 11
-  },
-  {
-   "file": "arrays.md",
-   "line": 3,
-   "kind": "prose",
-   "sha256": "71ab1d24dcbe33eb3a8e53c785bce651d77fea8d363ab07977159aa5cf31eddf",
-   "sourceCharacters": 15
+   "sha256": "699197984bc5f58b11402250cf7904f6ddf60729923169f11508f6c16399fcc3",
+   "sourceCharacters": 5
   },
   {
    "file": "grammar.md",
@@ -293,91 +203,55 @@
   {
    "before": "general-description.md:1",
    "sha256": "5203ccd76a211204e902de45f123b942053a9448276c67c43bb101b9b6026a6f",
+   "normalizedStart": 7321,
    "normalizedCharacters": 122
   },
   {
    "before": "expressions.md:832",
    "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "normalizedStart": 299128,
    "normalizedCharacters": 1
   },
   {
    "before": "expressions.md:852",
    "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "normalizedStart": 300307,
    "normalizedCharacters": 1
-  },
-  {
-   "before": "structs.md:251",
-   "sha256": "131d41fa5ca3a68ef2a743d30cae6a8c07bee01f57f5ee3b367397e936068bc6",
-   "normalizedCharacters": 1973
-  },
-  {
-   "before": "structs.md:264",
-   "sha256": "f953d12c2d56bca517d45fe3db696f29a51508c5dadb44cae68d0a34986a98a4",
-   "normalizedCharacters": 482
-  },
-  {
-   "before": "structs.md:304",
-   "sha256": "1974d5b3f1e1093fa92445c1c22ec857950652a112a66a381257de2f7a11437f",
-   "normalizedCharacters": 1539
-  },
-  {
-   "before": "structs.md:346",
-   "sha256": "fe1d4e52ef05ab2cf37d8246b0905c83d300804f413e807432069e33b1f25eae",
-   "normalizedCharacters": 495
-  },
-  {
-   "before": "structs.md:394",
-   "sha256": "d6d5b4f67f07c841319f3f7e885d28abaa891ef56e724ed22f80cdd37026800a",
-   "normalizedCharacters": 390
-  },
-  {
-   "before": "structs.md:413",
-   "sha256": "bed1e95003773b1f32f8c0ca0d4d01980c9ca9b0abbcfb06adc22de984925fa7",
-   "normalizedCharacters": 432
-  },
-  {
-   "before": "structs.md:448",
-   "sha256": "510631a7619374493b50d0fb794d482c8c83ee7303b34ff9d01fcdf8a23ac444",
-   "normalizedCharacters": 702
-  },
-  {
-   "before": "structs.md:475",
-   "sha256": "7f943c61f448e9e73d0bad07b422d75c952f586a36ecbcac862cdbb2a600514e",
-   "normalizedCharacters": 570
-  },
-  {
-   "before": "arrays.md:5",
-   "sha256": "da38bee3e0a6b0f966eaa45f6e9b8323e6f5c7856ba46bcfa140961133596b73",
-   "normalizedCharacters": 4262
   },
   {
    "before": "portability-issues.md:13",
    "sha256": "e6562fb7b4a0cded000a2f28dffddf8e7668ff732f6ffa0824c722cd131af792",
+   "normalizedStart": 940033,
    "normalizedCharacters": 39603
   },
   {
    "before": "standard-library.md:589",
    "sha256": "b39f7c563ee30dd648c4be55f90e6c61646f53c86e6907cbccbb5bbba92eea4f",
+   "normalizedStart": 994666,
    "normalizedCharacters": 167
   },
   {
    "before": "standard-library.md:781",
    "sha256": "f5bac8651c07f39792321bef54b399929a49c1d3c947904facda8ce437f94c33",
+   "normalizedStart": 996228,
    "normalizedCharacters": 6673
   },
   {
    "before": "standard-library.md:923",
    "sha256": "2247c398571a69ac4487ede59c8c6db433c2a20c3c51069abc47e06e95641e16",
+   "normalizedStart": 1003646,
    "normalizedCharacters": 4059
   },
   {
    "before": "documentation-comments.md:113",
    "sha256": "7569d70102884580d9ecb11f132b20cf3205cbc4109c64aff57f635437d43207",
+   "normalizedStart": 1017847,
    "normalizedCharacters": 6
   },
   {
    "before": "bibliography.md:3",
    "sha256": "6281730e5e36ba87c6af58a66ef74ad1d3f80fb2dfe8ad4d4a6b44dc6ca6ad82",
+   "normalizedStart": 1039034,
    "normalizedCharacters": 12
   }
  ]

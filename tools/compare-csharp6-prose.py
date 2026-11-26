@@ -11,6 +11,7 @@ text between consecutive matches is reported as PDF-only. The report lists align
 """
 import argparse, hashlib, html, json, re, unicodedata
 from pathlib import Path
+from ecma_source_hashes import chapter_digest
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('standard', type=Path)
@@ -38,6 +39,8 @@ if args.edition == 7:
 chapters = {p.stem for p in args.standard.glob('*.md') if p.name != 'README.md'}
 if chapters != set(ORDER):
     raise SystemExit(f'Chapter inventory differs: missing={sorted(set(ORDER) - chapters)}, extra={sorted(chapters - set(ORDER))}')
+if args.edition == 7 and chapter_digest(args.standard) != policy['workingText']['chaptersSha256']:
+    raise SystemExit('Chapter bytes do not match the pinned working text')
 
 KEEP = set('<>=!?&|^~+-*/%')  # '.' and ',' vary with list punctuation; '?' still separates ?. from .
 def reduce(text):
@@ -74,19 +77,26 @@ def strip_markup(text, kind):
     return text.replace('\\', '')
 
 QUOTE = re.compile(r'^\s*(>\s?)*')
+def fence_text(line):
+    text = QUOTE.sub('', line)
+    # The seventh edition has indented closing fences inside block quotes.
+    return text.lstrip() if args.edition == 7 else text
+
 def blocks(path):
     """Yield (line, kind, text): paragraphs, list items, code and grammar blocks, outside HTML comments."""
     source = re.sub(r'<!--.*?-->', lambda m: '\n' * m.group(0).count('\n'), path.read_text(encoding='utf-8'), flags=re.S)
     lines = source.split('\n'); i = 0; block, first = [], 0
     while i < len(lines):
         line = lines[i]; bare = QUOTE.sub('', line)
-        if bare.startswith('```'):
+        if fence_text(line).startswith('```'):
             if block: yield first + 1, 'prose', '\n'.join(block)
             block = []
             kind = 'grammar' if bare.strip() == '```ANTLR' else 'code'
             body, j = [], i + 1
-            while j < len(lines) and not QUOTE.sub('', lines[j]).startswith('```'):
+            while j < len(lines) and not fence_text(lines[j]).startswith('```'):
                 body.append(QUOTE.sub('', lines[j])); j += 1
+            if args.edition == 7 and j == len(lines):
+                raise SystemExit(f'{path.name}:{i+1}: unclosed code fence')
             yield i + 1, kind, '\n'.join(body); i = j + 1; continue
         if not bare.strip():
             if block: yield first + 1, 'prose', '\n'.join(block)
@@ -115,8 +125,13 @@ for name in ORDER:
         if at > pointer:
             gap = pdf[pointer:at]
             pdf_only.append(dict(before=f'{path.name}:{line}', sha256=hashlib.sha256(gap.encode()).hexdigest(), reduced=gap))
+            if args.edition == 7:
+                pdf_only[-1]['normalizedStart'] = pointer
         pointer = at + len(reduced)
-if pointer < len(pdf): pdf_only.append(dict(before='end', sha256=hashlib.sha256(pdf[pointer:].encode()).hexdigest(), reduced=pdf[pointer:]))
+if pointer < len(pdf):
+    pdf_only.append(dict(before='end', sha256=hashlib.sha256(pdf[pointer:].encode()).hexdigest(), reduced=pdf[pointer:]))
+    if args.edition == 7:
+        pdf_only[-1]['normalizedStart'] = pointer
 if args.edition == 7:
     for candidate in working:
         candidate['sourceCharacters'] = len(candidate.pop('text'))
@@ -127,6 +142,9 @@ record = dict(schemaVersion=2 if args.edition == 6 else 3, profile=profile, prim
               scope='Every working-text block (prose, notes, list items, tables, headings, code and grammar) reduced to letters, digits and operator characters and aligned in document order with the reduced PDF body; text on either side without a counterpart is reported.',
               counts=dict(blocks=total, aligned=total - len(working), workingTextOnly=len(working), pdfOnly=len(pdf_only)),
               workingTextOnly=working, pdfOnly=pdf_only)
+if args.edition == 7:
+    record['workingText']['chaptersSha256'] = policy['workingText']['chaptersSha256']
+    record['scope'] = 'Blocks and PDF spans unmatched by the ordered normalization and search, pending source inspection.'
 text = json.dumps(record, indent=1, ensure_ascii=False) + '\n'
 if args.check:
     if OUT.read_text(encoding='utf-8') != text: raise SystemExit(f'{OUT.name} is stale')

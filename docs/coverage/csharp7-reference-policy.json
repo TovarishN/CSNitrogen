@@ -15,6 +15,7 @@
     "branch": "standard-v7",
     "commit": "02d1a90122ece425cff575f47f197fb396be73d4",
     "grammarSha256": "e00b7348ed2e8a82494a932473c4eefcfc7693deb524b0d4941cce702debe3da",
+    "chaptersSha256": "e2dc1184dd8a08791bafd9ceb33ebab7667dc92e0905b61aed339a7a1222c7cf",
     "scope": "Extraction input pending reconciliation with the published PDF."
   },
   "extraction": {
