@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Compare every indexed sixth-edition grammar rule with the pinned ECMA-334 6th edition PDF.
+"""Compare every indexed grammar rule with its pinned ECMA-334 PDF.
 
 Inputs: the PDF (SHA-pinned in csharp6-reference-policy.json) and a macOS PDFKit text extraction of
 it (also SHA-pinned; produce it with PDFDocument.string). Annex A of the PDF is parsed into rules
-and each rule body, whitespace- and comment-normalized, is compared with the working-text body
-recorded in csharp6-standard-index.json. The PDF wins every difference; each one is written with
+and each rule body, whitespace- and comment-normalized, is compared with the edition's indexed working-text body. The PDF wins every difference; each one is written with
 its disposition. --check compares a fresh comparison with the committed record.
 """
 import argparse
@@ -14,23 +13,29 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'docs/coverage/csharp6-pdf-differences.json'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('pdf', type=Path)
 parser.add_argument('text', type=Path, help='PDFKit text extraction of the PDF')
+parser.add_argument('--edition', choices=(6, 7), default=6, type=int,
+                    help='ECMA-334 edition, defaults to the sixth')
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
-policy = json.loads((ROOT / 'docs/coverage/csharp6-reference-policy.json').read_text())
+stem = f'csharp{args.edition}'
+profile = 'CSharp6' if args.edition == 6 else 'CSharp7_3'
+OUT = ROOT / f'docs/coverage/{stem}-pdf-differences.json'
+policy = json.loads((ROOT / f'docs/coverage/{stem}-reference-policy.json').read_text())
 if hashlib.sha256(args.pdf.read_bytes()).hexdigest() != policy['primary']['sha256']:
     raise SystemExit('PDF does not match the pinned primary')
 raw = args.text.read_bytes()
 if hashlib.sha256(raw).hexdigest() != policy['extraction']['textSha256']:
     raise SystemExit('Text extraction does not match the pinned PDFKit extraction')
-index = json.loads((ROOT / 'docs/coverage/csharp6-standard-index.json').read_text())
+index = json.loads((ROOT / f'docs/coverage/{stem}-standard-index.json').read_text())
 lines = raw.decode('utf-8').split('\n')
 start = next(i for i, l in enumerate(lines) if l == 'A.2 Lexical grammar' and i > 1000)
-end = next(i for i in range(start, len(lines)) if lines[i] == 'B Portability issues')
-NOISE = re.compile(r'^(ECMA-334|\d+|A Grammar|A\.\d+(\.\d+)? .*|© Ecma International \d+ ?\d*)$')
+end_heading = 'B Portability issues' if args.edition == 6 else 'B. Portability issues'
+end = next(i for i in range(start, len(lines)) if lines[i] == end_heading)
+page_headers = '' if args.edition == 6 else r'|ECMA-334 A Grammar|A Grammar ECMA-334'
+NOISE = re.compile(r'^(ECMA-334|\d+|A Grammar|A\.\d+(\.\d+)? .*|© Ecma International \d+ ?\d*' + page_headers + r')$')
 annex = []
 for l in lines[start:end]:
     if NOISE.match(l.strip()): continue
@@ -101,15 +106,15 @@ for p in index['productions']:
         'resolution': 'pending-review'})
 extra = sorted(set(pdf) - names)
 record = {
-    'schemaVersion': 1, 'profile': 'CSharp6', 'primarySha256': policy['primary']['sha256'],
-    'extractionSha256': policy['extraction']['textSha256'], 'indexSha256': hashlib.sha256((ROOT / 'docs/coverage/csharp6-standard-index.json').read_bytes()).hexdigest(),
+    'schemaVersion': 1, 'profile': profile, 'primarySha256': policy['primary']['sha256'],
+    'extractionSha256': policy['extraction']['textSha256'], 'indexSha256': hashlib.sha256((ROOT / f'docs/coverage/{stem}-standard-index.json').read_bytes()).hexdigest(),
     'scope': 'Annex A rule bodies, whitespace/comment/typographic-quote normalized; main-text prose is reviewed separately',
     'counts': {'indexed': len(index['productions']), 'pdfRules': len(pdf), 'agreed': agreed, 'differences': len(differences), 'pdfOnly': len(extra)},
     'pdfOnly': extra, 'differences': differences,
 }
 text = json.dumps(record, indent=1, ensure_ascii=False) + '\n'
 if args.check:
-    if OUT.read_text(encoding='utf-8') != text: raise SystemExit('csharp6-pdf-differences.json is stale')
+    if OUT.read_text(encoding='utf-8') != text: raise SystemExit(f'{OUT.name} is stale')
     print('current')
 else:
     OUT.write_text(text, encoding='utf-8'); print(record['counts'])

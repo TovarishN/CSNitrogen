@@ -17,6 +17,10 @@
     "grammarSha256": "e00b7348ed2e8a82494a932473c4eefcfc7693deb524b0d4941cce702debe3da",
     "scope": "Extraction input pending reconciliation with the published PDF."
   },
+  "extraction": {
+    "method": "macOS PDFKit PDFDocument.string",
+    "textSha256": "88c79bd3259c6e2b23db0e0d367b60f875e502641f4ee7504f4c11c9b96f2f1f"
+  },
   "unicode": {
     "status": "approved",
     "policy": "unicode-4.0-scalar",
