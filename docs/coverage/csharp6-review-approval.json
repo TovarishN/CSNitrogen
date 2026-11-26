@@ -3,7 +3,7 @@
   "profile": "CSharp6",
   "status": "approved",
   "reviewer": "Dmitri Kamenetski",
-  "approvedOn": "2026-11-19",
-  "ledgerSha256": "71c1d2f4064097f245afe24da753e36ff7fcda61729daa84a09aa54fe661a55e",
-  "notes": ""
+  "approvedOn": "2026-11-26",
+  "ledgerSha256": "0b4fefb8d250ed47dff3d25b2631e297e233e26e908d9909a6b3c24997c4d688",
+  "notes": "Approved the five shared input updates for CSharp7 Unicode continuity, with the CSharp6 factory and admission scope preserved."
 }
