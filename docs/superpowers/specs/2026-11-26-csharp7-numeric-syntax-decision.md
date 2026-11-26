@@ -2,7 +2,7 @@
 
 C# 7.0 adds binary integers and separators between digits of numeric literals. C# 7.2 adds separators immediately after the binary and hexadecimal prefixes. The two additions need independently selectable grammar modules so a custom language can use the C# 7.0 forms without taking the 7.2 forms. The source contract leaves value conversion and overflow to semantic analysis. [Release observations](../../coverage/csharp7-release-boundary-evidence.md) · [C# 7.2 separator specification](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.2/leading-separator.md)
 
-## Preserve the current token API (recommended)
+## Preserve the current token API (approved)
 
 Keep the existing `LiteralExpression.Value` property as `Nitrogen.Token`. A composition that includes the numeric extensions supplies an additional expression alternative for the new spellings. Each new numeric expression keeps the full literal source span and its numeric token. Existing literal visitors can continue to consume their current node and token types. Visitors and patterns covering every literal in a CSharp7 profile need to handle the new alternative as well.
 
