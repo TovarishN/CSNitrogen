@@ -1,0 +1,258 @@
+{
+ "schemaVersion": 3,
+ "profile": "CSharp7_3",
+ "primarySha256": "7797c1d995dd7791683cb4f2dfd758cc1bfd22150b5234487fffe43e9b3e3ab0",
+ "extractionSha256": "88c79bd3259c6e2b23db0e0d367b60f875e502641f4ee7504f4c11c9b96f2f1f",
+ "workingText": {
+  "branch": "standard-v7",
+  "commit": "02d1a90122ece425cff575f47f197fb396be73d4",
+  "chaptersSha256": "e2dc1184dd8a08791bafd9ceb33ebab7667dc92e0905b61aed339a7a1222c7cf"
+ },
+ "scope": "Blocks and PDF spans unmatched by the ordered normalization and search, pending source inspection.",
+ "counts": {
+  "blocks": 8342,
+  "aligned": 8316,
+  "workingTextOnly": 26,
+  "pdfOnly": 9
+ },
+ "workingTextOnly": [
+  {
+   "file": "terms-and-definitions.md",
+   "line": 48,
+   "kind": "prose",
+   "sha256": "1d387ae9693c189ff1570158c5cdbe867a54e5916f2dd89da8735b054dae5923",
+   "sourceCharacters": 146
+  },
+  {
+   "file": "expressions.md",
+   "line": 3150,
+   "kind": "prose",
+   "sha256": "37554a1234b1ec436095e8d3562af49e2da412448234fde77415d7aa8b5055bf",
+   "sourceCharacters": 60
+  },
+  {
+   "file": "expressions.md",
+   "line": 5109,
+   "kind": "code",
+   "sha256": "ad53e8806d17c82d38902738d1d47d96bddaade27513466322efa0f793149dd0",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "expressions.md",
+   "line": 5188,
+   "kind": "code",
+   "sha256": "610318a78d7a41ad3bb0dcf4e28b6484eede71cb9f06ecf7200c7b111f2c88cd",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "expressions.md",
+   "line": 5226,
+   "kind": "code",
+   "sha256": "52aab3d2c2d109a158de090b132b702ca85e6d2cc4d2b64e11706cd95e51e3aa",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "expressions.md",
+   "line": 5268,
+   "kind": "code",
+   "sha256": "5fe87153b05a2f3188d7c53ffb1e84ee78271e829c1b8c213f0371e1c19879e8",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "expressions.md",
+   "line": 5331,
+   "kind": "code",
+   "sha256": "7a93c3da4831337d7230c790653255fa429ebe6bffc3f68a11dcb412115da6ae",
+   "sourceCharacters": 4
+  },
+  {
+   "file": "classes.md",
+   "line": 1347,
+   "kind": "code",
+   "sha256": "2c6be8d342aab3e401c72fbbf57c148d586fc868d837d05277ef147374ebd49a",
+   "sourceCharacters": 11
+  },
+  {
+   "file": "structs.md",
+   "line": 330,
+   "kind": "code",
+   "sha256": "ad53e8806d17c82d38902738d1d47d96bddaade27513466322efa0f793149dd0",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "structs.md",
+   "line": 378,
+   "kind": "code",
+   "sha256": "699197984bc5f58b11402250cf7904f6ddf60729923169f11508f6c16399fcc3",
+   "sourceCharacters": 5
+  },
+  {
+   "file": "grammar.md",
+   "line": 11,
+   "kind": "grammar",
+   "sha256": "0ed01e21c1af14d9ce4f3d0fbe6f2a5a92c13ec0c5cb5183de92f26b941529fa",
+   "sourceCharacters": 12517
+  },
+  {
+   "file": "grammar.md",
+   "line": 544,
+   "kind": "prose",
+   "sha256": "abcec5130139d83fc89cbec42bfe17a14c79e82c410f5ce0dcb129df56e0aed5",
+   "sourceCharacters": 24
+  },
+  {
+   "file": "grammar.md",
+   "line": 546,
+   "kind": "grammar",
+   "sha256": "5823cd910f186981748fc0229e81d900b883122ed013c369655f9b84fb06cdce",
+   "sourceCharacters": 45880
+  },
+  {
+   "file": "grammar.md",
+   "line": 2676,
+   "kind": "prose",
+   "sha256": "cda9d7471b99d0aca564661f3631bd584f6f3b51a02196e642a328053323969e",
+   "sourceCharacters": 41
+  },
+  {
+   "file": "grammar.md",
+   "line": 2678,
+   "kind": "grammar",
+   "sha256": "137e308b78224f6403d8189b082901c9be15b7f460364b56f6ece07c3545706c",
+   "sourceCharacters": 1802
+  },
+  {
+   "file": "grammar.md",
+   "line": 2760,
+   "kind": "prose",
+   "sha256": "1e38d56146441f78218dc67ef437b3e0fa8dc68ee9482252bd3769bfc2fa086e",
+   "sourceCharacters": 28
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 1,
+   "kind": "prose",
+   "sha256": "a8b0557c2d10f25bdc39e0c2525afed4660e327f65f40f577d015ada630e6258",
+   "sourceCharacters": 28
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 3,
+   "kind": "prose",
+   "sha256": "46d88ac9f2cd6370edfb13935cf60895efb6947444eae196fafe6a6ab8e89aad",
+   "sourceCharacters": 31
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 5,
+   "kind": "prose",
+   "sha256": "1d8b24eccf6ae1aef7e1f1b8dcedba0c1f903c255f04a97fcae150e865013221",
+   "sourceCharacters": 14
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 7,
+   "kind": "prose",
+   "sha256": "03cba508ac036e7cc2f2dc2365cc2f06f1a3fe7583eb060bfb78671e5d45a153",
+   "sourceCharacters": 90
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 9,
+   "kind": "prose",
+   "sha256": "a4f7cf0de26fe1e8a295efed80fbf85bc8b1ec9d2251555368c890b8a818fbb1",
+   "sourceCharacters": 25
+  },
+  {
+   "file": "portability-issues.md",
+   "line": 11,
+   "kind": "prose",
+   "sha256": "0f9111591b66da88808c80f992dfcd1493c112dfbab0bed7d3d3b1bc6eee2028",
+   "sourceCharacters": 57
+  },
+  {
+   "file": "standard-library.md",
+   "line": 587,
+   "kind": "prose",
+   "sha256": "426d0bbf4e3bb7fab0deb5f215216105589097ff826ae6de0be1bacb28fd67fd",
+   "sourceCharacters": 262
+  },
+  {
+   "file": "standard-library.md",
+   "line": 609,
+   "kind": "prose",
+   "sha256": "940171912a104b83f911716dadf41b6a6c1ac34087e4ba190f80b4567bdbd9d3",
+   "sourceCharacters": 10594
+  },
+  {
+   "file": "standard-library.md",
+   "line": 798,
+   "kind": "prose",
+   "sha256": "7aaa3f0828cec31b07388797f23186a6a4fd9ae5f4f85e16fe142026732e74ac",
+   "sourceCharacters": 5920
+  },
+  {
+   "file": "bibliography.md",
+   "line": 1,
+   "kind": "prose",
+   "sha256": "1bf93d3a8730dc7f36b76c113d266f74dc00cafb54c2ac20ac8d83de055dd9a9",
+   "sourceCharacters": 22
+  }
+ ],
+ "pdfOnly": [
+  {
+   "before": "general-description.md:1",
+   "sha256": "5203ccd76a211204e902de45f123b942053a9448276c67c43bb101b9b6026a6f",
+   "normalizedStart": 7321,
+   "normalizedCharacters": 122
+  },
+  {
+   "before": "expressions.md:832",
+   "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "normalizedStart": 299128,
+   "normalizedCharacters": 1
+  },
+  {
+   "before": "expressions.md:852",
+   "sha256": "65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2",
+   "normalizedStart": 300307,
+   "normalizedCharacters": 1
+  },
+  {
+   "before": "portability-issues.md:13",
+   "sha256": "e6562fb7b4a0cded000a2f28dffddf8e7668ff732f6ffa0824c722cd131af792",
+   "normalizedStart": 940033,
+   "normalizedCharacters": 39603
+  },
+  {
+   "before": "standard-library.md:589",
+   "sha256": "b39f7c563ee30dd648c4be55f90e6c61646f53c86e6907cbccbb5bbba92eea4f",
+   "normalizedStart": 994666,
+   "normalizedCharacters": 167
+  },
+  {
+   "before": "standard-library.md:781",
+   "sha256": "f5bac8651c07f39792321bef54b399929a49c1d3c947904facda8ce437f94c33",
+   "normalizedStart": 996228,
+   "normalizedCharacters": 6673
+  },
+  {
+   "before": "standard-library.md:923",
+   "sha256": "2247c398571a69ac4487ede59c8c6db433c2a20c3c51069abc47e06e95641e16",
+   "normalizedStart": 1003646,
+   "normalizedCharacters": 4059
+  },
+  {
+   "before": "documentation-comments.md:113",
+   "sha256": "7569d70102884580d9ecb11f132b20cf3205cbc4109c64aff57f635437d43207",
+   "normalizedStart": 1017847,
+   "normalizedCharacters": 6
+  },
+  {
+   "before": "bibliography.md:3",
+   "sha256": "6281730e5e36ba87c6af58a66ef74ad1d3f80fb2dfe8ad4d4a6b44dc6ca6ad82",
+   "normalizedStart": 1039034,
+   "normalizedCharacters": 12
+  }
+ ]
+}

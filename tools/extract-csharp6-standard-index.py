@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Index ANTLR grammar rules from the pinned ECMA-334 6th edition working text.
+"""Index ANTLR grammar rules from the pinned ECMA-334 sixth or seventh edition working text.
 
-Input: the standard/ directory of dotnet/csharpstandard tag V6-standard (commit pinned in
-csharp6-reference-policy.json). Nothing is downloaded or redistributed. Every rule of the
+Input: the standard/ directory of dotnet/csharpstandard at the configured edition commit. Nothing is downloaded or redistributed. Every rule of the
 consolidated grammar (grammar.md) is indexed with its top-level alternatives and source hashes,
 and linked to the main-text chapter block that defines it. --check compares a fresh extraction with
 the committed index.
@@ -12,18 +11,25 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from ecma_source_hashes import chapter_digest
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'docs/coverage/csharp6-standard-index.json'
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('standard', type=Path, help='path to the V6-standard standard/ directory')
+parser.add_argument('standard', type=Path, help='path to the pinned standard/ directory')
+parser.add_argument('--edition', choices=(6, 7), default=6, type=int,
+                    help='ECMA-334 edition, defaults to the sixth')
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
-policy = json.loads((ROOT / 'docs/coverage/csharp6-reference-policy.json').read_text())
+stem = f'csharp{args.edition}'
+profile = 'CSharp6' if args.edition == 6 else 'CSharp7_3'
+OUT = ROOT / f'docs/coverage/{stem}-standard-index.json'
+policy = json.loads((ROOT / f'docs/coverage/{stem}-reference-policy.json').read_text())
 work = policy['workingText']
 grammar_bytes = (args.standard / 'grammar.md').read_bytes()
 if hashlib.sha256(grammar_bytes).hexdigest() != work['grammarSha256']:
-    raise SystemExit('grammar.md does not match the pinned V6-standard working text')
+    raise SystemExit('grammar.md does not match the pinned working text')
+if args.edition == 7 and chapter_digest(args.standard) != work['chaptersSha256']:
+    raise SystemExit('Chapter bytes do not match the pinned working text')
 
 def sha(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
@@ -70,6 +76,8 @@ def alternatives(body):
     return [' '.join(p.split()) for p in parts]
 
 RULE = re.compile(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*$')
+# The seventh edition wraps section references in Markdown links.
+SECTION = re.compile(r'^// Source: (§\S+)' if args.edition == 6 else r'^// Source: \[?(§[\d.]+)')
 def rules_in(lines, first_line=1):
     """Yield (name, fragment, line, body, section) for each ANTLR rule in ANTLR-fenced blocks."""
     fenced, section, i = False, None, 0
@@ -79,7 +87,7 @@ def rules_in(lines, first_line=1):
             fenced = raw.strip() == '```ANTLR' if not fenced else False
             i += 1; continue
         if fenced:
-            m = re.match(r'^// Source: (§\S+)', raw)
+            m = SECTION.match(raw)
             if m: section = m.group(1)
             one = re.match(r'^(fragment\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*:(.*);\s*$', strip_comment(raw))
             if one:
@@ -129,13 +137,14 @@ for chapter in sorted(p for p in args.standard.glob('*.md') if p.name != 'gramma
         main.setdefault(name, []).append({'file': chapter.name, 'line': line, 'bodySha256': sha(' '.join(body.split()))})
 productions, counts = [], {'lexical': 0, 'syntactic': 0, 'unsafe': 0}
 seen = set()
+unsafe_chapter = f'§{22 if args.edition == 6 else 23}'
 for name, fragment, line, body, section in rules_in(grammar_lines):
     if name in seen:
         raise SystemExit('Duplicate grammar rule: ' + name)
     seen.add(name)
     lexical = fragment or name[0].isupper()
     alts = alternatives(body)
-    kind = 'unsafe' if section and section.startswith('§22') else 'lexical' if lexical else 'syntactic'
+    kind = 'unsafe' if section and section.split('.')[0] == unsafe_chapter else 'lexical' if lexical else 'syntactic'
     counts[kind] += 1
     normalized = ' '.join(body.split())
     occurrences = main.get(name, [])
@@ -151,8 +160,8 @@ unindexed = sorted({name for _, name in headings(grammar_lines)} - indexed)
 if unindexed:
     raise SystemExit('Fenced rule headings not indexed: ' + ', '.join(unindexed))
 index = {
-    'schemaVersion': 1, 'profile': 'CSharp6', 'status': 'indexed-unreviewed',
-    'source': {'repository': work['repository'], 'tag': work['tag'], 'commit': work['commit'], 'grammarSha256': work['grammarSha256']},
+    'schemaVersion': 1, 'profile': profile, 'status': 'indexed-unreviewed',
+    'source': {key: work[key] for key in ('repository', 'tag' if args.edition == 6 else 'branch', 'commit', 'grammarSha256')},
     'primarySha256': policy['primary']['sha256'],
     'extraction': {'tool': 'tools/extract-csharp6-standard-index.py', 'scope': 'Every ANTLR rule in grammar.md with top-level alternatives, linked to main-text chapter blocks; the PDF comparison is separate'},
     'counts': counts,
@@ -161,10 +170,12 @@ index = {
     'withoutMainText': sorted(p['name'] for p in productions if not p['mainTextOccurrences']),
     'productions': productions,
 }
+if args.edition == 7:
+    index['source']['chaptersSha256'] = work['chaptersSha256']
 text = json.dumps(index, indent=1, ensure_ascii=False) + '\n'
 if args.check:
     if OUT.read_text(encoding='utf-8') != text:
-        raise SystemExit('csharp6-standard-index.json is stale')
+        raise SystemExit(f'{OUT.name} is stale')
     print('current')
 else:
     OUT.write_text(text, encoding='utf-8')

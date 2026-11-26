@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
-"""Align the whole sixth-edition working text with the pinned PDF, block by block, in document order.
+"""Align a pinned edition’s working text with the pinned PDF, block by block, in document order.
 
-Inputs: the V6-standard standard/ directory, the SHA-pinned PDF and its pinned PDFKit text. Every block of
+Inputs: the standard/ directory, the SHA-pinned PDF and its pinned PDFKit text. Every block of
 the working text (prose paragraph, list item, note, table, heading, code block and grammar block, with
 markdown and HTML markup removed, outside HTML comments) is reduced to letters, digits and operator
 characters after Unicode NFKC normalization. The PDF body (from the Foreword, with page headers, footers,
 page numbers and list bullets removed) is reduced the same way. Blocks are located in order: each must
 occur after the end of the previous match. A block not found there is reported as working-text-only; PDF
-text between consecutive matches is reported as PDF-only. Both directions are dispositioned in
-csharp6-main-text-dispositions.json; the PDF wins every difference. --check compares with the record.
+text between consecutive matches is reported as PDF-only. The report lists alignment candidates for review against the PDF. --check compares with the record.
 """
 import argparse, hashlib, html, json, re, unicodedata
 from pathlib import Path
+from ecma_source_hashes import chapter_digest
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'docs/coverage/csharp6-main-text-differences.json'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('standard', type=Path)
 parser.add_argument('pdf', type=Path)
 parser.add_argument('text', type=Path)
+parser.add_argument('--edition', choices=(6, 7), default=6, type=int,
+                    help='ECMA-334 edition, defaults to the sixth')
 parser.add_argument('--check', action='store_true')
 args = parser.parse_args()
-policy = json.loads((ROOT / 'docs/coverage/csharp6-reference-policy.json').read_text())
+stem = f'csharp{args.edition}'
+profile = 'CSharp6' if args.edition == 6 else 'CSharp7_3'
+OUT = ROOT / f'docs/coverage/{stem}-main-text-differences.json'
+policy = json.loads((ROOT / f'docs/coverage/{stem}-reference-policy.json').read_text())
 if hashlib.sha256(args.pdf.read_bytes()).hexdigest() != policy['primary']['sha256']: raise SystemExit('PDF does not match the pinned primary')
 raw = args.text.read_bytes()
 if hashlib.sha256(raw).hexdigest() != policy['extraction']['textSha256']: raise SystemExit('Text extraction does not match the pinned extraction')
@@ -30,12 +34,22 @@ ORDER = ['foreword', 'introduction', 'scope', 'normative-references', 'terms-and
          'lexical-structure', 'basic-concepts', 'types', 'variables', 'conversions', 'expressions', 'statements', 'namespaces', 'classes',
          'structs', 'arrays', 'interfaces', 'enums', 'delegates', 'exceptions', 'attributes', 'unsafe-code', 'grammar',
          'portability-issues', 'standard-library', 'documentation-comments', 'bibliography']
+if args.edition == 7:
+    ORDER.insert(ORDER.index('expressions'), 'patterns')
+chapters = {p.stem for p in args.standard.glob('*.md') if p.name != 'README.md'}
+if chapters != set(ORDER):
+    raise SystemExit(f'Chapter inventory differs: missing={sorted(set(ORDER) - chapters)}, extra={sorted(chapters - set(ORDER))}')
+if args.edition == 7 and chapter_digest(args.standard) != policy['workingText']['chaptersSha256']:
+    raise SystemExit('Chapter bytes do not match the pinned working text')
+
 KEEP = set('<>=!?&|^~+-*/%')  # '.' and ',' vary with list punctuation; '?' still separates ?. from .
 def reduce(text):
     text = unicodedata.normalize('NFKC', text).replace('‘', "'").replace('’', "'").replace('“', '"').replace('”', '"')
     return ''.join(c for c in text.lower() if c.isalnum() or c in KEEP)
 
-HEADER = re.compile(r'^(ECMA-334|[0-9ivxlc]+|\d+(\.\d+)+|Chapter \d+ .*|[A-E] (Grammar|Portability issues|Standard library|Documentation comments|Bibliography)|© Ecma International \d+.*)$')
+header_text = r'(?:Chapter \d+ .+|[A-E] (?:Grammar|Portability issues|Standard library|Documentation comments|Bibliography)|Table of Contents)'
+page_headers = '' if args.edition == 6 else rf'|{header_text} ECMA-334|ECMA-334 {header_text}'
+HEADER = re.compile(r'^(ECMA-334|[0-9ivxlc]+|\d+(\.\d+)+|Chapter \d+ .*|[A-E] (Grammar|Portability issues|Standard library|Documentation comments|Bibliography)|© Ecma International \d+.*' + page_headers + r')$')
 pdf_lines = raw.decode('utf-8').split('\n')
 start = next(i for i, l in enumerate(pdf_lines) if l.strip() == 'Foreword' and i > 700)
 # List bullets and the dot after a top-level chapter number ("1. Scope") are PDF layout.
@@ -63,19 +77,26 @@ def strip_markup(text, kind):
     return text.replace('\\', '')
 
 QUOTE = re.compile(r'^\s*(>\s?)*')
+def fence_text(line):
+    text = QUOTE.sub('', line)
+    # The seventh edition has indented closing fences inside block quotes.
+    return text.lstrip() if args.edition == 7 else text
+
 def blocks(path):
     """Yield (line, kind, text): paragraphs, list items, code and grammar blocks, outside HTML comments."""
     source = re.sub(r'<!--.*?-->', lambda m: '\n' * m.group(0).count('\n'), path.read_text(encoding='utf-8'), flags=re.S)
     lines = source.split('\n'); i = 0; block, first = [], 0
     while i < len(lines):
         line = lines[i]; bare = QUOTE.sub('', line)
-        if bare.startswith('```'):
+        if fence_text(line).startswith('```'):
             if block: yield first + 1, 'prose', '\n'.join(block)
             block = []
             kind = 'grammar' if bare.strip() == '```ANTLR' else 'code'
             body, j = [], i + 1
-            while j < len(lines) and not QUOTE.sub('', lines[j]).startswith('```'):
+            while j < len(lines) and not fence_text(lines[j]).startswith('```'):
                 body.append(QUOTE.sub('', lines[j])); j += 1
+            if args.edition == 7 and j == len(lines):
+                raise SystemExit(f'{path.name}:{i+1}: unclosed code fence')
             yield i + 1, kind, '\n'.join(body); i = j + 1; continue
         if not bare.strip():
             if block: yield first + 1, 'prose', '\n'.join(block)
@@ -104,16 +125,29 @@ for name in ORDER:
         if at > pointer:
             gap = pdf[pointer:at]
             pdf_only.append(dict(before=f'{path.name}:{line}', sha256=hashlib.sha256(gap.encode()).hexdigest(), reduced=gap))
+            if args.edition == 7:
+                pdf_only[-1]['normalizedStart'] = pointer
         pointer = at + len(reduced)
-if pointer < len(pdf): pdf_only.append(dict(before='end', sha256=hashlib.sha256(pdf[pointer:].encode()).hexdigest(), reduced=pdf[pointer:]))
-record = dict(schemaVersion=2, profile='CSharp6', primarySha256=policy['primary']['sha256'], extractionSha256=policy['extraction']['textSha256'],
-              workingText=dict(tag=policy['workingText']['tag'], commit=policy['workingText']['commit']),
+if pointer < len(pdf):
+    pdf_only.append(dict(before='end', sha256=hashlib.sha256(pdf[pointer:].encode()).hexdigest(), reduced=pdf[pointer:]))
+    if args.edition == 7:
+        pdf_only[-1]['normalizedStart'] = pointer
+if args.edition == 7:
+    for candidate in working:
+        candidate['sourceCharacters'] = len(candidate.pop('text'))
+    for candidate in pdf_only:
+        candidate['normalizedCharacters'] = len(candidate.pop('reduced'))
+record = dict(schemaVersion=2 if args.edition == 6 else 3, profile=profile, primarySha256=policy['primary']['sha256'], extractionSha256=policy['extraction']['textSha256'],
+              workingText={k: policy['workingText'][k] for k in ('tag' if args.edition == 6 else 'branch', 'commit')},
               scope='Every working-text block (prose, notes, list items, tables, headings, code and grammar) reduced to letters, digits and operator characters and aligned in document order with the reduced PDF body; text on either side without a counterpart is reported.',
               counts=dict(blocks=total, aligned=total - len(working), workingTextOnly=len(working), pdfOnly=len(pdf_only)),
               workingTextOnly=working, pdfOnly=pdf_only)
+if args.edition == 7:
+    record['workingText']['chaptersSha256'] = policy['workingText']['chaptersSha256']
+    record['scope'] = 'Blocks and PDF spans unmatched by the ordered normalization and search, pending source inspection.'
 text = json.dumps(record, indent=1, ensure_ascii=False) + '\n'
 if args.check:
-    if OUT.read_text(encoding='utf-8') != text: raise SystemExit('csharp6-main-text-differences.json is stale')
+    if OUT.read_text(encoding='utf-8') != text: raise SystemExit(f'{OUT.name} is stale')
     print('current')
 else:
     OUT.write_text(text, encoding='utf-8'); print(record['counts'])
