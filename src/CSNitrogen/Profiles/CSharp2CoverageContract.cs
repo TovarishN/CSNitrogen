@@ -6,7 +6,7 @@ namespace CSNitrogen.Profiles;
 internal static class CSharp2CoverageContract
 {
     internal const string PrimarySha256="de596c178a4a80a8d86e91877544025822ec0749d8c04ecca25af60c75937652";
-    internal const string ApprovedLedgerSha256="e1298f267a2abe69870f8755976cb00fddeb07dec3d124fa4d6a08a6ab7c69dd";
+    internal const string ApprovedLedgerSha256="0920874bead61aa758c003a5dfb2add24e7840ef460936a88346ab8ae2a5d19e";
     internal static bool Reviewed(byte[] ledger,byte[] index,byte[] crosswalk,byte[] reference,byte[] composition,
         IReadOnlyDictionary<string,byte[]> inputs)
     {

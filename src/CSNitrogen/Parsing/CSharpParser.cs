@@ -14,7 +14,7 @@ public static unsafe class CSharpParser
             ["CSharp4"] = (new(() => CSharp4Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp4Composition.Start),
             ["CSharp5"] = (new(() => CSharp5Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp5Composition.Start),
             ["CSharp6"] = (new(() => CSharp6Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp6Composition.Start),
-            ["CSharp7"] = (new(() => CSharp7Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7Composition.Start),
+            ["CSharp7"] = (new(() => CSharp7Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp7Composition.Start),
             ["CSharp8"] = (new(() => CSharp8Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp8Composition.Start),
             ["CSharp9"] = (new(() => CSharp9Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp9Composition.Start),
             ["CSharp10"] = (new(() => CSharp10Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp10Composition.Start),
@@ -22,9 +22,9 @@ public static unsafe class CSharpParser
             ["CSharp12"] = (new(() => CSharp12Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp12Composition.Start),
             ["CSharp13"] = (new(() => CSharp13Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp13Composition.Start),
             ["CSharp14"] = (new(() => CSharp14Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp14Composition.Start),
-            ["CSharp7_1"] = (new(() => CSharp7_1Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7_1Composition.Start),
-            ["CSharp7_2"] = (new(() => CSharp7_2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7_2Composition.Start),
-            ["CSharp7_3"] = (new(() => CSharp7_3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.Skip).Build()), CSharp7_3Composition.Start),
+            ["CSharp7_1"] = (new(() => CSharp7_1Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp7_1Composition.Start),
+            ["CSharp7_2"] = (new(() => CSharp7_2Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp7_2Composition.Start),
+            ["CSharp7_3"] = (new(() => CSharp7_3Composition.CreateBuilder().WithTrivia(&CSharpTrivia.SkipUnicode4).Build()), CSharp7_3Composition.Start),
         };
     /// <summary>Actual module names and compilation-unit root provenance of each admitted factory.</summary>
     private static readonly IReadOnlyDictionary<string,Lazy<(IReadOnlyList<string> Modules,bool Root)>> FactoryContracts=
