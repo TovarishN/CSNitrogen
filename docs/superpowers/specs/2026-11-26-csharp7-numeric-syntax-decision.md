@@ -6,7 +6,7 @@ C# 7.0 adds binary integers and separators between digits of numeric literals. C
 
 Keep the existing `LiteralExpression.Value` property as `Nitrogen.Token`. A composition that includes the numeric extensions supplies an additional expression alternative for the new spellings. Each new numeric expression keeps the full literal source span and its numeric token. Existing literal visitors can continue to consume their current node and token types. Visitors and patterns covering every literal in a CSharp7 profile need to handle the new alternative as well.
 
-The main compilation-unit parser will recognize the variants wherever expressions are permitted. Verify that named-cast lookahead recognizes the new literals as operands. Test the standalone literal fragment and typed quotation behavior explicitly so the public entry points for the additive forms are visible.
+The main compilation-unit parser will recognize the variants wherever expressions are permitted. The existing `CSharp.Expressions.Literal` fragment and quotation category keep their current spellings. Callers can use `Expression` for the new forms. Verify named-cast lookahead and document the fragment and quotation entry points with witnesses.
 
 ## Use one literal expression type
 
@@ -20,4 +20,4 @@ A third route uses a shared token rule that accepts all spellings and a host pol
 
 An isolated grammar built with pinned Nitrogen revision `b3494870dfb5f187bae9065227d4ef7f742aa048` exercised both options. The additive alternative and the baseline each exposed `Token`, while the shared choice exposed `SyntaxNode`. Both extensions accepted `1_2` and `1_2.3_4` as one leaf, retained the exact source text, accepted the historical control `12.34`, and rejected `12_`. The baseline rejected both decorated spellings.
 
-Production verification should run through compilation units, expression fragments and typed literal views. Use binary and decimal integers, hexadecimal integers, real fractions and exponents, suffixes, numeric member access, and malformed separator placement. Verify the 7.0 and 7.2 transitions, inherited profiles and each custom module selection. The CSharp6 gate pins the shared composition and grammar resources, so a production candidate that changes those inputs requires renewed approval of its exact ledger digest.
+Production verification should run through compilation units, expression fragments and typed literal views. Use binary and decimal integers, hexadecimal integers, real fractions and exponents, suffixes, numeric member access, and malformed separator placement. Make each additive alternative exclusive to the spellings it introduces so ordinary literals retain their node identity. Verify the 7.0 and 7.2 transitions, inherited profiles and each custom module selection. The CSharp6 gate pins the shared composition and grammar resources, so a production candidate that changes those inputs requires renewed approval of its exact ledger digest.
