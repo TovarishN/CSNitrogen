@@ -7,7 +7,7 @@ namespace CSNitrogen.Profiles;
 /// <summary>Admission of the reviewed ECMA-334 sixth-edition normalized syntax snapshot.</summary>
 internal static class CSharp6CoverageContract
 {
-    internal const string ApprovedLedgerSha256 = "e9cbb2dc0c7d0a90d51d1ee59bec8d7faa4d8db7fd6ad79f866ab55254f2bc77";
+    internal const string ApprovedLedgerSha256 = "0b4fefb8d250ed47dff3d25b2631e297e233e26e908d9909a6b3c24997c4d688";
     internal const string ApprovalResource = "CSNitrogen.csharp6-approval.json";
     private const string Profile = "CSharp6";
     private const string PrimarySha256 = "4b859dfce21f9935f234b48af55c6a9de36e2eda1eb58d3b565e5aab2b44922f";

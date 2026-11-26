@@ -47,6 +47,20 @@ public sealed class CSharp7UnicodeContractTests
         Assert.False(resolved.Complete);
     }
 
+    [Theory]
+    [InlineData("CSharp7")]
+    [InlineData("CSharp7_1")]
+    [InlineData("CSharp7_2")]
+    [InlineData("CSharp7_3")]
+    public void A_supplementary_letter_cannot_replace_the_directive_separator(string profile)
+    {
+        const string source = "#define\U00010400\n#if \U00010400\nclass Selected{}\n#endif";
+        using var parsed = CSharpParser.Parse(new(source, profile, "unicode.cs", []));
+        Assert.False(parsed.Accepted);
+        Assert.Contains(parsed.Issues, issue => issue.Code == "CSN1204");
+        Assert.DoesNotContain("Selected", SyntaxDumper.Dump(parsed.Tree), StringComparison.Ordinal);
+    }
+
     [Fact]
     public void Eighth_profile_keeps_its_current_bmp_behavior()
     {

@@ -75,7 +75,21 @@ public sealed class DirectiveScanner
     private DirectiveRecord ReadDirective(int hash,SourceLine line,bool active)
     {
         int i=hash+1;while(i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version))i++;
-        int start=i;while(i<line.End&&IsDirectiveNamePart(_source[i]))i++;
+        int start=i;
+        while(i<line.End)
+        {
+            if(IsDirectiveNamePart(_source[i]))
+            {
+                i++;
+                continue;
+            }
+            // In CSharp7 a supplementary identifier part extends the directive name.
+            // It cannot start an argument without a separator.
+            if(_version.Major!=7 || i+1>=line.End || !char.IsSurrogatePair(_source[i],_source[i+1]) ||
+                !CSharp2UnicodeTables.IsPart(char.ConvertToUtf32(_source[i],_source[i+1])))
+                break;
+            i+=2;
+        }
         string kind=_source[start..i];
         bool separated=i<line.End&&UnicodePolicy.IsWhiteSpace(_source[i],_version);
         if(_version.Major<=6 || kind=="pragma" && _version>=new Version(2,0))
