@@ -1,0 +1,9 @@
+# CSharp7 source contract and Unicode continuity
+
+All four CSharp7 profiles continue the frozen Unicode 4.0 scalar contract approved for CSharp6. This covers identifiers, trivia, preprocessing symbols, and the assembly and module target grammar. For example, all four profiles accept U+10400 in identifiers and reject U+0860. A supplementary identifier character immediately after a directive name stays part of that name, so it cannot act as a separated argument. CSharp8 uses the current BMP selection.
+
+The published ECMA-334 seventh edition describes C# 7.3. The working annex has 489 rules and 1,221 alternatives. The comparison uses rule names and hashes of bodies after comment and whitespace normalization. It found 388 matching bodies, 46 changed bodies, 55 added names, and two removed names. The PDF and main text still need reconciliation, and the 7.0 through 7.3 release boundaries need separate evidence. All four seventh profiles remain partial. [Pinned sources](csharp7-reference-policy.json) · [Working annex comparison](csharp7-annex-candidate-delta.json) · [Microsoft specification mapping](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/language#c-language-specification)
+
+The CSharp6 ledger pins the full composition file and the shared parser, profile resolver, Unicode policy, and directive scanner sources. The edits in those five files apply to major version 7. The sixth factory entry, reference policy, witnesses, and exclusions are byte-identical to main. The refreshed CSharp6 ledger SHA-256 is `0b4fefb8d250ed47dff3d25b2631e297e233e26e908d9909a6b3c24997c4d688`. Dmitri Kamenetski approved this exact digest on 2026-11-26. [Candidate ledger](csharp6-coverage-gate.json)
+
+The full solution passed 12,811 tests with zero failures or skips with the refreshed sixth ledger and its named approval. All 141 Nitrogen dependency inputs and the candidate ledger pins verify.

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "profile": "CSharp7-family",
+  "status": "partial",
+  "profiles": ["CSharp7", "CSharp7_1", "CSharp7_2", "CSharp7_3"],
+  "primary": {
+    "title": "ECMA-334 7th edition, December 2023 | C# Language Specification",
+    "url": "https://ecma-international.org/wp-content/uploads/ECMA-334_7th_edition_december_2023.pdf",
+    "profile": "CSharp7_3",
+    "sha256": "7797c1d995dd7791683cb4f2dfd758cc1bfd22150b5234487fffe43e9b3e3ab0",
+    "bytes": 7604288
+  },
+  "workingText": {
+    "repository": "https://github.com/dotnet/csharpstandard",
+    "branch": "standard-v7",
+    "commit": "02d1a90122ece425cff575f47f197fb396be73d4",
+    "grammarSha256": "e00b7348ed2e8a82494a932473c4eefcfc7693deb524b0d4941cce702debe3da",
+    "scope": "Extraction input pending reconciliation with the published PDF."
+  },
+  "unicode": {
+    "status": "approved",
+    "policy": "unicode-4.0-scalar",
+    "authority": "The user approved CSharp6 Unicode continuity for all four named CSharp7 profiles on 2026-11-19.",
+    "source": "ECMA-334 7 §2 and §6.4.3",
+    "dataSha256": "77818a7e04c563a6a628e4f10be60323bf13f08e9fb208bffce11057b008ad7e"
+  },
+  "releaseBoundaries": "Microsoft versioned feature specifications and positive and negative compiler observations distinguish 7.0, 7.1, 7.2 and 7.3."
+}
