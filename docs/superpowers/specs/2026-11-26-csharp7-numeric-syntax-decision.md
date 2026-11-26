@@ -6,11 +6,11 @@ C# 7.0 adds binary integers and separators between digits of numeric literals. C
 
 Keep the existing `LiteralExpression.Value` property as `Nitrogen.Token`. A composition that includes the numeric extensions supplies an additional expression alternative for the new spellings. Each new numeric expression keeps the full literal source span and its numeric token. Existing literal visitors can continue to consume their current node and token types. Visitors and patterns covering every literal in a CSharp7 profile need to handle the new alternative as well.
 
-The main compilation-unit parser will recognize the variants wherever expressions are permitted. This includes cast operands, which use a separate lookahead extension. Test the standalone literal fragment and typed quotation behavior explicitly so the public entry points for the additive forms are visible.
+The main compilation-unit parser will recognize the variants wherever expressions are permitted. Verify that named-cast lookahead recognizes the new literals as operands. Test the standalone literal fragment and typed quotation behavior explicitly so the public entry points for the additive forms are visible.
 
 ## Use one literal expression type
 
-Add a transparent extensible choice inside the shared literal rule. This keeps `LiteralExpression` as the expression type for all literal spellings, including direct recognition through that shared rule. The generated `LiteralExpression.Value` property becomes `Nitrogen.SyntaxNode` across the CSharp1–14 compositions. Current token consumers would need to adapt their source or recompile against an updated view. The probe still produces one token leaf for each numeric value.
+Add a transparent extensible choice inside the shared literal rule. This keeps `LiteralExpression` as the expression type for all literal spellings, including direct recognition through that shared rule. The generated `LiteralExpression.Value` property becomes `Nitrogen.SyntaxNode` across the CSharp1–14 compositions. Callers using this property as a `Token` would need to update their code and recompile. The probe still produces one token leaf for each numeric value.
 
 A token rule that directly refers to this extension point fails in Nitrogen with `NGR0112`. The current generator supports extending syntax rules and emits a syntax node property for the shared choice, even when the extension body is transparent.
 
