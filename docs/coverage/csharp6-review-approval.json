@@ -4,6 +4,6 @@
   "status": "approved",
   "reviewer": "Dmitri Kamenetski",
   "approvedOn": "2026-11-27",
-  "ledgerSha256": "627d367744e5bff5a1035633fb60bb2409bd7c8803a8145b2c0165dfb4f22a5b",
-  "notes": "Dmitri Kamenetski (TovarishN) merged exact candidate head 7010323c8d4a50913e4a0b2c680ff3417e42769c of PR #74 on 2026-11-27. This record binds the merge approval to the CSharp6 ledger digest."
+  "ledgerSha256": "a06c92c91f0db6fa55a361ef2b8656a65db3a9c94b7b0c304c41e9677f19aed6",
+  "notes": "Dmitri Kamenetski (TovarishN) merged exact candidate head 27ef973f1518ad2161fdaa8c8ff1ec0fe9892956 of PR #76. This record binds the merge approval to its CSharp6 ledger digest."
 }
