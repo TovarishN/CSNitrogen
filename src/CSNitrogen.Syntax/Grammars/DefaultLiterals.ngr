@@ -1,0 +1,8 @@
+syntax module CSharp.DefaultLiterals
+{
+ extend syntax CSharp.Expressions.Expression
+ {
+  // A following parenthesis belongs to the typed default expression.
+  | DefaultLiteralExpression = Keyword:"default" !"("
+ }
+}

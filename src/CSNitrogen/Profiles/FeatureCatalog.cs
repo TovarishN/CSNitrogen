@@ -6,6 +6,7 @@ public sealed record CoverageFeature(string Id, Version Introduced, string Class
 public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
+        new FeatureDefinition("csharp7.default-literals", Array.AsReadOnly(new[]{"csharp2.default-values"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/DefaultLiterals.ngr"})) { Introduced=new(7,1) },
         new FeatureDefinition("csharp7.numeric-literals", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NumericLiterals.ngr"})) { Introduced=new(7,0) },
         new FeatureDefinition("csharp7.leading-digit-separators", Array.AsReadOnly(new[]{"csharp7.numeric-literals"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/LeadingDigitSeparators.ngr"})) { Introduced=new(7,2) },
         new FeatureDefinition("csharp6.enum-base-type-names", Array.AsReadOnly(new[]{"baseline.members","baseline.names-and-types"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/EnumBaseTypeNames.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },

@@ -43,7 +43,7 @@ public static class CSharpSyntaxPolicy
                 var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;
                 bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "NumericLiteralExpression" or
                     "LeadingSeparatorNumericLiteralExpression" or "ThisExpression" or
-                    "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or
+                    "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "DefaultLiteralExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or
                     "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
                     "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
@@ -221,7 +221,7 @@ public static class CSharpSyntaxPolicy
             if(kind=="UnsafeBlock")Error(node,"An iterator block cannot contain an unsafe context.");
         }
     }
-    private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or
+    private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "DefaultLiteralExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or
         "NumericLiteralExpression" or "LeadingSeparatorNumericLiteralExpression" or "ThisExpression" or
         "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
