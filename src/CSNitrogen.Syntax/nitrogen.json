@@ -245,7 +245,8 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr"
       ]
     },
     {
@@ -293,7 +294,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -341,7 +344,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -389,7 +394,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -437,7 +444,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -485,7 +494,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -533,7 +544,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -581,7 +594,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -629,7 +644,8 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr"
       ]
     },
     {
@@ -677,7 +693,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {
@@ -725,7 +743,9 @@
         "Grammars/PropertyInitializers.ngr",
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
-        "Grammars/EnumBaseTypeNames.ngr"
+        "Grammars/EnumBaseTypeNames.ngr",
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
     {

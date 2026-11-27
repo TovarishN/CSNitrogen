@@ -1,0 +1,11 @@
+// C# 7.2 allows leading separators after a base prefix.
+syntax module CSharp.LeadingDigitSeparators
+{
+ token Integer = ("0" ['x' 'X'] "_"+ CSharp.NumericLiterals.HexDigits
+   / "0" ['b' 'B'] "_"+ CSharp.NumericLiterals.BinaryDigits) CSharp.NumericLiterals.IntegerSuffix?;
+
+ extend syntax CSharp.Expressions.Expression
+ {
+  | LeadingSeparatorNumericLiteralExpression = Value:Integer
+ }
+}
