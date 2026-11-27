@@ -4,6 +4,6 @@
   "status": "approved",
   "reviewer": "Dmitri Kamenetski",
   "approvedOn": "2026-11-27",
-  "ledgerSha256": "a0d7ac6c17216965ca911756ac4a276cdc73e68aa07305bcc7c7b6d3612b945a",
-  "notes": "Approved the exact CSharp6 ledger refreshed for the CSharp7.1 default literal in PR #67."
+  "ledgerSha256": "1933bc79b17689a7995819989d52e47d8a37aae18810702012fcd4ce2202ab2b",
+  "notes": "Dmitri Kamenetski (TovarishN) merged the exact candidate head 4d1f711821c411fc08827f8c19d4aeabb748ceea of PR #68 on 2026-11-27. This record binds that merge approval to the CSharp6 ledger digest."
 }
