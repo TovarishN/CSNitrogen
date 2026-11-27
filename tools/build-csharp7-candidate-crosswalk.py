@@ -75,7 +75,7 @@ def build():
         return rule_id.rsplit(':', 1)[-1]
 
     counts = {'same': len(same), 'changed': len(changed), 'added': len(added), 'removed': len(removed)}
-    if counts['same'] != checked_delta['same'] or any(
+    if len(seventh) != checked_delta['totalRules'] or counts['same'] != checked_delta['same'] or any(
         sorted(expected) != sorted(actual) for expected, actual in (
             (checked_delta['changed'], [rule_name(row['to']) for row in changed]),
             (checked_delta['added'], [rule_name(row[0]) for row in added]),
