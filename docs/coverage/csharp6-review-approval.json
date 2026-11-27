@@ -3,7 +3,7 @@
   "profile": "CSharp6",
   "status": "approved",
   "reviewer": "Dmitri Kamenetski",
-  "approvedOn": "2026-11-26",
-  "ledgerSha256": "0b4fefb8d250ed47dff3d25b2631e297e233e26e908d9909a6b3c24997c4d688",
-  "notes": "Approved the five shared input updates for CSharp7 Unicode continuity, with the CSharp6 factory and admission scope preserved."
+  "approvedOn": "2026-11-27",
+  "ledgerSha256": "e37490990b76365afd57542df66039ee9f6f8fd3132cb957834c6a6fd4087cb7",
+  "notes": "Approved the exact CSharp6 ledger refreshed for the separate CSharp7 numeric literal nodes in PR #65."
 }
