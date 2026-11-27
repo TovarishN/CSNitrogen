@@ -3225,15 +3225,25 @@
       "title": "Binary Literals",
       "introduced": "7.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.0/binary-literals.md",
       "inventoryLine": 152,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/NumericLiterals.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp7NumericLiteralTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.numeric-literals"
+        ],
+        "policies": []
+      }
     },
     {
       "id": "csharp-7.0.deconstruction",
@@ -3255,15 +3265,25 @@
       "title": "Digit Separators",
       "introduced": "7.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.0/digit-separators.md",
       "inventoryLine": 153,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/NumericLiterals.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp7NumericLiteralTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.numeric-literals"
+        ],
+        "policies": []
+      }
     },
     {
       "id": "csharp-7.0.discards",
@@ -3480,15 +3500,25 @@
       "title": "Digit separator after base specifier",
       "introduced": "7.2",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.2/leading-separator.md",
       "inventoryLine": 136,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/LeadingDigitSeparators.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp7NumericLiteralTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.leading-digit-separators"
+        ],
+        "policies": []
+      }
     },
     {
       "id": "csharp-7.2.in-parameters-and-readonly-references",

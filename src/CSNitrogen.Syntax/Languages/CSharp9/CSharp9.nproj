@@ -43,6 +43,8 @@ language CSharp9
   grammar ../../Grammars/ExpressionBodies.ngr;
   grammar ../../Grammars/IndexInitializers.ngr;
   grammar ../../Grammars/EnumBaseTypeNames.ngr;
+  grammar ../../Grammars/NumericLiterals.ngr;
+  grammar ../../Grammars/LeadingDigitSeparators.ngr;
   start CSharp.CompilationUnits.CompilationUnit;
 
   nitrogen

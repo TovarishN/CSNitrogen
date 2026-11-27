@@ -1,0 +1,27 @@
+// C# 7.0 spellings only. Older spellings stay in the original literal alternative.
+syntax module CSharp.NumericLiterals
+{
+ token DecimalDigit = ['0'..'9'];
+ token BinaryDigit = ['0' '1'];
+ token DecimalDigits = DecimalDigit ("_"* DecimalDigit)*;
+ token BinaryDigits = BinaryDigit ("_"* BinaryDigit)*;
+ token HexDigits = CSharp.Lexical.Hex ("_"* CSharp.Lexical.Hex)*;
+ token SeparatedDecimal = CSharp.Lexical.Digits "_"+ DecimalDigits;
+ token SeparatedHex = CSharp.Lexical.Hex+ "_"+ HexDigits;
+ token IntegerSuffix = ['u' 'U'] ['l' 'L']? / ['l' 'L'] ['u' 'U']?;
+ token ExponentHead = ['e' 'E'] ['+' '-']?;
+ token Exponent = ExponentHead DecimalDigits;
+ token SeparatedExponent = ExponentHead SeparatedDecimal;
+
+ token Integer = ("0" ['b' 'B'] BinaryDigits / "0" ['x' 'X'] SeparatedHex / SeparatedDecimal) IntegerSuffix?;
+ token Real = (SeparatedDecimal "." DecimalDigits / DecimalDigits? "." SeparatedDecimal) Exponent? CSharp.Lexical.RealSuffix?
+   / DecimalDigits? "." DecimalDigits SeparatedExponent CSharp.Lexical.RealSuffix?
+   / (SeparatedDecimal Exponent / DecimalDigits SeparatedExponent) CSharp.Lexical.RealSuffix?
+   / SeparatedDecimal CSharp.Lexical.RealSuffix;
+ token Numeric = Real / Integer;
+
+ extend syntax CSharp.Expressions.Expression
+ {
+  | NumericLiteralExpression = Value:Numeric
+ }
+}
