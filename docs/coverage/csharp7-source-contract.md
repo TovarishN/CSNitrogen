@@ -20,4 +20,6 @@ The C# 7.0 event extension permits arrow bodies on `add` and `remove` and suppor
 
 The C# 7.2 accessor module accepts both `private protected` and `protected private`. For an ordinary member or nested type, the source policy recognizes the pair within one modifier list and reports its later token before 7.2. Accessibility binding and general modifier-set validity remain outside this check. [Approved release boundary](../superpowers/specs/2026-11-27-csharp72-private-protected-source-decision.md) · [Parser witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp72PrivateProtectedTests.cs)
 
+From C# 7.2 an ordinary or `base` indexer can contain a positional argument after a named one. The added expression alternatives retain the complete argument order and leave earlier positional and trailing-named trees intact. Conditional indexing and index initializers now apply the same version and duplicate-name checks within their own argument lists. Parameter-position matching remains a binding rule. [C# 7.2 proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.2/non-trailing-named-arguments.md) · [Parser witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp72NamedIndexArgumentTests.cs)
+
 The remaining syntax crosswalk and profile-specific Nitrogen witnesses are pending.

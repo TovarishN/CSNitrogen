@@ -302,6 +302,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -356,6 +357,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -410,6 +412,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -464,6 +467,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -518,6 +522,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -572,6 +577,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -626,6 +632,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -732,6 +739,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
@@ -786,6 +794,7 @@
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
         "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/NonTrailingNamedIndexArguments.ngr",
         "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },

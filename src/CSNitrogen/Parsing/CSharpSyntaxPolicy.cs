@@ -45,10 +45,10 @@ public static class CSharpSyntaxPolicy
                 bool unary=Kind(target.Index) is "NameExpression" or "LiteralExpression" or "NumericLiteralExpression" or
                     "LeadingSeparatorNumericLiteralExpression" or "ThisExpression" or
                     "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "DefaultLiteralExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or
-                    "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
+                    "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "MixedNamedBaseIndexExpression" or "ParenthesizedExpression" or "CastExpression" or
                     "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or "SizedArrayExpression" or "InitializedArrayExpression" or
                     "SizeOfBuiltinExpression" or "TypeOfExpression" or "CheckedExpression" or "UncheckedExpression" or
-                    "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or
+                    "PredefinedMemberExpression" or "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or "MixedNamedElementExpression" or
                     "PostfixIncrementExpression" or "PostfixDecrementExpression" or "UnaryExpression" or
                     "NullConditionalAccess" or "NullConditionalElementAccess" or "NameofExpression" or "NameofInvocation" or "InterpolatedRegularText" or "InterpolatedRegularString" or "InterpolatedVerbatimText" or "InterpolatedVerbatimString" or 
                     "PointerIndirectionExpression" or "AddressExpression" or "PointerMemberExpression" or "SizeOfExtendedExpression";
@@ -72,7 +72,7 @@ public static class CSharpSyntaxPolicy
                 if(Kind(left.Index) is "IsExpression" or "AsExpression")
                     issues.Add(new("CSN2016","A type-operator result requires parentheses before an operator at this tighter precedence.",tree.Span(n),IssueCategory.Syntax));
             }
-            if(tree.ChildCount(n)>0 && kind is "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or
+            if(tree.ChildCount(n)>0 && kind is "MemberExpression" or "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or "MixedNamedElementExpression" or
                 "PostfixIncrementExpression" or "PostfixDecrementExpression" or "PointerMemberExpression" or "GenericPointerMemberExpression" or "GenericMemberExpression")
             {
                 // A Pratt type operand (is/as) is not an expression recursion and can
@@ -84,6 +84,7 @@ public static class CSharpSyntaxPolicy
                     "InvocationExpression" => SyntaxView.Cast<InvocationExpressionExpression>(tree,n).Target,
                     "ElementExpression" => SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target,
                     "NamedElementExpression" => SyntaxView.Cast<NamedElementExpressionExpression>(tree,n).Target,
+                    "MixedNamedElementExpression" => SyntaxView.Cast<MixedNamedElementExpressionExpression>(tree,n).Target,
                     "PostfixIncrementExpression" => SyntaxView.Cast<PostfixIncrementExpressionExpression>(tree,n).Value,
                     "PostfixDecrementExpression" => SyntaxView.Cast<PostfixDecrementExpressionExpression>(tree,n).Value,
                     "GenericMemberExpression" => SyntaxView.Cast<GenericMemberExpressionExpression>(tree,n).Target,
@@ -91,11 +92,8 @@ public static class CSharpSyntaxPolicy
                     _ => SyntaxView.Cast<PointerMemberExpressionExpression>(tree,n).Target
                 };
                 if(!IsPrimaryKind(Kind(target.Index))&&!CSharp6ContextPolicy.SanctionedAmbiguity(tree,target.Index))issues.Add(new("CSN2015","A primary suffix requires a primary expression target; parenthesize a type-operator result.",tree.Span(n),IssueCategory.Syntax));
-            }
-            if(kind is "ElementExpression" or "NamedElementExpression" && tree.ChildCount(n)>0)
-            {
-                var target=kind=="ElementExpression"?SyntaxView.Cast<ElementExpressionExpression>(tree,n).Target:SyntaxView.Cast<NamedElementExpressionExpression>(tree,n).Target;
-                if(Kind(target.Index) is "SizedArrayExpression" or "InitializedArrayExpression" or "ImplicitArrayExpression")
+                if (kind is ("ElementExpression" or "NamedElementExpression" or "MixedNamedElementExpression") &&
+                    Kind(target.Index) is ("SizedArrayExpression" or "InitializedArrayExpression" or "ImplicitArrayExpression"))
                     issues.Add(new("CSN2005","Direct array creation requires parentheses before element access.",tree.Span(n),IssueCategory.Syntax));
             }
             if(kind=="SwitchStatement" && tree.ChildCount(n)>5)
@@ -224,10 +222,10 @@ public static class CSharpSyntaxPolicy
     }
     private static bool IsPrimaryKind(string kind) => kind is "GenericNameExpression" or "GenericBaseMemberExpression" or "GenericPredefinedMemberExpression" or "GenericMemberExpression" or "UnboundTypeOfExpression" or "AnonymousMethodExpression" or "DefaultValueExpression" or "DefaultLiteralExpression" or "AliasNameExpression" or "GenericPointerMemberExpression" or "NameExpression" or "LiteralExpression" or
         "NumericLiteralExpression" or "LeadingSeparatorNumericLiteralExpression" or "ThisExpression" or
-        "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or
+        "BaseMemberExpression" or "BaseIndexExpression" or "NamedBaseIndexExpression" or "MixedNamedBaseIndexExpression" or "ParenthesizedExpression" or "ObjectCreationExpression" or "InitializedObjectExpression" or "AnonymousObjectExpression" or "ImplicitArrayExpression" or
         "SizedArrayExpression" or "InitializedArrayExpression" or "SizeOfBuiltinExpression" or "TypeOfExpression" or
         "CheckedExpression" or "UncheckedExpression" or "PredefinedMemberExpression" or "MemberExpression" or
-        "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or
+        "InvocationExpression" or "ElementExpression" or "NamedElementExpression" or "MixedNamedElementExpression" or "PostfixIncrementExpression" or "PostfixDecrementExpression" or
         "NullConditionalAccess" or "NullConditionalElementAccess" or "NameofExpression" or "NameofInvocation" or "InterpolatedRegularText" or "InterpolatedRegularString" or "InterpolatedVerbatimText" or "InterpolatedVerbatimString" or 
         "PointerMemberExpression" or "SizeOfExtendedExpression";
     private static bool IsIdentifierPartAt(string text,int index,Version version)

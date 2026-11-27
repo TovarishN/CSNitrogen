@@ -48,6 +48,7 @@ language CSharp13
   grammar ../../Grammars/ThrowExpressions.ngr;
   grammar ../../Grammars/EventExpressionBodies.ngr;
   grammar ../../Grammars/LeadingDigitSeparators.ngr;
+  grammar ../../Grammars/NonTrailingNamedIndexArguments.ngr;
   grammar ../../Grammars/PrivateProtectedAccessors.ngr;
   start CSharp.CompilationUnits.CompilationUnit;
 

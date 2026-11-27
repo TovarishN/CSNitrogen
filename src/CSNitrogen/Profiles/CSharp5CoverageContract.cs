@@ -7,7 +7,7 @@ namespace CSNitrogen.Profiles;
 internal static class CSharp5CoverageContract
 {
  internal const string PrimarySha256="6f12b6a362d12c401902c57f4f9baf648d12ab399f6d33ce558f72ad20cb8519";
- internal const string ApprovedLedgerSha256="992d8fcaa4c89749ea4f6e8fee50c6b9bc81c1d1d355c9c35b0c27550235b359";
+ internal const string ApprovedLedgerSha256="51e3f735ddcd66bb951bc335099ea1e2d5e46c328eacd7fd47d76f97ee2f27ae";
  static readonly string[] Additions=["unary-expression","await-expression","lambda-expression","anonymous-method-expression","statement-expression","method-modifier"];
  /// <summary>Reviewed source paths (as tools/approve-csharp5-review.py records them) and their embedded resources.</summary>
  static readonly IReadOnlyDictionary<string,string> ApprovedInputs=new Dictionary<string,string>(StringComparer.Ordinal)

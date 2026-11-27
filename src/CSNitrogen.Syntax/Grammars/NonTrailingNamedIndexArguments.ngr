@@ -1,0 +1,14 @@
+syntax module CSharp.NonTrailingNamedIndexArguments
+{
+ // A positional argument after a named one distinguishes these trees from the C# 4 form.
+ syntax MixedNamedIndexArguments =
+   &(CSharp.NamedArguments.PositionalIndexArgument* (CSharp.NamedArguments.NamedIndexArgument ",")+
+     !(CSharp.Lexical.Identifier ":" !":"))
+   Items:((CSharp.NamedArguments.NamedIndexArgument / CSharp.Expressions.Expression); ",")+;
+
+ extend syntax CSharp.Expressions.Expression
+ {
+  | MixedNamedBaseIndexExpression = "base" "[" Arguments:MixedNamedIndexArguments "]"
+  | MixedNamedElementExpression = Target:Expression "[" Arguments:MixedNamedIndexArguments "]" precedence 180 left
+ }
+}

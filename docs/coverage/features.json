@@ -3582,15 +3582,31 @@
       "title": "Non-trailing named arguments",
       "introduced": "7.2",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.2/non-trailing-named-arguments.md",
       "inventoryLine": 134,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/NonTrailingNamedIndexArguments.ngr"
+      ],
+      "policies": [
+        "csharp4.source-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/CSharp7ReleaseObservationTests.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp72NamedIndexArgumentTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.non-trailing-named-arguments"
+        ],
+        "policies": [
+          "csharp4.source-context-checks"
+        ]
+      },
+      "notes": "Positional values may follow named arguments from 7.2. Matching argument names to parameter positions and validating overloads require binding."
     },
     {
       "id": "csharp-7.2.private-protected-accessibility",
