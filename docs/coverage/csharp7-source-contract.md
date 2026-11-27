@@ -12,4 +12,6 @@ The source tools accept `--edition 7`. Pass the pinned committee `standard/` dir
 
 The [release boundary observations](csharp7-release-boundary-evidence.md) record representative cases across 6.0 through 8.0. The numeric grammar selects binary literals and separators between digits starting at 7.0, with a separate extension for separators after a hexadecimal or binary prefix starting at 7.2. These spellings have their own token-valued expression nodes. The original literal expression and fragment keep their existing contract. [Tree decision](../superpowers/specs/2026-11-26-csharp7-numeric-syntax-decision.md) · [Numeric witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp7NumericLiteralTests.cs)
 
+The C# 7.1 composition adds a token-valued node for untyped `default`. The typed `default(T)` form and the switch `default:` label retain their existing trees. The grammar leaves target typing and conversion to semantic analysis. [Default literal witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp71DefaultLiteralTests.cs)
+
 The remaining syntax crosswalk and profile-specific Nitrogen witnesses are pending.

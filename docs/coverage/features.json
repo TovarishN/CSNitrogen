@@ -3440,15 +3440,25 @@
       "title": "Default expressions",
       "introduced": "7.1",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.1/target-typed-default.md",
       "inventoryLine": 140,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
+      "grammars": [
+        "Grammars/DefaultLiterals.ngr"
+      ],
       "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp71DefaultLiteralTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.default-literals"
+        ],
+        "policies": []
+      }
     },
     {
       "id": "csharp-7.1.inferred-tuple-element-names",

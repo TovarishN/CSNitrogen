@@ -17,6 +17,7 @@ language CSharp7_2
   grammar ../../Grammars/AnonymousMethods.ngr;
   grammar ../../Grammars/Iterators.ngr;
   grammar ../../Grammars/DefaultValues.ngr;
+  grammar ../../Grammars/DefaultLiterals.ngr;
   grammar ../../Grammars/DeclarationForms.ngr;
   grammar ../../Grammars/AliasQualification.ngr;
   grammar ../../Grammars/GenericUnsafe.ngr;

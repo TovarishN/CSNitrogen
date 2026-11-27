@@ -4,6 +4,6 @@
   "status": "approved",
   "reviewer": "Dmitri Kamenetski",
   "approvedOn": "2026-11-27",
-  "ledgerSha256": "e37490990b76365afd57542df66039ee9f6f8fd3132cb957834c6a6fd4087cb7",
-  "notes": "Approved the exact CSharp6 ledger refreshed for the separate CSharp7 numeric literal nodes in PR #65."
+  "ledgerSha256": "a0d7ac6c17216965ca911756ac4a276cdc73e68aa07305bcc7c7b6d3612b945a",
+  "notes": "Approved the exact CSharp6 ledger refreshed for the CSharp7.1 default literal in PR #67."
 }
