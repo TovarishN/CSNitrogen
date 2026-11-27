@@ -3395,15 +3395,29 @@
       "title": "Throw expressions",
       "introduced": "7.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.0/throw-expression.md",
       "inventoryLine": 157,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ThrowExpressions.ngr"
+      ],
+      "policies": [
+        "csharp7.throw-expression-contexts"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.throw-expressions"
+        ],
+        "policies": [
+          "csharp7.throw-expression-contexts"
+        ]
+      }
     },
     {
       "id": "csharp-7.0.tuples",

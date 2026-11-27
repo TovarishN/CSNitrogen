@@ -38,6 +38,7 @@ public static class CSharpSyntaxPolicy
                 }
                 previous=n;
             }
+            if (kind == "ThrowExpression") CSharp7ThrowExpressionPolicy.Check(tree, n, issues);
             if(kind=="AssignmentExpression" && tree.ChildCount(n)>=3)
             {
                 var target=SyntaxView.Cast<AssignmentExpressionExpression>(tree,n).Target;

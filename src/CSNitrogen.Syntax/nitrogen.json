@@ -246,7 +246,8 @@
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
-        "Grammars/NumericLiterals.ngr"
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr"
       ]
     },
     {
@@ -297,6 +298,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -348,6 +350,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -399,6 +402,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -450,6 +454,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -501,6 +506,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -552,6 +558,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -603,6 +610,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -653,7 +661,8 @@
         "Grammars/ExpressionBodies.ngr",
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
-        "Grammars/NumericLiterals.ngr"
+        "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr"
       ]
     },
     {
@@ -704,6 +713,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },
@@ -755,6 +765,7 @@
         "Grammars/IndexInitializers.ngr",
         "Grammars/EnumBaseTypeNames.ngr",
         "Grammars/NumericLiterals.ngr",
+        "Grammars/ThrowExpressions.ngr",
         "Grammars/LeadingDigitSeparators.ngr"
       ]
     },

@@ -14,4 +14,6 @@ The [release boundary observations](csharp7-release-boundary-evidence.md) record
 
 The C# 7.1 composition adds a token-valued node for untyped `default`. The typed `default(T)` form and the switch `default:` label retain their existing trees. The grammar leaves target typing and conversion to semantic analysis. [Default literal witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp71DefaultLiteralTests.cs)
 
+The C# 7.0 throw-expression module uses the null-coalescing operand precedence. The host policy permits a throw expression as a direct conditional arm, the right operand of `??`, or an expression body. Exception conversion remains semantic. [Throw expression witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs)
+
 The remaining syntax crosswalk and profile-specific Nitrogen witnesses are pending.
