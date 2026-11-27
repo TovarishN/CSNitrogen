@@ -35,7 +35,7 @@ internal static class CSharp4ContextPolicy
                 if(kind=="Argument")
                 {
                     var argument=SyntaxView.Cast<ArgumentNode>(tree,n);
-                    owner=Owner(n,"Arguments");
+                    owner=Owner(n,"Arguments","NullConditionalElementAccess","IndexInitializer");
                     if(argument.Name.HasValue)name=argument.Name.Value.Index;
                 }
                 else
@@ -55,7 +55,7 @@ internal static class CSharp4ContextPolicy
             else if(kind=="NamedIndexArgument")
             {
                 var argument=SyntaxView.Cast<NamedIndexArgumentNode>(tree,n);
-                Named(Owner(n,"NamedIndexArguments"),argument.Name.Index);
+                Named(Owner(n,"NamedIndexArguments","MixedNamedIndexArguments"),argument.Name.Index);
             }
             else if(kind=="FixedParameter")
             {
