@@ -7,6 +7,7 @@ public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
         new FeatureDefinition("csharp7.default-literals", Array.AsReadOnly(new[]{"csharp2.default-values"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/DefaultLiterals.ngr"})) { Introduced=new(7,1) },
+        new FeatureDefinition("csharp7.throw-expressions", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ThrowExpressions.ngr"})) { Introduced=new(7,0), Policies=Array.AsReadOnly(new[]{"csharp7.throw-expression-contexts"}) },
         new FeatureDefinition("csharp7.numeric-literals", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NumericLiterals.ngr"})) { Introduced=new(7,0) },
         new FeatureDefinition("csharp7.leading-digit-separators", Array.AsReadOnly(new[]{"csharp7.numeric-literals"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/LeadingDigitSeparators.ngr"})) { Introduced=new(7,2) },
         new FeatureDefinition("csharp6.enum-base-type-names", Array.AsReadOnly(new[]{"baseline.members","baseline.names-and-types"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/EnumBaseTypeNames.ngr"})) { Introduced=new(6,0), Policies=Array.AsReadOnly(new[]{"csharp6.source-context-checks"}) },
@@ -130,7 +131,7 @@ public static class FeatureCatalog
                 :parsed.RootElement.GetProperty("factory").GetProperty("modules").EnumerateArray().Select(x=>x.GetString()!);
             return Array.AsReadOnly(names.ToArray());
         }
-        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks","csharp6.source-context-checks"]).Order(StringComparer.Ordinal).ToArray();
+        var known=ledger.RootElement.GetProperty("policyGroups").EnumerateObject().Select(p=>p.Name).Concat(["unicode-3.0-bmp","unicode-4.0-scalar","unicode-current-bmp","csharp4.source-context-checks","csharp5.source-context-checks","csharp6.source-context-checks","csharp7.throw-expression-contexts"]).Order(StringComparer.Ordinal).ToArray();
         var sourceInputs=inputs.ToDictionary(x=>x.Key,x=>x.Value,StringComparer.Ordinal);
         // Each guard requires its actually admitted predecessor; later guards run only when their major is resolved.
         bool first=CoverageContract.Reviewed(ledger.RootElement,map.RootElement,source.RootElement,primary.RootElement,config.RootElement);

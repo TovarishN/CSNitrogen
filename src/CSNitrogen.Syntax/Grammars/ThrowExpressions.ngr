@@ -1,0 +1,8 @@
+syntax module CSharp.ThrowExpressions
+{
+ extend syntax CSharp.Expressions.Expression
+ {
+  // The operand admits coalescing (65) but stops before conditional (60).
+  | ThrowExpression = Keyword:"throw" Operand:Expression precedence 64
+ }
+}

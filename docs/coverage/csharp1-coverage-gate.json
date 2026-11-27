@@ -820,6 +820,35 @@
           "method": "Struct_instance_property_initializer_requires_a_later_version"
         }
       ]
+    },
+    {
+      "source": "Parsing/CSharp7ThrowExpressionPolicy.cs",
+      "codes": [
+        "CSN2070",
+        "CSN2071"
+      ],
+      "status": "verified",
+      "reference": "https://ecma-international.org/wp-content/uploads/ECMA-334_7th_edition_december_2023.pdf",
+      "positive": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs",
+          "method": "Throw_expressions_start_at_csharp7"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs",
+          "method": "Historical_throw_statement_is_unchanged"
+        }
+      ],
+      "negative": [
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs",
+          "method": "Throw_expressions_require_an_allowed_direct_parent"
+        },
+        {
+          "path": "tests/CSNitrogen.Tests/Syntax/CSharp7ThrowExpressionTests.cs",
+          "method": "Direct_lambda_and_query_are_outside_the_throw_operand_category"
+        }
+      ]
     }
   ],
   "policyGroups": {
@@ -847,7 +876,8 @@
       "Parsing/CSharp3DeclarationPolicy.cs",
       "Parsing/CSharp4ContextPolicy.cs",
       "Parsing/CSharp5ContextPolicy.cs",
-      "Parsing/CSharp6ContextPolicy.cs"
+      "Parsing/CSharp6ContextPolicy.cs",
+      "Parsing/CSharp7ThrowExpressionPolicy.cs"
     ]
   },
   "semanticExclusions": [

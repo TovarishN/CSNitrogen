@@ -45,6 +45,7 @@ language CSharp11
   grammar ../../Grammars/IndexInitializers.ngr;
   grammar ../../Grammars/EnumBaseTypeNames.ngr;
   grammar ../../Grammars/NumericLiterals.ngr;
+  grammar ../../Grammars/ThrowExpressions.ngr;
   grammar ../../Grammars/LeadingDigitSeparators.ngr;
   start CSharp.CompilationUnits.CompilationUnit;
 
