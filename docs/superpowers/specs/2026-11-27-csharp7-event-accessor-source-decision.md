@@ -4,7 +4,7 @@ ECMA-334 seventh edition covers expression bodies for instance constructors, sta
 
 ## Observed version boundary
 
-A Roslyn 5.0.0 compilation probe tested both language settings against equivalent CSNitrogen compilation-unit parses. The table shows compilation success for Roslyn and syntax acceptance for CSNitrogen. Roslyn emits CS8059 for each unavailable expression body in these C# 6 witnesses.
+A Roslyn 5.0.0 compilation probe tested both language settings against equivalent CSNitrogen compilation-unit parses. The table shows compilation success for Roslyn and syntax acceptance for CSNitrogen. Roslyn emits CS8059 for each unavailable expression body in these C# 6 witnesses. The committed arrow-event witnesses verify Roslyn. The CSNitrogen arrow-event rejections were observed separately in a disposable probe.
 
 | Source form | Roslyn 6.0 | Roslyn 7.0 | CSNitrogen 6.0 | CSNitrogen 7.0 |
 |---|---|---|---|---|
@@ -13,13 +13,13 @@ A Roslyn 5.0.0 compilation probe tested both language settings against equivalen
 | Static constructor or finalizer | Rejects | Accepts | Rejects | Accepts |
 | Property or indexer `get` and `set` | Rejects | Accepts | Rejects | Accepts |
 | Event `add` and `remove`, both expressed with arrows | Rejects | Accepts | Rejects | Rejects |
-| Mixed block and arrow event accessors, with either accessor first | Rejects | Accepts | Rejects | Rejects |
+| Mixed block and arrow event accessors, in either keyword or body order | Rejects | Accepts | Rejects | Rejects |
 | Event accessors, both expressed as blocks | Accepts | Accepts | Accepts | Accepts |
 
 For the event witnesses, a class field `System.Action h` provides storage. The event type is `System.Action`. The arrow expressions use `h += value` for `add` and `h -= value` for `remove`. The block controls wrap the same statements in braces. [Executable witnesses](../../../tests/CSNitrogen.Oracle.Tests/CSharp7ExpressionBodyObservations.cs)
 
 ## Source decision
 
-**Recommended.** Include expression-bodied event accessors from C# 7.0 as an explicit extension to the published grammar, consistent with the compiler and Microsoft examples. Keep the block-based event tree and its typed `EventAccessor.Body` property. Use additive syntax for events containing at least one arrow accessor, including mixed accessor bodies in either order. Production tests must also exercise the existing accessor-pair constraints and CSharp6 rejection.
+**Recommended.** Include expression-bodied event accessors from C# 7.0 as an explicit extension to the published grammar, consistent with the compiler and Microsoft examples. Keep the block-based event tree and its typed `EventAccessor.Body` property. Use additive syntax for events containing at least one arrow accessor, including mixed accessor bodies in either order. Preserve the requirement for exactly one `add` and one `remove` in either order, and test rejection under CSharp6.
 
 **Alternative.** Retain the published block-only grammar. Record the Roslyn divergence and leave the arrow accessor spelling outside the CSharp7 syntax contract.

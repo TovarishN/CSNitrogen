@@ -33,6 +33,8 @@ public class CSharp7ExpressionBodyObservations
     [InlineData("event System.Action E { add => h += value; remove => h -= value; }")]
     [InlineData("event System.Action E { add { h += value; } remove => h -= value; }")]
     [InlineData("event System.Action E { remove { h -= value; } add => h += value; }")]
+    [InlineData("event System.Action E { add => h += value; remove { h -= value; } }")]
+    [InlineData("event System.Action E { remove => h -= value; add { h += value; } }")]
     public void Roslyn_accepts_arrow_event_accessors_starting_in_csharp7(string members)
     {
         string source = Source(members);
