@@ -157,14 +157,15 @@ internal static class CSharpDeclarationPolicy
                         Error(items[i].Index,"A constructor constraint must be last.");
                 }
             }
-            if(kind is "Accessor" or "InterfaceAccessor" or "EventAccessor")
+            if(kind is "Accessor" or "InterfaceAccessor" or "EventAccessor" or "ArrowEventAccessor")
             {
                 if(tree.ChildCount(node)<3)continue;
                 int keyword=kind switch {
                     "Accessor"=>SyntaxView.Cast<AccessorNode>(tree,node).Keyword.Index,
                     "InterfaceAccessor"=>SyntaxView.Cast<InterfaceAccessorNode>(tree,node).Keyword.Index,
-                    _=>SyntaxView.Cast<EventAccessorNode>(tree,node).Keyword.Index};
-                int owner=Ancestor(node,"PropertyDeclaration","IndexerDeclaration","InterfaceProperty","InterfaceIndexer","EventPropertyDeclaration");
+                    "EventAccessor"=>SyntaxView.Cast<EventAccessorNode>(tree,node).Keyword.Index,
+                    _=>SyntaxView.Cast<ArrowEventAccessorNode>(tree,node).Keyword.Index};
+                int owner=Ancestor(node,"PropertyDeclaration","IndexerDeclaration","InterfaceProperty","InterfaceIndexer","EventPropertyDeclaration","ExpressionBodiedEventProperty");
                 if(owner>=0)
                 {
                     if(!accessors.TryGetValue(owner,out var names))accessors[owner]=names=new(StringComparer.Ordinal);
@@ -195,7 +196,7 @@ internal static class CSharpDeclarationPolicy
             }
         }
         for(int node=0;node<tree.NodeCount;node++)
-            if(Kind(node)=="EventPropertyDeclaration" &&
+            if(Kind(node) is ("EventPropertyDeclaration" or "ExpressionBodiedEventProperty") &&
                 (!accessors.TryGetValue(node,out var names)||!names.Contains("add")||!names.Contains("remove")))
                 Error(node,"An event accessor declaration requires both add and remove.");
         return issues.AsReadOnly();

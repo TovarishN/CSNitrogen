@@ -46,6 +46,7 @@ language CSharp12
   grammar ../../Grammars/EnumBaseTypeNames.ngr;
   grammar ../../Grammars/NumericLiterals.ngr;
   grammar ../../Grammars/ThrowExpressions.ngr;
+  grammar ../../Grammars/EventExpressionBodies.ngr;
   grammar ../../Grammars/LeadingDigitSeparators.ngr;
   start CSharp.CompilationUnits.CompilationUnit;
 

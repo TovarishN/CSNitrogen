@@ -7,6 +7,7 @@ public static class FeatureCatalog
 {
     public static IReadOnlyList<FeatureDefinition> Implemented { get; } = Array.AsReadOnly(new[] {
         new FeatureDefinition("csharp7.default-literals", Array.AsReadOnly(new[]{"csharp2.default-values"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/DefaultLiterals.ngr"})) { Introduced=new(7,1) },
+        new FeatureDefinition("csharp7.event-expression-bodies", Array.AsReadOnly(new[]{"csharp6.expression-bodies"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/EventExpressionBodies.ngr"})) { Introduced=new(7,0), Policies=Array.AsReadOnly(new[]{"generated-syntax-context-checks"}) },
         new FeatureDefinition("csharp7.throw-expressions", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/ThrowExpressions.ngr"})) { Introduced=new(7,0), Policies=Array.AsReadOnly(new[]{"csharp7.throw-expression-contexts"}) },
         new FeatureDefinition("csharp7.numeric-literals", Array.AsReadOnly(new[]{"baseline.expressions"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/NumericLiterals.ngr"})) { Introduced=new(7,0) },
         new FeatureDefinition("csharp7.leading-digit-separators", Array.AsReadOnly(new[]{"csharp7.numeric-literals"}), Array.Empty<string>(), Array.AsReadOnly(new[]{"Grammars/LeadingDigitSeparators.ngr"})) { Introduced=new(7,2) },

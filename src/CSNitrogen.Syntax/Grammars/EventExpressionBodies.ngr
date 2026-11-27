@@ -1,0 +1,15 @@
+syntax module CSharp.EventExpressionBodies
+{
+ syntax ArrowEventAccessor = Attributes:CSharp.Attributes.AttributeSection*
+   Keyword:(CSharp.Lexical.ContextualAdd / CSharp.Lexical.ContextualRemove) Body:CSharp.ExpressionBodies.ExpressionClause;
+
+ extend syntax CSharp.Declarations.MemberDeclarationExtension
+ {
+  // Require an arrow before taking this branch. Block-only events retain their original tree.
+  | ExpressionBodiedEventProperty = !CSharp.Lexical.Identifier "event" Type:CSharp.NamesTypes.TypeReference
+    NamePrefix:CSharp.NamesTypes.TypeNamePrefix? Name:CSharp.NamesTypes.QualifiedName
+    NameExtension:CSharp.Declarations.MemberNameSuffix? "{"
+    &(CSharp.Declarations.EventAccessor* ArrowEventAccessor)
+    Accessors:(CSharp.Declarations.EventAccessor / ArrowEventAccessor)+ "}"
+ }
+}
