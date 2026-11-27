@@ -10,6 +10,7 @@ internal static class CSharpDeclarationPolicy
     {
         var issues = new List<ParseIssue>();
         var accessors = new Dictionary<int, HashSet<string>>();
+        bool beforePrivateProtected = version < new Version(7, 2);
         string Kind(int node) => tree.Language!.GetKindName(tree.Kind(node));
         string Text(int node) { if(node==SyntaxTree.NoNode)return ""; var span=tree.Span(node); return tree.Text.Substring(span.Start,span.Length); }
         // Descends first children; stops at an absent first slot (formerly a zero-width Empty node).
@@ -48,9 +49,52 @@ internal static class CSharpDeclarationPolicy
             version<new Version(10,0)?$"{feature} requires C# 10.":$"{feature} is not implemented in this composition.",
             tree.Span(node),version<new Version(10,0)?IssueCategory.UnavailableFeature:IssueCategory.UnsupportedCoverage));
 
+        SyntaxList<ModifierNode>? DeclarationModifiers(int node, string kind) => kind switch
+        {
+            "MemberDeclaration" => MemberDeclarationNode.Create(tree, node).Modifiers,
+            "FixedBufferMember" => FixedBufferMemberClassMember.Create(tree, node).Modifiers,
+            "ClassDeclaration" => ClassDeclarationNode.Create(tree, node).Modifiers,
+            "StructDeclaration" => StructDeclarationNode.Create(tree, node).Modifiers,
+            "InterfaceDeclaration" => InterfaceDeclarationNode.Create(tree, node).Modifiers,
+            "EnumDeclaration" => EnumDeclarationNode.Create(tree, node).Modifiers,
+            "NamedBaseEnumDeclaration" => NamedBaseEnumDeclarationNode.Create(tree, node).Modifiers,
+            "DelegateDeclaration" => DelegateDeclarationNode.Create(tree, node).Modifiers,
+            _ => null,
+        };
+
+        void RequirePrivateProtectedVersion(SyntaxList<ModifierNode> modifiers)
+        {
+            int privateModifier = -1;
+            int protectedModifier = -1;
+            foreach (var modifier in modifiers)
+            {
+                var text = tree.GetText(modifier.Index);
+                if (text.SequenceEqual("private"))
+                {
+                    if (privateModifier >= 0) return;
+                    privateModifier = modifier.Index;
+                }
+                else if (text.SequenceEqual("protected"))
+                {
+                    if (protectedModifier >= 0) return;
+                    protectedModifier = modifier.Index;
+                }
+                else if (text.SequenceEqual("public") || text.SequenceEqual("internal"))
+                    return;
+            }
+            if (privateModifier >= 0 && protectedModifier >= 0)
+                issues.Add(new("CSN2011", "Private protected accessibility requires C# 7.2.",
+                    tree.Span(Math.Max(privateModifier, protectedModifier)), IssueCategory.UnavailableFeature));
+        }
+
         for(int node=0;node<tree.NodeCount;node++)
         {
             string kind=Kind(node);
+            if (beforePrivateProtected && tree.ChildCount(node) >= 2 &&
+                DeclarationModifiers(node, kind) is { Count: >= 2 } declarationModifiers &&
+                (kind is "MemberDeclaration" or "FixedBufferMember" ||
+                    Ancestor(node, "ClassDeclaration", "StructDeclaration", "InterfaceDeclaration") >= 0))
+                RequirePrivateProtectedVersion(declarationModifiers);
             if(kind=="FixedBufferMember")
             {
                 if(!InStruct(node))Error(node,"A fixed buffer declaration requires a struct owner.");
@@ -103,9 +147,8 @@ internal static class CSharpDeclarationPolicy
                 if(count>0 && kind=="IndexerDeclaration")
                 {
                     var indexer=SyntaxView.Cast<IndexerDeclarationNode>(tree,node);
-                    // A simple indexer-name consists solely of the this token.
-                    int first=FirstLeaf(indexer.Name.Index);
-                    if(Text(first)!="this")Error(node,"Explicit-interface indexers cannot declare accessor accessibility.");
+                    // The optional qualifier is an empty first slot on a simple indexer.
+                    if(Text(indexer.Name.Index)!="this")Error(node,"Explicit-interface indexers cannot declare accessor accessibility.");
                 }
             }
             if(kind=="GenericConstraints")

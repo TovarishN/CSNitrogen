@@ -12,6 +12,6 @@ The executable checks use Roslyn 5.0.0. The CSNitrogen results come from an isol
 
 ## Decision on the earlier profile boundary
 
-**Recommended.** Add either accessor spelling from CSharp7.2, then reject the newly introduced pair on ordinary members and nested types in all earlier profiles. That is a narrow correction to existing acceptance, including admitted profiles. Keep the existing modifier nodes and verify the unsupported-version diagnostic against the authored tokens. Review the changed historical behavior and refresh approval for any changed admission pins. General modifier-set validity and accessibility binding retain their separate scope.
+**Approved on 2026-11-27.** Add either accessor spelling from CSharp7.2, then reject the newly introduced pair on ordinary members and nested types in all earlier profiles. That is a narrow correction to existing acceptance, including admitted profiles. Keep the existing modifier nodes and verify the unsupported-version diagnostic against the authored tokens. Review the changed historical behavior and refresh approval for any changed admission pins. General modifier-set validity and accessibility binding retain their separate scope.
 
 **Compatibility option.** Add either accessor spelling from CSharp7.2 and enforce the pair boundary for CSharp7 and CSharp7.1. Retain the accepted modifier lists of the admitted CSharp1–6 profiles under their existing modifier-compatibility exclusions. Record the historical divergence for those earlier profiles.

@@ -369,7 +369,7 @@
     ]
   },
   "reviewInputs": {
-    "CSNitrogen.coverage.json": "d613fa22cb81af524c86177bc0263f8b04b024797c58d1b48485b46fee62cb8e",
+    "CSNitrogen.coverage.json": "4b09760cf358149af199ab5d4f1ee1075b229a4e54ea016c314a3b569e4de6b4",
     "CSNitrogen.csharp3-evidence.declaration-production-cases.json": "3d6e84dc39f5d36e5f1b0c2aeefb816a63dda56e262a0065835f4c62ed0c117d",
     "CSNitrogen.csharp3-evidence.expression-production-cases.json": "ed5ec61b89a1af6db35e771742dc11c4d0ff38a803db790bfa7ef108920d00ef",
     "CSNitrogen.csharp3-evidence.finite-alternative-cases.json": "1f57a55da4a3e8e6deb9d879137c5f169eb180a23b9bb65930d7fda44615425c",
@@ -439,6 +439,7 @@
     "CSNitrogen.grammar.NumericLiterals.ngr": "0c81fbd8cfe276f3a9146de1c6ceaa8ce0dc4715730cd2e88dab741c7605258c",
     "CSNitrogen.grammar.ObjectInitializers.ngr": "62b7f3d691f993432627b11e7fbf2343579b7e895533bdb404489bdbd6ebadbb",
     "CSNitrogen.grammar.OptionalParameters.ngr": "9b67d5e2577aeb4cf79bf20204e9fef1be6b2546e2700d3da8769a16291a9caf",
+    "CSNitrogen.grammar.PrivateProtectedAccessors.ngr": "33938cdebd0c70e4026dab655d946a80aaaae2e152cd0e57fa1b9851b9bb6780",
     "CSNitrogen.grammar.PropertyInitializers.ngr": "d07aec2561a2c62ddd8b552ea44ca2f99f9982183bb4a1d865c2a064a16bebe3",
     "CSNitrogen.grammar.Queries.ngr": "7fc1d68096a7fd25a5659e55193be360734e2c21bc590dc1ea87b56e1097bdd4",
     "CSNitrogen.grammar.Statements.ngr": "36e777c233e654726788520765872c396467352688c3d828e65bada2950afd7b",
@@ -455,7 +456,7 @@
     "CSNitrogen.source.Parsing/CSharp7ThrowExpressionPolicy.cs": "6cdfbeefbab76dfd6e79d51a9ac6a4cf336c32f9ac9ca330b0f8df6468d6dff4",
     "CSNitrogen.source.Parsing/CSharpAttributePolicy.cs": "bda47dd0645031151f7189bd6198013c396996fe8c1dfa1fb6078295521becd0",
     "CSNitrogen.source.Parsing/CSharpCompilationUnitPolicy.cs": "9faf08849f37f95c2c57aa59fd142739701219d0fcd67c63021fdec99291f7ab",
-    "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "70b56fa1754423e67d60e1ba5dfc3ec666eaa7dad85c446ce455fbbcfe0cac0e",
+    "CSNitrogen.source.Parsing/CSharpDeclarationPolicy.cs": "2ffba06f62f9dd759dbdc880ef158ff9f7b9d5c03342a3cc299155c2ceb74566",
     "CSNitrogen.source.Parsing/CSharpParser.cs": "30e499f82f0734710f76d7484ba00fb8b6f1552e57f83e4d7930886ac0d353a2",
     "CSNitrogen.source.Parsing/CSharpSyntaxPolicy.cs": "2f2ef81da6caa421f197bc69e44d05a65c5d3eccdcc99bddf81ece2cdcd1e391",
     "CSNitrogen.source.Parsing/CSharpTrivia.cs": "13c99794aebf55f540edf908a0b75b585fe2795d1ecb0605a004865a9f83fd5b",
@@ -470,12 +471,12 @@
     "CSNitrogen.source.Preprocessing/DirectiveScanner.cs": "9e06fdcc997be54441aed49f4b962a142d7993b3d26cb60a245056da83de0137",
     "CSNitrogen.source.Preprocessing/PreprocessRequest.cs": "c08dd55af7403cd37d269b6000489137878630db6fcaf9e26e827131763e9862",
     "CSNitrogen.source.Preprocessing/PreprocessResult.cs": "1c6c2734f410774aa26226747df928135d65b259a689ca46badb8a15bb61836a",
-    "CSNitrogen.source.Profiles/CSharp6CoverageContract.cs": "fdfae1726800569a6fc0519717736d1f8daaa13758b327ed3197b00c4575a8a6",
+    "CSNitrogen.source.Profiles/CSharp6CoverageContract.cs": "a0756967704fc359251724325f401ab5f0e95804cb32b31a6615a9c9d2dbebe0",
     "CSNitrogen.source.Profiles/ContractJson.cs": "45f174833c6a0354a328df29d600cfdce97cbd9f870d1f7cf43143b35dfd22cd",
     "CSNitrogen.source.Profiles/CoverageContract.cs": "3c7eddef4274d6c0ea6fd36eaedc9b1bb64a29eb5339d1acf4cf7616c2c817a2",
     "CSNitrogen.source.Profiles/CoverageHash.cs": "9701a4e33ba66b6f87a01fe604b24e4935ad7731ba91c62312d72df47ffdd686",
     "CSNitrogen.source.Profiles/CoverageMapping.cs": "892a0a337331bf30c2e288a4aaa27edf3668fabc79fdd0a4af10640ad569ae17",
-    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "933bea2db59e83e2c715a752737cbffe24bc1aea8e7f100d2362ed965bd79284",
+    "CSNitrogen.source.Profiles/FeatureCatalog.cs": "bff71d25dc8d3c0fcbcc6e64be38f9a14eaf705e8ee0f50ef6aaa2b7f4f15115",
     "CSNitrogen.source.Profiles/LanguageProfile.cs": "83d4fc689ee2d24ed6a6e3bf918c030d9b1973f098523b6dedad4eb62ddc3bac",
     "CSNitrogen.source.Profiles/ProfileResolver.cs": "9f8f367584bd0a23f51180f70ada8d1cf0d98f7e8cca2fada4d2d8f54e3473c8"
   }

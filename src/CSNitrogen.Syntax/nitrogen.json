@@ -301,7 +301,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -354,7 +355,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -407,7 +409,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -460,7 +463,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -513,7 +517,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -566,7 +571,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -619,7 +625,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -724,7 +731,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
@@ -777,7 +785,8 @@
         "Grammars/NumericLiterals.ngr",
         "Grammars/ThrowExpressions.ngr",
         "Grammars/EventExpressionBodies.ngr",
-        "Grammars/LeadingDigitSeparators.ngr"
+        "Grammars/LeadingDigitSeparators.ngr",
+        "Grammars/PrivateProtectedAccessors.ngr"
       ]
     },
     {
