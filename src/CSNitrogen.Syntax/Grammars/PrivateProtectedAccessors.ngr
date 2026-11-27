@@ -1,0 +1,7 @@
+syntax module CSharp.PrivateProtectedAccessors
+{
+ extend syntax CSharp.Declarations.AccessorModifiers
+ {
+  | PrivateProtectedAccessorAccessibility = Value:("private" "protected" / "protected" "private")
+ }
+}

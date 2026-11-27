@@ -3597,15 +3597,31 @@
       "title": "Private protected accessibility",
       "introduced": "7.2",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://github.com/dotnet/csharplang/blob/main/proposals/csharp-7.2/private-protected.md",
       "inventoryLine": 135,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/PrivateProtectedAccessors.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/CSharp72PrivateProtectedObservations.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp72PrivateProtectedTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp7.private-protected-accessibility"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      },
+      "notes": "Either order is recognized. Modifier lists preserve their existing nodes. Declared accessibility and general modifier-set validity remain outside this targeted version check."
     },
     {
       "id": "csharp-7.2.ref-conditional",

@@ -18,4 +18,6 @@ The C# 7.0 throw-expression module uses the null-coalescing operand precedence. 
 
 The C# 7.0 event extension permits arrow bodies on `add` and `remove` and supports mixing them with blocks. Each event must declare exactly one of each accessor. Block-only declarations use the original typed tree. This is a reviewed departure from the seventh edition's block-only event grammar. [Approved event source contract](../superpowers/specs/2026-11-27-csharp7-event-accessor-source-decision.md) · [Event witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp7EventExpressionBodyTests.cs)
 
+The C# 7.2 accessor module accepts both `private protected` and `protected private`. For an ordinary member or nested type, the source policy recognizes the pair within one modifier list and reports its later token before 7.2. Accessibility binding and general modifier-set validity remain outside this check. [Approved release boundary](../superpowers/specs/2026-11-27-csharp72-private-protected-source-decision.md) · [Parser witnesses](../../tests/CSNitrogen.Tests/Syntax/CSharp72PrivateProtectedTests.cs)
+
 The remaining syntax crosswalk and profile-specific Nitrogen witnesses are pending.
