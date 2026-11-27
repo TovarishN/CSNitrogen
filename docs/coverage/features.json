@@ -3335,15 +3335,33 @@
       "title": "More expression-bodied members",
       "introduced": "7.0",
       "classification": "syntax-or-policy",
-      "reviewed": false,
+      "reviewed": true,
       "reference": "https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members",
       "inventoryLine": 156,
       "requires": [],
       "conflicts": [],
-      "grammars": [],
-      "policies": [],
-      "fixtures": [],
-      "status": "unimplemented"
+      "grammars": [
+        "Grammars/ExpressionBodies.ngr",
+        "Grammars/EventExpressionBodies.ngr"
+      ],
+      "policies": [
+        "generated-syntax-context-checks"
+      ],
+      "fixtures": [
+        "tests/CSNitrogen.Oracle.Tests/CSharp7ExpressionBodyObservations.cs",
+        "tests/CSNitrogen.Tests/Syntax/CSharp7EventExpressionBodyTests.cs"
+      ],
+      "status": "verified",
+      "coverage": {
+        "capabilities": [
+          "csharp6.expression-bodies",
+          "csharp7.event-expression-bodies"
+        ],
+        "policies": [
+          "generated-syntax-context-checks"
+        ]
+      },
+      "notes": "Constructors, finalizers, and property and indexer accessors reuse the earlier expression body rules. Event accessors follow the approved extension recorded in docs/superpowers/specs/2026-11-27-csharp7-event-accessor-source-decision.md."
     },
     {
       "id": "csharp-7.0.out-variables",

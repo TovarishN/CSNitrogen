@@ -20,6 +20,6 @@ For the event witnesses, a class field `System.Action h` provides storage. The e
 
 ## Source decision
 
-**Recommended.** Include expression-bodied event accessors from C# 7.0 as an explicit extension to the published grammar, consistent with the compiler and Microsoft examples. Keep the block-based event tree and its typed `EventAccessor.Body` property. Use additive syntax for events containing at least one arrow accessor, including mixed accessor bodies in either order. Preserve the requirement for exactly one `add` and one `remove` in either order, and test rejection under CSharp6.
+**Approved on 2026-11-27.** Include expression-bodied event accessors from C# 7.0 as an explicit extension to the published grammar, consistent with the compiler and Microsoft examples. Keep the block-based event tree and its typed `EventAccessor.Body` property. Use additive syntax for events containing at least one arrow accessor, including mixed accessor bodies in either order. Preserve the requirement for exactly one `add` and one `remove` in either order, and test rejection under CSharp6.
 
 **Alternative.** Retain the published block-only grammar. Record the Roslyn divergence and leave the arrow accessor spelling outside the CSharp7 syntax contract.
